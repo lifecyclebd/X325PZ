@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="<?php echo e(asset("public/frontend/css/bootstrap.min.css")); ?>">
         <link rel="stylesheet" href="<?php echo e(asset("public/frontend/css/font-awesome.min.css")); ?>">
         <link rel="stylesheet" href="<?php echo e(asset("public/frontend/css/style.css")); ?>">
+        <link rel="stylesheet" href="<?php echo e(asset("public/frontend/css/animate.css\n\
+")); ?>">
     </head>
     <body id="top" data-spy="scroll">
         <!--top header-->
@@ -81,8 +83,8 @@
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="<?php echo e(url('/view-doctor')); ?>">Doctor</a></li>
-                                        <li><a href="#">Hospital</a></li>
-                                        <li><a href="#">Ambulence</a></li>
+                                        <li><a href="<?php echo e(url('/view-hospital')); ?>">Hospital</a></li>
+                                        <li><a href="<?php echo e(url('/view-ambulance')); ?>">Ambulence</a></li>
                                         <li><a href="<?php echo e(url('/write-to-doctor')); ?>">Write To Doctor</a></li>
                                     </ul>
                                 </li> 
@@ -91,27 +93,27 @@
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="<?php echo e(url('/news-page')); ?>">News</a></li>
-                                        <li><a href="#">Blog</a></li> 
+                                        <li><a href="<?php echo e(url('/blog-page')); ?>">Blog</a></li> 
                                     </ul>
                                 </li>
                                 <li class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Events
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Recent</a></li>
-                                        <li><a href="#">Upcoming</a></li> 
+                                        <li><a href="<?php echo e(url('/recent-event')); ?>">Recent</a></li>
+                                        <li><a href="<?php echo e(url('/upcoming-event')); ?>">Upcoming</a></li> 
                                     </ul>
                                 </li>
                                 <li class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Join
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Be a Volunteer</a></li>
-                                        <li><a href="#">Make a Donation</a></li> 
+                                        <li><a href="<?php echo e(url('/volunteer')); ?>">Be a Volunteer</a></li>
+                                        <li><a href="<?php echo e(url('/make-donation')); ?>">Make a Donation</a></li> 
                                     </ul>
                                 </li>
-                                <li><a href="#portfolio">About Us</a></li>
-                                <li><a href="#contact">contact</a></li>
+                                <li><a href="<?php echo e(url('/about-us')); ?>">About Us</a></li>
+                                <li><a href="<?php echo e(url('/contact')); ?>">contact</a></li>
                                 <li class="hidden-sm hidden-xs">
                                     <a href="#" id="ss"><i class="fa fa-search" aria-hidden="true"></i></a>
                                 </li>

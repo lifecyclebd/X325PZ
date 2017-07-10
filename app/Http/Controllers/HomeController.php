@@ -24,27 +24,72 @@ class HomeController extends Controller {
     public function index() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('home');
+        return view('frontend.home');
     }
     public function blood_info() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('blood_info');
+        return view('frontend.blood_info');
     }
     public function news_page() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('news_page');
+        return view('frontend.news_page');
     }
     public function write_to_doctor() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('write_to_doctor');
+        return view('frontend.write_to_doctor');
     }
     public function view_doctor() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('view_doctor');
+        return view('frontend.view_doctor');
+    }
+    public function view_hospital() {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        return view('frontend.view_hospital');
+    }
+    public function view_ambulance() {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        return view('frontend.view_ambulance');
+    }
+    public function blog_page() {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        return view('frontend.view_blog');
+    }
+    public function recent_event() {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        return view('frontend.recent_event');
+    }
+    public function upcoming_event() {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        return view('frontend.upcoming_event');
+    }
+    public function volunteer() {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        return view('frontend.volunteer');
+    }
+    public function make_donation() {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        return view('frontend.make_donation');
+    }
+    public function about_us() {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        return view('frontend.about_us');
+    }
+    public function contact() {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        return view('frontend.contact');
     }
     
     

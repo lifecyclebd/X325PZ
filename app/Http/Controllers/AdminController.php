@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User; 
+use APP\Testimonial;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -60,5 +61,11 @@ class AdminController extends Controller {
         return redirect('/admin');
 
     }
-
+    public function viewtestimonial() {
+        //dd(111111);
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        $data['testimonial']=Testimonial::all();
+        return view('testimonial.view_testimonial');
+    }
 }

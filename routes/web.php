@@ -1,5 +1,7 @@
 <?php
  
+//---------------------Testimonials---------------------------
+Route::get('/admin/testimonal', 'AdminController@viewtestimonial');
 
 Route::post('/donor/search', 'DonorController@search');
 Route::get('donor/viewprofile/{id}', 'DonorController@viewprofile');
@@ -49,7 +51,15 @@ Route::get('/blood-info', 'HomeController@blood_info');
 Route::get('/news-page', 'HomeController@news_page');
 Route::get('/write-to-doctor', 'HomeController@write_to_doctor');
 Route::get('/view-doctor', 'HomeController@view_doctor');
-Route::get('/view-hospital', 'HomeController@view-hospital');
+Route::get('/view-hospital', 'HomeController@view_hospital');
+Route::get('/view-ambulance', 'HomeController@view_ambulance');
+Route::get('/blog-page', 'HomeController@blog_page');
+Route::get('/recent-event', 'HomeController@recent_event');
+Route::get('/upcoming-event', 'HomeController@upcoming_event');
+Route::get('/volunteer', 'HomeController@volunteer');
+Route::get('/make-donation', 'HomeController@make_donation');
+Route::get('/about-us', 'HomeController@about_us');
+Route::get('/contact', 'HomeController@contact');
 
 
 
@@ -59,7 +69,7 @@ Route::get('/VisionMissionValue', 'PostController@VisionMissionValue');
 Route::get('/FAQ', 'FaqController@faq');
 Route::get('/aboutus', 'PostController@aboutus');
 Route::get('/gallery', 'PhotoController@index');
-Route::get('/contact', 'PostController@contactPage');
+//Route::get('/contact', 'PostController@contactPage');
 Route::get('/project', 'HomeController@projectPage');
 Route::get('/events', 'HomeController@eventsPage'); 
 Route::get('/donate', 'DonorController@donate');
@@ -82,6 +92,7 @@ Route::get('/admin/{id}/edit', 'AdminController@edit');
 Route::get('/admin/store', 'AdminController@store')->name('store');
 Route::post('/admin/update', 'AdminController@update');
 Route::any('/admin/{id}/destroy', 'AdminController@destroy');
+
 
 //--------Donor-------------------------------------
 Route::get('/test', 'TestController@index');
@@ -171,6 +182,9 @@ Route::any('admin/mailbox/inbox', 'MailController@show_inbox');
 Route::any('admin/mailbox/compose', 'MailController@show_compose');
 Route::any('admin/mailbox/read', 'MailController@show_read');
 Route::any('admin/mailbox/sent', 'MailController@show_sent');
+
+
+
 
 
 

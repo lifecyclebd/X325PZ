@@ -117,8 +117,13 @@
                             <span>Manage Degrees</span>
                         </a>
                     </li>
-
                 </ul>
+            </li>
+            <li class="treeview">
+                <a href="{{url('/admin/testimonial')}}">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    <span>Testimonials</span>
+                </a>
             </li>
             <li class="treeview">
                 <a href="#">

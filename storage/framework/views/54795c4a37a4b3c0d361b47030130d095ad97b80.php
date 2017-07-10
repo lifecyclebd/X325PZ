@@ -4,7 +4,7 @@
         <p class="text-center" style="font-size: 20px">More about info</p>
         <hr>
         <div class="col-md-3">
-            <div class="info_abou_blood">
+            <div class="info_abou_blood slideInDown">
                 <span class="back_icon1 pull-center" style="height: 200px">  </span>
                 <p class="title">Blood Donor 24</p>
                 <p class="text-justify">
@@ -16,7 +16,7 @@
             </div> 
         </div>
         <div class="col-md-3">
-            <div class="info_abou_blood">
+            <div class="info_abou_blood slideInDown">
                 <span class="back_icon2 pull-center" style="height: 200px">  </span>
                 <p class="title">Blood Donor 24</p>
                 <p class="text-justify">
@@ -28,7 +28,7 @@
             </div> 
         </div>
         <div class="col-md-3">
-            <div class="info_abou_blood">
+            <div class="info_abou_blood slideInDown">
                 <span class="back_icon3 pull-center" style="height: 200px">  </span>
                 <p class="title">Blood Donor 24</p>
                 <p class="text-justify">
@@ -40,7 +40,7 @@
             </div> 
         </div>
         <div class="col-md-3">
-            <div class="info_abou_blood">
+            <div class="info_abou_blood slideInDown">
                 <span class="back_icon4 pull-center" style="height: 200px">  </span>
                 <p class="title">Blood Donor 24</p>
                 <p class="text-justify">

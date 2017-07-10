@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="{{ asset("public/frontend/css/bootstrap.min.css") }}">
         <link rel="stylesheet" href="{{ asset("public/frontend/css/font-awesome.min.css") }}">
         <link rel="stylesheet" href="{{ asset("public/frontend/css/style.css") }}">
+        <link rel="stylesheet" href="{{ asset("public/frontend/css/animate.css\n\
+") }}">
     </head>
     <body id="top" data-spy="scroll">
         <!--top header-->
@@ -82,7 +84,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="{{ url('/view-doctor') }}">Doctor</a></li>
                                         <li><a href="{{ url('/view-hospital') }}">Hospital</a></li>
-                                        <li><a href="#">Ambulence</a></li>
+                                        <li><a href="{{ url('/view-ambulance') }}">Ambulence</a></li>
                                         <li><a href="{{ url('/write-to-doctor') }}">Write To Doctor</a></li>
                                     </ul>
                                 </li> 
@@ -91,27 +93,27 @@
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="{{ url('/news-page') }}">News</a></li>
-                                        <li><a href="#">Blog</a></li> 
+                                        <li><a href="{{ url('/blog-page') }}">Blog</a></li> 
                                     </ul>
                                 </li>
                                 <li class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Events
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Recent</a></li>
-                                        <li><a href="#">Upcoming</a></li> 
+                                        <li><a href="{{ url('/recent-event') }}">Recent</a></li>
+                                        <li><a href="{{ url('/upcoming-event') }}">Upcoming</a></li> 
                                     </ul>
                                 </li>
                                 <li class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Join
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Be a Volunteer</a></li>
-                                        <li><a href="#">Make a Donation</a></li> 
+                                        <li><a href="{{ url('/volunteer') }}">Be a Volunteer</a></li>
+                                        <li><a href="{{ url('/make-donation') }}">Make a Donation</a></li> 
                                     </ul>
                                 </li>
-                                <li><a href="#portfolio">About Us</a></li>
-                                <li><a href="#contact">contact</a></li>
+                                <li><a href="{{ url('/about-us') }}">About Us</a></li>
+                                <li><a href="{{ url('/contact') }}">contact</a></li>
                                 <li class="hidden-sm hidden-xs">
                                     <a href="#" id="ss"><i class="fa fa-search" aria-hidden="true"></i></a>
                                 </li>
