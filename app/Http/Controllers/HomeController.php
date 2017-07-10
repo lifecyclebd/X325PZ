@@ -25,7 +25,29 @@ class HomeController extends Controller {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
         return view('home');
-    }    
+    }
+    public function blood_info() {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        return view('blood_info');
+    }
+    public function news_page() {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        return view('news_page');
+    }
+    public function write_to_doctor() {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        return view('write_to_doctor');
+    }
+    public function view_doctor() {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        return view('view_doctor');
+    }
+    
+    
 
     public function OurPolicy() {  
         $data['OurPolicy'] = Content:: where ('content_type','our-policy') ->get(); 

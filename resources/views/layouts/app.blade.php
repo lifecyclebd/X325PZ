@@ -1,4 +1,4 @@
-@include('user.header')
+@include('frontend.header')
 
 @if( isset($data['is_home_page']) && $data['is_home_page'] )
  @include('user/bannercontainer')

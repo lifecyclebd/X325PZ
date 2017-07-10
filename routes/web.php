@@ -37,9 +37,24 @@ Route::any('/admin/viewPhoto', 'PhotoController@viewPhoto');
 Route::get('/DonorSearchByLocation', 'SearchController@DonorSearchByLocation');
 Route::get('/search', 'SearchController@index');
 Route::get('/my-profile', 'ProfileController@viewMyProfile');
+//Route::get('/', 'PostController@WhoWeAre');
 
 
-Route::get('/', 'PostController@WhoWeAre');
+
+
+
+//----------------------Home page route---------------------------//
+Route::get('/', 'HomeController@index');
+Route::get('/blood-info', 'HomeController@blood_info');
+Route::get('/news-page', 'HomeController@news_page');
+Route::get('/write-to-doctor', 'HomeController@write_to_doctor');
+Route::get('/view-doctor', 'HomeController@view_doctor');
+Route::get('/view-hospital', 'HomeController@view-hospital');
+
+
+
+
+
 Route::get('/VisionMissionValue', 'PostController@VisionMissionValue');
 Route::get('/FAQ', 'FaqController@faq');
 Route::get('/aboutus', 'PostController@aboutus');
@@ -181,7 +196,7 @@ Route::resource('donor','DonorController');
 Route::resource('content','ContentController');
 
 
-Route::get('/', 'UserController@index');
+//Route::get('/', 'UserController@index');
 Route::get('/WhoWeAre', 'PostController@WhoWeAre');
 
 

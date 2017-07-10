@@ -33,6 +33,7 @@
                                     <th>Location</th>
                                     <th>Chamber</th>
                                     <th>Operation</th>
+									<th>Dummy</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,6 +54,7 @@
                                         <a href="<?php echo e(url('/donor/')); ?>/<?php echo e($row->id); ?>" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
                                         </a>
                                     </td>
+									<td>dummy content</td>
 
                                 </tr>
 

@@ -24,7 +24,7 @@
                     </div>
                     <div class="box-body">
                         <!-- form start -->
-                        <form action="<?php echo e(url('/blog/saveCategory')); ?>" method="post">
+                        <form class="form-horizontal" action="<?php echo e(url('/blog/saveCategory')); ?>" method="post">
                         <?php echo csrf_field(); ?>
 
 
@@ -34,10 +34,8 @@
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="category_name" required autofocus>
 
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                            </div> 
+                            <div class="col-md-2">
                                 <button type="submit" class="btn btn-primary">
                                     Add Category
                                 </button>

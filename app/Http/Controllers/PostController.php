@@ -29,7 +29,7 @@ class PostController extends Controller
         return view('user.aboutus', ['data' => $data]);
 
     }
-
+    
 
 
 
