@@ -14,8 +14,8 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">Testimonial List</h3>
                         <div class="box-tools pull-right">
-                            <a href="{{url('admin/hospital/create_hospital')}}" class="">      
-                                <i class="fa fa-plus" aria-hidden="true"></i> Add Hospital
+                            <a href="{{url('/admin/testimonial/add')}}" class="">      
+                                <i class="fa fa-plus" aria-hidden="true"></i> Add Testimonial
                             </a>
 
                         </div>
@@ -28,34 +28,37 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
-                                    <th>Hospital Name</th>
-                                    <th>Location</th>
-                                    <th>Phone</th>
-                                    <th>Incharge Name</th>
-                                    <th>Detail</th>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Institute</th>
+                                    <th>Designation</th>
+                                    <th>Title</th>
+                                    <th style="width: 30%">Message</th>
+                                    <th>Rank</th>
                                     <th>Operation</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($data['testimonial'] as $row) 
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td> 
-                                        <a href="{{url('admin/hospital')}}/edit/}}" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
-                                        <a href="{{url('admin/hospital')}}/delete" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
-                                        <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
-                                        <a href="{{url('/donor/')}}/" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
-                                        </a>
+                                    <td>{{$row->id}}</td>
+                                    <td><img src="{{asset('/')}}/public/images/testimonial/{{$row->photo}}" class="img img-thumbnail"></td>
+                                    <td>{{$row->name}}</td>
+                                    <td>{{$row->email}}</td>
+                                    <td>{{$row->institution}}</td>
+                                    <td>{{$row->designation}}</td>
+                                    <td>{{$row->title}}</td>
+                                    <td>{{$row->message}}</td>
+                                    <td>{{$row->rank}}</td>
+                                    <td align="center"> 
+                                         <a href="{{url('admin/hospital')}}/delete" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
+                                       
                                     </td>
 
                                 </tr>
 
-                                <!--@endforeach-->
+                                @endforeach
                             </tbody>
 
                         </table>

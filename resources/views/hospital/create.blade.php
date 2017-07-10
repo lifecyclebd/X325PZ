@@ -80,7 +80,7 @@
 
             <div class="box-body">
                 <!-- form start -->
-                <form class="form-horizontal" action="{{url('/admin/hospital/hospital_store')}}" method="post" > 
+                <form class="form-horizontal" action="{{url('/admin/hospital/hospital_store')}}" method="post" enctype='multipart/form-data' > 
                     
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">

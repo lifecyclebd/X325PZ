@@ -11,8 +11,8 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">Testimonial List</h3>
                         <div class="box-tools pull-right">
-                            <a href="<?php echo e(url('admin/hospital/create_hospital')); ?>" class="">      
-                                <i class="fa fa-plus" aria-hidden="true"></i> Add Hospital
+                            <a href="<?php echo e(url('/admin/testimonial/add')); ?>" class="">      
+                                <i class="fa fa-plus" aria-hidden="true"></i> Add Testimonial
                             </a>
 
                         </div>
@@ -25,34 +25,37 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
-                                    <th>Hospital Name</th>
-                                    <th>Location</th>
-                                    <th>Phone</th>
-                                    <th>Incharge Name</th>
-                                    <th>Detail</th>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Institute</th>
+                                    <th>Designation</th>
+                                    <th>Title</th>
+                                    <th style="width: 30%">Message</th>
+                                    <th>Rank</th>
                                     <th>Operation</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <!--<?php $__currentLoopData = $data['hospital']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>-->
+                                <?php $__currentLoopData = $data['testimonial']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td> 
-                                        <a href="<?php echo e(url('admin/hospital')); ?>/edit/}}" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
-                                        <a href="<?php echo e(url('admin/hospital')); ?>/delete" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
-                                        <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
-                                        <a href="<?php echo e(url('/donor/')); ?>/" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
-                                        </a>
+                                    <td><?php echo e($row->id); ?></td>
+                                    <td><img src="<?php echo e(asset('/')); ?>/public/images/testimonial/<?php echo e($row->photo); ?>" class="img img-thumbnail"></td>
+                                    <td><?php echo e($row->name); ?></td>
+                                    <td><?php echo e($row->email); ?></td>
+                                    <td><?php echo e($row->institution); ?></td>
+                                    <td><?php echo e($row->designation); ?></td>
+                                    <td><?php echo e($row->title); ?></td>
+                                    <td><?php echo e($row->message); ?></td>
+                                    <td><?php echo e($row->rank); ?></td>
+                                    <td align="center"> 
+                                         <a href="<?php echo e(url('admin/hospital')); ?>/delete" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
+                                       
                                     </td>
 
                                 </tr>
 
-                                <!--<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>-->
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </tbody>
 
                         </table>
