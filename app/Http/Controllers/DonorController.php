@@ -209,5 +209,6 @@ class DonorController extends Controller {
         $data->save();
         return redirect('/bloodrequest');
     }
+    
 
 }

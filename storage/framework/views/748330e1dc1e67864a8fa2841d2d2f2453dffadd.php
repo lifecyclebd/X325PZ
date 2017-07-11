@@ -99,6 +99,7 @@
                         <ul class="treeview-menu" style="display: none;">
                             <li><a href="<?php echo e(url('/')); ?>/admin/doctor/view"><i class="fa fa-circle-o"></i> Doctors</a></li>
                             <li><a href="<?php echo e(url('/admin/doctor/search_view')); ?>"><i class="fa fa-circle-o"></i> Search Doctors</a></li>
+                            <li><a href="<?php echo e(url('admin/doctor/problem-view')); ?>"><i class="fa fa-circle-o"></i> Patient Problems</a></li>
                         </ul>
                     </li>
                     <li class="treeview">

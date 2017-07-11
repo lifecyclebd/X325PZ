@@ -9,6 +9,7 @@ use App\Doctor_designation;
 use App\Hospital;
 use App\Doctor_speciality;
 use App\doctor_degree;
+use App\Find_solution;
 use App\Libraries\Common;
 use DB;
 
@@ -257,6 +258,32 @@ class DoctorController extends Controller {
         $hospital = Hospital::find($id);
         $hospital->delete();        
         return redirect('admin/hospital/view_hospital');
+    }
+    public function write_to_doctor(Request $request){
+        $data =new Find_solution();
+        $data->name=$request->name;
+        $data->age=$request->age;
+        $data->last_blood_pressure=$request->last_blood_pressure;
+        $data->any_disease=$request->any_disease;
+        $data->email=$request->email;
+        $data->phone=$request->phone;
+        $data->problems=$request->problems;
+        $data->save();
+        return redirect('/write-to-doctor');
+    }
+    
+    public function view_problem() {
+        $data['problems'] = Find_solution::all();
+        return view('problems.view')->with('data', $data);
+    }
+    public function problem_delete($id){
+        $degree = Find_solution::find($id);
+        $degree->delete();        
+        return redirect('admin/doctor/problem-view');
+    }
+    public function problem_show($id) {
+        $data = Find_solution::find($id);
+        return view('problems.show')->with('data', $data);
     }
 
 }

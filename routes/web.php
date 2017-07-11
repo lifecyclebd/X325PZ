@@ -22,6 +22,8 @@ Route::get('/admin/donor/get_upazilla/{id}', 'DonorController@get_upazilla');
 
 
 
+
+
 Route::get('/admin/addGallery', 'PhotoController@addGallery');
 Route::any('/admin/storeGallery', 'PhotoController@storeGallery');
 Route::any('/admin/viewGallery', 'PhotoController@viewGallery');
@@ -116,6 +118,10 @@ Route::post('admin/doctor/search', 'DoctorController@search');
 Route::get('admin/doctor/edit/{id}', 'DoctorController@doctor_edit');
 Route::post('admin/doctor/update', 'DoctorController@doctor_update');
 Route::any('admin/doctor/delete/{id}', 'DoctorController@doctor_delete');
+Route::post('admin/doctor/write', 'DoctorController@write_to_doctor');
+Route::get('admin/doctor/problem-view', 'DoctorController@view_problem');
+Route::any('admin/doctor/problem/delete/{id}', 'DoctorController@problem_delete');
+Route::get('admin/doctor/problem-view/{id}', 'DoctorController@problem_show')->name('show');
 
 //-------------------------Hospital------------------------
 Route::get('admin/hospital/view_hospital', 'DoctorController@hospital_view');
