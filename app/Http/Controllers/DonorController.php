@@ -18,7 +18,11 @@ class DonorController extends Controller {
         $data['donor'] = Donor::all();
         return view('donor.view')->with('data', $data);
     }
-
+ public function donor_login() {
+        $data['division'] = Division::all();
+        $data['donor'] = Donor::all();
+        return view('frontend.donor_login');
+    }
     public function create() {
         //  $blood_group= new Common;
         //=$blood_group->get_blood_group();
