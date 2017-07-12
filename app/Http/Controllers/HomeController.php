@@ -25,6 +25,7 @@ class HomeController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
+        //dd('ssssssssssssssssssss');
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
         $data['gallery_category']= Gallery::all();
