@@ -263,5 +263,38 @@
 
 </div>
 
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(".filter-button").click(function () {
+            var value = $(this).attr('data-filter');
+            //    alert("home");
+            if (value == "all")
+            {
+                $('.filter').removeClass('hidden');
+                $('.filter').show();
+                $('#all').addClass('active');
+            } 
+            @foreach($data['gallery_category'] as $row)
+             if (value == "{{$row->page_name}}") {
+                $('.filter').addClass('hidden');
+                $('.{{$row->page_name}}').removeClass('hidden');
+                $(".{{$row->page_name}}").removeClass("active");
+              //  $('.filter-button').addClass('active');
+                $('.filter').show();
+            } 
+            @endforeach
+       
+        });
+
+        if ($(".filter-button").removeClass("active")) {
+           $(this).removeClass("active");
+        }
+        $(this).addClass("active");
+
+    });
+
+</script>
 @endsection
 
