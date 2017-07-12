@@ -76,9 +76,19 @@
 
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="<?php echo e(url('/')); ?>">Home</a></li>
-                                <li><a href="<?php echo e(url('/blood-info')); ?>">Blood Info</a></li>
+                                
+                                
+                                
                                 <li class="dropdown">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Health
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="">Blood
+                                        <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="<?php echo e(url('/blood-news')); ?>">Blood News</a></li>
+                                        <li><a href="<?php echo e(url('/blood-info')); ?>">Blood Info</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="">Health
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="<?php echo e(url('/view-doctor')); ?>">Doctor</a></li>
@@ -91,8 +101,8 @@
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Activity
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="<?php echo e(url('/news-page')); ?>">News</a></li>
-                                        <li><a href="<?php echo e(url('/blog-page')); ?>">Blog</a></li> 
+                                        <li><a href="<?php echo e(url('/news')); ?>">News</a></li>
+                                        <li><a href="<?php echo e(url('/blog')); ?>">Blog</a></li> 
                                     </ul>
                                 </li>
                                 <li class="dropdown">

@@ -141,7 +141,7 @@ html[xmlns] .flexslider .slides {
 .flex-direction-nav a.flex-next:before {
   content: '\f002';
 }
-.flex-direction-nav .flex-prev {
+.flex-direction-nav .sflex-prev {
   left: -50px;
 }
 .flex-direction-nav .flex-next {

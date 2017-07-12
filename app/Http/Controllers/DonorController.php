@@ -210,5 +210,12 @@ class DonorController extends Controller {
         return redirect('/bloodrequest');
     }
     
+    public function donor_register(){
+        //$data['request_list']= BloodRequest::all();
+        $data['division'] = Division::all();
+        return view('frontend.donor_register')->with('data', $data);
+        
+    }
+    
 
 }

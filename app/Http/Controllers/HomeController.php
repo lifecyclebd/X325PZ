@@ -40,6 +40,11 @@ class HomeController extends Controller {
         
         return view('frontend.home')->with('data', $data);
     }
+    public function blood_news() {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        return view('frontend.blood_news');
+    }
     public function blood_info() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
@@ -49,6 +54,11 @@ class HomeController extends Controller {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
         return view('frontend.news_page');
+    }
+    public function news_detail_page() {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        return view('frontend.news_detail_page');
     }
     public function write_to_doctor() {
         //$divisions = DB::table("divisions")->lists("name", "id");
@@ -64,6 +74,11 @@ class HomeController extends Controller {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
         return view('frontend.view_hospital');
+    }
+    public function search_hospital() {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        return view('frontend.search_hospital');
     }
     public function view_ambulance() {
         //$divisions = DB::table("divisions")->lists("name", "id");

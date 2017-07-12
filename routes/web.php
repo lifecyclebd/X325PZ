@@ -51,13 +51,16 @@ Route::get('/my-profile', 'ProfileController@viewMyProfile');
 
 //----------------------Home page route---------------------------//
 Route::get('/', 'HomeController@index');
+Route::get('/blood-news', 'HomeController@blood_news');
 Route::get('/blood-info', 'HomeController@blood_info');
-Route::get('/news-page', 'HomeController@news_page');
+Route::get('/news', 'HomeController@news_page');
+Route::get('/news-detail/{id}', 'HomeController@news_detail_page');
 Route::get('/write-to-doctor', 'HomeController@write_to_doctor');
 Route::get('/view-doctor', 'HomeController@view_doctor');
 Route::get('/view-hospital', 'HomeController@view_hospital');
+Route::any('/search-hospital', 'HomeController@search_hospital');
 Route::get('/view-ambulance', 'HomeController@view_ambulance');
-Route::get('/blog-page', 'HomeController@blog_page');
+Route::get('/blog', 'HomeController@blog_page');
 Route::get('/recent-event', 'HomeController@recent_event');
 Route::get('/upcoming-event', 'HomeController@upcoming_event');
 Route::get('/volunteer', 'HomeController@volunteer');
@@ -102,6 +105,7 @@ Route::any('/admin/{id}/destroy', 'AdminController@destroy');
 Route::get('/test', 'TestController@index');
 
 Route::get('/donor', 'DonorController@index');
+Route::get('/donor-register', 'DonorController@donor_register');
 Route::get('/donor/create', 'DonorController@index');
 Route::post('/donor/store', 'DonorController@store');
 Route::get('/donor/{id}', 'DonorController@show');

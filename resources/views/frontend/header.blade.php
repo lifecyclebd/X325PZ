@@ -76,9 +76,19 @@
 
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="{{ url('/') }}">Home</a></li>
-                                <li><a href="{{ url('/blood-info') }}">Blood Info</a></li>
+                                
+                                
+                                
                                 <li class="dropdown">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Health
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="">Blood
+                                        <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ url('/blood-news') }}">Blood News</a></li>
+                                        <li><a href="{{ url('/blood-info') }}">Blood Info</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="">Health
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="{{ url('/view-doctor') }}">Doctor</a></li>
@@ -91,8 +101,8 @@
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Activity
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="{{ url('/news-page') }}">News</a></li>
-                                        <li><a href="{{ url('/blog-page') }}">Blog</a></li> 
+                                        <li><a href="{{ url('/news') }}">News</a></li>
+                                        <li><a href="{{ url('/blog') }}">Blog</a></li> 
                                     </ul>
                                 </li>
                                 <li class="dropdown">
