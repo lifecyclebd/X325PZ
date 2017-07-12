@@ -4,7 +4,7 @@
     <div class="service-footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-12"> 
+                <div class="col-md-offset-2 col-md-8"> 
                     <p class="text-center find_out_where">Find out where to give blood</p> 
                     <form class="form-horizontal" method="post" action=""> 
                         <div class="input-group">
