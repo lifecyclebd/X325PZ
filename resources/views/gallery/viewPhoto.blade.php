@@ -29,16 +29,18 @@
                                 <tr>
                                     <th> ID</th>
                                     <th>Photo Name</th> 
+                                    <th>Slug</th> 
                                     <th>Image</th>
 
                                     <th>Operation</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($data['gallery'] as $row)
+                                @foreach($data['galleries'] as $row)
                                 <tr>
                                     <td>{{$row->id}}</td>
-                                    <td>{{$row->photo_name}}</td>  
+                                    <td>{{$row->photo_name}}</td> 
+                                    <td>{{$row->page_name}}</td> 
                                     <td><img style="width:100px; height:70px" src="{{url('/public/images/gallery')}}/{{$row->photo_name}}"> </td>  
                                     <td> 
                                         <a href="{{url('/donor')}}/{{$row->id}}/edit" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>

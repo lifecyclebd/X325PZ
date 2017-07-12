@@ -27,7 +27,7 @@
                     {!! csrf_field() !!}
 
                     <div class="form-group">
-                        <label for="name" class="col-md-4 control-label">Page Name</label>
+                        <label for="name" class="col-md-4 control-label">Slug</label>
                         <div class="col-md-6">
                             <input id="name" type="text" class="form-control" name="page_name" required autofocus>
                         </div>

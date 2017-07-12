@@ -16,8 +16,9 @@
         <link rel="stylesheet" href="<?php echo e(asset("public/frontend/css/bootstrap.min.css")); ?>">
         <link rel="stylesheet" href="<?php echo e(asset("public/frontend/css/font-awesome.min.css")); ?>">
         <link rel="stylesheet" href="<?php echo e(asset("public/frontend/css/style.css")); ?>">
-        <link rel="stylesheet" href="<?php echo e(asset("public/frontend/css/animate.css\n\
-")); ?>">
+        <link rel="stylesheet" href="<?php echo e(asset("public/frontend/css/animate.css")); ?>">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="<?php echo e(asset("public/frontend/js/jquery-3.2.1.min.js")); ?>"></script>
     </head>
     <body id="top" data-spy="scroll">
         <!--top header-->

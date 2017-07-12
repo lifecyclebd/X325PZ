@@ -138,8 +138,14 @@ class PhotoController extends Controller
     }
 
     public function viewPhoto(){
+        $data['gallery_category']= Gallery::all();
+        $data['gallery']= Gallery_detail::all(); 
         
-         $data['gallery']= Gallery_detail::all(); 
+        $data['galleries'] = DB::table('galleries')
+            ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id')
+            ->get();
+        
+         //$data['gallery']= Gallery_detail::all(); 
         return view('gallery.viewPhoto')->with('data', $data);
     }
     

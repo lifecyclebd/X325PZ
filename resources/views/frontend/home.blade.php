@@ -154,8 +154,7 @@
 
 <div class="upcomming_event">
     <div class="container">
-        <h3 class="text-center">Upcoming Events</h3>
-        <hr>
+        <h3 class="text-center gallery-title">Upcoming Events</h3>
 
         <div class="container">
             <h2>Carousel Example</h2>
@@ -233,5 +232,36 @@
 
 
 <div class="clearfix"></div>
+<div id="gallery"> 
+    <div class="container">
+        <div class="row">
+            <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h1 class="gallery-title">Blood Fighter</h1>
+
+            </div>
+
+            <div align="center">
+                <button class="btn filter-button" id="all" data-filter="all">All</button>
+                @foreach($data['gallery_category'] as $row)
+                <button class="btn filter-button" data-filter="{{$row->page_name}}">{{$row->gallery_name}}</button>
+                @endforeach
+            </div>
+            <br/>
+
+
+            @foreach($data['galleries'] as $row)
+            
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter 
+                 {{$row->page_name}}">
+                <img src="{{url('public/images/gallery')}}/{{$row->photo_name}}" class="img-responsive thumbnail" style="width: 300px;height: 200px">
+            </div>
+
+            
+            @endforeach
+        </div>
+    </div> 
+
+</div>
+
 @endsection
 

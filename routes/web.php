@@ -23,7 +23,7 @@ Route::get('/admin/donor/get_upazilla/{id}', 'DonorController@get_upazilla');
 
 
 
-
+//-------------------------------------------Galary------------------------------------------------
 Route::get('/admin/addGallery', 'PhotoController@addGallery');
 Route::any('/admin/storeGallery', 'PhotoController@storeGallery');
 Route::any('/admin/viewGallery', 'PhotoController@viewGallery');

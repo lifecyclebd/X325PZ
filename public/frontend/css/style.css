@@ -1,11 +1,86 @@
 /*
-    Theme Name: MyBiz
-    Theme URL: https://bootstrapmade.com/mybiz-free-business-bootstrap-theme/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
+    Theme Name: Md Rashed Jaman 
 */
 
 /*General*/
+
+.gallery-title
+{
+       font-size: 30px; 
+    text-shadow: 3px 3px 3px #949292;
+    color: red;
+    text-align: center;
+    font-weight: 500px;
+    BORDER-BOTTOM: 3px solid #eee;
+    margin-bottom: 20px;
+    padding: 10px;
+} 
+.filter-button
+{
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px; 
+    text-align: center;
+    color: #42B32F;
+    margin-bottom: 30px;
+    width: 150px;
+
+}
+button.active{
+    background: red;
+}
+.filter-button:hover
+{ 
+    color: #ffffff;
+    background-color: red;
+
+}
+.btn-default:active .filter-button:active
+{
+    background-color: #42B32F;
+    color: white;
+}
+
+.port-image
+{
+    width: 100%;
+}
+
+.gallery_product
+{
+    margin-bottom: 30px;
+}
+
+.control-slider {
+    float: right;
+    display: inline-block;
+    margin-right: -10px;
+}
+.no-bottom .span12 {
+    margin-bottom: -10px;
+}
+.float-left {
+    float: left;
+}
+.prev-slider {
+    margin-right: -5px;
+}
+.prev-slider i, .next-slider i {
+    border: solid 1px #ccc;
+    padding: 5px 10px 5px 10px;
+}
+.prev-slider, .next-slider {
+    float: left;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.carousel-inner.onebyone-carosel { margin: auto; width: 90%; }
+.onebyone-carosel .active.left { left: -33.33%; }
+.onebyone-carosel .active.right { left: 33.33%; }
+.onebyone-carosel .next { left: 33.33%; }
+.onebyone-carosel .prev { left: -33.33%; }
 .back_icon1{
     background: url(../images/icon1.png) center center no-repeat;
     padding: 40px;

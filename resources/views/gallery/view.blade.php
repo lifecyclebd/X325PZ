@@ -28,7 +28,7 @@
                             <thead>
                                 <tr>
                                     <th> ID</th>
-                                    <th>Page Name</th>
+                                    <th>Slug</th>
                                     <th>Gallery Name</th> 
                                     <th>Operation</th>
                                 </tr>
@@ -42,9 +42,7 @@
                                     <td> 
                                         <a href="{{url('/donor')}}/{{$row->id}}/edit" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
                                         <a href="{{url('/donor')}}/{{$row->id}}/destroy" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
-                                        <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
-                                        <a href="{{url('/donor/')}}/{{ $row->id }}" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
-                                        </a>
+                                       
                                     </td>
 
                                 </tr>

@@ -152,8 +152,7 @@
 
 <div class="upcomming_event">
     <div class="container">
-        <h3 class="text-center">Upcoming Events</h3>
-        <hr>
+        <h3 class="text-center gallery-title">Upcoming Events</h3>
 
         <div class="container">
             <h2>Carousel Example</h2>
@@ -231,6 +230,37 @@
 
 
 <div class="clearfix"></div>
+<div id="gallery"> 
+    <div class="container">
+        <div class="row">
+            <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h1 class="gallery-title">Blood Fighter</h1>
+
+            </div>
+
+            <div align="center">
+                <button class="btn filter-button" id="all" data-filter="all">All</button>
+                <?php $__currentLoopData = $data['gallery_category']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <button class="btn filter-button" data-filter="<?php echo e($row->page_name); ?>"><?php echo e($row->gallery_name); ?></button>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </div>
+            <br/>
+
+
+            <?php $__currentLoopData = $data['galleries']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter 
+                 <?php echo e($row->page_name); ?>">
+                <img src="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->photo_name); ?>" class="img-responsive thumbnail" style="width: 300px;height: 200px">
+            </div>
+
+            
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </div>
+    </div> 
+
+</div>
+
 <?php $__env->stopSection(); ?>
 
 

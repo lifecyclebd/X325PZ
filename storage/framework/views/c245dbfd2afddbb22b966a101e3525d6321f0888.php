@@ -26,16 +26,18 @@
                                 <tr>
                                     <th> ID</th>
                                     <th>Photo Name</th> 
+                                    <th>Slug</th> 
                                     <th>Image</th>
 
                                     <th>Operation</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $__currentLoopData = $data['gallery']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php $__currentLoopData = $data['galleries']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
                                     <td><?php echo e($row->id); ?></td>
-                                    <td><?php echo e($row->photo_name); ?></td>  
+                                    <td><?php echo e($row->photo_name); ?></td> 
+                                    <td><?php echo e($row->page_name); ?></td> 
                                     <td><img style="width:100px; height:70px" src="<?php echo e(url('/public/images/gallery')); ?>/<?php echo e($row->photo_name); ?>"> </td>  
                                     <td> 
                                         <a href="<?php echo e(url('/donor')); ?>/<?php echo e($row->id); ?>/edit" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>

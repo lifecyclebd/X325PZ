@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Content;
 use App\Donor;
+use App\Gallery;
+use App\Gallery_detail;
+use DB;
 class HomeController extends Controller {
 
     /**
@@ -24,7 +27,17 @@ class HomeController extends Controller {
     public function index() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('frontend.home');
+        $data['gallery_category']= Gallery::all();
+        $data['gallery']= Gallery_detail::all(); 
+        
+        $data['galleries'] = DB::table('galleries')
+            ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id')
+            ->take(30)
+            ->orderBy('gallery_details.id', 'desc')
+            ->get();
+        
+        
+        return view('frontend.home')->with('data', $data);
     }
     public function blood_info() {
         //$divisions = DB::table("divisions")->lists("name", "id");
