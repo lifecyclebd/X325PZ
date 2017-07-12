@@ -114,46 +114,15 @@
 
 
 <!-- jQuery -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.flexslider.js"></script>
-<script src="js/jquery.inview.js"></script> 
-<script src="js/script.js"></script>
-<script src="contactform/contactform.js"></script>
-<script src="js/jquery-3.2.1.min.js"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery.min.js"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/bootstrap.min.js}}"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery.flexslider.js}}"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery.inview.js}}"></script> 
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/script.js}}"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/contactform/contactform.js}}"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery-3.2.1.min.js}}"></script>
 
-
-<script type="text/javascript">
-    $(document).ready(function () {
-
-        $(".filter-button").click(function () {
-            var value = $(this).attr('data-filter');
-            //    alert("home");
-            if (value == "all")
-            {
-                $('.filter').removeClass('hidden');
-                $('.filter').show();
-                $('#all').addClass('active');
-            } 
-            <?php $__currentLoopData = $data['gallery_category']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-             if (value == "<?php echo e($row->page_name); ?>") {
-                $('.filter').addClass('hidden');
-                $('.<?php echo e($row->page_name); ?>').removeClass('hidden');
-                $(".<?php echo e($row->page_name); ?>").removeClass("active");
-              //  $('.filter-button').addClass('active');
-                $('.filter').show();
-            } 
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-       
-        });
-
-        if ($(".filter-button").removeClass("active")) {
-           $(this).removeClass("active");
-        }
-        $(this).addClass("active");
-
-    });
-
-</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery-3.2.1.min.js") }}"></script>
 </body>
 </html>

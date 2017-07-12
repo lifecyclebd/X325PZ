@@ -261,6 +261,39 @@
 
 </div>
 
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(".filter-button").click(function () {
+            var value = $(this).attr('data-filter');
+            //    alert("home");
+            if (value == "all")
+            {
+                $('.filter').removeClass('hidden');
+                $('.filter').show();
+                $('#all').addClass('active');
+            } 
+            <?php $__currentLoopData = $data['gallery_category']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+             if (value == "<?php echo e($row->page_name); ?>") {
+                $('.filter').addClass('hidden');
+                $('.<?php echo e($row->page_name); ?>').removeClass('hidden');
+                $(".<?php echo e($row->page_name); ?>").removeClass("active");
+              //  $('.filter-button').addClass('active');
+                $('.filter').show();
+            } 
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+       
+        });
+
+        if ($(".filter-button").removeClass("active")) {
+           $(this).removeClass("active");
+        }
+        $(this).addClass("active");
+
+    });
+
+</script>
 <?php $__env->stopSection(); ?>
 
 
