@@ -41,7 +41,7 @@
                                 <tr>
                                     <td>{{$row->id}}</td>
                                     <td>{{$row->title}}</td>
-                                    <td>{{$row->description}}</td> 
+                                    <td>{!! $row->description !!}</td> 
                                     <td>{{$row->content_type}}</td> 
                                     <td>{{$row->content_page}}</td> 
                                     <td> 
