@@ -2,17 +2,22 @@
 
 @section('content')
 <!--about-->
-<div id="about">
+<style type="text/css">
+    input{color:white;}
+    select{color:white;}
+    textarea{color:white;}
+</style>
+<div id="donor-register">
     <div class="container">
         <div class="content-wrapper">
 
             <!-- Main content -->
-            <section class="content">
+            <section class="content donor_content">
 
                 <!-- Default box -->
                 <div class="box box-info">
                     <div class="box-header with-border">
-                        <h3 class="box-title">New Donor </h3>
+                        <h2 class="box-title text-center">Registration </h2>
                     </div>
 
                     <div class="box-body">
@@ -23,7 +28,7 @@
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Full Name</label>
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="fullname"  autofocus>
+                                    <input id="name" type="text" class="form-control" name="fullname" placeholder="Full Name"  autofocus>
                                 </div>
                             </div>
 

@@ -38,7 +38,7 @@
                                 <tr>
                                     <td><?php echo e($row->id); ?></td>
                                     <td><?php echo e($row->title); ?></td>
-                                    <td><?php echo e($row->description); ?></td> 
+                                    <td><?php echo $row->description; ?></td> 
                                     <td><?php echo e($row->content_type); ?></td> 
                                     <td><?php echo e($row->content_page); ?></td> 
                                     <td> 
