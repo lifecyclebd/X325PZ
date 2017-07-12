@@ -40,12 +40,11 @@
                         <label for="email" class="col-sm-2 control-label">Content Type</label>
 
                         <div class="col-md-8">
-                            <select class="form-control" name="content_type" multiple="true">
-                                <option value="{{$data->description}}">{{$data->description}}</option>
-                                <option value="Page">Page</option>
-                                <option value="Post">Post</option>
-                                <option value="Notice">Notice</option>
-                                <option value="Events">Events</option>
+                            <select class="form-control" name="content_type"> 
+                                <option value="news" <?php if ($data->content_type == "news") echo 'selected="selected"'; ?> > News </option>
+                                <option value="events"<?php if ($data->content_type == "events") echo 'selected="selected"'; ?> > Events</option>
+                                <option value="post" <?php if ($data->content_type == "post") echo 'selected="selected"'; ?> > Post </option>
+                                <option value="page" <?php if ($data->content_type == "page") echo 'selected="selected"'; ?>  > Page </option>
                             </select>
 
                         </div>
@@ -56,10 +55,10 @@
                         <div class="col-md-8">
                             <select class="form-control" name="content_page" >
                                 <option value="{{$data->content_page}}">{{$data->content_page}}</option>
-                                <option value="Home">Home</option>
-                                <option value="About">About</option>
-                                <option value="Donor">Donor</option>
-                                <option value="Contact">Contact</option>
+                                <option value="home" <?php if ($data->content_page == "home") echo 'selected="selected"'; ?> >Home </option>
+                                <option value="blood-info" <?php if ($data->content_page == "blood-info") echo 'selected="selected"'; ?> >Blood Info</option>
+                                <option value="doctor" <?php if ($data->content_page == "doctor") echo 'selected="selected"'; ?> >Doctor </option>
+                                <option value="health" <?php if ($data->content_page == "health") echo 'selected="selected"'; ?> >Health </option>
                             </select>
 
                         </div>
@@ -72,9 +71,9 @@
                             </button>
                         </div>
                     </div>
-                    
+
                 </form>
-                    <!-- form close -->
+                <!-- form close -->
             </div>  
         </div>  
     </div> 
