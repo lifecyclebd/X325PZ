@@ -218,7 +218,7 @@
                   data-actions='[{"event":"click","action":"scrollbelow","offset":"px"}]'
                   data-basealign="slide" 
                   data-responsive_offset="on"
-                  style="z-index: 8; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;"><?=$readmore_bn;?>
+                  style="z-index: 8; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">read more
                 </div>
 
               </li>
@@ -322,7 +322,7 @@
                   data-actions='[{"event":"click","action":"scrollbelow","offset":"px"}]'
                   data-basealign="slide" 
                   data-responsive_offset="on"
-                  style="z-index: 8; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;"><?=$readmore_bn;?>
+                  style="z-index: 8; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">read more
                 </div>
 
               </li>
@@ -426,7 +426,7 @@
                   data-actions='[{"event":"click","action":"scrollbelow","offset":"px"}]'
                   data-basealign="slide" 
                   data-responsive_offset="on"
-                  style="z-index: 8; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;"><?=$readmore_bn;?>
+                  style="z-index: 8; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">read more
                 </div>
 
               </li>
@@ -446,7 +446,7 @@
                             <div class="text">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                             </div>
-                            <div class="link"><a href="global-projects.html" class="thm-btn inverse"><i class="fa fa-caret-right text-text-thmed"></i> <?=$readmore_bn;?></a></div>
+                            <div class="link"><a href="global-projects.html" class="thm-btn inverse"><i class="fa fa-caret-right text-text-thmed"></i> read more</a></div>
                         </div>
                     </article>
                 </div>
@@ -510,7 +510,7 @@
                                         </div>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt .</p>
                                         <a class="thm-btn btn-xs" href="donate-now.html"><i class="fa fa-angle-double-right text-white"></i> Donate Now</a>
-                                        <a href="global-projects.html" class="thm-btn inverse btn-xs ml-5"><i class="fa fa-heart text-text-thmed"></i> <?=$readmore_bn;?></a>
+                                        <a href="global-projects.html" class="thm-btn inverse btn-xs ml-5"><i class="fa fa-heart text-text-thmed"></i> read more</a>
                                     </div>
                                 </div>
                             </div>
@@ -536,7 +536,7 @@
                                             <li data-text-color="#777"> <i class="fa fa-map-marker"></i> Langford WA 6147</li>
                                         </ul>
                                         <div class="event-date pl-0">
-                                             <a class="thm-btn btn-xs" href="projects-single.html"><i class="fa fa-angle-double-right text-white"></i> <?=$readmore_bn;?></a>
+                                             <a class="thm-btn btn-xs" href="projects-single.html"><i class="fa fa-angle-double-right text-white"></i> read more</a>
                                         </div>
                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt .</p>
                                     </div>
@@ -559,7 +559,7 @@
                                             <li data-text-color="#777"> <i class="fa fa-map-marker"></i> Langford WA 6147.</li>
                                         </ul>
                                         <div class="event-date pl-0">
-                                            <a class="thm-btn btn-xs" href="projects-single.html"><i class="fa fa-angle-double-right text-white"></i> <?=$readmore_bn;?></a>
+                                            <a class="thm-btn btn-xs" href="projects-single.html"><i class="fa fa-angle-double-right text-white"></i> read more</a>
                                         </div>
                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt .</p>
                                     </div>
@@ -582,7 +582,7 @@
                                             <li data-text-color="#777"> <i class="fa fa-map-marker"></i> Langford WA 6147.</li>
                                         </ul>
                                         <div class="event-date pl-0">
-                                            <a class="thm-btn btn-xs" href="projects-single.html"><i class="fa fa-angle-double-right text-white"></i> <?=$readmore_bn;?></a>
+                                            <a class="thm-btn btn-xs" href="projects-single.html"><i class="fa fa-angle-double-right text-white"></i> read more</a>
                                         </div>
                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt .</p>
                                     </div>
@@ -605,7 +605,7 @@
                                             <li data-text-color="#777"> <i class="fa fa-map-marker"></i> Langford WA 6147.</li>
                                         </ul>
                                         <div class="event-date pl-0">
-                                            <a class="thm-btn btn-xs" href="projects-single.html"><i class="fa fa-angle-double-right text-white"></i> <?=$readmore_bn;?></a>
+                                            <a class="thm-btn btn-xs" href="projects-single.html"><i class="fa fa-angle-double-right text-white"></i> read more</a>
                                         </div>
                                         <p class="mb-0">TLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>
                                     </div>
@@ -628,7 +628,7 @@
                                             <li data-text-color="#777"> <i class="fa fa-map-marker"></i> Langford WA 6147.</li>
                                         </ul>
                                         <div class="event-date pl-0">
-                                            <a class="thm-btn btn-xs" href="projects-single.html"><i class="fa fa-angle-double-right text-white"></i> <?=$readmore_bn;?></a>
+                                            <a class="thm-btn btn-xs" href="projects-single.html"><i class="fa fa-angle-double-right text-white"></i> read more</a>
                                         </div>
                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>
                                     </div>
@@ -652,7 +652,7 @@
                         <p class="pr-50 pr-50 mt-30" style="color:#453f3f; font-size:16px; line-height:19px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                         <p class="pr-50 pr-50 mt-30" style="color:#453f3f; font-size:16px; line-height:19px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                         <a href="donate-now.html" class="thm-btn inverse mt-20">Join Us</a>
-                        <a href="who-we-are.html" class="read-more thm-btn btn-dark mt-20"> <?=$readmore_bn;?></a>
+                        <a href="who-we-are.html" class="read-more thm-btn btn-dark mt-20"> read more</a>
                     </div>
                     <div class="col-md-6 bg-f7 p-80 p-md-20 p-sm-70 pb-50">
                         <h2 class="text-dark mt-0 pb-20 text-uppercase font-weight-700">Make a donation</h2>
