@@ -105,6 +105,8 @@ Route::any('/admin/{id}/destroy', 'AdminController@destroy');
 Route::get('/test', 'TestController@index');
 
 Route::get('/donor', 'DonorController@index');
+Route::get('/donor-login', 'DonorController@donor_login');
+
 Route::get('/donor-register', 'DonorController@donor_register');
 Route::get('/donor/create', 'DonorController@index');
 Route::post('/donor/store', 'DonorController@store');
