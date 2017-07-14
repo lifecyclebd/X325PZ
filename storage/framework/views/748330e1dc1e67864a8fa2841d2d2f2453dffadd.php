@@ -28,7 +28,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li> 
-            <li><a href="<?php echo e(url('/admin')); ?>"><i class="fa fa-home"></i> <span>Home</span></a></li> 
+            <li><a href="<?php echo e(url('/admin/home')); ?>"><i class="fa fa-home"></i> <span>Home</span></a></li> 
             <li class="treeview">
                 <a href="<?php echo e(url('/admin/view')); ?>">
                     <i class="fa fa-user"></i>
