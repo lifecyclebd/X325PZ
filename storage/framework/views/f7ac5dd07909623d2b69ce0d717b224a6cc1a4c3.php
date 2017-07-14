@@ -19,50 +19,73 @@
                         <h2 class="page-header">Our Team</h2>
                     </div>
                     <div class="col-lg-4 col-sm-6 text-center">
-                        <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                        <h3>John Smith
-                            <small>Job Title</small>
-                        </h3>
-                        <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-                    </div>
+                        <div class="admin_home_sec">
+                            <span class="admin_home_count">55</span>
+                            <h3>A Positive   <small>(A+)</small>  </h3>
+                        </div>
+                        
+                    </div> 
                     <div class="col-lg-4 col-sm-6 text-center">
-                        <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                        <h3>John Smith
-                            <small>Job Title</small>
-                        </h3>
-                        <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-                    </div>
+                        <div class="admin_home_sec">
+                            <span class="admin_home_count">55</span>
+                            <h3>A Positive   <small>(A+)</small>  </h3>
+                        </div>
+                        
+                    </div> 
                     <div class="col-lg-4 col-sm-6 text-center">
-                        <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                        <h3>John Smith
-                            <small>Job Title</small>
-                        </h3>
-                        <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-                    </div>
+                        <div class="admin_home_sec">
+                            <span class="admin_home_count">55</span>
+                            <h3>A Positive   <small>(A+)</small>  </h3>
+                        </div>
+                        
+                    </div> 
                     <div class="col-lg-4 col-sm-6 text-center">
-                        <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                        <h3>John Smith
-                            <small>Job Title</small>
-                        </h3>
-                        <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-                    </div>
+                        <div class="admin_home_sec">
+                            <span class="admin_home_count">55</span>
+                            <h3>A Positive   <small>(A+)</small>  </h3>
+                        </div>
+                        
+                    </div> 
                     <div class="col-lg-4 col-sm-6 text-center">
-                        <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                        <h3>John Smith
-                            <small>Job Title</small>
-                        </h3>
-                        <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-                    </div>
+                        <div class="admin_home_sec">
+                            <span class="admin_home_count">55</span>
+                            <h3>A Positive   <small>(A+)</small>  </h3>
+                        </div>
+                        
+                    </div> 
                     <div class="col-lg-4 col-sm-6 text-center">
-                        <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                        <h3>John Smith
-                            <small>Job Title</small>
-                        </h3>
-                        <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-                    </div>
+                        <div class="admin_home_sec">
+                            <span class="admin_home_count">55</span>
+                            <h3>A Positive   <small>(A+)</small>  </h3>
+                        </div>
+                        
+                    </div> 
                     <!-- form close -->
-                </div> 
-            </div>
+                </div>  
+                <div class="container">
+                    <div class="row">
+                        <h3>Daily Activities</h3>
+                        <div class="col-md-6">
+                            <h4>Admin Section</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>User Section</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="clearfix"></div>
+
+                    <div class="row">
+                        <h3>Important Notice Activities</h3>
+                        <div class="col-md-6">
+                            <h4>Admin Section</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>User Section</h4>
+                        </div>
+                    </div>
+                 </div>
+
             <!-- /.box -->
 
     </section>

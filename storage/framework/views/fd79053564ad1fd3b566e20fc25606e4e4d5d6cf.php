@@ -5,51 +5,84 @@
 
 <link rel="stylesheet" href="<?php echo e(asset("public/frontend/css/half-slider.css")); ?>">
 
- <!-- Half Page Image Background Carousel Header -->
-    <header id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+<!-- Half Page Image Background Carousel Header -->
+<header id="imgSlider" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#imgSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#imgSlider" data-slide-to="1"></li>
+        <li data-target="#imgSlider" data-slide-to="2"></li>
+        <li data-target="#imgSlider" data-slide-to="3"></li>
+        <li data-target="#imgSlider" data-slide-to="4"></li>
+    </ol>
 
-        <!-- Wrapper for Slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 1</h2>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 2</h2>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 3</h2>
-                </div>
+    <!-- Wrapper for Slides -->
+    <div class="carousel-inner">
+        <div class="item active"> 
+            <!-- Set the first background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('<?php echo e(asset('/')); ?>public/images/slider/1.jpg');"></div>
+            <div class="carousel-caption">
+                <h2>Caption 1</h2>
             </div>
         </div>
+        <div class="item">
+            <!-- Set the second background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('<?php echo e(asset('/')); ?>public/images/slider/2.jpg');"></div>
+            <div class="carousel-caption">
+                <h2>Caption 2</h2>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the third background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('<?php echo e(asset('/')); ?>public/images/slider/3.jpg');"></div>
+            <div class="carousel-caption">
+                <h2>Caption 3</h2>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the second background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('<?php echo e(asset('/')); ?>public/images/slider/4.jpg');"></div>
+            <div class="carousel-caption">
+                <h2>Caption 2</h2>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the third background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('<?php echo e(asset('/')); ?>public/images/slider/5.jpg');"></div>
+            <div class="carousel-caption">
+                <h2>Caption 3</h2>
+            </div>
+        </div>
+    </div>
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#imgSlider" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#imgSlider" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+    <div class="clearfix"></div>
 
-    </header>
+    <div class="row" style="min-height: 100px; background-color: red; padding: 10px; margin: 0 auto;">
+        <div class="col-md-offset-2 col-md-8">
+            <form class="form-horizontak" method="" action="" style="margin: 10px;">
+                <div class="input-group">
+                    <span class="input-group-addon" style="padding: 0px 30px; font-size: 25px;"><i class="fa fa-map-marker"></i></span>
+                    <input type="text" style="height: 45px;    background: white;    font-size: 20px;" class="form-control" aria-label="Search Donor" placeholder="Search Donor Location">
+                    <span class="input-group-addon" style="padding: 0px 0px; font-size: 25px;">
+                        <button class="btn  btn-serach" style="border-radius: 0px;  height: 40px;  background-color: #ff0000;"> <i class="fa fa-search"></i> </button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    
+        <div class="clearfix" style="margin-top: 30px;"></div>
+</header>
 
-<div class="More_about_info">
+<div class="More_about_info" style="margin-top:30px;">
     <div class="container"> 
         <p class="text-center" style="font-size: 20px">More about info</p>
         <hr>
@@ -206,12 +239,12 @@
 
         <div class="container">
             <h2>Carousel Example</h2>
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div id="imgSlider" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#imgSlider" data-slide-to="0" class="active"></li>
+                    <li data-target="#imgSlider" data-slide-to="1"></li>
+                    <li data-target="#imgSlider" data-slide-to="2"></li>
                 </ol>
 
                 <!-- Wrapper for slides -->
@@ -263,11 +296,11 @@
                 </div>
 
                 <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <a class="left carousel-control" href="#imgSlider" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <a class="right carousel-control" href="#imgSlider" data-slide="next">
                     <span class="glyphicon glyphicon-chevron-right"></span>
                     <span class="sr-only">Next</span>
                 </a>
@@ -298,13 +331,13 @@
 
 
             <?php $__currentLoopData = $data['galleries']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            
+
             <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter 
                  <?php echo e($row->page_name); ?>">
                 <img src="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->photo_name); ?>" class="img-responsive thumbnail" style="width: 300px;height: 200px">
             </div>
 
-            
+
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
     </div> 
@@ -324,8 +357,7 @@
 <script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery-3.2.1.min.js}}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery-3.2.1.min.js }}"></script> 
-<script src="<?php echo e(asset('/')); ?>/public/jquery.js}}"></script> 
-<script src="<?php echo e(asset('/')); ?>/public/frontend/js/bootstrap.min.js}}"></script> 
+<script src="<?php echo e(asset('/')); ?>/public/jquery.js}}"></script>  
 
 
 
@@ -335,42 +367,38 @@
 
 
 <script type="text/javascript">
-    $(document).ready(function () {
+$(document).ready(function () {
 
-        $(".filter-button").click(function () {
-            var value = $(this).attr('data-filter');
-            //    alert("home");
-            if (value == "all")
-            {
+    $(".filter-button").click(function () {
+        var value = $(this).attr('data-filter');
+        //    alert("home");
+        if (value == "all")
+                {
                 $('.filter').removeClass('hidden');
-                $('.filter').show();
-                $('#all').addClass('active');
-            } 
-            <?php $__currentLoopData = $data['gallery_category']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-             if (value == "<?php echo e($row->page_name); ?>") {
-                $('.filter').addClass('hidden');
-                $('.<?php echo e($row->page_name); ?>').removeClass('hidden');
-                $(".<?php echo e($row->page_name); ?>").removeClass("active");
-              //  $('.filter-button').addClass('active');
-                $('.filter').show();
-            } 
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-       
-        });
-
-        if ($(".filter-button").removeClass("active")) {
-           $(this).removeClass("active");
+                        $('.filter').show();
+                        $('#all').addClass('active');
+                        }
+        <?php $__currentLoopData = $data['gallery_category']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        if (value == "<?php echo e($row->page_name); ?>") {
+            $('.filter').addClass('hidden');
+            $('.<?php echo e($row->page_name); ?>').removeClass('hidden');
+            $(".<?php echo e($row->page_name); ?>").removeClass("active");
+            //  $('.filter-button').addClass('active');
+            $('.filter').show();
         }
-        $(this).addClass("active");
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
     });
-
-</script>
-    <script>
+    if ($(".filter-button").removeClass("active")) {
+        $(this).removeClass("active");
+    }
+    $(this).addClass("active");
+});</script>
+<script>
     $('.carousel').carousel({
-        interval: 5000  
+        interval: 5000
     })
-    </script>
+</script>
 
 <?php $__env->stopSection(); ?>
 

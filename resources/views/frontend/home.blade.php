@@ -6,79 +6,82 @@
 
 <link rel="stylesheet" href="{{ asset("public/frontend/css/half-slider.css") }}">
 
- <!-- Half Page Image Background Carousel Header -->
-    <header id="imgSlider" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#imgSlider" data-slide-to="0" class="active"></li>
-            <li data-target="#imgSlider" data-slide-to="1"></li>
-            <li data-target="#imgSlider" data-slide-to="2"></li>
-            <li data-target="#imgSlider" data-slide-to="3"></li>
-            <li data-target="#imgSlider" data-slide-to="4"></li>
-        </ol>
+<!-- Half Page Image Background Carousel Header -->
+<header id="imgSlider" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#imgSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#imgSlider" data-slide-to="1"></li>
+        <li data-target="#imgSlider" data-slide-to="2"></li>
+        <li data-target="#imgSlider" data-slide-to="3"></li>
+        <li data-target="#imgSlider" data-slide-to="4"></li>
+    </ol>
 
-        <!-- Wrapper for Slides -->
-        <div class="carousel-inner">
-            <div class="item active"> 
-                <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/1.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 1</h2>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/1.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 2</h2>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/1.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 3</h2>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/1.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 2</h2>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/1.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 3</h2>
-                </div>
+    <!-- Wrapper for Slides -->
+    <div class="carousel-inner">
+        <div class="item active"> 
+            <!-- Set the first background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/1.jpg');"></div>
+            <div class="carousel-caption">
+                <h2>Caption 1</h2>
             </div>
         </div>
+        <div class="item">
+            <!-- Set the second background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/2.jpg');"></div>
+            <div class="carousel-caption">
+                <h2>Caption 2</h2>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the third background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/3.jpg');"></div>
+            <div class="carousel-caption">
+                <h2>Caption 3</h2>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the second background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/4.jpg');"></div>
+            <div class="carousel-caption">
+                <h2>Caption 2</h2>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the third background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/5.jpg');"></div>
+            <div class="carousel-caption">
+                <h2>Caption 3</h2>
+            </div>
+        </div>
+    </div>
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#imgSlider" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#imgSlider" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-        <div class="clearfix"></div>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#imgSlider" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#imgSlider" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+    <div class="clearfix"></div>
 
-<div class="row" style="min-height: 100px; background-color: red; padding: 10px; margin: 0 auto;">
-<div class="col-md-offset-2 col-md-8">
-    <form class="form-horizontak" method="" action="" style="margin: 10px;">
-         <div class="input-group">
-  <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
-  <input type="text" style="height: 60px;    background: white;    font-size: 20px;" class="form-control" aria-label="Search Donor" placeholder="Search Donor Location">
-  <span class="input-group-addon">
-<button class="btn  btn-serach" style="  height: 40px;  background-color: #ff0000;"> <i class="fa fa-search"></i> </button>
-  </span>
-</div>
-    </form>
-</div>
+    <div class="row" style="min-height: 100px; background-color: red; padding: 10px; margin: 0 auto;">
+        <div class="col-md-offset-2 col-md-8">
+            <form class="form-horizontak" method="" action="" style="margin: 10px;">
+                <div class="input-group">
+                    <span class="input-group-addon" style="padding: 0px 30px; font-size: 25px;"><i class="fa fa-map-marker"></i></span>
+                    <input type="text" style="height: 45px;    background: white;    font-size: 20px;" class="form-control" aria-label="Search Donor" placeholder="Search Donor Location">
+                    <span class="input-group-addon" style="padding: 0px 0px; font-size: 25px;">
+                        <button class="btn  btn-serach" style="border-radius: 0px;  height: 40px;  background-color: #ff0000;"> <i class="fa fa-search"></i> </button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    
         <div class="clearfix" style="margin-top: 30px;"></div>
-    </header>
+</header>
 
 <div class="More_about_info" style="margin-top:30px;">
     <div class="container"> 
@@ -329,13 +332,13 @@
 
 
             @foreach($data['galleries'] as $row)
-            
+
             <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter 
                  {{$row->page_name}}">
                 <img src="{{url('public/images/gallery')}}/{{$row->photo_name}}" class="img-responsive thumbnail" style="width: 300px;height: 200px">
             </div>
 
-            
+
             @endforeach
         </div>
     </div> 
@@ -365,42 +368,38 @@
 
 
 <script type="text/javascript">
-    $(document).ready(function () {
+$(document).ready(function () {
 
-        $(".filter-button").click(function () {
-            var value = $(this).attr('data-filter');
-            //    alert("home");
-            if (value == "all")
-            {
+    $(".filter-button").click(function () {
+        var value = $(this).attr('data-filter');
+        //    alert("home");
+        if (value == "all")
+                {
                 $('.filter').removeClass('hidden');
-                $('.filter').show();
-                $('#all').addClass('active');
-            } 
-            @foreach($data['gallery_category'] as $row)
-             if (value == "{{$row->page_name}}") {
-                $('.filter').addClass('hidden');
-                $('.{{$row->page_name}}').removeClass('hidden');
-                $(".{{$row->page_name}}").removeClass("active");
-              //  $('.filter-button').addClass('active');
-                $('.filter').show();
-            } 
-            @endforeach
-       
-        });
-
-        if ($(".filter-button").removeClass("active")) {
-           $(this).removeClass("active");
+                        $('.filter').show();
+                        $('#all').addClass('active');
+                        }
+        @foreach($data['gallery_category'] as $row)
+        if (value == "{{$row->page_name}}") {
+            $('.filter').addClass('hidden');
+            $('.{{$row->page_name}}').removeClass('hidden');
+            $(".{{$row->page_name}}").removeClass("active");
+            //  $('.filter-button').addClass('active');
+            $('.filter').show();
         }
-        $(this).addClass("active");
+        @endforeach
 
     });
-
-</script>
-    <script>
+    if ($(".filter-button").removeClass("active")) {
+        $(this).removeClass("active");
+    }
+    $(this).addClass("active");
+});</script>
+<script>
     $('.carousel').carousel({
-        interval: 5000  
+        interval: 5000
     })
-    </script>
+</script>
 
 @endsection
 
