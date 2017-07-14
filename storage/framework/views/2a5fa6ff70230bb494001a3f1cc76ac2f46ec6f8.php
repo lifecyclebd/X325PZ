@@ -1,3 +1,6 @@
+<?php $__env->startSection('title', 'Find Splutions'); ?>
+<?php $__env->startSection('pageTitle', 'Find Splutions'); ?>
+<?php $__env->startSection('parentName', 'Home'); ?>
 <?php $__env->startSection('content'); ?>
 <div class="container"> 
     <div class="col-md-offset-2 col-md-8">

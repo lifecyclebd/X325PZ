@@ -62,7 +62,9 @@
                     <div class="container">
 
                         <div class="navbar-header">
-                            <a href="blood_info.html" class="navbar-brand">LifeCycle</a>
+                            <a href="blood_info.html" class="navbar-brand">
+                                 <img style="width:50px; height:40px" src="<?php echo e(asset('/')); ?>/public/frontend/images/logoo.png">
+                            </a>
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ftheme">
                                 <span class="sr-only">Toggle</span>
                                 <span class="icon-bar"></span>

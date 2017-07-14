@@ -712,8 +712,7 @@ textarea:focus {
     margin:0;
 }
 
-#main-nav .navbar-header a {
-    background-color: red;
+#main-nav .navbar-header a { 
     color: #fff;
 }
 /*Toggle Menu*/
