@@ -11,6 +11,9 @@ use DB;
 use App\Division;
 use App\District;
 use App\Upazila;
+use App\Message;
+use App\Activity;
+use App\BloodRequest;
 use App\Libraries\Common;
 
 class HomeController extends Controller {
@@ -58,7 +61,53 @@ class HomeController extends Controller {
         //return view('search.im', compact('divisions'));
         return view('frontend.blood_info');
     }
+    public function blood_request() {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        return view('frontend.blood_request');
+    }
+    public function blood_request_store(Request $request){
+        $data =new BloodRequest;
+        $msg=new Message;
+        $actv=new Activity;
+        $data->user_id=6;
+        $data->request_blood_group=$request->request_blood_group;
+        $data->patient_name=$request->patient_name;
+        $data->patient_phone=$request->patient_phone;
+        $data->patient_place=$request->patient_place;
+        $data->number_blood_bag=$request->number_blood_bag;
+        $data->disease=$request->disease;
+        $data->relation=$request->relation;
+        $data->opration_time=$request->opration_time;
+        $data->save();
+        //-----------------------------------------------------//
+        $msg->sender_id=2;
+        $msg->sender_type='donor';
+        $msg->receiver_id=303;
+        $msg->receiver_type='admin';
+        $msg->message='Need '.$request->request_blood_group.'Blood '.$request->number_blood_bag.' for '.$request->patient_name;
+        $msg->created_by='Sakib';
+        $msg->updated_by='Rashed';
+        $msg->save();
+        //------------------------------------------------------//
+        $actv->created_id=5;
+        $actv->created_type='donor';
+        $actv->receiver_id=303;
+        $actv->receiver_type='admin';
+        $actv->purpose='dont know';
+        $actv->short_message='Need '.$request->request_blood_group.'Blood '.$request->number_blood_bag.' for '.$request->patient_name;;
+        $actv->is_read=1;
+        $actv->is_reply=0;
+        $actv->parent_id=6;
+        $actv->created_by='Asru';
+        $actv->save();
+        return redirect('/blood-request');
+    }
 
+    public function activity_list() {
+        $data['activity'] = Activity::all();
+        return view('admin.activity')->with('data', $data);
+    }
     public function news_page() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));

@@ -48,6 +48,7 @@
                     <li><a href="{{ url('/donor') }}"><i class="fa fa-circle-o"></i> Donor</a></li>
                     <li><a href="{{ url('/search') }}"><i class="fa fa-circle-o"></i> Search</a></li>
                     <li><a href="{{ url('/bloodrequest') }}"><i class="fa fa-circle-o"></i> Blood Request</a></li>
+                    <li><a href="{{ url('/activity-list') }}"><i class="fa fa-circle-o"></i> Activity List</a></li>
                 </ul>
             </li>
             <li class="treeview">
