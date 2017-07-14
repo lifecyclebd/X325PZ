@@ -13,13 +13,15 @@
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
         </ol>
 
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                <div class="fill" style="background-image:url("asset('/')}}/public/images/slide/1.jpg");"></div>
                 <div class="carousel-caption">
                     <h2>Caption 1</h2>
                 </div>
@@ -325,8 +327,7 @@
 <script src="{{ asset('/')}}/public/frontend/js/jquery-3.2.1.min.js}}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="{{ asset('/')}}/public/frontend/js/jquery-3.2.1.min.js }}"></script> 
-<script src="{{ asset('/')}}/public/jquery.js}}"></script> 
-<script src="{{ asset('/')}}/public/frontend/js/bootstrap.min.js}}"></script> 
+<script src="{{ asset('/')}}/public/jquery.js}}"></script>  
 
 
 
