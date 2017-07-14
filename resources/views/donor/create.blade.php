@@ -135,7 +135,7 @@
                     <div class="form-group">
                         <label for="name" class="col-md-4 control-label">Division</label>
                         <div class="col-md-2">
-                            <select name="division" class="divisions form-control">
+                            <select name="division_id" class="divisions form-control">
 
                                 @foreach($data['division'] as $row)
                                 <option value="{{$row->id}}">{{$row->division_name}}</option>

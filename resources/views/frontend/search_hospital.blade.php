@@ -1,5 +1,8 @@
 @extends('layouts/front')
 
+@section('title', 'Search Hospitals')
+@section('pageTitle', 'Search Hospitals')
+@section('parentName', 'Health')
 @section('content')
 <div class="all_hospitals">
     <div class="container">   
@@ -29,7 +32,7 @@
             </div>
         </form>
         <hr>
-        <div class="row">
+        <div class="row" style="min-height: 500px;">
             <div class="col-md-3 col-xs-12">
                 <h2>Summary</h2>
                 <ul class="list-group">
@@ -40,26 +43,32 @@
             </div>
             <div class="col-md-9 col-xs-12">
                 <h2>Hospital List</h2>
-                <table class="table table-striped table-bordered">
+                <table class="table table-striped table-bordered example1" id="example1">
                     <thead>
                         <tr style="text-align: center">
                             <th>SL</th><th>Hospital Name</th><th>Chamber</th><th>Address</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($data['hospital_list'] as $row)
                         <tr>
-                            <td>1</td>  <td>
+                            <td>{{$row->id}}</td>  
+                            <td>
                                 <span style="float: left; margin-right: 10px;">
-                                    <img src="images/Home-icon.png" class="img img-responsive" style="width:30px; height: 30px">
+
+                                    <i class="fa fa-home" style="font-size: 20px;"></i>
                                 </span>
                                 <span style="font-weight: bold; float:left">
-                                    <a href="#"> A-Care Orthopaedic & General Hospital</a>
-                                </span></td><td>
+                                    <a href="#"> {{$row->hospital_name}}</a>
+                                </span></td>
+                                
+                                <td>
                                 <i class="fa fa-map-marker"></i>
-                                Dhaka, Shahabag-1217
-                            </td><td>453, Green Way Rd, Dhaka</td>
+                                {{$row->location}}
+                            </td>
+                            <td>{{$row->phone}}</td>
                         </tr>  
-
+                        @endforeach
 
                     </tbody>
                 </table>
@@ -68,5 +77,23 @@
     </div>
 </div>  
 
+ 
+<!-- DataTables -->
+<script src="{{ asset('public/AdminLTE/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+ <script src="{{ asset('public/AdminLTE/plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
+ 
+<script type="text/javascript">
+   $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
 @endsection
 

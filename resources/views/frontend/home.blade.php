@@ -1,6 +1,9 @@
 @extends('layouts/front')
-
+@section('title', 'Page Title')
+@section('pageTitle', 'About Us')
+@section('parentName', 'Home')
 @section('content')
+
 <div class="More_about_info">
     <div class="container"> 
         <p class="text-center" style="font-size: 20px">More about info</p>
@@ -296,5 +299,10 @@
     });
 
 </script>
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
 @endsection
 

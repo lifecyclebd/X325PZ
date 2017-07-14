@@ -16,7 +16,7 @@ class SearchController extends Controller
     }
 
     public function DonorSearchByLocation(){
-    	        $data['division'] = Division::all();
+    	$data['division'] = Division::all();
         $data['donor'] = Donor::all();
         return view('search.DonorSearchByLocation')->with('data', $data);
 

@@ -1,3 +1,6 @@
+<?php $__env->startSection('title', 'Find Hospitals'); ?>
+<?php $__env->startSection('pageTitle', 'Find Hospitals'); ?>
+<?php $__env->startSection('parentName', 'Health'); ?>
 <?php $__env->startSection('content'); ?>
 <div class="find_hospital">
     <div class="container">  

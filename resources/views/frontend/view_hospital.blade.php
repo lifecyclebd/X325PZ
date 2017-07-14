@@ -1,5 +1,9 @@
 @extends('layouts/front')
 
+
+@section('title', 'Find Hospitals')
+@section('pageTitle', 'Find Hospitals')
+@section('parentName', 'Health')
 @section('content')
 <div class="find_hospital">
     <div class="container">  

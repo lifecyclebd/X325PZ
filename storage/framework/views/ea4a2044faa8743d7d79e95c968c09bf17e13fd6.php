@@ -111,6 +111,19 @@
     </div>
 </div>
 
+<!-- jQuery -->
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery.min.js"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/bootstrap.min.js}}"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery.flexslider.js}}"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery.inview.js}}"></script> 
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/script.js}}"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/contactform/contactform.js}}"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery-3.2.1.min.js}}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery-3.2.1.min.js }}"></script> 
+
+
+<!-- /.content-wrapper -->
 <script type="text/javascript">
     $(document).ready(function () {
         $(".divisions").change(function () {
@@ -149,17 +162,5 @@
 
 </script>
 
-
-<!-- jQuery -->
-<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery.min.js"></script>
-<script src="<?php echo e(asset('/')); ?>/public/frontend/js/bootstrap.min.js}}"></script>
-<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery.flexslider.js}}"></script>
-<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery.inview.js}}"></script> 
-<script src="<?php echo e(asset('/')); ?>/public/frontend/js/script.js}}"></script>
-<script src="<?php echo e(asset('/')); ?>/public/frontend/contactform/contactform.js}}"></script>
-<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery-3.2.1.min.js}}"></script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery-3.2.1.min.js }}"></script>
 </body>
 </html>

@@ -1,4 +1,7 @@
 @extends('layouts/front')
+@section('title', 'Find Splutions')
+@section('pageTitle', 'Find Splutions')
+@section('parentName', 'Home')
 @section('content')
 <div class="container"> 
     <div class="col-md-offset-2 col-md-8">

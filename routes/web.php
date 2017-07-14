@@ -10,6 +10,8 @@ Route::get('donor/viewprofile/{id}', 'DonorController@viewprofile');
 Route::get('/Blogs', 'BlogController@view');
 
 
+Route::get('/search-blood-donor', 'HomeController@SearchBloodDonor');
+Route::post('/view/search-blood-donor','HomeController@ShowBloodDonor');
 Route::get('/search-donor', 'HomeController@SearchDonor');
 Route::get('/our-policy', 'HomeController@OurPolicy');
 Route::get('/speech-of-CEO', 'SpeechController@index');

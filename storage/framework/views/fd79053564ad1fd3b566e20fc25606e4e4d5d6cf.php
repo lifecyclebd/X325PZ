@@ -1,4 +1,8 @@
+<?php $__env->startSection('title', 'Page Title'); ?>
+<?php $__env->startSection('pageTitle', 'About Us'); ?>
+<?php $__env->startSection('parentName', 'Home'); ?>
 <?php $__env->startSection('content'); ?>
+
 <div class="More_about_info">
     <div class="container"> 
         <p class="text-center" style="font-size: 20px">More about info</p>
@@ -294,6 +298,11 @@
     });
 
 </script>
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
 <?php $__env->stopSection(); ?>
 
 

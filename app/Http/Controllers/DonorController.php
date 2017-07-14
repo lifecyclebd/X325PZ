@@ -29,6 +29,12 @@ class DonorController extends Controller {
         $data['division'] = Division::all();
         return view('donor.create')->with('data', $data);
     }
+    public function donor_register(){
+        //$data['request_list']= BloodRequest::all();
+        $data['division'] = Division::all();
+        return view('frontend.donor_register')->with('data', $data);
+        
+    }
 
     public function get_district($division_id) {
         $districts = \App\District::where('division_row_id', $division_id)->get();
@@ -50,25 +56,27 @@ class DonorController extends Controller {
         $Donor = new Donor;
         $common = new Common;
 
-        $Donor->fullname = $request->fullname;
+        $Donor->fname = $request->fname;
+        $Donor->lname = $request->fullname;
         $Donor->email = $request->email;
         $Donor->fcm_email = $request->email;
         $Donor->fcm_uid = 1;
         $Donor->fcm_token = 'kynbupDsNrtWwUx3iAWrpzdfnSiqAtKJ6m4QjWID';
-        $Donor->varification = 892345;
+        $Donor->verification = 892345;
         $Donor->gender = $request->gender;
-        $Donor->date_of_birth = $request->date_of_birth;
-        $Donor->last_donate_date = $request->last_donate_date;
+        $Donor->birth_date = $request->birth_date;
+        $Donor->last_donation = $request->last_donation;
         $Donor->phone = $request->phone;
+        $Donor->division = $request->division;
         $Donor->district = $request->district;
-        $Donor->upazila = $request->upazila;
-        $Donor->location = $request->location;
+        $Donor->thana = $request->thana;
+        $Donor->address = $request->address;
         $Donor->blood_group = $request->blood_group;
         $Donor->rank = $request->rank;
         $Donor->web_url = $request->web_url;
         $Donor->fb_url = $request->fb_url;
         $Donor->status = $request->status;
-        $Donor->number_of_donate = $request->number_of_donate;
+        $Donor->donations_number = $request->donations_number;
         $Donor->password = bcrypt($request->password);
         $Donor->called_date = $request->called_date;
         $Donor->called_today = $request->called_today;
@@ -92,11 +100,11 @@ class DonorController extends Controller {
 
         $Donor_file = new Donor;
         $Donor_file = Donor::find($last_insert_id);
-        if ($request->profile_photo) {
+        if ($request->pic_path) {
 
             $fileName = $last_insert_id . '_' . $request->fullname;
-            $profile_photo = $common->uploadImage('profile_photo', 'images/profile', $fileName);
-            $Donor_file->profile_photo = $profile_photo;
+            $profile_photo = $common->uploadImage('pic_path', 'images/profile', $fileName);
+            $Donor_file->pic_path = $profile_photo;
             $Donor_file->save();
         }
 
@@ -214,12 +222,7 @@ class DonorController extends Controller {
         return redirect('/bloodrequest');
     }
     
-    public function donor_register(){
-        //$data['request_list']= BloodRequest::all();
-        $data['division'] = Division::all();
-        return view('frontend.donor_register')->with('data', $data);
-        
-    }
+    
     
 
 }

@@ -79,9 +79,15 @@
 
 
                             <div class="form-group">
-                                <label for="name" class="col-md-4 control-label">Full Name</label>
+                                <label for="name" class="col-md-4 control-label">First Name</label>
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="fullname" placeholder="Full Name"  autofocus>
+                                    <input id="name" type="text" class="form-control" name="fname" placeholder="First Name"  autofocus>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="col-md-4 control-label">Last Name</label>
+                                <div class="col-md-6">
+                                    <input id="name" type="text" class="form-control" name="lname" placeholder="Last Name"  autofocus>
                                 </div>
                             </div>
 
@@ -112,11 +118,11 @@
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Date of Birth</label>
                                 <div class="col-md-2">
-                                    <input id="name" type="date" class="form-control" name="date_of_birth"  autofocus>
+                                    <input id="name" type="date" class="form-control" name="birth_date"  autofocus>
                                 </div> 
                                 <label for="name" class="col-md-2 control-label">Last Donate</label>
                                 <div class="col-md-2">
-                                    <input id="name" type="date" class="form-control" name="last_donate_date"  autofocus>
+                                    <input id="name" type="date" class="form-control" name="last_donation"  autofocus>
                                 </div>
                             </div>
 
@@ -146,10 +152,10 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">Upazilla</label>
+                                <label for="email" class="col-md-4 control-label">Thana</label>
 
                                 <div class="col-md-2">
-                                    <select name="upazila" id="upazillas" class="form-control"> 
+                                    <select name="thana" id="upazillas" class="form-control"> 
                                     </select>
 
                                 </div>
@@ -160,10 +166,10 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="password" class="col-md-4 control-label">Location</label>
+                                <label for="password" class="col-md-4 control-label">Address</label>
 
                                 <div class="col-md-6" style="height: 150px;">
-                                    <input name="location" id="pac-input" class=" form-control" type="text" placeholder="Search Box">
+                                    <input name="address" id="pac-input" class=" form-control" type="text" placeholder="Search Box">
                                     <div id="map" style="overflow: hidden;"></div>
                                 </div>
                             </div>
@@ -187,7 +193,20 @@
                                 <label for="email" class="col-md-2 control-label">Profile Photo</label>
 
                                 <div class="col-md-2">
-                                    <input type="file" class="form-control"  name="profile_photo" />
+                                    <input type="file" class="form-control"  name="pic_path" />
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-md-4 control-label">FB Url</label>
+
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control"  name="fb_url" />
+                                </div> 
+                                <label for="email" class="col-md-2 control-label">Web url</label>
+
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control"  name="web_url" />
 
                                 </div>
                             </div>
@@ -298,7 +317,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Number of Donate</label>
                                 <div class="col-md-6">
-                                    <input type="number" class="form-control"  name="number_of_donate" />
+                                    <input type="number" class="form-control"  name="donations_number" />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -397,4 +416,4 @@
 
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts/front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

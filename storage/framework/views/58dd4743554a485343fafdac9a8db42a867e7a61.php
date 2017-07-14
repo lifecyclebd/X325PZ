@@ -1,3 +1,6 @@
+<?php $__env->startSection('title', 'Search Hospitals'); ?>
+<?php $__env->startSection('pageTitle', 'Search Hospitals'); ?>
+<?php $__env->startSection('parentName', 'Health'); ?>
 <?php $__env->startSection('content'); ?>
 <div class="all_hospitals">
     <div class="container">   
@@ -27,7 +30,7 @@
             </div>
         </form>
         <hr>
-        <div class="row">
+        <div class="row" style="min-height: 500px;">
             <div class="col-md-3 col-xs-12">
                 <h2>Summary</h2>
                 <ul class="list-group">
@@ -38,26 +41,33 @@
             </div>
             <div class="col-md-9 col-xs-12">
                 <h2>Hospital List</h2>
-                <table class="table table-striped table-bordered">
+                <table class="table table-striped table-bordered example1" id="example1">
                     <thead>
                         <tr style="text-align: center">
                             <th>SL</th><th>Hospital Name</th><th>Chamber</th><th>Address</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <?php $__currentLoopData = $data['hospital_list']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td>1</td>  <td>
+                            <td><?php echo e($row->id); ?></td>  
+                            <td>
                                 <span style="float: left; margin-right: 10px;">
-                                    <img src="images/Home-icon.png" class="img img-responsive" style="width:30px; height: 30px">
+
+                                    <i class="fa fa-home" style="font-size: 20px;"></i>
                                 </span>
                                 <span style="font-weight: bold; float:left">
-                                    <a href="#"> A-Care Orthopaedic & General Hospital</a>
-                                </span></td><td>
+                                    <a href="#"> <?php echo e($row->hospital_name); ?></a>
+                                </span></td>
+                                
+                                <td>
                                 <i class="fa fa-map-marker"></i>
-                                Dhaka, Shahabag-1217
-                            </td><td>453, Green Way Rd, Dhaka</td>
-                        </tr>  
+                                <?php echo e($row->location); ?>
 
+                            </td>
+                            <td><?php echo e($row->phone); ?></td>
+                        </tr>  
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                     </tbody>
                 </table>
@@ -66,6 +76,24 @@
     </div>
 </div>  
 
+ 
+<!-- DataTables -->
+<script src="<?php echo e(asset('public/AdminLTE/plugins/datatables/jquery.dataTables.min.js')); ?>"></script>
+ <script src="<?php echo e(asset('public/AdminLTE/plugins/datatables/dataTables.bootstrap.min.js')); ?>"></script>
+ 
+<script type="text/javascript">
+   $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
 <?php $__env->stopSection(); ?>
 
 
