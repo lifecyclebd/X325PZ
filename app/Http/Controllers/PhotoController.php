@@ -105,6 +105,12 @@ class PhotoController extends Controller
         
         $gallery->page_name = $request->page_name;
         $gallery->gallery_name = $request->gallery_name;
+        $gallery->caption = $request->caption;
+        $gallery->sub_caption = $request->sub_caption;
+        
+        
+        
+
         $gallery->updated_by = 2;
         $gallery->save();
         return redirect('/admin/viewGallery');

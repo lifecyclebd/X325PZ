@@ -112,15 +112,15 @@
 </div>
 
 <!-- jQuery -->
-<script src="{{ asset('/')}}/public/frontend/js/jquery.min.js"></script>
-<script src="{{ asset('/')}}/public/frontend/js/bootstrap.min.js}}"></script>
-<script src="{{ asset('/')}}/public/frontend/js/jquery.flexslider.js}}"></script>
-<script src="{{ asset('/')}}/public/frontend/js/jquery.inview.js}}"></script> 
-<script src="{{ asset('/')}}/public/frontend/js/script.js}}"></script>
-<script src="{{ asset('/')}}/public/frontend/contactform/contactform.js}}"></script>
-<script src="{{ asset('/')}}/public/frontend/js/jquery-3.2.1.min.js}}"></script>
+<script src="{{asset('/')}}public/frontend/js/jquery.min.js"></script>
+<script src="{{asset('/')}}public/frontend/js/bootstrap.min.js"></script>
+<script src="{{asset('/')}}public/frontend/js/jquery.flexslider.js"></script>
+<script src="{{asset('/')}}public/frontend/js/jquery.inview.js"></script> 
+<script src="{{asset('/')}}public/frontend/js/script.js"></script>
+<script src="{{asset('/')}}public/frontend/js/jquery-3.2.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="{{ asset('/')}}/public/frontend/js/jquery-3.2.1.min.js }}"></script> 
+<script src="{{ asset('/')}}public/frontend/js/jquery-3.2.1.min.js"></script> 
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 
 <!-- /.content-wrapper -->
@@ -159,6 +159,14 @@
             });
         });
     });
+
+       $(document).ready(function () {
+        $(".is_active").click(function () {
+              $(this).addClass("active");
+        });
+    });
+
+    
 
 </script>
 

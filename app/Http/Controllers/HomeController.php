@@ -29,10 +29,7 @@ class HomeController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-        //dd('ssssssssssssssssssss');
-        //$divisions = DB::table("divisions")->lists("name", "id");
-        //return view('search.im', compact('divisions'));
+    public function index() { 
         $data['gallery_category'] = Gallery::all();
         $data['gallery'] = Gallery_detail::all();
 
@@ -42,6 +39,10 @@ class HomeController extends Controller {
                 ->orderBy('gallery_details.id', 'desc')
                 ->get();
 
+        $data['slider'] = DB::table('galleries')
+                ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id') 
+                ->where('galleries.page_name', 'slider')
+                ->get();
 
         return view('frontend.home')->with('data', $data);
     }
@@ -174,6 +175,13 @@ class HomeController extends Controller {
 
     public function SearchBloodDonor() {
         $data['division'] = Division::all();
+        $data['donor'] = Donor::all();
+
+        return view('frontend.SearchBloodDonor')->with('data', $data);
+    }  
+
+    public function SliderShow() {
+        $data['slider'] = Division::all();
         $data['donor'] = Donor::all();
 
         return view('frontend.SearchBloodDonor')->with('data', $data);

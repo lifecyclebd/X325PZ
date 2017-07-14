@@ -3,7 +3,25 @@
 */
 
 /*General*/
+.More_about_info{
+    margin-top: 80px; 
 
+}
+.life_title{
+margin-top: 50px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold; 
+    text-transform: uppercase;
+} 
+.life_title:after {
+    text-align: center;
+    content: "";
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    border-bottom: 3px  solid #eeeeee; 
+    }
 .hero-spacer {
     margin-top: 50px;
 }
@@ -173,19 +191,17 @@ button.find_search_button{
 } 
 .filter-button
 {
-    padding: 10px;
-    border-radius: 5px;
+    padding: 10px; 
     font-size: 18px; 
-    text-align: center;
-    color: #42B32F;
+    text-align: center; 
     margin-bottom: 30px;
     width: 150px;
-
+border-radius: 5px;    background-color: #4d4d4d !important;    color: white;
 }
 .filter-button:hover
 { 
     color: #ffffff;
-    background-color: red;
+    background-color: #c9302c !important;
 
 }
 .btn-default:active .filter-button:active
@@ -373,7 +389,8 @@ p.title{
     background: #eee;
     border-radius: 10px;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 .get_well_soon_sec{
     background: #c9302c;
@@ -664,7 +681,7 @@ textarea:focus {
     background: none; 
 }
 .btn{
-    border-radius: 15px;
+    border-radius: 5px;
     background-color: #b9b8b8;
     color:white;
 }
@@ -736,7 +753,7 @@ textarea:focus {
     text-transform: uppercase;
     color: white;
     background: #585757;
-    border-radius: 15px; 
+    border-radius: 5px; 
     padding: 3px 15px;  
     margin: 5px;   
     min-width: 100px;
@@ -746,14 +763,19 @@ textarea:focus {
 
 #main-nav .navbar-right li > a:focus {
     color: red;
-    background: none;
+    background: white;
+    outline: none;
+}
+
+#main-nav .navbar-right li > a:active {
+    color: red;
+    background: white;
     outline: none;
 }
 
 #main-nav .navbar-nav>li>a:hover,
 #main-nav .navbar-nav>li.active>a {
-    color: red;
-    border-radius: 15px;
+    color: red; 
     background: white;
 }
 

@@ -45,6 +45,18 @@
                             <input id="name" type="file" class="form-control" name="photo_name" multiple="true">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="name" class="col-md-4 control-label">Photo Caption</label>
+                        <div class="col-md-6">
+                            <input id="name" type="Text" class="form-control" name="caption" multiple="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-md-4 control-label">Short Text</label>
+                        <div class="col-md-6">
+                            <input id="name" type="text" class="form-control" name="sub_caption" multiple="true">
+                        </div>
+                    </div>
 
                     
                     <div class="form-group">

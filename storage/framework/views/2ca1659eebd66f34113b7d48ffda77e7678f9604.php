@@ -6,12 +6,8 @@
         <title>Life Cycle | <?php echo $__env->yieldContent('title'); ?></title>
         <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
         <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
-        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Raleway" rel="stylesheet">
-        <link rel="stylesheet" href="css/flexslider.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <!------------------------------------------------------------------------------------>
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Raleway" rel="stylesheet"> 
+
         <link rel="stylesheet" href="<?php echo e(asset("public/frontend/css/flexslider.css")); ?>">
         <link rel="stylesheet" href="<?php echo e(asset("public/frontend/css/bootstrap.min.css")); ?>">
         <link rel="stylesheet" href="<?php echo e(asset("public/frontend/css/font-awesome.min.css")); ?>">
@@ -77,7 +73,7 @@
 
 
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="<?php echo e(url('/')); ?>">Home</a></li>
+                                <li><a id="is_active" class="is_active affix " href="<?php echo e(url('/')); ?>">Home</a></li>
                                 
                                 
                                 
@@ -124,7 +120,7 @@
                                         <li><a href="<?php echo e(url('/make-donation')); ?>">Make a Donation</a></li> 
                                     </ul>
                                 </li>
-                                <li><a href="<?php echo e(url('/about-us')); ?>">About Us</a></li>
+                                <li><a  id="is_active" class="" href="<?php echo e(url('/about-us')); ?>">About Us</a></li>
                                 <li><a href="<?php echo e(url('/contact')); ?>">contact</a></li>
                                 <li class="hidden-sm hidden-xs">
                                     <a href="#" id="ss"><i class="fa fa-search" aria-hidden="true"></i></a>

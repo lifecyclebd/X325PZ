@@ -19,41 +19,20 @@
 
     <!-- Wrapper for Slides -->
     <div class="carousel-inner">
-        <div class="item active"> 
+        <?php $i=0; ?>
+        @foreach($data['slider'] as $row)
+        
+        <div class="item <?php if($i==0){echo 'active';}?>"> 
             <!-- Set the first background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/1.jpg');"></div>
+            <div class="fill" style="background-image:url('{{asset('/')}}public/images/gallery/{{$row->photo_name}}');"></div>
             <div class="carousel-caption">
-                <h2>Caption 1</h2>
+            
+                <h2><?php if (!empty($row->caption)) { echo $row->caption;} ?></h2>
+                <h4><?php if (!empty($row->sub_caption)) { echo $row->sub_caption;} ?></h4>
             </div>
         </div>
-        <div class="item">
-            <!-- Set the second background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/2.jpg');"></div>
-            <div class="carousel-caption">
-                <h2>Caption 2</h2>
-            </div>
-        </div>
-        <div class="item">
-            <!-- Set the third background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/3.jpg');"></div>
-            <div class="carousel-caption">
-                <h2>Caption 3</h2>
-            </div>
-        </div>
-        <div class="item">
-            <!-- Set the second background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/4.jpg');"></div>
-            <div class="carousel-caption">
-                <h2>Caption 2</h2>
-            </div>
-        </div>
-        <div class="item">
-            <!-- Set the third background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/5.jpg');"></div>
-            <div class="carousel-caption">
-                <h2>Caption 3</h2>
-            </div>
-        </div>
+        <?php $i++;  ?>
+        @endforeach 
     </div>
 
     <!-- Controls -->
@@ -65,7 +44,7 @@
     </a>
     <div class="clearfix"></div>
 
-    <div class="row" style="min-height: 100px; background-color: red; padding: 10px; margin: 0 auto;">
+    <div class="row" style="min-height: 100px; background-color: #8f0002; padding: 10px; margin: 0 auto;">
         <div class="col-md-offset-2 col-md-8">
             <form class="form-horizontak" method="" action="" style="margin: 10px;">
                 <div class="input-group">
@@ -80,13 +59,11 @@
     </div>
     
     
-        <div class="clearfix" style="margin-top: 30px;"></div>
 </header>
 
-<div class="More_about_info" style="margin-top:30px;">
+<div class="More_about_info">
     <div class="container"> 
-        <p class="text-center" style="font-size: 20px">More about info</p>
-        <hr>
+         <h3 class="life_title ">More about blood</h3>  
         <div class="col-md-3">
             <div class="info_abou_blood slideInDown">
                 <span class="back_icon1 pull-center" style="height: 200px">  </span>
@@ -138,13 +115,11 @@
 
     </div> 
 </div>
-
-<hr style="height: 5px; background: #eee; margin: 20px;"> 
+  
 
 <div class="get_well_soon">        
     <div class="container"> 
-        <p class="text-center" style="font-size: 20px">Get Well Soon</p>
-        <hr>
+        <h3 class="life_title ">Get Well Soon</h3> 
         <div class="col-md-3">
             <div class="get_well_soon_sec">
                 <br>
@@ -214,7 +189,9 @@
                 A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
             </p>
             <div class="pull-center">
-                <button class="join_now">Join Now</button>
+            <form method="post" action="{{url('/')}}/join-volenter">
+                <button class="join_now hidden-xs">Join Now</button>
+            </form>
             </div>
 
         </div>               
@@ -226,7 +203,9 @@
                 A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
             </p>
             <div class="pull-center">
-                <button class="donate_now">Donate Now</button>
+            <form method="post" action="{{url('/')}}/join-volenter">
+                <button class="donate_now hidden-xs">Donate Now</button>
+            </form>
             </div>    
         </div>
 
@@ -236,10 +215,9 @@
 
 <div class="upcomming_event">
     <div class="container">
-        <h3 class="text-center gallery-title">Upcoming Events</h3>
+       <h3 class="life_title ">Upcoming Events</h3>
 
-        <div class="container">
-            <h2>Carousel Example</h2>
+        <div class="container"> 
             <div id="imgSlider" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
@@ -252,47 +230,32 @@
                 <div class="carousel-inner">
 
                     <div class="item active">
-                        <div class="col-md-6">
-                            <img src="{{url('/')}}/public/frontend/images/about/about1.jpg" alt="New York" style="width:100%;height: 340px;">
+                        <div class="col-md-6" style="margin-bottom: 20px">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <img class="img img-responsive img-thumbnail " src="{{url('/')}}/public/frontend/images/event.jpg" alt="New York" style="width:100%;height: auto;">
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <h3>Blood Donation Camp 1</h3>
+                                <p class="text-justify">We love the Big Apple!We love the Big Apple!</p>
+                                <span style="margin-top: 30px; float: right;" class="hidden-xs">
+                                    <a style="padding: 10px; text-align: center;" href="#" class="btn-danger" ><?php echo date("l jS \of F");?> </a>
+                                </span>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <h3>New York</h3>
-                            <p>We love the Big Apple!</p>
-                        </div>
-                        <div class="carousel-caption">
-                            <h3>Los Angeles</h3>
-                            <p>LA is always so much fun!</p>
-                        </div>
-                    </div>
+                        <div class="col-md-6" style="margin-bottom: 20px">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <img src="{{url('/')}}/public/frontend/images/event2.jpg" alt="New York" style="width:100%;height: auto;">
+                            </div>  
 
-                    <div class="item">
-                        <div class="col-md-6">
-                            <img src="{{url('/')}}/public/frontend/images/about/about1.jpg" alt="New York" style="width:100%;height: 340px;">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <h3>Blood Donation Camp 1</h3>
+                                <p class="text-justify">We love the Big Apple!We love the Big Apple! We love the Big Apple!We love the Big Apple!   </p>
+                                <span style="margin-top: 30px; float: right;" class="hidden-xs">
+                                    <a style="padding: 10px; text-align: center;" href="#" class="btn-danger" ><?php echo date("l jS \of F");?> </a>
+                                </span>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <h3>New York</h3>
-                            <p>We love the Big Apple!</p>
-                        </div>
-                        <div class="carousel-caption">
-                            <h3>Chicago</h3>
-                            <p>Thank you, Chicago!</p>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="col-md-6">
-                            <img src="{{url('/')}}/public/frontend/images/about/about1.jpg" alt="New York" style="width:100%;height: 340px;">
-                        </div>
-                        <div class="col-md-6">
-                            <h3>New York</h3>
-                            <p>We love the Big Apple!</p>
-                        </div>
-
-                        <div class="carousel-caption">
-                            <h3>New York</h3>
-                            <p>We love the Big Apple!</p>
-                        </div>
-                    </div>
+                    </div> 
 
                 </div>
 
@@ -318,7 +281,7 @@
     <div class="container">
         <div class="row">
             <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h1 class="gallery-title">Blood Fighter</h1>
+              <h3 class="life_title ">Blood Fighter</h3>
 
             </div>
 
@@ -333,7 +296,7 @@
 
             @foreach($data['galleries'] as $row)
 
-            <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter 
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-6 col-xs-12 filter 
                  {{$row->page_name}}">
                 <img src="{{url('public/images/gallery')}}/{{$row->photo_name}}" class="img-responsive thumbnail" style="width: 300px;height: 200px">
             </div>
@@ -349,16 +312,15 @@
 
 @section('script_link')
 <!-- jQuery -->
-<script src="{{ asset('/')}}/public/frontend/js/jquery.min.js"></script>
-<script src="{{ asset('/')}}/public/frontend/js/bootstrap.min.js}}"></script>
-<script src="{{ asset('/')}}/public/frontend/js/jquery.flexslider.js}}"></script>
-<script src="{{ asset('/')}}/public/frontend/js/jquery.inview.js}}"></script> 
-<script src="{{ asset('/')}}/public/frontend/js/script.js}}"></script>
-<script src="{{ asset('/')}}/public/frontend/contactform/contactform.js}}"></script>
-<script src="{{ asset('/')}}/public/frontend/js/jquery-3.2.1.min.js}}"></script>
+<script src="{{ asset('/')}}public/frontend/js/jquery.min.js"></script>
+<script src="{{ asset('/')}}public/frontend/js/bootstrap.min.js"></script>
+<script src="{{ asset('/')}}public/frontend/js/jquery.flexslider.js"></script>
+<script src="{{ asset('/')}}public/frontend/js/jquery.inview.js"></script> 
+<script src="{{ asset('/')}}public/frontend/js/script.js"></script>
+<script src="{{ asset('/')}}public/frontend/js/jquery-3.2.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="{{ asset('/')}}/public/frontend/js/jquery-3.2.1.min.js }}"></script> 
-<script src="{{ asset('/')}}/public/jquery.js}}"></script>  
+<script src="{{ asset('/')}}public/frontend/js/jquery-3.2.1.min.js"></script> 
+<script src="{{ asset('/')}}public/js/jquery.js"></script>  
 
 
 
@@ -394,11 +356,15 @@ $(document).ready(function () {
         $(this).removeClass("active");
     }
     $(this).addClass("active");
-});</script>
+});
+
+</script>
 <script>
+$(document).ready(function () {
     $('.carousel').carousel({
         interval: 5000
-    })
+    });
+});
 </script>
 
 @endsection
