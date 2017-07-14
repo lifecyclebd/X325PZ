@@ -7,35 +7,49 @@
 <link rel="stylesheet" href="{{ asset("public/frontend/css/half-slider.css") }}">
 
  <!-- Half Page Image Background Carousel Header -->
-    <header id="myCarousel" class="carousel slide">
+    <header id="imgSlider" class="carousel slide">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#imgSlider" data-slide-to="0" class="active"></li>
+            <li data-target="#imgSlider" data-slide-to="1"></li>
+            <li data-target="#imgSlider" data-slide-to="2"></li>
+            <li data-target="#imgSlider" data-slide-to="3"></li>
+            <li data-target="#imgSlider" data-slide-to="4"></li>
         </ol>
 
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">
-            <div class="item active">
+            <div class="item active"> 
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url("asset('/')}}/public/images/slide/1.jpg");"></div>
+                <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/1.jpg');"></div>
                 <div class="carousel-caption">
                     <h2>Caption 1</h2>
                 </div>
             </div>
             <div class="item">
                 <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/1.jpg');"></div>
                 <div class="carousel-caption">
                     <h2>Caption 2</h2>
                 </div>
             </div>
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/1.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 3</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/1.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 2</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('{{asset('/')}}public/images/slider/1.jpg');"></div>
                 <div class="carousel-caption">
                     <h2>Caption 3</h2>
                 </div>
@@ -43,16 +57,30 @@
         </div>
 
         <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <a class="left carousel-control" href="#imgSlider" data-slide="prev">
             <span class="icon-prev"></span>
         </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <a class="right carousel-control" href="#imgSlider" data-slide="next">
             <span class="icon-next"></span>
         </a>
+        <div class="clearfix"></div>
 
+<div class="row" style="min-height: 100px; background-color: red; padding: 10px; margin: 0 auto;">
+<div class="col-md-offset-2 col-md-8">
+    <form class="form-horizontak" method="" action="" style="margin: 10px;">
+         <div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+  <input type="text" style="height: 60px;    background: white;    font-size: 20px;" class="form-control" aria-label="Search Donor" placeholder="Search Donor Location">
+  <span class="input-group-addon">
+<button class="btn  btn-serach" style="  height: 40px;  background-color: #ff0000;"> <i class="fa fa-search"></i> </button>
+  </span>
+</div>
+    </form>
+</div>
+        <div class="clearfix" style="margin-top: 30px;"></div>
     </header>
 
-<div class="More_about_info">
+<div class="More_about_info" style="margin-top:30px;">
     <div class="container"> 
         <p class="text-center" style="font-size: 20px">More about info</p>
         <hr>
@@ -209,12 +237,12 @@
 
         <div class="container">
             <h2>Carousel Example</h2>
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div id="imgSlider" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#imgSlider" data-slide-to="0" class="active"></li>
+                    <li data-target="#imgSlider" data-slide-to="1"></li>
+                    <li data-target="#imgSlider" data-slide-to="2"></li>
                 </ol>
 
                 <!-- Wrapper for slides -->
@@ -266,11 +294,11 @@
                 </div>
 
                 <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <a class="left carousel-control" href="#imgSlider" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <a class="right carousel-control" href="#imgSlider" data-slide="next">
                     <span class="glyphicon glyphicon-chevron-right"></span>
                     <span class="sr-only">Next</span>
                 </a>
