@@ -15,3 +15,14 @@ body {
 footer {
     margin: 50px 0;
 }
+.admin_home_count{ 
+     font-size: 45px;
+    color: red;
+}
+.admin_home_sec{
+	min-height: 100px;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f39c12;
+    margin: 10px;
+}
