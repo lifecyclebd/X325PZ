@@ -18,6 +18,11 @@ class AdminController extends Controller {
     public function index() {
       
         $data = User::all();
+        return view('admin.home_page')->with('data', $data);
+    }
+    public function view_admin() {
+      
+        $data = User::all();
         return view('admin.view')->with('data', $data);
     }
 

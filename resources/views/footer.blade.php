@@ -32,6 +32,7 @@
  
 <!-- AdminLTE for demo purposes -->
  <script src="{{ asset('public/AdminLTE/dist/js/demo.js')}}"></script>   
+ <script src="{{ asset('/')}}/public/jquery.js}}"></script>
   
               
 	

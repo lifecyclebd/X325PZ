@@ -32,6 +32,7 @@
  
 <!-- AdminLTE for demo purposes -->
  <script src="<?php echo e(asset('public/AdminLTE/dist/js/demo.js')); ?>"></script>   
+ <script src="<?php echo e(asset('/')); ?>/public/jquery.js}}"></script>
   
               
 	

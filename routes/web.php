@@ -94,7 +94,8 @@ Route::get('/gradingSystem', 'GradingSystemController@view');
 
 
 //-------Admin -----------
-Route::get('/admin', 'AdminController@index'); 
+Route::get('/admin', 'AdminController@index');
+Route::get('/admin/view', 'AdminController@view_admin');
 Route::get('/admin/create', 'AdminController@create');
 Route::get('/admin/{id}', 'AdminController@show')->name('show');
 Route::get('/admin/{id}/edit', 'AdminController@edit'); 
