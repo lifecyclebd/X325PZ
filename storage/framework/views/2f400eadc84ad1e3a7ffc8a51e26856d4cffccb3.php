@@ -111,8 +111,6 @@
     </div>
 </div>
 
-
-
 <!-- jQuery -->
 <script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery.min.js"></script>
 <script src="<?php echo e(asset('/')); ?>/public/frontend/js/bootstrap.min.js}}"></script>
@@ -121,8 +119,48 @@
 <script src="<?php echo e(asset('/')); ?>/public/frontend/js/script.js}}"></script>
 <script src="<?php echo e(asset('/')); ?>/public/frontend/contactform/contactform.js}}"></script>
 <script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery-3.2.1.min.js}}"></script>
-
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery-3.2.1.min.js") }}"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery-3.2.1.min.js }}"></script> 
+
+
+<!-- /.content-wrapper -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".divisions").change(function () {
+            var classid = $(this).val();
+            // alert(classid);
+            $("#districts").html('');
+            $.ajax({
+                url: "<?php echo e(url('admin/donor/get_district')); ?>" + '/' + classid,
+                type: "GET",
+                dataType: "html",
+                success: function (data) {
+                    //    alert(data);
+                    $("#districts").append(data);
+                }
+            });
+        });
+    });
+
+
+    $(document).ready(function () {
+        $(".districts").change(function () {
+            var classid = $(this).val();
+            // alert(classid);
+            $("#upazillas").html('');
+            $.ajax({
+                url: "<?php echo e(url('admin/donor/get_upazilla')); ?>" + '/' + classid,
+                type: "GET",
+                dataType: "html",
+                success: function (data) {
+                    // alert(data);
+                    $("#upazillas").append(data);
+                }
+            });
+        });
+    });
+
+</script>
+
 </body>
 </html>

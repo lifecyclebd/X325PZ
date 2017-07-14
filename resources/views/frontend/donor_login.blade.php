@@ -6,9 +6,18 @@
     input{color:white;}
     select{color:white;}
     textarea{color:white;}
+    form.login{
+    background-color: rgba(224, 224, 224, 0.41);
+    height: 300px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 50px;
+    border-radius: 10px;
+    }
 </style>
 <div id="donor-register">
-    <div class="container">
+    <div class="container" style="height: 500px">
         <div class="content-wrapper">
 
             <!-- Main content -->
@@ -22,7 +31,7 @@
 
                     <div class="box-body">
                         <!-- form start -->
-                        <form class="form-horizontal" action="{{url('/donor/store')}}" method="post" enctype= "multipart/form-data"> 
+                        <form class="form-horizontal login" action="{{url('/donor/store')}}" method="post" enctype= "multipart/form-data"> 
                             {!! csrf_field() !!}
 
                             <div class="form-group">

@@ -480,12 +480,11 @@ input[type="text"].write_to_doctor{
     padding-top: 40px;
     padding-bottom: 40px;
     position: relative; 
-    background: url(../images/blood.gif) center center no-repeat;
-    -webkit-background-size: contain;
-    background-size: contain; 
-    color: black; 
-    background-color: rgb(220, 220, 220);  
-}
+    background: url(../images/header-background.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover; 
+    color: black;  
+    }
 .inner-header .sec-title h2 {
     color: #202a30;
     font-size: 40px;
@@ -1278,8 +1277,7 @@ textarea:focus {
 }
 
 /*Service*/
-#service {
-    margin-top: 100px;
+#service { 
     background-attachment: scroll;
     padding-bottom: 0px;
     padding-top: 0px;

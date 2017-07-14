@@ -3,6 +3,52 @@
 <?php $__env->startSection('parentName', 'Home'); ?>
 <?php $__env->startSection('content'); ?>
 
+<link rel="stylesheet" href="<?php echo e(asset("public/frontend/css/half-slider.css")); ?>">
+
+ <!-- Half Page Image Background Carousel Header -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 1</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 2</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 3</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+
+    </header>
+
 <div class="More_about_info">
     <div class="container"> 
         <p class="text-center" style="font-size: 20px">More about info</p>
@@ -265,6 +311,28 @@
 
 </div>
 
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script_link'); ?>
+<!-- jQuery -->
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery.min.js"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/bootstrap.min.js}}"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery.flexslider.js}}"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery.inview.js}}"></script> 
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/script.js}}"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/contactform/contactform.js}}"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery-3.2.1.min.js}}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/jquery-3.2.1.min.js }}"></script> 
+<script src="<?php echo e(asset('/')); ?>/public/jquery.js}}"></script> 
+<script src="<?php echo e(asset('/')); ?>/public/frontend/js/bootstrap.min.js}}"></script> 
+
+
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('javascript_code'); ?>
+
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -300,9 +368,10 @@
 </script>
     <script>
     $('.carousel').carousel({
-        interval: 5000 //changes the speed
+        interval: 5000  
     })
     </script>
+
 <?php $__env->stopSection(); ?>
 
 

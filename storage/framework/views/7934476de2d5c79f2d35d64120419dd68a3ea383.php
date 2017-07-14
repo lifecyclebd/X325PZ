@@ -1,4 +1,4 @@
-<div class="inner-header">
+<!--div class="inner-header">
     <div class="container">
         <div class="row">
             <div class="col-md-12 sec-title colored text-center">
@@ -12,5 +12,5 @@
             </div>
         </div>
     </div>
-</div> 
+</div--> 
 

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <title>Life Cycle | Home</title>
+        <title>Life Cycle | <?php echo $__env->yieldContent('title'); ?></title>
         <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
         <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Raleway" rel="stylesheet">
@@ -62,7 +62,9 @@
                     <div class="container">
 
                         <div class="navbar-header">
-                            <a href="blood_info.html" class="navbar-brand">LifeCycle</a>
+                            <a href="blood_info.html" class="navbar-brand">
+                                 <img style="width:50px; height:40px" src="<?php echo e(asset('/')); ?>/public/frontend/images/logoo.png">
+                            </a>
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ftheme">
                                 <span class="sr-only">Toggle</span>
                                 <span class="icon-bar"></span>
@@ -83,6 +85,7 @@
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="">Blood
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
+                                        <li><a href="<?php echo e(url('/search-blood-donor')); ?>">Search Donor</a></li>
                                         <li><a href="<?php echo e(url('/blood-news')); ?>">Blood News</a></li>
                                         <li><a href="<?php echo e(url('/blood-info')); ?>">Blood Info</a></li>
                                     </ul>
