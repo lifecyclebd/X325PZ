@@ -31,7 +31,7 @@
 
                     <div class="box-body">
                         <!-- form start -->
-                        <form class="form-horizontal login" action="{{url('/donor/store')}}" method="post" enctype= "multipart/form-data"> 
+                        <form class="form-horizontal login" action="{{url('/donor/login')}}" method="post" enctype= "multipart/form-data"> 
                             {!! csrf_field() !!}
 
                             <div class="form-group">

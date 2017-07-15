@@ -10,7 +10,7 @@ use App\Upazila;
 use App\BloodRequest;
 use App\Libraries\Common;
 use DB;
-
+use Hash;
 class DonorController extends Controller {
 
     public function index() {
@@ -22,6 +22,17 @@ class DonorController extends Controller {
         $data['division'] = Division::all();
         $data['donor'] = Donor::all();
         return view('frontend.donor_login');
+    }
+    public function donor_login_access(Request $request){
+        $donor_username=$request->donor_username;
+        $donor_password=$request->donor_password;
+        $donor_password = Hash::make($donor_password);
+    //    dd($donor_password);
+        $data['donor'] = Donor:: where([['email',$donor_username],['password',$donor_password]])->first();
+
+
+       dd($data['donor']);
+
     }
     public function create() {
         //  $blood_group= new Common;

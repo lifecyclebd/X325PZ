@@ -29,7 +29,7 @@
 
                     <div class="box-body">
                         <!-- form start -->
-                        <form class="form-horizontal login" action="<?php echo e(url('/donor/store')); ?>" method="post" enctype= "multipart/form-data"> 
+                        <form class="form-horizontal login" action="<?php echo e(url('/donor/login')); ?>" method="post" enctype= "multipart/form-data"> 
                             <?php echo csrf_field(); ?>
 
 
