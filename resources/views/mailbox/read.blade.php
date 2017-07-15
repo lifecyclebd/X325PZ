@@ -99,76 +99,13 @@
                         </div>
                         <!-- /.mailbox-controls -->
                         <div class="mailbox-read-message">
-                            <p>Hello John,</p>
+                            <p>{{$data['read']->message}}</p>
 
-                            <p>Keffiyeh blog actually fashion axe vegan, irony biodiesel. Cold-pressed hoodie chillwave put a bird
-                                on it aesthetic, bitters brunch meggings vegan iPhone. Dreamcatcher vegan scenester mlkshk. Ethical
-                                master cleanse Bushwick, occupy Thundercats banjo cliche ennui farm-to-table mlkshk fanny pack
-                                gluten-free. Marfa butcher vegan quinoa, bicycle rights disrupt tofu scenester chillwave 3 wolf moon
-                                asymmetrical taxidermy pour-over. Quinoa tote bag fashion axe, Godard disrupt migas church-key tofu
-                                blog locavore. Thundercats cronut polaroid Neutra tousled, meh food truck selfies narwhal American
-                                Apparel.</p>
- 
-                            <p>Skateboard artisan letterpress before they sold out High Life messenger bag. Bitters chambray
-                                leggings listicle, drinking vinegar chillwave synth. Fanny pack hoodie American Apparel twee. American
-                                Apparel PBR listicle, salvia aesthetic occupy sustainable Neutra kogi. Organic synth Tumblr viral
-                                plaid, shabby chic single-origin coffee Etsy 3 wolf moon slow-carb Schlitz roof party tousled squid
-                                vinyl. Readymade next level literally trust fund. Distillery master cleanse migas, Vice sriracha
-                                flannel chambray chia cronut.</p>
-
-                            <p>Thanks,<br>Jane</p>
                         </div>
                         <!-- /.mailbox-read-message -->
                     </div>
                     <!-- /.box-body -->
-                    <div class="box-footer">
-                        <ul class="mailbox-attachments clearfix">
-                            <li>
-                                <span class="mailbox-attachment-icon"><i class="fa fa-file-pdf-o"></i></span>
-
-                                <div class="mailbox-attachment-info">
-                                    <a href="#" class="mailbox-attachment-name"><i class="fa fa-paperclip"></i> Sep2014-report.pdf</a>
-                                    <span class="mailbox-attachment-size">
-                                        1,245 KB
-                                        <a href="#" class="btn btn-default btn-xs pull-right"><i class="fa fa-cloud-download"></i></a>
-                                    </span>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="mailbox-attachment-icon"><i class="fa fa-file-word-o"></i></span>
-
-                                <div class="mailbox-attachment-info">
-                                    <a href="#" class="mailbox-attachment-name"><i class="fa fa-paperclip"></i> App Description.docx</a>
-                                    <span class="mailbox-attachment-size">
-                                        1,245 KB
-                                        <a href="#" class="btn btn-default btn-xs pull-right"><i class="fa fa-cloud-download"></i></a>
-                                    </span>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="mailbox-attachment-icon has-img"><img src="../../dist/img/photo1.png" alt="Attachment"></span>
-
-                                <div class="mailbox-attachment-info">
-                                    <a href="#" class="mailbox-attachment-name"><i class="fa fa-camera"></i> photo1.png</a>
-                                    <span class="mailbox-attachment-size">
-                                        2.67 MB
-                                        <a href="#" class="btn btn-default btn-xs pull-right"><i class="fa fa-cloud-download"></i></a>
-                                    </span>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="mailbox-attachment-icon has-img"><img src="../../dist/img/photo2.png" alt="Attachment"></span>
-
-                                <div class="mailbox-attachment-info">
-                                    <a href="#" class="mailbox-attachment-name"><i class="fa fa-camera"></i> photo2.png</a>
-                                    <span class="mailbox-attachment-size">
-                                        1.9 MB
-                                        <a href="#" class="btn btn-default btn-xs pull-right"><i class="fa fa-cloud-download"></i></a>
-                                    </span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                    
                     <!-- /.box-footer -->
                     <div class="box-footer">
                         <div class="pull-right">

@@ -200,7 +200,7 @@ Route::any('/blog/destroy/{id}', 'BlogController@delete_blog');
 //-----------------------Mail box----------------------
 Route::any('admin/mailbox/inbox', 'MailController@show_inbox');
 Route::any('admin/mailbox/compose', 'MailController@show_compose');
-Route::any('admin/mailbox/read', 'MailController@show_read');
+Route::any('admin/mailbox/read/{id}', 'MailController@show_read');
 Route::any('admin/mailbox/sent', 'MailController@show_sent');
 
 

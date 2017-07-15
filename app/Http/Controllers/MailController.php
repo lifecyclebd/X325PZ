@@ -49,8 +49,9 @@ class MailController extends Controller
    public function show_compose(){
        return view('mailbox.compose');
    }
-   public function show_read(){
-       return view('mailbox.read');
+   public function show_read($id){
+       $data['read'] = Message::find($id);
+       return view('mailbox.read')->with('data', $data);
    }
    public function show_sent(){
        return view('mailbox.sent');
