@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
-        <title>এডমিন প্যানেল </title>
+        <title>Life Cycle BD</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.6 -->
@@ -34,7 +34,7 @@
             <header class="main-header">
                 <!-- Logo -->
                 <a href="" class="logo"> 
-                    <span class="logo-lg"><b>এডমিন </b>প্যানেল</span>
+                    <span class="logo-lg"><b>Lifecycle </b>BD</span>
                 </a>
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top">
@@ -49,8 +49,8 @@
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
                             <?php if(Auth::guest()): ?>
-                            <li><a href="<?php echo e(route('login')); ?>">লগিন </a></li>
-                            <li><a href="<?php echo e(route('register')); ?>">নিবন্ধন </a></li>
+                            <li><a href="<?php echo e(route('login')); ?>">Login </a></li>
+                            <li><a href="<?php echo e(route('register')); ?>">Register </a></li>
                             <?php else: ?>
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">

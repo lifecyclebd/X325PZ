@@ -30,10 +30,7 @@
                             <label for="inputEmail3" class="col-sm-2 control-label">Donor Name</label>
 
                             <div class="col-sm-10">
-                                <select name="category" class="form-control">
-                                    <option value="Blood Donor">Blood Donor</option>
-                                    <option value="Blood Recever">Blood Receiver</option>
-                                </select>
+                                <input type="text" name="donor_name" placeholder="Write Donor Name or Blood Group" id="donor_name" class="form-control donor_name_search">
                             </div>
                         </div>
                         <div class="form-group">
@@ -60,8 +57,9 @@
                 </form>
  
                     <div class="col-md-12">
+                        <div style="border: 2px solid #eee;padding: 5px">
                         <h3 class="text-center">SMS History</h3>
-                        <table class="table table-resposive" id="example1">
+                        <table class="table table-resposive table-bordered" id="example1">
                             <thead>
                                 <th>SL</th>
                                 <th>Sender</th>
@@ -76,8 +74,8 @@
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Masud </td>
-                                    <td>SHaheen</td>
+                                    <td>Masud <br><small>01910077777 </small></td>
+                                    <td>SHaheen <br><small>0189652325</small></td>
                                     <td>Request A+ Blood</td>
                                     <td><span class="label label-info">Blood Request</span></td>
                                     <td><span class="label label-success">Done !</span></td>
@@ -90,8 +88,8 @@
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Jaman </td>
-                                    <td>Rashed</td>
+                                    <td>Jaman <br><small>01734446514</small></td>
+                                    <td>Rashed <br><small>01711034465</small></td>
                                     <td>Admin Send request for AB- Blood</td>
                                     <td><span class="label label-danger">Blood Request</span></td>
                                     <td><span class="label label-warning">Not Yet !</span></td>
@@ -105,6 +103,7 @@
                             </tbody>
                             
                         </table>
+                    </div>
                     </div>
                 </div>
             </div>
