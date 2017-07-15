@@ -2,6 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/Lifecycle/routes/web.php</file>
+            <file>file:/C:/xampp/htdocs/Lifecycle/resources/views/mailbox/inbox.blade.php</file>
+            <file>file:/C:/xampp/htdocs/Lifecycle/resources/views/degree/view.blade.php</file>
+            <file>file:/C:/xampp/htdocs/Lifecycle/resources/views/leftsidebar.blade.php</file>
+            <file>file:/C:/xampp/htdocs/Lifecycle/app/Http/Controllers/HomeController.php</file>
+            <file>file:/C:/xampp/htdocs/Lifecycle/app/Http/Controllers/MailController.php</file>
+        </group>
     </open-files>
 </project-private>
