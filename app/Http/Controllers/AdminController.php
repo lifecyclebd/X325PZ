@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\User; 
+use App\User;
+use App\Doctor;
+use App\Donor;
+use App\Hospital;
+use App\Message;
+use App\Activity;
+use App\BloodRequest;
 use App\Testimonial;
 use Illuminate\Http\Request;
 use App\Libraries\Common;
@@ -16,8 +22,25 @@ class AdminController extends Controller {
     }
 
     public function index() {
-      
         $data = User::all();
+        $data['count_user'] = User::get()->count();
+        $data['count_donor'] = Donor::get()->count();
+        
+        $data['a_positive'] = Donor::where('blood_group','A+')->get()->count();
+        $data['a_negative'] = Donor::where('blood_group','A-')->get()->count();
+        $data['b_positive'] = Donor::where('blood_group','B+')->get()->count();
+        $data['b_negative'] = Donor::where('blood_group','B-')->get()->count();
+        $data['ab_negative'] = Donor::where('blood_group','AB-')->get()->count();
+        $data['o_positive'] = Donor::where('blood_group','O+')->get()->count();
+        $data['o_negative'] = Donor::where('blood_group','O-')->get()->count();
+        
+        
+        $data['count_doctor'] = Doctor::get()->count();
+        $data['count_hospital'] = Hospital::get()->count();
+        $data['count_message'] = Message::get()->count();
+        $data['count_activity'] = Activity::get()->count();
+        $data['count_bloodrequest'] = BloodRequest::get()->count();
+        $data['count_testimonial'] = Testimonial::get()->count();
         return view('admin.home_page')->with('data', $data);
     }
     public function view_admin() {

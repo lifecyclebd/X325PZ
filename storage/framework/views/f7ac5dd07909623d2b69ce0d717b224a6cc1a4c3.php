@@ -22,7 +22,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Donors</span>
-              <span class="info-box-number">410</span>
+              <span class="info-box-number"><?php echo e($data['count_donor']); ?></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -35,7 +35,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Doctors</span>
-              <span class="info-box-number">450</span>
+              <span class="info-box-number"><?php echo e($data['count_doctor']); ?></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -48,7 +48,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Hopitals</span>
-              <span class="info-box-number">648</span>
+              <span class="info-box-number"><?php echo e($data['count_hospital']); ?></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -61,7 +61,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Ambulances</span>
-              <span class="info-box-number">139</span>
+              <span class="info-box-number">static</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -80,7 +80,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Messages</span>
-              <span class="info-box-number">4110</span>
+              <span class="info-box-number"><?php echo e($data['count_message']); ?></span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 70%"></div>
@@ -100,7 +100,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Blood Requests</span>
-              <span class="info-box-number">40</span>
+              <span class="info-box-number"><?php echo e($data['count_bloodrequest']); ?></span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 70%"></div>
@@ -120,7 +120,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Send SMS</span>
-              <span class="info-box-number">410</span>
+              <span class="info-box-number">static</span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 70%"></div>
@@ -140,7 +140,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Donors</span>
-              <span class="info-box-number">10</span>
+              <span class="info-box-number">static</span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 70%"></div>
@@ -163,43 +163,43 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 text-center">
                         <div class="admin_home_sec">
-                            <span class="admin_home_count counter" data-count="55" id="foo">55</span>
+                            <span class="admin_home_count counter" data-count="55" id="foo"><?php echo e($data['a_positive']); ?></span>
                             <h3>A Positive   <small>(A+)</small>  </h3>
                         </div>
                         
                     </div> 
                     <div class="col-lg-4 col-sm-6 text-center">
                         <div class="admin_home_sec">
-                            <span class="admin_home_count">55</span>
-                            <h3>A Positive   <small>(A+)</small>  </h3>
+                            <span class="admin_home_count"><?php echo e($data['a_negative']); ?></span>
+                            <h3>A Negative   <small>(A-)</small>  </h3>
                         </div>
                         
                     </div> 
                     <div class="col-lg-4 col-sm-6 text-center">
                         <div class="admin_home_sec">
-                            <span class="admin_home_count">55</span>
-                            <h3>A Positive   <small>(A+)</small>  </h3>
+                            <span class="admin_home_count"><?php echo e($data['b_positive']); ?></span>
+                            <h3>B Positive   <small>(B+)</small>  </h3>
                         </div>
                         
                     </div> 
                     <div class="col-lg-4 col-sm-6 text-center">
                         <div class="admin_home_sec">
-                            <span class="admin_home_count">55</span>
-                            <h3>A Positive   <small>(A+)</small>  </h3>
+                            <span class="admin_home_count"><?php echo e($data['b_negative']); ?></span>
+                            <h3>B Negative   <small>(B-)</small>  </h3>
                         </div>
                         
                     </div> 
                     <div class="col-lg-4 col-sm-6 text-center">
                         <div class="admin_home_sec">
-                            <span class="admin_home_count">55</span>
-                            <h3>A Positive   <small>(A+)</small>  </h3>
+                            <span class="admin_home_count"><?php echo e($data['o_positive']); ?></span>
+                            <h3>O Positive   <small>(O+)</small>  </h3>
                         </div>
                         
                     </div> 
                     <div class="col-lg-4 col-sm-6 text-center">
                         <div class="admin_home_sec">
-                            <span class="admin_home_count">55</span>
-                            <h3>A Positive   <small>(A+)</small>  </h3>
+                            <span class="admin_home_count"><?php echo e($data['o_negative']); ?></span>
+                            <h3>O Negative   <small>(O+)</small>  </h3>
                         </div>
                         
                     </div> 

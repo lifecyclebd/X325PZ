@@ -72,8 +72,9 @@
                         <h3 class="box-title">Read Mail</h3>
 
                         <div class="box-tools pull-right">
-                            <a href="#" class="btn btn-box-tool" data-toggle="tooltip" title="" data-original-title="Previous"><i class="fa fa-chevron-left"></i></a>
-                            <a href="#" class="btn btn-box-tool" data-toggle="tooltip" title="" data-original-title="Next"><i class="fa fa-chevron-right"></i></a>
+                            <a href="{{url('admin/mailbox/inbox')}}" class="">      
+                                <i class="fa fa-undo" aria-hidden="true"></i> back
+                            </a>
                         </div>
                     </div>
                     <!-- /.box-header -->
@@ -105,7 +106,7 @@
                         <!-- /.mailbox-read-message -->
                     </div>
                     <!-- /.box-body -->
-                    
+
                     <!-- /.box-footer -->
                     <div class="box-footer">
                         <div class="pull-right">
