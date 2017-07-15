@@ -25,7 +25,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Donors</span>
-              <span class="info-box-number">410</span>
+              <span class="info-box-number">{{$data['count_donor']}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -38,7 +38,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Doctors</span>
-              <span class="info-box-number">450</span>
+              <span class="info-box-number">{{$data['count_doctor']}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -51,7 +51,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Hopitals</span>
-              <span class="info-box-number">648</span>
+              <span class="info-box-number">{{$data['count_hospital']}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -64,7 +64,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Ambulances</span>
-              <span class="info-box-number">139</span>
+              <span class="info-box-number">static</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -83,7 +83,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Messages</span>
-              <span class="info-box-number">4110</span>
+              <span class="info-box-number">{{$data['count_message']}}</span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 70%"></div>
@@ -103,7 +103,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Blood Requests</span>
-              <span class="info-box-number">40</span>
+              <span class="info-box-number">{{$data['count_bloodrequest']}}</span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 70%"></div>
@@ -123,7 +123,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Send SMS</span>
-              <span class="info-box-number">410</span>
+              <span class="info-box-number">static</span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 70%"></div>
@@ -143,7 +143,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Donors</span>
-              <span class="info-box-number">10</span>
+              <span class="info-box-number">static</span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 70%"></div>
