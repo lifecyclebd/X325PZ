@@ -70,8 +70,9 @@
     width: 100%;
     margin: 0 auto;
     padding: 10px;
-    padding-top: 50px;
-    border-radius: 10px;
+    padding-top: 50px; 
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     }
 
     input:focus{
