@@ -310,18 +310,16 @@
 
 @endsection
 
-@section('script_link')
-<!-- jQuery -->
+@section('script_link') 
+
+
 <script src="{{ asset('/')}}public/frontend/js/jquery.min.js"></script>
 <script src="{{ asset('/')}}public/frontend/js/bootstrap.min.js"></script>
 <script src="{{ asset('/')}}public/frontend/js/jquery.flexslider.js"></script>
-<script src="{{ asset('/')}}public/frontend/js/jquery.inview.js"></script> 
-<script src="{{ asset('/')}}public/frontend/js/script.js"></script>
+<script src="{{ asset('/')}}public/frontend/js/jquery.inview.js"></script>  
 <script src="{{ asset('/')}}public/frontend/js/jquery-3.2.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="{{ asset('/')}}public/frontend/js/jquery-3.2.1.min.js"></script> 
-<script src="{{ asset('/')}}public/js/jquery.js"></script>  
-
+<script src="{{ asset('/')}}public/frontend/js/jquery-3.2.1.min.js"></script>   
 
 
 @endsection
@@ -376,8 +374,7 @@ $(document).ready(function () {
     $(this).addClass("active");
 });
 
-</script>
-<script>
+ 
 $(document).ready(function () {
     $('.carousel').carousel({
         interval: 5000
