@@ -25,6 +25,16 @@ class AdminController extends Controller {
         $data = User::all();
         $data['count_user'] = User::get()->count();
         $data['count_donor'] = Donor::get()->count();
+        
+        $data['a_positive'] = Donor::where('blood_group','A+')->get()->count();
+        $data['a_negative'] = Donor::where('blood_group','A-')->get()->count();
+        $data['b_positive'] = Donor::where('blood_group','B+')->get()->count();
+        $data['b_negative'] = Donor::where('blood_group','B-')->get()->count();
+        $data['ab_negative'] = Donor::where('blood_group','AB-')->get()->count();
+        $data['o_positive'] = Donor::where('blood_group','O+')->get()->count();
+        $data['o_negative'] = Donor::where('blood_group','O-')->get()->count();
+        
+        
         $data['count_doctor'] = Doctor::get()->count();
         $data['count_hospital'] = Hospital::get()->count();
         $data['count_message'] = Message::get()->count();

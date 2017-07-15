@@ -163,43 +163,43 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 text-center">
                         <div class="admin_home_sec">
-                            <span class="admin_home_count counter" data-count="55" id="foo">55</span>
+                            <span class="admin_home_count counter" data-count="55" id="foo"><?php echo e($data['a_positive']); ?></span>
                             <h3>A Positive   <small>(A+)</small>  </h3>
                         </div>
                         
                     </div> 
                     <div class="col-lg-4 col-sm-6 text-center">
                         <div class="admin_home_sec">
-                            <span class="admin_home_count">55</span>
-                            <h3>A Positive   <small>(A+)</small>  </h3>
+                            <span class="admin_home_count"><?php echo e($data['a_negative']); ?></span>
+                            <h3>A Negative   <small>(A-)</small>  </h3>
                         </div>
                         
                     </div> 
                     <div class="col-lg-4 col-sm-6 text-center">
                         <div class="admin_home_sec">
-                            <span class="admin_home_count">55</span>
-                            <h3>A Positive   <small>(A+)</small>  </h3>
+                            <span class="admin_home_count"><?php echo e($data['b_positive']); ?></span>
+                            <h3>B Positive   <small>(B+)</small>  </h3>
                         </div>
                         
                     </div> 
                     <div class="col-lg-4 col-sm-6 text-center">
                         <div class="admin_home_sec">
-                            <span class="admin_home_count">55</span>
-                            <h3>A Positive   <small>(A+)</small>  </h3>
+                            <span class="admin_home_count"><?php echo e($data['b_negative']); ?></span>
+                            <h3>B Negative   <small>(B-)</small>  </h3>
                         </div>
                         
                     </div> 
                     <div class="col-lg-4 col-sm-6 text-center">
                         <div class="admin_home_sec">
-                            <span class="admin_home_count">55</span>
-                            <h3>A Positive   <small>(A+)</small>  </h3>
+                            <span class="admin_home_count"><?php echo e($data['o_positive']); ?></span>
+                            <h3>O Positive   <small>(O+)</small>  </h3>
                         </div>
                         
                     </div> 
                     <div class="col-lg-4 col-sm-6 text-center">
                         <div class="admin_home_sec">
-                            <span class="admin_home_count">55</span>
-                            <h3>A Positive   <small>(A+)</small>  </h3>
+                            <span class="admin_home_count"><?php echo e($data['o_negative']); ?></span>
+                            <h3>O Negative   <small>(O+)</small>  </h3>
                         </div>
                         
                     </div> 
