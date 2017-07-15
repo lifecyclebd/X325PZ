@@ -72,7 +72,7 @@ class HomeController extends Controller {
         $actv=new Activity;
         $data->user_id=6;
         $data->request_blood_group=$request->request_blood_group;
-        $data->patient_name=$request->patient_name;
+        $data->patient_hospital=$request->patient_hospital;
         $data->patient_phone=$request->patient_phone;
         $data->patient_place=$request->patient_place;
         $data->number_blood_bag=$request->number_blood_bag;
@@ -101,7 +101,7 @@ class HomeController extends Controller {
         $actv->parent_id=6;
         $actv->created_by='Asru';
         $actv->save();
-        return redirect('/blood-request');
+        return redirect('/blood-request?send_request_suceessfully=yes');
     }
 
     public function activity_list() {

@@ -1028,12 +1028,12 @@ textarea:focus {
 .submit-btn{
     background: #c9302c;
     color: white;
-    font-size: 24px; 
-    padding: 10px;
-    border-radius: 15px;
-    height: 60px;
-    text-align: center;  
-    margin-top:30px;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    height: 45px;
+    text-align: center;
+    margin-top: 30px;
     font-weight: bold;
 }
 #about .about-right-wrapper {

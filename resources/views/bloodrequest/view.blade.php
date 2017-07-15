@@ -12,7 +12,7 @@
                 <div class="box">
 
                     <div class="box-header with-border">
-                        <h3 class="box-title">Blood Request List</h3>
+                        <h3 class="box-title">Blood Donor <i class="fa fa-angle-right"> </i>    Blood Request List</h3>
                         <div class="box-tools pull-right">
                             <a href="{{url('bloodrequest/create')}}" class="">      
                                 <i class="fa fa-plus" aria-hidden="true"></i> Add Blood Request
@@ -30,13 +30,13 @@
                                     <th>SL</th>
                                     <th>User Name</th>
                                     <th>Requested Blood Group</th>
-                                    <th>Patient Name</th>
+                                    <th>Patient Hospital</th>
                                     <th>Patient Phone</th>
                                     <th>Patient Place</th>
                                     <th>Number of Blood Bag</th>
                                     <th>Any Disease?</th>
                                     <th>Relation</th>
-                                    <th>Operation Time</th>
+                                    <th>Operation Date</th>
                                     <th>Operation</th>
                                 </tr>
                             </thead>
@@ -46,7 +46,7 @@
                                     <td>{{$row->id}}</td>
                                     <td>{{$row->user_id}}</td>
                                     <td>{{$row->request_blood_group}}</td>
-                                    <td>{{$row->patient_name}}</td>
+                                    <td>{{$row->patient_hospital}}</td>
                                     <td>{{$row->patient_phone}}</td>
                                     <td>{{$row->patient_place}}</td>
                                     <td>{{$row->number_blood_bag}}</td>
