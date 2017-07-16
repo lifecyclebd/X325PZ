@@ -4,14 +4,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <title>Life Cycle | @yield('title')</title>
-        <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
-        <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/style.css"> 
+        <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/half-slider.css">
+        <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/font-awesome.min.css">         
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Raleway" rel="stylesheet"> 
-        <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/flexslider.css">
-        <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/bootstrap.min.css">
-        <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/font-awesome.min.css">
-        <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/style.css">
-        <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/animate.css">
+
+
     </head>
     <body id="top" data-spy="scroll">
         <!--top header-->
@@ -56,9 +57,9 @@
                 <nav class="navbar">
                     <div class="container">
 
-                        <div class="navbar-header pull-left">
+                        <div class="navbar-header">
                             <a href="{{url('/')}}" class="navbar-brand">
-                                 <img class="img img-responsive" style="width: 150px;height: 90px;margin-left: -20px;margin-top: 5px;" src="{{asset('/')}}/public/frontend/images/logoo.png">
+                                 <img class="img img-responsive" style="position: relative;width: 150px;height: 90px; margin-top: -35px;" src="{{asset('/')}}/public/frontend/images/logoo.png">
                             </a>
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ftheme">
                                 <span class="sr-only">Toggle</span>
@@ -120,20 +121,10 @@
                                     </ul>
                                 </li>
                                 <li><a href="{{ url('/about-us') }}">About Us</a></li>
-                                <li><a href="{{ url('/contact') }}">contact</a></li>
-                                <li class="hidden-sm hidden-xs">
-                                    <a href="#" id="ss"><i class="fa fa-search" aria-hidden="true"></i></a>
-                                </li>
+                                <li><a href="{{ url('/contact') }}">contact</a></li> 
                             </ul>
 
                         </div>
-
-                        <div class="search-form">
-                            <form>
-                                <input type="text" id="s" size="40" placeholder="Search..." />
-                            </form>
-                        </div>
-
                     </div>
                 </nav>
             </div>

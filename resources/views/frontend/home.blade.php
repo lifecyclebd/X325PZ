@@ -4,7 +4,39 @@
 @section('parentName', 'Home')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset("public/frontend/css/half-slider.css") }}">
+<style type="text/css">
+  
+    .search_button{
+        border-radius: 0px;
+        height: 43px;
+        background-color: #8f0002;
+        font-weight: 700;
+        border: 1px solid #8f0002;
+    }
+
+    .search_button:hover{
+        background: #ee1b2e;
+        color: white;
+        border: 1px solid #ee1b2e;
+    }
+    .map_marker{
+        color: #8f0002;
+        font-size: 30px;
+    }
+    .signup_button{
+        width: 100%;
+        padding: 10px;
+        margin: 10px;
+        height: 43px;
+        background: #db3328;
+    }
+  
+.signup_button.focus, .signup_button:focus, .signup_button:hover {
+    color: #fff !important;
+    text-decoration: none;
+    background: red !important;
+}
+</style>
 
 <!-- Half Page Image Background Carousel Header -->
 <header id="imgSlider" class="carousel slide">
@@ -45,16 +77,22 @@
     <div class="clearfix"></div>
 
     <div class="row" style="min-height: 100px; background-color: #8f0002; padding: 10px; margin: 0 auto;">
-        <div class="col-md-offset-2 col-md-8">
+        <div class="col-md-8">
             <form class="form-horizontak" method="" action="" style="margin: 10px;">
                 <div class="input-group">
-                    <span class="input-group-addon" style="padding: 0px 30px; font-size: 25px;"><i class="fa fa-map-marker"></i></span>
-                    <input type="text" style="height: 45px;    background: white;    font-size: 20px;" class="form-control" aria-label="Search Donor" placeholder="Search Donor Location">
+                    <span class="input-group-addon" style="padding: 0px 30px; font-size: 25px;"><i class="fa fa-map-marker map_marker"></i></span>
+                    
+                    <input type="text" style="height: 45px;    background: white;    font-size: 20px;" class="form-control" aria-label="Search Donor" placeholder="Search Donor Location" id="pac-input">
+                       <div id="map" style="overflow: hidden;"></div>
                     <span class="input-group-addon" style="padding: 0px 0px; font-size: 25px;">
-                        <button class="btn  btn-serach" style="border-radius: 0px;  height: 40px;  background-color: #ff0000;"> <i class="fa fa-search"></i> </button>
+
+                        <button class="btn  btn-serach search_button" > SEARCH </i> </button>
                     </span>
                 </div>
             </form>
+        </div>
+        <div class="col-md-4">
+             <button class="btn  btn-serach signup_button" > SIGN UP </i> </button>
         </div>
     </div>
     
@@ -314,14 +352,6 @@
 @section('script_link') 
 
 
-<script src="{{ asset('/')}}public/frontend/js/jquery.min.js"></script>
-<script src="{{ asset('/')}}public/frontend/js/bootstrap.min.js"></script>
-<script src="{{ asset('/')}}public/frontend/js/jquery.flexslider.js"></script>
-<script src="{{ asset('/')}}public/frontend/js/jquery.inview.js"></script>  
-<script src="{{ asset('/')}}public/frontend/js/jquery-3.2.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="{{ asset('/')}}public/frontend/js/jquery-3.2.1.min.js"></script>   
-
 
 @endsection
 
@@ -381,7 +411,6 @@ $(document).ready(function () {
         interval: 5000
     });
 });
-</script>
-
+</script>  
 @endsection
 

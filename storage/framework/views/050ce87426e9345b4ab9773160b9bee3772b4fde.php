@@ -70,10 +70,10 @@
                     </div><br><br>
                     <h4>Follow Us</h4>
                     <div class="footer_bottom_fa"> 
-                        <i style="padding: 5px;" class="fa fa-facebook" aria-hidden="true"></i> 
-                        <i style="padding: 5px;"  class="fa fa-google-plus" aria-hidden="true"></i> 
-                        <i style="padding: 5px;"  class="fa fa-youtube" aria-hidden="true"></i> 
-                        <i style="padding: 5px;"  class="fa fa-twitter" aria-hidden="true"></i> 
+                        <a href="<?php echo e(url('https://www.facebook.com/')); ?>" target="_blank"><i style="padding: 5px;" class="fa fa-facebook" aria-hidden="true"></i> </a>
+                        <a href="<?php echo e(url('https://plus.google.com/')); ?>" target="_blank"><i style="padding: 5px;"  class="fa fa-google-plus" aria-hidden="true"></i> 
+                        <a href="<?php echo e(url('https://www.youtube.com/')); ?>" target="_blank"><i style="padding: 5px;"  class="fa fa-youtube" aria-hidden="true"></i> 
+                        <a href="<?php echo e(url('https://twitter.com/')); ?>" target="_blank"><i style="padding: 5px;"  class="fa fa-twitter" aria-hidden="true"></i> 
 
                     </div>
                 </div>
@@ -111,63 +111,4 @@
     </div>
 </div>
 
-<!-- jQuery -->
-<script src="<?php echo e(asset('/')); ?>public/frontend/js/jquery.min.js"></script>
-<script src="<?php echo e(asset('/')); ?>public/frontend/js/bootstrap.min.js"></script>
-<script src="<?php echo e(asset('/')); ?>public/frontend/js/jquery.flexslider.js"></script>
-<script src="<?php echo e(asset('/')); ?>public/frontend/js/jquery.inview.js"></script>  
-<script src="<?php echo e(asset('/')); ?>public/frontend/js/jquery-3.2.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="<?php echo e(asset('/')); ?>public/frontend/js/jquery-3.2.1.min.js"></script> 
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
-
-<!-- /.content-wrapper -->
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(".divisions").change(function () {
-            var classid = $(this).val();
-            // alert(classid);
-            $("#districts").html('');
-            $.ajax({
-                url: "<?php echo e(url('admin/donor/get_district')); ?>" + '/' + classid,
-                type: "GET",
-                dataType: "html",
-                success: function (data) {
-                    //    alert(data);
-                    $("#districts").append(data);
-                }
-            });
-        });
-    });
-
-
-    $(document).ready(function () {
-        $(".districts").change(function () {
-            var classid = $(this).val();
-            // alert(classid);
-            $("#upazillas").html('');
-            $.ajax({
-                url: "<?php echo e(url('admin/donor/get_upazilla')); ?>" + '/' + classid,
-                type: "GET",
-                dataType: "html",
-                success: function (data) {
-                    // alert(data);
-                    $("#upazillas").append(data);
-                }
-            });
-        });
-    });
-
-       $(document).ready(function () {
-        $(".is_active").click(function () {
-              $(this).addClass("active");
-        });
-    });
-
-    
-
-</script>
-
-</body>
-</html>
