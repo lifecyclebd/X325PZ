@@ -67,9 +67,10 @@
         <div class="col-md-3">
             <div class="info_abou_blood slideInDown">
                 <span class="back_icon1 pull-center" style="height: 200px">  </span>
-                <p class="title">Blood Donor 24</p>
-                <p class="text-justify">
-                    A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
+                <?php //dd($data['donor_24']); ?>
+                <p class="title">{{$data['donor_24']->title}}</p>
+                <p class="text-justify" style="padding:30px">
+                    {{$data['donor_24']->short_description}}
                 </p>
                 <div class="text-center">
                     <button class="btn_read_more">Read More</button>
@@ -79,9 +80,9 @@
         <div class="col-md-3">
             <div class="info_abou_blood slideInDown">
                 <span class="back_icon2 pull-center" style="height: 200px">  </span>
-                <p class="title">Blood Donor 24</p>
-                <p class="text-justify">
-                    A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
+                <p class="title">{{$data['platelet']->title}}</p>
+                <p class="text-justify" style="padding:30px">
+                    {{$data['platelet']->short_description}}
                 </p>
                 <div class="text-center">
                     <button class="btn_read_more">Read More</button>
@@ -91,9 +92,9 @@
         <div class="col-md-3">
             <div class="info_abou_blood slideInDown">
                 <span class="back_icon3 pull-center" style="height: 200px">  </span>
-                <p class="title">Blood Donor 24</p>
-                <p class="text-justify">
-                    A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
+                <p class="title">{{$data['type']->title}}</p>
+                <p class="text-justify" style="padding:30px">
+                    {{$data['type']->short_description}}
                 </p>
                 <div class="text-center">
                     <button class="btn_read_more">Read More</button>
@@ -103,9 +104,9 @@
         <div class="col-md-3">
             <div class="info_abou_blood slideInDown">
                 <span class="back_icon4 pull-center" style="height: 200px">  </span>
-                <p class="title">Blood Donor 24</p>
-                <p class="text-justify">
-                    A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
+                <p class="title">{{$data['journey']->title}}</p>
+                <p class="text-justify" style="padding:30px">
+                    {{$data['journey']->short_description}}
                 </p>
                 <div class="text-center">
                     <button class="btn_read_more">Find out more</button>
