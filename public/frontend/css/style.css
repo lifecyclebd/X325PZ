@@ -1946,9 +1946,9 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 
 /*Bottom Footer*/
 #bottom-footer {
-    background-color: #ffffff;
+      background-color: #040404;
     padding: 20px 0;
-    color: #020202;
+    color: #f3f3f3;
 }
 
 #bottom-footer .footer-right ul > li > a {

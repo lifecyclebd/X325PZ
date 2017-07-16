@@ -323,24 +323,19 @@
     <div class="container">
         <div class="row">
             <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <h3 class="life_title ">Blood Fighter</h3>
+              <h3 class="life_title " style="margin-bottom: 30px">Blood Fighter</h3>
 
             </div>
 
-            <div align="center">
-                <button class="btn filter-button" id="all" data-filter="all">All</button>
-                @foreach($data['gallery_category'] as $row)
-                <button class="btn filter-button" data-filter="{{$row->page_name}}">{{$row->gallery_name}}</button>
-                @endforeach
-            </div>
+           
             <br/>
 
 
-            @foreach($data['galleries'] as $row)
+            @foreach($data['blood_fighter'] as $row)
 
-            <div class="gallery_product col-lg-3 col-md-3 col-sm-6 col-xs-12 filter 
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-6 col-xs-6 filter 
                  {{$row->page_name}}">
-                <img src="{{url('public/images/gallery')}}/{{$row->photo_name}}" class="img-responsive thumbnail" style="width: 300px;height: 200px">
+                <img src="{{url('public/images/gallery')}}/{{$row->photo_name}}" class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid red;">
             </div>
 
 

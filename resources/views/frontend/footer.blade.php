@@ -84,21 +84,23 @@
 </div>
 
 <!--bottom footer-->
-<div id="bottom-footer" class="hidden-xs">
+<div id="bottom-footer" class="xs-hidden">
     <div class="container">
         <div class="row">
-            <H1>LoGo</H1>
-            <hr>
-            <div class="col-md-6">
-                <div class="footer-left">
-                    &copy; MyBix Theme. All rights reserved 
-                    Designed by <a href="https://bootstrapmade.com/">Skybare IT</a> 
-                </div>
+
+            
+            <div class="col-md-4 col-xs-12 col-sm-12 text-center" style="margin-bottom: 20px;">
+            <a href="{{url('/')}}" class="navbar-brand " style="width: 100%">
+                 <img class="img img-responsive" style="width: 150px;height: 60px;" src="{{asset('/')}}/public/frontend/images/logoo.png">
+            </a>  <br><br><br>
             </div>
 
-            <div class="col-md-6">
-                <div class="footer-right">
-                    <ul class="list-unstyled list-inline pull-right">
+            <div class="col-md-8 col-xs-12 col-sm-12 text-center">
+                <div class="footer-left" style="margin-top: 40px; text-align: center;">
+                    &copy; lifecylebd.org. All rights reserved 2017 | Designed by <a href="https://skybare.com/">Skybare IT</a> 
+                </div>
+                <div class="footer-right  text-center">
+                    <ul class="list-unstyled list-inline">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#service">Service</a></li>
