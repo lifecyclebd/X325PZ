@@ -101,49 +101,56 @@
 
 <div class="More_about_info">
     <div class="container"> 
-         <h3 class="life_title ">More about blood</h3>  
-        <div class="col-md-3">
-            <div class="info_abou_blood slideInDown">
-                <span class="back_icon1 pull-center" style="height: 200px">  </span>
-                <p class="title">Blood Donor 24</p>
-                <p class="text-justify">
-                    A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
+        <h3 class="life_title " style="margin-bottom:50px">More about blood</h3>  
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info_abou_blood slideInDown" style="min-height:350px">
+                <div class="position_info">
+                <span class="back_icon1 pull-center">  </span>
+                </div>
+                <?php //dd($data['donor_24']); ?>
+                <p class="title"><?php echo e($data['donor_24']->title); ?></p>
+                <p class="text-justify" style="padding:30px">
+                    <?php echo e($data['donor_24']->short_description); ?>
+
                 </p>
                 <div class="text-center">
                     <button class="btn_read_more">Read More</button>
                 </div>
             </div> 
         </div>
-        <div class="col-md-3">
-            <div class="info_abou_blood slideInDown">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info_abou_blood slideInDown" style="min-height:350px">
                 <span class="back_icon2 pull-center" style="height: 200px">  </span>
-                <p class="title">Blood Donor 24</p>
-                <p class="text-justify">
-                    A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
+                <p class="title"><?php echo e($data['platelet']->title); ?></p>
+                <p class="text-justify" style="padding:30px">
+                    <?php echo e($data['platelet']->short_description); ?>
+
                 </p>
                 <div class="text-center">
                     <button class="btn_read_more">Read More</button>
                 </div>
             </div> 
         </div>
-        <div class="col-md-3">
-            <div class="info_abou_blood slideInDown">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info_abou_blood slideInDown" style="min-height:350px">
                 <span class="back_icon3 pull-center" style="height: 200px">  </span>
-                <p class="title">Blood Donor 24</p>
-                <p class="text-justify">
-                    A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
+                <p class="title"><?php echo e($data['type']->title); ?></p>
+                <p class="text-justify" style="padding:30px">
+                    <?php echo e($data['type']->short_description); ?>
+
                 </p>
                 <div class="text-center">
                     <button class="btn_read_more">Read More</button>
                 </div>
             </div> 
         </div>
-        <div class="col-md-3">
-            <div class="info_abou_blood slideInDown">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info_abou_blood slideInDown" style="min-height:350px">
                 <span class="back_icon4 pull-center" style="height: 200px">  </span>
-                <p class="title">Blood Donor 24</p>
-                <p class="text-justify">
-                    A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
+                <p class="title"><?php echo e($data['journey']->title); ?></p>
+                <p class="text-justify" style="padding:30px">
+                    <?php echo e($data['journey']->short_description); ?>
+
                 </p>
                 <div class="text-center">
                     <button class="btn_read_more">Find out more</button>
@@ -157,7 +164,7 @@
 
 <div class="get_well_soon">        
     <div class="container"> 
-        <h3 class="life_title ">Get Well Soon</h3> 
+        <h3 class="life_title " style="margin-bottom:30px">Get Well Soon</h3> 
         <div class="col-md-3">
             <div class="get_well_soon_sec">
                 <br>
@@ -319,24 +326,19 @@
     <div class="container">
         <div class="row">
             <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <h3 class="life_title ">Blood Fighter</h3>
+              <h3 class="life_title " style="margin-bottom: 30px">Blood Fighter</h3>
 
             </div>
 
-            <div align="center">
-                <button class="btn filter-button" id="all" data-filter="all">All</button>
-                <?php $__currentLoopData = $data['gallery_category']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <button class="btn filter-button" data-filter="<?php echo e($row->page_name); ?>"><?php echo e($row->gallery_name); ?></button>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            </div>
+           
             <br/>
 
 
-            <?php $__currentLoopData = $data['galleries']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php $__currentLoopData = $data['blood_fighter']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
-            <div class="gallery_product col-lg-3 col-md-3 col-sm-6 col-xs-12 filter 
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-6 col-xs-6 filter 
                  <?php echo e($row->page_name); ?>">
-                <img src="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->photo_name); ?>" class="img-responsive thumbnail" style="width: 300px;height: 200px">
+                <img src="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->photo_name); ?>" class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid red;">
             </div>
 
 

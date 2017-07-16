@@ -49,6 +49,15 @@ class HomeController extends Controller {
                 ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id') 
                 ->where('galleries.page_name', 'slider')
                 ->get();
+
+
+        $data['blood_fighter'] = DB::table('galleries')
+                ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id') 
+                ->where('galleries.page_name', 'Home_Page')
+                ->take(8)
+                ->orderBy('gallery_details.id', 'desc')
+                ->get();
+
         
         //$data['donor_24'] = More_about_blood::all();
         $data['donor_24'] = More_about_blood:: where('slug', 'donor_24')->first();
