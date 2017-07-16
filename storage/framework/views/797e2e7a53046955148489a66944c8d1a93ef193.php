@@ -89,8 +89,8 @@
                                 <option>---select---</option>
                                 <?php $__currentLoopData = $data['hospital']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <option value="<?php echo e($value->id); ?>" 
-                                        <?php if($doctor_list->hospital==$value->id): ?> selected="selected" <?php endif; ?>
-                                        ><?php echo e($value->hospital_name); ?></option>
+                                        <?php if($doctor_list->hospital==$value->id): ?> selected="selected" <?php endif; ?>>
+                                        <?php echo e($value->hospital_name); ?></option>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </select>
                         </div>

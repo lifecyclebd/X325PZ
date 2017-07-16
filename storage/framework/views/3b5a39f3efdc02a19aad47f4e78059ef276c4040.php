@@ -33,7 +33,7 @@
                             </thead>
                             <tbody> 
                                 <tr>
-                                    <td><?php echo e($data->fullname); ?></td>
+                                    <td><?php echo e($data->fname); ?></td>
                                     <td><?php echo e($data->email); ?></td> 
                                     <td> 
                                         <a href="<?php echo e(url('/donor')); ?>/<?php echo e($data->id); ?>/edit" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>

@@ -28,7 +28,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li> 
-            <li><a href="<?php echo e(url('/admin/home')); ?>"><i class="fa fa-home"></i> <span>Home</span></a></li> 
+            <li class="active"><a href="<?php echo e(url('/admin/home')); ?>"><i class="fa fa-home"></i> <span>Home</span></a></li> 
             <li class="treeview">
                 <a href="<?php echo e(url('/admin/view')); ?>">
                     <i class="fa fa-user"></i>
@@ -159,10 +159,13 @@
                     <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
                 </ul>
             </li>
-            <li class="treeview active">
+            <li class="treeview">
                 <a href="mailbox.html">
                     <i class="fa fa-envelope"></i> <span>Mailbox</span>
                     <span class="pull-right-container">
+              <small class="label pull-left bg-yellow">12</small>
+              <small class="label pull-left bg-green">16</small>
+              <small class="label pull-left bg-red">5</small>
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
@@ -174,11 +177,23 @@
                             </span>
                         </a>
                     </li>
-                    <li><a href="<?php echo e(url('admin/mailbox/compose')); ?>">Compose</a></li>
-                    <li><a href="<?php echo e(url('admin/mailbox/read')); ?>">Read</a></li>
-                    <li><a href="<?php echo e(url('admin/mailbox/sent')); ?>">Sent</a></li>
+                    <li><a href="<?php echo e(url('admin/mailbox/compose')); ?>">Compose
+                    </a></li>
+                    <li><a href="<?php echo e(url('admin/mailbox/read')); ?>">Read
+                            <span class="pull-right-container">
+                                <span class="label label-info pull-right">3</span>
+                            </span>
+                    </a></li>
+                    <li><a href="<?php echo e(url('admin/mailbox/sent')); ?>">Sent
+                            <span class="pull-right-container">
+                                <span class="label label-success pull-right">1</span>
+                            </span>
+                    </a></li>
                 </ul>
             </li>
+
+ 
+
             <li class="treeview">
                 <a href="<?php echo e(url('/content')); ?>">
                     <i class="fa fa-tasks"></i>
