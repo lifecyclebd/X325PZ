@@ -56,7 +56,7 @@
                 <nav class="navbar">
                     <div class="container">
 
-                        <div class="navbar-header">
+                        <div class="navbar-header pull-left">
                             <a href="blood_info.html" class="navbar-brand">
                                  <img style="width:130px; height:70px;margin-top: -10px;" src="<?php echo e(asset('/')); ?>/public/frontend/images/logoo.png">
                             </a>
