@@ -35,6 +35,11 @@
     text-decoration: none;
     background: red !important;
 }
+.carousel-inner.onebyone-carosel { margin: auto; width: 90%; }
+.onebyone-carosel .active.left { left: -33.33%; }
+.onebyone-carosel .active.right { left: 33.33%; }
+.onebyone-carosel .next { left: 33.33%; }
+.onebyone-carosel .prev { left: -33.33%; }
 
 </style>
 
@@ -348,6 +353,72 @@
 
 </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class=" ">
+                <h2 class="life_title">Testimonials</h2>
+                    <div id="myCarousel" class="carousel fdi-Carousel slide">
+                     <!-- Carousel items -->
+                        <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
+                            <div class="carousel-inner onebyone-carosel">
+                                <div class="item active">
+                                    <div class="col-md-4" style="border:1px solid red">
+                                        <span style="width: 50%; float: left;">
+                                        <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
+                                        </span>
+                                        <span style="float: right; width: 50%; ">
+                                        <div class="text-left">
+                                            <h4>Abdul Al-Amin</h4>
+                                            <p>CEO</p><small>A+ blood Donor</small> 
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="col-md-4">
+                                        <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
+                                        <div class="text-center">2</div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="col-md-4">
+                                        <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
+                                        <div class="text-center">3</div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="col-md-4">
+                                        <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
+                                        <div class="text-center">4</div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="col-md-4">
+                                        <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
+                                        <div class="text-center">5</div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="col-md-4">
+                                        <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
+                                        <div class="text-center">6</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#eventCarousel" data-slide="prev"></a>
+                            <a class="right carousel-control" href="#eventCarousel" data-slide="next"></a>
+                        </div>
+                        <!--/carousel-inner-->
+                    </div><!--/myCarousel-->
+                </div><!--/well-->
+            </div>
+        </div>
+    </div>
+
+
+
+
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('script_link'); ?> 
@@ -360,6 +431,28 @@
 
 
 <script type="text/javascript">
+$(document).ready(function () {
+    $('#myCarousel').carousel({
+        interval: 10000
+    })
+    $('.fdi-Carousel .item').each(function () {
+        var next = $(this).next();
+        if (!next.length) {
+            next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+
+        if (next.next().length > 0) {
+            next.next().children(':first-child').clone().appendTo($(this));
+        }
+        else {
+            $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+        }
+    });
+});
+
+
+
 $(document).ready(function() {
     $('.navbar a.dropdown-toggle').on('click', function(e) {
         var elmnt = $(this).parent().parent();
@@ -413,6 +506,9 @@ $(document).ready(function () {
     });
 });
 </script>  
+
+
+
 <?php $__env->stopSection(); ?>
 
 
