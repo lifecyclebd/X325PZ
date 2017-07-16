@@ -18,6 +18,13 @@ class DonorController extends Controller {
         $data['donor'] = Donor::all();
         return view('donor.view')->with('data', $data);
     }
+    public function donor_profile(){
+   
+        $data['division'] = Division::all();
+        $data['donor'] = Donor::all();
+
+        return view('frontend.donor_profile');
+    }
  public function donor_login() {
         $data['division'] = Division::all();
         $data['donor'] = Donor::all();
