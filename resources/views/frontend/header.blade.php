@@ -7,11 +7,11 @@
         <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
         <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Raleway" rel="stylesheet"> 
-        <link rel="stylesheet" href="{{ asset("public/frontend/css/flexslider.css") }}">
-        <link rel="stylesheet" href="{{ asset("public/frontend/css/bootstrap.min.css") }}">
-        <link rel="stylesheet" href="{{ asset("public/frontend/css/font-awesome.min.css") }}">
-        <link rel="stylesheet" href="{{ asset("public/frontend/css/style.css") }}">
-        <link rel="stylesheet" href="{{ asset("public/frontend/css/animate.css") }}">
+        <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/flexslider.css">
+        <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/style.css">
+        <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/animate.css">
     </head>
     <body id="top" data-spy="scroll">
         <!--top header-->
@@ -57,8 +57,8 @@
                     <div class="container">
 
                         <div class="navbar-header pull-left">
-                            <a href="blood_info.html" class="navbar-brand">
-                                 <img style="width:130px; height:70px;margin-top: -10px;" src="{{asset('/')}}/public/frontend/images/logoo.png">
+                            <a href="{{url('/')}}" class="navbar-brand">
+                                 <img class="img img-responsive" style="width: 150px;height: 90px;margin-left: -20px;margin-top: 5px;" src="{{asset('/')}}/public/frontend/images/logoo.png">
                             </a>
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ftheme">
                                 <span class="sr-only">Toggle</span>
