@@ -36,7 +36,7 @@
                             </thead>
                             <tbody> 
                                 <tr>
-                                    <td>{{$data->fullname}}</td>
+                                    <td>{{$data->fname}}</td>
                                     <td>{{$data->email}}</td> 
                                     <td> 
                                         <a href="{{url('/donor')}}/{{$data->id}}/edit" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>

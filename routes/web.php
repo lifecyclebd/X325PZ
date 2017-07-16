@@ -113,6 +113,8 @@ Route::get('/test', 'TestController@index');
 
 Route::get('/donor', 'DonorController@index');
 Route::get('/donor-login', 'DonorController@donor_login');
+Route::post('/donor/login', 'DonorController@donor_login_access');
+
 
 Route::get('/donor-register', 'DonorController@donor_register');
 Route::get('/donor/create', 'DonorController@index');

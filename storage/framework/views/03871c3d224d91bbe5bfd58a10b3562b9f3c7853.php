@@ -13,6 +13,12 @@
     padding-top: 50px;
     border-radius: 10px;
     }
+    input[type="text"].search_place:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus {
+    background: none;
+    outline: none;
+    color: white;
+}
+
 </style>
 <div id="donor-register">
     <div class="container" style="height: 500px">
@@ -29,7 +35,7 @@
 
                     <div class="box-body">
                         <!-- form start -->
-                        <form class="form-horizontal login" action="<?php echo e(url('/donor/store')); ?>" method="post" enctype= "multipart/form-data"> 
+                        <form class="form-horizontal login" action="<?php echo e(url('/donor/login')); ?>" method="post" enctype= "multipart/form-data"> 
                             <?php echo csrf_field(); ?>
 
 
@@ -49,8 +55,8 @@
  
                             <div class="form-group">
                                 <div class="col-md-12 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Add Donor
+                                    <button type="submit" class="submit-btn" style="width: 150px;font-size: 15px;    height: 35px;">
+                                       Login
                                     </button>
                                 </div>
                             </div>

@@ -58,6 +58,29 @@
     #target {
         width: 345px;
     }
+    #pac-input:focus{
+        background:none;
+        color: white;
+    }
+    form.login{
+        background-color: rgba(224, 224, 224, 0.41);
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 50px;
+    border-radius: 10px;
+    }
+
+    input:focus{
+        background: none;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus {
+    background: none;
+    outline: none;
+    color: #fff;
+}
 </style>
 <div id="donor-register">
     <div class="container">
@@ -74,7 +97,7 @@
 
                     <div class="box-body">
                         <!-- form start -->
-                        <form class="form-horizontal" action="<?php echo e(url('/donor/store')); ?>" method="post" enctype= "multipart/form-data"> 
+                        <form class="form-horizontal login" action="<?php echo e(url('/donor/store')); ?>" method="post" enctype= "multipart/form-data"> 
                             <?php echo csrf_field(); ?>
 
 
@@ -169,7 +192,7 @@
                                 <label for="password" class="col-md-4 control-label">Address</label>
 
                                 <div class="col-md-6" style="height: 150px;">
-                                    <input name="address" id="pac-input" class=" form-control" type="text" placeholder="Search Box">
+                                    <input name="address" id="pac-input" class=" form-control" type="text" placeholder="Search Box" style="background: rgb(79, 0, 0);">
                                     <div id="map" style="overflow: hidden;"></div>
                                 </div>
                             </div>
@@ -267,8 +290,8 @@
 
                                 <div class="col-md-2">
                                     <select name="pro_visible" class="form-control">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
                                     </select>
 
                                 </div>

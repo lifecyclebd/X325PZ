@@ -4,6 +4,84 @@
     input{color:white;}
     select{color:white;}
     textarea{color:white;}
+
+    #map {
+        height: 100%;
+    } 
+
+    #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+    }
+
+    #infowindow-content .title {
+        font-weight: bold;
+    }
+
+    #infowindow-content {
+        display: none;
+    }
+
+    #map #infowindow-content {
+        display: inline;
+    }
+
+
+
+    #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+    }
+
+    .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+    }
+
+    .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+    }
+
+
+
+
+    #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+    }
+    #target {
+        width: 345px;
+    }
+    #pac-input:focus{
+        background:none;
+        color: white;
+    }
+    form.login{
+        background-color: rgba(224, 224, 224, 0.41);
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 50px; 
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    }
+
+    input:focus{
+        background: none;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus {
+    background: none;
+    outline: none;
+    color: #fff;
+}
 </style>
 <div id="donor-register">
     <div class="container">
@@ -20,14 +98,20 @@
 
                     <div class="box-body">
                         <!-- form start -->
-                        <form class="form-horizontal" action="<?php echo e(url('/donor/store')); ?>" method="post" enctype= "multipart/form-data"> 
+                        <form class="form-horizontal login" action="<?php echo e(url('/donor/store')); ?>" method="post" enctype= "multipart/form-data"> 
                             <?php echo csrf_field(); ?>
 
 
                             <div class="form-group">
-                                <label for="name" class="col-md-4 control-label">Full Name</label>
+                                <label for="name" class="col-md-4 control-label">First Name</label>
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="fullname" placeholder="Full Name"  autofocus>
+                                    <input id="name" type="text" class="form-control" name="fname" placeholder="First Name"  autofocus>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="col-md-4 control-label">Last Name</label>
+                                <div class="col-md-6">
+                                    <input id="name" type="text" class="form-control" name="lname" placeholder="Last Name"  autofocus>
                                 </div>
                             </div>
 
@@ -58,11 +142,11 @@
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Date of Birth</label>
                                 <div class="col-md-2">
-                                    <input id="name" type="date" class="form-control" name="date_of_birth"  autofocus>
+                                    <input id="name" type="date" class="form-control" name="birth_date"  autofocus>
                                 </div> 
                                 <label for="name" class="col-md-2 control-label">Last Donate</label>
                                 <div class="col-md-2">
-                                    <input id="name" type="date" class="form-control" name="last_donate_date"  autofocus>
+                                    <input id="name" type="date" class="form-control" name="last_donation"  autofocus>
                                 </div>
                             </div>
 
@@ -92,10 +176,10 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">Upazilla</label>
+                                <label for="email" class="col-md-4 control-label">Thana</label>
 
                                 <div class="col-md-2">
-                                    <select name="upazila" id="upazillas" class="form-control"> 
+                                    <select name="thana" id="upazillas" class="form-control"> 
                                     </select>
 
                                 </div>
@@ -106,10 +190,10 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="password" class="col-md-4 control-label">Location</label>
+                                <label for="password" class="col-md-4 control-label">Address</label>
 
                                 <div class="col-md-6" style="height: 150px;">
-                                    <input name="location" id="pac-input" class=" form-control" type="text" placeholder="Search Box">
+                                    <input name="address" id="pac-input" class=" form-control" type="text" placeholder="Search Box" style="background: rgb(79, 0, 0);">
                                     <div id="map" style="overflow: hidden;"></div>
                                 </div>
                             </div>
@@ -133,7 +217,20 @@
                                 <label for="email" class="col-md-2 control-label">Profile Photo</label>
 
                                 <div class="col-md-2">
-                                    <input type="file" class="form-control"  name="profile_photo" />
+                                    <input type="file" class="form-control"  name="pic_path" />
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-md-4 control-label">FB Url</label>
+
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control"  name="fb_url" />
+                                </div> 
+                                <label for="email" class="col-md-2 control-label">Web url</label>
+
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control"  name="web_url" />
 
                                 </div>
                             </div>
@@ -194,8 +291,8 @@
 
                                 <div class="col-md-2">
                                     <select name="pro_visible" class="form-control">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
                                     </select>
 
                                 </div>
@@ -244,7 +341,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Number of Donate</label>
                                 <div class="col-md-6">
-                                    <input type="number" class="form-control"  name="number_of_donate" />
+                                    <input type="number" class="form-control"  name="donations_number" />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -343,4 +440,4 @@
 
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts/front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

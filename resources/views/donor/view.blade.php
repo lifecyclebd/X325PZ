@@ -29,6 +29,7 @@
                                 <tr>
                                     <th>Donor ID</th>
                                     <th>Donor Name</th>
+                                    <th>Email</th>
                                     <th>Donor Gender</th>
                                     <th>Last Donate</th>
                                     <th>Phone</th>
@@ -43,7 +44,8 @@
                                 @foreach($data['donor'] as $row)
                                 <tr>
                                     <td>{{$row->id}}</td>
-                                    <td>{{$row->fullname}}</td>
+                                    <td>{{$row->fname}} {{$row->lname}}</td>
+                                    <td>{{$row->email}}</td>
                                     <td>{{$row->gender}}</td> 
                                     <td>{{$row->last_donate_date}}</td> 
                                     <td>{{$row->phone}}</td> 
