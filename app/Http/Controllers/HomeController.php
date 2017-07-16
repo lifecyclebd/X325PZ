@@ -9,10 +9,12 @@ use App\Gallery;
 use App\Gallery_detail;
 use DB;
 use App\Division;
+use App\More_about_blood;
 use App\District;
 use App\Upazila;
 use App\Message;
 use App\Activity;
+use App\Hospital;
 use App\BloodRequest;
 use App\Blog;
 use App\Libraries\Common;
@@ -47,7 +49,13 @@ class HomeController extends Controller {
                 ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id') 
                 ->where('galleries.page_name', 'slider')
                 ->get();
-
+        
+        //$data['donor_24'] = More_about_blood::all();
+        $data['donor_24'] = More_about_blood:: where('slug', 'donor_24')->first();
+        $data['platelet'] = More_about_blood:: where('slug', 'platelets')->first();
+        $data['type'] = More_about_blood:: where('slug', 'blood_type')->first();
+        $data['journey'] = More_about_blood:: where('slug', 'journey')->first();
+//dd($data['donor_24']);
         return view('frontend.home')->with('data', $data);
     }
 
@@ -143,7 +151,7 @@ class HomeController extends Controller {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
         
-        $data['hospital_list'] = \App\Hospital::all();
+        $data['hospital_list'] = Hospital::all();
         return view('frontend.search_hospital')->with('data', $data);
     }
 
