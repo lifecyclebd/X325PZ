@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
         <title>Life Cycle | <?php echo $__env->yieldContent('title'); ?></title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -12,7 +13,20 @@
         <link rel="stylesheet" href="<?php echo e(asset('/')); ?>public/frontend/css/font-awesome.min.css">         
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Raleway" rel="stylesheet"> 
 
+<style type="text/css">
+   input[type="text"].login:focus, input[type="password"].login:focus, input[type="email"].login:focus, textarea.login:focus {
+    background: none;
+    outline: none;
+    color: #333;
+}
 
+button.login {
+    border-radius: 5px;
+    background-color: #393939;
+    color: white;
+    height: 34px;
+}
+</style>
     </head>
     <body id="top" data-spy="scroll">
         <!--top header-->
@@ -24,8 +38,8 @@
                         <div class="col-md-6">
                             <div class="top-left" style="padding: 10px;">
                                 <ul> 
-                                    <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Contract us</a></li>
-                                    <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span class="phone"> 123456</span></a></li>
+                                    <li><i class="fa fa-envelope" aria-hidden="true"> </i> info@lifecyclebd.org </li>
+                                    <li><i class="fa fa-phone" aria-hidden="true"></i><span class="phone"> +880 1711 111 222</span></li>
                                     <li><a href="<?php echo e(url('https://www.facebook.com/')); ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                     <li><a href="<?php echo e(url('https://twitter.com/')); ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                     <li><a href="<?php echo e(url('https://www.linkedin.com/')); ?>" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
@@ -38,10 +52,10 @@
                             <div class="top-right">
                                 <form action="" method="post" class="navbar-form navbar-right">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Username">
-                                        <input type="Password" class="form-control" placeholder="Password">
+                                        <input type="text" class="form-control login" placeholder="Username">
+                                        <input type="Password" class="form-control login" placeholder="Password">
                                     </div>
-                                    <button type="submit" class="btn btn-default">Login</button>
+                                    <button type="submit" class="btn btn-default login">Login</button>
                                 </form>
                             </div>
                         </div>
