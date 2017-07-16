@@ -3,7 +3,39 @@
 <?php $__env->startSection('parentName', 'Home'); ?>
 <?php $__env->startSection('content'); ?>
 
-<link rel="stylesheet" href="<?php echo e(asset("public/frontend/css/half-slider.css")); ?>">
+<style type="text/css">
+  
+    .search_button{
+        border-radius: 0px;
+        height: 43px;
+        background-color: #8f0002;
+        font-weight: 700;
+        border: 1px solid #8f0002;
+    }
+
+    .search_button:hover{
+        background: #ee1b2e;
+        color: white;
+        border: 1px solid #ee1b2e;
+    }
+    .map_marker{
+        color: #8f0002;
+        font-size: 30px;
+    }
+    .signup_button{
+        width: 100%;
+        padding: 10px;
+        margin: 10px;
+        height: 43px;
+        background: #db3328;
+    }
+  
+.signup_button.focus, .signup_button:focus, .signup_button:hover {
+    color: #fff !important;
+    text-decoration: none;
+    background: red !important;
+}
+</style>
 
 <!-- Half Page Image Background Carousel Header -->
 <header id="imgSlider" class="carousel slide">
@@ -44,16 +76,22 @@
     <div class="clearfix"></div>
 
     <div class="row" style="min-height: 100px; background-color: #8f0002; padding: 10px; margin: 0 auto;">
-        <div class="col-md-offset-2 col-md-8">
+        <div class="col-md-8">
             <form class="form-horizontak" method="" action="" style="margin: 10px;">
                 <div class="input-group">
-                    <span class="input-group-addon" style="padding: 0px 30px; font-size: 25px;"><i class="fa fa-map-marker"></i></span>
-                    <input type="text" style="height: 45px;    background: white;    font-size: 20px;" class="form-control" aria-label="Search Donor" placeholder="Search Donor Location">
+                    <span class="input-group-addon" style="padding: 0px 30px; font-size: 25px;"><i class="fa fa-map-marker map_marker"></i></span>
+                    
+                    <input type="text" style="height: 45px;    background: white;    font-size: 20px;" class="form-control" aria-label="Search Donor" placeholder="Search Donor Location" id="pac-input">
+                       <div id="map" style="overflow: hidden;"></div>
                     <span class="input-group-addon" style="padding: 0px 0px; font-size: 25px;">
-                        <button class="btn  btn-serach" style="border-radius: 0px;  height: 40px;  background-color: #ff0000;"> <i class="fa fa-search"></i> </button>
+
+                        <button class="btn  btn-serach search_button" > SEARCH </i> </button>
                     </span>
                 </div>
             </form>
+        </div>
+        <div class="col-md-4">
+             <button class="btn  btn-serach signup_button" > SIGN UP </i> </button>
         </div>
     </div>
     
@@ -62,10 +100,12 @@
 
 <div class="More_about_info">
     <div class="container"> 
-         <h3 class="life_title ">More about blood</h3>  
-        <div class="col-md-3">
-            <div class="info_abou_blood slideInDown">
-                <span class="back_icon1 pull-center" style="height: 200px">  </span>
+        <h3 class="life_title " style="margin-bottom:50px">More about blood</h3>  
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info_abou_blood slideInDown" style="min-height:350px">
+                <div class="position_info">
+                <span class="back_icon1 pull-center">  </span>
+                </div>
                 <?php //dd($data['donor_24']); ?>
                 <p class="title"><?php echo e($data['donor_24']->title); ?></p>
                 <p class="text-justify" style="padding:30px">
@@ -77,8 +117,8 @@
                 </div>
             </div> 
         </div>
-        <div class="col-md-3">
-            <div class="info_abou_blood slideInDown">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info_abou_blood slideInDown" style="min-height:350px">
                 <span class="back_icon2 pull-center" style="height: 200px">  </span>
                 <p class="title"><?php echo e($data['platelet']->title); ?></p>
                 <p class="text-justify" style="padding:30px">
@@ -90,8 +130,8 @@
                 </div>
             </div> 
         </div>
-        <div class="col-md-3">
-            <div class="info_abou_blood slideInDown">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info_abou_blood slideInDown" style="min-height:350px">
                 <span class="back_icon3 pull-center" style="height: 200px">  </span>
                 <p class="title"><?php echo e($data['type']->title); ?></p>
                 <p class="text-justify" style="padding:30px">
@@ -103,8 +143,8 @@
                 </div>
             </div> 
         </div>
-        <div class="col-md-3">
-            <div class="info_abou_blood slideInDown">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info_abou_blood slideInDown" style="min-height:350px">
                 <span class="back_icon4 pull-center" style="height: 200px">  </span>
                 <p class="title"><?php echo e($data['journey']->title); ?></p>
                 <p class="text-justify" style="padding:30px">
@@ -123,7 +163,7 @@
 
 <div class="get_well_soon">        
     <div class="container"> 
-        <h3 class="life_title ">Get Well Soon</h3> 
+        <h3 class="life_title " style="margin-bottom:30px">Get Well Soon</h3> 
         <div class="col-md-3">
             <div class="get_well_soon_sec">
                 <br>
@@ -317,14 +357,6 @@
 <?php $__env->startSection('script_link'); ?> 
 
 
-<script src="<?php echo e(asset('/')); ?>public/frontend/js/jquery.min.js"></script>
-<script src="<?php echo e(asset('/')); ?>public/frontend/js/bootstrap.min.js"></script>
-<script src="<?php echo e(asset('/')); ?>public/frontend/js/jquery.flexslider.js"></script>
-<script src="<?php echo e(asset('/')); ?>public/frontend/js/jquery.inview.js"></script>  
-<script src="<?php echo e(asset('/')); ?>public/frontend/js/jquery-3.2.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="<?php echo e(asset('/')); ?>public/frontend/js/jquery-3.2.1.min.js"></script>   
-
 
 <?php $__env->stopSection(); ?>
 
@@ -384,8 +416,7 @@ $(document).ready(function () {
         interval: 5000
     });
 });
-</script>
-
+</script>  
 <?php $__env->stopSection(); ?>
 
 

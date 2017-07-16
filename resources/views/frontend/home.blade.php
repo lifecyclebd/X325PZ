@@ -101,10 +101,12 @@
 
 <div class="More_about_info">
     <div class="container"> 
-         <h3 class="life_title ">More about blood</h3>  
-        <div class="col-md-3">
-            <div class="info_abou_blood slideInDown">
-                <span class="back_icon1 pull-center" style="height: 200px">  </span>
+        <h3 class="life_title " style="margin-bottom:50px">More about blood</h3>  
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info_abou_blood slideInDown" style="min-height:350px">
+                <div class="position_info">
+                <span class="back_icon1 pull-center">  </span>
+                </div>
                 <?php //dd($data['donor_24']); ?>
                 <p class="title">{{$data['donor_24']->title}}</p>
                 <p class="text-justify" style="padding:30px">
@@ -115,8 +117,8 @@
                 </div>
             </div> 
         </div>
-        <div class="col-md-3">
-            <div class="info_abou_blood slideInDown">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info_abou_blood slideInDown" style="min-height:350px">
                 <span class="back_icon2 pull-center" style="height: 200px">  </span>
                 <p class="title">{{$data['platelet']->title}}</p>
                 <p class="text-justify" style="padding:30px">
@@ -127,8 +129,8 @@
                 </div>
             </div> 
         </div>
-        <div class="col-md-3">
-            <div class="info_abou_blood slideInDown">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info_abou_blood slideInDown" style="min-height:350px">
                 <span class="back_icon3 pull-center" style="height: 200px">  </span>
                 <p class="title">{{$data['type']->title}}</p>
                 <p class="text-justify" style="padding:30px">
@@ -139,8 +141,8 @@
                 </div>
             </div> 
         </div>
-        <div class="col-md-3">
-            <div class="info_abou_blood slideInDown">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info_abou_blood slideInDown" style="min-height:350px">
                 <span class="back_icon4 pull-center" style="height: 200px">  </span>
                 <p class="title">{{$data['journey']->title}}</p>
                 <p class="text-justify" style="padding:30px">
@@ -158,7 +160,7 @@
 
 <div class="get_well_soon">        
     <div class="container"> 
-        <h3 class="life_title ">Get Well Soon</h3> 
+        <h3 class="life_title " style="margin-bottom:30px">Get Well Soon</h3> 
         <div class="col-md-3">
             <div class="get_well_soon_sec">
                 <br>

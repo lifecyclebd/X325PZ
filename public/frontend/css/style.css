@@ -267,34 +267,42 @@ border-radius: 5px;    background-color: #4d4d4d !important;    color: white;
 .onebyone-carosel .active.right { left: 33.33%; }
 .onebyone-carosel .next { left: 33.33%; }
 .onebyone-carosel .prev { left: -33.33%; }
-.back_icon1{
-    background: url(../images/icon1.png) center center no-repeat;
-    padding: 40px;
-    background-size: 40px 40px;
-    /* margin: 0 auto; */
+.back_icon1{ 
+     background: url(../images/icon1.png) center center no-repeat;
+    background-size: 60px 60px; 
     text-align: center;
-    margin: 40%;
+    margin: 0 auto;
+    padding-top: 55px;
+    padding-bottom: 15px;
+    padding-right: 0px;
+    padding-left: 240px;
 }.back_icon2{
     background: url(../images/icon2.png) center center no-repeat;
-    padding: 40px;
-    background-size: 40px 40px;
-    /* margin: 0 auto; */
+    background-size: 60px 60px; 
     text-align: center;
-    margin: 40%;
+    margin: 0 auto;
+    padding-top: 55px;
+    padding-bottom: 15px;
+    padding-right: 0px;
+    padding-left: 240px;
 }.back_icon3{
     background: url(../images/icon3.png) center center no-repeat;
-    padding: 40px;
-    background-size: 40px 40px;
-    /* margin: 0 auto; */
+    background-size: 60px 60px; 
     text-align: center;
-    margin: 40%;
+    margin: 0 auto;
+    padding-top: 55px;
+    padding-bottom: 15px;
+    padding-right: 0px;
+    padding-left: 240px;
 }.back_icon4{
     background: url(../images/icon4.png) center center no-repeat;
-    padding: 40px;
-    background-size: 40px 40px;
-    /* margin: 0 auto; */
+    background-size: 60px 60px; 
     text-align: center;
-    margin: 40%;
+    margin: 0 auto;
+    padding-top: 55px;
+    padding-bottom: 15px;
+    padding-right: 0px;
+    padding-left: 240px;
 }.back_icon5{
     background: url(../images/icon5.png) center center no-repeat;
     padding: 60px;
@@ -779,7 +787,7 @@ display: block;
     border-bottom: 1px solid #444343;
     border-right: 1px solid black !important;
     }
-    .dropdown-menu>li>a: {
+    .dropdown-menu>li>a {
         color: red !important;
     }
 
