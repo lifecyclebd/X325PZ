@@ -5,6 +5,7 @@ Route::get('/admin/testimonial', 'AdminController@view_testimonial');
 Route::get('/admin/testimonial/add', 'AdminController@create_testimonial');
 Route::any('/admin/testimonial/store', 'AdminController@store_testimonial');
 
+Route::get('/donor_profile', 'DonorController@donor_profile');
 Route::post('/donor/search', 'DonorController@search');
 Route::get('donor/viewprofile/{id}', 'DonorController@viewprofile');
 Route::get('/Blogs', 'BlogController@view');
