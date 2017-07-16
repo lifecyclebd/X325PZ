@@ -70,10 +70,10 @@
                     </div><br><br>
                     <h4>Follow Us</h4>
                     <div class="footer_bottom_fa"> 
-                        <i style="padding: 5px;" class="fa fa-facebook" aria-hidden="true"></i> 
-                        <i style="padding: 5px;"  class="fa fa-google-plus" aria-hidden="true"></i> 
-                        <i style="padding: 5px;"  class="fa fa-youtube" aria-hidden="true"></i> 
-                        <i style="padding: 5px;"  class="fa fa-twitter" aria-hidden="true"></i> 
+                        <a href="{{url('https://www.facebook.com/')}}" target="_blank"><i style="padding: 5px;" class="fa fa-facebook" aria-hidden="true"></i> </a>
+                        <a href="{{url('https://plus.google.com/')}}" target="_blank"><i style="padding: 5px;"  class="fa fa-google-plus" aria-hidden="true"></i> 
+                        <a href="{{url('https://www.youtube.com/')}}" target="_blank"><i style="padding: 5px;"  class="fa fa-youtube" aria-hidden="true"></i> 
+                        <a href="{{url('https://twitter.com/')}}" target="_blank"><i style="padding: 5px;"  class="fa fa-twitter" aria-hidden="true"></i> 
 
                     </div>
                 </div>

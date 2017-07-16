@@ -40,10 +40,18 @@ class BlogController extends Controller {
         return view('blog.create_blog')->with('data', $data);
     }
     public function save_blog(Request $request) {
-        $data = new Blog_Category();
-        $data->category_name = $request->category_name;
+        $data = new Blog;
+        $common = new Common;
+        $data->blog_category_id = $request->blog_category_id;
+        $data->title = $request->title;
+        $data->description = $request->description;
         $data->save();
-        return redirect('/blog/category');
+        
+        $fileName='asdf';
+        $profile_photo = $common->uploadImage('photo', 'public/frontend/images/news', $fileName);
+        $data->photo = $profile_photo;
+        $data->save();
+        return redirect('/blog/content');
     }
     public function edit_blog_category($id){
         $data['blog_category'] = Blog_Category::find($id);

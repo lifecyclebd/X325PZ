@@ -25,11 +25,11 @@
                                 <ul> 
                                     <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Contract us</a></li>
                                     <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span class="phone"> 123456</span></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="{{url('https://www.facebook.com/')}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="{{url('https://twitter.com/')}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="{{url('https://www.linkedin.com/')}}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="{{url('https://vk.com/')}}" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
+                                    <li><a href="{{url('https://www.instagram.com/')}}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
                         </div>

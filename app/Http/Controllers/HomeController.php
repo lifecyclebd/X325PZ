@@ -14,6 +14,7 @@ use App\Upazila;
 use App\Message;
 use App\Activity;
 use App\BloodRequest;
+use App\Blog;
 use App\Libraries\Common;
 
 class HomeController extends Controller {
@@ -51,9 +52,9 @@ class HomeController extends Controller {
     }
 
     public function blood_news() {
-        //$divisions = DB::table("divisions")->lists("name", "id");
-        //return view('search.im', compact('divisions'));
-        return view('frontend.blood_news');
+        //$data['blood_news'] = Blog::all();
+        $data['blood_news'] = Blog:: where('blog_category_id', 2)->orderByDesc('id')->get();
+        return view('frontend.blood_news')->with('data', $data);
     }
 
     public function blood_info() {
