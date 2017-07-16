@@ -35,6 +35,7 @@
     text-decoration: none;
     background: red !important;
 }
+
 </style>
 
 <!-- Half Page Image Background Carousel Header -->
