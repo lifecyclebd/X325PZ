@@ -41,7 +41,26 @@
 .onebyone-carosel .active.right { left: 33.33%; }
 .onebyone-carosel .next { left: 33.33%; }
 .onebyone-carosel .prev { left: -33.33%; }
+.recent_donor{
+    width: 335px; 
+    height: 152px;
+    border: 2px solid red;
+}
 
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    height: 148px;
+    }
+    .carousel-control.left,  .carousel-control.right{
+        background: none;
+    }
+    .carousel-inner.onebyone-carosel {
+    margin: auto;
+    width: 100%;
+}
+.blood_stock{ 
+    background: #eee;
+    padding:20px; 
+}
 </style>
 
 <!-- Half Page Image Background Carousel Header -->
@@ -349,59 +368,107 @@
     </div> 
 
 </div>
-
+<div class="blood_stock" style="  margin: 30px 0px">
     <div class="container">
         <div class="row">
+            <h2 class="life_title" style="margin-bottom: 20px; margin-top: 30px">blood stock</h2>
+                <p class="text-center">Current blood stock in bangladesh</p>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                    40% Complete (success)
+                  </div><div class="pull-right  progress-bar-success progress-bar-striped" style="width:25px"> A+ </div>
+                </div>
+
+                <div class="progress">
+                  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                    50% Complete (info)
+                  </div><div class="pull-right  progress-bar-info progress-bar-striped" style="width:25px"> B+ </div>
+                </div>
+
+                <div class="progress">
+                  <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
+                  aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+                    60% Complete (warning)
+                  </div><div class="pull-right  progress-bar-warning progress-bar-striped" style="width:25px"> AB+ </div>
+                </div>
+
+                <div class="progress">
+                  <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"
+                  aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                    70% Complete (danger)
+                  </div><div class="pull-right  progress-bar-danger progress-bar-striped" style="width:25px"> A- </div>
+                </div>
+
+                <div class="progress">
+                  <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
+                  aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                    70% Complete (danger)
+                  </div><div class="pull-right  progress-bar-warning progress-bar-striped" style="width:25px"> AB- </div>
+                </div>
+
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        <div class="row" style="margin-bottom: 20px;">
             <div class="span12">
                 <div class=" ">
-                <h2 class="life_title">Testimonials</h2>
+                <h2 class="life_title" style="margin-bottom: 20px;">Recent Donor</h2>
                     <div id="myCarousel" class="carousel fdi-Carousel slide">
                      <!-- Carousel items -->
                         <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
                             <div class="carousel-inner onebyone-carosel">
                                 <div class="item active">
-                                    <div class="col-md-4" style="border:1px solid red">
-                                        <span style="width: 50%; float: left;">
-                                        <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
-                                        </span>
-                                        <span style="float: right; width: 50%; ">
-                                        <div class="text-left">
-                                            <h4>Abdul Al-Amin</h4>
-                                            <p>CEO</p><small>A+ blood Donor</small> 
+                                    <div class="col-md-4" style="">
+                                        <div class="recent_donor">
+                                            <span style="width: 40%; float: left;">
+                                            <a href="#"><img src="{{url('/')}}/public/images/jaman.jpg" class="img-responsive center-block img-thumbnail"></a>
+                                            </span>
+                                            <span style="float: right; width: 60%; padding-left: 10px;">
+                                            <div class="text-left">
+                                                <h4>Abdul Al-Amin</h4>
+                                                <p>CEO</p><small>A+ blood Donor</small> 
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>  
+                                <div class="item ">
+                                    <div class="col-md-4">
+                                        <div class="recent_donor">
+                                            <span style="width: 40%; float: left;">
+                                            <a href="#"><img src="{{url('/')}}/public/images/jaman.jpg" class="img-responsive center-block img-thumbnail"></a>
+                                            </span>
+                                            <span style="float: right; width: 60%;padding-left: 10px; ">
+                                            <div class="text-left">
+                                                <h4>Abdul Al-Amin</h4>
+                                                <p>CEO</p><small>A+ blood Donor</small> 
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div> 
+
+                                <div class="item ">
+                                    <div class="col-md-4">
+                                        <div class="recent_donor">
+                                            <span style="width: 40%; float: left;">
+                                            <a href="#"><img src="{{url('/')}}/public/images/jaman.jpg" class="img-responsive center-block img-thumbnail"></a>
+                                            </span>
+                                            <span style="float: right; width: 60%;padding-left: 10px; ">
+                                            <div class="text-left">
+                                                <h4>Abdul Al-Amin</h4>
+                                                <p>CEO</p><small>A+ blood Donor</small> 
                                             </div>
-                                        </span>
+                                            </span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-md-4">
-                                        <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
-                                        <div class="text-center">2</div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-md-4">
-                                        <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
-                                        <div class="text-center">3</div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-md-4">
-                                        <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
-                                        <div class="text-center">4</div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-md-4">
-                                        <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
-                                        <div class="text-center">5</div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-md-4">
-                                        <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
-                                        <div class="text-center">6</div>
-                                    </div>
-                                </div>
+                                </div> 
+
+
                             </div>
                             <a class="left carousel-control" href="#eventCarousel" data-slide="prev"></a>
                             <a class="right carousel-control" href="#eventCarousel" data-slide="next"></a>
