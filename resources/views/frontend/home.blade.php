@@ -166,11 +166,11 @@
             <div class="get_well_soon_sec">
                 <br>
                 <span class="back_icon5 pull-center" style="margin-top: 100px">  </span>
-                <p class="text-white">Blood Donor 24</p>
+                <p class="text-white">Connect With Doctor</p>
                 <div class="get_well_soon_div">
                     A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
                     <div class="text-center">
-                        <button class="btn_read_more2">Find out more</button>
+                        <a href="{{url('/write-to-doctor')}}"><button class="btn_read_more2">Find out more</button></a>
                     </div>
                 </div>
 
@@ -180,11 +180,11 @@
             <div class="get_well_soon_sec">
                 <br>
                 <span class="back_icon6 pull-center" style="height: 200px">  </span>
-                <p class="text-white">Blood Donor 24</p>
+                <p class="text-white">Find Hospital</p>
                 <div class="get_well_soon_div">
                     A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
                     <div class="text-center">
-                        <button class="btn_read_more2">Find out more</button>
+                        <a href="{{url('/view-hospital')}}"><button class="btn_read_more2">Find out more</button></a>
                     </div>
                 </div>
 
@@ -194,7 +194,7 @@
             <div class="get_well_soon_sec">
                 <br>
                 <span class="back_icon7 pull-center" style="height: 200px">  </span>
-                <p class="text-white">Blood Donor 24</p>
+                <p class="text-white">Hire Ambulance</p>
                 <div class="get_well_soon_div">
                     A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
                     <div class="text-center">
@@ -208,11 +208,11 @@
             <div class="get_well_soon_sec">
                 <br>
                 <span class="back_icon8 pull-center" style="height: 200px">  </span>
-                <p class="text-white">Blood Donor 24</p>
+                <p class="text-white">Blog</p>
                 <div class="get_well_soon_div">
                     A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
                     <div class="text-center">
-                        <button class="btn_read_more2">Find out more</button>
+                        <a href="{{url('/blog')}}"><button class="btn_read_more2">Find out more</button></a>
                     </div>
                 </div>
 
@@ -230,24 +230,23 @@
             <p class="text-justify ">
                 A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
             </p>
-            <div class="pull-center">
-            <form method="post" action="{{url('/')}}/join-volenter">
-                <button class="join_now hidden-xs">Join Now</button>
-            </form>
+            <div class="pull-center"> 
+                <button class="join_now hidden-xs"   data-toggle="modal" data-target="#joinVolentier">Join Now</button>
+      
             </div>
 
         </div>               
     </div>
     <div class="col-md-6 make_donation">
         <div class="col-md-offset-2 col-md-8">
-            <h2>Make a volenter </h2>
+            <h2>Make a Donation </h2>
             <p class="text-justify" style="color:white;">
                 A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
             </p>
             <div class="pull-center">
-            <form method="post" action="{{url('/')}}/join-volenter">
-                <button class="donate_now hidden-xs">Donate Now</button>
-            </form>
+            
+                <button class="donate_now hidden-xs" data-target="#makeDonation" data-toggle="modal">Donate Now</button>
+           
             </div>    
         </div>
 
@@ -344,7 +343,129 @@
     </div> 
 
 </div>
+<!-- Modal -->
+<div class="modal fade" id="joinVolentier" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Join as Volentier</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          
+        </button>
+      </div>
+        <div class="modal-body"> 
+          <form class="form-horizontal" action="" method="post">
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Name</label>
+                  <div class="col-sm-10">
+                  <input type="text" class="form-control" name="name" >
+                  </div>
+              </div>
+              
+              
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Email</label>
+                  <div class="col-sm-10">
+                  <input type="email" class="form-control" name="name" >
+                  </div>
+              </div>
+              
+              
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Message</label>
+                  <div class="col-sm-10">
+                      <textarea class="form-control" name="message"></textarea>
+                  </div>
+              </div>
+              
+              
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Age</label>
+                  <div class="col-sm-10">
+                  <input type="text" class="form-control" name="name" >
+                  </div>
+              </div>
+              
+              
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Contribution</label>
+                  <div class="col-sm-10">
+                      <textarea class="form-control" name="Contribution"></textarea>
+                  </div>
+              </div>
+              
+              
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+<div class="modal fade" id="makeDonation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Make a donation</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          
+        </button>
+      </div>
+        <div class="modal-body"> 
+          <form class="form-horizontal" action="" method="post">
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Name</label>
+                  <div class="col-sm-10">
+                  <input type="text" class="form-control" name="name" >
+                  </div>
+              </div>
+              
+              
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Email</label>
+                  <div class="col-sm-10">
+                  <input type="email" class="form-control" name="name" >
+                  </div>
+              </div>
+              
+              
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Message</label>
+                  <div class="col-sm-10">
+                      <textarea class="form-control" name="message"></textarea>
+                  </div>
+              </div>
+              
+              
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Age</label>
+                  <div class="col-sm-10">
+                  <input type="text" class="form-control" name="name" >
+                  </div>
+              </div>
+              
+              
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Contribution</label>
+                  <div class="col-sm-10">
+                      <textarea class="form-control" name="Contribution"></textarea>
+                  </div>
+              </div>
+              
+              
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
 
 @section('script_link') 

@@ -67,6 +67,7 @@ Route::get('/view-hospital', 'HomeController@view_hospital');
 Route::any('/search-hospital', 'HomeController@search_hospital');
 Route::get('/view-ambulance', 'HomeController@view_ambulance');
 Route::get('/blog', 'HomeController@blog_page');
+Route::get('/blog-detail', 'HomeController@blog_detail');
 Route::get('/recent-event', 'HomeController@recent_event');
 Route::get('/upcoming-event', 'HomeController@upcoming_event');
 Route::get('/volunteer', 'HomeController@volunteer');

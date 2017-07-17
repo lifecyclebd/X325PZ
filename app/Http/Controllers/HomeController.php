@@ -173,7 +173,14 @@ class HomeController extends Controller {
     public function blog_page() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('frontend.view_blog');
+        $data['blood_news'] = Blog:: where('blog_category_id', 2)->orderByDesc('id')->get();
+        return view('frontend.view_blog')->with('data', $data);
+    }
+    public function blog_detail($id) {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        $data['blog_detail'] = Blog::find($id);
+        return view('frontend.view_blog_detail')->with('data', $data);
     }
 
     public function recent_event() {
