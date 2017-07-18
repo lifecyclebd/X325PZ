@@ -37,6 +37,7 @@ class HomeController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() { 
+        $common = new Common;
         $data['gallery_category'] = Gallery::all();
         $data['gallery'] = Gallery_detail::all();
 
@@ -67,7 +68,9 @@ class HomeController extends Controller {
         $data['journey'] = More_about_blood:: where('slug', 'journey')->first();
         $data['upcoming_event'] = Content:: where('content_type', 'upcoming_events')->get();
         
-        $data['footer'] = System_setting::first();
+        $data['footer'] =$common->get_footer('system_settings','id',1);
+        //dd($data['footer']);
+        //$data['footer'] = System_setting::first();
         
 //dd($data['donor_24']);
         return view('frontend.home')->with('data', $data);

@@ -123,6 +123,11 @@ class Common {
         }
         echo $html;
     }
+    public function  get_footer($table_name, $column_name, $check_value)
+    {
+        $sql_result=DB::table($table_name)->select('*')->where($column_name,$check_value)->first();
+        return $sql_result;
+    }
 
     public function getSections($classid, $current_section = NULL) {
 
