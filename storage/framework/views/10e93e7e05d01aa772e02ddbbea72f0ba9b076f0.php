@@ -63,27 +63,12 @@
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </div>
-                    <!-- /.col-lg-6 -->
-                    
-                    <!-- /.col-lg-6 -->
                 </div>
-                <!-- /.row -->
             </div>
-
-            <!-- Side Widget Well -->
-            <div class="well">
-                <h4>Side Widget Well</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
-            </div>
-
         </div>
 
     </div>
-    <!-- /.row -->
-
     <hr>
-
-    <!-- Footer -->
     <footer>
         <div class="row">
             <div class="col-lg-12">

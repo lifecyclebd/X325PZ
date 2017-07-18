@@ -17,6 +17,7 @@ use App\Activity;
 use App\Hospital;
 use App\BloodRequest;
 use App\Blog;
+use App\System_setting;
 use App\Libraries\Common;
 
 class HomeController extends Controller {
@@ -58,12 +59,16 @@ class HomeController extends Controller {
                 ->orderBy('gallery_details.id', 'desc')
                 ->get();
 
-        
+        $data['recent_donor'] = Donor:: where('is_available', 1)->orderByDesc('last_donation')->get();
         //$data['donor_24'] = More_about_blood::all();
         $data['donor_24'] = More_about_blood:: where('slug', 'donor_24')->first();
         $data['platelet'] = More_about_blood:: where('slug', 'platelets')->first();
         $data['type'] = More_about_blood:: where('slug', 'blood_type')->first();
         $data['journey'] = More_about_blood:: where('slug', 'journey')->first();
+        $data['upcoming_event'] = Content:: where('content_type', 'upcoming_events')->get();
+        
+        $data['footer'] = System_setting::first();
+        
 //dd($data['donor_24']);
         return view('frontend.home')->with('data', $data);
     }
@@ -74,6 +79,12 @@ class HomeController extends Controller {
         return view('frontend.blood_news')->with('data', $data);
     }
 
+    public function read_more($id) {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        $data['read_more_detail']= More_about_blood::find($id);
+        return view('frontend.read_more')->with('data', $data);
+    }
     public function blood_info() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
