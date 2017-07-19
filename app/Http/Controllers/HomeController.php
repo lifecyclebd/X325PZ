@@ -29,6 +29,7 @@ class HomeController extends Controller {
      */
     public function __construct() {
         //  $this->middleware('auth');
+        $_SESSION['donor_login']="Nazmus Sakib";
     }
 
     /**
@@ -117,7 +118,7 @@ class HomeController extends Controller {
         $msg->sender_type='donor';
         $msg->receiver_id=303;
         $msg->receiver_type='admin';
-        $msg->message='Need '.$request->request_blood_group.'Blood '.$request->number_blood_bag.' for '.$request->patient_name;
+        $msg->message='Need '.$request->request_blood_group.'Blood '.$request->number_blood_bag.' in '.$request->patient_hospital.'at'.$request->opration_time;
         $msg->created_by='Sakib';
         $msg->updated_by='Rashed';
         $msg->save();
@@ -127,7 +128,7 @@ class HomeController extends Controller {
         $actv->receiver_id=303;
         $actv->receiver_type='admin';
         $actv->purpose='dont know';
-        $actv->short_message='Need '.$request->request_blood_group.'Blood '.$request->number_blood_bag.' for '.$request->patient_name;;
+        $actv->short_message='Need '.$request->request_blood_group.'Blood '.$request->number_blood_bag.' in '.$request->patient_hospital.'at'.$request->opration_time;
         $actv->is_read=1;
         $actv->is_reply=0;
         $actv->parent_id=6;
@@ -203,16 +204,30 @@ class HomeController extends Controller {
         return view('frontend.view_blog_detail')->with('data', $data);
     }
 
-    public function recent_event() {
+    public function events() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('frontend.recent_event');
+        //$data['division'] = Division::all();
+        $data['upcoming_event'] = Content:: where('content_type', 'upcoming_events')->take(10)->orderByDesc('created_at')->get();
+        $data['recent_event'] = Content:: where('content_type', 'recent_events')->take(4)->skip(1)->orderByDesc('created_at')->get();
+        $data['last_recent_event'] = Content:: where('content_type', 'recent_events')->take(1)->orderByDesc('created_at')->first();
+        return view('frontend.events')->with('data', $data);
+    }
+    public function recent_event($id) {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        $data['recent'] = Content:: where('content_type', 'recent_events')->take(10)->get();
+        $data['recent_detail']= Content::find($id);
+        return view('frontend.recent_event')->with('data', $data);
     }
 
-    public function upcoming_event() {
+    public function upcoming_event($id) {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('frontend.upcoming_event');
+        $data['upcoming'] = Content:: where('content_type', 'upcoming_events')->take(10)->get();
+        $data['upcoming_detail']= Content::find($id);
+      //  dd($data['upcoming_detail']);
+        return view('frontend.upcoming_event')->with('data', $data);
     }
 
     public function volunteer() {

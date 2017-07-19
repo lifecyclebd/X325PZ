@@ -11,6 +11,7 @@ Route::get('donor/viewprofile/{id}', 'DonorController@viewprofile');
 Route::get('/Blogs', 'BlogController@view');
 
 
+Route::get('/find-doctor', 'DoctorController@FindDoctor');
 Route::get('/search-blood-donor', 'HomeController@SearchBloodDonor');
 Route::post('/view/search-blood-donor','HomeController@ShowBloodDonor');
 Route::get('/search-donor', 'HomeController@SearchDonor');
@@ -68,13 +69,14 @@ Route::any('/search-hospital', 'HomeController@search_hospital');
 Route::get('/view-ambulance', 'HomeController@view_ambulance');
 Route::get('/blog', 'HomeController@blog_page');
 Route::get('/blog-detail', 'HomeController@blog_detail');
-Route::get('/recent-event', 'HomeController@recent_event');
-Route::get('/upcoming-event', 'HomeController@upcoming_event');
+Route::get('/recent-event/{id}', 'HomeController@recent_event');
+Route::get('/upcoming-event/{id}', 'HomeController@upcoming_event');
 Route::get('/volunteer', 'HomeController@volunteer');
 Route::get('/make-donation', 'HomeController@make_donation');
 Route::get('/about-us', 'HomeController@about_us');
 Route::get('/contact', 'HomeController@contact');
 Route::get('/read-more/detail/{id}', 'HomeController@read_more');
+Route::get('/events', 'HomeController@events');
 
 
 
@@ -86,7 +88,7 @@ Route::get('/aboutus', 'PostController@aboutus');
 Route::get('/gallery', 'PhotoController@index');
 //Route::get('/contact', 'PostController@contactPage');
 Route::get('/project', 'HomeController@projectPage');
-Route::get('/events', 'HomeController@eventsPage'); 
+//Route::get('/events', 'HomeController@eventsPage'); 
 Route::get('/donate', 'DonorController@donate');
 Route::get('/profile', 'ProfileController@index');
 

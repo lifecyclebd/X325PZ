@@ -25,11 +25,12 @@
     <div class="container">
         <div class="row">
             <h3 class="footer_title">Contact Us</h3>
+            <?php $info =  get_footer(); ?>
             
             <div class="col-md-3">
                 <div class="footer-heading">
                     <h3><span>Head Office</span></h3>
-                    <p>static value</p>
+                    <p><?php echo e($info->head_office); ?></p>
                     <p><b>Initial release:</b>static value<br>
                         <b>Director:</b>Ken Finkleman<br><b>Box office:</b> 3.394 million USD<br><b>Screenplay: </b>Ken Finkleman
                 </p>
@@ -52,14 +53,13 @@
                 <div class="footer-heading">
                     <h3><span>Give Blood</span></h3>
                     <div class="insta">
-                        <h2>Static value</h2>
                         <p>Monday to Thursday 10am - 12pm and 2pm-4pm; Friday 10 am-12pm</p>
+                        <h3><?php echo e($info->phone1); ?>  </h3>
                         <p>
                             Please call for blood
-                        </p>
-                        <h3>static value</h3>
-                        <h3>static value</h3>
-                        
+                        </p> 
+                        <h3><?php echo e($info->phone2); ?></h3>
+                         
                         <div class="insta">
                             <button  class="foooter_button">Sign up to give Blood</button>
                         </div>

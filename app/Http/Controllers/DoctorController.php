@@ -23,8 +23,14 @@ class DoctorController extends Controller {
         $data['doctor'] = Doctor::all();
         return view('doctor.view')->with('data', $data);
     }
+public function FindDoctor(){
+    
+        $data['doctor'] = Doctor::all();
+        $data['doctor_specialities'] = Doctor_speciality::all();
+        return view('frontend.find_doctor')->with('data', $data);
+}
 
-    public function create() {
+public function create() {
         $data['designation'] = Doctor_designation::all();
         $data['hospital'] = Hospital::all();
         $data['specility'] = Doctor_speciality::all();
