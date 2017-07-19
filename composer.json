@@ -24,7 +24,10 @@
         ],
         "psr-4": {
             "App\\": "app/"
-        }
+        },
+        "files": [
+        "app/Helpers/myhelper.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -52,4 +55,5 @@
         "sort-packages": true,
         "optimize-autoloader": true
     }
+
 }

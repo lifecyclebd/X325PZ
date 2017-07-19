@@ -58,7 +58,10 @@
                             Please call for blood
                         </p>
                         <h3>{{$data['footer']->phone2}}</h3>
-                        <h3><?php $data['value']=get_footer('system_settings','id',1);?></h3>
+                        <h3><?php 
+                        $f = new \App\Helpers;
+
+                        $data['value']=$f->get_footer();?></h3>
                         <?php dd($data['value']); ?>
                         <div class="insta">
                             <button  class="foooter_button">Sign up to give Blood</button>
