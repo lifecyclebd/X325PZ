@@ -21,44 +21,18 @@
 
 
         <div class="row">
-            <div class="col-md-6 news"> 
-                <span class="related_links_news_title"><a class="" href="#">আকাশে জন্ম নিল শিশু, আ </a></span>
+            @foreach($data['recent_news'] as $row)
+            <div class="col-md-6 col-md-offset-1 news"> 
+                <span class="related_links_news_title"><a class="" href="#">{{$row->title}}</a></span>
                 <div class="news_img col-md-6">
-                    <span><img src="{{url('/')}}/public/frontend/images/news/child-birth.jpg" class="img"> </span>
+                    <span><img src="{{url('/')}}/public/images/content/news/{{$row->content_photo}}" class="img"> </span>
                 </div>
                 <div class="news_text col-md-6">
-                    বিমানটি তখন ৩৫ হাজার ফুট উঁচুতে, হঠাৎ করেই গর্ভবতী এক নারীর ব্যথা শুরু হলো। নির্ধারিত সময়ের আগেই প্রসব বেদনা শুরু হলো ওই নারীর।
+                    {{$row->description}}
                 </div>
+                <button class="pull-right btn-default" style="background: none;">More Details</button>
             </div>
-            <div class="col-md-6 news"> 
-                <span class="related_links_news_title"><a class="" href="#">লন্ডনে ফের পথচারীদের উপর গাড়ি হামলা</a></span>
-                <div class="news_img col-md-6">
-                    <span><img src="{{url('/')}}/public/frontend/images/news/london_gari_hamla.jpg" class="img img-thumbnail"> </span>
-                </div>
-                <div class="news_text col-md-6">
-                    লন্ডনে এবার একটি মসজিদের কাছে পথ 
-                </div>
-            </div> 
-            <div class="col-md-6 news"> 
-                <span class="related_links_news_title"><a class="" href="#">আকাশে জন্ম নিল শিশু, আজীবন বিনামূল্যে আকাশ ভ্রমণ</a></span>
-                <div class="news_img col-md-6">
-                    <span><img src="{{url('/')}}/public/frontend/images/news/child-birth.jpg" class="img img-thumbnail"> </span>
-                </div>
-                <div class="news_text col-md-6">
-                    বিমানটি তখন ৩৫ হাজার ফুট উঁচুতে, হঠাৎ করেই।
-                </div>
-            </div>
-            <div class="col-md-6 news"> 
-                <span class="related_links_news_title"><a class="" href="#">লন্ডনে ফের পথচারীদের উপর গাড়ি হামলা</a></span>
-                <div class="news_img col-md-6">
-                    <span><img src="{{url('/')}}/public/frontend/images/news/london_gari_hamla.jpg" class="img img-thumbnail"> </span>
-                </div>
-                <div class="news_text col-md-6">
-                    লন্ডনে এবার একটি মসজিদের কাছে পথচারীদের ওপর গাড়ি চাপা দেয়ার ঘটনা ঘটেছে।
-                </div>
-            </div> 
-
-
+            @endforeach
         </div>
 
 
@@ -66,73 +40,18 @@
     <div class="col-md-3">
         <span class="more_news_title">More News</span>
         <hr  class="more_news">
+        @foreach($data['news'] as $row)
         <div class="col-md-12 border-bottom">
             <div class="more_news_left">
-                <img src="{{url('/')}}/public/frontend/images/news/child-birth.jpg" class="img-thumbnail">
+                <img src="{{url('/')}}/public/images/content/news/{{$row->content_photo}}" class="img-thumbnail">
             </div>
-            <div class="more_news_right">
-                <h4>This is a Test...</h4>
-                12 June, 2013
+            <div class="more_news_right ">
+                <h4>{{$row->title}}</h4>
+                {{$row->created_at}}
             </div>
             <br>
         </div>
-        <div class="col-md-12 border-bottom">
-            <div class="more_news_left">
-                <img src="{{url('/')}}/public/frontend/images/news/london_gari_hamla.jpg" class="img-thumbnail">
-            </div>
-            <div class="more_news_right">
-                <h4>This is a Test...</h4>
-                <hr style="margin: 0px;">
-                12 June, 2013
-            </div> 
-            <br>
-        </div>
-
-
-        <div class="col-md-12 border-bottom">
-            <div class="more_news_left">
-                <img src="{{url('/')}}/public/frontend/images/news/child-birth.jpg" class="img-thumbnail">
-            </div>
-            <div class="more_news_right">
-                <h4>This is a Test...</h4>
-                12 June, 2013
-            </div>
-            <br>
-        </div>
-        <div class="col-md-12 border-bottom">
-            <div class="more_news_left">
-                <img src="{{url('/')}}/public/frontend/images/news/london_gari_hamla.jpg" class="img-thumbnail">
-            </div>
-            <div class="more_news_right">
-                <h4>This is a Test...</h4>
-                <hr style="margin: 0px;">
-                12 June, 2013
-            </div> 
-            <br>
-        </div>
-
-
-        <div class="col-md-12 border-bottom">
-            <div class="more_news_left">
-                <img src="{{url('/')}}/public/frontend/images/news/child-birth.jpg" class="img-thumbnail">
-            </div>
-            <div class="more_news_right">
-                <h4>This is a Test...</h4>
-                12 June, 2013
-            </div>
-            <br>
-        </div>
-        <div class="col-md-12 border-bottom">
-            <div class="more_news_left">
-                <img src="{{url('/')}}/public/frontend/images/news/london_gari_hamla.jpg" class="img-thumbnail">
-            </div>
-            <div class="more_news_right">
-                <h4>This is a Test...</h4>
-                <hr style="margin: 0px;">
-                12 June, 2013
-            </div> 
-            <br>
-        </div>
+        @endforeach
     </div>
 </div> 
 

@@ -29,8 +29,8 @@
             <div class="col-md-3">
                 <div class="footer-heading">
                     <h3><span>Head Office</span></h3>
-                    <p>{{$data['footer']->head_office}}</p>
-                    <p><b>Initial release:</b>{{$data['footer']->established_datetime}}	<br>
+                    <p>static value</p>
+                    <p><b>Initial release:</b>static value<br>
                         <b>Director:</b>Ken Finkleman<br><b>Box office:</b> 3.394 million USD<br><b>Screenplay: </b>Ken Finkleman
                 </p>
                 </div>
@@ -52,17 +52,23 @@
                 <div class="footer-heading">
                     <h3><span>Give Blood</span></h3>
                     <div class="insta">
-                        <h2>{{$data['footer']->phone1}}</h2>
+                        <h2>Static value</h2>
                         <p>Monday to Thursday 10am - 12pm and 2pm-4pm; Friday 10 am-12pm</p>
                         <p>
                             Please call for blood
                         </p>
+<<<<<<< HEAD
                         <h3>{{$data['footer']->phone2}}</h3>
                         <h3><?php 
                         $f = new \App\Helpers;
 
                         $data['value']=$f->get_footer();?></h3>
                         <?php dd($data['value']); ?>
+=======
+                        <h3>static value</h3>
+                        <h3>static value</h3>
+                        
+>>>>>>> 19c280ff9b40818a839ccdfc47387c2be59b5080
                         <div class="insta">
                             <button  class="foooter_button">Sign up to give Blood</button>
                         </div>

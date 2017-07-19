@@ -68,7 +68,7 @@ class HomeController extends Controller {
         $data['journey'] = More_about_blood:: where('slug', 'journey')->first();
         $data['upcoming_event'] = Content:: where('content_type', 'upcoming_events')->get();
         
-        $data['footer'] =$common->get_footer('system_settings','id',1);
+        //$data['footer'] =$common->get_footer('system_settings','id',1);
         //dd($data['footer']);
         //$data['footer'] = System_setting::first();
         
@@ -143,7 +143,10 @@ class HomeController extends Controller {
     public function news_page() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('frontend.news_page');
+        //$data['activity'] = Activity::all();
+        $data['news'] = Content:: where('content_type', 'news')->get();
+        $data['recent_news'] = Content:: where('content_type', 'news')->take(2)->skip(0)->orderByDesc('created_at')->get();
+        return view('frontend.news_page')->with('data', $data);
     }
 
     public function news_detail_page() {
