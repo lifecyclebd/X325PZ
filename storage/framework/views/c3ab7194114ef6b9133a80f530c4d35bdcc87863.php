@@ -16,8 +16,6 @@
             </div>
             <br>
         </div>
-
-
         <div class="row">
             <?php $__currentLoopData = $data['recent_news']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col-md-6 col-md-offset-1 news"> 
@@ -29,7 +27,7 @@
                     <?php echo e($row->description); ?>
 
                 </div>
-                <button class="pull-right btn-default" style="background: none;">More Details</button>
+                <a href="<?php echo e(url('/news-detail')); ?>/<?php echo e($row->id); ?>"><button class="pull-right btn-default" style="background: none;">More Details</button></a>
             </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>

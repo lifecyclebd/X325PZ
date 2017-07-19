@@ -144,15 +144,18 @@ class HomeController extends Controller {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
         //$data['activity'] = Activity::all();
-        $data['news'] = Content:: where('content_type', 'news')->get();
-        $data['recent_news'] = Content:: where('content_type', 'news')->take(2)->skip(0)->orderByDesc('created_at')->get();
+        $data['news'] = Content:: where('content_type', 'news')->take(10)->get();
+        $data['recent_news'] = Content:: where('content_type', 'news')->take(4)->skip(0)->orderByDesc('created_at')->get();
         return view('frontend.news_page')->with('data', $data);
     }
 
-    public function news_detail_page() {
+    public function news_detail_page($id) {
         //$divisions = DB::table("divisions")->lists("name", "id");
-        //return view('search.im', compact('divisions'));
-        return view('frontend.news_detail_page');
+        //return view('search.im', compact('divisions'))
+        $data['news'] = Content:: where('content_type', 'news')->take(10)->get();
+        $data['news_detail']= Content::find($id);
+        //dd($data['news_detail']);
+        return view('frontend.news_detail_page')->with('data', $data);
     }
 
     public function write_to_doctor() {

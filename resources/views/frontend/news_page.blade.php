@@ -18,8 +18,6 @@
             </div>
             <br>
         </div>
-
-
         <div class="row">
             @foreach($data['recent_news'] as $row)
             <div class="col-md-6 col-md-offset-1 news"> 
@@ -30,7 +28,7 @@
                 <div class="news_text col-md-6">
                     {{$row->description}}
                 </div>
-                <button class="pull-right btn-default" style="background: none;">More Details</button>
+                <a href="{{url('/news-detail')}}/{{$row->id}}"><button class="pull-right btn-default" style="background: none;">More Details</button></a>
             </div>
             @endforeach
         </div>
