@@ -46,7 +46,8 @@
                         <div class="col-md-8">
                             <select class="form-control" name="content_type"> 
                                  <option value="news">News </option>
-                                <option value="events">Events</option>
+                                <option value="upcoming_events">Upcoming Events</option>
+                                <option value="recent_events">Recent Events</option>
                                 <option value="post">Post </option>
                                 <option value="page">Page </option>
                             </select>

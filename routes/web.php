@@ -107,7 +107,7 @@ Route::get('/admin/{id}', 'AdminController@show')->name('show');
 Route::get('/admin/{id}/edit', 'AdminController@edit'); 
 Route::get('/admin/store', 'AdminController@store')->name('store');
 Route::post('/admin/update', 'AdminController@update');
-Route::any('/admin/{id}/destroy', 'AdminController@destroy');
+Route::any('/admin/destroy/{id}', 'AdminController@destroy');
 
 
 //--------Donor-------------------------------------
