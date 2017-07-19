@@ -25,12 +25,15 @@
     <div class="container">
         <div class="row">
             <h3 class="footer_title">Contact Us</h3>
+            <?php $info =  get_footer(); ?>
+            
             <div class="col-md-3">
                 <div class="footer-heading">
                     <h3><span>Head Office</span></h3>
-                    <p>A U.S. senator's son (Judge Reinhold) gets a job at a conglomerate and falls for the chairman's (Eddie Albert) radical daughter.</p>
-                    <p><b>Initial release:</b>December 29, 1985<br>
-                        <b>Director:</b>Ken Finkleman<br><b>Box office:</b> 3.394 million USD<br><b>Screenplay: </b>Ken Finkleman </p>
+                    <p><?php echo e($info->head_office); ?></p>
+                    <p><b>Initial release:</b>static value<br>
+                        <b>Director:</b>Ken Finkleman<br><b>Box office:</b> 3.394 million USD<br><b>Screenplay: </b>Ken Finkleman
+                </p>
                 </div>
             </div>
 
@@ -50,12 +53,13 @@
                 <div class="footer-heading">
                     <h3><span>Give Blood</span></h3>
                     <div class="insta">
-                        <h2>01711111111</h2>
+                        <h3><?php echo e($info->phone1); ?>  </h3>
                         <p>Monday to Thursday 10am - 12pm and 2pm-4pm; Friday 10 am-12pm</p>
                         <p>
                             Please call for blood
-                        </p>
-                        <h3>01711111111</h3>
+                        </p> 
+                        <h3><?php echo e($info->phone2); ?></h3>
+                         
                         <div class="insta">
                             <button  class="foooter_button">Sign up to give Blood</button>
                         </div>
@@ -87,8 +91,6 @@
 <div id="bottom-footer" class="xs-hidden">
     <div class="container">
         <div class="row">
-
-            
             <div class="col-md-4 col-xs-12 col-sm-12 text-center" style="margin-bottom: 20px;">
             <a href="<?php echo e(url('/')); ?>" class="navbar-brand " style="width: 100%">
                  <img class="img img-responsive" style="width: 150px;height: 60px;" src="<?php echo e(asset('/')); ?>/public/frontend/images/logoo.png">

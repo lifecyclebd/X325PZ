@@ -24,7 +24,10 @@
         ],
         "psr-4": {
             "App\\": "app/"
-        }
+        },
+        "files": [
+        "app/Helpers/lifecycle_helper.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

@@ -68,7 +68,7 @@ class HomeController extends Controller {
         $data['journey'] = More_about_blood:: where('slug', 'journey')->first();
         $data['upcoming_event'] = Content:: where('content_type', 'upcoming_events')->get();
         
-        //$data['footer'] =$common->get_footer('system_settings','id',1);
+        // =$common->get_footer('system_settings','id',1);
         //dd($data['footer']);
         //$data['footer'] = System_setting::first();
         
