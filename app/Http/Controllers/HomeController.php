@@ -29,7 +29,6 @@ class HomeController extends Controller {
      */
     public function __construct() {
         //  $this->middleware('auth');
-        $_SESSION['donor_login']="Nazmus Sakib";
     }
 
     /**
@@ -74,10 +73,19 @@ class HomeController extends Controller {
         //$data['footer'] = System_setting::first();
         
 //dd($data['donor_24']);
+        
+      //  $_SESSION['donor_login']="Nazmus Sakib";
         return view('frontend.home')->with('data', $data);
     }
+    
+    
+    public function logout(){
+        unset($_SESSION['donor_login']);
+       //  session_destroy();
+        return redirect('/donor-login');
+    }
 
-    public function blood_news() {
+public function blood_news() {
         //$data['blood_news'] = Blog::all();
         $data['blood_news'] = Blog:: where('blog_category_id', 2)->orderByDesc('id')->get();
         return view('frontend.blood_news')->with('data', $data);
