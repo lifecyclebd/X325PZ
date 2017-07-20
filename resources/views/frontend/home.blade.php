@@ -300,10 +300,10 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-
+                    @foreach($data['upcoming_event'] as $row)
                     <div class="item active">
                        
-                        @foreach($data['upcoming_event'] as $row)
+                        
                         <div class="col-md-6" style="margin-bottom: 20px">
                             <div class="col-md-6 col-xs-6 col-sm-6">
                                 <img class="img img-responsive img-thumbnail " src="{{url('/')}}/public/frontend/images/content/events/{{$row->content_photo}}" alt="New York" style="width:100%;height: auto;">
@@ -316,10 +316,10 @@
                                 </span>
                             </div>
                         </div>
-                       
-                        @endforeach
+                        
+                        
                     </div> 
-
+                    @endforeach
                 </div>
 
                 <!-- Left and right controls -->

@@ -304,10 +304,10 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-
+                    <?php $__currentLoopData = $data['upcoming_event']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="item active">
                        
-                        <?php $__currentLoopData = $data['upcoming_event']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        
                         <div class="col-md-6" style="margin-bottom: 20px">
                             <div class="col-md-6 col-xs-6 col-sm-6">
                                 <img class="img img-responsive img-thumbnail " src="<?php echo e(url('/')); ?>/public/frontend/images/content/events/<?php echo e($row->content_photo); ?>" alt="New York" style="width:100%;height: auto;">
@@ -320,10 +320,10 @@
                                 </span>
                             </div>
                         </div>
-                       
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        
+                        
                     </div> 
-
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
 
                 <!-- Left and right controls -->
