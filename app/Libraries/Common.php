@@ -103,31 +103,36 @@ class Common {
         }
         echo $html;
     }
+ 
 
-    public function getShift($classid, $current_shift = NULL) {
-        $query = DB::table('school_class_shifts AS scs')
-                ->leftjoin('school_shifts AS ss', 'scs.shift_row_id', '=', 'ss.shift_row_id')
-                ->select('scs.*', 'ss.*')
-                ->where([['scs.class_row_id', $classid], ['scs.school_row_id', session('school_row_id')], ['scs.academic_session', session('academic_session_row_id')], ['scs.is_active', 1]])
-                ->orderBy('ss.shift_title', 'asc');
 
-        $allshifts = $query->get();
-        $html = "";
-        foreach ($allshifts as $shift) {
-            if (isset($current_shift) && ($shift->shift_row_id == $current_shift)) {
-                $selected = 'selected="selected"';
-            } else {
-                $selected = '';
-            }
-            $html .= "<option value=" . $shift->shift_row_id . " " . $selected . ">" . $shift->shift_title . "</option>";
-        }
-        echo $html;
-    }
+
+
+
+
+
+
+
+
     public function  get_footer($table_name, $column_name, $check_value)
     {
         $sql_result=DB::table($table_name)->select('*')->where($column_name,$check_value)->first();
         return $sql_result;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function getSections($classid, $current_section = NULL) {
 
