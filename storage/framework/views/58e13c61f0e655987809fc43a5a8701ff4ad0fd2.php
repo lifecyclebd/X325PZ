@@ -67,11 +67,11 @@
                             <div class="top-right">
                                 <?php if (isset($_SESSION['donor_login']) && !empty($_SESSION['donor_login'])) { ?>
                                     <li class="logout"> <?php echo $_SESSION['donor_login']; ?>  
-                                        <a class="" href="<?php echo e(url('/')); ?>/donor-lo                                                      gout">Log Out</a>
+                                        <a class="" href="<?php echo e(url('/')); ?>/donor-logout">Log Out</a>
                                     </li>
                                 <?php } else { ?>
                                     <form action="" method="post" class="navbar-form navbar-right">
-                                        <div class="fo                                                  rm-group">
+                                        <div class="form-group">
                                             <input type="text" class="form-control login" placeholder="Username">
                                             <input type="Password" class="form-control login" placeholder="Password">
                                         </div>
@@ -115,7 +115,6 @@
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="<?php echo e(url('/find-doctor')); ?>">Find Doctor</a></li>
-                                        <li><a href="<?php echo e(url('/view-doctor')); ?>">view Doctor</a></li>
                                         <li><a href="<?php echo e(url('/view-hospital')); ?>">Hospital</a></li>
                                         <li><a href="<?php echo e(url('/view-ambulance')); ?>">Ambulence</a></li>
                                         <li><a href="<?php echo e(url('/write-to-doctor')); ?>">Write To Doctor</a></li>
