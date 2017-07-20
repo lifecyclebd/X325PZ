@@ -53,8 +53,8 @@
                 <div class="footer-heading">
                     <h3><span>Give Blood</span></h3>
                     <div class="insta">
-                        <h3><?php echo e($info->phone1); ?>  </h3>
                         <p>Monday to Thursday 10am - 12pm and 2pm-4pm; Friday 10 am-12pm</p>
+                        <h3><?php echo e($info->phone1); ?>  </h3>
                         <p>
                             Please call for blood
                         </p> 
