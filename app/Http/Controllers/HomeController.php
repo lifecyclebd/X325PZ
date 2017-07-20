@@ -78,7 +78,12 @@ class HomeController extends Controller {
         return view('frontend.home')->with('data', $data);
     }
     
-    
+    public function SearchAny(Request $request){
+        $searchdata=$request->searchany; 
+
+        $data['donor']=More_about_blood:: where('slug', 'donor_24')->first();
+
+    }
     public function logout(){
         unset($_SESSION['donor_login']);
        //  session_destroy();

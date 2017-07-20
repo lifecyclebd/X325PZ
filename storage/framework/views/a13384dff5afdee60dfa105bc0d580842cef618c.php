@@ -108,13 +108,13 @@
 
     <div class="row" style="min-height: 100px; background-color: #8f0002; padding: 10px; margin: 0 auto;">
         <div class="col-md-8">
-            <form class="form-horizontak" method="post" action="<?php echo e(url('/')); ?>/view/search-blood-donor" style="margin: 10px;">
+            <form class="form-horizontak" method="post" action="<?php echo e(url('/')); ?>/search-any" style="margin: 10px;">
                 <?php echo csrf_field(); ?>
 
                 <div class="input-group">
                     <span class="input-group-addon" style="padding: 0px 30px; font-size: 25px;"><i class="fa fa-map-marker map_marker"></i></span>
 
-                    <input type="text" style="height: 45px;    background: white;    font-size: 20px;" class="form-control" aria-label="Search Donor" placeholder="Search Donor Location" id="pac-input">
+                    <input type="text" style="height: 45px;    background: white;    font-size: 20px;" class="form-control" aria-label="Search Donor" placeholder="Search Donor Location" name="searchany">
                     <div id="map" style="overflow: hidden;"></div>
                     <span class="input-group-addon" style="padding: 0px 0px; font-size: 25px;">
 
@@ -191,6 +191,70 @@
         </div>
 
     </div> 
+
+
+
+
+    <div class="container" style="margin-top: 30px">  
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info_abou_blood slideInDown" style="min-height:350px">
+                <div class="position_info">
+                    <span class="back_icon1 pull-center">  </span>
+                </div>
+                <p class="title"><?php echo e($data['donor_24']->title); ?></p>
+                <p class="text-justify" style="padding:30px">
+                    <?php echo e($data['donor_24']->short_description); ?>
+
+                </p>
+                <div class="text-center">
+                    <a href="<?php echo e(url('/read-more')); ?>/detail/<?php echo e($data['donor_24']->id); ?>"><button class="btn_read_more">Read More</button></a>
+               
+                </div>
+            </div> 
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info_abou_blood slideInDown" style="min-height:350px">
+                <span class="back_icon2 pull-center" style="height: 200px">  </span>
+                <p class="title"><?php echo e($data['platelet']->title); ?></p>
+                <p class="text-justify" style="padding:30px">
+                    <?php echo e($data['platelet']->short_description); ?>
+
+                </p>
+                <div class="text-center">
+                    <a href="<?php echo e(url('/read-more')); ?>/detail/<?php echo e($data['platelet']->id); ?>"><button class="btn_read_more">Read More</button></a>
+                </div>
+            </div> 
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info_abou_blood slideInDown" style="min-height:350px">
+                <span class="back_icon3 pull-center" style="height: 200px">  </span>
+                <p class="title"><?php echo e($data['type']->title); ?></p>
+                <p class="text-justify" style="padding:30px">
+                    <?php echo e($data['type']->short_description); ?>
+
+                </p>
+                <div class="text-center">
+                    <a href="<?php echo e(url('/read-more')); ?>/detail/<?php echo e($data['type']->id); ?>"><button class="btn_read_more">Read More</button></a>
+                </div>
+            </div> 
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info_abou_blood slideInDown" style="min-height:350px">
+                <span class="back_icon4 pull-center" style="height: 200px">  </span>
+                <p class="title"><?php echo e($data['journey']->title); ?></p>
+                <p class="text-justify" style="padding:30px">
+                    <?php echo e($data['journey']->short_description); ?>
+
+                </p>
+                <div class="text-center">
+                    <a href="<?php echo e(url('/read-more')); ?>/detail/<?php echo e($data['journey']->id); ?>"><button class="btn_read_more">Read more</button></a>
+                </div>
+            </div> 
+        </div>
+
+    </div> 
+
+
 </div>
 
 
@@ -430,45 +494,48 @@
         </div>
     </div>
 </div>
-<div class="blood_stock" style="  margin: 30px 0px">
+<style type="text/css">
+    .margin{
+        margin: 0 auto;
+    }
+</style>
+<div class="blood_stock" style="  margin-top: 30px">
     <div class="container">
-        <div class="row">
+        <div class="row text-center">
             <h2 class="life_title" style="margin-bottom: 20px; margin-top: 30px">blood stock</h2>
             <p class="text-center">Current blood stock in bangladesh</p>
-            <div class="progress">
-                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-                     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-                    40% Complete (success)
-                </div><div class="pull-right  progress-bar-success progress-bar-striped" style="width:25px"> A+ </div>
-            </div>
-
-            <div class="progress">
-                <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
-                     aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                    50% Complete (info)
-                </div><div class="pull-right  progress-bar-info progress-bar-striped" style="width:25px"> B+ </div>
-            </div>
-
-            <div class="progress">
-                <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
-                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
-                    60% Complete (warning)
-                </div><div class="pull-right  progress-bar-warning progress-bar-striped" style="width:25px"> AB+ </div>
-            </div>
-
-            <div class="progress">
-                <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"
-                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                    70% Complete (danger)
-                </div><div class="pull-right  progress-bar-danger progress-bar-striped" style="width:25px"> A- </div>
-            </div>
-
-            <div class="progress">
-                <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
-                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                    70% Complete (danger)
-                </div><div class="pull-right  progress-bar-warning progress-bar-striped" style="width:25px"> AB- </div>
-            </div>
+             <div class="col-md-3" style="margin-top:5px; border: 1px">
+                 <img src="<?php echo e(url('/')); ?>/public/images/bag/1.png" class="img img-responsive margin">
+                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
+             </div>
+             <div class="col-md-3" style="margin-top:5px; border: 1px">
+                 <img src="<?php echo e(url('/')); ?>/public/images/bag/2.png" class="img img-responsive margin">
+                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
+             </div>
+             <div class="col-md-3" style="margin-top:5px; border: 1px">
+                 <img src="<?php echo e(url('/')); ?>/public/images/bag/3.png" class="img img-responsive margin">
+                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
+             </div>
+             <div class="col-md-3" style="margin-top:5px; border: 1px">
+                 <img src="<?php echo e(url('/')); ?>/public/images/bag/4.png" class="img img-responsive margin">
+                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
+             </div>
+             <div class="col-md-3" style="margin-top:5px; border: 1px">
+                 <img src="<?php echo e(url('/')); ?>/public/images/bag/8.png" class="img img-responsive margin">
+                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
+             </div>
+             <div class="col-md-3" style="margin-top:5px; border: 1px">
+                 <img src="<?php echo e(url('/')); ?>/public/images/bag/6.png" class="img img-responsive margin">
+                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
+             </div>
+             <div class="col-md-3" style="margin-top:5px; border: 1px">
+                 <img src="<?php echo e(url('/')); ?>/public/images/bag/7.png" class="img img-responsive margin">
+                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
+             </div>
+             <div class="col-md-3" style="margin-top:5px; border: 1px">
+                 <img src="<?php echo e(url('/')); ?>/public/images/bag/7.png" class="img img-responsive margin">
+                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
+             </div>
 
         </div>
     </div>
