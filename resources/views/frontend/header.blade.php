@@ -115,7 +115,6 @@
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="{{ url('/find-doctor') }}">Find Doctor</a></li>
-                                        <li><a href="{{ url('/view-doctor') }}">view Doctor</a></li>
                                         <li><a href="{{ url('/view-hospital') }}">Hospital</a></li>
                                         <li><a href="{{ url('/view-ambulance') }}">Ambulence</a></li>
                                         <li><a href="{{ url('/write-to-doctor') }}">Write To Doctor</a></li>

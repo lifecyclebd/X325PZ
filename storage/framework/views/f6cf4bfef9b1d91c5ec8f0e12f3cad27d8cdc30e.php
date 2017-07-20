@@ -115,7 +115,6 @@
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="<?php echo e(url('/find-doctor')); ?>">Find Doctor</a></li>
-                                        <li><a href="<?php echo e(url('/view-doctor')); ?>">view Doctor</a></li>
                                         <li><a href="<?php echo e(url('/view-hospital')); ?>">Hospital</a></li>
                                         <li><a href="<?php echo e(url('/view-ambulance')); ?>">Ambulence</a></li>
                                         <li><a href="<?php echo e(url('/write-to-doctor')); ?>">Write To Doctor</a></li>

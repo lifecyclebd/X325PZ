@@ -29,6 +29,12 @@ public function FindDoctor(){
         $data['doctor_specialities'] = Doctor_speciality::all();
         return view('frontend.find_doctor')->with('data', $data);
 }
+public function ViewDoctor(){
+    
+        //$data['doctor'] = Doctor::all();
+        //$data['doctor_specialities'] = Doctor_speciality::all();
+        return view('frontend.view_doctor');
+}
 
 public function create() {
         $data['designation'] = Doctor_designation::all();
