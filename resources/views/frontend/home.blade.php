@@ -655,6 +655,39 @@
         </div>
     </div>
 </div>
+
+<div class="video" style="background: black; color: white">
+<div class="container">
+    <div class="col-md-6">
+        <h2 class="">Video</h2>
+        <iframe width="333" height="220" src="https://www.youtube.com/embed/NqqPEwVP8Mo" frameborder="0" allowfullscreen></iframe>
+
+        
+    </div>
+    <div class="col-md-3">
+    <style type="text/css">
+        i.fa{
+            font-size: 20px;
+    padding: 5px;
+    margin: 5px;
+        }
+    </style>
+        <h2 class="">Social Media</h2>
+        <span><i class="fa fa-facebook-official"></i></span>
+        <span><i class="fa fa-google-plus-square"></i></span>
+        <span><i class="fa fa-youtube-square"></i></span>
+        <span><i class="fa fa-twitter-square"></i></span>
+        <span><i class="fa fa-linkedin-square"></i></span>
+    </div>
+    <div class="col-md-3">
+        <h2 class="">Be Donor</h2>
+        <a href="{{url('/')}}/"><img style="width: 100%" src="{{url('/')}}/public/images/be-a-donor.jpg" class="img img-responsive"></a>
+        
+    </div>
+
+</div>
+
+</div>
 <div class="modal fade" id="makeDonation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
