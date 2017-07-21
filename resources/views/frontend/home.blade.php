@@ -46,7 +46,14 @@
         height: 152px;
         border: 2px solid red;
     }
-
+ .what_people_say {
+    padding: 5px;
+    background: red;
+    color: white; 
+    border: 2px solid red;
+    border-radius: 5px;
+    margin: 0 auto;
+}
     .carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
         height: 148px;
     }
@@ -360,25 +367,44 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
+                <?php $i=0; ?>
                     @foreach($data['upcoming_event'] as $row)
-                    <div class="item active">
-                       
+                    <div class="item <?php if($i==0) echo 'active'; ?>">                       
                         
                         <div class="col-md-6" style="margin-bottom: 20px">
                             <div class="col-md-6 col-xs-6 col-sm-6">
-                                <img class="img img-responsive img-thumbnail " src="{{url('/')}}/public/frontend/images/content/events/{{$row->content_photo}}" alt="New York" style="width:100%;height: auto;">
+                                <img class="img img-responsive img-thumbnail " src="{{url('/')}}/public/images/content/upcoming_events/{{$row->content_photo}}" alt="New York" style="width:100%;height: auto;">
                             </div>
                             <div class="col-md-6 col-xs-6 col-sm-6">
                                 <h3>{{$row->title}}</h3>
-                                <p class="text-justify">We love the Big Apple!We love the Big Apple!</p>
+                                <p class="text-justify">
+                                    {{$row->description}}
+                                </p>
                                 <span style="margin-top: 30px; float: right;" class="hidden-xs">
                                     <a style="padding: 10px; text-align: center;" href="#" class="btn-danger" ><?php echo date("l jS \of F"); ?> </a>
                                 </span>
                             </div>
                         </div>
-                        
+                        <div class="col-md-6" style="margin-bottom: 20px">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <img class="img img-responsive img-thumbnail " src="{{url('/')}}/public/images/content/upcoming_events/{{$row->content_photo}}" alt="New York" style="width:100%;height: auto;">
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <h3>{{$row->title}}</h3>
+                                <p class="text-justify">
+                                    {{$row->description}}</p>
+                                <span style="margin-top: 30px; float: right;" class="hidden-xs">
+                                    <a style="padding: 10px; text-align: center;" href="#" class="btn-danger" ><?php echo date("l jS \of F"); ?> </a>
+                                </span>
+                            </div>
+                        </div>
+                          
                         
                     </div> 
+                    <?php $i++; ?>                                             
+                        
+                          
+                         
                     @endforeach
                 </div>
 
@@ -412,14 +438,16 @@
                     <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
                         <div class="carousel-inner onebyone-carosel">
                             <?php $i=0;?>
-                            @foreach($data['recent_donor'] as $row)
+                            @foreach($data['testimonial'] as $row)
                             <div class="item <?php if($i==0)echo 'active';?>">
                                 <div class="col-md-4" style="">
-                                    <div class="recent_donor" style="height: 300px"> 
+                                    <div class="what_people_say" style="height: 300px"> 
                                         <span style="padding-left: 10px;">
                                             <div class="text-left">
-                                                <h4>HHHHHHHHHHHHHHHHHHHHHH</h4>
-                                                <p>HHHHHHHHHHHHHHHHH</p><small>GGGGGGGGGGGGGGGGGGGG</small> 
+                                                <h4>{{ $row->name}}</h4><small>{{ $row->designation}}</small>
+                                                <b>{{$row->institution}}</b>
+                                                <hr>
+                                                <p>{{ $row->message}}</p> 
                                             </div>
                                         </span>
                                     </div>

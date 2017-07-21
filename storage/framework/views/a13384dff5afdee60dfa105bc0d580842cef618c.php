@@ -45,7 +45,14 @@
         height: 152px;
         border: 2px solid red;
     }
-
+ .what_people_say {
+    padding: 5px;
+    background: red;
+    color: white; 
+    border: 2px solid red;
+    border-radius: 5px;
+    margin: 0 auto;
+}
     .carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
         height: 148px;
     }
@@ -368,25 +375,45 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
+                <?php $i=0; ?>
                     <?php $__currentLoopData = $data['upcoming_event']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="item active">
-                       
+                    <div class="item <?php if($i==0) echo 'active'; ?>">                       
                         
                         <div class="col-md-6" style="margin-bottom: 20px">
                             <div class="col-md-6 col-xs-6 col-sm-6">
-                                <img class="img img-responsive img-thumbnail " src="<?php echo e(url('/')); ?>/public/frontend/images/content/events/<?php echo e($row->content_photo); ?>" alt="New York" style="width:100%;height: auto;">
+                                <img class="img img-responsive img-thumbnail " src="<?php echo e(url('/')); ?>/public/images/content/upcoming_events/<?php echo e($row->content_photo); ?>" alt="New York" style="width:100%;height: auto;">
                             </div>
                             <div class="col-md-6 col-xs-6 col-sm-6">
                                 <h3><?php echo e($row->title); ?></h3>
-                                <p class="text-justify">We love the Big Apple!We love the Big Apple!</p>
+                                <p class="text-justify">
+                                    <?php echo e($row->description); ?>
+
+                                </p>
                                 <span style="margin-top: 30px; float: right;" class="hidden-xs">
                                     <a style="padding: 10px; text-align: center;" href="#" class="btn-danger" ><?php echo date("l jS \of F"); ?> </a>
                                 </span>
                             </div>
                         </div>
-                        
+                        <div class="col-md-6" style="margin-bottom: 20px">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <img class="img img-responsive img-thumbnail " src="<?php echo e(url('/')); ?>/public/images/content/upcoming_events/<?php echo e($row->content_photo); ?>" alt="New York" style="width:100%;height: auto;">
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <h3><?php echo e($row->title); ?></h3>
+                                <p class="text-justify">
+                                    <?php echo e($row->description); ?></p>
+                                <span style="margin-top: 30px; float: right;" class="hidden-xs">
+                                    <a style="padding: 10px; text-align: center;" href="#" class="btn-danger" ><?php echo date("l jS \of F"); ?> </a>
+                                </span>
+                            </div>
+                        </div>
+                          
                         
                     </div> 
+                    <?php $i++; ?>                                             
+                        
+                          
+                         
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
 
@@ -420,14 +447,16 @@
                     <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
                         <div class="carousel-inner onebyone-carosel">
                             <?php $i=0;?>
-                            <?php $__currentLoopData = $data['recent_donor']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php $__currentLoopData = $data['testimonial']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="item <?php if($i==0)echo 'active';?>">
                                 <div class="col-md-4" style="">
-                                    <div class="recent_donor" style="height: 300px"> 
+                                    <div class="what_people_say" style="height: 300px"> 
                                         <span style="padding-left: 10px;">
                                             <div class="text-left">
-                                                <h4>HHHHHHHHHHHHHHHHHHHHHH</h4>
-                                                <p>HHHHHHHHHHHHHHHHH</p><small>GGGGGGGGGGGGGGGGGGGG</small> 
+                                                <h4><?php echo e($row->name); ?></h4><small><?php echo e($row->designation); ?></small>
+                                                <b><?php echo e($row->institution); ?></b>
+                                                <hr>
+                                                <p><?php echo e($row->message); ?></p> 
                                             </div>
                                         </span>
                                     </div>

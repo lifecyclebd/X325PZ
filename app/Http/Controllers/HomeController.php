@@ -19,6 +19,7 @@ use App\BloodRequest;
 use App\Blog;
 use App\System_setting;
 use App\Libraries\Common;
+use App\Testimonial;
 
 class HomeController extends Controller {
 
@@ -75,6 +76,9 @@ class HomeController extends Controller {
 //dd($data['donor_24']);
         
       //  $_SESSION['donor_login']="Nazmus Sakib";
+
+        $data['testimonial']=Testimonial::all();
+
         return view('frontend.home')->with('data', $data);
     }
     

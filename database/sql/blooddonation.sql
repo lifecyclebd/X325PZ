@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2017 at 11:36 AM
+-- Generation Time: Jul 21, 2017 at 06:27 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -19,6 +19,39 @@ SET time_zone = "+00:00";
 --
 -- Database: `blooddonation`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `activities`
+--
+
+CREATE TABLE `activities` (
+  `id` int(11) NOT NULL,
+  `created_id` int(11) NOT NULL,
+  `created_type` varchar(255) NOT NULL,
+  `receiver_id` int(11) NOT NULL,
+  `receiver_type` varchar(255) NOT NULL,
+  `purpose` text NOT NULL,
+  `short_message` text NOT NULL,
+  `is_read` int(11) NOT NULL,
+  `is_reply` int(11) NOT NULL,
+  `parent_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_by` varchar(255) NOT NULL,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `activities`
+--
+
+INSERT INTO `activities` (`id`, `created_id`, `created_type`, `receiver_id`, `receiver_type`, `purpose`, `short_message`, `is_read`, `is_reply`, `parent_id`, `created_at`, `created_by`, `updated_at`) VALUES
+(1, 5, 'donor', 303, 'admin', 'dont know', 'Need AB+Blood 6 for Mahedi', 1, 0, 6, '2017-07-14 20:37:31', 'Asru', '2017-07-14 20:37:31'),
+(2, 5, 'donor', 303, 'admin', 'dont know', 'Need A+Blood 3 for Mohin', 1, 0, 6, '2017-07-14 21:04:36', 'Asru', '2017-07-14 21:04:36'),
+(3, 5, 'donor', 303, 'admin', 'dont know', 'Need A+Blood 2 for ', 1, 0, 6, '2017-07-19 19:22:15', 'Asru', '2017-07-19 19:22:15'),
+(4, 5, 'donor', 303, 'admin', 'dont know', 'Need O-Blood 100 for ', 1, 0, 6, '2017-07-19 19:25:50', 'Asru', '2017-07-19 19:25:50'),
+(5, 5, 'donor', 303, 'admin', 'dont know', 'Need B+Blood 6 in Rajshahi Medical', 1, 0, 6, '2017-07-19 19:32:42', 'Asru', '2017-07-19 19:32:42');
 
 -- --------------------------------------------------------
 
@@ -44,6 +77,33 @@ INSERT INTO `admins` (`id`, `name`, `email`, `password`, `remember_token`, `crea
 (24, 'N Sakib', 'n_sakib.cse.bd@gmail.com', '$2y$10$mYTIwlUfNEhYg46H3kUtVe80RD10cmj1BcQvKv2BfJwxPvlbyMRjC', 'dOmg6IRog4qHs0DtMBWhm8eGy2nH5UPywQfQq68D', '2017-05-18 15:40:18', '2017-05-23 09:46:40'),
 (25, 'Fokhrul', 'fokhrul.cse.bd@gmail.com', '$2y$10$xh6UzrYjlv.qggixmCVPCukImfxmVDlOvfPv.IZLWJtrLjIG1Rhw.', 'DHRKILpPATYmW3yzueSAHncrx8B0ZoGl6gGSqXqk', '2017-05-19 08:47:05', '2017-05-19 08:47:05'),
 (27, 'Shaju', 'shaju@gmail.com', '$2y$10$vz5AbMUwHgeQaTlg.aDSV.xhUdfYy/f.jbc/dYP9jRXNm7MavqGdK', '873DH0g1EdIjachAWom0DjvkfTviuqHS9q3ov4Je', '2017-05-23 09:11:11', '2017-05-23 09:11:24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `apphospitals`
+--
+
+CREATE TABLE `apphospitals` (
+  `id` int(11) NOT NULL,
+  `pic_path` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `speciality` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `latitude` double NOT NULL,
+  `longitude` double NOT NULL,
+  `division` varchar(255) NOT NULL,
+  `district` varchar(255) NOT NULL,
+  `thana` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `apphospitals`
+--
+
+INSERT INTO `apphospitals` (`id`, `pic_path`, `name`, `address`, `speciality`, `phone`, `latitude`, `longitude`, `division`, `district`, `thana`) VALUES
+(1, 'hospitalImages/dhakasishu.jpg', 'Dhaka Shishu (children) Hospital', 'Sher-e-Bangla Nagar, Dhaka-1207,\r\nBangladesh', 'Cardiology, Nephrology, Neurology, Child Development & Child Pschycology, Neonatology, Gastroenterology, Hepatology and Nutrition', '880-2-9128308', 23.77123, 90.375225, 'Dhaka', 'Dhaka', 'Sher-e-Bangla Nagar');
 
 -- --------------------------------------------------------
 
@@ -311,6 +371,62 @@ INSERT INTO `apps_countries` (`id`, `country_code`, `country_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `blogs`
+--
+
+CREATE TABLE `blogs` (
+  `id` int(11) NOT NULL,
+  `blog_category_id` int(11) NOT NULL,
+  `title` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `photo` varchar(255) NOT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_by` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `blogs`
+--
+
+INSERT INTO `blogs` (`id`, `blog_category_id`, `title`, `description`, `photo`, `updated_by`, `updated_at`, `created_by`, `created_at`) VALUES
+(1, 6, 'রক্তদানের প্রয়োজনিয়তা?', 'প্রথম এবং প্রধান কারণ, আপনার দানকৃত রক্ত একজন মানুষের জীবন বাঁচাবে। রক্তদানের জন্য এর থেকে বড় কারণ আর কি হতে পারে !\r\nহয়তো একদিন আপনার নিজের প্রয়োজনে/বিপদে অন্য কেউ এগিয়ে আসবে।\r\nনিয়মিত রক্তদানে হৃদরোগ ও হার্ট অ্যাটাকের ঝুঁকি অনেক কম।\r\nনিয়মিত স্বেচ্ছায় রক্তদানের মাধ্যমে বিনা খরচে জানা যায় নিজের শরীরে বড় কোনো রোগ আছে কিনা। যেমন : হেপাটাইটিস-বি, হেপাটাইটিস-সি, সিফিলিস, এইচআইভি (এইডস) ইত্যাদি।\r\nদেহের রোগ প্রতিরোধ ক্ষমতা অনেকগুন বেড়ে যায়।', '.jpg', 0, '2017-06-22 04:43:30', 0, '2017-06-19 12:39:49'),
+(2, 2, 'রক্তদাতাদের করণীয় কি ?aabb', 'রোগী কোন হাসপাতাল/ক্লিনিকে আছেন জেনে নিন। হাসপাতাল/ক্লিনিক ছাড়া অন্য কোথাও রক্তদান করতে যাবেন না। রোগীর বাসায় হলেও না।\r\nহাসপাতাল/ক্লিনিক ছাড়া অন্য কোথাও রক্ত আবেদনকারী (মোবাইল নম্বরে যে ব্যাক্তির সাথে আপনি যোগাযোগ করছেন) এর সাথে দেখা করবেন না। হাসপাতালের পাশের গলি, কিংবা কোনও দোকানে দেখা করতে বললে যাবেন না।\r\nরক্তদানের পূর্বে রোগী দেখে নিবেন। রোগীর রিপোর্ট, ডাক্তারের রিকুইজিশন লেটার দেখে নিবেন।\r\nরক্তদানের সময় দুই-একজন বন্ধু সাথে নিয়ে গেলে ভালো হয়।\r\nরক্তদানে নতুন সূচ ব্যবহার করছে কিনা নিশ্চিত হয়ে নিন।\r\nউপস্থিত বিশেষজ্ঞের দক্ষতা নিয়ে সন্দেহ থাকলে কর্তৃপক্ষকে জানান.', 'child-birth.jpg', 0, '2017-06-22 04:39:55', 0, '2017-06-19 12:41:19'),
+(3, 2, 'বাংলায় নমুনা লেখা', ' বাংলা কোডেক্সসহ বিভিন্ন বাংলা অনলাইন পত্রিকা তৈরির কাজ করতে করতে বাংলার সাথে নিজেকে বেঁধে নিয়েছি আষ্টেপৃষ্ঠে। বিশেষ করে অনলাইন পত্রিকা তৈরি করতে ডিযাইন করার সময়, সেই ডিযাইনকে কোডে রূপান্তর করবার সময় বারবার অনুভব করেছি কিছু নমুনা লেখার। যে লেখাগুলো ফটোশপে বসিয়ে বাংলায় ডিযাইন করা যাবে, আবার সেই লেখাই অনলাইনে ব্যবহার করা যাবে। কিন্তু দুঃখজনক হলেও সত্য যে, ইংরেজিতে লাতিন Lorem Ipsum… সূচক নমুনা লেখা (dummy texts) থাকলেও বাংলা ভাষায় এরকম কোনো লেখা নেই। তাই নিজের তাগিদেই বাংলা ভাষার জন্য প্রথম নমুনা লেখা তৈরি করলাম, এ হলো বাংলা Lorem ipsum – কিন্তু তার অনুবাদ নয়। আমি একে নামকরণ করেছি: অর্থহীন লেখা!', 'asdf.png', 2, '2017-07-16 08:52:30', 3, '2017-07-16 08:52:30'),
+(4, 2, 'অর্থহীন লেখা', 'অর্থহীন লেখা যার মাঝে আছে অনেক কিছু। হ্যাঁ, এই লেখার মাঝেই আছে অনেক কিছু। যদি তুমি মনে করো, এটা তোমার কাজে লাগবে, তাহলে তা লাগবে কাজে। নিজের ভাষায় লেখা দেখতে অভ্যস্ত হও। মনে রাখবে লেখা অর্থহীন হয়, যখন তুমি তাকে অর্থহীন মনে করো; আর লেখা অর্থবোধকতা তৈরি করে, যখন তুমি তাতে অর্থ ঢালো। যেকোনো লেখাই তোমার কাছে অর্থবোধকতা তৈরি করতে পারে, যদি তুমি সেখানে অর্থদ্যোতনা দেখতে পাও। …ছিদ্রান্বেষণ? না, তা হবে কেন?', 'icon.png', 5, '2017-07-16 08:55:26', 4, '2017-07-16 08:55:26'),
+(5, 2, 'যে কথাকে কাজে লাগাতে চাও', 'যে কথাকে কাজে লাগাতে চাও, তাকে কাজে লাগানোর কথা চিন্তা করার আগে ভাবো, তুমি কি সেই কথার জাদুতে আচ্ছন্ন হয়ে গেছ কিনা। তুমি যদি নিশ্চিত হও যে, তুমি কোনো মোহাচ্ছাদিত আবহে আবিষ্ট হয়ে অন্যের শেখানো বুলি আত্মস্থ করছো না, তাহলে তুমি নির্ভয়ে, নিশ্চিন্তে অগ্রসর হও। তুমি সেই কথাকে জানো, বুঝো, আত্মস্থ করো; মনে রাখবে, যা অনুসরণ করতে চলেছো, তা আগে অনুধাবন করা জরুরি; এখানে কিংকর্তব্যবিমূঢ় হবার কোনো সুযোগ নেই।', 'icon2.png', 6, '2017-07-16 08:58:23', 8, '2017-07-16 08:58:23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog_categories`
+--
+
+CREATE TABLE `blog_categories` (
+  `id` int(3) NOT NULL,
+  `category_name` varchar(100) NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `blog_categories`
+--
+
+INSERT INTO `blog_categories` (`id`, `category_name`, `updated_at`, `created_at`) VALUES
+(1, 'Event', '2017-07-12 00:19:23', '0000-00-00 00:00:00'),
+(2, 'Blood News', '2017-07-16 07:37:21', '0000-00-00 00:00:00'),
+(3, 'cat_3', '2017-06-19 17:59:15', '0000-00-00 00:00:00'),
+(4, 'cat_4', '2017-06-19 17:59:15', '0000-00-00 00:00:00'),
+(5, 'cat_66', '2017-07-16 00:03:49', '2017-06-19 12:01:39'),
+(6, 'Hospital', '2017-06-19 12:34:06', '2017-06-19 12:34:06'),
+(7, 'Home', '2017-06-23 09:18:11', '2017-06-23 09:18:11'),
+(8, 'Ashru', '2017-07-16 00:04:35', '2017-07-16 00:04:35');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `bloodgroups`
 --
 
@@ -320,6 +436,48 @@ CREATE TABLE `bloodgroups` (
   `sort_order` int(11) NOT NULL,
   `created_datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blood_requests`
+--
+
+CREATE TABLE `blood_requests` (
+  `id` int(11) NOT NULL,
+  `user_id` int(255) NOT NULL,
+  `request_blood_group` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `patient_hospital` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `patient_phone` varchar(255) NOT NULL,
+  `patient_place` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `number_blood_bag` int(11) NOT NULL,
+  `disease` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `relation` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `opration_time` datetime NOT NULL,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_by` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `blood_requests`
+--
+
+INSERT INTO `blood_requests` (`id`, `user_id`, `request_blood_group`, `patient_hospital`, `patient_phone`, `patient_place`, `number_blood_bag`, `disease`, `relation`, `opration_time`, `updated_at`, `created_at`, `created_by`) VALUES
+(1, 0, '56778', 'jaman', '0', 'jhinaidaha', 3, 'no', 'bro', '2017-06-22 03:22:11', '2017-06-22 00:24:10', '2017-06-22 00:24:10', 2),
+(2, 2, 'A+', 'jhjhk', '8787778', 'vhjhg', 9, 'Yes', 'hgvghf', '2017-06-30 00:00:00', '2017-06-21 19:19:33', '2017-06-21 19:19:33', NULL),
+(3, 2, 'AB+', 'Rashed', '12345', 'Basabo', 4, 'No', 'Brother', '2017-07-20 00:00:00', '2017-07-08 15:21:53', '2017-07-08 15:21:53', NULL),
+(4, 6, 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:30:55', '2017-07-14 20:30:55', NULL),
+(5, 6, 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:32:35', '2017-07-14 20:32:35', NULL),
+(6, 6, 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:32:35', '2017-07-14 20:32:35', NULL),
+(7, 6, 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:33:32', '2017-07-14 20:33:32', NULL),
+(8, 6, 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:36:30', '2017-07-14 20:36:30', NULL),
+(9, 6, 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:37:11', '2017-07-14 20:37:11', NULL),
+(10, 6, 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:37:30', '2017-07-14 20:37:30', NULL),
+(11, 6, 'A+', 'Mohin', '0158965848', 'Moynamoti', 3, 'unknown', 'brother', '2017-07-21 00:00:00', '2017-07-14 21:04:36', '2017-07-14 21:04:36', NULL),
+(12, 6, 'A+', 'Dhaka Medical', '019100077628', 'Dhaka', 2, 'Fever', 'Brother', '2017-07-05 00:00:00', '2017-07-19 19:22:15', '2017-07-19 19:22:15', NULL),
+(13, 6, 'O-', 'Dhaka', '011111', 'DHaka', 100, 'No', 'ok', '2017-07-12 00:00:00', '2017-07-19 19:25:50', '2017-07-19 19:25:50', NULL),
+(14, 6, 'B+', 'Rajshahi Medical', '01865987458', 'Rajshahi', 6, 'Thalasamia', 'Friend', '2017-07-28 00:00:00', '2017-07-19 19:32:41', '2017-07-19 19:32:41', NULL);
 
 -- --------------------------------------------------------
 
@@ -370,6 +528,7 @@ CREATE TABLE `contents` (
   `description` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `content_type` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `content_page` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `content_photo` text NOT NULL,
   `author_id` bigint(20) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
@@ -379,11 +538,24 @@ CREATE TABLE `contents` (
 -- Dumping data for table `contents`
 --
 
-INSERT INTO `contents` (`id`, `title`, `description`, `content_type`, `content_page`, `author_id`, `created_at`, `updated_at`) VALUES
-(4, 'কেন রক্তদান করবেন?', '<ul>\r\n	<li>প্রথম এবং প্রধান কারণ, আপনার দানকৃত রক্ত একজন মানুষের জীবন বাঁচাবে। রক্তদানের জন্য এর থেকে বড় কারণ আর কি হতে পারে !</li>\r\n	<li>হয়তো একদিন আপনার নিজের প্রয়োজনে/বিপদে অন্য কেউ এগিয়ে আসবে।</li>\r\n	<li>নিয়মিত রক্তদানে হৃদরোগ ও হার্ট অ্যাটাকের ঝুঁকি অনেক কম।</li>\r\n	<li>দেহের রোগ প্রতিরোধ ক্ষমতা অনেকগুন বেড়ে যায়।</li>\r\n</ul>', 'Page', 'Home', 3, '2017-06-01 16:36:05', '2017-06-01 16:36:05'),
-(5, 'কারা রক্তদান করতে পারবেন?', '<ul>\r\n	<li>১৮ বছর থেকে ৬০ বছরের যেকোনো সুস্থদেহের মানুষ রক্ত দান করতে পারবেন।</li>\r\n	<li>শারীরিক এবং মানসিক ভাবে সুস্থ নিরোগ ব্যক্তি রক্ত দিতে পারবেন</li>\r\n	<li>আপনার ওজন অবশ্যই ৫০ কিলোগ্রাম কিংবা তার বেশি হতে হবে।</li>\r\n	<li>মহিলাদের ক্ষেত্রে ৪ মাস অন্তর-অন্তর, পুরুষদের ক্ষেত্রে ৩ মাস অন্তর অন্তর রক্ত-দান করা যায়।</li>\r\n	<li>রক্তে হিমোগ্লোবিনের পরিমাণ, রক্তচাপ ও শরীরের তাপমাত্রা স্বাভাবিক থাকতে হবে।</li>\r\n	<li>শ্বাস-প্রশ্বাসজনিত রোগ এ্যাজমা, হাপানি যাদের আছে তারা রক্ত দিতে পারবেন না।</li>\r\n</ul>', 'Notice', 'Donor', 3, '2017-06-01 16:36:52', '2017-06-01 16:36:52'),
-(6, 'কিছু ভুল ধারনা', '<ul>\r\n	<li>প্রথম এবং প্রধান কারণ, আপনার দানকৃত রক্ত একজন মানুষের জীবন বাঁচাবে। রক্তদানের জন্য এর থেকে বড় কারণ আর কি হতে পারে !</li>\r\n	<li>হয়তো একদিন আপনার নিজের প্রয়োজনে/বিপদে অন্য কেউ এগিয়ে আসবে।</li>\r\n	<li>নিয়মিত রক্তদানে হৃদরোগ ও হার্ট অ্যাটাকের ঝুঁকি অনেক কম।</li>\r\n	<li>দেহের রোগ প্রতিরোধ ক্ষমতা অনেকগুন বেড়ে যায়।</li>\r\n</ul>', 'Page', 'Home', 3, '2017-06-01 16:39:25', '2017-06-01 16:39:25'),
-(7, 'সাবধানতা ও সতর্কতা', '<ul>\r\n	<li>১৮ বছর থেকে ৬০ বছরের যেকোনো সুস্থদেহের মানুষ রক্ত দান করতে পারবেন।</li>\r\n	<li>শারীরিক এবং মানসিক ভাবে সুস্থ নিরোগ ব্যক্তি রক্ত দিতে পারবেন</li>\r\n	<li>আপনার ওজন অবশ্যই ৫০ কিলোগ্রাম কিংবা তার বেশি হতে হবে।</li>\r\n	<li>মহিলাদের ক্ষেত্রে ৪ মাস অন্তর-অন্তর, পুরুষদের ক্ষেত্রে ৩ মাস অন্তর অন্তর রক্ত-দান করা যায়।</li>\r\n	<li>রক্তে হিমোগ্লোবিনের পরিমাণ, রক্তচাপ ও শরীরের তাপমাত্রা স্বাভাবিক থাকতে হবে।</li>\r\n	<li>শ্বাস-প্রশ্বাসজনিত রোগ এ্যাজমা, হাপানি যাদের আছে তারা রক্ত দিতে পারবেন না।</li>\r\n</ul>', 'our-policy', 'About', 3, '2017-06-16 20:26:30', '2017-06-01 16:43:02');
+INSERT INTO `contents` (`id`, `title`, `description`, `content_type`, `content_page`, `content_photo`, `author_id`, `created_at`, `updated_at`) VALUES
+(5, 'কারা রক্তদান করতে পারবেন?', '<ul>\r\n	<li>১৮ বছর থেকে ৬০ বছরের যেকোনো সুস্থদেহের মানুষ রক্ত দান করতে পারবেন।</li>\r\n	<li>শারীরিক এবং মানসিক ভাবে সুস্থ নিরোগ ব্যক্তি রক্ত দিতে পারবেন</li>\r\n	<li>আপনার ওজন অবশ্যই ৫০ কিলোগ্রাম কিংবা তার বেশি হতে হবে।</li>\r\n	<li>মহিলাদের ক্ষেত্রে ৪ মাস অন্তর-অন্তর, পুরুষদের ক্ষেত্রে ৩ মাস অন্তর অন্তর রক্ত-দান করা যায়।</li>\r\n	<li>রক্তে হিমোগ্লোবিনের পরিমাণ, রক্তচাপ ও শরীরের তাপমাত্রা স্বাভাবিক থাকতে হবে।</li>\r\n	<li>শ্বাস-প্রশ্বাসজনিত রোগ এ্যাজমা, হাপানি যাদের আছে তারা রক্ত দিতে পারবেন না।</li>\r\n</ul>', 'Notice', 'Donor', '', 3, '2017-06-01 16:36:52', '2017-06-01 16:36:52'),
+(6, 'কিছু ভুল ধারনা', 'রক্তদান হল কোন প্রাপ্তবয়স্ক সুস্থ মানুষের স্বেচ্ছায় রক্ত দেবার প্রক্রিয়া। এই দান করা রক্ত পরিসঞ্চালন ... একজন রক্তদাতা কতদিন পরপর রক্তদান করতে পারবেন তা নির্ভর করে তিনি কী দান করছেন তার ওপর এবং যে দেশে রক্তদান সম্পন্ন হচ্ছে সে দেশের আইনের উপর ।', 'upcoming_events', 'Home', 'EVENTS_9.png', 3, '2017-07-21 16:24:14', '2017-06-01 16:39:25'),
+(7, 'সাবধানতা ও সতর্কতা', 'রক্তদান হল কোন প্রাপ্তবয়স্ক সুস্থ মানুষের স্বেচ্ছায় রক্ত দেবার প্রক্রিয়া। এই দান করা রক্ত পরিসঞ্চালন ... একজন রক্তদাতা কতদিন পরপর রক্তদান করতে পারবেন তা নির্ভর করে তিনি কী দান করছেন তার ওপর এবং যে দেশে রক্তদান সম্পন্ন হচ্ছে সে দেশের আইনের উপর ।', 'upcoming_events', 'About', 'EVENTS_9.png', 3, '2017-07-21 16:23:33', '2017-06-01 16:43:02'),
+(8, 'Medical Camp', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit&nbsp;</p>', 'recent_events', 'doctor', 'EVENTS_8.jpg', 3, '2017-07-17 20:16:44', '2017-07-12 11:53:44'),
+(9, 'আপনি জানেন কি?', 'রক্তদান হল কোন প্রাপ্তবয়স্ক সুস্থ মানুষের স্বেচ্ছায় রক্ত দেবার প্রক্রিয়া। এই দান করা রক্ত পরিসঞ্চালন ... একজন রক্তদাতা কতদিন পরপর রক্তদান করতে পারবেন তা নির্ভর করে তিনি কী দান করছেন তার ওপর এবং যে দেশে রক্তদান সম্পন্ন হচ্ছে সে দেশের আইনের উপর ।', 'upcoming_events', 'home', 'EVENTS_9.png', 3, '2017-07-21 16:25:08', '2017-07-17 12:47:46'),
+(10, 'যে কথাকে কাজে লাগাতে চাও', '<p>যে কথাকে কাজে লাগাতে চাও, তাকে কাজে লাগানোর কথা চিন্তা করার আগে ভাবো, তুমি কি সেই কথার জাদুতে আচ্ছন্ন হয়ে গেছ কিনা। তুমি যদি নিশ্চিত হও যে, তুমি কোনো মোহাচ্ছাদিত আবহে আবিষ্ট হয়ে অন্যের শেখানো বুলি আত্মস্থ করছো না, তাহলে তুমি নির্ভয়ে, নিশ্চিন্তে অগ্রসর হও। তুমি সেই কথাকে জানো, বুঝো, আত্মস্থ করো; মনে রাখবে, যা অনুসরণ করতে চলেছো, তা আগে অনুধাবন করা জরুরি; এখানে কিংকর্তব্যবিমূঢ় হবার কোনো সুযোগ নেই।</p>', 'news', 'home', 'NEWS_10.jpg', 3, '2017-07-18 18:04:53', '2017-07-18 12:04:53'),
+(11, 'কোনো কথা শোনামাত্রই কি তুমি তা বিশ্বাস করবে?', '<p>কোনো কথা শোনামাত্রই কি তুমি তা বিশ্বাস করবে? হয়তো বলবে, করবে, হয়তো বলবে &ldquo;আমি করবো না।&rdquo; হ্যা, &ldquo;আমি করবো না&rdquo; বললেই সবকিছু অস্বীকার করা যায় না, হয়তো তুমি মনের গহীন গভীর থেকে ঠিকই বিশ্বাস করতে শুরু করেছো সেই কথাটি, কিন্তু মুখে অস্বীকার করছো। তাই সচেতন থাকো, তুমি কী ভাবছো&mdash; তার প্রতি; সচেতন থাকো, তুমি কি আসলেই বিশ্বাস করতে চলেছো ঐ কথাটি&hellip; শুধু এতটুকু বলি, যা-ই বিশ্বাস করো না কেন, আগে যাচাই করে নাও; আর এতে চাই তোমার প্রত্যুৎপন্নমতিত্ব।</p>', 'news', 'home', 'NEWS_11.jpg', 3, '2017-07-18 18:06:16', '2017-07-18 12:06:16'),
+(12, 'তাই কোন কথাটি কাজে লাগবে', '<p>তাই কোন কথাটি কাজে লাগবে, তা নির্ধারণ করবে তুমি&mdash; হ্যাঁ, তুমি। হয়তো সামান্য ক&rsquo;টা বাংলা অক্ষর: খন্ড-ত, অনুস্বার, বিঃসর্গ কিংবা চন্দ্রবিন্দু&mdash; কিন্তু যদি তুমি বিশ্বাস করো, তাহলে হয়তো তুমি তা দিয়েই তৈরি করতে পারো এক উচ্চমার্গীয় মহাকাব্য- এক চিরসবুজ অর্ঘ্য। রচিত হতে পারে পৃথিবীর ১ম বিরাম চিহ্নের ইতিকথা &ndash; এক নতুন ঊষা। &hellip;মহাকাব্য লিখতে ঋষি-মুনি হওয়া লাগে না।</p>', 'news', 'home', 'NEWS_12.jpg', 3, '2017-07-18 18:07:23', '2017-07-18 12:07:23'),
+(13, 'হ্যাঁ, এই লেখার মাঝেই আছে অনেক কিছু', '<p>হ্যাঁ, এই লেখার মাঝেই আছে অনেক কিছু। যদি তুমি মনে করো, এটা তোমার কাজে লাগবে, তাহলে তা লাগবে কাজে। নিজের ভাষায় লেখা দেখতে অভ্যস্ত হও। মনে রাখবে লেখা অর্থহীন হয়, যখন তুমি তাকে অর্থহীন মনে করো; আর লেখা অর্থবোধকতা তৈরি করে, যখন তুমি তাতে অর্থ ঢালো।</p>', 'news', 'home', 'NEWS_13.png', 3, '2017-07-18 18:08:40', '2017-07-18 12:08:40'),
+(14, 'তুমি সেই কথাকে জানো, বুঝো, আত্মস্থ করো', '<p>সেই কথার জাদুতে আচ্ছন্ন হয়ে গেছ কিনা। তুমি যদি নিশ্চিত হও যে, তুমি কোনো মোহাচ্ছাদিত আবহে আবিষ্ট হয়ে অন্যের শেখানো বুলি আত্মস্থ করছো না, তাহলে তুমি নির্ভয়ে, নিশ্চিন্তে অগ্রসর হও। তুমি সেই কথাকে জানো, বুঝো, আত্মস্থ করো; মনে রাখবে, যা অনুসরণ করতে চলেছো, তা আগে অনুধাবন করা জরুরি; এখানে কিংকর্তব্যবিমূঢ় হবার কোনো সুযোগ নেই।</p>', 'news', 'home', 'NEWS_14.png', 3, '2017-07-18 18:10:07', '2017-07-18 12:10:07'),
+(15, 'Medical Camp 22', '<p>Lorem ipsum dolor sit amet, consectetuer a libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit&nbsp;</p>', 'recent_events', 'doctor', 'EVENTS_8.jpg', 3, '2017-07-17 20:16:44', '2017-07-12 11:53:44'),
+(16, 'Medical Camp138', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius ', 'recent_events', 'doctor', 'EVENTS_8.jpg', 3, '2017-07-17 20:16:44', '2017-07-12 11:53:44'),
+(17, 'Medical Camp224', 'tur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ', 'recent_events', 'doctor', 'EVENTS_8.jpg', 3, '2017-07-17 20:16:44', '2017-07-12 11:53:44'),
+(18, 'Medical Camp350', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit&nbsp;</p>', 'recent_events', 'doctor', 'EVENTS_8.jpg', 3, '2017-07-17 20:16:49', '2017-07-12 11:53:44'),
+(19, 'Medical Camp430', 'enean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate egam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit&nbsp;</p>', 'recent_events', 'doctor', 'EVENTS_8.jpg', 3, '2017-07-17 20:16:50', '2017-07-12 11:53:44'),
+(20, '৩০ বছরের পর হার্ট ভালো রাখার সাত উপায়', 'রক্ত কৃত্তিমভাবে তৈরী করা যায় না, শুধুমাত্র একজন মানুষই পারে আরেকজন মানুষকে বাঁচাতে। কিন্তু দুঃখের ব্যাপার, প্রতিবছর বহুসংখ্যক মানুষ মারা যাচ্ছে জরুরি মুহুর্তে প্রয়োজনীয় রক্তের অভাবে। বর্তমানে বাংলাদেশে প্রতি বছর রক্তের প্রয়োজন মাত্র ৯ লাখ ব্যাগ। অথচ জনবহুল এই দেশে এখনো মানুষ মারা যাচ্ছে রক্তের অভাবে। রক্তের এই চাহিদা খুব সহজেই পূরণ করা সম্ভব হবে যদি আমাদের দেশের সকল প্রান্তের পূর্ণবয়স্ক মানুষদের রক্তদানের প্রয়োজনীয়তা এবং সুফলতা বুঝিয়ে সচেতন করা যায়।', 'recent_events', 'home', 'RECENT_EVENTS_20.jpg', 3, '2017-07-21 16:22:26', '2017-07-19 13:02:29'),
+(21, '10 বছরের পর হার্ট ভালো রাখার সাত উপায়', 'রক্তদান হল কোন প্রাপ্তবয়স্ক সুস্থ মানুষের স্বেচ্ছায় রক্ত দেবার প্রক্রিয়া। এই দান করা রক্ত পরিসঞ্চালন ... একজন রক্তদাতা কতদিন পরপর রক্তদান করতে পারবেন তা নির্ভর করে তিনি কী দান করছেন তার ওপর এবং যে দেশে রক্তদান সম্পন্ন হচ্ছে সে দেশের আইনের উপর ।', 'recent_events', 'home', 'RECENT_EVENTS_20.jpg', 3, '2017-07-21 16:22:44', '2017-07-19 13:02:29');
 
 -- --------------------------------------------------------
 
@@ -514,6 +686,186 @@ INSERT INTO `divisions` (`id`, `country_row_id`, `division_name`, `division_name
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `doctors`
+--
+
+CREATE TABLE `doctors` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `designation` varchar(255) NOT NULL,
+  `hospital` varchar(255) NOT NULL,
+  `speacilist` varchar(255) NOT NULL,
+  `phone` varchar(30) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `gender` varchar(255) NOT NULL,
+  `profile_photo` text NOT NULL,
+  `preasent_address` text NOT NULL,
+  `doctor_detail` text NOT NULL,
+  `chamber_address` varchar(255) NOT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_by` int(11) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `doctors`
+--
+
+INSERT INTO `doctors` (`id`, `name`, `designation`, `hospital`, `speacilist`, `phone`, `email`, `gender`, `profile_photo`, `preasent_address`, `doctor_detail`, `chamber_address`, `updated_by`, `updated_at`, `created_by`, `created_at`) VALUES
+(1, 'Dr. Jaman', 'profrssor', 'IBN SINA', 'Neuro', '018456935', 'Dhaka', '', '', '', '', 'Basabo', 0, '2017-06-21 00:01:35', 0, '2017-06-21 00:01:35'),
+(2, 'Rashed Jaman', '2', '1', '1', '017689565', 'jaman@gmail.com', 'male', '.jpg', 'dhaka', 'poca doctor', 'basabo', NULL, '2017-06-22 07:09:27', NULL, '2017-06-20 19:44:51'),
+(3, 'Shaheen', '3', '9', '7', '345345242', 'shaheen@gmail.com', 'male', 'C:\\xampp\\tmp\\phpAA48.tmp', 'dfksehfgshfgisfh', 'dfwefbwejkh', 'efawekfhgweukfgy', NULL, '2017-06-20 19:45:49', NULL, '2017-06-20 19:45:49'),
+(4, 'Shaheen', '3', '9', '7', '345345242', 'shaheen@gmail.com', 'male', 'C:\\xampp\\tmp\\php5C25.tmp', 'dfksehfgshfgisfh', 'dfwefbwejkh', 'efawekfhgweukfgy', NULL, '2017-06-20 19:46:35', NULL, '2017-06-20 19:46:35'),
+(5, 'Shaheen', '3', '9', '7', '345345242', 'shaheen@gmail.com', 'male', 'C:\\xampp\\tmp\\php8856.tmp', 'dfksehfgshfgisfh', 'dfwefbwejkh', 'efawekfhgweukfgy', NULL, '2017-06-20 19:46:46', NULL, '2017-06-20 19:46:46'),
+(6, 'Shaheen', '3', '9', '7', '345345242', 'shaheen@gmail.com', 'male', 'C:\\xampp\\tmp\\php35BE.tmp', 'dfksehfgshfgisfh', 'dfwefbwejkh', 'efawekfhgweukfgy', NULL, '2017-06-20 19:47:31', NULL, '2017-06-20 19:47:31');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `doctor_degrees`
+--
+
+CREATE TABLE `doctor_degrees` (
+  `id` int(11) NOT NULL,
+  `abbr` varchar(255) DEFAULT NULL,
+  `degree` varchar(255) DEFAULT NULL,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `doctor_degrees`
+--
+
+INSERT INTO `doctor_degrees` (`id`, `abbr`, `degree`, `updated_at`, `created_at`) VALUES
+(1, 'M.B.B.S', 'Bachelor of Medicine/Bachelor of Surgery', '2017-06-22 07:58:52', '2017-06-21 20:27:18'),
+(2, 'B.D.S', 'Bachelor of Dental Surgery', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(3, 'B.Pharma', 'Bachelor of Pharmacy', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(4, 'B.P.T ', 'Physiotherapy', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(5, 'B.O.T', 'Occupational Therapy', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(6, 'B.H.M.S', 'Homeopathy Medicine', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(7, 'B.U.M.S', 'Unani Medicine', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(8, NULL, 'Optometry', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(9, NULL, 'Ophthalmic Assistant Medical course', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(12, 'D. Pharma', 'AyurvedicSiddha Medicine', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(13, NULL, 'Lab Technicians', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(14, NULL, 'Sanitary Inspector Medical course', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(15, NULL, 'General Nursing Training Medical course', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(16, NULL, 'Orthopedist Medical course', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(17, NULL, 'Dental Mechanic Medical course', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(18, NULL, 'Dental Hygienist Medical course', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(19, NULL, 'Bachelor of Occupationaltherapy', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(20, NULL, 'Radiological Assistant', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(21, NULL, 'Radiography', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(22, NULL, 'Nuclear Medicine Technology', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(23, NULL, 'B.Sc Nursing', '2017-06-21 20:27:18', '2017-06-21 20:27:18'),
+(24, 'TP', 'Tia Pakhi', '2017-06-21 14:37:44', '2017-06-21 14:37:44');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `doctor_designations`
+--
+
+CREATE TABLE `doctor_designations` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `doctor_designations`
+--
+
+INSERT INTO `doctor_designations` (`id`, `name`, `updated_at`, `created_at`) VALUES
+(1, 'Professor', '2017-07-16 05:57:58', '2017-06-21 20:14:14'),
+(2, 'Associate Professor', '2017-06-21 20:14:14', '2017-06-21 20:14:14'),
+(3, 'Assistant Professor', '2017-06-21 20:14:14', '2017-06-21 20:14:14'),
+(4, 'Lecturer', '2017-06-21 20:14:14', '2017-06-21 20:14:14'),
+(5, 'Sr. Lecturer', '2017-06-21 20:14:14', '2017-06-21 20:14:14'),
+(6, 'Professor & Head', '2017-06-21 20:14:14', '2017-06-21 20:14:14'),
+(7, 'Meem', '2017-06-21 14:16:31', '2017-06-21 14:16:31'),
+(8, 'asdf', '2017-06-21 14:19:33', '2017-06-21 14:19:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `doctor_specialities`
+--
+
+CREATE TABLE `doctor_specialities` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `doctor_specialities`
+--
+
+INSERT INTO `doctor_specialities` (`id`, `name`) VALUES
+(1, 'Allergy and immunology'),
+(2, 'Adolescent medicine'),
+(3, 'Anaesthesiology'),
+(4, 'Aerospace medicine'),
+(5, 'Pathology'),
+(6, 'Cardiothoracic surgery'),
+(7, 'Clinical neurophysiology'),
+(8, 'Colon and Rectal Surgery'),
+(9, 'Dermatology-Venereology'),
+(10, 'Emergency medicine'),
+(11, 'Endocrinology'),
+(12, 'Gastroenterology'),
+(13, 'General practice'),
+(14, 'Geriatrics'),
+(15, 'Obstetrics and gynecology'),
+(16, 'Health informatics'),
+(17, 'Hospice and palliative medicine'),
+(18, 'Infectious disease'),
+(19, 'Internal medicine'),
+(20, 'Interventional radiology'),
+(21, 'Microbiology'),
+(22, 'Nephrology'),
+(23, 'Neurology'),
+(24, 'Neurosurgery'),
+(25, 'Nuclear medicine'),
+(26, 'Occupational medicine'),
+(27, 'Ophthalmology'),
+(28, 'Orthodontics'),
+(29, 'Orthopaedics'),
+(30, 'Oral and maxillofacial surgery'),
+(31, 'Otorhinolaryngology'),
+(32, 'Paediatrics'),
+(33, 'Paediatric allergology'),
+(34, 'Paediatric cardiology'),
+(35, 'Paediatric endocrinology and diabetes'),
+(36, 'Paediatric gastroenterology '),
+(37, 'hepatology and nutrition'),
+(38, 'Paediatric haematology and oncology'),
+(39, 'Paediatric infectious diseases'),
+(40, 'Neonatology'),
+(41, 'Paediatric nephrology'),
+(42, 'Paediatric respiratory medicine'),
+(43, 'Paediatric rheumatology'),
+(44, 'Paediatric surgery'),
+(45, 'Physical medicine and rehabilitation'),
+(46, 'Plastic'),
+(47, ' reconstructive and aesthetic surgery'),
+(48, 'Pulmonology'),
+(49, 'Psychiatry'),
+(50, 'Public Health'),
+(51, 'Radiation Oncology'),
+(52, 'Radiology'),
+(53, 'Sports medicine'),
+(54, 'Neuroradiology'),
+(55, 'General surgery'),
+(56, 'Urology'),
+(57, 'Vascular surgery');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `donateblood`
 --
 
@@ -539,54 +891,64 @@ CREATE TABLE `donateblood` (
 
 CREATE TABLE `donors` (
   `id` int(11) NOT NULL,
-  `fullname` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
-  `email` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `password` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
-  `gender` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `date_of_birth` date DEFAULT NULL,
-  `last_donate_date` date DEFAULT NULL,
-  `phone` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `division_id` int(11) NOT NULL,
-  `district` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `upazila` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `location` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
-  `blood_group` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `post_code` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `rank` int(11) DEFAULT NULL,
-  `web_url` text,
-  `fb_url` text,
-  `profile_photo` text,
+  `phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` text COLLATE utf8_unicode_ci,
+  `pic_path` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `fname` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lname` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `blood_group` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `birth_date` date DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `last_donation` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `new_donor` int(11) DEFAULT NULL,
+  `email` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `division` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `district` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `thana` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `latitude` double DEFAULT NULL,
   `longitude` double DEFAULT NULL,
-  `varification` int(11) DEFAULT NULL,
+  `code` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `verification` int(11) DEFAULT NULL,
   `lastLat` double DEFAULT NULL,
   `lastLng` double DEFAULT NULL,
-  `fcm_email` varchar(255) DEFAULT NULL,
-  `fcm_uid` varchar(255) DEFAULT NULL,
-  `fcm_token` varchar(255) DEFAULT NULL,
-  `age` varchar(255) DEFAULT NULL,
-  `pro_visible` varchar(255) DEFAULT NULL,
-  `called_date` varchar(255) DEFAULT NULL,
-  `called_today` varchar(255) DEFAULT NULL,
-  `religion` varchar(255) DEFAULT NULL,
-  `is_physically_disble` varchar(255) DEFAULT NULL,
-  `nationality` varchar(255) DEFAULT NULL,
-  `nid` varchar(255) DEFAULT NULL,
-  `status` varchar(20) DEFAULT NULL,
-  `number_of_donate` int(11) DEFAULT NULL,
+  `fcm_email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `fcm_uid` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `fcm_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pro_visible` int(11) DEFAULT NULL,
+  `called_date` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `called_today` int(11) DEFAULT NULL,
+  `donations_number` int(11) DEFAULT NULL,
+  `user_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `gender` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `already_donated` int(11) DEFAULT NULL,
+  `autopro_visible` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `singup_steps` int(11) DEFAULT NULL,
+  `post_code` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `rank` int(11) DEFAULT NULL,
+  `web_url` text COLLATE utf8_unicode_ci,
+  `fb_url` text COLLATE utf8_unicode_ci,
+  `profile_photo` text COLLATE utf8_unicode_ci,
+  `religion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `is_physically_disble` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nationality` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nid` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `status` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `is_available` tinyint(1) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_by` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_by` int(11) DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `donors`
 --
 
-INSERT INTO `donors` (`id`, `fullname`, `email`, `password`, `gender`, `date_of_birth`, `last_donate_date`, `phone`, `division_id`, `district`, `upazila`, `location`, `blood_group`, `post_code`, `rank`, `web_url`, `fb_url`, `profile_photo`, `latitude`, `longitude`, `varification`, `lastLat`, `lastLng`, `fcm_email`, `fcm_uid`, `fcm_token`, `age`, `pro_visible`, `called_date`, `called_today`, `religion`, `is_physically_disble`, `nationality`, `nid`, `status`, `number_of_donate`, `updated_at`, `created_at`, `updated_by`) VALUES
-(9, NULL, 'jmrashed@gmail.com', '$2y$10$6Q7hCA97SLZ61FcJ9KenquK6wJBhhQb6Bhe.eItwVo55ozazpY0hu', NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, 'A+', NULL, NULL, NULL, NULL, '.jpg', NULL, NULL, 892345, NULL, NULL, 'jmrashed@gmail.com', '1', 'kynbupDsNrtWwUx3iAWrpzdfnSiqAtKJ6m4QjWID', NULL, 'Yes', NULL, NULL, 'Muslim', 'Yes', NULL, NULL, NULL, NULL, '2017-06-16 20:42:16', '2017-06-16 20:42:16', 2),
-(10, 'Jaman', 'jmrashed@gmail.com', '$2y$10$MRGyifZquIE8DWrXj14zuO2lLd5Dzp5DrAL2MuUhutWw/FRhvEJtW', 'male', '2017-05-30', '2017-06-21', NULL, 3, '14', '244', 'Mouchak Rail Station, Gazipur District, Dhaka Division, Bangladesh', 'A+', NULL, NULL, NULL, NULL, 'JAMAN.jpg', NULL, NULL, 892345, NULL, NULL, 'jmrashed@gmail.com', '1', 'kynbupDsNrtWwUx3iAWrpzdfnSiqAtKJ6m4QjWID', NULL, 'Yes', NULL, NULL, 'Muslim', 'Yes', NULL, NULL, NULL, NULL, '2017-06-16 20:42:20', '2017-06-16 20:42:20', 2),
-(11, 'Nazmus Sakib', 'sakib@gmail.com', '$2y$10$ST3Ab.7JQkmnlZiqzLBemuA.zKSuXseUBjZpFno4VX4OIJlgGBK2a', 'male', '2017-05-30', '2017-06-02', '01910077628', 2, '14', '242', 'Mouchak Market, West Malibagh, Dhaka, Bangladesh', 'A+', '1212', 45, 'ee', NULL, '11_NAZMUSSAKIB.jpg', 23.895623, 90.568923, 892345, 23.568945, 90.457865, 'sakib@gmail.com', '1', 'kynbupDsNrtWwUx3iAWrpzdfnSiqAtKJ6m4QjWID', '34', 'Yes', '2017-05-30', '2017-06-08', 'Muslim', 'Yes', 'Bangladeshi', '1526513159652', '1', 3, '2017-06-16 20:51:24', '2017-06-16 20:51:24', 2);
+INSERT INTO `donors` (`id`, `phone`, `password`, `pic_path`, `fname`, `lname`, `blood_group`, `birth_date`, `age`, `last_donation`, `new_donor`, `email`, `division`, `district`, `thana`, `address`, `latitude`, `longitude`, `code`, `verification`, `lastLat`, `lastLng`, `fcm_email`, `fcm_uid`, `fcm_token`, `pro_visible`, `called_date`, `called_today`, `donations_number`, `user_type`, `gender`, `already_donated`, `autopro_visible`, `singup_steps`, `post_code`, `rank`, `web_url`, `fb_url`, `profile_photo`, `religion`, `is_physically_disble`, `nationality`, `nid`, `status`, `is_available`, `updated_at`, `created_at`, `updated_by`, `created_by`) VALUES
+(1, '01910077628', '123', 'public/images/profile/rashed.jpg', 'Md', 'Rasheduzzaman', 'A+', '1992-07-14', 24, '2016-05-12', 1, 'jmrashed@gmail.com', 'Dhaka', 'Dhaka', 'Ramna', '453, Green Way Rd, DHaka', NULL, NULL, NULL, NULL, 11, NULL, NULL, NULL, NULL, 1, NULL, NULL, 5, NULL, 'Male', NULL, NULL, NULL, '1217', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2017-07-17 18:10:34', '0000-00-00 00:00:00', NULL, NULL),
+(2, '01923589277', 'anisur', 'profileImages/anis.jpg', 'anis', 'mizi', 'A+', '1989-07-14', 28, '2017-07-14', 1, 'an@gmail.com', 'Dhaka', 'Dhaka', 'Adabor', 'Mohanagar Middle Rd 2, Dhaka 1212, Bangladesh', 23.7663383, 90.4165958, '36438', 1, 23.7663383, 90.4165958, 'test21@gmail.com', 'avIoHO42GrdjcHHFuJB11cETsQE3', 'fEZReXUJXLc:APA91bFzM-sI_CDDtdRI8OkvXli9GBvSccpMAvcBJQr-JFBLMorR0BP2YFPNh6PX9WxqRZm86cpvBUapWUbyf5P8KdiiI8Mr_D8Z34uPDb_nOKYRgPbPU2XWoJkVcz-q_ZYTNv85Reg8', 1, 'na', 0, 0, 'donor', 'Male', 0, 'na', 3, 'na', 1, 'na', 'na', 'na', 'na', 'na', 'na', 'na', 'na', 1, '2017-07-17 18:01:32', '2014-08-11 23:14:54', 1, 1),
+(3, '01923589278', 'anisur', 'profileImages/salam.jpg', 'salam', 'mizi', 'A-', '1991-07-14', 26, '2017-07-14', 1, 'salam@gmail.com', 'Dhaka', 'Dhaka', 'Adabor', 'Mohanagar Middle Rd 2, Dhaka 1212, Bangladesh', 23.782062399999997, 90.4160527, '95035', 1, 23.782062399999997, 90.4160527, 'test20@gmail.com', 'UvoewKHQkXOZ1Afzzv1Q182ybCI2', 'fa1DqrAZhvY:APA91bGKG3d-AA1NeE7bZjSAkSTWSZQbxLd-Y4yHd5S6TUr0KlXUixld45knPAuwXErucpzv68vfcXh9Y1rG-yTCUn1NGRdhiL34FBOps0emDu6nhzRvLc2j5eGqTG0da2bOnx2Paq-g', 1, 'na', 0, 0, 'admin', 'Male', 0, 'na', 3, 'na', 1, 'na', 'na', 'na', 'na', 'na', 'na', 'na', 'na', 1, '2017-07-17 18:10:30', '2014-08-11 23:14:54', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -651,6 +1013,41 @@ INSERT INTO `faqs` (`id`, `category`, `question`, `answer`, `author_id`, `create
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `find_solutions`
+--
+
+CREATE TABLE `find_solutions` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `age` int(11) NOT NULL,
+  `last_blood_pressure` varchar(255) NOT NULL,
+  `any_disease` text NOT NULL,
+  `problems` text NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `is_solved` tinyint(2) DEFAULT NULL,
+  `doctor_suggestion` text,
+  `doctor_detail` text,
+  `sort_order` int(11) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_by` varchar(255) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_by` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `find_solutions`
+--
+
+INSERT INTO `find_solutions` (`id`, `name`, `age`, `last_blood_pressure`, `any_disease`, `problems`, `email`, `phone`, `is_solved`, `doctor_suggestion`, `doctor_detail`, `sort_order`, `status`, `updated_at`, `updated_by`, `created_at`, `created_by`) VALUES
+(1, 'Ashru', 21, '120/80', 'Many', 'Onek problem', 'ashru@gmail.com', '7046864888', NULL, NULL, NULL, NULL, NULL, '2017-07-11 07:17:55', NULL, '2017-07-11 13:17:55', NULL),
+(2, 'Meem', 21, '130/90', 'yes', 'pathay problem', 'meem@gmail.com', '123965874', NULL, NULL, NULL, NULL, NULL, '2017-07-11 07:43:36', NULL, '2017-07-11 13:43:36', NULL),
+(3, 'Rashed Jaman', 26, '100/80', 'no', 'onek problem bt jana nai', 'rashed@gmail.com', '789654123', NULL, NULL, NULL, NULL, NULL, '2017-07-11 07:45:00', NULL, '2017-07-11 13:45:00', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `galleries`
 --
 
@@ -668,10 +1065,13 @@ CREATE TABLE `galleries` (
 --
 
 INSERT INTO `galleries` (`id`, `page_name`, `gallery_name`, `updated_by`, `updated_at`, `created_at`) VALUES
-(1, 'home', 'home_gallery', 1, '2017-05-31 15:05:41', '2017-05-31 15:05:41'),
-(2, 'profile', 'my_gallery', 1, '2017-05-31 15:07:16', '2017-05-31 15:07:16'),
-(4, 'Contact Page', 'Contact', 2, '2017-06-01 18:19:34', '2017-06-01 18:19:34'),
-(5, 'Test', 'teat for tat', 2, '2017-06-01 18:35:44', '2017-06-01 18:35:44');
+(1, 'health', 'Health', 1, '2017-05-31 15:05:41', '2017-05-31 15:05:41'),
+(2, 'doctor', 'Doctor', 1, '2017-05-31 15:07:16', '2017-05-31 15:07:16'),
+(4, 'services', 'Services', 2, '2017-06-01 18:19:34', '2017-06-01 18:19:34'),
+(5, 'blog', 'Blog', 2, '2017-06-01 18:35:44', '2017-06-01 18:35:44'),
+(6, 'Home_Page', 'Blood Fighter', 2, '2017-07-11 18:45:37', '2017-07-11 18:45:37'),
+(7, 'slider', 'Slider', 0, '2017-07-15 00:11:58', '2017-07-15 00:11:58'),
+(8, 'slider', 'Slider', 2, '2017-07-15 00:12:21', '2017-07-15 00:12:21');
 
 -- --------------------------------------------------------
 
@@ -683,6 +1083,8 @@ CREATE TABLE `gallery_details` (
   `id` int(11) NOT NULL,
   `gallery_id` int(11) NOT NULL,
   `photo_name` varchar(255) NOT NULL,
+  `caption` text,
+  `sub_caption` text,
   `updated_by` int(11) NOT NULL,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -692,12 +1094,158 @@ CREATE TABLE `gallery_details` (
 -- Dumping data for table `gallery_details`
 --
 
-INSERT INTO `gallery_details` (`id`, `gallery_id`, `photo_name`, `updated_by`, `updated_at`, `created_at`) VALUES
-(1, 1, '1.jpg', 2, '2017-06-01 22:09:14', '2017-06-01 22:09:14'),
-(2, 2, '2.jpg', 2, '2017-06-01 22:27:51', '2017-06-01 22:27:51'),
-(3, 2, '3.jpg', 2, '2017-06-01 22:27:51', '2017-06-01 22:27:51'),
-(4, 2, '4.jpg', 2, '2017-06-01 22:27:51', '2017-06-01 22:27:51'),
-(5, 2, '5.jpg', 2, '2017-06-01 22:27:51', '2017-06-01 22:27:51');
+INSERT INTO `gallery_details` (`id`, `gallery_id`, `photo_name`, `caption`, `sub_caption`, `updated_by`, `updated_at`, `created_at`) VALUES
+(1, 6, '2017-07-12_1499838447.jpg', 'This is caption text.', 'Sub caption 1', 2, '2017-07-12 05:47:27', '2017-07-12 05:47:27'),
+(2, 6, '2017-07-12_1499838476.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 05:47:56', '2017-07-12 05:47:56'),
+(3, 6, '2017-07-12_1499838485.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 05:48:05', '2017-07-12 05:48:05'),
+(4, 6, '2017-07-12_1499838493.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 05:48:13', '2017-07-12 05:48:13'),
+(5, 6, '2017-07-12_1499838504.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 05:48:24', '2017-07-12 05:48:24'),
+(6, 6, '2017-07-12_1499838519.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 05:48:39', '2017-07-12 05:48:39'),
+(7, 6, '2017-07-12_1499838526.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 05:48:46', '2017-07-12 05:48:46'),
+(8, 6, '2017-07-12_1499838533.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 05:48:53', '2017-07-12 05:48:53'),
+(9, 6, '2017-07-12_1499838540.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 05:49:00', '2017-07-12 05:49:00'),
+(10, 2, '2017-07-12_1499839273.png', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 06:01:14', '2017-07-12 06:01:14'),
+(11, 2, '2017-07-12_1499839324.png', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 06:02:04', '2017-07-12 06:02:04'),
+(12, 2, '2017-07-12_1499839378.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 06:02:58', '2017-07-12 06:02:58'),
+(13, 2, '2017-07-12_1499839385.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 06:03:05', '2017-07-12 06:03:05'),
+(14, 2, '2017-07-12_1499839394.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 06:03:14', '2017-07-12 06:03:14'),
+(15, 2, '2017-07-12_1499839398.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 06:03:18', '2017-07-12 06:03:18'),
+(16, 1, '2017-07-12_1499839490.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 06:04:50', '2017-07-12 06:04:50'),
+(17, 1, '2017-07-12_1499839499.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 06:04:59', '2017-07-12 06:04:59'),
+(18, 1, '2017-07-12_1499839504.png', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 06:05:04', '2017-07-12 06:05:04'),
+(19, 1, '2017-07-12_1499839511.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 06:05:11', '2017-07-12 06:05:11'),
+(20, 1, '2017-07-12_1499839516.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 06:05:16', '2017-07-12 06:05:16'),
+(21, 7, '2017-07-14_1500041889.jpg', 'This is caption text. 1', 'Sub caption 1', 2, '2017-07-14 14:18:09', '2017-07-14 14:18:09'),
+(22, 7, '2017-07-14_1500041899.jpg', 'This is caption text. 2', 'Sub caption 2', 2, '2017-07-14 14:18:19', '2017-07-14 14:18:19'),
+(23, 7, '2017-07-14_1500041906.jpg', 'This is caption text. 3', 'Sub caption 3', 2, '2017-07-14 14:18:26', '2017-07-14 14:18:26'),
+(24, 7, '2017-07-14_1500041912.jpg', 'This is caption text. 4', 'Sub caption 4', 2, '2017-07-14 14:18:32', '2017-07-14 14:18:32'),
+(25, 7, '2017-07-14_1500041920.jpg', 'This is caption text. 5', 'Sub caption 5', 2, '2017-07-14 14:18:40', '2017-07-14 14:18:40'),
+(26, 7, '2017-07-14_1500041927.jpg', 'This is caption text. 6', 'Sub caption 6', 2, '2017-07-14 14:18:47', '2017-07-14 14:18:47');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hospitals`
+--
+
+CREATE TABLE `hospitals` (
+  `id` int(11) NOT NULL,
+  `hospital_name` varchar(255) NOT NULL,
+  `location` varchar(255) NOT NULL,
+  `phone` varchar(30) NOT NULL,
+  `incharge_name` varchar(255) NOT NULL,
+  `details` text NOT NULL,
+  `remember_token` varchar(255) DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_by` int(11) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hospitals`
+--
+
+INSERT INTO `hospitals` (`id`, `hospital_name`, `location`, `phone`, `incharge_name`, `details`, `remember_token`, `updated_by`, `updated_at`, `created_by`, `created_at`) VALUES
+(1, 'Ad-din Women''s Medical College Hospital, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:40:43', 0, '2017-06-20 23:40:43'),
+(2, 'Siddiqia Eye Foundation, Mymensingh', 'Magh Bazar, Dhaka-1217', '01711889966', 'ratul2', 'asdf2', '', 0, '2017-07-16 05:56:35', 0, '2017-06-20 23:40:43'),
+(3, 'Ad-din Sakina Medical College Hospital, Jessore', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:41:36', 0, '2017-06-20 23:41:36'),
+(4, 'National Institute of Neuroscience', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(5, 'Aichi Hospital, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(6, 'Al Haramain Hospital, Sylhet', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(7, 'Ambia Memorial Hospital, Barisal', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(8, 'Anwer Khan Modern Hospital Ltd, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(9, 'Apollo Hospitals Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(10, 'Asgar Ali Hospital, Gandaria, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(11, 'Aysha Memorial Specialised Hospital, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(12, 'Bangabandhu Sheikh Mujib Medical University', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(13, 'Bangabandhu Memorial Hospital (BBMH), Chittagong', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(14, 'Bangladesh Spine & Orthopaedic General Hospital Ltd, Panthapath, Dhaka.', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(15, 'Bangladesh Eye Hospital Ltd., Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(16, 'Bangladesh Medical College Hospital, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(17, 'Bangladesh Specialized Hospital', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(18, 'Basundhura Hospital (Pvt.) Ltd.', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(19, 'BDR (Bangladesh Rifles) Hospital', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(20, 'BRB Hospital- Panthapath Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(21, 'Bangladesh Institute of Research and Rehabilitation for Diabetes, Endocrine and Metabolic Disorders (BIRDEM)', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(22, 'Cardio Care Specialized and General Hospital Ltd, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(23, 'CARe Hospital, Dhaka5', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(24, 'Care Zone Hospital, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(25, 'Catharsis Medical Centre Limited, Gazipur', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(26, 'Central Hospital, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(27, 'Chittagong Eye Infirmary and Training Hospital', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(28, 'Chittagong Maa-O-Shishu Hospital, Chittagong', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(29, 'Chittagong Medical College Hospital', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(30, 'CMH (Combined Military Hospital)', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(31, 'Comilla Medical College Hospital, Comilla', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(32, 'Community Based Medical College Hospital, Bangladesh (CBMCH, B) Mymensingh6', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(33, 'Continental Hospital Ltd.', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(34, 'Coxs Bazar Hospital for Women & Children, Chittagong7', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(35, 'Duwell Medical', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(36, 'Dhaka Hospital, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(37, 'Dhaka Central International Medical College Hospital, Adabor, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(38, 'Dhaka Dental College and Hospital', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(39, 'Dhaka Medical College & Hospital', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(40, 'Dhaka National Medical College And Hospital Institute', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(41, 'Dhaka Shishu Hospital', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(42, 'Dr. Alauddin Ahmed Clinic, Jhalakati', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(43, 'Dinajpur Medical College Hospital', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(44, 'Eastern Hospital & Medical Research Centre', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(45, 'Esperto Health Care & Research Center, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(46, 'Holy Family Red Crescent Medical College Hospital, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(47, 'Greenland Hospital Limited, Sector - 10, Uttara, Dhaka.', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(48, 'Gazi Medical College Hospital, Khulna', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(49, 'Genuine Cancer Hospital Limited, Chittagong', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(50, 'Gonoshasthaya Nagar Hospital', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(51, 'Government Homeopathic Medical College Hospital', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(52, 'Ibn Sina Hospital Sylhet Ltd', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(53, 'Ibn Sina Hospitals, Dhaka8', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(54, 'Institute of Child and Mother Health, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(55, 'Institute of Laser Surgery & Hospital, Dhaka9', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(56, 'Ispahani Islamia Eye Institute and Hospital (IIEI&H)10', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(57, 'Labaid Cardiac Hospital, Dhaka11', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(58, 'Khulna Medical College Hospital, Khulna', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(59, 'Labaid Specialized Hospital, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(60, 'Maa Nursing Home & Diagnostic Centre, Tangail', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(61, 'Mikrani Dental Banasree Dhaka (Dental Hospital), Dhaka1', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(62, 'Mojibunnessa Eye Hospital, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(63, 'Moulana Bhasani Medical College Hospital, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(64, 'Mymensingh Medical College Hospital', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(65, 'National Institute of Cardiovascular Diseases (NICVD)1', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(66, 'National Institute of Ear, Nose and Throat(ENT)1', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(67, 'National Institute of Kidney Disease & Urology1', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(68, 'National Institute of Mental Health1', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(69, 'Medinova Medical Services Ltd.', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(70, 'National Institute of Preventive and Social Medicine1', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(71, 'Popular Specialized Hospital Ltd.', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(72, 'Rajshahi Medical College Hospital', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(73, 'Rangpur Medical College Hospital, Rangpur', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(74, 'Rashmono General Hospital,Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(75, 'Royal Hospital and research Center Ltd., Chittagong', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(76, 'Royal Hospital And Research Center Ltd., Chittagong', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(77, 'Samorita Hospital Ltd.', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(78, 'Saphena Womens Dental College & Hospital16', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(79, 'Shaheed Monsur Ali Medical College Hospital, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(80, 'Shalahuddin Hospital', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(81, 'Sheikh Fazilatunnesa Mujib Memorial KPJ Specialized Hospital & Nursing College', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(82, 'Shaheed Ziaur Rahman Medical College Hospital, Bogra', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(83, 'Sher-e-Bangla Medical College Hospital, Barisal', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(84, 'Sir Salimullah Medical College & Mitford Hospital, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(85, 'Square Hospital Ltd., Dhaka17', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(86, 'Sylhet Medical College Hospital', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(87, 'Sylhet Womens Medical College', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(88, 'Sylhet Eye Hospital & Laser Centre', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(89, 'Sylhet, M.A.G Osmani Medical College and Hospital', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(90, 'Sylhet, North East Medical College and Hospital', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(91, 'National Heart Foundation, Sylhet.', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(92, 'Nurjahan Hospital Ltd, Sylhet.', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(93, 'Oasis Hospital (Pvt) Ltd, Sylhet', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(94, 'Mount Adora Hospital, Sylhet.', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(95, 'The Medical College for Women and Hospital', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(96, 'Union Specialized Hospital Limited, Aftabnagor, Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(97, 'United Hospital Ltd., Dhaka', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(98, 'Z.H. Sikder Women’s Medical College and Hospital (Pvt.) Ltd.', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(99, 'aaaaaaaaaaaaaaa', 'Magh Bazar, Dhaka-1217', '01711889966', 'aaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', NULL, NULL, '2017-06-21 09:43:44', NULL, '2017-06-21 09:43:44');
 
 -- --------------------------------------------------------
 
@@ -713,6 +1261,116 @@ CREATE TABLE `links` (
   `link_image` varchar(255) NOT NULL,
   `post_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `locations`
+--
+
+CREATE TABLE `locations` (
+  `id` int(11) NOT NULL,
+  `division` varchar(255) NOT NULL,
+  `district` varchar(255) NOT NULL,
+  `thana` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `locations`
+--
+
+INSERT INTO `locations` (`id`, `division`, `district`, `thana`) VALUES
+(1, 'Dhaka', 'Dhaka', 'Adabor'),
+(2, 'Dhaka', 'Dhaka', 'Badda'),
+(3, 'Dhaka', 'Dhaka', 'Bangsal'),
+(4, 'Dhaka', 'Dhaka', 'Bimanbandar'),
+(5, 'Dhaka', 'Dhaka', 'Cantonment'),
+(6, 'Dhaka', 'Dhaka', 'Chak Bazar'),
+(7, 'Dhaka', 'Dhaka', 'Dakshinkhan'),
+(8, 'Dhaka', 'Dhaka', 'Darus Salam'),
+(9, 'Dhaka', 'Dhaka', 'Demra'),
+(10, 'Dhaka', 'Dhaka', 'Dhamrai'),
+(11, 'Dhaka', 'Dhaka', 'Dhanmondi'),
+(12, 'Dhaka', 'Dhaka', 'Dohar'),
+(13, 'Dhaka', 'Dhaka', 'Gendaria'),
+(14, 'Dhaka', 'Dhaka', 'Gulshan'),
+(15, 'Dhaka', 'Dhaka', 'Hazaribagh'),
+(16, 'Dhaka', 'Dhaka', 'Jatrabari'),
+(17, 'Dhaka', 'Dhaka', 'Kadamtali'),
+(18, 'Dhaka', 'Dhaka', 'Kafrul'),
+(19, 'Dhaka', 'Dhaka', 'Kalabagan'),
+(20, 'Dhaka', 'Dhaka', 'Kamrangirchar'),
+(21, 'Dhaka', 'Dhaka', 'Keraniganj'),
+(22, 'Dhaka', 'Dhaka', 'Khilgaon'),
+(23, 'Dhaka', 'Dhaka', 'khilkhet'),
+(24, 'Dhaka', 'Dhaka', 'Kotwali'),
+(25, 'Dhaka', 'Dhaka', 'Lalbagh'),
+(26, 'Dhaka', 'Dhaka', 'Mirpur'),
+(27, 'Dhaka', 'Dhaka', 'Mohammadpur'),
+(28, 'Dhaka', 'Dhaka', 'Motijheel'),
+(29, 'Dhaka', 'Dhaka', 'Nawabganj'),
+(30, 'Dhaka', 'Dhaka', 'Newmarket'),
+(31, 'Dhaka', 'Dhaka', 'Pallabi'),
+(32, 'Dhaka', 'Dhaka', 'Paltan'),
+(33, 'Dhaka', 'Dhaka', 'Ramna'),
+(34, 'Dhaka', 'Dhaka', 'Rampura'),
+(35, 'Dhaka', 'Dhaka', 'Sabujbagh'),
+(36, 'Dhaka', 'Dhaka', 'Savar'),
+(37, 'Dhaka', 'Dhaka', 'Shah Ali'),
+(38, 'Dhaka', 'Dhaka', 'Shahbag'),
+(39, 'Dhaka', 'Dhaka', 'Sher-e-Bangla Nagar'),
+(40, 'Dhaka', 'Dhaka', 'Shyampur'),
+(41, 'Dhaka', 'Dhaka', 'Sutrapur'),
+(42, 'Dhaka', 'Dhaka', 'Tejgaon'),
+(43, 'Dhaka', 'Dhaka', 'Mohakhali'),
+(44, 'Dhaka', 'Dhaka', 'Tejgaon Industrial Area'),
+(45, 'Dhaka', 'Dhaka', 'Turag'),
+(46, 'Dhaka', 'Dhaka', 'Uttara'),
+(47, 'Dhaka', 'Dhaka', 'Uttar Khan'),
+(48, 'Dhaka', 'Faridpur', 'Alfadanga'),
+(49, 'Dhaka', 'Faridpur', 'Bhanga'),
+(50, 'Dhaka', 'Faridpur', 'Boalmari'),
+(51, 'Dhaka', 'Faridpur', 'Charbhadrasan'),
+(52, 'Dhaka', 'Faridpur', 'Faridpur Sadar'),
+(53, 'Dhaka', 'Faridpur', 'Madhukhali'),
+(54, 'Dhaka', 'Faridpur', 'Nagarkanda'),
+(55, 'Dhaka', 'Faridpur', 'Sadarpur'),
+(56, 'Dhaka', 'Faridpur', 'Saltha');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `sender_id` int(11) NOT NULL,
+  `sender_type` varchar(255) NOT NULL,
+  `receiver_id` int(11) NOT NULL,
+  `receiver_type` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_by` varchar(255) NOT NULL,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_by` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `sender_id`, `sender_type`, `receiver_id`, `receiver_type`, `message`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
+(1, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', '2017-07-14 20:32:35', 'Sakib', '2017-07-14 20:32:35', 'Rashed'),
+(2, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', '2017-07-14 20:32:35', 'Sakib', '2017-07-14 20:32:35', 'Rashed'),
+(3, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', '2017-07-14 20:33:32', 'Sakib', '2017-07-14 20:33:32', 'Rashed'),
+(4, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', '2017-07-14 20:36:30', 'Sakib', '2017-07-14 20:36:30', 'Rashed'),
+(5, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', '2017-07-14 20:37:11', 'Sakib', '2017-07-14 20:37:11', 'Rashed'),
+(6, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', '2017-07-14 20:37:30', 'Sakib', '2017-07-14 20:37:30', 'Rashed'),
+(7, 2, 'donor', 303, 'admin', 'Need A+Blood 3 for Mohin', '2017-07-14 21:04:36', 'Sakib', '2017-07-14 21:04:36', 'Rashed'),
+(8, 2, 'donor', 303, 'admin', 'Need A+Blood 2 for ', '2017-07-19 19:22:15', 'Sakib', '2017-07-19 19:22:15', 'Rashed'),
+(9, 2, 'donor', 303, 'admin', 'Need O-Blood 100 for ', '2017-07-19 19:25:50', 'Sakib', '2017-07-19 19:25:50', 'Rashed'),
+(10, 2, 'donor', 303, 'admin', 'Need B+Blood 6 for ', '2017-07-19 19:32:41', 'Sakib', '2017-07-19 19:32:41', 'Rashed');
 
 -- --------------------------------------------------------
 
@@ -737,26 +1395,28 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `needblood`
+-- Table structure for table `more_about_bloods`
 --
 
-CREATE TABLE `needblood` (
+CREATE TABLE `more_about_bloods` (
   `id` int(11) NOT NULL,
-  `user_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `user_phone` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `user_email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `user_blood` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `user_place` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `patient_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `patient_place` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `number_blood_bag` int(11) NOT NULL,
-  `disease` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `relation` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `opration_time` time NOT NULL,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `created_by` int(11) NOT NULL
+  `title` varchar(255) NOT NULL,
+  `short_description` text NOT NULL,
+  `long_description` text NOT NULL,
+  `photo` text NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `more_about_bloods`
+--
+
+INSERT INTO `more_about_bloods` (`id`, `title`, `short_description`, `long_description`, `photo`, `slug`, `updated_at`) VALUES
+(2, 'Blood Donor 247', 'Blood Donor 247 is a team of emergency response donors who pledge to give blood within 247 hours.', 'long description247', '.png', 'donor_24', '2017-07-21 09:57:16'),
+(3, 'Give Platelets', 'Patients of Scotland rely on platelets including people with cancer and leukaemia', 'long description', '.jpg', 'platelets', '2017-07-21 10:00:55'),
+(4, 'Blood Types', 'How much do you know about your blood? We aim to have six days supply of each blood group at all times.', 'jdnfslj ouvhzsdo', '.png', 'blood_type', '2017-07-21 10:01:20'),
+(5, 'The journey of donated blood', 'Each precious blood donation has a very short shelf life. We have to act fast to make sure it goes where it needed.', 'kjdfhihdfui lsdfbsduifh sklDJfbhsdui', 'sdfg.jpg', 'journey', '2017-07-16 22:20:50');
 
 -- --------------------------------------------------------
 
@@ -906,6 +1566,96 @@ CREATE TABLE `states` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `system_settings`
+--
+
+CREATE TABLE `system_settings` (
+  `id` int(11) NOT NULL,
+  `system_name` text NOT NULL,
+  `director` varchar(255) NOT NULL,
+  `established_datetime` datetime NOT NULL,
+  `current_office` text NOT NULL,
+  `head_office` text NOT NULL,
+  `year` int(11) NOT NULL,
+  `phone1` varchar(20) NOT NULL,
+  `phone2` varchar(20) NOT NULL,
+  `email1` varchar(30) NOT NULL,
+  `email2` varchar(30) NOT NULL,
+  `fb_url` text NOT NULL,
+  `web_url` text NOT NULL,
+  `tw_url` text NOT NULL,
+  `link_url` text NOT NULL,
+  `copy_right` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `system_settings`
+--
+
+INSERT INTO `system_settings` (`id`, `system_name`, `director`, `established_datetime`, `current_office`, `head_office`, `year`, `phone1`, `phone2`, `email1`, `email2`, `fb_url`, `web_url`, `tw_url`, `link_url`, `copy_right`) VALUES
+(1, 'Life Cycle', 'Rashed Jaman', '2017-07-18 05:20:17', 'Maghbazar, Dhaka-1217', 'Gulshan, Dhaka-1200', 2017, '0171111111111111', '0191111111111111', 'info@lifecyclebd.org', 'support@lifecyclebd.org', 'fb.com', 'http://www.fb.com', 'http://www.fb.com', 'http://www.fb.com', '© lifecylebd.org. All rights reserved 2017 | Designed by Skybare IT\r\n');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testimonials`
+--
+
+CREATE TABLE `testimonials` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `designation` varchar(255) NOT NULL,
+  `institution` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `web_url` text,
+  `fb_url` text,
+  `linkdin_url` text,
+  `rank` varchar(255) NOT NULL,
+  `photo` text,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_by` varchar(255) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_by` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `testimonials`
+--
+
+INSERT INTO `testimonials` (`id`, `name`, `email`, `designation`, `institution`, `title`, `message`, `web_url`, `fb_url`, `linkdin_url`, `rank`, `photo`, `updated_at`, `updated_by`, `created_at`, `created_by`) VALUES
+(1, 'Engr. Md Rasheduzzaman', 'jmrashed@gmail.com', 'Software Engineer', 'United Group', 'This is most important part of our Life', 'A Community of Voluntary Blood Donors of Bangladesh. List of Bangladeshi blood donors profile and list of current blood request.', 'http://localhost:81/phpmyadmin/tbl_change.php?', 'http://localhost:81/phpmyadmin/tbl_change.php?', 'http://localhost:81/phpmyadmin/tbl_change.php?', '4', 'A.png', '2017-07-11 00:41:51', '', '2017-07-11 00:41:51', '2'),
+(2, 'Engr. Md Nazmus Sakib', 'sakib@gmail.com', 'Software Engineer', 'United Group', 'This is most important part of our Life', 'A Community of Voluntary Blood Donors of Bangladesh. List of Bangladeshi blood donors profile and list of current blood request.', 'http://localhost:81/phpmyadmin/tbl_change.php?', 'http://localhost:81/phpmyadmin/tbl_change.php?', 'http://localhost:81/phpmyadmin/tbl_change.php?', '4', 'B.png', '2017-07-11 00:42:15', '', '2017-07-11 00:42:15', '2'),
+(3, 'Meem', 'meem@gmail.com', 'sister', 'home', 'valo', 'good morning', 'asd.com', 'hfgf', 'podfjdisdjfbdj', 'sdjhfbsdjh', 'C.png', '2017-07-10 19:36:39', NULL, '2017-07-10 19:36:39', NULL),
+(4, 'Asru', 'asru@gmail.com', 'sister', 'stamford', 'bon', 'This is a test', 'test.com', 'test.com/asru', 'test.com/asru', '6', '', '2017-07-10 19:40:51', NULL, '2017-07-10 19:40:51', NULL),
+(5, 'Nazmus Sakib', 'sakib.cse.bd@gmail.com', 'Soft. Developer', 'stamford', 'title', 'this is a test', '1675 Snyder Avenue', 'thdt.com', 'test.com/asru', '434', '5_.png', '2017-07-10 19:47:10', NULL, '2017-07-10 19:47:10', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tobeproud`
+--
+
+CREATE TABLE `tobeproud` (
+  `id` int(11) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `comment` varchar(255) NOT NULL,
+  `pic_path` varchar(255) NOT NULL,
+  `share_date` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tobeproud`
+--
+
+INSERT INTO `tobeproud` (`id`, `phone`, `comment`, `pic_path`, `share_date`) VALUES
+(1, '01923589277', 'Hello', 'proudImages/Proud_20170714_071048.jpg', '14-7-2017'),
+(2, '01923589277', 'hello', 'proudImages/Proud_20170714_071618.jpg', '14-7-2017');
 
 -- --------------------------------------------------------
 
@@ -1440,17 +2190,31 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `is_admin`) VALUES
-(1, 'Md Rasheduzzaman', 'jmrashed@gmail.com', '$2y$10$vjr3UOBsv/jlTpefFX7FB.Mk.EyEudeJHZSc9883YULd6JMVMhJk2', 'CbIuqlrp5Y3Yg3l66mHysPC12adAVxqQ8qOYGhuCSov91BrWQroxLubcC87k', '2017-05-01 04:56:59', '2017-05-01 04:56:59', NULL),
-(2, 'masud', 'enggmasud1983@gmail.com', '$2y$10$l0vYgvUj0QPxghVXO/uTaeMmNoSpmenqTNQhGTJvJoDyYpSv10In.', 'M0v6m7xHqohVSONriFsh1ctr02i08E87syEkn0hr1kKEKZteHs6AFAnlsOYu', '2017-06-08 01:07:39', '2017-06-08 01:07:39', NULL);
+(1, 'Md Rasheduzzaman ll', 'jmrashed@gmail.com', '$2y$10$vjr3UOBsv/jlTpefFX7FB.Mk.EyEudeJHZSc9883YULd6JMVMhJk2', 'CbIuqlrp5Y3Yg3l66mHysPC12adAVxqQ8qOYGhuCSov91BrWQroxLubcC87k', '2017-05-01 04:56:59', '2017-07-15 23:43:37', NULL),
+(2, 'masud', 'enggmasud1983@gmail.com', '$2y$10$l0vYgvUj0QPxghVXO/uTaeMmNoSpmenqTNQhGTJvJoDyYpSv10In.', 'M0v6m7xHqohVSONriFsh1ctr02i08E87syEkn0hr1kKEKZteHs6AFAnlsOYu', '2017-06-08 01:07:39', '2017-06-08 01:07:39', NULL),
+(3, 'Sakib', 'sakib@gmail.com', '$2y$10$C1D/md2bzD3Zja6Wrv2U7u6mtnOb0obDbTadgJ0ELJfNw/cz06uVW', 'z9YfyKRLigNvvdL4aLFclFVhIKr3UV4bghD4UdNdW82uUNa7Gw4e2Acwje2G', '2017-06-19 10:52:12', '2017-07-20 10:44:37', NULL),
+(4, 'aaacccc2', 'ccccc@gmail.com', '$2y$10$H7LRYyphLFI3MpihZG.nv.dOjkKoVj19dm93ThuEU0jEBkIH65dFy', 'UaXoPYTneNmI4L4fczulkR2law49nyURZK0MCdfD', '2017-06-21 11:19:21', '2017-07-18 11:04:38', NULL);
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `activities`
+--
+ALTER TABLE `activities`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `admins`
 --
 ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `apphospitals`
+--
+ALTER TABLE `apphospitals`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1460,9 +2224,27 @@ ALTER TABLE `apps_countries`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `blogs`
+--
+ALTER TABLE `blogs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `blog_categories`
+--
+ALTER TABLE `blog_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `bloodgroups`
 --
 ALTER TABLE `bloodgroups`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `blood_requests`
+--
+ALTER TABLE `blood_requests`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1504,6 +2286,30 @@ ALTER TABLE `divisions`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `doctors`
+--
+ALTER TABLE `doctors`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `doctor_degrees`
+--
+ALTER TABLE `doctor_degrees`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `doctor_designations`
+--
+ALTER TABLE `doctor_designations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `doctor_specialities`
+--
+ALTER TABLE `doctor_specialities`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `donateblood`
 --
 ALTER TABLE `donateblood`
@@ -1513,7 +2319,8 @@ ALTER TABLE `donateblood`
 -- Indexes for table `donors`
 --
 ALTER TABLE `donors`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `phone` (`phone`);
 
 --
 -- Indexes for table `donors_details`
@@ -1525,6 +2332,12 @@ ALTER TABLE `donors_details`
 -- Indexes for table `faqs`
 --
 ALTER TABLE `faqs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `find_solutions`
+--
+ALTER TABLE `find_solutions`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1540,9 +2353,27 @@ ALTER TABLE `gallery_details`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `hospitals`
+--
+ALTER TABLE `hospitals`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `links`
 --
 ALTER TABLE `links`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `locations`
+--
+ALTER TABLE `locations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1552,9 +2383,9 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `needblood`
+-- Indexes for table `more_about_bloods`
 --
-ALTER TABLE `needblood`
+ALTER TABLE `more_about_bloods`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1604,6 +2435,24 @@ ALTER TABLE `states`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `system_settings`
+--
+ALTER TABLE `system_settings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `testimonials`
+--
+ALTER TABLE `testimonials`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tobeproud`
+--
+ALTER TABLE `tobeproud`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `upazilas`
 --
 ALTER TABLE `upazilas`
@@ -1621,20 +2470,45 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `activities`
+--
+ALTER TABLE `activities`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+--
+-- AUTO_INCREMENT for table `apphospitals`
+--
+ALTER TABLE `apphospitals`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `apps_countries`
 --
 ALTER TABLE `apps_countries`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
 --
+-- AUTO_INCREMENT for table `blogs`
+--
+ALTER TABLE `blogs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `blog_categories`
+--
+ALTER TABLE `blog_categories`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
 -- AUTO_INCREMENT for table `bloodgroups`
 --
 ALTER TABLE `bloodgroups`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `blood_requests`
+--
+ALTER TABLE `blood_requests`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `categorys`
 --
@@ -1649,7 +2523,7 @@ ALTER TABLE `cities`
 -- AUTO_INCREMENT for table `contents`
 --
 ALTER TABLE `contents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `countries`
 --
@@ -1666,6 +2540,26 @@ ALTER TABLE `districts`
 ALTER TABLE `divisions`
   MODIFY `id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
+-- AUTO_INCREMENT for table `doctors`
+--
+ALTER TABLE `doctors`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `doctor_degrees`
+--
+ALTER TABLE `doctor_degrees`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+--
+-- AUTO_INCREMENT for table `doctor_designations`
+--
+ALTER TABLE `doctor_designations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `doctor_specialities`
+--
+ALTER TABLE `doctor_specialities`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+--
 -- AUTO_INCREMENT for table `donateblood`
 --
 ALTER TABLE `donateblood`
@@ -1674,7 +2568,7 @@ ALTER TABLE `donateblood`
 -- AUTO_INCREMENT for table `donors`
 --
 ALTER TABLE `donors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `donors_details`
 --
@@ -1686,30 +2580,50 @@ ALTER TABLE `donors_details`
 ALTER TABLE `faqs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT for table `find_solutions`
+--
+ALTER TABLE `find_solutions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT for table `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `gallery_details`
 --
 ALTER TABLE `gallery_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+--
+-- AUTO_INCREMENT for table `hospitals`
+--
+ALTER TABLE `hospitals`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 --
 -- AUTO_INCREMENT for table `links`
 --
 ALTER TABLE `links`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `locations`
+--
+ALTER TABLE `locations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT for table `needblood`
+-- AUTO_INCREMENT for table `more_about_bloods`
 --
-ALTER TABLE `needblood`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `more_about_bloods`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `permissions`
 --
@@ -1736,6 +2650,21 @@ ALTER TABLE `speeches`
 ALTER TABLE `states`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `system_settings`
+--
+ALTER TABLE `system_settings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `testimonials`
+--
+ALTER TABLE `testimonials`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `tobeproud`
+--
+ALTER TABLE `tobeproud`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `upazilas`
 --
 ALTER TABLE `upazilas`
@@ -1744,7 +2673,7 @@ ALTER TABLE `upazilas`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Constraints for dumped tables
 --
