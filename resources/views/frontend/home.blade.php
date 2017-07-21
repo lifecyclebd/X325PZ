@@ -399,6 +399,59 @@
 </div>
 
 
+
+
+
+<div class="container">
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="span12">
+            <div class=" ">
+                <h2 class="life_title" style="margin-bottom: 20px;">What People Say</h2>
+                <div id="myCarousel" class="carousel fdi-Carousel slide">
+                    <!-- Carousel items -->
+                    <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
+                        <div class="carousel-inner onebyone-carosel">
+                            <?php $i=0;?>
+                            @foreach($data['recent_donor'] as $row)
+                            <div class="item <?php if($i==0)echo 'active';?>">
+                                <div class="col-md-4" style="">
+                                    <div class="recent_donor" style="height: 300px"> 
+                                        <span style="padding-left: 10px;">
+                                            <div class="text-left">
+                                                <h4>HHHHHHHHHHHHHHHHHHHHHH</h4>
+                                                <p>HHHHHHHHHHHHHHHHH</p><small>GGGGGGGGGGGGGGGGGGGG</small> 
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php $i++;?>
+                            @endforeach
+                            
+
+
+                        </div>
+                        <a class="left carousel-control" href="#eventCarousel" data-slide="prev"></a>
+                        <a class="right carousel-control" href="#eventCarousel" data-slide="next"></a>
+                    </div>
+                    <!--/carousel-inner-->
+                </div><!--/myCarousel-->
+            </div><!--/well-->
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="clearfix"></div>
 <div id="gallery"> 
     <div class="container">
