@@ -45,7 +45,14 @@
         height: 152px;
         border: 2px solid red;
     }
-
+ .what_people_say {
+    padding: 5px;
+    background: red;
+    color: white; 
+    border: 2px solid red;
+    border-radius: 5px;
+    margin: 0 auto;
+}
     .carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
         height: 148px;
     }
@@ -307,7 +314,7 @@
             <div class="get_well_soon_sec">
                 <br>
                 <span class="back_icon8 pull-center" style="height: 200px">  </span>
-                <p class="text-white">Blog</p>
+                <p class="text-white">News</p>
                 <div class="get_well_soon_div">
                     A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
                     <div class="text-center">
@@ -368,26 +375,46 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-
-                    <div class="item active">
-                       
-                        <?php $__currentLoopData = $data['upcoming_event']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php $i=0; ?>
+                    <?php $__currentLoopData = $data['upcoming_event']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="item <?php if($i==0) echo 'active'; ?>">                       
+                        
                         <div class="col-md-6" style="margin-bottom: 20px">
                             <div class="col-md-6 col-xs-6 col-sm-6">
-                                <img class="img img-responsive img-thumbnail " src="<?php echo e(url('/')); ?>/public/frontend/images/content/events/<?php echo e($row->content_photo); ?>" alt="New York" style="width:100%;height: auto;">
+                                <img class="img img-responsive img-thumbnail " src="<?php echo e(url('/')); ?>/public/images/content/upcoming_events/<?php echo e($row->content_photo); ?>" alt="New York" style="width:100%;height: auto;">
                             </div>
                             <div class="col-md-6 col-xs-6 col-sm-6">
                                 <h3><?php echo e($row->title); ?></h3>
-                                <p class="text-justify">We love the Big Apple!We love the Big Apple!</p>
+                                <p class="text-justify">
+                                    <?php echo e($row->description); ?>
+
+                                </p>
                                 <span style="margin-top: 30px; float: right;" class="hidden-xs">
                                     <a style="padding: 10px; text-align: center;" href="#" class="btn-danger" ><?php echo date("l jS \of F"); ?> </a>
                                 </span>
                             </div>
                         </div>
-                       
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <div class="col-md-6" style="margin-bottom: 20px">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <img class="img img-responsive img-thumbnail " src="<?php echo e(url('/')); ?>/public/images/content/upcoming_events/<?php echo e($row->content_photo); ?>" alt="New York" style="width:100%;height: auto;">
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <h3><?php echo e($row->title); ?></h3>
+                                <p class="text-justify">
+                                    <?php echo e($row->description); ?></p>
+                                <span style="margin-top: 30px; float: right;" class="hidden-xs">
+                                    <a style="padding: 10px; text-align: center;" href="#" class="btn-danger" ><?php echo date("l jS \of F"); ?> </a>
+                                </span>
+                            </div>
+                        </div>
+                          
+                        
                     </div> 
-
+                    <?php $i++; ?>                                             
+                        
+                          
+                         
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
 
                 <!-- Left and right controls -->
@@ -405,6 +432,61 @@
     </div>
 
 </div>
+
+
+
+
+
+<div class="container">
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="span12">
+            <div class=" ">
+                <h2 class="life_title" style="margin-bottom: 20px;">What People Say</h2>
+                <div id="myCarousel" class="carousel fdi-Carousel slide">
+                    <!-- Carousel items -->
+                    <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
+                        <div class="carousel-inner onebyone-carosel">
+                            <?php $i=0;?>
+                            <?php $__currentLoopData = $data['testimonial']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="item <?php if($i==0)echo 'active';?>">
+                                <div class="col-md-4" style="">
+                                    <div class="what_people_say" style="height: 300px"> 
+                                        <span style="padding-left: 10px;">
+                                            <div class="text-left">
+                                                <h4><?php echo e($row->name); ?></h4><small><?php echo e($row->designation); ?></small>
+                                                <b><?php echo e($row->institution); ?></b>
+                                                <hr>
+                                                <p><?php echo e($row->message); ?></p> 
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php $i++;?>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            
+
+
+                        </div>
+                        <a class="left carousel-control" href="#eventCarousel" data-slide="prev"></a>
+                        <a class="right carousel-control" href="#eventCarousel" data-slide="next"></a>
+                    </div>
+                    <!--/carousel-inner-->
+                </div><!--/myCarousel-->
+            </div><!--/well-->
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 
 
 <div class="clearfix"></div>
@@ -521,7 +603,7 @@
                  <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
-                 <img src="<?php echo e(url('/')); ?>/public/images/bag/8.png" class="img img-responsive margin">
+                 <img src="<?php echo e(url('/')); ?>/public/images/bag/5.png" class="img img-responsive margin">
                  <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
@@ -533,7 +615,7 @@
                  <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
-                 <img src="<?php echo e(url('/')); ?>/public/images/bag/7.png" class="img img-responsive margin">
+                 <img src="<?php echo e(url('/')); ?>/public/images/bag/8.png" class="img img-responsive margin">
                  <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
              </div>
 

@@ -26,6 +26,7 @@
                                 <tr>
                                     <th>Donor ID</th>
                                     <th>Donor Name</th>
+                                    <th>Email</th>
                                     <th>Donor Gender</th>
                                     <th>Last Donate</th>
                                     <th>Phone</th>
@@ -40,7 +41,8 @@
                                 <?php $__currentLoopData = $data['donor']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
                                     <td><?php echo e($row->id); ?></td>
-                                    <td><?php echo e($row->fullname); ?></td>
+                                    <td><?php echo e($row->fname); ?> <?php echo e($row->lname); ?></td>
+                                    <td><?php echo e($row->email); ?></td>
                                     <td><?php echo e($row->gender); ?></td> 
                                     <td><?php echo e($row->last_donate_date); ?></td> 
                                     <td><?php echo e($row->phone); ?></td> 

@@ -1,0 +1,88 @@
+body { 
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #000;
+    background-color: #a91300;
+}
+.skin-blue .main-header .navbar {
+    background-color: #a91300;
+}
+ .skin-blue .main-header .logo:hover {
+    background-color: #dd4b39;
+}
+
+.skin-blue .main-header .logo {
+    background-color: #367fa9;
+    color: #fff;
+    border-bottom: 0 solid transparent;
+}
+.skin-blue .main-header .logo {
+    background-color: #861d10;
+    color: #fff;
+    border-bottom: 0 solid transparent;
+}
+.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
+    background-color: #a91300;
+}
+.skin-blue .sidebar-menu>li:hover>a, .skin-blue .sidebar-menu>li.active>a {
+    color: #fff;
+    background: #942d20;
+    border-left-color: #ff070e;
+}
+.skin-blue .sidebar a {
+    color: #ffffff;
+}
+.skin-blue .sidebar-menu>li>.treeview-menu {
+    margin: 0 1px;
+    background: #861d10;
+}
+.skin-blue .sidebar-menu>li.header {
+    color: #ffffff;
+    background: #861d10;
+}
+.skin-blue .sidebar-form input[type="text"] {
+    color: #fd0303;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 2px;
+}
+
+_all-skins.min.css:1
+.skin-blue .sidebar-form input[type="text"], .skin-blue .sidebar-form .btn {
+    box-shadow: none;
+    background-color: #dd4b39;
+    border: 1px solid #dd4b39;
+    height: 35px;
+}
+.main-footer {
+    background: #a91300;
+    padding: 15px;
+    color: #f9f9f9;
+    /* border-top: 1px solid #d2d6de; */
+}
+.info-box {
+    display: block;
+    min-height: 90px;
+    background: #a91300;
+    width: 100%;
+    box-shadow: 1px 2px 2px rgba(230, 14, 14, 0.1);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 20px;
+}
+.progress-description, .info-box-text {
+    display: block;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+ 
+.info-box-number {
+    display: block;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0 auto;
+}

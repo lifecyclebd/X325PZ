@@ -29,6 +29,7 @@
                         <!-- form start -->
                         <form class="form-horizontal" action="{{url('/admin/testimonial/store')}}" method="post" enctype='multipart/form-data'  >
                         {!! csrf_field() !!}
+                          
 
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Name</label>
