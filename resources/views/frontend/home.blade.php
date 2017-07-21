@@ -583,31 +583,31 @@
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/2.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
+                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">50%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/3.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
+                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">36%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/4.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
+                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">62%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/5.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
+                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">78%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/6.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
+                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">25%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/7.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
+                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">49%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/8.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
+                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">36%</span>
              </div>
 
         </div>
@@ -629,7 +629,7 @@
                                 <div class="col-md-4" style="">
                                     <div class="recent_donor">
                                         <span style="width: 40%; float: left;">
-                                            <a href="#"><img src="{{url('/')}}public/images/content/events/{{$row->profile_photo}}" class="img-responsive center-block img-thumbnail"></a>
+                                            <a href="#"><img src="{{url('/')}}/public/images/content/donor/{{$row->profile_photo}}" class="img-responsive center-block img-thumbnail"></a>
                                         </span>
                                         <span style="float: right; width: 60%; padding-left: 10px;">
                                             <div class="text-left">
