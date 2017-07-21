@@ -10,19 +10,19 @@
             <?php echo csrf_field(); ?> 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
-                    <select name="divisions" class="form-control find_search_button divisions">
+                    <select name="division" class="form-control find_search_button divisions">
                         <?php $__currentLoopData = $data['division']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <option value="<?php echo e($row->id); ?>"><?php echo e($row->division_name); ?></option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                 </span>
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
-                    <select name="divisions" id="districts" class="form-control find_search_button districts">
+                    <select name="district" id="districts" class="form-control find_search_button districts">
                         
                     </select>
                 </span>
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
-                    <select name="divisions" id="upazillas" class="form-control find_search_button">
+                    <select name="upazila" id="upazillas" class="form-control find_search_button">
                         
                     </select>
                 </span>

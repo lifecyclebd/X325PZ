@@ -191,11 +191,14 @@ public function blood_news() {
         return view('frontend.view_hospital')->with('data', $data);
     }
 
-    public function search_hospital() {
+    public function search_hospital(Request $request) {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        
-        $data['hospital_list'] = Hospital::all();
+        $div=$request->division;
+        $dis=$request->district;
+        $upz=$request->upazila;
+        $data['division'] = Division::all();
+        $data['hospital_list'] = Hospital:: where([['division', $div], ['district', $dis], ['upazila', $upz]])->get();
         return view('frontend.search_hospital')->with('data', $data);
     }
 
