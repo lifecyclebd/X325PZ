@@ -299,7 +299,7 @@
             <div class="get_well_soon_sec">
                 <br>
                 <span class="back_icon8 pull-center" style="height: 200px">  </span>
-                <p class="text-white">Blog</p>
+                <p class="text-white">News</p>
                 <div class="get_well_soon_div">
                     A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
                     <div class="text-center">
@@ -360,10 +360,10 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-
+                    @foreach($data['upcoming_event'] as $row)
                     <div class="item active">
                        
-                        @foreach($data['upcoming_event'] as $row)
+                        
                         <div class="col-md-6" style="margin-bottom: 20px">
                             <div class="col-md-6 col-xs-6 col-sm-6">
                                 <img class="img img-responsive img-thumbnail " src="{{url('/')}}/public/frontend/images/content/events/{{$row->content_photo}}" alt="New York" style="width:100%;height: auto;">
@@ -376,10 +376,10 @@
                                 </span>
                             </div>
                         </div>
-                       
-                        @endforeach
+                        
+                        
                     </div> 
-
+                    @endforeach
                 </div>
 
                 <!-- Left and right controls -->
@@ -566,7 +566,7 @@
                  <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
-                 <img src="{{url('/')}}/public/images/bag/8.png" class="img img-responsive margin">
+                 <img src="{{url('/')}}/public/images/bag/5.png" class="img img-responsive margin">
                  <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
@@ -578,7 +578,7 @@
                  <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
-                 <img src="{{url('/')}}/public/images/bag/7.png" class="img img-responsive margin">
+                 <img src="{{url('/')}}/public/images/bag/8.png" class="img img-responsive margin">
                  <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
              </div>
 

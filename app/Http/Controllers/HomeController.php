@@ -187,7 +187,8 @@ public function blood_news() {
     public function view_hospital() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('frontend.view_hospital');
+        $data['division'] = Division::all();
+        return view('frontend.view_hospital')->with('data', $data);
     }
 
     public function search_hospital() {

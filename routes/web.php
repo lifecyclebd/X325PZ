@@ -115,6 +115,12 @@ Route::get('/admin/store', 'AdminController@store')->name('store');
 Route::post('/admin/update', 'AdminController@update');
 Route::any('/admin/destroy/{id}', 'AdminController@destroy');
 
+//-------------------------more about blood------------------------
+Route::get('/admin/more-blood/view', 'AdminController@view_more_blood');
+Route::get('/admin/more-blood/edit/{id}', 'AdminController@edit_more_blood');
+Route::post('/admin/more-blood/update', 'AdminController@update_more_blood');
+
+
 
 //--------Donor-------------------------------------
 Route::get('/test', 'TestController@index');
