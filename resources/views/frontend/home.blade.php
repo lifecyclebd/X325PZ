@@ -666,18 +666,18 @@
     </div>
     <div class="col-md-3">
     <style type="text/css">
-        i.fa{
+        i.icon_custom{
             font-size: 20px;
     padding: 5px;
     margin: 5px;
         }
     </style>
         <h2 class="">Social Media</h2>
-        <span><i class="fa fa-facebook-official"></i></span>
-        <span><i class="fa fa-google-plus-square"></i></span>
-        <span><i class="fa fa-youtube-square"></i></span>
-        <span><i class="fa fa-twitter-square"></i></span>
-        <span><i class="fa fa-linkedin-square"></i></span>
+        <span><i class="fa fa-facebook-official icon_custom"></i></span>
+        <span><i class="fa fa-google-plus-square icon_custom"></i></span>
+        <span><i class="fa fa-youtube-square icon_custom"></i></span>
+        <span><i class="fa fa-twitter-square icon_custom"></i></span>
+        <span><i class="fa fa-linkedin-square icon_custom"></i></span>
     </div>
     <div class="col-md-3">
         <h2 class="">Be Donor</h2>
