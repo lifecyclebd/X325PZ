@@ -133,7 +133,7 @@
                     <div class="form-group">
                         <label for="name" class="col-md-4 control-label">Division</label>
                         <div class="col-md-2">
-                            <select name="division" class="divisions form-control">
+                            <select name="division_id" class="divisions form-control">
 
                                 <?php $__currentLoopData = $data['division']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <option value="<?php echo e($row->id); ?>"><?php echo e($row->division_name); ?></option>
