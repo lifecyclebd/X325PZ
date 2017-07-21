@@ -192,7 +192,7 @@
                 </ul>
             </li>
 
- 
+            <li class="active"><a href="{{ url('/admin/more-blood/view')}}"><i class="fa fa-home"></i> <span>More About Blood</span></a></li> 
 
             <li class="treeview">
                 <a href="{{ url('/content') }}">

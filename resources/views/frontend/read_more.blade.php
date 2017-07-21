@@ -6,7 +6,7 @@
         <span class="more_news_title">{{$data['read_more_detail']->title}}</span>
         <hr  class="more_news">
         <div class="row border-bottom"> 
-            <img src="{{url('/')}}/public/images/blood_stock.png" class="img img-rounded img-thumbnail" style="width: 100%; height: 540px;">
+            <img src="{{asset('/')}}public/images/{{$data['read_more_detail']->photo}}" class="img img-rounded img-thumbnail" style="width: 100%; height: 540px;">
             <h4 style="padding: 10px"></h4>
             <p class="text-justify" style="padding: 10px"> {{$data['read_more_detail']->short_description}} 
                 {{$data['read_more_detail']->long_description}}
@@ -21,7 +21,7 @@
     <span class="more_news_title">{{$data['read_more_detail']->title}}</span>
         <hr  class="more_news">
         <div class="row border-bottom"> 
-            <img src="{{url('/')}}/public/images/blood_stock.png" class="img img-rounded img-thumbnail" style="width: 100%; height: auto;">
+            <img src="{{asset('/')}}public/images/{{$data['read_more_detail']->photo}}" class="img img-rounded img-thumbnail" style="width: 100%; height: auto;">
             <h4 style="padding: 10px"></h4>
             <p class="text-justify" style="padding: 10px"> {{$data['read_more_detail']->short_description}} 
                 {{substr($data['read_more_detail']->long_description,0,150)}} ...<a href="">Read more</a>
