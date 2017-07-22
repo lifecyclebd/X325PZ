@@ -14,7 +14,7 @@ class ContentController extends Controller {
     }
 
     public function index() {
-        $data = Content::all();
+        $data['content'] = Content::all();
         return view('content.view')->with('data', $data);
     }
 

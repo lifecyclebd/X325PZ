@@ -666,7 +666,7 @@
     </div>
     <div class="col-md-3">
     <style type="text/css">
-        i.fa{
+    i.fa{
             font-size: 20px;
     padding: 5px;
     margin: 5px;

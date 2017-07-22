@@ -37,7 +37,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($data as $row)
+                                @foreach($data['content'] as $row)
                                 <tr>
                                     <td>{{$row->id}}</td>
                                     <td>{{$row->title}}</td>
