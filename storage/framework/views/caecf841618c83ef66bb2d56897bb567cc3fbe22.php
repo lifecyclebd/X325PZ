@@ -19,6 +19,7 @@
         <!--  Admin Tempalte -->
         <link rel="stylesheet" href="<?php echo e(asset('public/AdminLTE/dist/css/AdminLTE.min.css')); ?>">
         <link rel="stylesheet" href="<?php echo e(asset('public/AdminLTE/dist/css/skins/_all-skins.min.css')); ?>"> 
+        <link rel="stylesheet" href="<?php echo e(asset('public/AdminLTE/dist/css/mystyle.css')); ?>"> 
         <script>
             window.Laravel = <?php echo json_encode([
                     'csrfToken' => csrf_token(),
