@@ -675,7 +675,7 @@
     </div>
     <div class="col-md-3">
     <style type="text/css">
-        i.icon_custom{
+ i.icon_custom{ 
             font-size: 20px;
     padding: 5px;
     margin: 5px;

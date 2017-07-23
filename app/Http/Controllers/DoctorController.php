@@ -31,6 +31,7 @@ public function ViewDoctor(Request $request){
         $dis=$request->district;
         $upz=$request->upazila;
         $data['doctor_list'] = Doctor:: where([['division', $div], ['district', $dis], ['upazila', $upz], ['speacilist', $specialist]])->get();
+        
         return view('frontend.view_doctor')->with('data', $data);
 }
 
@@ -133,18 +134,24 @@ public function create() {
     }
 
     public function hospital_create() {
-        return view('hospital.create');
+        $data['division'] = Division::all();
+        return view('hospital.create')->with('data', $data);
     }
 
     public function hospital_store(Request $request) {
         $Hospital = new Hospital;
-        // $data['hospital'] = Hospital::all(); 
-        //dd($data['hospital']);
+        $common =  New  Common;
         $Hospital->hospital_name = $request->hospital_name;
+        $Hospital->division = $request->division;
+        $Hospital->district = $request->district;
+        $Hospital->upazila = $request->upazila;
         $Hospital->location = $request->location;
         $Hospital->phone = $request->phone;
         $Hospital->incharge_name = $request->incharge_name;
         $Hospital->details = $request->details;
+
+        $profile_photo = $common->uploadImage('photo', 'images/hospitals');
+        $Hospital->photo = $profile_photo;
         $Hospital->save();
         return redirect('/admin/hospital/view_hospital');
     }
@@ -184,7 +191,7 @@ public function create() {
     
     public function FindDoctor() {
         $data['division'] = Division::all();
-        $data['doctor'] = Doctor::all();
+        //$data['doctor'] = Doctor::all();
         $data['doctor_specialities'] = Doctor_speciality::all();
         return view('frontend.find_doctor')->with('data', $data);
     }

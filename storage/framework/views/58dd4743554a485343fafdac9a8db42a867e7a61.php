@@ -49,7 +49,12 @@
                 <table class="table table-striped table-bordered example1" id="example1">
                     <thead>
                         <tr style="text-align: center">
-                            <th>SL</th><th>Hospital Name</th><th>Chamber</th><th>Address</th>
+                            <th>SL</th>
+                            <th>Hospital Name</th>
+                            <th>Address</th>
+                            <th>Phone</th>
+                            <th>Details</th>
+                            <th>Photo</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -63,14 +68,17 @@
                                 </span>
                                 <span style="font-weight: bold; float:left">
                                     <a href="#"> <?php echo e($row->hospital_name); ?></a>
-                                </span></td>
+                                </span>
+                            </td>
                                 
-                                <td>
+                            <td>
                                 <i class="fa fa-map-marker"></i>
                                 <?php echo e($row->location); ?>
 
                             </td>
                             <td><?php echo e($row->phone); ?></td>
+                            <td><?php echo e($row->details); ?></td>
+                            <td><img class="img-responsive" src="<?php echo e(url('/')); ?>/public/images/hospitals/<?php echo e($row->photo); ?>" alt="" style="width: 150px;height: 80px"></td>
                         </tr>  
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 

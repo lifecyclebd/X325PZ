@@ -13,7 +13,7 @@
             {!! csrf_field() !!} 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
-                    <select name="division" class="form-control find_search_button divisions">
+                    <select name="division" class="form-control find_search_button divisions" required>
                         <option value="">Select Division</option>
                         @foreach($data['division'] as $row)
                             <option value="{{$row->id}}">{{$row->division_name}}</option>

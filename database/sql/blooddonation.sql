@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2017 at 08:24 AM
+-- Generation Time: Jul 23, 2017 at 06:45 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -695,6 +695,9 @@ CREATE TABLE `doctors` (
   `designation` varchar(255) NOT NULL,
   `hospital` varchar(255) NOT NULL,
   `speacilist` varchar(255) NOT NULL,
+  `division` varchar(255) NOT NULL,
+  `district` varchar(255) NOT NULL,
+  `upazila` varchar(255) NOT NULL,
   `phone` varchar(30) NOT NULL,
   `email` varchar(100) NOT NULL,
   `gender` varchar(255) NOT NULL,
@@ -712,13 +715,13 @@ CREATE TABLE `doctors` (
 -- Dumping data for table `doctors`
 --
 
-INSERT INTO `doctors` (`id`, `name`, `designation`, `hospital`, `speacilist`, `phone`, `email`, `gender`, `profile_photo`, `preasent_address`, `doctor_detail`, `chamber_address`, `updated_by`, `updated_at`, `created_by`, `created_at`) VALUES
-(1, 'Dr. Jaman', 'profrssor', 'IBN SINA', 'Neuro', '018456935', 'Dhaka', '', '', '', '', 'Basabo', 0, '2017-06-21 00:01:35', 0, '2017-06-21 00:01:35'),
-(2, 'Rashed Jaman', '2', '1', '1', '017689565', 'jaman@gmail.com', 'male', '.jpg', 'dhaka', 'poca doctor', 'basabo', NULL, '2017-06-22 07:09:27', NULL, '2017-06-20 19:44:51'),
-(3, 'Shaheen', '3', '9', '7', '345345242', 'shaheen@gmail.com', 'male', 'C:\\xampp\\tmp\\phpAA48.tmp', 'dfksehfgshfgisfh', 'dfwefbwejkh', 'efawekfhgweukfgy', NULL, '2017-06-20 19:45:49', NULL, '2017-06-20 19:45:49'),
-(4, 'Shaheen', '3', '9', '7', '345345242', 'shaheen@gmail.com', 'male', 'C:\\xampp\\tmp\\php5C25.tmp', 'dfksehfgshfgisfh', 'dfwefbwejkh', 'efawekfhgweukfgy', NULL, '2017-06-20 19:46:35', NULL, '2017-06-20 19:46:35'),
-(5, 'Shaheen', '3', '9', '7', '345345242', 'shaheen@gmail.com', 'male', 'C:\\xampp\\tmp\\php8856.tmp', 'dfksehfgshfgisfh', 'dfwefbwejkh', 'efawekfhgweukfgy', NULL, '2017-06-20 19:46:46', NULL, '2017-06-20 19:46:46'),
-(6, 'Shaheen', '3', '9', '7', '345345242', 'shaheen@gmail.com', 'male', 'C:\\xampp\\tmp\\php35BE.tmp', 'dfksehfgshfgisfh', 'dfwefbwejkh', 'efawekfhgweukfgy', NULL, '2017-06-20 19:47:31', NULL, '2017-06-20 19:47:31');
+INSERT INTO `doctors` (`id`, `name`, `designation`, `hospital`, `speacilist`, `division`, `district`, `upazila`, `phone`, `email`, `gender`, `profile_photo`, `preasent_address`, `doctor_detail`, `chamber_address`, `updated_by`, `updated_at`, `created_by`, `created_at`) VALUES
+(1, 'Dr. Jaman', 'profrssor', 'IBN SINA', 'Neuro', '', '', '', '018456935', 'Dhaka', '', '', '', '', 'Basabo', 0, '2017-06-21 00:01:35', 0, '2017-06-21 00:01:35'),
+(2, 'Rashed Jaman', '2', '1', '1', '3', '5', '173', '017689565', 'jaman@gmail.com', 'male', '1.jpg', 'dhaka', 'poca doctor', 'basabo', NULL, '2017-06-22 07:09:27', NULL, '2017-06-20 19:44:51'),
+(3, 'Shaheen', '3', '9', '7', '', '', '', '345345242', 'shaheen@gmail.com', 'male', 'C:\\xampp\\tmp\\phpAA48.tmp', 'dfksehfgshfgisfh', 'dfwefbwejkh', 'efawekfhgweukfgy', NULL, '2017-06-20 19:45:49', NULL, '2017-06-20 19:45:49'),
+(4, 'Shaheen', '3', '9', '7', '', '', '', '345345242', 'shaheen@gmail.com', 'male', 'C:\\xampp\\tmp\\php5C25.tmp', 'dfksehfgshfgisfh', 'dfwefbwejkh', 'efawekfhgweukfgy', NULL, '2017-06-20 19:46:35', NULL, '2017-06-20 19:46:35'),
+(5, 'Shaheen', '3', '9', '7', '', '', '', '345345242', 'shaheen@gmail.com', 'male', 'C:\\xampp\\tmp\\php8856.tmp', 'dfksehfgshfgisfh', 'dfwefbwejkh', 'efawekfhgweukfgy', NULL, '2017-06-20 19:46:46', NULL, '2017-06-20 19:46:46'),
+(6, 'Shaheen', '3', '9', '7', '', '', '', '345345242', 'shaheen@gmail.com', 'male', 'C:\\xampp\\tmp\\php35BE.tmp', 'dfksehfgshfgisfh', 'dfwefbwejkh', 'efawekfhgweukfgy', NULL, '2017-06-20 19:47:31', NULL, '2017-06-20 19:47:31');
 
 -- --------------------------------------------------------
 
@@ -1043,7 +1046,8 @@ CREATE TABLE `find_solutions` (
 INSERT INTO `find_solutions` (`id`, `name`, `age`, `last_blood_pressure`, `any_disease`, `problems`, `email`, `phone`, `is_solved`, `doctor_suggestion`, `doctor_detail`, `sort_order`, `status`, `updated_at`, `updated_by`, `created_at`, `created_by`) VALUES
 (1, 'Ashru', 21, '120/80', 'Many', 'Onek problem', 'ashru@gmail.com', '7046864888', NULL, NULL, NULL, NULL, NULL, '2017-07-11 07:17:55', NULL, '2017-07-11 13:17:55', NULL),
 (2, 'Meem', 21, '130/90', 'yes', 'pathay problem', 'meem@gmail.com', '123965874', NULL, NULL, NULL, NULL, NULL, '2017-07-11 07:43:36', NULL, '2017-07-11 13:43:36', NULL),
-(3, 'Rashed Jaman', 26, '100/80', 'no', 'onek problem bt jana nai', 'rashed@gmail.com', '789654123', NULL, NULL, NULL, NULL, NULL, '2017-07-11 07:45:00', NULL, '2017-07-11 13:45:00', NULL);
+(3, 'Rashed Jaman', 26, '100/80', 'no', 'onek problem bt jana nai', 'rashed@gmail.com', '789654123', NULL, NULL, NULL, NULL, NULL, '2017-07-11 07:45:00', NULL, '2017-07-11 13:45:00', NULL),
+(4, 'asdd', 23, '120/80', 'no', 'sfsvvf', 'asd@fghbfg', '345345', NULL, NULL, NULL, NULL, NULL, '2017-07-23 10:30:16', NULL, '2017-07-23 16:30:16', NULL);
 
 -- --------------------------------------------------------
 
@@ -2196,7 +2200,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `creat
 (1, 'Md Rasheduzzaman ll', 'jmrashed@gmail.com', '$2y$10$vjr3UOBsv/jlTpefFX7FB.Mk.EyEudeJHZSc9883YULd6JMVMhJk2', 'CbIuqlrp5Y3Yg3l66mHysPC12adAVxqQ8qOYGhuCSov91BrWQroxLubcC87k', '2017-05-01 04:56:59', '2017-07-15 23:43:37', NULL),
 (2, 'masud', 'enggmasud1983@gmail.com', '$2y$10$l0vYgvUj0QPxghVXO/uTaeMmNoSpmenqTNQhGTJvJoDyYpSv10In.', 'M0v6m7xHqohVSONriFsh1ctr02i08E87syEkn0hr1kKEKZteHs6AFAnlsOYu', '2017-06-08 01:07:39', '2017-06-08 01:07:39', NULL),
 (3, 'Sakib', 'sakib@gmail.com', '$2y$10$C1D/md2bzD3Zja6Wrv2U7u6mtnOb0obDbTadgJ0ELJfNw/cz06uVW', 'z9YfyKRLigNvvdL4aLFclFVhIKr3UV4bghD4UdNdW82uUNa7Gw4e2Acwje2G', '2017-06-19 10:52:12', '2017-07-20 10:44:37', NULL),
-(4, 'aaacccc2', 'ccccc@gmail.com', '$2y$10$H7LRYyphLFI3MpihZG.nv.dOjkKoVj19dm93ThuEU0jEBkIH65dFy', 'UaXoPYTneNmI4L4fczulkR2law49nyURZK0MCdfD', '2017-06-21 11:19:21', '2017-07-18 11:04:38', NULL);
+(4, 'aaacccc', 'ccccc@gmail.com', '$2y$10$H7LRYyphLFI3MpihZG.nv.dOjkKoVj19dm93ThuEU0jEBkIH65dFy', 'UaXoPYTneNmI4L4fczulkR2law49nyURZK0MCdfD', '2017-06-21 11:19:21', '2017-07-23 01:05:48', NULL);
 
 --
 -- Indexes for dumped tables
@@ -2586,7 +2590,7 @@ ALTER TABLE `faqs`
 -- AUTO_INCREMENT for table `find_solutions`
 --
 ALTER TABLE `find_solutions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `galleries`
 --

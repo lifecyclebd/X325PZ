@@ -50,7 +50,12 @@
                 <table class="table table-striped table-bordered example1" id="example1">
                     <thead>
                         <tr style="text-align: center">
-                            <th>SL</th><th>Hospital Name</th><th>Chamber</th><th>Address</th>
+                            <th>SL</th>
+                            <th>Hospital Name</th>
+                            <th>Address</th>
+                            <th>Phone</th>
+                            <th>Details</th>
+                            <th>Photo</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,13 +69,16 @@
                                 </span>
                                 <span style="font-weight: bold; float:left">
                                     <a href="#"> {{$row->hospital_name}}</a>
-                                </span></td>
+                                </span>
+                            </td>
                                 
-                                <td>
+                            <td>
                                 <i class="fa fa-map-marker"></i>
                                 {{$row->location}}
                             </td>
                             <td>{{$row->phone}}</td>
+                            <td>{{$row->details}}</td>
+                            <td><img class="img-responsive" src="{{url('/')}}/public/images/hospitals/{{$row->photo}}" alt="" style="width: 150px;height: 80px"></td>
                         </tr>  
                         @endforeach
 
