@@ -4,7 +4,7 @@
         <span class="more_news_title"><?php echo e($data['read_more_detail']->title); ?></span>
         <hr  class="more_news">
         <div class="row border-bottom"> 
-            <img src="<?php echo e(url('/')); ?>/public/images/blood_stock.png" class="img img-rounded img-thumbnail" style="width: 100%; height: 540px;">
+            <img src="<?php echo e(asset('/')); ?>public/images/<?php echo e($data['read_more_detail']->photo); ?>" class="img img-rounded img-thumbnail" style="width: 100%; height: 540px;">
             <h4 style="padding: 10px"></h4>
             <p class="text-justify" style="padding: 10px"> <?php echo e($data['read_more_detail']->short_description); ?> 
                 <?php echo e($data['read_more_detail']->long_description); ?>
@@ -20,7 +20,7 @@
     <span class="more_news_title"><?php echo e($data['read_more_detail']->title); ?></span>
         <hr  class="more_news">
         <div class="row border-bottom"> 
-            <img src="<?php echo e(url('/')); ?>/public/images/blood_stock.png" class="img img-rounded img-thumbnail" style="width: 100%; height: auto;">
+            <img src="<?php echo e(asset('/')); ?>public/images/<?php echo e($data['read_more_detail']->photo); ?>" class="img img-rounded img-thumbnail" style="width: 100%; height: auto;">
             <h4 style="padding: 10px"></h4>
             <p class="text-justify" style="padding: 10px"> <?php echo e($data['read_more_detail']->short_description); ?> 
                 <?php echo e(substr($data['read_more_detail']->long_description,0,150)); ?> ...<a href="">Read more</a>

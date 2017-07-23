@@ -67,15 +67,55 @@
                         </div>
                         <div class="col-md-6">
                             <div class="top-right">
-                                <?php if (isset($_SESSION['donor_login']) && !empty($_SESSION['donor_login'])) { ?>
-                                    <li class="logout"> <?php echo $_SESSION['donor_login']; ?>  
-                                        <a class="" href="{{url('/')}}/donor-logout">Log Out</a>
+                                <?php 
+                                $login_email= get_session('fname').' '.get_session('lname');
+                                $login_profile=get_session('pic_path');
+                                $login_address=get_session('address');
+                                if (isset($login_email) && !empty($login_email)) { ?>
+                                  
+                                    <ul class="nav navbar-nav">
+                                       <li class="dropdown user user-menu" style="min-width: 250px;">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="{{url('/')}}/{{$login_profile}}" class="user-image" alt="User Image" style="width: 30px; height: 30px;">
+                                    <span class="hidden-xs" style="margin-left: 10px">{{$login_email}}</span>
+                                </a>
+                                <ul class="dropdown-menu" style="    background: rgb(132, 125, 125);">
+                                    <!-- User image -->
+
+                                    <li class="user-header" style="min-width: 250px;">
+                                        <img src="{{url('/')}}/{{$login_profile}}" class="user-image" alt="User Image" style="width: 30px; height: 30px;">
+                                         <span class="hidden-xs">{{$login_email}}</span>
+                                        <p>
+                                             {{$login_address}} 
+                                        </p>
                                     </li>
+
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <a style="background: #969090;padding: 5px;margin: 5px;" href="{{url('/donor-profile')}}" class="btn-sm btn-primary btn-flat">Profile </a>
+                                        </div>
+                                        <div class="pull-right">
+
+                                            <a style="padding: 5px;margin: 5px;" class="btn-sm btn-danger" href="{{url('/')}}/donor-logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                Logout
+                                            </a>
+
+                                            <form id="logout-form" action="{{url('/')}}/donor-logout" method="post" style="display: none;">
+                                                <input type="hidden" name="_token" value="jYCpfqZBLnxqW69PrYECMgnqbBB9rM7FCtx2XABB">
+                                            </form> 
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+
+                                                    </ul>
                                 <?php } else { ?>
-                                    <form action="" method="post" class="navbar-form navbar-right">
+                                    <form action="{{url('/donor/login')}}" method="post" class="navbar-form navbar-right">
+                                     {!! csrf_field() !!}
                                         <div class="form-group">
-                                            <input type="text" class="form-control login" placeholder="Username">
-                                            <input type="Password" class="form-control login" placeholder="Password">
+                                            <input type="text" class="form-control login" name="email" placeholder="Email">
+                                            <input type="Password" class="form-control login" name="password" placeholder="Password">
                                         </div>
                                         <button type="submit" class="btn btn-default login">Login</button>
                                     </form>

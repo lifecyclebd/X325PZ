@@ -18,29 +18,55 @@ class DonorController extends Controller {
         $data['donor'] = Donor::all();
         return view('donor.view')->with('data', $data);
     }
-    public function donor_profile(){
+    public function donor_profile(Request $request){
    
         $data['division'] = Division::all();
-        $data['donor'] = Donor::all();
+        $donor_email= $request->session()->get('email');
+        $data['donor'] = Donor::where('email',$donor_email)->first();
 
-        return view('frontend.donor_profile');
+        return view('frontend.donor_profile')->with('data', $data);
     }
- public function donor_login() {
+ public function donor_login(Request $request) {
+    $data = $request->session()->all();
+    $value = $request->session()->get('email');
+   // dd($data['email']);
+
         $data['division'] = Division::all();
         $data['donor'] = Donor::all();
         return view('frontend.donor_login');
     }
+
+
+
     public function donor_login_access(Request $request){
-        $donor_username=$request->donor_username;
-        $donor_password=$request->donor_password;
-        $donor_password = Hash::make($donor_password);
-    //    dd($donor_password);
+        $donor_username=$request->email;
+        $donor_password=$request->password;
+       // $donor_password = Hash::make($donor_password);
+      // dd($request);
         $data['donor'] = Donor:: where([['email',$donor_username],['password',$donor_password]])->first();
 
-
-       dd($data['donor']);
+        if(!empty($data['donor'])){
+            $request->session()->put('email', $data['donor']->email);
+            $request->session()->push('donors',$data['donor']);
+           // dd($value);
+            return redirect('/donor-profile');
+        }
+        else {
+             return redirect('/donor-login?message=Your Email or Passord is not valid !');
+        }
 
     }
+    public function logout(Request $request){
+        $request->session()->forget('email');
+        $request->session()->forget('donors');
+        
+        $request->session()->flush();
+
+       return redirect('/donor-login');
+    }
+
+
+
     public function create() {
         //  $blood_group= new Common;
         //=$blood_group->get_blood_group();
