@@ -14,6 +14,7 @@
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
                     <select name="division" class="form-control find_search_button divisions">
+                        <option value="">Select Division</option>
                         @foreach($data['division'] as $row)
                             <option value="{{$row->id}}">{{$row->division_name}}</option>
                         @endforeach
@@ -21,12 +22,12 @@
                 </span>
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
                     <select name="district" id="districts" class="form-control find_search_button districts">
-                        
+                        <option value="">Select District</option>
                     </select>
                 </span>
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
                     <select name="upazila" id="upazillas" class="form-control find_search_button">
-                        
+                        <option value="">Select Upazila</option>
                     </select>
                 </span>
                 

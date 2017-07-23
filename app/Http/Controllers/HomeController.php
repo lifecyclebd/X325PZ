@@ -15,6 +15,8 @@ use App\Upazila;
 use App\Message;
 use App\Activity;
 use App\Hospital;
+use App\Doctor;
+use App\Doctor_speciality;
 use App\BloodRequest;
 use App\Blog;
 use App\System_setting;
@@ -37,7 +39,7 @@ class HomeController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() { 
+    public function index() {
         $common = new Common;
         $data['gallery_category'] = Gallery::all();
         $data['gallery'] = Gallery_detail::all();
@@ -49,13 +51,13 @@ class HomeController extends Controller {
                 ->get();
 
         $data['slider'] = DB::table('galleries')
-                ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id') 
+                ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id')
                 ->where('galleries.page_name', 'slider')
                 ->get();
 
 
         $data['blood_fighter'] = DB::table('galleries')
-                ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id') 
+                ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id')
                 ->where('galleries.page_name', 'Home_Page')
                 ->take(8)
                 ->orderBy('gallery_details.id', 'desc')
@@ -68,33 +70,31 @@ class HomeController extends Controller {
         $data['type'] = More_about_blood:: where('slug', 'blood_type')->first();
         $data['journey'] = More_about_blood:: where('slug', 'journey')->first();
         $data['upcoming_event'] = Content:: where('content_type', 'upcoming_events')->get();
-        
+
         // =$common->get_footer('system_settings','id',1);
         //dd($data['footer']);
         //$data['footer'] = System_setting::first();
-        
 //dd($data['donor_24']);
-        
-      //  $_SESSION['donor_login']="Nazmus Sakib";
+        //  $_SESSION['donor_login']="Nazmus Sakib";
 
-        $data['testimonial']=Testimonial::all();
+        $data['testimonial'] = Testimonial::all();
 
         return view('frontend.home')->with('data', $data);
     }
-    
-    public function SearchAny(Request $request){
-        $searchdata=$request->searchany; 
 
-        $data['donor']=More_about_blood:: where('slug', 'donor_24')->first();
+    public function SearchAny(Request $request) {
+        $searchdata = $request->searchany;
 
+        $data['donor'] = More_about_blood:: where('slug', 'donor_24')->first();
     }
-    public function logout(){
+
+    public function logout() {
         unset($_SESSION['donor_login']);
-       //  session_destroy();
+        //  session_destroy();
         return redirect('/donor-login');
     }
 
-public function blood_news() {
+    public function blood_news() {
         //$data['blood_news'] = Blog::all();
         $data['blood_news'] = Blog:: where('blog_category_id', 2)->orderByDesc('id')->get();
         return view('frontend.blood_news')->with('data', $data);
@@ -103,53 +103,56 @@ public function blood_news() {
     public function read_more($id) {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        $data['read_more_detail']= More_about_blood::find($id);
+        $data['read_more_detail'] = More_about_blood::find($id);
         return view('frontend.read_more')->with('data', $data);
     }
+
     public function blood_info() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
         return view('frontend.blood_info');
     }
+
     public function blood_request() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
         return view('frontend.blood_request');
     }
-    public function blood_request_store(Request $request){
-        $data =new BloodRequest;
-        $msg=new Message;
-        $actv=new Activity;
-        $data->user_id=6;
-        $data->request_blood_group=$request->request_blood_group;
-        $data->patient_hospital=$request->patient_hospital;
-        $data->patient_phone=$request->patient_phone;
-        $data->patient_place=$request->patient_place;
-        $data->number_blood_bag=$request->number_blood_bag;
-        $data->disease=$request->disease;
-        $data->relation=$request->relation;
-        $data->opration_time=$request->opration_time;
+
+    public function blood_request_store(Request $request) {
+        $data = new BloodRequest;
+        $msg = new Message;
+        $actv = new Activity;
+        $data->user_id = 6;
+        $data->request_blood_group = $request->request_blood_group;
+        $data->patient_hospital = $request->patient_hospital;
+        $data->patient_phone = $request->patient_phone;
+        $data->patient_place = $request->patient_place;
+        $data->number_blood_bag = $request->number_blood_bag;
+        $data->disease = $request->disease;
+        $data->relation = $request->relation;
+        $data->opration_time = $request->opration_time;
         $data->save();
         //-----------------------------------------------------//
-        $msg->sender_id=2;
-        $msg->sender_type='donor';
-        $msg->receiver_id=303;
-        $msg->receiver_type='admin';
-        $msg->message='Need '.$request->request_blood_group.'Blood '.$request->number_blood_bag.' in '.$request->patient_hospital.'at'.$request->opration_time;
-        $msg->created_by='Sakib';
-        $msg->updated_by='Rashed';
+        $msg->sender_id = 2;
+        $msg->sender_type = 'donor';
+        $msg->receiver_id = 303;
+        $msg->receiver_type = 'admin';
+        $msg->message = 'Need ' . $request->request_blood_group . 'Blood ' . $request->number_blood_bag . ' in ' . $request->patient_hospital . 'at' . $request->opration_time;
+        $msg->created_by = 'Sakib';
+        $msg->updated_by = 'Rashed';
         $msg->save();
         //------------------------------------------------------//
-        $actv->created_id=5;
-        $actv->created_type='donor';
-        $actv->receiver_id=303;
-        $actv->receiver_type='admin';
-        $actv->purpose='dont know';
-        $actv->short_message='Need '.$request->request_blood_group.'Blood '.$request->number_blood_bag.' in '.$request->patient_hospital.'at'.$request->opration_time;
-        $actv->is_read=1;
-        $actv->is_reply=0;
-        $actv->parent_id=6;
-        $actv->created_by='Asru';
+        $actv->created_id = 5;
+        $actv->created_type = 'donor';
+        $actv->receiver_id = 303;
+        $actv->receiver_type = 'admin';
+        $actv->purpose = 'dont know';
+        $actv->short_message = 'Need ' . $request->request_blood_group . 'Blood ' . $request->number_blood_bag . ' in ' . $request->patient_hospital . 'at' . $request->opration_time;
+        $actv->is_read = 1;
+        $actv->is_reply = 0;
+        $actv->parent_id = 6;
+        $actv->created_by = 'Asru';
         $actv->save();
         return redirect('/blood-request?send_request_suceessfully=yes');
     }
@@ -158,6 +161,7 @@ public function blood_news() {
         $data['activity'] = Activity::all();
         return view('admin.activity')->with('data', $data);
     }
+
     public function news_page() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
@@ -171,7 +175,7 @@ public function blood_news() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'))
         $data['news'] = Content:: where('content_type', 'news')->take(10)->get();
-        $data['news_detail']= Content::find($id);
+        $data['news_detail'] = Content::find($id);
         //dd($data['news_detail']);
         return view('frontend.news_detail_page')->with('data', $data);
     }
@@ -198,9 +202,9 @@ public function blood_news() {
     public function search_hospital(Request $request) {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        $div=$request->division;
-        $dis=$request->district;
-        $upz=$request->upazila;
+        $div = $request->division;
+        $dis = $request->district;
+        $upz = $request->upazila;
         $data['division'] = Division::all();
         $data['hospital_list'] = Hospital:: where([['division', $div], ['district', $dis], ['upazila', $upz]])->get();
         return view('frontend.search_hospital')->with('data', $data);
@@ -218,6 +222,7 @@ public function blood_news() {
         $data['blood_news'] = Blog:: where('blog_category_id', 2)->orderByDesc('id')->get();
         return view('frontend.view_blog')->with('data', $data);
     }
+
     public function blog_detail($id) {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
@@ -234,11 +239,12 @@ public function blood_news() {
         $data['last_recent_event'] = Content:: where('content_type', 'recent_events')->take(1)->orderByDesc('created_at')->first();
         return view('frontend.events')->with('data', $data);
     }
+
     public function recent_event($id) {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
         $data['recent'] = Content:: where('content_type', 'recent_events')->take(10)->get();
-        $data['recent_detail']= Content::find($id);
+        $data['recent_detail'] = Content::find($id);
         return view('frontend.recent_event')->with('data', $data);
     }
 
@@ -246,8 +252,8 @@ public function blood_news() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
         $data['upcoming'] = Content:: where('content_type', 'upcoming_events')->take(10)->get();
-        $data['upcoming_detail']= Content::find($id);
-      //  dd($data['upcoming_detail']);
+        $data['upcoming_detail'] = Content::find($id);
+        //  dd($data['upcoming_detail']);
         return view('frontend.upcoming_event')->with('data', $data);
     }
 
@@ -308,7 +314,7 @@ public function blood_news() {
         $data['donor'] = Donor::all();
 
         return view('frontend.SearchBloodDonor')->with('data', $data);
-    }  
+    }
 
     public function SliderShow() {
         $data['slider'] = Division::all();
@@ -356,11 +362,13 @@ public function blood_news() {
     }
 
     public function show_hospital_list() {
-
+        
     }
 
     public function ajax() {
         return view('search.im');
     }
+
+    
 
 }

@@ -6,11 +6,17 @@
         <hr  class="more_news">
         <div class="row border-bottom">
             <div class="col-md-6">
-                <img src="<?php echo e(url('/')); ?>/public/frontend/images/about_left.jpg" class="img img-rounded" style="width: 100%; height: auto">
+                <img src="<?php echo e(url('/')); ?>/public/images/Blood_Donor_24.jpg" class="img img-rounded" style="width: 100%; height: auto">
             </div>
             <div class="col-md-6">
                 <p class="text-justify">
-                    পবিত্র রমজান মাসের খাদ্যতালিকা ঠিক করার সময় অন্য মাসগুলোর খাদ্যতালিকার থেকে বেশি পার্থক্য করার প্রয়োজন নেই, যত সাধারণ এবং স্বাভাবিক খাদ্যতালিকাভুক্ত করা যায় ততই ভালো।খাদ্যের প্রকার এবং গ্রহণ এমনই হওয়া উচিত যাতে স্বাভাবিক থাকা ওজন বেড়েও না যায় বা কমেও না যায়। এমন সব খাদ্য নির্ধারণ করা প্রয়োজন,
+                    Blood Donor 24 is a team of emergency response donors who pledge to respond and give blood within 24 hours, when we need it most.
+
+If you can give blood at our centres in Aberdeen, Dundee, Edinburgh, Glasgow or Inverness, you are uniquely placed to help if we're faced with an urgent demand for your blood group.
+
+Demand for blood is unpredictable, and lower levels of a particular blood group can occur for many reasons. This could be as the result of a major incident, or simply because of low attendances over a holiday period. Should the need for a specific blood group arise, eligible Blood Donor 24 members will receive a telephone call asking them to donate within 24 hours.
+
+If you would like to join Blood Donor 24, ask about it the next time you're giving blood. We'll sign you up and put you on standby for emergency alert should there be a sudden need for your blood group.
                 </p>
                 <button class="pull-right btn-default" style="background: none;">More Details</button>
             </div>

@@ -5,7 +5,7 @@
         <span class="more_news_title"><?php echo e($data['recent_detail']->title); ?></span>
         <hr  class="more_news">
         <div class="row border-bottom"> 
-            <img src="<?php echo e(url('/')); ?>/public/images/content/events/<?php echo e($data['recent_detail']->content_photo); ?>" class="img img-rounded img-thumbnail" style="width: 100%; height: 540px;">
+            <img src="<?php echo e(url('/')); ?>/public/images/content/recent_events/<?php echo e($data['recent_detail']->content_photo); ?>" class="img img-rounded img-thumbnail" style="width: 100%; height: 540px;">
             <p class="text-justify" style="padding: 10px">
                 <?php echo e($data['recent_detail']->description); ?>
 
@@ -20,7 +20,7 @@
         <?php $__currentLoopData = $data['recent']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="col-md-12 border-bottom">
             <div class="more_news_left">
-                <img src="<?php echo e(url('/')); ?>/public/images/content/events/<?php echo e($row->content_photo); ?>" class="img-thumbnail">
+                <img src="<?php echo e(url('/')); ?>/public/images/content/recent_events/<?php echo e($row->content_photo); ?>" class="img-thumbnail">
             </div>
             <div class="more_news_right ">
                 <a href="<?php echo e(url('/recent-event')); ?>/<?php echo e($row->id); ?>"><h4><?php echo e($row->title); ?></h4></a>

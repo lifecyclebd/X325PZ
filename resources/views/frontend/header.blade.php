@@ -8,7 +8,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/style.css"> 
+        <script src="{{ asset('/')}}public/frontend/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/style.css">
         <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/half-slider.css">
         <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/font-awesome.min.css">         
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Raleway" rel="stylesheet"> 
@@ -154,10 +156,10 @@
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="">Health
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="{{ url('/find-doctor') }}">Find Doctor</a></li>
+                                        <li><a href="{{ url('/search-doctor') }}">Find Doctor</a></li>
                                         <li><a href="{{ url('/view-hospital') }}">Hospital</a></li>
                                         <li><a href="{{ url('/view-ambulance') }}">Ambulence</a></li>
-                                        <li><a href="{{ url('/write-to-doctor') }}">Write To Doctor</a></li>
+                                        <!--<li><a href="{{ url('/write-to-doctor') }}">Write To Doctor</a></li>-->
                                     </ul>
                                 </li> 
                                 <li class="dropdown">
