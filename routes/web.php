@@ -13,7 +13,7 @@ Route::get('/Blogs', 'BlogController@view');
 Route::get('/donor-logout','HomeController@logout');
 
 
-Route::get('/find-doctor', 'DoctorController@FindDoctor');
+Route::get('/search-doctor', 'DoctorController@FindDoctor');
 Route::any('/view-doctor', 'DoctorController@ViewDoctor');
 Route::get('/search-blood-donor', 'HomeController@SearchBloodDonor');
 Route::post('/view/search-blood-donor','HomeController@ShowBloodDonor');

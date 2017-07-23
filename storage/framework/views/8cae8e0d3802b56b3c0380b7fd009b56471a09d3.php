@@ -10,21 +10,32 @@
             <?php echo csrf_field(); ?> 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
-                    <select name="divisions" class="form-control find_search_button">
-                        <option value="Dhaka">Select Specialities</option>
+                    <select name="specialist" class="form-control find_search_button">
+                        <option value="">Select Specialities</option>
                         <?php $__currentLoopData = $data['doctor_specialities']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>                        
-                        <option value="<?php echo e($row->name); ?>"><?php echo e($row->name); ?></option>
+                        <option value="<?php echo e($row->id); ?>"><?php echo e($row->name); ?></option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                 </span>
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
-                    <select name="divisions" class="form-control find_search_button">
-                        <option value="Dhaka">Select Upazila</option>
-                        <option value="Khulna">Khulna</option>
-                        <option value="Khulna">Dhaka</option>
+                    <select name="division" class="form-control find_search_button divisions">
+                        <option value="">Select Division</option>
+                        <?php $__currentLoopData = $data['division']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($row->id); ?>"><?php echo e($row->division_name); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                 </span>
-                <input type="text" class="col-xs-12 form-control find_search" placeholder="Hospital name" aria-describedby="basic-addon1">
+                <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
+                    <select name="district" id="districts" class="form-control find_search_button districts">
+                        <option value="">Select District</option>
+                    </select>
+                </span>
+                <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
+                    <select name="upazila" id="upazillas" class="form-control find_search_button">
+                        <option value="">Select Upazila</option>
+                    </select>
+                </span>
+                
                 <span class="input-group-addon" id="basic-addon1">
                         <button class="col-xs-12 btn btn-xs btn-search find_search_button">
                             <i class="fa fa-search"></i>

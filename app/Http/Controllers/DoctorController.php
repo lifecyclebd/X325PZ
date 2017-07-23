@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Doctor;
 use App\Doctor_designation;
 use App\Hospital;
+use App\Division;
 use App\Doctor_speciality;
 use App\doctor_degree;
 use App\Find_solution;
@@ -16,24 +17,21 @@ use DB;
 class DoctorController extends Controller {
 
     public function __construct() {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     public function view() {
         $data['doctor'] = Doctor::all();
         return view('doctor.view')->with('data', $data);
     }
-public function FindDoctor(){
-    
-        $data['doctor'] = Doctor::all();
-        $data['doctor_specialities'] = Doctor_speciality::all();
-        return view('frontend.find_doctor')->with('data', $data);
-}
-public function ViewDoctor(){
-    
-        //$data['doctor'] = Doctor::all();
-        //$data['doctor_specialities'] = Doctor_speciality::all();
-        return view('frontend.view_doctor');
+
+public function ViewDoctor(Request $request){
+        $specialist=$request->specialist;
+        $div=$request->division;
+        $dis=$request->district;
+        $upz=$request->upazila;
+        $data['doctor_list'] = Doctor:: where([['division', $div], ['district', $dis], ['upazila', $upz], ['speacilist', $specialist]])->get();
+        return view('frontend.view_doctor')->with('data', $data);
 }
 
 public function create() {
@@ -182,6 +180,13 @@ public function create() {
         $degree->degree = $request->degree;
         $degree->save();
         return redirect('/admin/degree/view_degree');
+    }
+    
+    public function FindDoctor() {
+        $data['division'] = Division::all();
+        $data['doctor'] = Doctor::all();
+        $data['doctor_specialities'] = Doctor_speciality::all();
+        return view('frontend.find_doctor')->with('data', $data);
     }
 
     public function doctor_edit($id) {

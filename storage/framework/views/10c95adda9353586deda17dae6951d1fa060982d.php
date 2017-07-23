@@ -22,48 +22,17 @@
 
         <!-- Team Members Row -->
         <div class="row pull-center"> 
+            <?php $__currentLoopData = $data['doctor_list']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col-lg-4 col-sm-6 text-center">
-                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="<?php echo e(url('/')); ?>/public/frontend/images/doctor/1.jpg" alt="">
-                <h3>Prof. Abdullah Al-Amin
-                    <small>Professor</small>
+                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="<?php echo e(url('/')); ?>/public/frontend/images/doctor/<?php echo e($row->profile_photo); ?>" alt="">
+                <h3><?php echo e($row->name); ?>
+
+                    <small><?php echo e($row->designation); ?></small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <h4>Hospital Name: <?php echo e($row->hospital); ?></h4>
+                <h4>Phone No: <?php echo e($row->phone); ?></h4>
             </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="<?php echo e(url('/')); ?>/public/frontend/images/doctor/1.jpg" alt="">
-                <h3>Prof. Abdullah Al-Amin
-                    <small>Professor</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="<?php echo e(url('/')); ?>/public/frontend/images/doctor/1.jpg" alt="">
-                <h3>Prof. Abdullah Al-Amin
-                    <small>Professor</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="<?php echo e(url('/')); ?>/public/frontend/images/doctor/1.jpg" alt="">
-                <h3>Prof. Abdullah Al-Amin
-                    <small>Professor</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="<?php echo e(url('/')); ?>/public/frontend/images/doctor/1.jpg" alt="">
-                <h3>Prof. Abdullah Al-Amin
-                    <small>Professor</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="<?php echo e(url('/')); ?>/public/frontend/images/doctor/1.jpg" alt="">
-                <h3>Prof. Abdullah Al-Amin
-                    <small>Professor</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
     </div>
 
