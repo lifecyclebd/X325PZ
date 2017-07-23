@@ -15,12 +15,12 @@
 
                         <div class="box-tools pull-right">
 
-                            <a href="{{url('/content')}}" class="">      
+                            <a href="{{url('admin/content')}}" class="">      
                                 <i class="fa fa-undo" aria-hidden="true"></i> back
                             </a>
 
                         </div>
-                        <h3 class="box-title">{{$data->name}}</h3>
+                        <h3 class="box-title">{{$data['content']->name}}</h3>
 
                     </div>
 
@@ -39,14 +39,13 @@
                             </thead>
                             <tbody> 
                                 <tr>
-                                    <td>{{$data->id}}</td>
-                                    <td>{{$data->title}}</td>
-                                    <td>{{$data->description}}</td>
-                                    <td>{{$data->content_page}}</td>
+                                    <td>{{$data['content']->id}}</td>
+                                    <td>{{$data['content']->title}}</td>
+                                    <td>{{$data['content']->description}}</td>
+                                    <td>{{$data['content']->content_page}}</td>
                                     <td> 
-                                        <a href="{{url('/content')}}/{{$data->id}}/edit" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
-                                        <a href="#" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
-                                        <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
+                                        <a href="{{url('admin/content')}}/{{$data['content']->id}}/edit" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
+                                        <a href="#" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a> 
                                     </td>
 
                                 </tr>

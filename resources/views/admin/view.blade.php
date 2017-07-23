@@ -14,7 +14,7 @@
 
                         <div class="box-tools pull-right">
 
-                            <a class="btn btn-success pull-right" href="{{ url('/admin/create') }}"><i class="fa fa-plus"></i> Add Admin</a>
+                            <a class="btn btn-xs btn-success pull-right" href="{{ url('/admin/create') }}"><i class="fa fa-plus"></i> Add Admin</a>
 
                         </div>
                         <h3 class="box-title">Admin List</h3>
@@ -46,8 +46,7 @@
                                     </td>
                                     <td> 
                                         <a href="{{url('/admin')}}/{{$row->id}}/edit" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
-                                        <a href="{{url('/admin')}}/destroy/{{$row->id}}" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
-                                        <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
+                                        <a href="{{url('/admin')}}/destroy/{{$row->id}}" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a> 
                                         <a href="{{url('/admin/')}}/{{ $row->id }}" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
                                         </a>
                                     </td>

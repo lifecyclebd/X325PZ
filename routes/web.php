@@ -194,13 +194,13 @@ Route::get('api/get-city-list','APIController@getCityList');
 */
 
 //---------Content--------------------
-Route::get('/content', 'ContentController@index'); 
-Route::get('/content/create', 'ContentController@create');
-Route::get('/content/{id}', 'ContentController@show');
-Route::get('/content/{id}/edit', 'ContentController@edit'); 
-Route::get('/content/store', 'ContentController@store')->name('store');
-Route::post('/content/update', 'ContentController@update');
-Route::any('/content/{id}/destroy', 'ContentController@destroy');
+Route::get('/admin/content', 'ContentController@index'); 
+Route::get('/admin/content/create', 'ContentController@create');
+Route::get('/admin/content/{id}', 'ContentController@show');
+Route::get('/admin/content/{id}/edit', 'ContentController@edit'); 
+Route::get('/admin/content/store', 'ContentController@store')->name('store');
+Route::post('/admin/content/update', 'ContentController@update');
+Route::any('/admin/content/{id}/destroy', 'ContentController@destroy');
 
 //-------------------Blog-----------------------------
 Route::any('/blog/category', 'BlogController@blog_category');
@@ -244,7 +244,7 @@ Route::get('/error',function(){
 
 Route::resource('admin','AdminController');
 Route::resource('donor','DonorController');
-Route::resource('content','ContentController');
+//Route::resource('content','ContentController');
 
 
 //Route::get('/', 'UserController@index');
