@@ -36,9 +36,36 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="name" class="col-md-4 control-label">Doctor Namel</label>
+                        <label for="name" class="col-md-4 control-label">Doctor Name</label>
                         <div class="col-md-6">
                             <input id="name" type="text" class="form-control" name="name"  autofocus>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-md-4 control-label">Division</label>
+                        <div class="col-md-6">
+                            <select name="division" class="form-control find_search_button divisions" required>
+                                <option value="">Select Division</option>
+                                    <?php $__currentLoopData = $data['division']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <option value="<?php echo e($row->id); ?>"><?php echo e($row->division_name); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-md-4 control-label">District</label>
+                        <div class="col-md-6">
+                            <select name="district" id="districts" class="form-control find_search_button districts">
+                        <option value="">Select District</option>
+                    </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-md-4 control-label">Upazila</label>
+                        <div class="col-md-6">
+                            <select name="upazila" id="upazillas" class="form-control find_search_button">
+                        <option value="">Select Upazila</option>
+                    </select>
                         </div>
                     </div>
                     <div class="form-group">

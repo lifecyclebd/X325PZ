@@ -1,9 +1,21 @@
 @extends('layouts/front')
 
+<<<<<<< HEAD
  @section('content')
 
  <div class="container">
  
+=======
+@section('content')
+
+   <h2 class="text-uppercase"> </h2>
+   <p class="text-justify">  </p>
+ 
+            <a href="#">Complete</a> | <a href="#">Edit</a> | <a href="#">Delete</a>
+         
+
+</div>
+>>>>>>> f59ff478fd5030230276ee0f1913f3e61eeb7c45
 
 <div class="contact-content sec-padding" style="padding-top:50px;">
         <div class="container">
@@ -91,8 +103,11 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 	
 @endsection 
+=======
+>>>>>>> f59ff478fd5030230276ee0f1913f3e61eeb7c45
 
 
 

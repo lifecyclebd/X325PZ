@@ -50,11 +50,25 @@
   });
 </script>
 <!-- /.content-wrapper -->
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
+<!-- /.content-wrapper -->
 <script type="text/javascript">
     $(document).ready(function () {
         $(".divisions").change(function () {
             var classid = $(this).val();
-           // alert(classid);
+           //alert(classid);
             $("#districts").html('');
             $.ajax({
                 url: "<?php echo e(url('admin/donor/get_district')); ?>" + '/' + classid,

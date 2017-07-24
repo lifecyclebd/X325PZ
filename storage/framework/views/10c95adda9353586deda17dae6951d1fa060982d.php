@@ -24,7 +24,7 @@
         <div class="row pull-center"> 
             <?php $__currentLoopData = $data['doctor_list']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col-lg-4 col-sm-6 text-center">
-                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="<?php echo e(url('/')); ?>/public/frontend/images/doctor/<?php echo e($row->profile_photo); ?>" alt="">
+                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="<?php echo e(url('/')); ?>/public/frontend/images/doctor/<?php echo e($row->profile_photo); ?>" alt="pic">
                 <h3><?php echo e($row->name); ?>
 
                     <small><?php echo e($row->designation); ?></small>

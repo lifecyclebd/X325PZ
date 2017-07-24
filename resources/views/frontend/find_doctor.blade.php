@@ -13,15 +13,15 @@
             {!! csrf_field() !!} 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
-                    <select name="specialist" class="form-control find_search_button">
-                        <option value="">Select Specialities</option>
-                        @foreach($data['doctor_specialities'] as $row)                        
-                        <option value="{{$row->id}}">{{$row->name}}</option>
+                    <select name="specialist" class="form-control find_search_button divisions" required>
+                        <option value="">Select Specialist</option>
+                        @foreach($data['doctor_specialities'] as $row)
+                            <option value="{{$row->id}}">{{$row->name}}</option>
                         @endforeach
                     </select>
                 </span>
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
-                    <select name="division" class="form-control find_search_button divisions">
+                    <select name="division" class="form-control find_search_button divisions" required>
                         <option value="">Select Division</option>
                         @foreach($data['division'] as $row)
                             <option value="{{$row->id}}">{{$row->division_name}}</option>
@@ -39,10 +39,10 @@
                     </select>
                 </span>
                 
-                <span class="input-group-addon" id="basic-addon1">
-                        <button class="col-xs-12 btn btn-xs btn-search find_search_button">
-                            <i class="fa fa-search"></i>
-                        </button>
+                <span class="input-group-addon" id="basic-addon1"> 
+                    <button class="col-xs-12 btn btn-xs btn-search find_search_button">
+                        <i class="fa fa-search"> Search</i>
+                    </button>
                 </span>
             </div>
         </form>

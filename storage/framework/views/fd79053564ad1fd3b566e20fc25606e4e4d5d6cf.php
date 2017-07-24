@@ -201,7 +201,7 @@
 
 
 
-
+    <!--
     <div class="container" style="margin-top: 30px">  
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info_abou_blood slideInDown" style="min-height:350px">
@@ -263,6 +263,7 @@
 
 
 </div>
+-->
 
 
 <div class="get_well_soon">        
@@ -274,9 +275,9 @@
                 <span class="back_icon5 pull-center" style="margin-top: 100px">  </span>
                 <p class="text-white">Connect With Doctor</p>
                 <div class="get_well_soon_div">
-                    A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
+                    সাস্থ্য সেবা এখন হাতের মুঠোয়। ২৪ ঘন্টা বিশেষজ্ঞ চিকিৎসক দ্বারা আপনার সাস্থ্য সেবা দিতে আমরা আছি আপনার পাশে।
                     <div class="text-center">
-                        <a href="<?php echo e(url('/write-to-doctor')); ?>"><button class="btn_read_more2">Find out more</button></a>
+                        <a href="<?php echo e(url('/write-to-doctor')); ?>"><button class="btn_read_more2">আরো জানতে</button></a>
                     </div>
                 </div>
 
@@ -288,9 +289,9 @@
                 <span class="back_icon6 pull-center" style="height: 200px">  </span>
                 <p class="text-white">Find Hospital</p>
                 <div class="get_well_soon_div">
-                    A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
+                    সারাদেশে সহজেই বিশেষায়িত হাসপাতাল খুঁজে নিতে পারবেন। পাবেন হাসপাতাল সম্পর্কিত প্রয়োজনীয় সব তথ্য।
                     <div class="text-center">
-                        <a href="<?php echo e(url('/view-hospital')); ?>"><button class="btn_read_more2">Find out more</button></a>
+                        <a href="<?php echo e(url('/view-hospital')); ?>"><button class="btn_read_more2">আরো জানতে</button></a>
                     </div>
                 </div>
 
@@ -302,9 +303,9 @@
                 <span class="back_icon7 pull-center" style="height: 200px">  </span>
                 <p class="text-white">Hire Ambulance</p>
                 <div class="get_well_soon_div">
-                    A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
+                    প্রয়োজনে যেকোনো সময় স্বল্পমূল্যে এ্যম্বুলেন্স সেবা পেতে যোগাযোগ করুন আমাদের সাথে। আমাদের আছে বিশেষ এ্যম্বুলেন্স সার্ভিস।
                     <div class="text-center">
-                        <button class="btn_read_more2">Find out more</button>
+                        <button class="btn_read_more2">আরো জানতে</button>
                     </div>
                 </div>
 
@@ -316,9 +317,9 @@
                 <span class="back_icon8 pull-center" style="height: 200px">  </span>
                 <p class="text-white">News</p>
                 <div class="get_well_soon_div">
-                    A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
+                    সাস্থ্য সম্পর্কিত বিভিন্ন তথ্য ও সংবাদ জানতে সর্বদা থাকুন আমাদের সঙ্গে।
                     <div class="text-center">
-                        <a href="<?php echo e(url('/blog')); ?>"><button class="btn_read_more2">Find out more</button></a>
+                        <a href="<?php echo e(url('/blog')); ?>"><button class="btn_read_more2">আরো জানতে</button></a>
                     </div>
                 </div>
 
@@ -675,7 +676,7 @@
     </div>
     <div class="col-md-3">
     <style type="text/css">
-        i.icon_custom{
+ i.icon_custom{ 
             font-size: 20px;
     padding: 5px;
     margin: 5px;

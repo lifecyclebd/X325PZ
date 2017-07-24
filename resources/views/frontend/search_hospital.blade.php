@@ -50,13 +50,17 @@
                 <table class="table table-striped table-bordered example1" id="example1">
                     <thead>
                         <tr style="text-align: center">
-                            <th>SL</th><th>Hospital Name</th><th>Chamber</th><th>Address</th>
+                            <th></th>
+                            <th>Hospital Name</th>
+                            <th>Address</th>
+                            <th>Phone</th>
+                            <th>Details</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($data['hospital_list'] as $row)
                         <tr>
-                            <td>{{$row->id}}</td>  
+                            <td><img class="img-responsive" src="{{url('/')}}/public/images/hospitals/{{$row->photo}}" alt="" style="width: 200px;height: 120px"></td>  
                             <td>
                                 <span style="float: left; margin-right: 10px;">
 
@@ -64,13 +68,15 @@
                                 </span>
                                 <span style="font-weight: bold; float:left">
                                     <a href="#"> {{$row->hospital_name}}</a>
-                                </span></td>
+                                </span>
+                            </td>
                                 
-                                <td>
+                            <td>
                                 <i class="fa fa-map-marker"></i>
                                 {{$row->location}}
                             </td>
                             <td>{{$row->phone}}</td>
+                            <td>{{$row->details}}</td>
                         </tr>  
                         @endforeach
 

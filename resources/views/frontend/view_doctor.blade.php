@@ -26,7 +26,7 @@
         <div class="row pull-center"> 
             @foreach($data['doctor_list'] as $row)
             <div class="col-lg-4 col-sm-6 text-center">
-                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="{{url('/')}}/public/frontend/images/doctor/{{$row->profile_photo}}" alt="">
+                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="{{url('/')}}/public/frontend/images/doctor/{{$row->profile_photo}}" alt="pic">
                 <h3>{{$row->name}}
                     <small>{{$row->designation}}</small>
                 </h3>

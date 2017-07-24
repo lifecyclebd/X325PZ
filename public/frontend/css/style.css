@@ -317,7 +317,7 @@ border-radius: 5px;    background-color: #4d4d4d !important;    color: white;
     text-align: center;
     margin: 40%;
 }.back_icon7{
-    background: url(../images/icon7.png) center center no-repeat;
+    background: url(../images/ambulace.png) center center no-repeat;
     padding: 60px;
     background-size: 60px 60px; 
     text-align: center;
@@ -414,6 +414,7 @@ p.title{
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 15px;
+    min-height: 350px
 
 }
 .text-white{
@@ -429,6 +430,7 @@ p.title{
     color: black;
     padding: 10px;
     border-radius: 10px;
+    min-height: 180px
 
 }
 .more_news{

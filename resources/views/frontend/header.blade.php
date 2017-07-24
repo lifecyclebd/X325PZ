@@ -11,6 +11,7 @@
         <script src="{{ asset('/')}}public/frontend/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/style.css">
+        <link rel="stylesheet" href="{{ asset('/')}}public/user/css/style.css">
         <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/half-slider.css">
         <link rel="stylesheet" href="{{ asset('/')}}public/frontend/css/font-awesome.min.css">         
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Raleway" rel="stylesheet"> 
