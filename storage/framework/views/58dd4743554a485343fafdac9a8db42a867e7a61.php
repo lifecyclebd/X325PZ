@@ -49,18 +49,17 @@
                 <table class="table table-striped table-bordered example1" id="example1">
                     <thead>
                         <tr style="text-align: center">
-                            <th>SL</th>
+                            <th></th>
                             <th>Hospital Name</th>
                             <th>Address</th>
                             <th>Phone</th>
                             <th>Details</th>
-                            <th>Photo</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php $__currentLoopData = $data['hospital_list']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td><?php echo e($row->id); ?></td>  
+                            <td><img class="img-responsive" src="<?php echo e(url('/')); ?>/public/images/hospitals/<?php echo e($row->photo); ?>" alt="" style="width: 200px;height: 120px"></td>  
                             <td>
                                 <span style="float: left; margin-right: 10px;">
 
@@ -78,7 +77,6 @@
                             </td>
                             <td><?php echo e($row->phone); ?></td>
                             <td><?php echo e($row->details); ?></td>
-                            <td><img class="img-responsive" src="<?php echo e(url('/')); ?>/public/images/hospitals/<?php echo e($row->photo); ?>" alt="" style="width: 150px;height: 80px"></td>
                         </tr>  
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 

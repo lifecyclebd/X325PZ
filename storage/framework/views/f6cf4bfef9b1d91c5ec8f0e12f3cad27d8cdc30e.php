@@ -11,6 +11,7 @@
         <script src="<?php echo e(asset('/')); ?>public/frontend/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="<?php echo e(asset('/')); ?>public/frontend/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo e(asset('/')); ?>public/frontend/css/style.css">
+        <link rel="stylesheet" href="<?php echo e(asset('/')); ?>public/user/css/style.css">
         <link rel="stylesheet" href="<?php echo e(asset('/')); ?>public/frontend/css/half-slider.css">
         <link rel="stylesheet" href="<?php echo e(asset('/')); ?>public/frontend/css/font-awesome.min.css">         
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Raleway" rel="stylesheet"> 
@@ -67,15 +68,56 @@
                         </div>
                         <div class="col-md-6">
                             <div class="top-right">
-                                <?php if (isset($_SESSION['donor_login']) && !empty($_SESSION['donor_login'])) { ?>
-                                    <li class="logout"> <?php echo $_SESSION['donor_login']; ?>  
-                                        <a class="" href="<?php echo e(url('/')); ?>/donor-logout">Log Out</a>
+                                <?php 
+                                $login_email= get_session('fname').' '.get_session('lname');
+                                $login_profile=get_session('pic_path');
+                                $login_address=get_session('address');
+                                if (isset($login_email) && !empty($login_email)) { ?>
+                                  
+                                    <ul class="nav navbar-nav">
+                                       <li class="dropdown user user-menu" style="min-width: 250px;">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="<?php echo e(url('/')); ?>/<?php echo e($login_profile); ?>" class="user-image" alt="User Image" style="width: 30px; height: 30px;">
+                                    <span class="hidden-xs" style="margin-left: 10px"><?php echo e($login_email); ?></span>
+                                </a>
+                                <ul class="dropdown-menu" style="    background: rgb(132, 125, 125);">
+                                    <!-- User image -->
+
+                                    <li class="user-header" style="min-width: 250px;">
+                                        <img src="<?php echo e(url('/')); ?>/<?php echo e($login_profile); ?>" class="user-image" alt="User Image" style="width: 30px; height: 30px;">
+                                         <span class="hidden-xs"><?php echo e($login_email); ?></span>
+                                        <p>
+                                             <?php echo e($login_address); ?> 
+                                        </p>
                                     </li>
+
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <a style="background: #969090;padding: 5px;margin: 5px;" href="<?php echo e(url('/donor-profile')); ?>" class="btn-sm btn-primary btn-flat">Profile </a>
+                                        </div>
+                                        <div class="pull-right">
+
+                                            <a style="padding: 5px;margin: 5px;" class="btn-sm btn-danger" href="<?php echo e(url('/')); ?>/donor-logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                Logout
+                                            </a>
+
+                                            <form id="logout-form" action="<?php echo e(url('/')); ?>/donor-logout" method="post" style="display: none;">
+                                                <input type="hidden" name="_token" value="jYCpfqZBLnxqW69PrYECMgnqbBB9rM7FCtx2XABB">
+                                            </form> 
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+
+                                                    </ul>
                                 <?php } else { ?>
-                                    <form action="" method="post" class="navbar-form navbar-right">
+                                    <form action="<?php echo e(url('/donor/login')); ?>" method="post" class="navbar-form navbar-right">
+                                     <?php echo csrf_field(); ?>
+
                                         <div class="form-group">
-                                            <input type="text" class="form-control login" placeholder="Username">
-                                            <input type="Password" class="form-control login" placeholder="Password">
+                                            <input type="text" class="form-control login" name="email" placeholder="Email">
+                                            <input type="Password" class="form-control login" name="password" placeholder="Password">
                                         </div>
                                         <button type="submit" class="btn btn-default login">Login</button>
                                     </form>
