@@ -10,7 +10,7 @@ Route::post('/donor/search', 'DonorController@search');
 Route::get('donor/viewprofile/{id}', 'DonorController@viewprofile');
 Route::get('/Blogs', 'BlogController@view');
 
-Route::get('/donor-logout','DonorController@logout');
+Route::any('/donor-logout','DonorController@logout');
 
 
 Route::get('/search-doctor', 'DoctorController@FindDoctor');

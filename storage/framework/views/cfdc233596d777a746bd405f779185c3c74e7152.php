@@ -139,12 +139,7 @@
         </div>
 
     </div>
-</div                        >
-
-
-<script src="<?php echo e(asset('public/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js')); ?>"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="<?php echo e(asset('public/AdminLTE/bootstrap/js/bootstrap.min.js')); ?>"></script> 
+</div>
 
 
 <?php $__env->stopSection(); ?>
