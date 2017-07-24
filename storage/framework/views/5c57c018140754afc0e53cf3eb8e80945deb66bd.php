@@ -10,7 +10,7 @@
             <?php echo csrf_field(); ?> 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
-                    <select name="division" class="form-control find_search_button divisions">
+                    <select name="division" class="form-control find_search_button divisions" required>
                         <option value="">Select Division</option>
                         <?php $__currentLoopData = $data['division']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <option value="<?php echo e($row->id); ?>"><?php echo e($row->division_name); ?></option>
