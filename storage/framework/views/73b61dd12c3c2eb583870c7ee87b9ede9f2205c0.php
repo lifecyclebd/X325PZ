@@ -83,7 +83,7 @@
     color: #fff;
 }
 </style>
-<div id="donor-register" style="margin-bottom: 700px;background-color: red">
+<div id="donor-register" style="margin-bottom: 700px">
     <div class="container">
         <div class="content-wrapper">
 

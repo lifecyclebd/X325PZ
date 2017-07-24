@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2017 at 06:45 PM
+-- Generation Time: Jul 24, 2017 at 09:32 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -717,11 +717,14 @@ CREATE TABLE `doctors` (
 
 INSERT INTO `doctors` (`id`, `name`, `designation`, `hospital`, `speacilist`, `division`, `district`, `upazila`, `phone`, `email`, `gender`, `profile_photo`, `preasent_address`, `doctor_detail`, `chamber_address`, `updated_by`, `updated_at`, `created_by`, `created_at`) VALUES
 (1, 'Dr. Jaman', 'profrssor', 'IBN SINA', 'Neuro', '', '', '', '018456935', 'Dhaka', '', '', '', '', 'Basabo', 0, '2017-06-21 00:01:35', 0, '2017-06-21 00:01:35'),
-(2, 'Rashed Jaman', '2', '1', '1', '3', '5', '173', '017689565', 'jaman@gmail.com', 'male', '1.jpg', 'dhaka', 'poca doctor', 'basabo', NULL, '2017-06-22 07:09:27', NULL, '2017-06-20 19:44:51'),
+(2, 'Rashed Jaman', '2', '1', '1', '3', '5', '173', '017689565', 'jaman@gmail.com', 'male', '1.jpg', 'dhaka', 'poca doctor', 'basabo', NULL, '2017-07-23 21:02:27', NULL, '2017-06-20 19:44:51'),
 (3, 'Shaheen', '3', '9', '7', '', '', '', '345345242', 'shaheen@gmail.com', 'male', 'C:\\xampp\\tmp\\phpAA48.tmp', 'dfksehfgshfgisfh', 'dfwefbwejkh', 'efawekfhgweukfgy', NULL, '2017-06-20 19:45:49', NULL, '2017-06-20 19:45:49'),
 (4, 'Shaheen', '3', '9', '7', '', '', '', '345345242', 'shaheen@gmail.com', 'male', 'C:\\xampp\\tmp\\php5C25.tmp', 'dfksehfgshfgisfh', 'dfwefbwejkh', 'efawekfhgweukfgy', NULL, '2017-06-20 19:46:35', NULL, '2017-06-20 19:46:35'),
 (5, 'Shaheen', '3', '9', '7', '', '', '', '345345242', 'shaheen@gmail.com', 'male', 'C:\\xampp\\tmp\\php8856.tmp', 'dfksehfgshfgisfh', 'dfwefbwejkh', 'efawekfhgweukfgy', NULL, '2017-06-20 19:46:46', NULL, '2017-06-20 19:46:46'),
-(6, 'Shaheen', '3', '9', '7', '', '', '', '345345242', 'shaheen@gmail.com', 'male', 'C:\\xampp\\tmp\\php35BE.tmp', 'dfksehfgshfgisfh', 'dfwefbwejkh', 'efawekfhgweukfgy', NULL, '2017-06-20 19:47:31', NULL, '2017-06-20 19:47:31');
+(6, 'Shaheen', '3', '9', '7', '', '', '', '345345242', 'shaheen@gmail.com', 'male', 'C:\\xampp\\tmp\\php35BE.tmp', 'dfksehfgshfgisfh', 'dfwefbwejkh', 'efawekfhgweukfgy', NULL, '2017-06-20 19:47:31', NULL, '2017-06-20 19:47:31'),
+(7, 'oopp', '5', '5', '17', '5', '22', '364', '6456456', 'jaman@gmail.com', 'male', 'FFFF.png', 'hbuhhb', '<p>uoybojbuh</p>', 'ubuiybubu', NULL, '2017-07-23 21:22:03', NULL, '2017-07-23 21:22:03'),
+(8, 'gvig', '6', '3', '12', '3', '4', '167', '18185', 'hbjhkb@jl', 'male', 'FFFF.png', 'ijjoiuj ijh ih ih ih b', '<p>ubyuggyb ibihb gyivgyuvu</p>', 'uhbuh bi yhubiu yyubu', NULL, '2017-07-23 21:25:26', NULL, '2017-07-23 21:25:26'),
+(9, 'Anis', 'Professor', 'Aichi Hospital, Dhaka', 'Geriatrics', 'Chittagong', 'Bandarban', 'Thanchi', '654646', 'jaman@gmail.com', 'male', 'FFFF.jpg', 'hkgvuk', '<p>jobljbliuhi</p>', 'ojbilbglubg', NULL, '2017-07-24 06:17:14', NULL, '2017-07-24 06:17:14');
 
 -- --------------------------------------------------------
 
@@ -949,7 +952,6 @@ CREATE TABLE `donors` (
 --
 
 INSERT INTO `donors` (`id`, `phone`, `password`, `pic_path`, `fname`, `lname`, `blood_group`, `birth_date`, `age`, `last_donation`, `new_donor`, `email`, `division`, `district`, `thana`, `address`, `latitude`, `longitude`, `code`, `verification`, `lastLat`, `lastLng`, `fcm_email`, `fcm_uid`, `fcm_token`, `pro_visible`, `called_date`, `called_today`, `donations_number`, `user_type`, `gender`, `already_donated`, `autopro_visible`, `singup_steps`, `post_code`, `rank`, `web_url`, `fb_url`, `profile_photo`, `religion`, `is_physically_disble`, `nationality`, `nid`, `status`, `is_available`, `updated_at`, `created_at`, `updated_by`, `created_by`) VALUES
-(1, '01910077628', '123', 'public/images/profile/rashed.jpg', 'Md', 'Rasheduzzaman', 'A+', '1992-07-14', 24, '2016-05-12', 1, 'jmrashed@gmail.com', 'Dhaka', 'Dhaka', 'Ramna', '453, Green Way Rd, DHaka', NULL, NULL, NULL, NULL, 11, NULL, NULL, NULL, NULL, 1, NULL, NULL, 5, NULL, 'Male', NULL, NULL, NULL, '1217', 5, NULL, NULL, 'b.jpg', NULL, NULL, NULL, NULL, NULL, 1, '2017-07-21 17:17:54', '0000-00-00 00:00:00', NULL, NULL),
 (2, '01923589277', 'anisur', 'profileImages/anis.jpg', 'anis', 'mizi', 'A+', '1989-07-14', 28, '2017-07-14', 1, 'an@gmail.com', 'Dhaka', 'Dhaka', 'Adabor', 'Mohanagar Middle Rd 2, Dhaka 1212, Bangladesh', 23.7663383, 90.4165958, '36438', 1, 23.7663383, 90.4165958, 'test21@gmail.com', 'avIoHO42GrdjcHHFuJB11cETsQE3', 'fEZReXUJXLc:APA91bFzM-sI_CDDtdRI8OkvXli9GBvSccpMAvcBJQr-JFBLMorR0BP2YFPNh6PX9WxqRZm86cpvBUapWUbyf5P8KdiiI8Mr_D8Z34uPDb_nOKYRgPbPU2XWoJkVcz-q_ZYTNv85Reg8', 1, 'na', 0, 0, 'donor', 'Male', 0, 'na', 3, 'na', 1, 'na', 'na', 'a.jpg', 'na', 'na', 'na', 'na', 'na', 1, '2017-07-21 17:17:44', '2014-08-11 23:14:54', 1, 1),
 (3, '01923589278', 'anisur', 'profileImages/salam.jpg', 'salam', 'mizi', 'A-', '1991-07-14', 26, '2017-07-14', 1, 'salam@gmail.com', 'Dhaka', 'Dhaka', 'Adabor', 'Mohanagar Middle Rd 2, Dhaka 1212, Bangladesh', 23.782062399999997, 90.4160527, '95035', 1, 23.782062399999997, 90.4160527, 'test20@gmail.com', 'UvoewKHQkXOZ1Afzzv1Q182ybCI2', 'fa1DqrAZhvY:APA91bGKG3d-AA1NeE7bZjSAkSTWSZQbxLd-Y4yHd5S6TUr0KlXUixld45knPAuwXErucpzv68vfcXh9Y1rG-yTCUn1NGRdhiL34FBOps0emDu6nhzRvLc2j5eGqTG0da2bOnx2Paq-g', 1, 'na', 0, 0, 'admin', 'Male', 0, 'na', 3, 'na', 1, 'na', 'na', 'c.jpg', 'na', 'na', 'na', 'na', 'na', 1, '2017-07-21 17:18:02', '2014-08-11 23:14:54', 1, 1);
 
@@ -1140,6 +1142,7 @@ CREATE TABLE `hospitals` (
   `upazila` varchar(255) NOT NULL,
   `location` varchar(255) NOT NULL,
   `phone` varchar(30) NOT NULL,
+  `photo` text NOT NULL,
   `incharge_name` varchar(255) NOT NULL,
   `details` text NOT NULL,
   `remember_token` varchar(255) DEFAULT NULL,
@@ -1153,106 +1156,108 @@ CREATE TABLE `hospitals` (
 -- Dumping data for table `hospitals`
 --
 
-INSERT INTO `hospitals` (`id`, `hospital_name`, `division`, `district`, `upazila`, `location`, `phone`, `incharge_name`, `details`, `remember_token`, `updated_by`, `updated_at`, `created_by`, `created_at`) VALUES
-(1, 'Ad-din Women''s Medical College Hospital, Dhaka', '3', '5', '173', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:40:43', 0, '2017-06-20 23:40:43'),
-(2, 'Siddiqia Eye Foundation, Mymensingh', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', 'ratul2', 'asdf2', '', 0, '2017-07-16 05:56:35', 0, '2017-06-20 23:40:43'),
-(3, 'Ad-din Sakina Medical College Hospital, Jessore', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:41:36', 0, '2017-06-20 23:41:36'),
-(4, 'National Institute of Neuroscience', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(5, 'Aichi Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(6, 'Al Haramain Hospital, Sylhet', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(7, 'Ambia Memorial Hospital, Barisal', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(8, 'Anwer Khan Modern Hospital Ltd, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(9, 'Apollo Hospitals Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(10, 'Asgar Ali Hospital, Gandaria, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(11, 'Aysha Memorial Specialised Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(12, 'Bangabandhu Sheikh Mujib Medical University', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(13, 'Bangabandhu Memorial Hospital (BBMH), Chittagong', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(14, 'Bangladesh Spine & Orthopaedic General Hospital Ltd, Panthapath, Dhaka.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(15, 'Bangladesh Eye Hospital Ltd., Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(16, 'Bangladesh Medical College Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(17, 'Bangladesh Specialized Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(18, 'Basundhura Hospital (Pvt.) Ltd.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(19, 'BDR (Bangladesh Rifles) Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(20, 'BRB Hospital- Panthapath Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(21, 'Bangladesh Institute of Research and Rehabilitation for Diabetes, Endocrine and Metabolic Disorders (BIRDEM)', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(22, 'Cardio Care Specialized and General Hospital Ltd, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(23, 'CARe Hospital, Dhaka5', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(24, 'Care Zone Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(25, 'Catharsis Medical Centre Limited, Gazipur', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(26, 'Central Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(27, 'Chittagong Eye Infirmary and Training Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(28, 'Chittagong Maa-O-Shishu Hospital, Chittagong', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(29, 'Chittagong Medical College Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(30, 'CMH (Combined Military Hospital)', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(31, 'Comilla Medical College Hospital, Comilla', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(32, 'Community Based Medical College Hospital, Bangladesh (CBMCH, B) Mymensingh6', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(33, 'Continental Hospital Ltd.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(34, 'Coxs Bazar Hospital for Women & Children, Chittagong7', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(35, 'Duwell Medical', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(36, 'Dhaka Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(37, 'Dhaka Central International Medical College Hospital, Adabor, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(38, 'Dhaka Dental College and Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(39, 'Dhaka Medical College & Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(40, 'Dhaka National Medical College And Hospital Institute', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(41, 'Dhaka Shishu Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(42, 'Dr. Alauddin Ahmed Clinic, Jhalakati', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(43, 'Dinajpur Medical College Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(44, 'Eastern Hospital & Medical Research Centre', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(45, 'Esperto Health Care & Research Center, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(46, 'Holy Family Red Crescent Medical College Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(47, 'Greenland Hospital Limited, Sector - 10, Uttara, Dhaka.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(48, 'Gazi Medical College Hospital, Khulna', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(49, 'Genuine Cancer Hospital Limited, Chittagong', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(50, 'Gonoshasthaya Nagar Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(51, 'Government Homeopathic Medical College Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(52, 'Ibn Sina Hospital Sylhet Ltd', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(53, 'Ibn Sina Hospitals, Dhaka8', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(54, 'Institute of Child and Mother Health, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(55, 'Institute of Laser Surgery & Hospital, Dhaka9', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(56, 'Ispahani Islamia Eye Institute and Hospital (IIEI&H)10', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(57, 'Labaid Cardiac Hospital, Dhaka11', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(58, 'Khulna Medical College Hospital, Khulna', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(59, 'Labaid Specialized Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(60, 'Maa Nursing Home & Diagnostic Centre, Tangail', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(61, 'Mikrani Dental Banasree Dhaka (Dental Hospital), Dhaka1', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(62, 'Mojibunnessa Eye Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(63, 'Moulana Bhasani Medical College Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(64, 'Mymensingh Medical College Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(65, 'National Institute of Cardiovascular Diseases (NICVD)1', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(66, 'National Institute of Ear, Nose and Throat(ENT)1', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(67, 'National Institute of Kidney Disease & Urology1', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(68, 'National Institute of Mental Health1', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(69, 'Medinova Medical Services Ltd.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(70, 'National Institute of Preventive and Social Medicine1', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(71, 'Popular Specialized Hospital Ltd.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(72, 'Rajshahi Medical College Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(73, 'Rangpur Medical College Hospital, Rangpur', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(74, 'Rashmono General Hospital,Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(75, 'Royal Hospital and research Center Ltd., Chittagong', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(76, 'Royal Hospital And Research Center Ltd., Chittagong', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(77, 'Samorita Hospital Ltd.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(78, 'Saphena Womens Dental College & Hospital16', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(79, 'Shaheed Monsur Ali Medical College Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(80, 'Shalahuddin Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(81, 'Sheikh Fazilatunnesa Mujib Memorial KPJ Specialized Hospital & Nursing College', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(82, 'Shaheed Ziaur Rahman Medical College Hospital, Bogra', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(83, 'Sher-e-Bangla Medical College Hospital, Barisal', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(84, 'Sir Salimullah Medical College & Mitford Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(85, 'Square Hospital Ltd., Dhaka17', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(86, 'Sylhet Medical College Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(87, 'Sylhet Womens Medical College', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(88, 'Sylhet Eye Hospital & Laser Centre', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(89, 'Sylhet, M.A.G Osmani Medical College and Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(90, 'Sylhet, North East Medical College and Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(91, 'National Heart Foundation, Sylhet.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(92, 'Nurjahan Hospital Ltd, Sylhet.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(93, 'Oasis Hospital (Pvt) Ltd, Sylhet', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(94, 'Mount Adora Hospital, Sylhet.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(95, 'The Medical College for Women and Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(96, 'Union Specialized Hospital Limited, Aftabnagor, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(97, 'United Hospital Ltd., Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(98, 'Z.H. Sikder Women’s Medical College and Hospital (Pvt.) Ltd.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
-(99, 'aaaaaaaaaaaaaaa', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', 'aaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', NULL, NULL, '2017-06-21 09:43:44', NULL, '2017-06-21 09:43:44');
+INSERT INTO `hospitals` (`id`, `hospital_name`, `division`, `district`, `upazila`, `location`, `phone`, `photo`, `incharge_name`, `details`, `remember_token`, `updated_by`, `updated_at`, `created_by`, `created_at`) VALUES
+(1, 'Ad-din Women''s Medical College Hospital, Dhaka', '3', '5', '173', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:40:43', 0, '2017-06-20 23:40:43'),
+(2, 'Siddiqia Eye Foundation, Mymensingh', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', 'ratul', 'asdf', '', 0, '2017-07-23 18:23:05', 0, '2017-06-20 23:40:43'),
+(3, 'Ad-din Sakina Medical College Hospital, Jessore', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:41:36', 0, '2017-06-20 23:41:36'),
+(4, 'National Institute of Neuroscience', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(5, 'Aichi Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(6, 'Al Haramain Hospital, Sylhet', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(7, 'Ambia Memorial Hospital, Barisal', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(8, 'Anwer Khan Modern Hospital Ltd, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(9, 'Apollo Hospitals Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(10, 'Asgar Ali Hospital, Gandaria, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(11, 'Aysha Memorial Specialised Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(12, 'Bangabandhu Sheikh Mujib Medical University', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(13, 'Bangabandhu Memorial Hospital (BBMH), Chittagong', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(14, 'Bangladesh Spine & Orthopaedic General Hospital Ltd, Panthapath, Dhaka.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(15, 'Bangladesh Eye Hospital Ltd., Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(16, 'Bangladesh Medical College Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(17, 'Bangladesh Specialized Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(18, 'Basundhura Hospital (Pvt.) Ltd.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(19, 'BDR (Bangladesh Rifles) Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(20, 'BRB Hospital- Panthapath Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(21, 'Bangladesh Institute of Research and Rehabilitation for Diabetes, Endocrine and Metabolic Disorders (BIRDEM)', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(22, 'Cardio Care Specialized and General Hospital Ltd, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(23, 'CARe Hospital, Dhaka5', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(24, 'Care Zone Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(25, 'Catharsis Medical Centre Limited, Gazipur', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(26, 'Central Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(27, 'Chittagong Eye Infirmary and Training Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(28, 'Chittagong Maa-O-Shishu Hospital, Chittagong', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(29, 'Chittagong Medical College Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(30, 'CMH (Combined Military Hospital)', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(31, 'Comilla Medical College Hospital, Comilla', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(32, 'Community Based Medical College Hospital, Bangladesh (CBMCH, B) Mymensingh6', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(33, 'Continental Hospital Ltd.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(34, 'Coxs Bazar Hospital for Women & Children, Chittagong7', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(35, 'Duwell Medical', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(36, 'Dhaka Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(37, 'Dhaka Central International Medical College Hospital, Adabor, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(38, 'Dhaka Dental College and Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(39, 'Dhaka Medical College & Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(40, 'Dhaka National Medical College And Hospital Institute', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(41, 'Dhaka Shishu Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(42, 'Dr. Alauddin Ahmed Clinic, Jhalakati', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(43, 'Dinajpur Medical College Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(44, 'Eastern Hospital & Medical Research Centre', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(45, 'Esperto Health Care & Research Center, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(46, 'Holy Family Red Crescent Medical College Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(47, 'Greenland Hospital Limited, Sector - 10, Uttara, Dhaka.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(48, 'Gazi Medical College Hospital, Khulna', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(49, 'Genuine Cancer Hospital Limited, Chittagong', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(50, 'Gonoshasthaya Nagar Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(51, 'Government Homeopathic Medical College Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(52, 'Ibn Sina Hospital Sylhet Ltd', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(53, 'Ibn Sina Hospitals, Dhaka8', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(54, 'Institute of Child and Mother Health, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(55, 'Institute of Laser Surgery & Hospital, Dhaka9', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(56, 'Ispahani Islamia Eye Institute and Hospital (IIEI&H)10', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(57, 'Labaid Cardiac Hospital, Dhaka11', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(58, 'Khulna Medical College Hospital, Khulna', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(59, 'Labaid Specialized Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(60, 'Maa Nursing Home & Diagnostic Centre, Tangail', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(61, 'Mikrani Dental Banasree Dhaka (Dental Hospital), Dhaka1', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(62, 'Mojibunnessa Eye Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(63, 'Moulana Bhasani Medical College Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(64, 'Mymensingh Medical College Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(65, 'National Institute of Cardiovascular Diseases (NICVD)1', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(66, 'National Institute of Ear, Nose and Throat(ENT)1', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(67, 'National Institute of Kidney Disease & Urology1', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(68, 'National Institute of Mental Health1', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(69, 'Medinova Medical Services Ltd.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(70, 'National Institute of Preventive and Social Medicine1', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(71, 'Popular Specialized Hospital Ltd.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(72, 'Rajshahi Medical College Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(73, 'Rangpur Medical College Hospital, Rangpur', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(74, 'Rashmono General Hospital,Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(75, 'Royal Hospital and research Center Ltd., Chittagong', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(76, 'Royal Hospital And Research Center Ltd., Chittagong', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(77, 'Samorita Hospital Ltd.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(78, 'Saphena Womens Dental College & Hospital16', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(79, 'Shaheed Monsur Ali Medical College Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(80, 'Shalahuddin Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(81, 'Sheikh Fazilatunnesa Mujib Memorial KPJ Specialized Hospital & Nursing College', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(82, 'Shaheed Ziaur Rahman Medical College Hospital, Bogra', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(83, 'Sher-e-Bangla Medical College Hospital, Barisal', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(84, 'Sir Salimullah Medical College & Mitford Hospital, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(85, 'Square Hospital Ltd., Dhaka17', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(86, 'Sylhet Medical College Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(87, 'Sylhet Womens Medical College', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(88, 'Sylhet Eye Hospital & Laser Centre', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(89, 'Sylhet, M.A.G Osmani Medical College and Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(90, 'Sylhet, North East Medical College and Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(91, 'National Heart Foundation, Sylhet.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(92, 'Nurjahan Hospital Ltd, Sylhet.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(93, 'Oasis Hospital (Pvt) Ltd, Sylhet', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(94, 'Mount Adora Hospital, Sylhet.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(95, 'The Medical College for Women and Hospital', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(96, 'Union Specialized Hospital Limited, Aftabnagor, Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(97, 'United Hospital Ltd., Dhaka', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(98, 'Z.H. Sikder Women’s Medical College and Hospital (Pvt.) Ltd.', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', '', '', '', 0, '2017-06-20 23:47:52', 0, '2017-06-20 23:47:52'),
+(99, 'aaaaaaaaaaaaaaa', '', '', '', 'Magh Bazar, Dhaka-1217', '01711889966', '', 'aaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', NULL, NULL, '2017-06-21 09:43:44', NULL, '2017-06-21 09:43:44'),
+(100, 'Test Hospital', '4', '60', '306', 'chourhash', '123456', '.jpg', 'Sakib', 'valo hospital', NULL, NULL, '2017-07-23 20:17:39', NULL, '2017-07-23 20:17:39'),
+(101, 'Valo Hospital', 'Khulna', 'Kushtia', 'Mirpur', 'kuripol', '5456456', '.png', 'pappu', 'sljkfnsjkdfb', NULL, NULL, '2017-07-24 06:33:27', NULL, '2017-07-24 06:33:27');
 
 -- --------------------------------------------------------
 
@@ -1407,9 +1412,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `more_about_bloods` (
   `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `short_description` text NOT NULL,
-  `long_description` text NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `short_description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `long_description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `photo` text NOT NULL,
   `slug` varchar(255) NOT NULL,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -1420,7 +1425,7 @@ CREATE TABLE `more_about_bloods` (
 --
 
 INSERT INTO `more_about_bloods` (`id`, `title`, `short_description`, `long_description`, `photo`, `slug`, `updated_at`) VALUES
-(2, 'Blood Donor 247', 'Blood Donor 247 is a team of emergency response donors who pledge to give blood within 247 hours.', 'long description247', '.png', 'donor_24', '2017-07-21 09:57:16'),
+(2, 'আমার বাংলাদেশ', 'আমার বাংলাদেশ', 'আমার বাংলাদেশ', '.jpg', 'donor_24', '2017-07-23 19:45:51'),
 (3, 'Give Platelets', 'Patients of Scotland rely on platelets including people with cancer and leukaemia', 'long description', '.jpg', 'platelets', '2017-07-21 10:00:55'),
 (4, 'Blood Types', 'How much do you know about your blood? We aim to have six days supply of each blood group at all times.', 'jdnfslj ouvhzsdo', '.png', 'blood_type', '2017-07-21 10:01:20'),
 (5, 'The journey of donated blood', 'Each precious blood donation has a very short shelf life. We have to act fast to make sure it goes where it needed.', 'kjdfhihdfui lsdfbsduifh sklDJfbhsdui', 'sdfg.jpg', 'journey', '2017-07-16 22:20:50');
@@ -2199,7 +2204,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `is_admin`) VALUES
 (1, 'Md Rasheduzzaman ll', 'jmrashed@gmail.com', '$2y$10$vjr3UOBsv/jlTpefFX7FB.Mk.EyEudeJHZSc9883YULd6JMVMhJk2', 'CbIuqlrp5Y3Yg3l66mHysPC12adAVxqQ8qOYGhuCSov91BrWQroxLubcC87k', '2017-05-01 04:56:59', '2017-07-15 23:43:37', NULL),
 (2, 'masud', 'enggmasud1983@gmail.com', '$2y$10$l0vYgvUj0QPxghVXO/uTaeMmNoSpmenqTNQhGTJvJoDyYpSv10In.', 'M0v6m7xHqohVSONriFsh1ctr02i08E87syEkn0hr1kKEKZteHs6AFAnlsOYu', '2017-06-08 01:07:39', '2017-06-08 01:07:39', NULL),
-(3, 'Sakib', 'sakib@gmail.com', '$2y$10$C1D/md2bzD3Zja6Wrv2U7u6mtnOb0obDbTadgJ0ELJfNw/cz06uVW', 'z9YfyKRLigNvvdL4aLFclFVhIKr3UV4bghD4UdNdW82uUNa7Gw4e2Acwje2G', '2017-06-19 10:52:12', '2017-07-20 10:44:37', NULL),
+(3, 'Sakib', 'sakib@gmail.com', '$2y$10$C1D/md2bzD3Zja6Wrv2U7u6mtnOb0obDbTadgJ0ELJfNw/cz06uVW', '0TAc95FerMCXrqK3erNJEwcz5IxKe69Yf6aYvn7NvgiO6ZMkPYlw9eC2OcMb', '2017-06-19 10:52:12', '2017-07-20 10:44:37', NULL),
 (4, 'aaacccc', 'ccccc@gmail.com', '$2y$10$H7LRYyphLFI3MpihZG.nv.dOjkKoVj19dm93ThuEU0jEBkIH65dFy', 'UaXoPYTneNmI4L4fczulkR2law49nyURZK0MCdfD', '2017-06-21 11:19:21', '2017-07-23 01:05:48', NULL);
 
 --
@@ -2550,7 +2555,7 @@ ALTER TABLE `divisions`
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `doctor_degrees`
 --
@@ -2605,7 +2610,7 @@ ALTER TABLE `gallery_details`
 -- AUTO_INCREMENT for table `hospitals`
 --
 ALTER TABLE `hospitals`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 --
 -- AUTO_INCREMENT for table `links`
 --
