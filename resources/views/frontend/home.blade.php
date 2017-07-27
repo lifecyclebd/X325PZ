@@ -71,7 +71,7 @@
 </style>
 
 <!-- Half Page Image Background Carousel Header -->
-<header id="imgSlider" class="carousel slide">
+<header id="imgSlider" class="carousel slide" style="height: 409px">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#imgSlider" data-slide-to="0" class="active"></li>

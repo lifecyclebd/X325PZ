@@ -240,6 +240,7 @@ public function create() {
 
     public function doctor_edit($id) {
         $data['hospital'] = Hospital::all();
+        $data['division'] = Division::all();
         $data['designation'] = Doctor_designation::all();
         $data['specility'] = Doctor_speciality::all();
         $data['degree'] = doctor_degree::all();
@@ -250,15 +251,38 @@ public function create() {
         $common =New  Common;
         $id = $request->id;
         $doctor = Doctor::find($id); 
-        $doctor->hospital = $request->hospital;
+        //$doctor->hospital = $request->hospital;
+        $hsptl_id=$request->hospital;
+        $hsptl_name =Hospital:: where('id', $hsptl_id)->First();
+        $doctor->hospital = $hsptl_name['hospital_name'];
+
         $doctor->name = $request->name;
-        $doctor->speacilist = $request->speacilist;
-        $doctor->designation = $request->designation;
+
+        //$doctor->speacilist = $request->speacilist;
+        $spclst_id=$request->speacilist;
+        $spclst_name =Doctor_speciality:: where('id', $spclst_id)->First();
+        $doctor->speacilist = $spclst_name['name'];
+
+        //$doctor->designation = $request->designation;
+        $dsgntn_id=$request->designation;
+        $dsgntn_name =Doctor_designation:: where('id', $dsgntn_id)->First();
+        $doctor->designation = $dsgntn_name['name'];
+
         $doctor->email = $request->email;
         $doctor->phone = $request->phone;
-        $doctor->division = $request->division;
-        $doctor->district = $request->district;
-        $doctor->upazila = $request->upazila;
+
+        $div_id=$request->division;
+        $div_name =Division:: where('id', $div_id)->First();
+        $doctor->division = $div_name['division_name'];
+
+        $dis_id=$request->district;
+        $dis_name = District:: where('id', $dis_id)->First();
+        $doctor->district = $dis_name['district_name'];
+
+        $upz_id=$request->upazila;
+        $upz_name = Upazila:: where('id', $upz_id)->First();
+        $doctor->upazila = $upz_name['upazila_name'];
+
         $doctor->gender = $request->gender;
         $doctor->preasent_address = $request->preasent_address;
         $doctor->chamber_address = $request->chamber_address;
@@ -272,17 +296,38 @@ public function create() {
     }
     public function hospital_edit($id){
         $data['hospital'] = Hospital::find($id);
+        $data['division'] = Division::all();
         return view('hospital.edit')->with('data', $data);
     }
     public function hospital_update(Request $request){
+        $common = new Common;
         $id = $request->id;
         $hospital = Hospital::find($id); 
         $hospital->hospital_name = $request->hospital_name;
+
+        $div_id=$request->division;
+        $div_name =Division:: where('id', $div_id)->First();
+        $hospital->division = $div_name['division_name'];
+
+        $dis_id=$request->district;
+        $dis_name = District:: where('id', $dis_id)->First();
+        $hospital->district = $dis_name['district_name'];
+
+        $upz_id=$request->upazila;
+        $upz_name = Upazila:: where('id', $upz_id)->First();
+        $hospital->upazila = $upz_name['upazila_name'];
+
         $hospital->location = $request->location;
         $hospital->phone = $request->phone;
         $hospital->incharge_name = $request->incharge_name;
         $hospital->details = $request->details;
         $hospital->save();
+
+        $profile_photo = $common->uploadImage('profile_photo', 'frontend/images/hospital');
+        $hospital->photo = $profile_photo;
+
+        $hospital->save();
+
         return redirect('admin/hospital/view_hospital');
     }
     public function designation_edit($id){

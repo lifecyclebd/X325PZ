@@ -9,7 +9,7 @@
                 <div class="box">
 
                     <div class="box-header with-border">
-                        <h3 class="box-title">Doctor List</h3>
+                        <h3 class="box-title">Hospital List</h3>
                         <div class="box-tools pull-right">
                             <a href="<?php echo e(url('admin/hospital/create_hospital')); ?>" class="">      
                                 <i class="fa fa-plus" aria-hidden="true"></i> Add Hospital

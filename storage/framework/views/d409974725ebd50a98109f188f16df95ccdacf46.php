@@ -10,19 +10,29 @@
     width: 50%;
     margin: 0 auto;
     padding: 10px;
-    padding-top: 50px;
-    border-radius: 10px;
+    padding-top: 50px; 
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     }
     input[type="text"].search_place:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus {
     background: none;
     outline: none;
     color: white;
 }
+h2.login_title{
+    margin-top: 30px;
+    width: 50%;
+    margin: 0 auto;
+    background: rgb(237, 32, 36);
+    height: 45px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 
+}
 </style>
 <div id="donor-register">
     <div class="container" style="height: 500px">
-        <div class="content-wrapper">
+        <div class="content-wrapper" style="margin-bottom: 50px;">
 
             <!-- Main content -->
             <section class="content donor_content">
@@ -30,15 +40,17 @@
                 <!-- Default box -->
                 <div class="box box-info">
                     <div class="box-header with-border">
-                        <h2 class="box-title text-center">Login </h2>
                     </div>
 
-                    <div class="box-body">
+                    <div class="box-body" style="margin-top:50px">
                         <!-- form start -->
+                        <h2 class="box-title text-center login_title">Login </h2>
                         <form class="form-horizontal login" action="<?php echo e(url('/donor/login')); ?>" method="post" enctype= "multipart/form-data"> 
+
+                        
                             <?php echo csrf_field(); ?>
 
-
+                            <p><?php  if(isset($_GET['message'])){echo $_GET['message']; } ?></p>
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Email</label>
                                 <div class="col-md-6">
@@ -49,7 +61,7 @@
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Password</label>
                                 <div class="col-md-6">
-                                    <input id="name" type="password" class="form-control" name="Password" placeholder="Password" autofocus>
+                                    <input id="name" type="password" class="form-control" name="password" placeholder="Password" autofocus>
                                 </div>
                             </div>
  

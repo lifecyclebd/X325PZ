@@ -68,7 +68,7 @@
         <!-- Default box -->
         <div class="box box-info">
             <div class="box-header with-border">
-                <h3 class="box-title">New Doctor </h3>
+                <h3 class="box-title">Update Hospital</h3>
 
                 <div class="box-tools pull-right">
                     <a href="{{url('/admin/hospital/view_hospital')}}" class="">      
@@ -91,6 +91,33 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="name" class="col-md-4 control-label">Division</label>
+                        <div class="col-md-6">
+                            <select name="division" class="form-control find_search_button divisions" required>
+                                <option value="">{{$data['hospital']->division}}</option>
+                                    @foreach($data['division'] as $row)
+                                <option value="{{$row->id}}">{{$row->division_name}}</option>
+                            @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-md-4 control-label">District</label>
+                        <div class="col-md-6">
+                            <select name="district" id="districts" class="form-control find_search_button districts">
+                        <option value="">{{$data['hospital']->district}}</option>
+                    </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-md-4 control-label">Upazila</label>
+                        <div class="col-md-6">
+                            <select name="upazila" id="upazillas" class="form-control find_search_button">
+                        <option value="">{{$data['hospital']->upazila}}</option>
+                    </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="name" class="col-md-4 control-label">Location</label>
                         <div class="col-md-6">
                             <input id="name" type="text" class="form-control" value="{{ $data['hospital']->location }}" name="location"  autofocus>
@@ -106,6 +133,15 @@
                         <label for="name" class="col-md-4 control-label">Incharge Name</label>
                         <div class="col-md-6">
                             <input id="name" type="text" class="form-control" value="{{ $data['hospital']->incharge_name }}" name="incharge_name"  autofocus>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin:30px">
+                        <label for="name" class="col-md-4 control-label">Profile Photo</label>
+                        <div class="col-md-3">
+                            <input id="name" type="file" class="form-control" name="profile_photo"  autofocus>
+                        </div> 
+                        <div class="col-md-5">
+                            <img style="width:60%; height: auto" src="{{asset('/')}}public/images/hospital/{{$data['hospital']->photo}}" class="img img-resposive">
                         </div>
                     </div>
                     <div class="form-group">
