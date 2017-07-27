@@ -8,7 +8,10 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="<?php echo e(asset('/')); ?>public/frontend/css/style.css"> 
+        <script src="<?php echo e(asset('/')); ?>public/frontend/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="<?php echo e(asset('/')); ?>public/frontend/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo e(asset('/')); ?>public/frontend/css/style.css">
+        <link rel="stylesheet" href="<?php echo e(asset('/')); ?>public/user/css/style.css">
         <link rel="stylesheet" href="<?php echo e(asset('/')); ?>public/frontend/css/half-slider.css">
         <link rel="stylesheet" href="<?php echo e(asset('/')); ?>public/frontend/css/font-awesome.min.css">         
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Raleway" rel="stylesheet"> 
@@ -95,11 +98,13 @@
                                         </div>
                                         <div class="pull-right">
 
-                                            <a style="padding: 5px;margin: 5px;" class="btn-sm btn-danger" href="<?php echo e(url('/')); ?>/donor-logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <a style="padding: 5px;margin: 5px;" class="btn-sm btn-danger" href="<?php echo e(url('/')); ?>/donor-logout">
                                                 Logout
                                             </a>
 
                                             <form id="logout-form" action="<?php echo e(url('/')); ?>/donor-logout" method="post" style="display: none;">
+                                             <?php echo csrf_field(); ?>
+
                                                 <input type="hidden" name="_token" value="jYCpfqZBLnxqW69PrYECMgnqbBB9rM7FCtx2XABB">
                                             </form> 
                                         </div>
@@ -155,10 +160,10 @@
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="">Health
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="<?php echo e(url('/find-doctor')); ?>">Find Doctor</a></li>
+                                        <li><a href="<?php echo e(url('/search-doctor')); ?>">Find Doctor</a></li>
                                         <li><a href="<?php echo e(url('/view-hospital')); ?>">Hospital</a></li>
                                         <li><a href="<?php echo e(url('/view-ambulance')); ?>">Ambulence</a></li>
-                                        <li><a href="<?php echo e(url('/write-to-doctor')); ?>">Write To Doctor</a></li>
+                                        <!--<li><a href="<?php echo e(url('/write-to-doctor')); ?>">Write To Doctor</a></li>-->
                                     </ul>
                                 </li> 
                                 <li class="dropdown">

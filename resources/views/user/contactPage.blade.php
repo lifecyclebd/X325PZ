@@ -13,16 +13,6 @@
 
  <div class="container">
  
-    
-    
-@foreach($data['post'] as $row)
-   <h2 class="text-uppercase"> {{$row->post_title}}</h2>
-   <p class="text-justify"> {{$row->post_content}} </p>
- 
-            <a href="#">Complete</a> | <a href="#">Edit</a> | <a href="#">Delete</a>
-         
-@endforeach 
-</div>
 
 <div class="contact-content sec-padding" style="padding-top:50px;">
         <div class="container">

@@ -98,11 +98,12 @@
                                         </div>
                                         <div class="pull-right">
 
-                                            <a style="padding: 5px;margin: 5px;" class="btn-sm btn-danger" href="{{url('/')}}/donor-logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <a style="padding: 5px;margin: 5px;" class="btn-sm btn-danger" href="{{url('/')}}/donor-logout">
                                                 Logout
                                             </a>
 
                                             <form id="logout-form" action="{{url('/')}}/donor-logout" method="post" style="display: none;">
+                                             {!! csrf_field() !!}
                                                 <input type="hidden" name="_token" value="jYCpfqZBLnxqW69PrYECMgnqbBB9rM7FCtx2XABB">
                                             </form> 
                                         </div>
