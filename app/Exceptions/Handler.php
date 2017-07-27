@@ -7,6 +7,8 @@ use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 
 class Handler extends ExceptionHandler
 {
@@ -44,11 +46,21 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $exception
      * @return \Illuminate\Http\Response
      */
-    public function render($request, Exception $exception)
+      public function render($request, Exception $e)
     {
-        return parent::render($request, $exception);
-    }
+        //check if exception is an instance of ModelNotFoundException.
+        if ($e instanceof NotFoundHttpException) {
+            // ajax 404 json feedback
+            if ($request->ajax()) {
+                return response()->json(['error.404' => 'Not Found'], 404);
+            }
 
+            // normal 404 view page feedback
+            return response()->view('error.404', [], 404);
+        }
+
+        return parent::render($request, $e);
+    }
     /**
      * Convert an authentication exception into an unauthenticated response.
      *
