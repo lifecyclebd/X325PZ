@@ -170,9 +170,6 @@
                             <input id="name" <?php if ($data['doctor']->gender == 'male') { echo 'checked';}?> type="radio" name="gender" value="<?= $data['doctor']->gender; ?>" >Male &nbsp;&nbsp;&nbsp;   
                             <input id="name" <?php if ($data['doctor']->gender == 'female') { echo 'checked';}?> type="radio" name="gender" value="<?php echo e($data['doctor']->gender); ?>" >Female
 
-
-                             
-
                         </div>
                     </div>
                     <div class="form-group" style="margin:30px">
@@ -181,7 +178,7 @@
                             <input id="name" type="file" class="form-control" name="profile_photo"  autofocus>
                         </div> 
                         <div class="col-md-5">
-                            <img style="width:60%; height: auto" src="<?php echo e(asset('/')); ?>public/images/profile/<?php echo e($data['doctor']->profile_photo); ?>" class="img img-resposive">
+                            <img style="width:60%; height: auto" src="<?php echo e(asset('/')); ?>public/images/doctor/<?php echo e($data['doctor']->profile_photo); ?>" class="img img-resposive">
                         </div>
                     </div>
                     <div class="form-group">

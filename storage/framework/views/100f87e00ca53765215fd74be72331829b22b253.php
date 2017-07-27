@@ -12,7 +12,7 @@
 
                         <div class="box-tools pull-right">
 
-                            <a class="btn btn-success pull-right" href="<?php echo e(url('/content/create')); ?>"><i class="fa fa-plus"></i> Add Content</a>
+                            <a class="btn btn-success pull-right" href="<?php echo e(url('/admin/content/create')); ?>"><i class="fa fa-plus"></i> Add Content</a>
 
                         </div>
                         <h3 class="box-title">Content List</h3>
@@ -26,26 +26,28 @@
                             <thead>
                                 <tr>
                                     <th> ID</th>
-                                    <th> Title</th>
-                                    <th>Description</th>
+                                    <th style="width: 20%"> Title</th>
+                                    <th style="width: 30%">Description</th>
                                     <th>Content Type</th>
-                                    <th>Content Page</th>
+                                    <th>Image</th>
                                     <th>Operation</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php $__currentLoopData = $data['content']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
                                     <td><?php echo e($row->id); ?></td>
                                     <td><?php echo e($row->title); ?></td>
-                                    <td><?php echo $row->description; ?></td> 
+                                    <td align="justify"><?php echo substr($row->description,0,200); ?>...</td> 
                                     <td><?php echo e($row->content_type); ?></td> 
-                                    <td><?php echo e($row->content_page); ?></td> 
+                                    <td>
+                                        <img src="<?php echo e($row->pic_path); ?>" style="width: 60px; height: 60px;"> 
+
+                                    </td> 
                                     <td> 
-                                        <a href="<?php echo e(url('/content')); ?>/<?php echo e($row->id); ?>/edit" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
-                                        <a href="<?php echo e(url('/content')); ?>/<?php echo e($row->id); ?>/destroy" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
-                                        <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
-                                        <a href="<?php echo e(url('/content/')); ?>/<?php echo e($row->id); ?>" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
+                                        <a href="<?php echo e(url('/admin/content')); ?>/<?php echo e($row->id); ?>/edit" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
+                                        <a href="<?php echo e(url('/admin/content')); ?>/delete/<?php echo e($row->id); ?>" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
+                                        <a href="<?php echo e(url('/admin/content/')); ?>/<?php echo e($row->id); ?>" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
                                         </a>
                                     </td>
 

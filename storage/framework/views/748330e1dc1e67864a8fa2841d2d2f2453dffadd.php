@@ -185,7 +185,7 @@
             <li class=""><a href="<?php echo e(url('/admin/more-blood/view')); ?>"><i class="fa fa-home"></i> <span>More About Blood</span></a></li> 
 
             <li class="treeview">
-                <a href="<?php echo e(url('/content')); ?>">
+                <a href="<?php echo e(url('/admin/content')); ?>">
                     <i class="fa fa-tasks"></i>
                     <span>Content</span>
                 </a>

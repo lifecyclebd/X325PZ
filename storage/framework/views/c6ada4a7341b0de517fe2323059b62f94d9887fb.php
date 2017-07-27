@@ -12,39 +12,26 @@
 
                         <div class="box-tools pull-right">
 
-                            <a href="<?php echo e(url('/content')); ?>" class="">      
+                            <a href="<?php echo e(url('/admin/content')); ?>" class="">      
                                 <i class="fa fa-undo" aria-hidden="true"></i> back
                             </a>
 
                         </div>
-                        <h3 class="box-title"><?php echo e($data->name); ?></h3>
+                        <h3 class="box-title">Content :: Details Page</h3>
 
                     </div>
 
                     <!-- /.box-header -->
                     <div class="box-body">
 
-                        <table class="table table-bordered table-hover">
-                            <thead>
+                        <h3 class=""><?php echo e($data['content']->title); ?></h3>
+                        <hr>
+
+                        <table class="table"> 
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Title</th>
-                                    <th>Description</th>
-                                    <th>Content Page</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody> 
-                                <tr>
-                                    <td><?php echo e($data->id); ?></td>
-                                    <td><?php echo e($data->title); ?></td>
-                                    <td><?php echo e($data->description); ?></td>
-                                    <td><?php echo e($data->content_page); ?></td>
-                                    <td> 
-                                        <a href="<?php echo e(url('/content')); ?>/<?php echo e($data->id); ?>/edit" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
-                                        <a href="#" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
-                                        <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
-                                    </td>
+                                    <td><?php echo e($data['content']->id); ?></td>
+                                    <td><img src="<?php echo e($data['content']->pic_path); ?>" style="width: 50%; height: auto"></td>
+                                    <td style="text-align: justify;"><?php echo $data['content']->description; ?></td>  
 
                                 </tr>
  

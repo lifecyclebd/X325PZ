@@ -69,7 +69,7 @@
         <!-- Default box -->
         <div class="box box-info">
             <div class="box-header with-border">
-                <h3 class="box-title">New degree </h3>
+                <h3 class="box-title">Update degree </h3>
 
                 <div class="box-tools pull-right">
                     <a href="{{url('/admin/degree/view_degree')}}" class="">      
@@ -101,7 +101,7 @@
                     <div class="form-group">
                         <div class="col-md-12 col-md-offset-4">
                             <button type="submit" class="btn btn-primary">
-                                Update Designation
+                                Update Degree
                             </button>
                         </div>
                     </div>

@@ -1213,4 +1213,11 @@ class Common {
         return $selected_head_hierarchy;
     }
 
+
+
+    public function get_site_url(){
+        $site_url="http://localhost:81/Lifecycle/";
+        return $site_url;
+    }
+
 }

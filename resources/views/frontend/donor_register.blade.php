@@ -65,7 +65,7 @@
         color: white;
     }
     form.login{
-        background-color: rgba(224, 224, 224, 0.41);
+        background-color: rgba(224, 224, 224, 0.23);
     height: 100%;
     width: 100%;
     margin: 0 auto;
@@ -84,8 +84,16 @@
     outline: none;
     color: #fff;
 }
+
+input[type="text"], input[type="password"], input[type="email"], textarea {
+
+    background: none;
+    }
+    select{
+        background: none;
+    }
 </style>
-<div id="donor-register" style="margin-bottom: 700px">
+<div id="donor-register" style="height: auto;">
     <div class="container">
         <div class="content-wrapper">
 
@@ -100,33 +108,34 @@
 
                     <div class="box-body">
                         <!-- form start -->
-                        <form class="form-horizontal login" action="{{url('/donor/store')}}" method="post" enctype= "multipart/form-data"> 
+                        <form class="form-horizontal login" action="{{url('/donor/signup')}}" method="post" enctype= "multipart/form-data"> 
                             {!! csrf_field() !!}
 
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">First Name</label>
-                                <div class="col-md-6">
+                                <div class="col-md-2">
                                     <input id="name" type="text" class="form-control" name="fname" placeholder="First Name"  autofocus>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="col-md-4 control-label">Last Name</label>
-                                <div class="col-md-6">
+
+
+                                <label for="name" class="col-md-2 control-label">Last Name</label>
+                                <div class="col-md-2">
                                     <input id="name" type="text" class="form-control" name="lname" placeholder="Last Name"  autofocus>
                                 </div>
-                            </div>
+
+                            </div> 
 
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Email</label>
                                 <div class="col-md-6">
-                                    <input id="name" type="email" class="form-control" name="email"  autofocus>
+                                    <input id="name" type="email" class="form-control" placeholder="email" name="email"  autofocus>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Password</label>
                                 <div class="col-md-6">
-                                    <input id="name" type="password" class="form-control" name="password"  autofocus>
+                                    <input id="name" placeholder="Password" type="password" class="form-control" name="password"  autofocus>
                                 </div>
                             </div>
 
@@ -134,8 +143,9 @@
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Gender</label>
                                 <div class="col-md-6">
-                                    <input id="name" type="radio" name="gender" value="male" >Male &nbsp;&nbsp;&nbsp;
-                                    <input id="name" type="radio" name="gender" value="female" >Female
+                                    <input id="name" style="width: 20px; height: 20px;" type="radio" name="gender" value="male" >&nbsp;&nbsp;&nbsp;<span style="font-size: 20px">
+                                    Male</span> &nbsp;&nbsp;&nbsp;
+                                    <input id="name"  style="width: 20px; height: 20px;"  type="radio" name="gender" value="female" >&nbsp;&nbsp;&nbsp;<span style="font-size: 20px">Female</span>
                                     <input type="hidden" value="67890" name="donner_id">
                                 </div>
                             </div>
@@ -202,7 +212,7 @@
                             <div class="form-group">
                                 <label for="email" class="col-md-4 control-label">Blood Group</label>
 
-                                <div class="col-md-2">
+                                <div class="col-md-6">
                                     <select name="blood_group" class="form-control">
                                         <option value="A+">A+</option>
                                         <option value="AB+">AB+</option>
@@ -214,141 +224,15 @@
                                         <option value="O-">O-</option> 
                                     </select>
 
-                                </div> 
-                                <label for="email" class="col-md-2 control-label">Profile Photo</label>
-
-                                <div class="col-md-2">
-                                    <input type="file" class="form-control"  name="pic_path" />
-
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">FB Url</label>
-
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="fb_url" />
-                                </div> 
-                                <label for="email" class="col-md-2 control-label">Web url</label>
-
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="web_url" />
-
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">Called Date</label>
-
-                                <div class="col-md-2">
-                                    <input type="date" class="form-control"  name="called_date" />
-                                </div> 
-                                <label for="email" class="col-md-2 control-label">Called Today</label>
-
-                                <div class="col-md-2">
-                                    <input type="date" class="form-control"  name="called_today" />
-
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">Religion</label>
-
-                                <div class="col-md-2">
-                                    <select name="religion" class="form-control">
-                                        <option value="Muslim">Muslim</option>
-                                        <option value="Hindu">Hindu</option>
-                                        <option value="Christian">Christian</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div> 
-                                <label for="email" class="col-md-2 control-label">Is Physically Disable</label>
-
-                                <div class="col-md-2">
-                                    <select name="is_physically_disble" class="form-control">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                    </select>
-
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">Nationality</label>
-
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="nationality" />
-                                </div> 
-                                <label for="email" class="col-md-2 control-label">NID</label>
-
-                                <div class="col-md-2">
-                                    <input type="number" class="form-control"  name="nid" />
-
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">Age</label>
-
-                                <div class="col-md-2">
-                                    <input type="number" class="form-control"  name="age" />
-                                </div> 
-                                <label for="email" class="col-md-2 control-label">Profile Visible</label>
-
-                                <div class="col-md-2">
-                                    <select name="pro_visible" class="form-control">
-                                        <option value="1">Yes</option>
-                                        <option value="0">No</option>
-                                    </select>
-
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">Latitude</label>
-
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="latitude" />
-                                </div> 
-                                <label for="email" class="col-md-2 control-label">Longitude</label>
-
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="longitude" />
-
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">Last Latitude</label>
-
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="lastLat" />
-                                </div> 
-                                <label for="email" class="col-md-2 control-label">Last Longitude</label>
-
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="lastLng" />
-
-                                </div>
+                                </div>  
                             </div>
 
+
+ 
                             <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">Rank</label>
-
-                                <div class="col-md-2">
-
-                                    <input id="password" type="text" class="form-control" name="rank" >
-                                </div> 
-                                <label for="email" class="col-md-2 control-label">Status</label>
-
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="status" />
-
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Number of Donate</label>
-                                <div class="col-md-6">
-                                    <input type="number" class="form-control"  name="donations_number" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Add Donor
+                                <div class="col-md-12 col-md-offset-5">
+                                    <button type="submit" class=" col-md-4 btn btn-success">
+                                        Sign Up
                                     </button>
                                 </div>
                             </div>

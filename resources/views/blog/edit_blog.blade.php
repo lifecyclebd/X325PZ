@@ -63,11 +63,11 @@
                                 <label for="name" class="col-md-2 control-label">Image Upload</label>
 
                                 <div class="col-md-3">
-                                    <input id="name" type="file"   name="photo" required autofocus>
+                                    <input id="name" type="file"   name="image" required autofocus>
 
                                 </div>
                                 <div class="col-md-5">
-                                    <img style="width:60%; height: auto" src="{{asset('/')}}public/images/gallery/{{$data['blog']->image}}" class="img img-resposive">
+                                    <img style="width:60%; height: auto" src="{{$data['blog']->pic_path}}" class="img img-resposive">
 
                                 </div>
                             </div>

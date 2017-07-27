@@ -42,15 +42,30 @@ class BlogController extends Controller {
     public function save_blog(Request $request) {
         $data = new Blog;
         $common = new Common;
-        $data->blog_category_id = $request->blog_category_id;
+
+
+        //$data->blog_category_id = $request->blog_category_id;
+        $cat_id=$request->blog_category_id;
+        $cat_name =Blog_Category:: where('id', $cat_id)->First();
+        $data->blog_category = $cat_name['category_name'];
+
         $data->title = $request->title;
         $data->description = $request->description;
         $data->save();
-        
-        $fileName='asdf';
-        $profile_photo = $common->uploadImage('photo', 'public/frontend/images/news', $fileName);
-        $data->photo = $profile_photo;
-        $data->save();
+
+        $last_insert_id = $data->id;
+        $Content_file = new Blog;
+        $Content_file = Blog::find($last_insert_id);
+
+        if ($request->image) {
+            $common=new Common;
+            $fileName =$request->blog_category_id.'_'. $last_insert_id;
+            $content_photo = $common->uploadImage('image', 'images/blog/'.$request->blog_category_id, $fileName);
+            $Content_file->pic_path = $common->get_site_url().'public/images/blog/'.$request->blog_category_id.'/'.$content_photo;
+            $Content_file->save();
+        }
+ 
+
         return redirect('/blog/content');
     }
     public function edit_blog_category($id){
@@ -76,11 +91,23 @@ class BlogController extends Controller {
         $blog->blog_category_id = $request->blog_category_id;
         $blog->title = $request->title;
         $blog->description = $request->description;
- 
-        $profile_photo = $common->uploadImage('photo', 'images/gallery');
-        $blog->photo = $profile_photo;
+         $blog->save();
 
-        $blog->save();
+
+        $last_insert_id = $blog->id;
+        $Content_file = new Blog;
+        $Content_file = Blog::find($last_insert_id);
+
+        if ($request->image) {
+            $common=new Common;
+            $fileName =$request->blog_category_id.'_'. $last_insert_id;
+            $content_photo = $common->uploadImage('image', 'images/blog/'.$request->blog_category_id, $fileName);
+            $Content_file->pic_path = $common->get_site_url().'public/images/blog/'.$request->blog_category_id.'/'.$content_photo;
+            $Content_file->save();
+        }
+
+
+
         return redirect('/blog/content');
     }
     public function delete_blog($id){
@@ -88,5 +115,13 @@ class BlogController extends Controller {
         $blog->delete();        
         return redirect('/blog/content');
     }
-
+    public function delete_blog_category($id){
+        $blog = Blog_Category::find($id);
+        $blog->delete();        
+        return redirect('/blog/category');
+    }
+    public function blog_show($id){
+        $blog['content'] = Blog::find($id);
+        return view('blog.show_blog')->with('data',$blog);
+    }
 }

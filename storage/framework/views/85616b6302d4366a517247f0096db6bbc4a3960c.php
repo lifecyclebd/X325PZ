@@ -30,6 +30,9 @@
                                     <th>Hospital</th>
                                     <th>Specialist</th>
                                     <th>Phone</th>
+                                    <th>Division</th>
+                                    <th>District</th>
+                                    <th>Upazila</th>
                                     <th>Location</th>
                                     <th>Chamber</th>
                                     <th>Operation</th>
@@ -45,11 +48,14 @@
                                     <td><?php echo e($row->hospital); ?></td>
                                     <td><?php echo e($row->speacilist); ?></td>
                                     <td><?php echo e($row->phone); ?></td>
+                                    <td><?php echo e($row->division); ?></td>
+                                    <td><?php echo e($row->district); ?></td>
+                                    <td><?php echo e($row->upazila); ?></td>
                                     <td><?php echo e($row->preasent_address); ?></td> 
                                     <td><?php echo e($row->chamber_address); ?></td> 
                                     <td> 
                                         <a href="<?php echo e(url('admin/doctor')); ?>/edit/<?php echo e($row->id); ?>" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
-                                        <a href="<?php echo e(url('admin/doctor')); ?>/delete<?php echo e($row->id); ?>" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
+                                        <a href="<?php echo e(url('admin/doctor')); ?>/delete/<?php echo e($row->id); ?>" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
                                         <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
                                         <a href="<?php echo e(url('/donor/')); ?>/<?php echo e($row->id); ?>" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
                                         </a>

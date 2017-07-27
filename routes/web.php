@@ -6,6 +6,8 @@ Route::get('/admin/testimonial/add', 'AdminController@create_testimonial');
 Route::any('/admin/testimonial/store', 'AdminController@store_testimonial');
 
 Route::get('/donor-profile', 'DonorController@donor_profile');
+
+Route::post('/donor/signup', 'DonorController@signup');
 Route::post('/donor/search', 'DonorController@search');
 Route::get('donor/viewprofile/{id}', 'DonorController@viewprofile');
 Route::get('/Blogs', 'BlogController@view');
@@ -109,7 +111,7 @@ Route::get('/gradingSystem', 'GradingSystemController@view');
 Route::get('/admin/home', 'AdminController@index');
 Route::get('/admin/view', 'AdminController@view_admin');
 Route::get('/admin/create', 'AdminController@create');
-Route::get('/admin/{id}', 'AdminController@show')->name('show');
+Route::get('/admin/show/{id}', 'AdminController@show')->name('show');
 Route::get('/admin/{id}/edit', 'AdminController@edit'); 
 Route::get('/admin/store', 'AdminController@store')->name('store');
 Route::post('/admin/update', 'AdminController@update');
@@ -128,6 +130,8 @@ Route::get('/test', 'TestController@index');
 Route::get('/donor', 'DonorController@index');
 Route::get('/donor-login', 'DonorController@donor_login');
 Route::post('/donor/login', 'DonorController@donor_login_access');
+Route::any('/donor-logout','DonorController@logout');
+Route::get('/donor-profile', 'DonorController@donor_profile');
 
 
 Route::get('/donor-register', 'DonorController@donor_register');
@@ -194,13 +198,14 @@ Route::get('api/get-city-list','APIController@getCityList');
 */
 
 //---------Content--------------------
+
 Route::get('/admin/content', 'ContentController@index'); 
 Route::get('/admin/content/create', 'ContentController@create');
 Route::get('/admin/content/{id}', 'ContentController@show');
 Route::get('/admin/content/{id}/edit', 'ContentController@edit'); 
-Route::get('/admin/content/store', 'ContentController@store')->name('store');
+Route::post('/admin/content/store', 'ContentController@store')->name('store');
 Route::post('/admin/content/update', 'ContentController@update');
-Route::any('/admin/content/{id}/destroy', 'ContentController@destroy');
+Route::any('/admin/content/delete/{id}', 'ContentController@delete');
 
 //-------------------Blog-----------------------------
 Route::any('/blog/category', 'BlogController@blog_category');
@@ -209,11 +214,14 @@ Route::any('/blog/saveCategory', 'BlogController@save_category');
 Route::any('/blog/content', 'BlogController@view_blog');
 Route::any('/blog/create', 'BlogController@create_blog');
 Route::any('/blog/saveBlog', 'BlogController@save_blog');
+
 Route::any('/blog/editcategory/{id}', 'BlogController@edit_blog_category');
+Route::any('/blog/destroycategory/{id}', 'BlogController@delete_blog_category');
 Route::post('/blog/update_category', 'BlogController@update_blog_category');
 Route::any('/blog/editblog/{id}', 'BlogController@edit_blog');
 Route::post('/blog/updateBlog', 'BlogController@update_blog');
 Route::any('/blog/destroy/{id}', 'BlogController@delete_blog');
+Route::any('/blog/show/{id}', 'BlogController@blog_show');
 //-----------------------Mail box----------------------
 Route::any('admin/mailbox/inbox', 'MailController@show_inbox');
 Route::any('admin/mailbox/compose', 'MailController@show_compose');

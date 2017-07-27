@@ -8,6 +8,7 @@ use App\Division;
 use App\District;
 use App\Upazila;
 use App\BloodRequest;
+use App\Message;
 use App\Libraries\Common;
 use DB;
 use Hash;
@@ -18,53 +19,8 @@ class DonorController extends Controller {
         $data['donor'] = Donor::all();
         return view('donor.view')->with('data', $data);
     }
-    public function donor_profile(Request $request){
-   
-        $data['division'] = Division::all();
-        $donor_email= $request->session()->get('email');
-        $data['donor'] = Donor::where('email',$donor_email)->first();
-
-        return view('frontend.donor_profile')->with('data', $data);
-    }
- public function donor_login(Request $request) {
-    $data = $request->session()->all();
-    $value = $request->session()->get('email');
-   // dd($data['email']);
-
-        $data['division'] = Division::all();
-        $data['donor'] = Donor::all();
-        return view('frontend.donor_login');
-    }
-
-
-
-    public function donor_login_access(Request $request){
-        $donor_username=$request->email;
-        $donor_password=$request->password;
-       // $donor_password = Hash::make($donor_password);
-      // dd($request);
-        $data['donor'] = Donor:: where([['email',$donor_username],['password',$donor_password]])->first();
-
-        if(!empty($data['donor'])){
-            $request->session()->put('email', $data['donor']->email);
-            $request->session()->push('donors',$data['donor']);
-           // dd($value);
-            return redirect('/donor-profile');
-        }
-        else {
-             return redirect('/donor-login?message=Your Email or Passord is not valid !');
-        }
-
-    }
-    public function logout(Request $request){
-        $request->session()->forget('email');
-        $request->session()->forget('donors');
-        
-        $request->session()->flush();
-
-       return redirect('/donor-login');
-    }
-
+    
+ 
 
 
     public function create() {
@@ -106,7 +62,7 @@ class DonorController extends Controller {
         $Donor->fcm_email = 'na';
         $Donor->fcm_uid =  'na';
         $Donor->fcm_token =  'na';
-        $Donor->verification ='na';
+        $Donor->verification =0;
         $Donor->gender = $request->gender;
         $Donor->birth_date = $request->birth_date;
         $Donor->last_donation = $request->last_donation;
@@ -154,6 +110,60 @@ class DonorController extends Controller {
         return redirect('/donor');
     }
 
+
+
+public function signup(Request $request) {
+        $Donor = new Donor;
+        $common = new Common;
+
+        $Donor->fname = $request->fname;
+        $Donor->lname = $request->fullname;
+        $Donor->email = $request->email;
+        $Donor->fcm_email = 'na';
+        $Donor->fcm_uid =  'na';
+        $Donor->fcm_token =  'na';
+        $Donor->verification =0;
+        $Donor->gender = $request->gender;
+        $Donor->birth_date = $request->birth_date;
+        $Donor->last_donation = $request->last_donation;
+        $Donor->phone = $request->phone;
+        $Donor->division = $request->division;
+        $Donor->district = $request->district;
+        $Donor->thana = $request->thana;
+        $Donor->address = $request->address;
+        $Donor->blood_group = $request->blood_group;
+        $Donor->rank = 0;
+        $Donor->web_url = 'na';
+        $Donor->fb_url = 'na';
+        $Donor->status =1;
+        $Donor->donations_number =0;
+        $Donor->password =$request->password;
+        $Donor->called_date = 'na';
+        $Donor->called_today = 0;
+        $Donor->religion = 'na';
+        $Donor->is_physically_disble = 0;
+        $Donor->nationality ='Bangladeshi';
+        $Donor->nid ='na';
+        $Donor->age = 0;
+        $Donor->pro_visible = 1;
+        $Donor->latitude =0;
+        $Donor->longitude =0;
+        $Donor->lastLat = 0;
+        $Donor->lastLng = 0;
+        $Donor->pic_path = $common->get_site_url().'public/images/profile/user.png';
+        $Donor->post_code = $request->post_code;
+         
+        $Donor->save();
+
+        $last_insert_id = $Donor->id; 
+
+            $request->session()->put('id',$last_insert_id);
+            $request->session()->put('email',$request->email); 
+
+
+        return redirect('/donor-profile');
+
+}
     public function show($id) {
         $data = Donor::find($id);
         return view('donor.show')->with('data', $data);
@@ -265,7 +275,55 @@ class DonorController extends Controller {
         return redirect('/bloodrequest');
     }
     
-    
-    
+    public function donor_profile(Request $request){
+        $value = $request->session()->get('email');
+        if(empty($value)){
+           return redirect('/donor-login');
+         }
+        $data['login_id'] = $request->session()->get('id');
+        $data['messages'] = Message::where([['sender_id', $data['login_id']], ['sender_type', 'donor']])->get(); 
+
+        $data['division'] = Division::all();
+        $donor_email= $request->session()->get('email');
+        $data['donor'] = Donor::where('email',$donor_email)->first();
+        return view('frontend.donor_profile')->with('data', $data);
+    }
+
+
+    public function donor_login_access(Request $request){
+        $donor_username=$request->email;
+        $donor_password=$request->password; 
+        $data['donor'] = Donor:: where([['email',$donor_username],['password',$donor_password]])->first();
+
+        if(!empty($data['donor'])){
+            $request->session()->put('id', $data['donor']->id);
+            $request->session()->put('email', $data['donor']->email);
+            $request->session()->push('donors',$data['donor']); 
+            return redirect('/donor-profile');
+        }
+        else {
+             return redirect('/donor-login?message=Your Email or Passord is not valid !');
+        }
+
+    }
+    public function donor_login(Request $request) {
+    $data = $request->session()->all();
+    $value = $request->session()->get('email');
+    if(!empty($value)){
+           return redirect('/donor-profile');
+       } 
+        $data['division'] = Division::all();
+        $data['donor'] = Donor::all();
+        return view('frontend.donor_login');
+    }
+
+    public function logout(Request $request){
+        $request->session()->forget('email');
+        $request->session()->forget('donors');
+        
+        $request->session()->flush();
+
+       return redirect('/donor-login');
+    }
 
 }

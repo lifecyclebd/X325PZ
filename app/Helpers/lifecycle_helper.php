@@ -10,14 +10,16 @@ use Illuminate\Http\Request;
     }
 
 
-    function get_session($column_name){
+    function get_session(){
     	$request = request();
-    	if ($request->session()->exists('email')) {
-    		$session_email = $request->session()->get('email');
-    		 $sql_result=DB::table('donors')->select('*')->where('email', $session_email)->first();
-    		 $result= $sql_result->$column_name;
+        $value = $request->session()->get('email');
+        if(!empty($value)){
+     //	if ($request->session()->exists('email')) {
+
+    		 $sql_result=DB::table('donors')->select('*')->where('email', $value)->first();
+    		 //$result= $sql_result->$column_name;
     	//	 dd($result);
-	    	return $result;
+	    	return $sql_result;
     	}else{
     		 
    			  return null;

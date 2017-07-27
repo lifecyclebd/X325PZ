@@ -68,26 +68,27 @@
                         </div>
                         <div class="col-md-6">
                             <div class="top-right">
-                                <?php 
-                                $login_email= get_session('fname').' '.get_session('lname');
-                                $login_profile=get_session('pic_path');
-                                $login_address=get_session('address');
-                                if (isset($login_email) && !empty($login_email)) { ?>
-                                  
+                              <?php 
+                                $login_user= get_session();
+                                if(!empty($login_user)){
+                                $login_profile=$login_user->pic_path;
+                                $login_address=$login_user->address; 
+                                  ?>
                                     <ul class="nav navbar-nav">
                                        <li class="dropdown user user-menu" style="min-width: 250px;">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="<?php echo e(url('/')); ?>/<?php echo e($login_profile); ?>" class="user-image" alt="User Image" style="width: 30px; height: 30px;">
-                                    <span class="hidden-xs" style="margin-left: 10px"><?php echo e($login_email); ?></span>
+                                    <img src="<?php echo e($login_profile); ?>" class="user-image" alt="User Image" style="width: 30px; height: 30px;">
+                                    <span class="hidden-xs" style="margin-left: 10px"><?php echo e($login_user->fname); ?></span>
                                 </a>
                                 <ul class="dropdown-menu" style="    background: rgb(132, 125, 125);">
                                     <!-- User image -->
 
                                     <li class="user-header" style="min-width: 250px;">
-                                        <img src="<?php echo e(url('/')); ?>/<?php echo e($login_profile); ?>" class="user-image" alt="User Image" style="width: 30px; height: 30px;">
-                                         <span class="hidden-xs"><?php echo e($login_email); ?></span>
+                                        <img src="<?php echo e($login_profile); ?>" class="user-image" alt="User Image" style="width: 30px; height: 30px;">
+                                         <span class="hidden-xs"><?php echo e($login_user->fname); ?> <?php echo e($login_user->lname); ?></span>
                                         <p>
-                                             <?php echo e($login_address); ?> 
+                                            <?php echo e($login_user->address); ?>
+
                                         </p>
                                     </li>
 
@@ -111,9 +112,8 @@
                                     </li>
                                 </ul>
                             </li>
-
-                                                    </ul>
-                                <?php } else { ?>
+                        </ul>
+                           <?php } else { ?>
                                     <form action="<?php echo e(url('/donor/login')); ?>" method="post" class="navbar-form navbar-right">
                                      <?php echo csrf_field(); ?>
 

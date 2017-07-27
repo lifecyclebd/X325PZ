@@ -15,7 +15,7 @@
 
                         <div class="box-tools pull-right">
 
-                            <a class="btn btn-success pull-right" href="{{ url('/content/create') }}"><i class="fa fa-plus"></i> Add Content</a>
+                            <a class="btn btn-success pull-right" href="{{ url('/admin/content/create') }}"><i class="fa fa-plus"></i> Add Content</a>
 
                         </div>
                         <h3 class="box-title">Content List</h3>
@@ -29,10 +29,10 @@
                             <thead>
                                 <tr>
                                     <th> ID</th>
-                                    <th> Title</th>
-                                    <th>Description</th>
+                                    <th style="width: 20%"> Title</th>
+                                    <th style="width: 30%">Description</th>
                                     <th>Content Type</th>
-                                    <th>Content Page</th>
+                                    <th>Image</th>
                                     <th>Operation</th>
                                 </tr>
                             </thead>
@@ -41,14 +41,16 @@
                                 <tr>
                                     <td>{{$row->id}}</td>
                                     <td>{{$row->title}}</td>
-                                    <td>{!! $row->description !!}</td> 
+                                    <td align="justify">{!! substr($row->description,0,200) !!}...</td> 
                                     <td>{{$row->content_type}}</td> 
-                                    <td>{{$row->content_page}}</td> 
+                                    <td>
+                                        <img src="{{$row->pic_path}}" style="width: 60px; height: 60px;"> 
+
+                                    </td> 
                                     <td> 
-                                        <a href="{{url('/content')}}/{{$row->id}}/edit" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
-                                        <a href="{{url('/content')}}/{{$row->id}}/destroy" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
-                                        <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
-                                        <a href="{{url('/content/')}}/{{ $row->id }}" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
+                                        <a href="{{url('/admin/content')}}/{{$row->id}}/edit" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
+                                        <a href="{{url('/admin/content')}}/delete/{{$row->id}}" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
+                                        <a href="{{url('/admin/content/')}}/{{ $row->id }}" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
                                         </a>
                                     </td>
 
