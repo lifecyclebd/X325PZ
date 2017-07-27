@@ -297,7 +297,7 @@
                 <div class="get_well_soon_div">
                     প্রয়োজনে যেকোনো সময় স্বল্পমূল্যে এ্যম্বুলেন্স সেবা পেতে যোগাযোগ করুন আমাদের সাথে। আমাদের আছে বিশেষ এ্যম্বুলেন্স সার্ভিস।
                     <div class="text-center">
-                        <button class="btn_read_more2">আরো জানতে</button>
+                        <a href="{{ url('/view-ambulance') }}"><button class="btn_read_more2">আরো জানতে</button></a>
                     </div>
                 </div>
 

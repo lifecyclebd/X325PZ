@@ -153,6 +153,9 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="{{ url('/') }}">Home</a></li>
                                 <li><a href="{{ url('/blood-request') }}">Blood Request</a></li>
+                                <li><a href="{{ url('/search-doctor') }}">Doctor</a></li>
+                                <li><a href="{{ url('/view-hospital') }}">Hospital</a></li>
+                                <!--
                                 <li class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="">Health
                                         <span class="caret"></span></a>
@@ -160,9 +163,11 @@
                                         <li><a href="{{ url('/search-doctor') }}">Find Doctor</a></li>
                                         <li><a href="{{ url('/view-hospital') }}">Hospital</a></li>
                                         <li><a href="{{ url('/view-ambulance') }}">Ambulence</a></li>
-                                        <!--<li><a href="{{ url('/write-to-doctor') }}">Write To Doctor</a></li>-->
+                                        <li><a href="{{ url('/write-to-doctor') }}">Write To Doctor</a></li>
                                     </ul>
                                 </li> 
+                                -->
+
                                 <li class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Activity
                                         <span class="caret"></span></a>
