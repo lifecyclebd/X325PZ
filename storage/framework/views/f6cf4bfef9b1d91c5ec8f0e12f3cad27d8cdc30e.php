@@ -39,6 +39,12 @@
                 color:red;
 
             }
+            .dropdown-menu>li>a.li_menu {
+    color: #fbfbfb !important;
+}
+            .dropdown-menu>li>a.li_menu:hover {
+    color: black !important;
+}
         </style>
     </head>
     <body id="top" data-spy="scroll">
@@ -75,14 +81,47 @@
                                 $login_address=$login_user->address; 
                                   ?>
                                     <ul class="nav navbar-nav">
-                                       <li class="dropdown user user-menu" style="min-width: 250px;">
+                                       <li class="dropdown" style="min-width: 80px;">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> 
+                                                <span class="hidden-xs" style="margin-left: 10px"> <i style="font-size: 16px; color: red" class="fa fa-envelope"></i> <span class="badge" style="margin-top: -20px;"><?php echo e($data['last5messageCount']); ?></span></span>
+                                            </a>
+                                            <ul class="dropdown-menu" style="    background: rgb(132, 125, 125);">
+                                                <!-- User image -->
+                                                <?php $__currentLoopData = $data['last5message']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <li class="" style="min-width: 250px;"> 
+                                                     <a class="li_menu" href="<?php echo e(url('/')); ?>/donor-profile/message-show/<?php echo e($row->id); ?>" style="text-transform: none;"> <?php echo e($row->message); ?> </a> 
+                                                </li> 
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                            </ul>
+                                        </li>
+
+                                           <li class="dropdown" style="min-width: 80px;">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> 
+                                                <span class="hidden-xs" style="margin-left: 10px"> 
+                                                <i style="font-size: 22px; color: red" class="fa fa-tint" aria-hidden="true"></i>
+                                               <sup> <span class="badge"  style="margin-top: -20px;">  5</span></sup> </span>
+                                            </a>
+                                            <ul class="dropdown-menu" style="    background: rgb(132, 125, 125);">
+                                                <!-- User image -->
+                                                <?php $__currentLoopData = $data['last5activities']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <li class="" style="min-width: 250px;"> 
+                                                     <a class="li_menu" href="<?php echo e(url('/')); ?>/" style="text-transform: none;"> <?php echo e($row->short_message); ?> nn</a> 
+                                                </li> 
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                            </ul>
+                                        </li>
+
+
+                                        
+
+                             <li class="dropdown user user-menu" style="min-width: 250px;">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                     <img src="<?php echo e($login_profile); ?>" class="user-image" alt="User Image" style="width: 30px; height: 30px;">
                                     <span class="hidden-xs" style="margin-left: 10px"><?php echo e($login_user->fname); ?></span>
                                 </a>
                                 <ul class="dropdown-menu" style="    background: rgb(132, 125, 125);">
                                     <!-- User image -->
-
+                                    
                                     <li class="user-header" style="min-width: 250px;">
                                         <img src="<?php echo e($login_profile); ?>" class="user-image" alt="User Image" style="width: 30px; height: 30px;">
                                          <span class="hidden-xs"><?php echo e($login_user->fname); ?> <?php echo e($login_user->lname); ?></span>
@@ -112,6 +151,7 @@
                                     </li>
                                 </ul>
                             </li>
+
                         </ul>
                            <?php } else { ?>
                                     <form action="<?php echo e(url('/donor/login')); ?>" method="post" class="navbar-form navbar-right">

@@ -134,7 +134,7 @@ class HomeController extends Controller {
         $data->opration_time = $request->opration_time;
         $data->save();
         //-----------------------------------------------------//
-        $msg->sender_id = 2;
+        $msg->sender_email =  $request->session()->get('email');;
         $msg->sender_type = 'donor';
         $msg->receiver_id = 303;
         $msg->receiver_type = 'admin';
