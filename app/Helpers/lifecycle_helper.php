@@ -35,11 +35,7 @@ use App\Donor;
         $data['login_id'] = $request->session()->get('id');
         $donor_email= $request->session()->get('email');
 
-        $data['messages'] = Message::where([['sender_id', $data['login_id']], ['sender_type', 'donor']])->get(); 
-   //     $data['singlemeaasge']=Message::where([['id',$msg_id ],['sender_id', $data['login_id']], ['sender_type', 'donor']])->first();
-
-
-         
+        $data['messages'] = Message::where([['sender_id', $data['login_id']], ['sender_type', 'donor']])->get();  
         $data['last5message'] = Message::where([['sender_id', $data['login_id']], ['sender_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
         $data['last5messageCount']=$data['last5message']->count();
 
