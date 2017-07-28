@@ -8,6 +8,7 @@ use App\Donor;
 use App\Hospital;
 use App\Message;
 use App\More_about_blood;
+use App\Find_solution;
 use App\Activity;
 use App\BloodRequest;
 use App\Testimonial;
@@ -158,5 +159,28 @@ class AdminController extends Controller {
         $data->photo = $profile_photo;
         $data->save();
         return redirect('/admin/more-blood/view');
+    }
+
+    
+    public function view_write_to_doctor(){
+        $data['problems'] = Find_solution::all();
+        return view('problems.view')->with('data', $data);
+    }
+    
+    public function doctor_reply_store(Request $request){
+        
+        $data =new Message(); 
+        $email=$request->email;
+        $data->receiver_email=$email;
+        $data->receiver_type='donor';
+        $data->sender_type='doctor';
+        $data->sender_id=1;
+        $data->is_read=0;
+        $data->created_by='Doctor';
+        $data->message=$request->message;
+        $data->save();
+        
+        
+        return redirect('/admin/write/to/doctor');
     }
 }

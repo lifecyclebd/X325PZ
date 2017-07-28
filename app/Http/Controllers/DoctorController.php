@@ -399,5 +399,10 @@ public function create() {
         $data = Find_solution::find($id);
         return view('problems.show')->with('data', $data);
     }
+    public function reply_problem($id) {
+        $data['user'] = Find_solution::find($id);
+        return view('problems.reply')->with('data', $data);
+    }
+    
 
 }

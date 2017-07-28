@@ -278,6 +278,7 @@ public function signup(Request $request) {
     
     public function donor_profile(Request $request){
         $value = $request->session()->get('email');
+
         if(empty($value)){
            return redirect('/donor-login');
          }
@@ -292,8 +293,9 @@ public function signup(Request $request) {
         $data['last5activitiesCount']=$data['last5activities']->count();
 
         $data['division'] = Division::all();
-        $donor_email= $request->session()->get('email');
+        $donor_email= $value;
         $data['donor'] = Donor::where('email',$donor_email)->first();
+        //dd($data);
         return view('frontend.donor_profile')->with('data', $data);
     }
 

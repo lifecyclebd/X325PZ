@@ -123,7 +123,7 @@ class HomeController extends Controller {
         $data = new BloodRequest;
         $msg = new Message;
         $actv = new Activity;
-        $data->user_id = 6;
+        //-------------------For BloodRequest Table--------------------------
         $data->request_blood_group = $request->request_blood_group;
         $data->patient_hospital = $request->patient_hospital;
         $data->patient_phone = $request->patient_phone;
@@ -132,27 +132,36 @@ class HomeController extends Controller {
         $data->disease = $request->disease;
         $data->relation = $request->relation;
         $data->opration_time = $request->opration_time;
+        $data->sender_email =  $request->session()->get('email');
+        $data->sender_type =  'donor';
+        $data->receiver_type =  'admin';
+        $data->receiver_email =  'admin@lifecycle.org';
+        $data->created_by = $request->session()->get('id');
         $data->save();
-        //-----------------------------------------------------//
-        $msg->sender_email =  $request->session()->get('email');;
-        $msg->sender_type = 'donor';
-        $msg->receiver_id = 303;
-        $msg->receiver_type = 'admin';
-        $msg->message = 'Need ' . $request->request_blood_group . 'Blood ' . $request->number_blood_bag . ' in ' . $request->patient_hospital . 'at' . $request->opration_time;
-        $msg->created_by = 'Sakib';
-        $msg->updated_by = 'Rashed';
-        $msg->save();
-        //------------------------------------------------------//
-        $actv->created_id = 5;
+        //------------------------For Message---------------------------//
+        //$msg->sender_email =  $request->session()->get('email');
+        //$msg->sender_type =  'donor';
+        //$msg->receiver_type =  'admin';
+        //$msg->receiver_email =  'admin@lifecycle.org';
+        //$msg->sender_type = 'donor';
+        //$msg->receiver_id = 303;
+        //$msg->receiver_type = 'admin';
+        //$msg->message = 'Need ' . $request->request_blood_group . 'Blood ' . $request->number_blood_bag . ' in ' . $request->patient_hospital . 'at' . $request->opration_time;
+        //$msg->created_by = $request->session()->get('id');
+        //$msg->updated_by = 'Rashed';
+        //$msg->save();
+        //---------------------------For Activity Table---------------------------//
+        $actv->created_id = $request->session()->get('id');;
+        $actv->created_email = $request->session()->get('email');;
         $actv->created_type = 'donor';
-        $actv->receiver_id = 303;
+        $actv->receiver_email = 'admin@lifecycle.org';
         $actv->receiver_type = 'admin';
-        $actv->purpose = 'dont know';
+        $actv->purpose = 'umknown';
         $actv->short_message = 'Need ' . $request->request_blood_group . 'Blood ' . $request->number_blood_bag . ' in ' . $request->patient_hospital . 'at' . $request->opration_time;
-        $actv->is_read = 1;
+        $actv->is_read = 0;
         $actv->is_reply = 0;
-        $actv->parent_id = 6;
-        $actv->created_by = 'Asru';
+        $actv->parent_id = 0;
+        $actv->created_by = $request->session()->get('email');
         $actv->save();
         return redirect('/blood-request?send_request_suceessfully=yes');
     }

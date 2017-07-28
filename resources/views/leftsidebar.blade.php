@@ -26,6 +26,12 @@
                 </a>
             </li>
             <li class="treeview">
+                <a href="{{ url('/admin/write/to/doctor') }}">
+                    <i class="fa fa-user"></i>
+                    <span>Mail to Doctor</span>
+                </a>
+            </li>
+            <li class="treeview">
                 <a href="#">
                     <i class="fa fa-rss" aria-hidden="true"></i>
                     <span>Blood Donor</span>

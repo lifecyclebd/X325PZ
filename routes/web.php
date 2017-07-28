@@ -124,6 +124,12 @@ Route::get('/admin/more-blood/view', 'AdminController@view_more_blood');
 Route::get('/admin/more-blood/edit/{id}', 'AdminController@edit_more_blood');
 Route::post('/admin/more-blood/update', 'AdminController@update_more_blood');
 
+Route::get('/admin/write/to/doctor', 'AdminController@view_write_to_doctor');
+Route::post('/admin/docror/reply/store', 'AdminController@doctor_reply_store');
+
+
+
+
 
 
 //--------Donor-------------------------------------
@@ -154,7 +160,7 @@ Route::get('admin/doctor/edit/{id}', 'DoctorController@doctor_edit');
 Route::post('admin/doctor/update', 'DoctorController@doctor_update');
 Route::any('admin/doctor/delete/{id}', 'DoctorController@doctor_delete');
 Route::post('admin/doctor/write', 'DoctorController@write_to_doctor');
-Route::get('admin/doctor/problem-view', 'DoctorController@view_problem');
+Route::get('admin/doctor/problem-reply/{id}', 'DoctorController@reply_problem');
 Route::any('admin/doctor/problem/delete/{id}', 'DoctorController@problem_delete');
 Route::get('admin/doctor/problem-view/{id}', 'DoctorController@problem_show')->name('show');
 

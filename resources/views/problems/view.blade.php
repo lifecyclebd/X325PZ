@@ -39,11 +39,8 @@
                                     <td>{{$row->phone}}</td>
                                     <td>{{$row->problems}}</td>
                                     <td> 
-                                        <a href="{{url('admin/hospital')}}/edit/{{$row->id}}" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
+                                        <a href="{{url('admin/doctor/problem-reply')}}/{{ $row->id }}" class="btn  btn-primary btn-xs">Reply</a>
                                         <a href="{{url('admin/doctor/problem')}}/delete/{{$row->id}}" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
-                                        <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
-                                        <a href="{{url('admin/doctor/problem-view')}}/{{ $row->id }}" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
-                                        </a>
                                     </td>
 
                                 </tr>
