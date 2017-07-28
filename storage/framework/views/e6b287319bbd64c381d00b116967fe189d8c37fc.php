@@ -27,6 +27,7 @@
                         <form class="form-horizontal" action="<?php echo e(url('/admin/testimonial/store')); ?>" method="post" enctype='multipart/form-data'  >
                         <?php echo csrf_field(); ?>
 
+                          
 
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Name</label>

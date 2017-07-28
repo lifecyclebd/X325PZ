@@ -11,12 +11,7 @@
 
                     <div class="box-header with-border">
                         <h3 class="box-title">More About Blood</h3>
-                        <div class="box-tools pull-right">
-                            <a href="{{url('admin/doctor/create')}}" class="">      
-                                <i class="fa fa-plus" aria-hidden="true"></i> Add Doctor
-                            </a>
-
-                        </div>
+                        
                     </div>
 
                     <!-- /.box-header -->
@@ -41,11 +36,8 @@
                                     <td>{{$row->long_description}}</td>
                                     <td>{{$row->photo}}</td>
                                     <td> 
-                                        <a href="{{url('/admin/more-blood')}}/edit/{{$row->id}}" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
-                                        <a href="{{url('admin/doctor')}}/delete{{$row->id}}" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
-                                        <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
-                                        <a href="{{url('/donor/')}}/{{ $row->id }}" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
-                                        </a>
+                                        <a href="{{url('/admin/more-blood')}}/edit/{{$row->id}}" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> Edit </a>
+                                        
                                     </td>
 
                                 </tr>

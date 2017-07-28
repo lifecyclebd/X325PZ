@@ -358,6 +358,17 @@ public function signup(Request $request) {
             $request->session()->put('id', $data['donor']->id);
             $request->session()->put('email', $data['donor']->email);
             $request->session()->push('donors',$data['donor']); 
+
+            //     $request=request();
+             $url = $request->session()->get('redirect_url');
+
+            if(empty($url)){
+               return redirect('/donor-login');
+             }else{
+                return redirect($url);
+             }
+
+
             return redirect('/donor-profile');
         }
         else {

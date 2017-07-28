@@ -84,6 +84,8 @@ Route::get('/make-donation', 'HomeController@make_donation');
 Route::get('/about-us', 'HomeController@about_us');
 Route::get('/contact', 'HomeController@contact');
 Route::get('/read-more/detail/{id}', 'HomeController@read_more');
+Route::get('/seeMoreBloodInfo', 'HomeController@seeMoreBloodInfo');
+
 Route::get('/events', 'HomeController@events');
 
 

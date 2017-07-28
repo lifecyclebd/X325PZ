@@ -115,9 +115,8 @@
 
     <div class="row" style="min-height: 100px; background-color: #8f0002; padding: 10px; margin: 0 auto;">
         <div class="col-md-8">
-            <form class="form-horizontak" method="post" action="<?php echo e(url('/')); ?>/search-any" style="margin: 10px;">
-                <?php echo csrf_field(); ?>
-
+            <!--<form class="form-horizontak" method="get" action="" style="margin: 10px;">
+                <?php echo csrf_field(); ?>-->
                 <div class="input-group">
                     <span class="input-group-addon" style="padding: 0px 30px; font-size: 25px;"><i class="fa fa-map-marker map_marker"></i></span>
 
@@ -128,7 +127,7 @@
                         <button class="btn  btn-serach search_button" > SEARCH </i> </button>
                     </span>
                 </div>
-            </form>
+            <!--</form>-->
         </div>
         <div class="col-md-4">
             <a href="<?php echo e(url('/donor-register')); ?>"><button class="btn  btn-serach signup_button" > SIGN UP </i> </button></a>
@@ -139,131 +138,33 @@
 </header>
 
 <div class="More_about_info">
-    <div class="container"> 
-        <h3 class="life_title " style="margin-bottom:50px">More about blood</h3>  
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info_abou_blood slideInDown" style="min-height:350px">
-                <div class="position_info">
-                    <span class="back_icon1 pull-center">  </span>
-                </div>
-                <p class="title"><?php echo e($data['donor_24']->title); ?></p>
-                <p class="text-justify" style="padding:30px">
-                    <?php echo e($data['donor_24']->short_description); ?>
+    <div class="container-fluid" style="background-color: gray;height: 580px"> 
+        <h3 class="life_title " style="margin-bottom:50px;color: white">More about blood</h3> 
+
+        <?php $__currentLoopData = $data['all_blood_info']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+        <div class="col-md-3 col-sm-6 col-xs-12" style="border-radius: 8px">
+            <div class="info_abou_blood " style="min-height:350px">
+                 
+                <p class="title"><?php echo e($row->title); ?></p>
+                <p class="text-justify" style="padding:10px">
+                    <?php echo substr($row->description,0,600); ?>
 
                 </p>
-                <div class="text-center">
-                    <a href="<?php echo e(url('/read-more')); ?>/detail/<?php echo e($data['donor_24']->id); ?>"><button class="btn_read_more">Read More</button></a>
+            </div>
+                <div class="text-center more_blood_bottom">
+                    <a href="<?php echo e(url('/read-more')); ?>/detail/<?php echo e($row->id); ?>"><button class="btn_read_more">আরো জানতে</button></a>
                
-                </div>
-            </div> 
+                </div> 
         </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info_abou_blood slideInDown" style="min-height:350px">
-                <span class="back_icon2 pull-center" style="height: 200px">  </span>
-                <p class="title"><?php echo e($data['platelet']->title); ?></p>
-                <p class="text-justify" style="padding:30px">
-                    <?php echo e($data['platelet']->short_description); ?>
-
-                </p>
-                <div class="text-center">
-                    <a href="<?php echo e(url('/read-more')); ?>/detail/<?php echo e($data['platelet']->id); ?>"><button class="btn_read_more">Read More</button></a>
-                </div>
-            </div> 
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info_abou_blood slideInDown" style="min-height:350px">
-                <span class="back_icon3 pull-center" style="height: 200px">  </span>
-                <p class="title"><?php echo e($data['type']->title); ?></p>
-                <p class="text-justify" style="padding:30px">
-                    <?php echo e($data['type']->short_description); ?>
-
-                </p>
-                <div class="text-center">
-                    <a href="<?php echo e(url('/read-more')); ?>/detail/<?php echo e($data['type']->id); ?>"><button class="btn_read_more">Read More</button></a>
-                </div>
-            </div> 
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info_abou_blood slideInDown" style="min-height:350px">
-                <span class="back_icon4 pull-center" style="height: 200px">  </span>
-                <p class="title"><?php echo e($data['journey']->title); ?></p>
-                <p class="text-justify" style="padding:30px">
-                    <?php echo e($data['journey']->short_description); ?>
-
-                </p>
-                <div class="text-center">
-                    <a href="<?php echo e(url('/read-more')); ?>/detail/<?php echo e($data['journey']->id); ?>"><button class="btn_read_more">Read more</button></a>
-                </div>
-            </div> 
-        </div>
-
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        <br> 
     </div> 
+    <div class="container-fluid" style="padding: 20px; background-color: #4d4f54"><a class="pull-right btn btn-serach" href="<?php echo e(url('/')); ?>/seeMoreBloodInfo">See More</a></div>
 
 
 
-    <!--
-    <div class="container" style="margin-top: 30px">  
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info_abou_blood slideInDown" style="min-height:350px">
-                <div class="position_info">
-                    <span class="back_icon1 pull-center">  </span>
-                </div>
-                <p class="title"><?php echo e($data['donor_24']->title); ?></p>
-                <p class="text-justify" style="padding:30px">
-                    <?php echo e($data['donor_24']->short_description); ?>
 
-                </p>
-                <div class="text-center">
-                    <a href="<?php echo e(url('/read-more')); ?>/detail/<?php echo e($data['donor_24']->id); ?>"><button class="btn_read_more">Read More</button></a>
-               
-                </div>
-            </div> 
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info_abou_blood slideInDown" style="min-height:350px">
-                <span class="back_icon2 pull-center" style="height: 200px">  </span>
-                <p class="title"><?php echo e($data['platelet']->title); ?></p>
-                <p class="text-justify" style="padding:30px">
-                    <?php echo e($data['platelet']->short_description); ?>
-
-                </p>
-                <div class="text-center">
-                    <a href="<?php echo e(url('/read-more')); ?>/detail/<?php echo e($data['platelet']->id); ?>"><button class="btn_read_more">Read More</button></a>
-                </div>
-            </div> 
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info_abou_blood slideInDown" style="min-height:350px">
-                <span class="back_icon3 pull-center" style="height: 200px">  </span>
-                <p class="title"><?php echo e($data['type']->title); ?></p>
-                <p class="text-justify" style="padding:30px">
-                    <?php echo e($data['type']->short_description); ?>
-
-                </p>
-                <div class="text-center">
-                    <a href="<?php echo e(url('/read-more')); ?>/detail/<?php echo e($data['type']->id); ?>"><button class="btn_read_more">Read More</button></a>
-                </div>
-            </div> 
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info_abou_blood slideInDown" style="min-height:350px">
-                <span class="back_icon4 pull-center" style="height: 200px">  </span>
-                <p class="title"><?php echo e($data['journey']->title); ?></p>
-                <p class="text-justify" style="padding:30px">
-                    <?php echo e($data['journey']->short_description); ?>
-
-                </p>
-                <div class="text-center">
-                    <a href="<?php echo e(url('/read-more')); ?>/detail/<?php echo e($data['journey']->id); ?>"><button class="btn_read_more">Read more</button></a>
-                </div>
-            </div> 
-        </div>
-
-    </div> 
-
-
-</div>
--->
+    
 
 
 <div class="get_well_soon">        
@@ -273,9 +174,11 @@
             <div class="get_well_soon_sec">
                 <br>
                 <span class="back_icon5 pull-center" style="margin-top: 100px">  </span>
-                <p class="text-white">Connect With Doctor</p>
+                <p class="text-white">ডাক্তার</p>
                 <div class="get_well_soon_div">
-                    সাস্থ্য সেবা এখন হাতের মুঠোয়। ২৪ ঘন্টা বিশেষজ্ঞ চিকিৎসক দ্বারা আপনার সাস্থ্য সেবা দিতে আমরা আছি আপনার পাশে।
+                    
+আমরা ২৪ ঘন্টাই প্রস্তুত আছি আপনাদের কথা শুনতে, সরাসরি এবং মোবাইলে। এছাড়াও আমরা জানিয়ে দিচ্ছি বাংলাদেশের সকল বিশেষজ্ঞ ডাক্তাররা কে, কোথায় , কখন বসছে এবং তাদের ফি সর্ম্পকে ।
+
                     <div class="text-center">
                         <a href="<?php echo e(url('/write-to-doctor')); ?>"><button class="btn_read_more2">আরো জানতে</button></a>
                     </div>
@@ -287,9 +190,9 @@
             <div class="get_well_soon_sec">
                 <br>
                 <span class="back_icon6 pull-center" style="height: 200px">  </span>
-                <p class="text-white">Find Hospital</p>
+                <p class="text-white">হাসপাতাল </p>
                 <div class="get_well_soon_div">
-                    সারাদেশে সহজেই বিশেষায়িত হাসপাতাল খুঁজে নিতে পারবেন। পাবেন হাসপাতাল সম্পর্কিত প্রয়োজনীয় সব তথ্য।
+দরিদ্রের জন্য অল্প ব্যয়ে উন্নত চিকিৎসা সেবা ও সকলের জন্য হাসপাতাল সম্পর্কিত জরুরী তথ্য যেমন জরুরী নম্বর, ডাক্তার গণের তালিকা, কি ধরনের চিকিৎসা করে ইত্যাদি সর্ম্পকে জানানো ।
                     <div class="text-center">
                         <a href="<?php echo e(url('/view-hospital')); ?>"><button class="btn_read_more2">আরো জানতে</button></a>
                     </div>
@@ -301,9 +204,9 @@
             <div class="get_well_soon_sec">
                 <br>
                 <span class="back_icon7 pull-center" style="height: 200px">  </span>
-                <p class="text-white">Hire Ambulance</p>
+                <p class="text-white">এ্যাম্বুলেন্স </p>
                 <div class="get_well_soon_div">
-                    প্রয়োজনে যেকোনো সময় স্বল্পমূল্যে এ্যম্বুলেন্স সেবা পেতে যোগাযোগ করুন আমাদের সাথে। আমাদের আছে বিশেষ এ্যম্বুলেন্স সার্ভিস।
+                    যখন ও যেখানেই লাগবে জরুরী সেবায় ২৪ ঘন্টাই থাকবে আমাদের এ্যাম্বুলেন্স। এছাড়া ও বাংলাদেশের সকল হাসপাতালের এ্যাম্বুলেন্স নাম্বার, তাদের ফি সর্ম্পকিত যাবতীয় তথ্য পাওয়া যাবে এখানেই।
                     <div class="text-center">
                         <a href="<?php echo e(url('/view-ambulance')); ?>"><button class="btn_read_more2">আরো জানতে</button></a>
                     </div>
@@ -315,11 +218,11 @@
             <div class="get_well_soon_sec">
                 <br>
                 <span class="back_icon8 pull-center" style="height: 200px">  </span>
-                <p class="text-white">News</p>
+                <p class="text-white">স্বাস্থ্য সংবাদ</p>
                 <div class="get_well_soon_div">
-                    সাস্থ্য সম্পর্কিত বিভিন্ন তথ্য ও সংবাদ জানতে সর্বদা থাকুন আমাদের সঙ্গে।
+                    স্বাস্থ্য সর্ম্পকিত সকল সংবাদ এক ক্লিকেই আপনার হাতে। বাংলাদেশ সহ বিশ্বের সকল ধরনের প্রয়োজনীয় ও গুরুত্বপূর্ণ স্বাস্থ্য সংবাদগুলো আপনাদের প্রয়োজনে এখন লাইফ সাইকেলের  হাতের মুঠোয়।
                     <div class="text-center">
-                        <a href="<?php echo e(url('/blog')); ?>"><button class="btn_read_more2">আরো জানতে</button></a>
+                        <a href="<?php echo e(url('/news')); ?>"><button class="btn_read_more2">আরো জানতে</button></a>
                     </div>
                 </div>
 
@@ -376,8 +279,7 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-                <?php $i=0; ?>
-                    <?php $__currentLoopData = $data['upcoming_event']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php for($i=0; $i<3; $i++) {?>
                     <div class="item <?php if($i==0) echo 'active'; ?>">                       
                         
                         <div class="col-md-6" style="margin-bottom: 20px">
@@ -411,11 +313,7 @@
                           
                         
                     </div> 
-                    <?php $i++; ?>                                             
-                        
-                          
-                         
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php } ?>   
                 </div>
 
                 <!-- Left and right controls -->
@@ -451,13 +349,20 @@
                             <?php $__currentLoopData = $data['testimonial']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="item <?php if($i==0)echo 'active';?>">
                                 <div class="col-md-4" style="">
-                                    <div class="what_people_say" style="height: 300px"> 
+                                    <div class="what_people_say" style="height: 350px;padding: 25px"> 
                                         <span style="padding-left: 10px;">
                                             <div class="text-left">
+                                            <div class="row" style="margin-top: -40px">
                                                 <h4><?php echo e($row->name); ?></h4><small><?php echo e($row->designation); ?></small>
                                                 <b><?php echo e($row->institution); ?></b>
+                                                <img class="img img-responsive img-circle pull-right " src="<?php echo e(url('/')); ?>/public/images/testimonial/<?php echo e($row->photo); ?>" alt="testimonial" style="width:130px;height:110px;margin-top: -50px">
+                                            </div>
+                                                
                                                 <hr>
-                                                <p><?php echo e($row->message); ?></p> 
+                                                <div class="row">
+                                                    <p><?php echo e($row->message); ?></p>
+                                                </div>
+                                                 
                                             </div>
                                         </span>
                                     </div>

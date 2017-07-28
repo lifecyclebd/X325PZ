@@ -218,10 +218,11 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="<?php echo e(url('/news')); ?>">News</a></li>
                                         <li><a href="<?php echo e(url('/blog')); ?>">Blog</a></li>
+                                        <li><a href="<?php echo e(url('/blood-info')); ?>">Blood Info</a></li>
                                         <!--
                                         <li><a href="<?php echo e(url('/search-blood-donor')); ?>">Search Donor</a></li>
                                         <li><a href="<?php echo e(url('/blood-news')); ?>">Blood News</a></li>
-                                        <li><a href="<?php echo e(url('/blood-info')); ?>">Blood Info</a></li>
+                                        
                                         -->
                                         <li><a href="<?php echo e(url('/events')); ?>">Events</a></li>
                                     </ul>

@@ -48,6 +48,7 @@
                                  <option value="news">News </option>
                                 <option value="upcoming_events">Upcoming Events</option>
                                 <option value="recent_events">Recent Events</option>
+                                <option value="more_blood">More About Blood</option>
                                 <option value="post">Post </option>
                                 <option value="page">Page </option>
                             </select>
