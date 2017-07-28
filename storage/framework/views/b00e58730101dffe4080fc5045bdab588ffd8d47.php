@@ -1,6 +1,5 @@
-@extends('layouts/front')
  
-@section('content')
+<?php $__env->startSection('content'); ?>
  <style type="text/css">
      #header{
             background: rgb(91, 2, 1);
@@ -90,4 +89,5 @@
 <div style="min-height: 450px">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.6061408838555!2d90.39588331456119!3d23.72575508460154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8e6474187cf%3A0xb3d3783755659522!2sDhaka+Medical+College+Hospital!5e0!3m2!1sen!2sbd!4v1501241907662" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
-@endsection  
+<?php $__env->stopSection(); ?>  
+<?php echo $__env->make('layouts/front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

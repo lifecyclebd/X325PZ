@@ -1,10 +1,8 @@
-@extends('layouts/front')
+<?php $__env->startSection('title', 'About Us'); ?>
+<?php $__env->startSection('pageTitle', 'About Us'); ?>
+<?php $__env->startSection('parentName', 'Home'); ?>
 
-@section('title', 'About Us')
-@section('pageTitle', 'About Us')
-@section('parentName', 'Home')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="container">
 
         <!-- Portfolio Item Heading -->
@@ -21,7 +19,7 @@
         <div class="row">
  
             <div class="col-md-4">
-                <img class="img-responsive" src="{{asset('/')}}/public/frontend/images/donor_register.jpg" alt="">
+                <img class="img-responsive" src="<?php echo e(asset('/')); ?>/public/frontend/images/donor_register.jpg" alt="">
             </div>
 
             <div class="col-md-8">
@@ -103,5 +101,7 @@ Our blood stocks are updated online every weekday, so you can always see which b
     </div>
 
 
-@endsection
+<?php $__env->stopSection(); ?>
 
+
+<?php echo $__env->make('layouts/front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
