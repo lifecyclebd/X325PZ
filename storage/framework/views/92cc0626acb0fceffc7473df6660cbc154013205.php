@@ -649,6 +649,9 @@
             <!-- /.tab-content -->
           </div> 
           <h3 class="life_title">Meassge</h3>
+          <audio autoplay>
+            <source src="<?php echo e(url('/')); ?>/public/sound/on.mp3" type="audio/ogg">  
+          </audio>
           <h4>From: <?php if($data['singlemeaasge']->receiver_type=="admin"){echo 'Life Cycle'; } ?></h4>
           <h4>Message Published: <?php echo e($data['singlemeaasge']->created_at); ?></h4>
           <hr>
