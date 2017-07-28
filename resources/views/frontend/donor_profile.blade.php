@@ -104,22 +104,37 @@
         <div class="col-md-9">
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-              <li class="active"><a href="#activities" data-toggle="tab">Activity</a></li>
+              <li class="<?php if(!isset($_GET['inbox'])){ echo 'active';} ?>"><a href="#activities" data-toggle="tab">Activity</a></li>
               <li><a href="#newsfeed" data-toggle="tab">News Feed</a></li>
               <li><a href="#settings" data-toggle="tab">Settings</a></li> 
               <li><a href="#changepassword" data-toggle="tab">Change Password</a></li> 
-              <li><a href="#inbox" data-toggle="tab">Inbox  <span class="badge badge-danger">5</span></a></li>
+              <li><a class="<?php if(isset($_GET['inbox'])){ echo 'active';} ?>" href="#inbox" data-toggle="tab">Inbox  <span class="badge badge-danger">5</span></a></li>
               <li><a href="#blood_request" data-toggle="tab">Blood Request  <span class="badge badge-danger">15</span></a></li> 
             </ul>
             <div class="tab-content">
-                <div class="tab-pane active" id="activities">
+                <div class="tab-pane  <?php if(!isset($_GET['inbox'])){ echo 'active';} ?> " id="activities">
                 <h3 class="life_title">Personal Activities</h3>
-                    <table class="table table-bordered">
-                      <tr><td>SL</td><td>Purpose</td><td>Blood Group</td><td>Place</td><td>Status</td></tr>
-                      <tr><td>1</td><td>Donate Blood A+ in the Mirpur Hospital</td><td>A+</td><td><i class="fa fa-map-marker margin-r-5"></i> Malibag, Dhaka</td><td style="color:green">Done !</td></tr>
-                      <tr><td>2</td><td>23 April 2017</td><td>AB+</td><td><i class="fa fa-map-marker margin-r-5"></i> DMC, Dhaka-1212</td><td>Approved</td></tr>
-                      <tr><td>3</td><td>1 June 2017</td><td>AB-</td><td><i class="fa fa-map-marker margin-r-5"></i> Ramna, Dhaka, Bangladesh</td><td style="color: orange">Pending</td></tr>
-                  </table>
+                  <table class="table table-bordered">
+                      <tr><td>SL</td><td>Purpose</td><td>Short Message</td><td>Published</td> <td>Status</td></tr>
+                      @php $i=1; @endphp
+                    @foreach($data['activities'] as $row)
+                      <tr>
+                      <td>{{$i}}</td>
+                      <td>{{$row->purpose}}</td>
+                      <td>{{$row->short_message}}</td>
+                      <td>
+                      <?php $newDate = date("d-m-Y H:m:s", strtotime($row->created_at)); ?>
+                      {{$newDate}}</td>
+                      <td>
+                      <a href=""><i class="fa fa-trash" style="font-size: 20px;"></i></a>
+
+                      <a href=""><i class="fa fa-clock-o" style="font-size: 20px;"></i></a>
+
+                      </td>
+                      </tr>
+                      @php $i++; @endphp
+                      @endforeach
+                      </table>
               </div>
 
             
@@ -593,7 +608,7 @@
 
 
 
-              <div class="tab-pane" id="inbox">
+              <div class="tab-pane <?php if(isset($_GET['inbox'])){ echo 'active';} ?>" id="inbox"  >
                 <h3 class="life_title">Mail Box</h3>
                     <table class="table table-bordered">
                       <tr><td>SL</td><td>Donate Date</td><td>Blood Group</td><td>Place</td><td>Status</td></tr>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Division;
 use App\District;
 use App\Upazila;
+use App\Activity;
 use App\BloodRequest;
 use App\Message;
 use App\Libraries\Common;
@@ -282,6 +283,13 @@ public function signup(Request $request) {
          }
         $data['login_id'] = $request->session()->get('id');
         $data['messages'] = Message::where([['sender_id', $data['login_id']], ['sender_type', 'donor']])->get(); 
+        $data['last5message'] = Message::where([['sender_id', $data['login_id']], ['sender_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
+        $data['last5messageCount']=$data['last5message']->count();
+
+
+        $data['activities'] = Activity::where([['created_id', $data['login_id']], ['created_type', 'donor']])->get(); 
+        $data['last5activities']= Activity::where([['created_id', $data['login_id']], ['created_type', 'donor']])->orderByDesc('created_at')->take(5)->get(); 
+        $data['last5activitiesCount']=$data['last5activities']->count();
 
         $data['division'] = Division::all();
         $donor_email= $request->session()->get('email');
@@ -289,6 +297,55 @@ public function signup(Request $request) {
         return view('frontend.donor_profile')->with('data', $data);
     }
 
+
+
+   public function singleMessageShow(Request $request,$msg_id){
+        $value = $request->session()->get('email');
+        if(empty($value)){
+           return redirect('/donor-login');
+         }
+        $data['login_id'] = $request->session()->get('id');
+        $data['messages'] = Message::where([['sender_id', $data['login_id']], ['sender_type', 'donor']])->get(); 
+        $data['singlemeaasge']=Message::where([['id',$msg_id ],['sender_id', $data['login_id']], ['sender_type', 'donor']])->first();
+
+
+         
+        $data['last5message'] = Message::where([['sender_id', $data['login_id']], ['sender_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
+        $data['last5messageCount']=$data['last5message']->count();
+
+        
+        $data['activities'] = Activity::where([['created_id', $data['login_id']], ['created_type', 'donor']])->get(); 
+        $data['last5activities']= Activity::where([['created_id', $data['login_id']], ['created_type', 'donor']])->orderByDesc('created_at')->take(5)->get(); 
+        $data['division'] = Division::all();
+        $donor_email= $request->session()->get('email');
+        $data['donor'] = Donor::where('email',$donor_email)->first();
+        return view('frontend.singleMessageShow')->with('data', $data);
+    }
+
+   public function singleRequestShow(Request $request,$req_id){
+        $value = $request->session()->get('email');
+        if(empty($value)){
+           return redirect('/donor-login');
+         }
+        $data['login_id'] = $request->session()->get('id');
+        $data['login_email'] = $request->session()->get('email');
+        $data['messages'] = Message::where([['sender_id', $data['login_id']], ['sender_type', 'donor']])->get(); 
+
+        $data['singlerequest']=BloodRequest::where([['id',$req_id ],['sender_email', $data['login_email']], ['sender_type', 'donor']])->first();
+
+
+         
+        $data['last5message'] = Message::where([['sender_id', $data['login_id']], ['sender_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
+        $data['last5messageCount']=$data['last5message']->count();
+
+        
+        $data['activities'] = Activity::where([['created_id', $data['login_id']], ['created_type', 'donor']])->get(); 
+        $data['last5activities']= Activity::where([['created_id', $data['login_id']], ['created_type', 'donor']])->orderByDesc('created_at')->take(5)->get(); 
+        $data['division'] = Division::all();
+        $donor_email= $request->session()->get('email');
+        $data['donor'] = Donor::where('email',$donor_email)->first();
+        return view('frontend.singleRequestShow')->with('data', $data);
+    }
 
     public function donor_login_access(Request $request){
         $donor_username=$request->email;

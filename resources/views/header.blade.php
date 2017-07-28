@@ -65,14 +65,14 @@
 
                                         <p>
                                             {{ Auth::user()->name }} - Assistant commissioner
-                                            <small>২০১৬ </small>
+                                            <small>2016 </small>
                                         </p>
                                     </li>
 
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-left">
-                                            <a href="#" class="btn btn-primary btn-flat">প্রফাইল </a>
+                                            <a href="#" class="btn btn-primary btn-flat">Profile </a>
                                         </div>
                                         <div class="pull-right">
 

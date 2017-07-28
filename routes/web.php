@@ -6,6 +6,8 @@ Route::get('/admin/testimonial/add', 'AdminController@create_testimonial');
 Route::any('/admin/testimonial/store', 'AdminController@store_testimonial');
 
 Route::get('/donor-profile', 'DonorController@donor_profile');
+Route::get('donor-profile/message-show/{id}', 'DonorController@singleMessageShow');
+
 
 Route::post('/donor/signup', 'DonorController@signup');
 Route::post('/donor/search', 'DonorController@search');
