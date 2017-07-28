@@ -75,6 +75,7 @@
                         <div class="col-md-6">
                             <div class="top-right">
                               <?php 
+                              $data=after_login();
                                 $login_user= get_session();
                                 if(!empty($login_user)){
                                 $login_profile=$login_user->pic_path;
