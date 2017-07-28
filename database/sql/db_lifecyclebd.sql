@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 28, 2017 at 12:44 AM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 7.0.9
+-- Generation Time: Jul 28, 2017 at 10:20 AM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.6.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -47,11 +47,11 @@ CREATE TABLE `activities` (
 --
 
 INSERT INTO `activities` (`id`, `created_id`, `created_type`, `receiver_id`, `receiver_type`, `purpose`, `short_message`, `is_read`, `is_reply`, `parent_id`, `created_at`, `created_by`, `updated_at`) VALUES
-(1, 5, 'donor', 303, 'admin', 'dont know', 'Need AB+Blood 6 for Mahedi', 1, 0, 6, '2017-07-14 20:37:31', 'Asru', '2017-07-14 20:37:31'),
+(1, 4, 'donor', 303, 'admin', 'Blood Donation', 'Need AB+Blood 6 for Mahedi', 1, 0, 6, '2017-07-14 20:37:31', 'Asru', '2017-07-14 20:37:31'),
 (2, 5, 'donor', 303, 'admin', 'dont know', 'Need A+Blood 3 for Mohin', 1, 0, 6, '2017-07-14 21:04:36', 'Asru', '2017-07-14 21:04:36'),
 (3, 5, 'donor', 303, 'admin', 'dont know', 'Need A+Blood 2 for ', 1, 0, 6, '2017-07-19 19:22:15', 'Asru', '2017-07-19 19:22:15'),
 (4, 5, 'donor', 303, 'admin', 'dont know', 'Need O-Blood 100 for ', 1, 0, 6, '2017-07-19 19:25:50', 'Asru', '2017-07-19 19:25:50'),
-(5, 5, 'donor', 303, 'admin', 'dont know', 'Need B+Blood 6 in Rajshahi Medical', 1, 0, 6, '2017-07-19 19:32:42', 'Asru', '2017-07-19 19:32:42');
+(5, 4, 'donor', 303, 'admin', 'Request for A+ Blood', 'Need B+Blood 6 in Rajshahi Medical', 1, 0, 6, '2017-07-19 19:32:42', 'Asru', '2017-07-19 19:32:42');
 
 -- --------------------------------------------------------
 
@@ -442,7 +442,10 @@ CREATE TABLE `bloodgroups` (
 
 CREATE TABLE `blood_requests` (
   `id` int(11) NOT NULL,
-  `user_id` int(255) NOT NULL,
+  `sender_email` varchar(255) DEFAULT NULL,
+  `sender_type` varchar(255) DEFAULT NULL,
+  `receiver_email` varchar(255) DEFAULT NULL,
+  `receiver_type` varchar(255) DEFAULT NULL,
   `request_blood_group` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `patient_hospital` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `patient_phone` varchar(255) NOT NULL,
@@ -460,21 +463,21 @@ CREATE TABLE `blood_requests` (
 -- Dumping data for table `blood_requests`
 --
 
-INSERT INTO `blood_requests` (`id`, `user_id`, `request_blood_group`, `patient_hospital`, `patient_phone`, `patient_place`, `number_blood_bag`, `disease`, `relation`, `opration_time`, `updated_at`, `created_at`, `created_by`) VALUES
-(1, 0, '56778', 'jaman', '0', 'jhinaidaha', 3, 'no', 'bro', '2017-06-22 03:22:11', '2017-06-22 00:24:10', '2017-06-22 00:24:10', 2),
-(2, 2, 'A+', 'jhjhk', '8787778', 'vhjhg', 9, 'Yes', 'hgvghf', '2017-06-30 00:00:00', '2017-06-21 19:19:33', '2017-06-21 19:19:33', NULL),
-(3, 2, 'AB+', 'Rashed', '12345', 'Basabo', 4, 'No', 'Brother', '2017-07-20 00:00:00', '2017-07-08 15:21:53', '2017-07-08 15:21:53', NULL),
-(4, 6, 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:30:55', '2017-07-14 20:30:55', NULL),
-(5, 6, 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:32:35', '2017-07-14 20:32:35', NULL),
-(6, 6, 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:32:35', '2017-07-14 20:32:35', NULL),
-(7, 6, 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:33:32', '2017-07-14 20:33:32', NULL),
-(8, 6, 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:36:30', '2017-07-14 20:36:30', NULL),
-(9, 6, 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:37:11', '2017-07-14 20:37:11', NULL),
-(10, 6, 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:37:30', '2017-07-14 20:37:30', NULL),
-(11, 6, 'A+', 'Mohin', '0158965848', 'Moynamoti', 3, 'unknown', 'brother', '2017-07-21 00:00:00', '2017-07-14 21:04:36', '2017-07-14 21:04:36', NULL),
-(12, 6, 'A+', 'Dhaka Medical', '019100077628', 'Dhaka', 2, 'Fever', 'Brother', '2017-07-05 00:00:00', '2017-07-19 19:22:15', '2017-07-19 19:22:15', NULL),
-(13, 6, 'O-', 'Dhaka', '011111', 'DHaka', 100, 'No', 'ok', '2017-07-12 00:00:00', '2017-07-19 19:25:50', '2017-07-19 19:25:50', NULL),
-(14, 6, 'B+', 'Rajshahi Medical', '01865987458', 'Rajshahi', 6, 'Thalasamia', 'Friend', '2017-07-28 00:00:00', '2017-07-19 19:32:41', '2017-07-19 19:32:41', NULL);
+INSERT INTO `blood_requests` (`id`, `sender_email`, `sender_type`, `receiver_email`, `receiver_type`, `request_blood_group`, `patient_hospital`, `patient_phone`, `patient_place`, `number_blood_bag`, `disease`, `relation`, `opration_time`, `updated_at`, `created_at`, `created_by`) VALUES
+(1, '0', 'donor', '0', 'admin', '56778', 'jaman', '0', 'jhinaidaha', 3, 'no', 'bro', '2017-06-22 03:22:11', '2017-06-22 00:24:10', '2017-06-22 00:24:10', 2),
+(2, '0', 'donor', '0', 'admin', 'A+', 'jhjhk', '8787778', 'vhjhg', 9, 'Yes', 'hgvghf', '2017-06-30 00:00:00', '2017-06-21 19:19:33', '2017-06-21 19:19:33', NULL),
+(3, 'jmrashed@gmail.com', 'donor', 'admin@lifecyle', 'admin', 'AB+', 'Rashed', '12345', 'Basabo', 4, 'No', 'Brother', '2017-07-20 00:00:00', '2017-07-08 15:21:53', '2017-07-08 15:21:53', NULL),
+(4, '0', 'donor', '0', 'admin', 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:30:55', '2017-07-14 20:30:55', NULL),
+(5, '0', 'donor', '0', 'admin', 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:32:35', '2017-07-14 20:32:35', NULL),
+(6, '0', 'donor', '0', 'admin', 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:32:35', '2017-07-14 20:32:35', NULL),
+(7, '0', 'donor', '0', 'admin', 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:33:32', '2017-07-14 20:33:32', NULL),
+(8, '0', 'donor', '0', 'admin', 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:36:30', '2017-07-14 20:36:30', NULL),
+(9, '0', 'donor', '0', 'admin', 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:37:11', '2017-07-14 20:37:11', NULL),
+(10, '0', 'donor', '0', 'admin', 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:37:30', '2017-07-14 20:37:30', NULL),
+(11, '0', 'donor', '0', 'admin', 'A+', 'Mohin', '0158965848', 'Moynamoti', 3, 'unknown', 'brother', '2017-07-21 00:00:00', '2017-07-14 21:04:36', '2017-07-14 21:04:36', NULL),
+(12, '0', 'donor', '0', 'admin', 'A+', 'Dhaka Medical', '019100077628', 'Dhaka', 2, 'Fever', 'Brother', '2017-07-05 00:00:00', '2017-07-19 19:22:15', '2017-07-19 19:22:15', NULL),
+(13, '0', 'donor', '0', 'admin', 'O-', 'Dhaka', '011111', 'DHaka', 100, 'No', 'ok', '2017-07-12 00:00:00', '2017-07-19 19:25:50', '2017-07-19 19:25:50', NULL),
+(14, '0', 'donor', '0', 'admin', 'B+', 'Rajshahi Medical', '01865987458', 'Rajshahi', 6, 'Thalasamia', 'Friend', '2017-07-28 00:00:00', '2017-07-19 19:32:41', '2017-07-19 19:32:41', NULL);
 
 -- --------------------------------------------------------
 
@@ -948,7 +951,7 @@ CREATE TABLE `donors` (
 INSERT INTO `donors` (`id`, `phone`, `password`, `pic_path`, `fname`, `lname`, `blood_group`, `birth_date`, `age`, `last_donation`, `new_donor`, `email`, `division`, `district`, `thana`, `address`, `latitude`, `longitude`, `code`, `verification`, `lastLat`, `lastLng`, `fcm_email`, `fcm_uid`, `fcm_token`, `pro_visible`, `called_date`, `called_today`, `donations_number`, `user_type`, `gender`, `already_donated`, `autopro_visible`, `singup_steps`, `post_code`, `rank`, `web_url`, `fb_url`, `profile_photo`, `religion`, `is_physically_disble`, `nationality`, `nid`, `status`, `is_available`, `updated_at`, `created_at`, `updated_by`, `created_by`) VALUES
 (2, '01923589277', 'tatun', 'profileImages/anis.jpg', 'anis', 'mizi', 'A+', '1989-07-14', 28, '2017-07-14', 1, 'tatun@gmail.com', 'Dhaka', 'Dhaka', 'Adabor', 'Mohanagar Middle Rd 2, Dhaka 1212, Bangladesh', 23.7663383, 90.4165958, '36438', 1, 23.7663383, 90.4165958, 'test21@gmail.com', 'avIoHO42GrdjcHHFuJB11cETsQE3', 'fEZReXUJXLc:APA91bFzM-sI_CDDtdRI8OkvXli9GBvSccpMAvcBJQr-JFBLMorR0BP2YFPNh6PX9WxqRZm86cpvBUapWUbyf5P8KdiiI8Mr_D8Z34uPDb_nOKYRgPbPU2XWoJkVcz-q_ZYTNv85Reg8', 1, 'na', 0, 0, 'donor', 'Male', 0, 'na', 3, 'na', 1, 'na', 'na', 'a.jpg', 'na', 'na', 'na', 'na', 'na', 1, '2017-07-27 21:25:41', '2014-08-11 23:14:54', 1, 1),
 (3, '01923589278', 'anisur', 'profileImages/salam.jpg', 'salam', 'mizi', 'A-', '1991-07-14', 26, '2017-07-14', 1, 'salam@gmail.com', 'Dhaka', 'Dhaka', 'Adabor', 'Mohanagar Middle Rd 2, Dhaka 1212, Bangladesh', 23.782062399999997, 90.4160527, '95035', 1, 23.782062399999997, 90.4160527, 'test20@gmail.com', 'UvoewKHQkXOZ1Afzzv1Q182ybCI2', 'fa1DqrAZhvY:APA91bGKG3d-AA1NeE7bZjSAkSTWSZQbxLd-Y4yHd5S6TUr0KlXUixld45knPAuwXErucpzv68vfcXh9Y1rG-yTCUn1NGRdhiL34FBOps0emDu6nhzRvLc2j5eGqTG0da2bOnx2Paq-g', 1, 'na', 0, 0, 'admin', 'Male', 0, 'na', 3, 'na', 1, 'na', 'na', 'c.jpg', 'na', 'na', 'na', 'na', 'na', 1, '2017-07-21 17:18:02', '2014-08-11 23:14:54', 1, 1),
-(4, '0159856', 'sakib984', 'http://localhost:81/Lifecycle/public/images/profile/user.png', 'Nazmus', NULL, 'B+', '2003-02-10', 0, '2017-06-19', NULL, 'sakib@gmail.com', '4', '60', '306', 'Chourhash, Kushtia, Khulna Division, Bangladesh', 0, 0, NULL, 0, 0, 0, 'na', 'na', 'na', 1, 'na', 0, 0, NULL, 'male', NULL, NULL, NULL, '7000', 0, 'na', 'na', NULL, 'na', '0', 'Bangladeshi', 'na', '1', NULL, '2017-07-27 16:20:47', '2017-07-27 16:20:47', NULL, NULL);
+(4, '0159856', '123', 'http://localhost/Lifecycle/public/images/profile/user.png', 'Jaman', 'Rashed', 'B+', '2003-02-10', 0, '2017-06-19', NULL, 'jmrashed@gmail.com', '4', '60', '306', 'Chourhash, Kushtia, Khulna Division, Bangladesh', 0, 0, NULL, 0, 0, 0, 'na', 'na', 'na', 1, 'na', 0, 0, NULL, 'male', NULL, NULL, NULL, '7000', 0, 'na', 'na', NULL, 'na', '0', 'Bangladeshi', 'na', '1', NULL, '2017-07-28 03:47:36', '2017-07-27 16:20:47', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1355,6 +1358,8 @@ CREATE TABLE `messages` (
   `receiver_id` int(11) NOT NULL,
   `receiver_type` varchar(255) NOT NULL,
   `message` text NOT NULL,
+  `is_read` int(11) DEFAULT '0',
+  `donor_response` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_by` varchar(255) NOT NULL,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -1365,17 +1370,17 @@ CREATE TABLE `messages` (
 -- Dumping data for table `messages`
 --
 
-INSERT INTO `messages` (`id`, `sender_id`, `sender_type`, `receiver_id`, `receiver_type`, `message`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
-(1, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', '2017-07-14 20:32:35', 'Sakib', '2017-07-14 20:32:35', 'Rashed'),
-(2, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', '2017-07-14 20:32:35', 'Sakib', '2017-07-14 20:32:35', 'Rashed'),
-(3, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', '2017-07-14 20:33:32', 'Sakib', '2017-07-14 20:33:32', 'Rashed'),
-(4, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', '2017-07-14 20:36:30', 'Sakib', '2017-07-14 20:36:30', 'Rashed'),
-(5, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', '2017-07-14 20:37:11', 'Sakib', '2017-07-14 20:37:11', 'Rashed'),
-(6, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', '2017-07-14 20:37:30', 'Sakib', '2017-07-14 20:37:30', 'Rashed'),
-(7, 2, 'donor', 303, 'admin', 'Need A+Blood 3 for Mohin', '2017-07-14 21:04:36', 'Sakib', '2017-07-14 21:04:36', 'Rashed'),
-(8, 2, 'donor', 303, 'admin', 'Need A+Blood 2 for ', '2017-07-19 19:22:15', 'Sakib', '2017-07-19 19:22:15', 'Rashed'),
-(9, 2, 'donor', 303, 'admin', 'Need O-Blood 100 for ', '2017-07-19 19:25:50', 'Sakib', '2017-07-19 19:25:50', 'Rashed'),
-(10, 2, 'donor', 303, 'admin', 'Need B+Blood 6 for ', '2017-07-19 19:32:41', 'Sakib', '2017-07-19 19:32:41', 'Rashed');
+INSERT INTO `messages` (`id`, `sender_id`, `sender_type`, `receiver_id`, `receiver_type`, `message`, `is_read`, `donor_response`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
+(1, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', 0, 'disagree', '2017-07-14 20:32:35', 'Sakib', '2017-07-14 20:32:35', 'Rashed'),
+(2, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', 0, 'disagree', '2017-07-14 20:32:35', 'Sakib', '2017-07-14 20:32:35', 'Rashed'),
+(3, 4, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi. Please help Me, I need 5 bag A+ blood', 0, 'disagree', '2017-07-14 20:33:32', 'Sakib', '2017-07-14 20:33:32', 'Rashed'),
+(4, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', 0, 'disagree', '2017-07-14 20:36:30', 'Sakib', '2017-07-14 20:36:30', 'Rashed'),
+(5, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', 0, 'disagree', '2017-07-14 20:37:11', 'Sakib', '2017-07-14 20:37:11', 'Rashed'),
+(6, 4, 'donor', 303, 'admin', 'Please help Me, I need 5 bag A+ blood', 0, 'disagree', '2017-07-14 20:37:30', 'Sakib', '2017-07-14 20:37:30', 'Rashed'),
+(7, 2, 'donor', 303, 'admin', 'Need A+Blood 3 for Mohin', 0, 'disagree', '2017-07-14 21:04:36', 'Sakib', '2017-07-14 21:04:36', 'Rashed'),
+(8, 2, 'donor', 303, 'admin', 'Need A+Blood 2 for ', 0, 'disagree', '2017-07-19 19:22:15', 'Sakib', '2017-07-19 19:22:15', 'Rashed'),
+(9, 4, 'donor', 303, 'admin', 'Need O-Blood 100 for ', 0, 'disagree', '2017-07-19 19:25:50', 'Sakib', '2017-07-19 19:25:50', 'Rashed'),
+(10, 2, 'donor', 303, 'admin', 'Need B+Blood 6 for ', 0, 'disagree', '2017-07-19 19:32:41', 'Sakib', '2017-07-19 19:32:41', 'Rashed');
 
 -- --------------------------------------------------------
 
@@ -2498,7 +2503,7 @@ ALTER TABLE `apps_countries`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `blog_categories`
 --
@@ -2528,7 +2533,7 @@ ALTER TABLE `cities`
 -- AUTO_INCREMENT for table `contents`
 --
 ALTER TABLE `contents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `countries`
 --
