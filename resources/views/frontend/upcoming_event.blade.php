@@ -15,9 +15,9 @@
         <span class="more_news_title">{{$data['upcoming_detail']->title}}</span>
         <hr  class="more_news">
         <div class="row border-bottom"> 
-            <img src="{{url('/')}}/public/images/content/upcoming_events/{{$data['upcoming_detail']->content_photo}}" class="img img-rounded img-thumbnail" style="width: 100%; height: 540px;">
+            <img src="{{$data['upcoming_detail']->pic_path}}" class="img img-rounded img-thumbnail" style="width: 100%; height: 540px;">
             <p class="text-justify" style="padding: 10px">
-                {{$data['upcoming_detail']->description}}
+                {!!$data['upcoming_detail']->description!!}
             </p>
         </div>
 
@@ -29,7 +29,7 @@
         @foreach($data['upcoming'] as $row)
         <div class="col-md-12 border-bottom">
             <div class="more_news_left">
-                <img src="{{url('/')}}/public/images/content/upcoming_events/{{$row->content_photo}}" class="img-thumbnail">
+                <img src="{{$row->pic_path}}" class="img-thumbnail">
             </div>
             <div class="more_news_right ">
                 <a href="{{url('/upcoming-event')}}/{{$row->id}}"><h4>{{$row->title}}</h4></a>

@@ -7,7 +7,7 @@
         <div class="row border-bottom"> 
             <img src="<?php echo e(url('/')); ?>/public/images/content/recent_events/<?php echo e($data['recent_detail']->content_photo); ?>" class="img img-rounded img-thumbnail" style="width: 100%; height: 540px;">
             <p class="text-justify" style="padding: 10px">
-                <?php echo e($data['recent_detail']->description); ?>
+                <?php echo $data['recent_detail']->description; ?>
 
             </p>
         </div>
@@ -24,8 +24,7 @@
             </div>
             <div class="more_news_right ">
                 <a href="<?php echo e(url('/recent-event')); ?>/<?php echo e($row->id); ?>"><h4><?php echo e($row->title); ?></h4></a>
-                <?php echo e($row->created_at); ?>
-
+                <p><?php echo e($row->created_at); ?></p>
             </div>
             <br>
         </div>

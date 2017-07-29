@@ -9,7 +9,7 @@
         <div class="row border-bottom"> 
             <img src="{{url('/')}}/public/images/content/recent_events/{{$data['recent_detail']->content_photo}}" class="img img-rounded img-thumbnail" style="width: 100%; height: 540px;">
             <p class="text-justify" style="padding: 10px">
-                {{$data['recent_detail']->description}}
+                {!!$data['recent_detail']->description!!}
             </p>
         </div>
 

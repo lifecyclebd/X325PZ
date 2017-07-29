@@ -8,11 +8,11 @@
         <hr  class="more_news">
         <div class="row border-bottom">
             <div class="col-md-6">
-                <img src="{{url('/')}}/public/images/content/recent_events/{{$data['last_recent_event']->content_photo}}" class="img img-rounded" style="width: 100%; height: auto">
+                <img src="{{$data['last_recent_event']->pic_path}}" class="img img-rounded" style="width: 100%; height: auto">
             </div>
             <div class="col-md-6">
                 <p class="text-justify">
-                    {{$data['last_recent_event']->description}}
+                    {!!$data['last_recent_event']->description!!}
                 </p>
             </div>
             <br>
@@ -21,13 +21,13 @@
         <div class="row">
             <span class="more_news_title">Recent Events</span>
             @foreach($data['recent_event'] as $row)
-            <div class="col-md-6 col-md-offset-1 news"> 
+            <div class="col-md-6 news"> 
                 <span class="related_links_news_title"><a class="" href="{{url('/recent-event')}}/{{$row->id}}">{{$row->title}}</a></span>
                 <div class="news_img col-md-6">
-                    <span><img src="{{url('/')}}/public/images/content/recent_events/{{$row->content_photo}}" class="img"> </span>
+                    <span><img src="{{$row->pic_path}}" class="img"> </span>
                 </div>
                 <div class="news_text col-md-6">
-                    {{ substr($row->description,0,100)}}
+                    {!! substr($row->description,0,100)!!}
                 </div>
                 <a href="{{url('/recent-event')}}/{{$row->id}}"><button class="pull-right btn-default" style="background: none;">More Details</button></a>
             </div>
@@ -42,7 +42,7 @@
         @foreach($data['upcoming_event'] as $row)
         <div class="col-md-12 border-bottom">
             <div class="more_news_left">
-                <img src="{{url('/')}}/public/images/content/upcoming_events/{{$row->content_photo}}" class="img-thumbnail">
+                <img src="{{$row->pic_path}}" class="img-thumbnail">
             </div>
             <div class="more_news_right ">
                 <a href="{{url('/upcoming-event')}}/{{$row->id}}" ><h4>{{$row->title}}</h4></a>
