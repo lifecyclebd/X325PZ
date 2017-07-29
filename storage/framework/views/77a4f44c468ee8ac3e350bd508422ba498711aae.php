@@ -37,15 +37,14 @@
                                 <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
                                     <td><?php echo e($row->id); ?></td>
-                                    <td><?php echo e($row->blog_category_id); ?></td>
+                                    <td><?php echo e($row->blog_category); ?></td>
                                     <td><?php echo e($row->title); ?></td>
                                     <td><?php echo e($row->description); ?></td>
-                                    <td><?php echo e($row->photo); ?></td>
+                                    <td><img src="<?php echo e($row->pic_path); ?>" style="width: 60px; height: auto;"></td>
                                     <td> 
                                         <a href="<?php echo e(url('/blog')); ?>/editblog/<?php echo e($row->id); ?>" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
                                         <a href="<?php echo e(url('/blog')); ?>/destroy/<?php echo e($row->id); ?>" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
-                                        <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
-                                        <a href="<?php echo e(url('/donor/')); ?>/<?php echo e($row->id); ?>" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
+                                        <a href="<?php echo e(url('/blog')); ?>/show/<?php echo e($row->id); ?>" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
                                         </a>
                                     </td>
                                 </tr>

@@ -33,6 +33,9 @@
                                     <th>Hospital</th>
                                     <th>Specialist</th>
                                     <th>Phone</th>
+                                    <th>Division</th>
+                                    <th>District</th>
+                                    <th>Upazila</th>
                                     <th>Location</th>
                                     <th>Chamber</th>
                                     <th>Operation</th>
@@ -48,11 +51,14 @@
                                     <td>{{$row->hospital}}</td>
                                     <td>{{$row->speacilist}}</td>
                                     <td>{{$row->phone}}</td>
+                                    <td>{{$row->division}}</td>
+                                    <td>{{$row->district}}</td>
+                                    <td>{{$row->upazila}}</td>
                                     <td>{{$row->preasent_address}}</td> 
                                     <td>{{$row->chamber_address}}</td> 
                                     <td> 
                                         <a href="{{url('admin/doctor')}}/edit/{{$row->id}}" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
-                                        <a href="{{url('admin/doctor')}}/delete{{$row->id}}" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
+                                        <a href="{{url('admin/doctor')}}/delete/{{$row->id}}" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
                                         <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
                                         <a href="{{url('/donor/')}}/{{ $row->id }}" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
                                         </a>

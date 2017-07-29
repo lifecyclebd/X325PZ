@@ -5,23 +5,28 @@
 <div class="all_hospitals">
     <div class="container">   
 
-        <form class="form-horizontal" method="post" action>
+        <form class="form-horizontal" method="post" action="<?php echo e(url('/search-hospital')); ?>">
+            <?php echo csrf_field(); ?>
+
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
-                    <select name="divisions" class="form-control find_search_button">
-                        <option value="Dhaka">Select Division</option>
-                        <option value="Khulna">Khulna</option>
-                        <option value="Khulna">Dhaka</option>
+                    <select name="division" class="form-control find_search_button divisions">
+                        <?php $__currentLoopData = $data['division']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($row->id); ?>"><?php echo e($row->division_name); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                 </span>
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
-                    <select name="divisions" class="form-control find_search_button">
-                        <option value="Dhaka">Select Upazila</option>
-                        <option value="Khulna">Khulna</option>
-                        <option value="Khulna">Dhaka</option>
+                    <select name="district" id="districts" class="form-control find_search_button districts">
+                        
                     </select>
                 </span>
-                <input type="text" class="col-xs-12 form-control find_search" placeholder="Hospital name" aria-describedby="basic-addon1">
+                <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
+                    <select name="upazila" id="upazillas" class="form-control find_search_button">
+                        
+                    </select>
+                </span>
+                
                 <span class="input-group-addon" id="basic-addon1"> 
                     <button class="col-xs-12 btn btn-xs btn-search find_search_button">
                         <i class="fa fa-search"></i>
@@ -44,13 +49,17 @@
                 <table class="table table-striped table-bordered example1" id="example1">
                     <thead>
                         <tr style="text-align: center">
-                            <th>SL</th><th>Hospital Name</th><th>Chamber</th><th>Address</th>
+                            <th></th>
+                            <th>Hospital Name</th>
+                            <th>Address</th>
+                            <th>Phone</th>
+                            <th>Details</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php $__currentLoopData = $data['hospital_list']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td><?php echo e($row->id); ?></td>  
+                            <td><img class="img-responsive" src="<?php echo e(url('/')); ?>/public/images/hospitals/<?php echo e($row->photo); ?>" alt="" style="width: 200px;height: 120px"></td>  
                             <td>
                                 <span style="float: left; margin-right: 10px;">
 
@@ -58,14 +67,16 @@
                                 </span>
                                 <span style="font-weight: bold; float:left">
                                     <a href="#"> <?php echo e($row->hospital_name); ?></a>
-                                </span></td>
+                                </span>
+                            </td>
                                 
-                                <td>
+                            <td>
                                 <i class="fa fa-map-marker"></i>
                                 <?php echo e($row->location); ?>
 
                             </td>
                             <td><?php echo e($row->phone); ?></td>
+                            <td><?php echo e($row->details); ?></td>
                         </tr>  
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 

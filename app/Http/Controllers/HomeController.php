@@ -9,12 +9,19 @@ use App\Gallery;
 use App\Gallery_detail;
 use DB;
 use App\Division;
+use App\More_about_blood;
 use App\District;
 use App\Upazila;
 use App\Message;
 use App\Activity;
+use App\Hospital;
+use App\Doctor;
+use App\Doctor_speciality;
 use App\BloodRequest;
+use App\Blog;
+use App\System_setting;
 use App\Libraries\Common;
+use App\Testimonial;
 
 class HomeController extends Controller {
 
@@ -32,7 +39,8 @@ class HomeController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() { 
+    public function index() {
+        $common = new Common;
         $data['gallery_category'] = Gallery::all();
         $data['gallery'] = Gallery_detail::all();
 
@@ -43,17 +51,79 @@ class HomeController extends Controller {
                 ->get();
 
         $data['slider'] = DB::table('galleries')
-                ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id') 
+                ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id')
                 ->where('galleries.page_name', 'slider')
                 ->get();
 
+
+        $data['blood_fighter'] = DB::table('galleries')
+                ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id')
+                ->where('galleries.page_name', 'Home_Page')
+                ->take(8)
+                ->orderBy('gallery_details.id', 'desc')
+                ->get();
+
+        $data['recent_donor'] = Donor:: where('is_available', 1)->orderByDesc('last_donation')->get();
+        $data['upcoming_event'] = Content:: where('content_type', 'upcoming_events')->get();
+        $data['all_blood_info']=Content::where('content_type','more_blood')->orderByDesc('created_at')->take(4)->get();
+        $data['testimonial'] = Testimonial::all();
         return view('frontend.home')->with('data', $data);
+    }
+    public function seeMoreBloodInfo(){
+        $data['all_blood_info']=Content::where('content_type','more_blood')->orderByDesc('created_at')->get();
+        return view('frontend.seeMoreBloodInfo')->with('data', $data);
+    }
+
+
+
+//----------send message from contact form ------
+    public function send_message(Request $request){
+
+        $msg = new Message; 
+        $msg->sender_email = $request->email;
+        $msg->sender_type = 'user';
+
+        $msg->receiver_type =  'admin';
+        $msg->receiver_email =  'admin@lifecycle.org'; 
+
+        $msg->message ='Name: '. $request->name.
+        '<br>Email: '. $request->email.
+        '<br>Phone: '. $request->phone.
+        'Date Time: '.date('d-M-Y H:m').
+        '<br>Message:' . $request->message;
+        if(!empty($request->session()->get('id'))){$id=$request->session()->get('id');}
+        else{ $id=1000; }
+
+        $msg->created_by = $id; 
+        $msg->save();
+        return redirect('/contact?message='.$request->name.', Your message send successfully !');
+    }
+
+
+
+    public function SearchAny(Request $request) {
+        $searchdata = $request->searchany;
+
+        $data['donor'] = More_about_blood:: where('slug', 'donor_24')->first();
+    }
+
+    public function logout() {
+        unset($_SESSION['donor_login']);
+        //  session_destroy();
+        return redirect('/donor-login');
     }
 
     public function blood_news() {
+        //$data['blood_news'] = Blog::all();
+        $data['blood_news'] = Blog:: where('blog_category', 2)->orderByDesc('id')->get();
+        return view('frontend.blood_news')->with('data', $data);
+    }
+
+    public function read_more($id) {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('frontend.blood_news');
+        $data['read_more_detail'] = More_about_blood::find($id);
+        return view('frontend.read_more')->with('data', $data);
     }
 
     public function blood_info() {
@@ -61,45 +131,64 @@ class HomeController extends Controller {
         //return view('search.im', compact('divisions'));
         return view('frontend.blood_info');
     }
+
     public function blood_request() {
+        $request=request();
+         $value = $request->session()->get('email');
+
+        if(empty($value)){
+
+            $request->session()->put('redirect_url','/blood-request');
+           return redirect('/donor-login');
+         }
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
         return view('frontend.blood_request');
     }
-    public function blood_request_store(Request $request){
-        $data =new BloodRequest;
-        $msg=new Message;
-        $actv=new Activity;
-        $data->user_id=6;
-        $data->request_blood_group=$request->request_blood_group;
-        $data->patient_hospital=$request->patient_hospital;
-        $data->patient_phone=$request->patient_phone;
-        $data->patient_place=$request->patient_place;
-        $data->number_blood_bag=$request->number_blood_bag;
-        $data->disease=$request->disease;
-        $data->relation=$request->relation;
-        $data->opration_time=$request->opration_time;
+
+    public function blood_request_store(Request $request) {
+        $data = new BloodRequest;
+        $msg = new Message;
+        $actv = new Activity;
+        //-------------------For BloodRequest Table--------------------------
+        $data->request_blood_group = $request->request_blood_group;
+        $data->patient_hospital = $request->patient_hospital;
+        $data->patient_phone = $request->patient_phone;
+        $data->patient_place = $request->patient_place;
+        $data->number_blood_bag = $request->number_blood_bag;
+        $data->disease = $request->disease;
+        $data->relation = $request->relation;
+        $data->opration_time = $request->opration_time;
+        $data->sender_email =  $request->session()->get('email');
+        $data->sender_type =  'donor';
+        $data->receiver_type =  'admin';
+        $data->receiver_email =  'admin@lifecycle.org';
+        $data->created_by = $request->session()->get('id');
         $data->save();
-        //-----------------------------------------------------//
-        $msg->sender_id=2;
-        $msg->sender_type='donor';
-        $msg->receiver_id=303;
-        $msg->receiver_type='admin';
-        $msg->message='Need '.$request->request_blood_group.'Blood '.$request->number_blood_bag.' for '.$request->patient_name;
-        $msg->created_by='Sakib';
-        $msg->updated_by='Rashed';
-        $msg->save();
-        //------------------------------------------------------//
-        $actv->created_id=5;
-        $actv->created_type='donor';
-        $actv->receiver_id=303;
-        $actv->receiver_type='admin';
-        $actv->purpose='dont know';
-        $actv->short_message='Need '.$request->request_blood_group.'Blood '.$request->number_blood_bag.' for '.$request->patient_name;;
-        $actv->is_read=1;
-        $actv->is_reply=0;
-        $actv->parent_id=6;
-        $actv->created_by='Asru';
+        //------------------------For Message---------------------------//
+        //$msg->sender_email =  $request->session()->get('email');
+        //$msg->sender_type =  'donor';
+        //$msg->receiver_type =  'admin';
+        //$msg->receiver_email =  'admin@lifecycle.org';
+        //$msg->sender_type = 'donor';
+        //$msg->receiver_id = 303;
+        //$msg->receiver_type = 'admin';
+        //$msg->message = 'Need ' . $request->request_blood_group . 'Blood ' . $request->number_blood_bag . ' in ' . $request->patient_hospital . 'at' . $request->opration_time;
+        //$msg->created_by = $request->session()->get('id');
+        //$msg->updated_by = 'Rashed';
+        //$msg->save();
+        //---------------------------For Activity Table---------------------------//
+        $actv->created_id = $request->session()->get('id');;
+        $actv->created_email = $request->session()->get('email');;
+        $actv->created_type = 'donor';
+        $actv->receiver_email = 'admin@lifecycle.org';
+        $actv->receiver_type = 'admin';
+        $actv->purpose = 'umknown';
+        $actv->short_message = 'Need ' . $request->request_blood_group . 'Blood ' . $request->number_blood_bag . ' in ' . $request->patient_hospital . 'at' . $request->opration_time;
+        $actv->is_read = 0;
+        $actv->is_reply = 0;
+        $actv->parent_id = 0;
+        $actv->created_by = $request->session()->get('email');
         $actv->save();
         return redirect('/blood-request?send_request_suceessfully=yes');
     }
@@ -108,16 +197,21 @@ class HomeController extends Controller {
         $data['activity'] = Activity::all();
         return view('admin.activity')->with('data', $data);
     }
+
     public function news_page() {
-        //$divisions = DB::table("divisions")->lists("name", "id");
-        //return view('search.im', compact('divisions'));
-        return view('frontend.news_page');
+        $data['last_news'] = Content:: where('content_type', 'news')->take(1)->orderByDesc('created_at')->first();
+        $data['news'] = Content:: where('content_type', 'news')->take(10)->skip(5)->orderByDesc('created_at')->get();
+        $data['recent_news'] = Content:: where('content_type', 'news')->take(4)->skip(1)->orderByDesc('created_at')->get();
+        return view('frontend.news_page')->with('data', $data);
     }
 
-    public function news_detail_page() {
+    public function news_detail_page($id) {
         //$divisions = DB::table("divisions")->lists("name", "id");
-        //return view('search.im', compact('divisions'));
-        return view('frontend.news_detail_page');
+        //return view('search.im', compact('divisions'))
+        $data['news'] = Content:: where('content_type', 'news')->take(10)->get();
+        $data['news_detail'] = Content::find($id);
+        //dd($data['news_detail']);
+        return view('frontend.news_detail_page')->with('data', $data);
     }
 
     public function write_to_doctor() {
@@ -135,14 +229,18 @@ class HomeController extends Controller {
     public function view_hospital() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('frontend.view_hospital');
+        $data['division'] = Division::all();
+        return view('frontend.view_hospital')->with('data', $data);
     }
 
-    public function search_hospital() {
+    public function search_hospital(Request $request) {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        
-        $data['hospital_list'] = \App\Hospital::all();
+        $div = $request->division;
+        $dis = $request->district;
+        $upz = $request->upazila;
+        $data['division'] = Division::all();
+        $data['hospital_list'] = Hospital:: where([['division', $div], ['district', $dis], ['upazila', $upz]])->get();
         return view('frontend.search_hospital')->with('data', $data);
     }
 
@@ -155,19 +253,42 @@ class HomeController extends Controller {
     public function blog_page() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('frontend.view_blog');
+        $data['blood_news'] = Blog:: where('blog_category', 2)->orderByDesc('id')->get();
+        return view('frontend.view_blog')->with('data', $data);
     }
 
-    public function recent_event() {
+    public function blog_detail($id) {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('frontend.recent_event');
+        $data['blog_detail'] = Blog::find($id);
+        return view('frontend.view_blog_detail')->with('data', $data);
     }
 
-    public function upcoming_event() {
+    public function events() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('frontend.upcoming_event');
+        //$data['division'] = Division::all();
+        $data['upcoming_event'] = Content:: where('content_type', 'upcoming_events')->take(10)->orderByDesc('created_at')->get();
+        $data['recent_event'] = Content:: where('content_type', 'recent_events')->take(4)->skip(1)->orderByDesc('created_at')->get();
+        $data['last_recent_event'] = Content:: where('content_type', 'recent_events')->take(1)->orderByDesc('created_at')->first();
+        return view('frontend.events')->with('data', $data);
+    }
+
+    public function recent_event($id) {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        $data['recent'] = Content:: where('content_type', 'recent_events')->take(10)->get();
+        $data['recent_detail'] = Content::find($id);
+        return view('frontend.recent_event')->with('data', $data);
+    }
+
+    public function upcoming_event($id) {
+        //$divisions = DB::table("divisions")->lists("name", "id");
+        //return view('search.im', compact('divisions'));
+        $data['upcoming'] = Content:: where('content_type', 'upcoming_events')->take(10)->get();
+        $data['upcoming_detail'] = Content::find($id);
+        //  dd($data['upcoming_detail']);
+        return view('frontend.upcoming_event')->with('data', $data);
     }
 
     public function volunteer() {
@@ -227,7 +348,7 @@ class HomeController extends Controller {
         $data['donor'] = Donor::all();
 
         return view('frontend.SearchBloodDonor')->with('data', $data);
-    }  
+    }
 
     public function SliderShow() {
         $data['slider'] = Division::all();
@@ -275,11 +396,13 @@ class HomeController extends Controller {
     }
 
     public function show_hospital_list() {
-
+        
     }
 
     public function ajax() {
         return view('search.im');
     }
+
+    
 
 }

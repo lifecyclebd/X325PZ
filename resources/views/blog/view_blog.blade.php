@@ -40,15 +40,14 @@
                                 @foreach($data as $row)
                                 <tr>
                                     <td>{{$row->id}}</td>
-                                    <td>{{$row->blog_category_id}}</td>
+                                    <td>{{$row->blog_category}}</td>
                                     <td>{{$row->title}}</td>
                                     <td>{{$row->description}}</td>
-                                    <td>{{$row->photo}}</td>
+                                    <td><img src="{{$row->pic_path}}" style="width: 60px; height: auto;"></td>
                                     <td> 
                                         <a href="{{url('/blog')}}/editblog/{{$row->id}}" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
                                         <a href="{{url('/blog')}}/destroy/{{$row->id}}" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
-                                        <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
-                                        <a href="{{url('/donor/')}}/{{ $row->id }}" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
+                                        <a href="{{url('/blog')}}/show/{{ $row->id }}" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
                                         </a>
                                     </td>
                                 </tr>

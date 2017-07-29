@@ -7,6 +7,8 @@ use App\Doctor;
 use App\Donor;
 use App\Hospital;
 use App\Message;
+use App\More_about_blood;
+use App\Find_solution;
 use App\Activity;
 use App\BloodRequest;
 use App\Testimonial;
@@ -135,5 +137,50 @@ class AdminController extends Controller {
         }
 
         return redirect('/admin/testimonial');
+    }
+    public function view_more_blood(){
+        $data['more_blood'] = More_about_blood::all();
+        return view('more_blood.view')->with('data', $data);
+    }
+    public function edit_more_blood($id){
+        $data['edit_more_blood'] = More_about_blood::find($id);
+        return view('more_blood.edit')->with('data', $data);
+    }
+    public function update_more_blood(Request $request){
+        $common=new Common();
+        $id=$request->id;
+        $data = More_about_blood::find($id); 
+        $data->title=$request->title;
+        $data->short_description=$request->short_description;
+        $data->long_description=$request->long_description;
+        $data->save();
+        
+        $profile_photo = $common->uploadImage('photo', 'images');
+        $data->photo = $profile_photo;
+        $data->save();
+        return redirect('/admin/more-blood/view');
+    }
+
+    
+    public function view_write_to_doctor(){
+        $data['problems'] = Find_solution::all();
+        return view('problems.view')->with('data', $data);
+    }
+    
+    public function doctor_reply_store(Request $request){
+        
+        $data =new Message(); 
+        $email=$request->email;
+        $data->receiver_email=$email;
+        $data->receiver_type='donor';
+        $data->sender_type='doctor';
+        $data->sender_id=1;
+        $data->is_read=0;
+        $data->created_by='Doctor';
+        $data->message=$request->message;
+        $data->save();
+        
+        
+        return redirect('/admin/write/to/doctor');
     }
 }

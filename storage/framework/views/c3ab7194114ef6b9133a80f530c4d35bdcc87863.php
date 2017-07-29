@@ -2,61 +2,45 @@
 <div class="container-fluid"> 
     <div class="col-md-9">
 
-        <span class="more_news_title">রোজায় স্বাস্থ্য</span>
+        <span class="more_news_title">Latest News</span>
         <hr  class="more_news">
-        <div class="row border-bottom">
+        <div class="row ">
             <div class="col-md-6">
-                <img src="<?php echo e(url('/')); ?>/public/frontend/images/about_left.jpg" class="img img-rounded" style="width: 100%; height: auto">
+                <img src="<?php echo e(url('/')); ?>/public/images/<?php echo e($data['last_news']->pic_path); ?>" class="img img-rounded" style="width: 100%; height: auto">
             </div>
             <div class="col-md-6">
+                <span class="related_links_news_title"><a class="" href="#"><?php echo e($data['last_news']->title); ?></a></span>
                 <p class="text-justify">
-                    পবিত্র রমজান মাসের খাদ্যতালিকা ঠিক করার সময় অন্য মাসগুলোর খাদ্যতালিকার থেকে বেশি পার্থক্য করার প্রয়োজন নেই, যত সাধারণ এবং স্বাভাবিক খাদ্যতালিকাভুক্ত করা যায় ততই ভালো।খাদ্যের প্রকার এবং গ্রহণ এমনই হওয়া উচিত যাতে স্বাভাবিক থাকা ওজন বেড়েও না যায় বা কমেও না যায়। এমন সব খাদ্য নির্ধারণ করা প্রয়োজন,
+                    <?php echo $data['last_news']->description; ?>
+
                 </p>
                 <button class="pull-right btn-default" style="background: none;">More Details</button>
             </div>
             <br>
         </div>
-
-
+        <span class="more_news_title">Recent News</span>
+        <hr  class="more_news">
         <div class="row">
+            <?php $__currentLoopData = $data['recent_news']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col-md-6 news"> 
-                <span class="related_links_news_title"><a class="" href="#">আকাশে জন্ম নিল শিশু, আ </a></span>
+                <span class="related_links_news_title"><a class="" href="<?php echo e(url('/news-detail')); ?>/<?php echo e($row->id); ?>"><?php echo e($row->title); ?></a></span>
                 <div class="news_img col-md-6">
-                    <span><img src="<?php echo e(url('/')); ?>/public/frontend/images/news/child-birth.jpg" class="img"> </span>
+                    <span><img style="width: 100%;height: 150px" src="<?php echo e(url('/')); ?>/public/images/content/news/<?php echo e($row->pic_path); ?>" class="img"> </span>
                 </div>
                 <div class="news_text col-md-6">
-                    বিমানটি তখন ৩৫ হাজার ফুট উঁচুতে, হঠাৎ করেই গর্ভবতী এক নারীর ব্যথা শুরু হলো। নির্ধারিত সময়ের আগেই প্রসব বেদনা শুরু হলো ওই নারীর।
-                </div>
-            </div>
-            <div class="col-md-6 news"> 
-                <span class="related_links_news_title"><a class="" href="#">লন্ডনে ফের পথচারীদের উপর গাড়ি হামলা</a></span>
-                <div class="news_img col-md-6">
-                    <span><img src="<?php echo e(url('/')); ?>/public/frontend/images/news/london_gari_hamla.jpg" class="img img-thumbnail"> </span>
-                </div>
-                <div class="news_text col-md-6">
-                    লন্ডনে এবার একটি মসজিদের কাছে পথ 
-                </div>
-            </div> 
-            <div class="col-md-6 news"> 
-                <span class="related_links_news_title"><a class="" href="#">আকাশে জন্ম নিল শিশু, আজীবন বিনামূল্যে আকাশ ভ্রমণ</a></span>
-                <div class="news_img col-md-6">
-                    <span><img src="<?php echo e(url('/')); ?>/public/frontend/images/news/child-birth.jpg" class="img img-thumbnail"> </span>
-                </div>
-                <div class="news_text col-md-6">
-                    বিমানটি তখন ৩৫ হাজার ফুট উঁচুতে, হঠাৎ করেই।
-                </div>
-            </div>
-            <div class="col-md-6 news"> 
-                <span class="related_links_news_title"><a class="" href="#">লন্ডনে ফের পথচারীদের উপর গাড়ি হামলা</a></span>
-                <div class="news_img col-md-6">
-                    <span><img src="<?php echo e(url('/')); ?>/public/frontend/images/news/london_gari_hamla.jpg" class="img img-thumbnail"> </span>
-                </div>
-                <div class="news_text col-md-6">
-                    লন্ডনে এবার একটি মসজিদের কাছে পথচারীদের ওপর গাড়ি চাপা দেয়ার ঘটনা ঘটেছে।
-                </div>
-            </div> 
+                    <?php 
+                    $str=substr($row->description,0,398); 
+                    $str[399]=' '; 
 
 
+
+                    ?>
+                    <?php echo e($str); ?>
+
+                </div>
+                <a href="<?php echo e(url('/news-detail')); ?>/<?php echo e($row->id); ?>"><button class="pull-right btn-default" style="background: none;">More Details</button></a>
+            </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
 
 
@@ -64,73 +48,19 @@
     <div class="col-md-3">
         <span class="more_news_title">More News</span>
         <hr  class="more_news">
+        <?php $__currentLoopData = $data['news']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="col-md-12 border-bottom">
-            <div class="more_news_left">
-                <img src="<?php echo e(url('/')); ?>/public/frontend/images/news/child-birth.jpg" class="img-thumbnail">
+            <div class="more_news_left col-md-6">
+                <img style="width: 100%;height: 100px" src="<?php echo e(url('/')); ?>/public/images/content/news/<?php echo e($row->pic_path); ?>" class="img-thumbnail">
             </div>
-            <div class="more_news_right">
-                <h4>This is a Test...</h4>
-                12 June, 2013
-            </div>
-            <br>
-        </div>
-        <div class="col-md-12 border-bottom">
-            <div class="more_news_left">
-                <img src="<?php echo e(url('/')); ?>/public/frontend/images/news/london_gari_hamla.jpg" class="img-thumbnail">
-            </div>
-            <div class="more_news_right">
-                <h4>This is a Test...</h4>
-                <hr style="margin: 0px;">
-                12 June, 2013
-            </div> 
-            <br>
-        </div>
+            <div class="more_news_right col-md-6 ">
+                <h5 class=""><a class="" href="<?php echo e(url('/news-detail')); ?>/<?php echo e($row->id); ?>"><?php echo e($row->title); ?></a></h5>
+                <?php echo e($row->created_at); ?>
 
-
-        <div class="col-md-12 border-bottom">
-            <div class="more_news_left">
-                <img src="<?php echo e(url('/')); ?>/public/frontend/images/news/child-birth.jpg" class="img-thumbnail">
-            </div>
-            <div class="more_news_right">
-                <h4>This is a Test...</h4>
-                12 June, 2013
             </div>
             <br>
         </div>
-        <div class="col-md-12 border-bottom">
-            <div class="more_news_left">
-                <img src="<?php echo e(url('/')); ?>/public/frontend/images/news/london_gari_hamla.jpg" class="img-thumbnail">
-            </div>
-            <div class="more_news_right">
-                <h4>This is a Test...</h4>
-                <hr style="margin: 0px;">
-                12 June, 2013
-            </div> 
-            <br>
-        </div>
-
-
-        <div class="col-md-12 border-bottom">
-            <div class="more_news_left">
-                <img src="<?php echo e(url('/')); ?>/public/frontend/images/news/child-birth.jpg" class="img-thumbnail">
-            </div>
-            <div class="more_news_right">
-                <h4>This is a Test...</h4>
-                12 June, 2013
-            </div>
-            <br>
-        </div>
-        <div class="col-md-12 border-bottom">
-            <div class="more_news_left">
-                <img src="<?php echo e(url('/')); ?>/public/frontend/images/news/london_gari_hamla.jpg" class="img-thumbnail">
-            </div>
-            <div class="more_news_right">
-                <h4>This is a Test...</h4>
-                <hr style="margin: 0px;">
-                12 June, 2013
-            </div> 
-            <br>
-        </div>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
 </div> 
 

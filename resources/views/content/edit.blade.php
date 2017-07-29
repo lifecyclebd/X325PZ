@@ -10,7 +10,7 @@
             <div class="box-header with-border">
                 <h3 class="box-title">Update Content</h3>
                 <div class="box-tools pull-right">
-                    <a href="{{url('/content')}}" class="">      
+                    <a href="{{url('/admin/content')}}" class="">      
                         <i class="fa fa-undo" aria-hidden="true"></i> back
                     </a>
 
@@ -18,7 +18,7 @@
             </div>
             <div class="box-body">
                 <!-- form start -->
-                <form method="post" action="{{url('/content/update')}}" class="form-horizontal">
+                <form method="post" action="{{url('/admin/content/update')}}" class="form-horizontal" enctype="multipart/form-data">
                     {!! csrf_field() !!}
                     <input type="hidden" name="id" value="{{$data->id}}">
                     <div class="form-group">
@@ -48,22 +48,15 @@
                             </select>
 
                         </div>
-                    </div>
+                    </div> 
+
                     <div class="form-group">
-                        <label for="email" class="col-sm-2 control-label">Content Page</label>
+                        <label for="email" class="col-sm-2 control-label">Featured Image</label>
 
-                        <div class="col-md-8">
-                            <select class="form-control" name="content_page" >
-                                <option value="{{$data->content_page}}">{{$data->content_page}}</option>
-                                <option value="home" <?php if ($data->content_page == "home") echo 'selected="selected"'; ?> >Home </option>
-                                <option value="blood-info" <?php if ($data->content_page == "blood-info") echo 'selected="selected"'; ?> >Blood Info</option>
-                                <option value="doctor" <?php if ($data->content_page == "doctor") echo 'selected="selected"'; ?> >Doctor </option>
-                                <option value="health" <?php if ($data->content_page == "health") echo 'selected="selected"'; ?> >Health </option>
-                            </select>
-
+                        <div class="col-md-10">
+                            <input type="file" name="pic_path" > 
                         </div>
                     </div>
-
                     <div class="form-group">
                         <div class="col-md-6 col-md-offset-2">
                             <button type="submit" class="btn btn-primary">

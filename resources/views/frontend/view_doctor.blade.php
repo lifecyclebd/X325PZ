@@ -24,48 +24,16 @@
 
         <!-- Team Members Row -->
         <div class="row pull-center"> 
+            @foreach($data['doctor_list'] as $row)
             <div class="col-lg-4 col-sm-6 text-center">
-                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="{{url('/')}}/public/frontend/images/doctor/1.jpg" alt="">
-                <h3>Prof. Abdullah Al-Amin
-                    <small>Professor</small>
+                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="{{url('/')}}/public/frontend/images/doctor/{{$row->profile_photo}}" alt="pic">
+                <h3>{{$row->name}}
+                    <small>{{$row->designation}}</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <h4>Hospital Name: {{$row->hospital}}</h4>
+                <h4>Phone No: {{$row->phone}}</h4>
             </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="{{url('/')}}/public/frontend/images/doctor/1.jpg" alt="">
-                <h3>Prof. Abdullah Al-Amin
-                    <small>Professor</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="{{url('/')}}/public/frontend/images/doctor/1.jpg" alt="">
-                <h3>Prof. Abdullah Al-Amin
-                    <small>Professor</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="{{url('/')}}/public/frontend/images/doctor/1.jpg" alt="">
-                <h3>Prof. Abdullah Al-Amin
-                    <small>Professor</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="{{url('/')}}/public/frontend/images/doctor/1.jpg" alt="">
-                <h3>Prof. Abdullah Al-Amin
-                    <small>Professor</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img style="width:200px; height: 200px" class="img-circle img-responsive img-center" src="{{url('/')}}/public/frontend/images/doctor/1.jpg" alt="">
-                <h3>Prof. Abdullah Al-Amin
-                    <small>Professor</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
+            @endforeach
         </div>
     </div>
 

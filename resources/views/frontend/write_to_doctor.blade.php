@@ -3,8 +3,15 @@
 @section('pageTitle', 'Find Splutions')
 @section('parentName', 'Home')
 @section('content')
-<div class="container"> 
-    <div class="col-md-offset-2 col-md-8">
+<div class="container" style="margin-bottom: 50px">
+<div class="col-md-6" style="margin-top: 65px;size: 50;">
+        <div>
+            <img src="public/images/pres1.jpg" class="img img-responsive img-rounded">
+            <h3>To find our speacilized doctor in your area please <a href="{{url('/search-doctor')}}">Click</a> here</h3>
+            <h2>Any Query : 01738719951</h2>
+        </div>
+    </div> 
+    <div class="col-md-6">
         <p class="text-center" style="font-size: 25px;">Please fill up the form</p>
         <form class="form-horizontal" method="post" action="{{url('admin/doctor/write')}}">
             {!! csrf_field() !!}
@@ -35,11 +42,12 @@
             </div>
             <div class="row">
                 <div class="col-md-offset-4 col-md-4">
-                    <input type="submit" name="submit" value="Submit" class="submit-btn form-control">
+                    <input type="submit" name="submit" value="Send" class="submit-btn btn btn-default form-control">
                 </div>
             </div>
         </form>
     </div>
+    
 </div> 
 @endsection
 

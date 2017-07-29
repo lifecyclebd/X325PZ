@@ -65,7 +65,7 @@
         <!-- Default box -->
         <div class="box box-info">
             <div class="box-header with-border">
-                <h3 class="box-title">New Doctor </h3>
+                <h3 class="box-title">Update Doctor </h3>
 
                 <div class="box-tools pull-right">
                     <a href="<?php echo e(url('/admin/doctor/view')); ?>" class="">      
@@ -89,8 +89,8 @@
                                 <option>---select---</option>
                                 <?php $__currentLoopData = $data['hospital']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <option value="<?php echo e($value->id); ?>" 
-                                        <?php if($doctor_list->hospital==$value->id): ?> selected="selected" <?php endif; ?>
-                                        ><?php echo e($value->hospital_name); ?></option>
+                                        <?php if($doctor_list->hospital==$value->id): ?> selected="selected" <?php endif; ?>>
+                                        <?php echo e($value->hospital_name); ?></option>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </select>
                         </div>
@@ -104,10 +104,37 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="name" class="col-md-4 control-label">Division</label>
+                        <div class="col-md-6">
+                            <select name="division" class="form-control find_search_button divisions" required>
+                                <option value=""><?php echo e($data['doctor']->division); ?></option>
+                                    <?php $__currentLoopData = $data['division']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <option value="<?php echo e($row->id); ?>"><?php echo e($row->division_name); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-md-4 control-label">District</label>
+                        <div class="col-md-6">
+                            <select name="district" id="districts" class="form-control find_search_button districts">
+                        <option value=""><?php echo e($data['doctor']->district); ?></option>
+                    </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-md-4 control-label">Upazila</label>
+                        <div class="col-md-6">
+                            <select name="upazila" id="upazillas" class="form-control find_search_button">
+                        <option value=""><?php echo e($data['doctor']->upazila); ?></option>
+                    </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="name" class="col-md-4 control-label">Speacility</label>
                         <div class="col-md-6">
                             <select name="speacilist" class="form-control">
-                                <option>--Selelect Speacility---</option>
+                                <option><?php echo e($data['doctor']->speacilist); ?></option>
                                 <?php $__currentLoopData = $data['specility']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <option value="<?php echo e($value->id); ?>"  <?php if($doctor_list->speacilist==$value->id): ?> selected="selected" <?php endif; ?> ><?php echo e($value->name); ?></option>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -118,7 +145,7 @@
                         <label for="name" class="col-md-4 control-label">Designation</label>
                         <div class="col-md-6">
                             <select name="designation" class="form-control">
-                                <option>--Selelect Designation---</option>
+                                <option><?php echo e($data['doctor']->designation); ?></option>
                                 <?php $__currentLoopData = $data['designation']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <option value="<?php echo e($value->id); ?>"  <?php if($doctor_list->designation==$value->id): ?> selected="selected" <?php endif; ?> ><?php echo e($value->name); ?></option>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -143,9 +170,6 @@
                             <input id="name" <?php if ($data['doctor']->gender == 'male') { echo 'checked';}?> type="radio" name="gender" value="<?= $data['doctor']->gender; ?>" >Male &nbsp;&nbsp;&nbsp;   
                             <input id="name" <?php if ($data['doctor']->gender == 'female') { echo 'checked';}?> type="radio" name="gender" value="<?php echo e($data['doctor']->gender); ?>" >Female
 
-
-                             
-
                         </div>
                     </div>
                     <div class="form-group" style="margin:30px">
@@ -154,7 +178,7 @@
                             <input id="name" type="file" class="form-control" name="profile_photo"  autofocus>
                         </div> 
                         <div class="col-md-5">
-                            <img style="width:60%; height: auto" src="<?php echo e(asset('/')); ?>public/images/profile/<?php echo e($data['doctor']->profile_photo); ?>" class="img img-resposive">
+                            <img style="width:60%; height: auto" src="<?php echo e(asset('/')); ?>public/images/doctor/<?php echo e($data['doctor']->profile_photo); ?>" class="img img-resposive">
                         </div>
                     </div>
                     <div class="form-group">

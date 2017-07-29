@@ -20,7 +20,7 @@
     <section class="content">
         <div class="row">
             <div class="col-md-3">
-                <a href="compose.html" class="btn btn-primary btn-block margin-bottom">Compose</a>
+                <a href="compose.html" class="btn btn-danger btn-block margin-bottom">Compose</a>
 
                 <div class="box box-solid">
                     <div class="box-header with-border">
@@ -35,34 +35,15 @@
                         <ul class="nav nav-pills nav-stacked">
                             <li class="active"><a href="{{url('admin/mailbox/inbox')}}"><i class="fa fa-inbox"></i> Inbox
                                     <span class="label label-primary pull-right">12</span></a></li>
-                            <li><a href="{{url('admin/mailbox/compose')}}"><i class="fa fa-envelope-o"></i> Sent</a></li>
-                            <li><a href="#"><i class="fa fa-file-text-o"></i> Drafts</a></li>
-                            <li><a href="#"><i class="fa fa-filter"></i> Junk <span class="label label-warning pull-right">65</span></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-trash-o"></i> Trash</a></li>
+                            <li><a href="{{url('admin/mailbox/compose')}}"><i class="fa fa-envelope-o"></i> Sent<span class="label label-success pull-right">65</span></a></a></li>
+                            <li><a href="#"><i class="fa fa-file-text-o"></i> Drafts<span class="label label-danger pull-right">65</span></a></a></li>
+                             
+                            <li><a href="#"><i class="fa fa-trash-o"></i> Trash <span class="label label-warning pull-right">65</span></a></li>
                         </ul>
                     </div>
                     <!-- /.box-body -->
                 </div>
-                <!-- /. box -->
-                <div class="box box-solid">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Labels</h3>
-
-                        <div class="box-tools">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="box-body no-padding">
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#"><i class="fa fa-circle-o text-red"></i> Important</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Promotions</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o text-light-blue"></i> Social</a></li>
-                        </ul>
-                    </div>
-                    <!-- /.box-body -->
-                </div>
+                
                 <!-- /.box -->
             </div>
             <!-- /.col -->
@@ -109,7 +90,7 @@
                                     <tr>
                                         <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
                                         <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
-                                        <td class="mailbox-name"><a href="read-mail.html">{{$row->sender_id}}</a></td>
+                                        <td class="mailbox-name"><a href="{{url('admin/mailbox/read')}}/{{$row->id}}">Sender Name - {{$row->sender_id}}</a></td>
                                         <td class="mailbox-subject"><b></b>{{$row->message}}</td>
                                         <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
                                         <td class="mailbox-date">{{$row->created_at}}</td>

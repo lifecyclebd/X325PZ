@@ -14,7 +14,7 @@ class ContentController extends Controller {
     }
 
     public function index() {
-        $data = Content::all();
+        $data['content'] = Content::orderBy('id', 'desc')->get();
         return view('content.view')->with('data', $data);
     }
 
@@ -27,10 +27,8 @@ class ContentController extends Controller {
         $Content = new Content;
         //$formdata = $request->all();
         $Content->title = $request->title;
-        $Content->description = $request->description;
-        $Content->content_photo = $request->content_photo;
-        $Content->content_type = $request->content_type;
-        $Content->content_page = $request->content_page;
+        $Content->description = $request->description; 
+        $Content->content_type = $request->content_type; 
         $Content->author_id = 3;
         $Content->save();
         
@@ -39,19 +37,19 @@ class ContentController extends Controller {
         $Content_file = new Content;
         $Content_file = Content::find($last_insert_id);
 
-        if ($request->content_photo) {
+        if ($request->pic_path) {
             $common=new Common;
             $fileName =$request->content_type.'_'. $last_insert_id;
-            $content_photo = $common->uploadImage('content_photo', 'images/content/'.$request->content_type, $fileName);
-            $Content_file->content_photo = $content_photo;
+            $content_photo = $common->uploadImage('pic_path', 'images/content/'.$request->content_type, $fileName);
+            $Content_file->pic_path = $common->get_site_url().'public/images/content/'.$request->content_type.'/'.$content_photo;
             $Content_file->save();
         }
  
-        return redirect('/content');
+        return redirect('/admin/content');
     }
 
     public function show($id) {
-        $data = Content::find($id);
+        $data['content'] = Content::find($id);
         return view('content.show')->with('data', $data);
     }
 
@@ -66,16 +64,27 @@ class ContentController extends Controller {
         $data->title = $request->title;
         $data->description = $request->description;
         $data->content_type = $request->content_type;
-        $data->content_page = $request->content_page;
         $data->author_id = 3;
+
+
         $data->save();
-        return redirect('/content/' . $id);
+        $Content_file = new Content;
+        $Content_file = Content::find($id);
+
+        if ($request->pic_path) {
+            $common=new Common;
+            $fileName =$request->content_type.'_'. $id;
+            $content_photo = $common->uploadImage('pic_path', 'images/content/'.$request->content_type, $fileName);
+            $Content_file->pic_path = $common->get_site_url().'public/images/content/'.$request->content_type.'/'.$content_photo;
+            $Content_file->save();
+        }
+        return redirect('/admin/content');
     }
 
-    public function destroy($id) {
+    public function delete($id) {
         $admin = Content::find($id);
         $admin->delete();
-        return redirect('/content');
+        return redirect('/admin/content');
     }
 
 }

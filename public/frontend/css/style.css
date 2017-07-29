@@ -30,7 +30,7 @@ margin-top: 50px;
     display: block;
     width: 300px;
     margin: 0 auto;
-    border-bottom: 3px  solid #eeeeee; 
+    border-bottom: 3px  solid #eeeeee;  
     }
 .hero-spacer {
     margin-top: 50px;
@@ -154,10 +154,11 @@ margin-top: 50px;
     background-color: #f5f5f5;
 }
 .find_hospital{
-    background: url(../images/background.png) center center no-repeat;
+    background: url(../images/backround.jpg) center center no-repeat;
     min-height: 500px; 
     opacity: .8;
     filter: alpha(opacity=80);
+    background-size: cover;
 }
 .find_hospital_title{
     color: white;
@@ -190,7 +191,7 @@ button.find_search_button{
 .gallery-title
 {
     font-size: 36px;
-    color: red;
+    color: #c9302c;
     text-align: center;
     font-weight: 500;
     BORDER-BOTTOM: 3px solid #eee;
@@ -231,7 +232,7 @@ border-radius: 5px;    background-color: #4d4d4d !important;    color: white;
     margin-top: 30px;
 }
 .blood_info_sec1{
-    border:3px solid red;
+    border:3px solid #c9302c;
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
@@ -267,34 +268,42 @@ border-radius: 5px;    background-color: #4d4d4d !important;    color: white;
 .onebyone-carosel .active.right { left: 33.33%; }
 .onebyone-carosel .next { left: 33.33%; }
 .onebyone-carosel .prev { left: -33.33%; }
-.back_icon1{
-    background: url(../images/icon1.png) center center no-repeat;
-    padding: 40px;
-    background-size: 40px 40px;
-    /* margin: 0 auto; */
+.back_icon1{ 
+     background: url(../images/icon1.png) center center no-repeat;
+    background-size: 60px 60px; 
     text-align: center;
-    margin: 40%;
+    margin: 0 auto;
+    padding-top: 55px;
+    padding-bottom: 15px;
+    padding-right: 0px;
+    padding-left: 240px;
 }.back_icon2{
     background: url(../images/icon2.png) center center no-repeat;
-    padding: 40px;
-    background-size: 40px 40px;
-    /* margin: 0 auto; */
+    background-size: 60px 60px; 
     text-align: center;
-    margin: 40%;
+    margin: 0 auto;
+    padding-top: 55px;
+    padding-bottom: 15px;
+    padding-right: 0px;
+    padding-left: 240px;
 }.back_icon3{
     background: url(../images/icon3.png) center center no-repeat;
-    padding: 40px;
-    background-size: 40px 40px;
-    /* margin: 0 auto; */
+    background-size: 60px 60px; 
     text-align: center;
-    margin: 40%;
+    margin: 0 auto;
+    padding-top: 55px;
+    padding-bottom: 15px;
+    padding-right: 0px;
+    padding-left: 240px;
 }.back_icon4{
     background: url(../images/icon4.png) center center no-repeat;
-    padding: 40px;
-    background-size: 40px 40px;
-    /* margin: 0 auto; */
+    background-size: 60px 60px; 
     text-align: center;
-    margin: 40%;
+    margin: 0 auto;
+    padding-top: 55px;
+    padding-bottom: 15px;
+    padding-right: 0px;
+    padding-left: 240px;
 }.back_icon5{
     background: url(../images/icon5.png) center center no-repeat;
     padding: 60px;
@@ -308,7 +317,7 @@ border-radius: 5px;    background-color: #4d4d4d !important;    color: white;
     text-align: center;
     margin: 40%;
 }.back_icon7{
-    background: url(../images/icon7.png) center center no-repeat;
+    background: url(../images/ambulace.png) center center no-repeat;
     padding: 60px;
     background-size: 60px 60px; 
     text-align: center;
@@ -327,7 +336,7 @@ border-radius: 5px;    background-color: #4d4d4d !important;    color: white;
     border-radius: 10px;
     border: 3px solid #c9302c;
     text-align: center;
-    color: red;
+    color: #c9302c;
     padding: 5px;
     background: none;
     box-shadow: 3px 3px 5px #959595;
@@ -338,14 +347,13 @@ border-radius: 5px;    background-color: #4d4d4d !important;    color: white;
     color:white; 
     background: #c9302c;
 }
-.btn_read_more{
-    margin-top: 30px;
+.btn_read_more{ 
     width: 50%;
     height: 30px;
     border-radius: 5px;
     border: 1px solid #c9302c;
     text-align: center;
-    color: red;
+    color: #c9302c;
     padding: 5px;
     box-shadow: 3px 3px 5px #959595;
 }
@@ -392,19 +400,30 @@ p.title{
     font-size: 16px;
     text-align: center;
     padding: 10px;
+    border-bottom: 1px solid #c9302c;
 }
 .info_abou_blood{
-    background: #eee;
-    border-radius: 10px;
+    background: #eee; 
     padding: 10px;
     margin-bottom: 10px;
     margin-top: 10px;
+    border-radius: 0px;
+    border-top: 10px solid #c9302c;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+.more_blood_bottom{
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: #c9302c; margin-top: -10px;
+    padding: 10px;
 }
 .get_well_soon_sec{
     background: #c9302c;
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 15px;
+    min-height: 350px
 
 }
 .text-white{
@@ -420,6 +439,7 @@ p.title{
     color: black;
     padding: 10px;
     border-radius: 10px;
+    min-height: 180px
 
 }
 .more_news{
@@ -486,7 +506,7 @@ input[type="text"].write_to_doctor{
     color: black;
 }
 .related_links_news_title a:hover{
-    color: red;
+    color: #c9302c;
 }
 .news_img{
     padding: 10px;
@@ -526,7 +546,7 @@ input[type="text"].write_to_doctor{
     margin-bottom: 20px;
 }
 .breadcumb li a {
-    color: red;
+    color: #c9302c;
 }
 .breadcumb li {
     display: inline-block;
@@ -678,7 +698,7 @@ textarea:focus {
 }
 
 .top-left a:hover {
-    color: red;
+    color: #c9302c;
 }
 
 /*Top Right Menu*/
@@ -697,7 +717,7 @@ textarea:focus {
     content: "\f041";
     font-family: 'FontAwesome';
     font-size: 16px;
-    color: red;
+    color: #c9302c;
     margin-right: 10px;
 }
 
@@ -733,6 +753,8 @@ textarea:focus {
     transition: all 0.3s;
 }
 
+
+
 .navbar {
     margin:0;
 }
@@ -742,7 +764,7 @@ textarea:focus {
 }
 /*Toggle Menu*/
 #main-nav .navbar-toggle {
-    background-color: red;
+    background-color: #c9302c;
 }
 
 #main-nav .navbar-toggle span {
@@ -754,36 +776,66 @@ textarea:focus {
     margin-top: 10px;
 }
 #main-nav .navbar-right li > a {
-    font-family: 'Raleway', sans-serif;
+ font-family: 'Raleway', sans-serif;
     font-size: 15px;
     font-weight: 700;
-    line-height: 30px;   
+    line-height: 10px;
     text-transform: uppercase;
     color: white;
-    background: #585757;
-    border-radius: 5px; 
-    padding: 3px 15px;  
-    margin: 5px;   
+    margin: 5px 0px;
     min-width: 100px;
     text-align: center;
+    border-right: 2px solid rgba(80, 79, 79, 0.85);
 
 }
+.dropdown-menu>li>a {
+display: block;
+    padding: 10px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    border-bottom: 1px solid #444343;
+    border-right: 1px solid black !important;
+    }
+    .dropdown-menu>li>a {
+        color: #c9302c !important;
+    }
 
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    color: #c9302c !important;
+    text-decoration: none;
+    background-color: #f5f5f5;
+}
+
+
+.navbar-nav>li>.dropdown-menu {
+    font-family: 'Raleway', sans-serif; 
+    font-weight: 700; 
+    text-transform: uppercase;
+    color: white;
+    background: black;
+    margin: 0px 0px;
+    min-width: 100px;
+    text-align: center; 
+    border-bottom: 1px solid #9E9E9E !important;
+}
 #main-nav .navbar-right li > a:focus {
-    color: red;
+    color: #c9302c;
     background: white;
     outline: none;
 }
 
 #main-nav .navbar-right li > a:active {
-    color: red;
+    color: #c9302c;
     background: white;
     outline: none;
 }
 
 #main-nav .navbar-nav>li>a:hover,
 #main-nav .navbar-nav>li.active>a {
-    color: red; 
+    color: #c9302c; 
     background: white;
 }
 
@@ -845,7 +897,7 @@ textarea:focus {
 
 #slider .caption span {
     padding: 0 10px;
-    background-color: red;
+    background-color: #c9302c;
     color: #fff;
 }
 
@@ -855,7 +907,7 @@ textarea:focus {
     font-size: 24px;
     font-style: italic;
     margin-top: 30px;
-    color: red;
+    color: #c9302c;
 }
 
 #slider .caption button {
@@ -863,16 +915,16 @@ textarea:focus {
     font-weight: 700;
     font-size: 17px;
     margin-top: 20px;
-    background-color: red;
+    background-color: #c9302c;
     color: #fff;
     border: 1px solid #fff;
 }
 
 #slider .caption button:hover {
     background-color: #fff;
-    border: 1px solid red;
+    border: 1px solid #c9302c;
     transition: 0.3s;
-    color: red;
+    color: #c9302c;
 }
 
 
@@ -893,7 +945,7 @@ textarea:focus {
         font-style: italic;
         margin: 0;
         padding: 0;
-        color: red;
+        color: #c9302c;
     }
 
     #slider .caption .btn {
@@ -921,7 +973,7 @@ textarea:focus {
         font-size: 16px;
         font-style: italic;
         margin-top: 15px;
-        color: red;
+        color: #c9302c;
     }
 
     #slider .caption .btn {
@@ -950,15 +1002,15 @@ textarea:focus {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    border: 1px solid red;
+    border: 1px solid #c9302c;
 }
 
 #slider .flex-control-paging li a:hover {
-    background: red;
+    background: #c9302c;
 }
 
 #slider .flex-control-paging li a.flex-active {
-    background: red;
+    background: #c9302c;
     width: 12px;
     height: 12px;
 }
@@ -1021,7 +1073,7 @@ textarea:focus {
     font-size: 45px;
     padding: 65px 30px 0 0;
     float: left;
-    color: red;
+    color: #c9302c;
 }
 .submit-btn{
     background: #c9302c;
@@ -1048,7 +1100,7 @@ textarea:focus {
 }
 
 #about .about-right-wrapper a:hover {
-    color: red;
+    color: #c9302c;
 }
 
 #about .about-right-wrapper p {
@@ -1063,7 +1115,7 @@ textarea:focus {
     font-size: 45px;
     padding: 65px 30px 0 0;
     float: left;
-    color: red;
+    color: #c9302c;
 }
 
 #about .about-right-support:before {
@@ -1072,7 +1124,7 @@ textarea:focus {
     font-size: 45px;
     padding: 65px 30px 0 0;
     float: left;
-    color: red;
+    color: #c9302c;
 }
 
 /*Media*/
@@ -1272,7 +1324,7 @@ textarea:focus {
     margin-right: 20px;
     text-align: center;
     float: left;
-    color: red;
+    color: #c9302c;
 }
 
 #about-bg .about-bg-wrapper p {
@@ -1369,7 +1421,7 @@ textarea:focus {
     font-size: 36px;
     margin-bottom: 15px;
     line-height: 1px;
-    color: red;	
+    color: #c9302c;	
 }
 
 .services-style-one .services-column h4 {
@@ -1404,7 +1456,7 @@ textarea:focus {
 }
 
 .services-style-one .content-column .sec-title h2 > span {
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid #c9302c;
     padding-bottom: 5px;
 }
 
@@ -1420,7 +1472,7 @@ textarea:focus {
 }
 
 .inner-box button {
-    background-color: red;
+    background-color: #c9302c;
     width: 120px;
     height: 35px;
     color: #fff;
@@ -1428,7 +1480,7 @@ textarea:focus {
 
 .inner-box button:hover {
     background-color: #fff;
-    color: red;
+    color: #c9302c;
 }
 
 /*Service Footer*/
@@ -1460,8 +1512,8 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 }
 .btn-search:hover {
     color: #fff;
-    background-color: red;
-    border: 2px solid red;
+    background-color: #c9302c;
+    border: 2px solid #c9302c;
     text-transform: uppercase; 
 }
 #service .service-footer-left h3 {
@@ -1472,7 +1524,7 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 }
 
 #service .service-footer-left h3 > span {
-    color: red;
+    color: #c9302c;
 }
 
 #service .service-footer-left p {
@@ -1486,7 +1538,7 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 }
 
 #service .service-footer-right button {
-    background-color: red;
+    background-color: #c9302c;
     width: 180px;
     height: 50px;
     color: #fff;
@@ -1494,7 +1546,7 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 
 #service .service-footer-right button:hover {
     background-color: #fff;
-    color: red;
+    color: #c9302c;
 }
 
 /*Media*/
@@ -1590,7 +1642,7 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
     height: 45px;
     line-height: 45px;
     text-align: center;
-    color: red;
+    color: #c9302c;
     background-color: #fff;
     position: absolute;
     top: 45%;
@@ -1667,7 +1719,7 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 }
 
 .validation {
-    color: red;
+    color: #c9302c;
     display:none;
     margin: 0 0 20px;
     font-weight:400;
@@ -1685,9 +1737,9 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 }
 
 #errormessage {
-    color: red;
+    color: #c9302c;
     display:none;
-    border:1px solid red;
+    border:1px solid #c9302c;
     text-align:center;
     padding:15px;
     font-weight:600;
@@ -1746,11 +1798,11 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
     margin-top: 25px;
     background-color: transparent;
     color: #7e7e7e;
-    border-color: red;
+    border-color: #c9302c;
 }
 
 #get-touch .content .form .submit .btn:hover {
-    background-color: red;
+    background-color: #c9302c;
     color: #fff;
 }
 
@@ -1884,7 +1936,7 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 }
 
 #footer .footer-heading ul > li > a:hover {
-    color: red;
+    color: #c9302c;
 }
 .insta{
     color: #cccbcb;
@@ -1900,15 +1952,15 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
     margin-top: 30px;
 }
 
-.credits a {
+.c#c9302cits a {
     color: #fff;
 }
 
 /*Bottom Footer*/
 #bottom-footer {
-    background-color: #ffffff;
+      background-color: #040404;
     padding: 20px 0;
-    color: #020202;
+    color: #f3f3f3;
 }
 
 #bottom-footer .footer-right ul > li > a {
@@ -1916,6 +1968,6 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 }
 
 #bottom-footer .footer-right ul > li > a:hover {
-    color: red;
+    color: #c9302c;
 }
 

@@ -5,11 +5,21 @@ Route::get('/admin/testimonial', 'AdminController@view_testimonial');
 Route::get('/admin/testimonial/add', 'AdminController@create_testimonial');
 Route::any('/admin/testimonial/store', 'AdminController@store_testimonial');
 
+Route::get('/donor-profile', 'DonorController@donor_profile');
+Route::get('donor-profile/message-show/{id}', 'DonorController@singleMessageShow');
+Route::get('donor-profile/request-show/{id}', 'DonorController@singleRequestShow');
+
+
+Route::post('/donor/signup', 'DonorController@signup');
 Route::post('/donor/search', 'DonorController@search');
 Route::get('donor/viewprofile/{id}', 'DonorController@viewprofile');
 Route::get('/Blogs', 'BlogController@view');
 
+Route::any('/donor-logout','DonorController@logout');
 
+
+Route::get('/search-doctor', 'DoctorController@FindDoctor');
+Route::any('/view-doctor', 'DoctorController@ViewDoctor');
 Route::get('/search-blood-donor', 'HomeController@SearchBloodDonor');
 Route::post('/view/search-blood-donor','HomeController@ShowBloodDonor');
 Route::get('/search-donor', 'HomeController@SearchDonor');
@@ -20,8 +30,9 @@ Route::get('/speech-of-CEO', 'SpeechController@index');
 Route::get('/admin/donor/get_district/{id}', 'DonorController@get_district');
 Route::get('/admin/donor/get_upazilla/{id}', 'DonorController@get_upazilla');
 
+Route::post('/send-message', 'HomeController@send_message');
 
-
+Route::post('/search-any','HomeController@SearchAny');
 
 
 
@@ -66,12 +77,17 @@ Route::get('/view-hospital', 'HomeController@view_hospital');
 Route::any('/search-hospital', 'HomeController@search_hospital');
 Route::get('/view-ambulance', 'HomeController@view_ambulance');
 Route::get('/blog', 'HomeController@blog_page');
-Route::get('/recent-event', 'HomeController@recent_event');
-Route::get('/upcoming-event', 'HomeController@upcoming_event');
+Route::get('/blog-detail', 'HomeController@blog_detail');
+Route::get('/recent-event/{id}', 'HomeController@recent_event');
+Route::get('/upcoming-event/{id}', 'HomeController@upcoming_event');
 Route::get('/volunteer', 'HomeController@volunteer');
 Route::get('/make-donation', 'HomeController@make_donation');
 Route::get('/about-us', 'HomeController@about_us');
 Route::get('/contact', 'HomeController@contact');
+Route::get('/read-more/detail/{id}', 'HomeController@read_more');
+Route::get('/seeMoreBloodInfo', 'HomeController@seeMoreBloodInfo');
+
+Route::get('/events', 'HomeController@events');
 
 
 
@@ -83,7 +99,7 @@ Route::get('/aboutus', 'PostController@aboutus');
 Route::get('/gallery', 'PhotoController@index');
 //Route::get('/contact', 'PostController@contactPage');
 Route::get('/project', 'HomeController@projectPage');
-Route::get('/events', 'HomeController@eventsPage'); 
+//Route::get('/events', 'HomeController@eventsPage'); 
 Route::get('/donate', 'DonorController@donate');
 Route::get('/profile', 'ProfileController@index');
 
@@ -100,11 +116,23 @@ Route::get('/gradingSystem', 'GradingSystemController@view');
 Route::get('/admin/home', 'AdminController@index');
 Route::get('/admin/view', 'AdminController@view_admin');
 Route::get('/admin/create', 'AdminController@create');
-Route::get('/admin/{id}', 'AdminController@show')->name('show');
+Route::get('/admin/show/{id}', 'AdminController@show')->name('show');
 Route::get('/admin/{id}/edit', 'AdminController@edit'); 
 Route::get('/admin/store', 'AdminController@store')->name('store');
 Route::post('/admin/update', 'AdminController@update');
-Route::any('/admin/{id}/destroy', 'AdminController@destroy');
+Route::any('/admin/destroy/{id}', 'AdminController@destroy');
+
+//-------------------------more about blood------------------------
+Route::get('/admin/more-blood/view', 'AdminController@view_more_blood');
+Route::get('/admin/more-blood/edit/{id}', 'AdminController@edit_more_blood');
+Route::post('/admin/more-blood/update', 'AdminController@update_more_blood');
+
+Route::get('/admin/write/to/doctor', 'AdminController@view_write_to_doctor');
+Route::post('/admin/docror/reply/store', 'AdminController@doctor_reply_store');
+
+
+
+
 
 
 //--------Donor-------------------------------------
@@ -113,6 +141,8 @@ Route::get('/test', 'TestController@index');
 Route::get('/donor', 'DonorController@index');
 Route::get('/donor-login', 'DonorController@donor_login');
 Route::post('/donor/login', 'DonorController@donor_login_access');
+Route::any('/donor-logout','DonorController@logout');
+Route::get('/donor-profile', 'DonorController@donor_profile');
 
 
 Route::get('/donor-register', 'DonorController@donor_register');
@@ -133,7 +163,7 @@ Route::get('admin/doctor/edit/{id}', 'DoctorController@doctor_edit');
 Route::post('admin/doctor/update', 'DoctorController@doctor_update');
 Route::any('admin/doctor/delete/{id}', 'DoctorController@doctor_delete');
 Route::post('admin/doctor/write', 'DoctorController@write_to_doctor');
-Route::get('admin/doctor/problem-view', 'DoctorController@view_problem');
+Route::get('admin/doctor/problem-reply/{id}', 'DoctorController@reply_problem');
 Route::any('admin/doctor/problem/delete/{id}', 'DoctorController@problem_delete');
 Route::get('admin/doctor/problem-view/{id}', 'DoctorController@problem_show')->name('show');
 
@@ -179,13 +209,14 @@ Route::get('api/get-city-list','APIController@getCityList');
 */
 
 //---------Content--------------------
-Route::get('/content', 'ContentController@index'); 
-Route::get('/content/create', 'ContentController@create');
-Route::get('/content/{id}', 'ContentController@show');
-Route::get('/content/{id}/edit', 'ContentController@edit'); 
-Route::get('/content/store', 'ContentController@store')->name('store');
-Route::post('/content/update', 'ContentController@update');
-Route::any('/content/{id}/destroy', 'ContentController@destroy');
+
+Route::get('/admin/content', 'ContentController@index'); 
+Route::get('/admin/content/create', 'ContentController@create');
+Route::get('/admin/content/{id}', 'ContentController@show');
+Route::get('/admin/content/{id}/edit', 'ContentController@edit'); 
+Route::post('/admin/content/store', 'ContentController@store')->name('store');
+Route::post('/admin/content/update', 'ContentController@update');
+Route::any('/admin/content/delete/{id}', 'ContentController@delete');
 
 //-------------------Blog-----------------------------
 Route::any('/blog/category', 'BlogController@blog_category');
@@ -194,11 +225,14 @@ Route::any('/blog/saveCategory', 'BlogController@save_category');
 Route::any('/blog/content', 'BlogController@view_blog');
 Route::any('/blog/create', 'BlogController@create_blog');
 Route::any('/blog/saveBlog', 'BlogController@save_blog');
+
 Route::any('/blog/editcategory/{id}', 'BlogController@edit_blog_category');
+Route::any('/blog/destroycategory/{id}', 'BlogController@delete_blog_category');
 Route::post('/blog/update_category', 'BlogController@update_blog_category');
 Route::any('/blog/editblog/{id}', 'BlogController@edit_blog');
 Route::post('/blog/updateBlog', 'BlogController@update_blog');
 Route::any('/blog/destroy/{id}', 'BlogController@delete_blog');
+Route::any('/blog/show/{id}', 'BlogController@blog_show');
 //-----------------------Mail box----------------------
 Route::any('admin/mailbox/inbox', 'MailController@show_inbox');
 Route::any('admin/mailbox/compose', 'MailController@show_compose');
@@ -229,7 +263,7 @@ Route::get('/error',function(){
 
 Route::resource('admin','AdminController');
 Route::resource('donor','DonorController');
-Route::resource('content','ContentController');
+//Route::resource('content','ContentController');
 
 
 //Route::get('/', 'UserController@index');

@@ -69,7 +69,7 @@
         <!-- Default box -->
         <div class="box box-info">
             <div class="box-header with-border">
-                <h3 class="box-title">New designation </h3>
+                <h3 class="box-title">Updatedesignation </h3>
 
                 <div class="box-tools pull-right">
                     <a href="{{url('/admin/designation/view')}}" class="">      
@@ -94,7 +94,7 @@
                     <div class="form-group">
                         <div class="col-md-12 col-md-offset-4">
                             <button type="submit" class="btn btn-primary">
-                                Add Designation
+                                Update Designation
                             </button>
                         </div>
                     </div>

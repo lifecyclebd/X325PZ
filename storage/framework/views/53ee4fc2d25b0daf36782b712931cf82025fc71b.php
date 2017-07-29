@@ -9,7 +9,7 @@
                 <div class="box">
 
                     <div class="box-header with-border">
-                        <h3 class="box-title">Blood Request List</h3>
+                        <h3 class="box-title">Blood Donor <i class="fa fa-angle-right"> </i>    Blood Request List</h3>
                         <div class="box-tools pull-right">
                             <a href="<?php echo e(url('bloodrequest/create')); ?>" class="">      
                                 <i class="fa fa-plus" aria-hidden="true"></i> Add Blood Request
@@ -27,13 +27,13 @@
                                     <th>SL</th>
                                     <th>User Name</th>
                                     <th>Requested Blood Group</th>
-                                    <th>Patient Name</th>
+                                    <th>Patient Hospital</th>
                                     <th>Patient Phone</th>
                                     <th>Patient Place</th>
                                     <th>Number of Blood Bag</th>
                                     <th>Any Disease?</th>
                                     <th>Relation</th>
-                                    <th>Operation Time</th>
+                                    <th>Operation Date</th>
                                     <th>Operation</th>
                                 </tr>
                             </thead>
@@ -43,7 +43,7 @@
                                     <td><?php echo e($row->id); ?></td>
                                     <td><?php echo e($row->user_id); ?></td>
                                     <td><?php echo e($row->request_blood_group); ?></td>
-                                    <td><?php echo e($row->patient_name); ?></td>
+                                    <td><?php echo e($row->patient_hospital); ?></td>
                                     <td><?php echo e($row->patient_phone); ?></td>
                                     <td><?php echo e($row->patient_place); ?></td>
                                     <td><?php echo e($row->number_blood_bag); ?></td>

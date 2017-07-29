@@ -13,23 +13,27 @@
             {!! csrf_field() !!} 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
-                    <select name="divisions" class="form-control find_search_button">
-                        <option value="Dhaka">Select Division</option>
-                        <option value="Khulna">Khulna</option>
-                        <option value="Khulna">Dhaka</option>
+                    <select name="division" class="form-control find_search_button divisions" required>
+                        <option value="">Select Division</option>
+                        @foreach($data['division'] as $row)
+                            <option value="{{$row->id}}">{{$row->division_name}}</option>
+                        @endforeach
                     </select>
                 </span>
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
-                    <select name="divisions" class="form-control find_search_button">
-                        <option value="Dhaka">Select Upazila</option>
-                        <option value="Khulna">Khulna</option>
-                        <option value="Khulna">Dhaka</option>
+                    <select name="district" id="districts" class="form-control find_search_button districts">
+                        <option value="">Select District</option>
                     </select>
                 </span>
-                <input type="text" class="col-xs-12 form-control find_search" placeholder="Hospital name" aria-describedby="basic-addon1">
+                <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
+                    <select name="upazila" id="upazillas" class="form-control find_search_button">
+                        <option value="">Select Upazila</option>
+                    </select>
+                </span>
+                
                 <span class="input-group-addon" id="basic-addon1"> 
                     <button class="col-xs-12 btn btn-xs btn-search find_search_button">
-                        <i class="fa fa-search"></i>
+                        <i class="fa fa-search"> Search</i>
                     </button>
                 </span>
             </div>

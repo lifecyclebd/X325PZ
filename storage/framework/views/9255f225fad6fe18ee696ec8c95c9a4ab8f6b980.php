@@ -36,11 +36,8 @@
                                     <td><?php echo e($row->phone); ?></td>
                                     <td><?php echo e($row->problems); ?></td>
                                     <td> 
-                                        <a href="<?php echo e(url('admin/hospital')); ?>/edit/<?php echo e($row->id); ?>" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
+                                        <a href="<?php echo e(url('admin/doctor/problem-reply')); ?>/<?php echo e($row->id); ?>" class="btn  btn-primary btn-xs">Reply</a>
                                         <a href="<?php echo e(url('admin/doctor/problem')); ?>/delete/<?php echo e($row->id); ?>" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
-                                        <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
-                                        <a href="<?php echo e(url('admin/doctor/problem-view')); ?>/<?php echo e($row->id); ?>" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
-                                        </a>
                                     </td>
 
                                 </tr>
