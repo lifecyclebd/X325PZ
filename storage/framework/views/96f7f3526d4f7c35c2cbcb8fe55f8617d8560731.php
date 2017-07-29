@@ -2,7 +2,7 @@
 <?php $__env->startSection('pageTitle', 'About Us'); ?>
 <?php $__env->startSection('parentName', 'Home'); ?>
 <?php $__env->startSection('content'); ?>
-
+<link rel="stylesheet" href="<?php echo e(asset('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css')); ?>"> 
 <style type="text/css">
 
     .search_button{
@@ -394,30 +394,16 @@
             <br/>
 
 
+        <div class="popup-gallery">
             <?php $__currentLoopData = $data['blood_fighter']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-
-            <div class="gallery_product col-lg-3 col-md-3 col-sm-6 col-xs-6 filter 
-                 <?php echo e($row->page_name); ?>">
-                <img src="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->photo_name); ?>" class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid #c9302c;">
-            </div>
-
-
+        <a href="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->photo_name); ?>" title="The Cleaner" class="col-md-3" >
+            <img src="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->photo_name); ?>"  class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid #c9302c; float: left;">
+        </a>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
-    </div> 
-
-    <div class="container">
-        <div class="popup-gallery">
-    <a href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg" title="The Cleaner"><img src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg" width="75" height="75"></a>
-    <a href="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg" title="Winter Dance"><img src="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_s.jpg" width="75" height="75"></a>
-    <a href="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_b.jpg" title="The Uninvited Guest"><img src="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_s.jpg" width="75" height="75"></a>
-    <a href="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_b.jpg" title="Oh no, not again!"><img src="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_s.jpg" width="75" height="75"></a>
-    <a href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg" title="Swan Lake"><img src="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_s.jpg" width="75" height="75"></a>
-    <a href="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_b.jpg" title="The Shake"><img src="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_s.jpg" width="75" height="75"></a>
-    <a href="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg" title="Who's that, mommy?"><img src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg" width="75" height="75"></a>
-</div>
-
-    </div>
+           
+        </div>
+    </div>  
 
 </div>
 <!-- Modal -->
@@ -666,7 +652,7 @@
 
 <?php $__env->startSection('script_link'); ?> 
 
-
+<script src="<?php echo e(asset('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js')); ?>"></script>
 
 <?php $__env->stopSection(); ?>
 
@@ -763,7 +749,7 @@
         image: {
             tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
             titleSrc: function(item) {
-                return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+                return item.el.attr('title') + '<small>by lifecycle</small>';
             }
         }
     });
