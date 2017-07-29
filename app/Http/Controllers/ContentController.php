@@ -10,13 +10,25 @@ use DB;
 class ContentController extends Controller {
 
     public function __construct() {
-        //    $this->middleware('auth');
+            $this->middleware('auth');
     }
 
     public function index() {
         $data['content'] = Content::orderBy('id', 'desc')->get();
         return view('content.view')->with('data', $data);
+    }    
+
+    public function contentSearch(Request $request) {
+
+        if ($request->isMethod('post')) {
+        $data['content'] = Content::where('content_type',$request->category)->orderBy('id', 'desc')->get();
+        }
+        else {
+        $data['content'] = Content::orderBy('id', 'desc')->get();
+        }
+        return view('content.search-content')->with('data', $data);
     }
+
 
     public function create() {
 

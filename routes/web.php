@@ -211,6 +211,7 @@ Route::get('api/get-city-list','APIController@getCityList');
 //---------Content--------------------
 
 Route::get('/admin/content', 'ContentController@index'); 
+Route::any('/admin/content/search-content', 'ContentController@contentSearch'); 
 Route::get('/admin/content/create', 'ContentController@create');
 Route::get('/admin/content/{id}', 'ContentController@show');
 Route::get('/admin/content/{id}/edit', 'ContentController@edit'); 
