@@ -3,7 +3,7 @@
 @section('pageTitle', 'About Us')
 @section('parentName', 'Home')
 @section('content')
-
+<link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css') }}"> 
 <style type="text/css">
 
     .search_button{
@@ -394,30 +394,16 @@
             <br/>
 
 
+        <div class="popup-gallery">
             @foreach($data['blood_fighter'] as $row)
-
-            <div class="gallery_product col-lg-3 col-md-3 col-sm-6 col-xs-6 filter 
-                 {{$row->page_name}}">
-                <img src="{{url('public/images/gallery')}}/{{$row->photo_name}}" class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid #c9302c;">
-            </div>
-
-
+        <a href="{{url('public/images/gallery')}}/{{$row->photo_name}}" title="The Cleaner" class="col-md-3" >
+            <img src="{{url('public/images/gallery')}}/{{$row->photo_name}}"  class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid #c9302c; float: left;">
+        </a>
             @endforeach
         </div>
-    </div> 
-
-    <div class="container">
-        <div class="popup-gallery">
-    <a href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg" title="The Cleaner"><img src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg" width="75" height="75"></a>
-    <a href="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg" title="Winter Dance"><img src="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_s.jpg" width="75" height="75"></a>
-    <a href="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_b.jpg" title="The Uninvited Guest"><img src="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_s.jpg" width="75" height="75"></a>
-    <a href="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_b.jpg" title="Oh no, not again!"><img src="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_s.jpg" width="75" height="75"></a>
-    <a href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg" title="Swan Lake"><img src="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_s.jpg" width="75" height="75"></a>
-    <a href="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_b.jpg" title="The Shake"><img src="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_s.jpg" width="75" height="75"></a>
-    <a href="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg" title="Who's that, mommy?"><img src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg" width="75" height="75"></a>
-</div>
-
-    </div>
+           
+        </div>
+    </div>  
 
 </div>
 <!-- Modal -->
@@ -666,7 +652,7 @@
 
 @section('script_link') 
 
-
+<script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js')}}"></script>
 
 @endsection
 
