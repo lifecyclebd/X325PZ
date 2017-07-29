@@ -80,7 +80,11 @@ background: none; color: white; font-size: 20px;
                 <div class="col-md-8 col-sm-6 col-xs-12" >
                     <h3 style="color: white">Contact Form</h3>
                     <form action="{{url('/')}}/send-message" method="post" class="contact-form row" id="contact-page-contact-form">
-                    
+                    <?php if(isset($_GET['message'])){ ?>
+    <p class="label label-success label-lg" style="height: 30px;padding: 10px; font-size: 12px"><?php echo $_GET['message'];?></p>
+    <br> <br>  We will inform you by cell phone within 30 minutes. Keep faith on Allah.</p>
+    <?php } ?>
+
             {!! csrf_field() !!} 
                         <div class="col-md-6">
                             <input type="text" class="form-control contact" name="name" placeholder="Name">

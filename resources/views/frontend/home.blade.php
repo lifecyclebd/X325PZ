@@ -34,7 +34,7 @@
     .signup_button.focus, .signup_button:focus, .signup_button:hover {
         color: #fff !important;
         text-decoration: none;
-        background: red !important;
+        background: #c9302c !important;
     }
     .carousel-inner.onebyone-carosel { margin: auto; width: 90%; }
     .onebyone-carosel .active.left { left: -33.33%; }
@@ -44,13 +44,13 @@
     .recent_donor{
         width: 335px; 
         height: 152px;
-        border: 2px solid red;
+        border: 2px solid #c9302c;
     }
  .what_people_say {
     padding: 5px;
-    background: red;
+    background: #c9302c;
     color: white; 
-    border: 2px solid red;
+    border: 2px solid #c9302c;
     border-radius: 5px;
     margin: 0 auto;
 }
@@ -168,7 +168,7 @@
 
 
 <div class="get_well_soon">        
-    <div class="container"> 
+    <div class="container-fluid"> 
         <h3 class="life_title " style="margin-bottom:30px">Get Well Soon</h3> 
         <div class="col-md-3">
             <div class="get_well_soon_sec">
@@ -264,78 +264,64 @@
 </div>   
 <div class="clearfix"></div>     
 
-<div class="upcomming_event">
-    <div class="container">
-        <h3 class="life_title ">Upcoming Events</h3>
+ 
 
-        <div class="container"> 
-            <div id="imgSlider" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#imgSlider" data-slide-to="0" class="active"></li>
-                    <li data-target="#imgSlider" data-slide-to="1"></li>
-                    <li data-target="#imgSlider" data-slide-to="2"></li>
-                </ol>
+<div class="container-fluid">
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="span12">
+            <div class=" ">
+                <h2 class="life_title" style="margin-bottom: 20px;">Upcoming Events</h2>
+                <div id="myCarousel" class="carousel fdi-Carousel slide">
+                    <!-- Carousel items -->
+                    <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
+                        <div class="carousel-inner onebyone-carosel">
+                            <?php $i=0;?>
+                            @foreach($data['testimonial'] as $row)
+                            <div class="item <?php if($i==0)echo 'active';?>">
+                                <div class="col-md-4">
+                                    <div style="background: #eee; padding: 5px; margin: 5px; max-height: 300px;min-height: 420px;">
+                                        <span style="float: left; width: 100%">
+                                            <img class="img img-responsive img-thumbnail" src="{{url('/')}}/public/images/testimonial/{{$row->photo}}" alt="testimonial" style="width:100%;height:200px;">
+                                        </span>
+                                        <span style="float: right; width: 100%; padding: 10px;"> 
+                                            <span style="float: left; width: 30%; background: gray; color: white; text-align: center">
+                                            <h4>13</h4> June 2016
+                                            </span>
+                                            <span style="float: right; width: 70%">                                      
+                                            <h4 style="color: #c9302c; font-size: 20px; padding-left: 10px;">Event Title <?php echo $i;?></h4>
+                                            <p style="padding-left: 10px; border-top: 1px solid #c9302c;">Maghbazar, Dhaka</p>   
+                                            </span>                                              
+                                            <span style="width: 100%; padding: 10px; float: left; margin-bottom: 10px">
+                                            <p style="text-align:justify; margin-top: 10px;">{{substr($row->message,0,100)}}</p>
 
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                <?php for($i=0; $i<3; $i++) {?>
-                    <div class="item <?php if($i==0) echo 'active'; ?>">                       
-                        
-                        <div class="col-md-6" style="margin-bottom: 20px">
-                            <div class="col-md-6 col-xs-6 col-sm-6">
-                                <img class="img img-responsive img-thumbnail " src="{{url('/')}}/public/images/content/upcoming_events/{{$row->content_photo}}" alt="New York" style="width:100%;height: auto;">
+                                            <a href="#" class="btn-serach pull-right" style="color: #c9302c"> বিস্তারিত জানতে </a>
+                                            </span> 
+                                        </span>
+
+                                    </div>                                
+                                </div>
                             </div>
-                            <div class="col-md-6 col-xs-6 col-sm-6">
-                                <h3>{{$row->title}}</h3>
-                                <p class="text-justify">
-                                    {{$row->description}}
-                                </p>
-                                <span style="margin-top: 30px; float: right;" class="hidden-xs">
-                                    <a style="padding: 10px; text-align: center;" href="#" class="btn-danger" ><?php echo date("l jS \of F"); ?> </a>
-                                </span>
-                            </div>
+                            <?php $i++;?>
+                            @endforeach
+                            
+
+
                         </div>
-                        <div class="col-md-6" style="margin-bottom: 20px">
-                            <div class="col-md-6 col-xs-6 col-sm-6">
-                                <img class="img img-responsive img-thumbnail " src="{{url('/')}}/public/images/content/upcoming_events/{{$row->content_photo}}" alt="New York" style="width:100%;height: auto;">
-                            </div>
-                            <div class="col-md-6 col-xs-6 col-sm-6">
-                                <h3>{{$row->title}}</h3>
-                                <p class="text-justify">
-                                    {{$row->description}}</p>
-                                <span style="margin-top: 30px; float: right;" class="hidden-xs">
-                                    <a style="padding: 10px; text-align: center;" href="#" class="btn-danger" ><?php echo date("l jS \of F"); ?> </a>
-                                </span>
-                            </div>
-                        </div>
-                          
-                        
-                    </div> 
-                    <?php } ?>   
-                </div>
-
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#imgSlider" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#imgSlider" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
+                        <a class="left carousel-control" href="#eventCarousel" data-slide="prev"></a>
+                        <a class="right carousel-control" href="#eventCarousel" data-slide="next"></a>
+                    </div>
+                    <!--/carousel-inner-->
+                </div><!--/myCarousel-->
+            </div><!--/well-->
         </div>
-
     </div>
-
 </div>
 
 
 
+<div style="background: #eee">
 
-
-<div class="container">
+<div class="container-fluid">
     <div class="row" style="margin-bottom: 20px;">
         <div class="span12">
             <div class=" ">
@@ -348,7 +334,7 @@
                             @foreach($data['testimonial'] as $row)
                             <div class="item <?php if($i==0)echo 'active';?>">
                                 <div class="col-md-4" style="">
-                                    <div class="what_people_say" style="height: 350px;padding: 25px"> 
+                                    <div class="what_people_say" style="height: 400px;padding: 25px"> 
                                         <span style="padding-left: 10px;">
                                             <div class="text-left">
                                             <div class="row" style="margin-top: -40px">
@@ -359,7 +345,8 @@
                                                 
                                                 <hr>
                                                 <div class="row">
-                                                    <p>{{ $row->message}}</p>
+                                                    <p style="text-align: justify; min-height: 220px;   background: white !important;color: black;padding: 10px;border-radius: 8px;">
+                                                    {{ $row->message}}</p>
                                                 </div>
                                                  
                                             </div>
@@ -383,7 +370,7 @@
     </div>
 </div>
 
-
+</div>
 
 
 
@@ -396,7 +383,7 @@
 
 <div class="clearfix"></div>
 <div id="gallery"> 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h3 class="life_title " style="margin-bottom: 30px">Blood Fighter</h3>
@@ -411,13 +398,26 @@
 
             <div class="gallery_product col-lg-3 col-md-3 col-sm-6 col-xs-6 filter 
                  {{$row->page_name}}">
-                <img src="{{url('public/images/gallery')}}/{{$row->photo_name}}" class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid red;">
+                <img src="{{url('public/images/gallery')}}/{{$row->photo_name}}" class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid #c9302c;">
             </div>
 
 
             @endforeach
         </div>
     </div> 
+
+    <div class="container">
+        <div class="popup-gallery">
+    <a href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg" title="The Cleaner"><img src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg" width="75" height="75"></a>
+    <a href="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg" title="Winter Dance"><img src="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_s.jpg" width="75" height="75"></a>
+    <a href="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_b.jpg" title="The Uninvited Guest"><img src="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_s.jpg" width="75" height="75"></a>
+    <a href="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_b.jpg" title="Oh no, not again!"><img src="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_s.jpg" width="75" height="75"></a>
+    <a href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg" title="Swan Lake"><img src="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_s.jpg" width="75" height="75"></a>
+    <a href="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_b.jpg" title="The Shake"><img src="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_s.jpg" width="75" height="75"></a>
+    <a href="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg" title="Who's that, mommy?"><img src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg" width="75" height="75"></a>
+</div>
+
+    </div>
 
 </div>
 <!-- Modal -->
@@ -487,48 +487,48 @@
     }
 </style>
 <div class="blood_stock" style="  margin-top: 30px">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row text-center">
             <h2 class="life_title" style="margin-bottom: 20px; margin-top: 30px">blood stock</h2>
             <p class="text-center">Current blood stock in bangladesh</p>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/1.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">45%</span>
+                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">45%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/2.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">50%</span>
+                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">50%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/3.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">36%</span>
+                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">36%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/4.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">62%</span>
+                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">62%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/5.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">78%</span>
+                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">78%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/6.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">25%</span>
+                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">25%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/7.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">49%</span>
+                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">49%</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/8.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: red; text-align: center;padding: 10px">36%</span>
+                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">36%</span>
              </div>
 
         </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row" style="margin-bottom: 20px;">
         <div class="span12">
             <div class=" ">
@@ -747,6 +747,29 @@
     interval: 5000
     });
             });
+
+
+            $(document).ready(function() {
+    $('.popup-gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        tLoading: 'Loading image #%curr%...',
+        mainClass: 'mfp-img-mobile',
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+            titleSrc: function(item) {
+                return item.el.attr('title') + '<small>by lifecycle</small>';
+            }
+        }
+    });
+});
+
+
 </script>  
 
 
