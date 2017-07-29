@@ -11,7 +11,7 @@
                 <img src="{{url('/')}}/public/images/{{$data['last_news']->pic_path}}" class="img img-rounded" style="width: 100%; height: auto">
             </div>
             <div class="col-md-6">
-                <span class="related_links_news_title"><a class="" href="#">{{$data['last_news']->title}}</a></span>
+                <span class="related_links_news_title"><a class="" href="{{url('/news-detail')}}/{{$data['last_news']->id}}">{{$data['last_news']->title}}</a></span>
                 <p class="text-justify">
                     {!!$data['last_news']->description!!}
                 </p>

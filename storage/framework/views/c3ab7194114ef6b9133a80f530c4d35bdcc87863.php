@@ -9,7 +9,7 @@
                 <img src="<?php echo e(url('/')); ?>/public/images/<?php echo e($data['last_news']->pic_path); ?>" class="img img-rounded" style="width: 100%; height: auto">
             </div>
             <div class="col-md-6">
-                <span class="related_links_news_title"><a class="" href="#"><?php echo e($data['last_news']->title); ?></a></span>
+                <span class="related_links_news_title"><a class="" href="<?php echo e(url('/news-detail')); ?>/<?php echo e($data['last_news']->id); ?>"><?php echo e($data['last_news']->title); ?></a></span>
                 <p class="text-justify">
                     <?php echo $data['last_news']->description; ?>
 

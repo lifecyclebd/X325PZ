@@ -286,8 +286,8 @@ public function signup(Request $request) {
             return redirect('/donor-login');
          }
 
-        $data['messages'] = Message::where([['sender_email', $login_donor_email], ['sender_type', 'donor']])->get(); 
-        $data['last5message'] = Message::where([['sender_email', $login_donor_email], ['sender_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
+        $data['messages'] = Message::where([['receiver_email', $login_donor_email], ['receiver_type', 'donor']])->get(); 
+        $data['last5message'] = Message::where([['receiver_email', $login_donor_email], ['receiver_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
         $data['last5messageCount']=$data['last5message']->count();
 
 
@@ -315,12 +315,12 @@ public function signup(Request $request) {
             return redirect('/donor-login');
          }
 
-        $data['messages'] = Message::where([['sender_email', $login_donor_email], ['sender_type', 'donor']])->get(); 
-        $data['singlemeaasge']=Message::where([['id',$msg_id ],['sender_email', $login_donor_email], ['sender_type', 'donor']])->first();
+        $data['messages'] = Message::where([['receiver_email', $login_donor_email], ['receiver_type', 'donor']])->get(); 
+        $data['singlemeaasge']=Message::where([['id',$msg_id ],['receiver_email', $login_donor_email], ['receiver_type', 'donor']])->first();
 
 
          
-        $data['last5message'] = Message::where([['sender_email', $login_donor_email], ['sender_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
+        $data['last5message'] = Message::where([['receiver_email', $login_donor_email], ['receiver_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
         $data['last5messageCount']=$data['last5message']->count();
 
         
@@ -344,13 +344,16 @@ public function signup(Request $request) {
          }
   
         $data['login_email'] = $request->session()->get('email');
-        $data['messages'] = Message::where([['sender_email', $login_donor_email], ['sender_type', 'donor']])->get(); 
+        $data['messages'] = Message::where([['receiver_email', $login_donor_email], ['receiver_type', 'donor']])->get(); 
 
-        //$data['singlerequest']=BloodRequest::where([['id',$req_id ],['sender_email', $login_donor_email], ['sender_type', 'donor']])->first();
+        //$data['singlerequest']=BloodRequest::where([['id',$req_id ],['receiver_email', $login_donor_email], ['receiver_type', 'donor']])->first();
 
+           $data['blood_request'] = BloodRequest::where('id',$req_id)->first(); 
+          // dd($data['blood_request']);
+            $data['bloodRequestCount']=$data['blood_request']->count();
 
          
-        $data['last5message'] = Message::where([['sender_email', $login_donor_email], ['sender_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
+        $data['last5message'] = Message::where([['receiver_email', $login_donor_email], ['receiver_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
         $data['last5messageCount']=$data['last5message']->count();
 
         
@@ -358,7 +361,7 @@ public function signup(Request $request) {
         $data['last5activities']= Activity::where([['created_id', $login_donor_id], ['created_type', 'donor']])->orderByDesc('created_at')->take(5)->get(); 
 
         $data['singleactivities']=Activity::where([['id',$req_id ],['created_id', $login_donor_email], ['created_type', 'donor']])->first();
-        dd($data['singleactivities']);
+       // dd($data['singleactivities']);
 
         $data['division'] = Division::all();
         $donor_email= $request->session()->get('email');

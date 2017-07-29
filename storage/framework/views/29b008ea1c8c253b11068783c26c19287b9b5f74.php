@@ -29,8 +29,7 @@
                 <img  class="img-responsive img-circle img" src="<?php echo e(url('/')); ?>/public/images/available.png"  style="width:28px; height: 28px;" >
                 </span>
               <span style="float: left; font-size: 20px; padding: 5px">
-                <?php echo e($data['donor']->fname); ?> <?php echo e($data['donor']->lname); ?>  <?php echo e($data['login_id']); ?>
-
+                <?php echo e($data['donor']->fname); ?> <?php echo e($data['donor']->lname); ?> 
                 </span>
                <span style="clear: both;"></span> 
               <hr>

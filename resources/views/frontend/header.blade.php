@@ -100,13 +100,18 @@
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> 
                                                 <span class="hidden-xs" style="margin-left: 10px"> 
                                                 <i style="font-size: 22px; color: red" class="fa fa-tint" aria-hidden="true"></i>
-                                               <sup> <span class="badge"  style="margin-top: -20px;">  5</span></sup> </span>
+                                               <sup> <span class="badge"  style="margin-top: -20px;">  {{$data['bloodRequestCount']}}</span></sup> </span>
                                             </a>
                                             <ul class="dropdown-menu" style="    background: rgb(132, 125, 125);">
                                                 <!-- User image -->
-                                                @foreach($data['last5activities'] as $row)
+                                                @foreach($data['blood_request'] as $row)
                                                 <li class="" style="min-width: 250px;"> 
-                                                     <a class="li_menu" href="{{url('/')}}/" style="text-transform: none;"> {{$row->short_message}} nn</a> 
+                                                     <a class="li_menu" href="{{url('/')}}/donor-profile/request-show/{{$row->id}}" style="text-transform: none;">
+You are requested for {{$row->number_blood_bag}} bag of 
+<span class="badge badge-danger" style="background: red">{{$row->request_blood_group}}</span> Blood.
+
+
+                                                       </a> 
                                                 </li> 
                                                 @endforeach
                                             </ul>
