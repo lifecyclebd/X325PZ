@@ -139,7 +139,7 @@
 
 <div class="More_about_info">
     <div class="container-fluid" style="background-color: gray;height: 580px"> 
-        <h3 class="life_title " style="margin-bottom:50px;color: white">More about blood</h3> 
+        <h3 class="life_title " style="margin-bottom:50px;color: white"> রক্তদান - কিছু প্রয়োজনীয় কথা </h3> 
 
         <?php $__currentLoopData = $data['all_blood_info']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
         <div class="col-md-3 col-sm-6 col-xs-12" style="border-radius: 8px">
@@ -159,7 +159,8 @@
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         <br> 
     </div> 
-    <div class="container-fluid" style="padding: 20px; background-color: #4d4f54"><a class="pull-right btn btn-serach" href="<?php echo e(url('/')); ?>/seeMoreBloodInfo">See More</a></div>
+    <div class="container-fluid" style="padding: 20px; background-color: #4d4f54">
+    <a style="color: red; padding: 10px" class="pull-right btn btn-serach" href="<?php echo e(url('/')); ?>/seeMoreBloodInfo">একই রকম পোস্ট </a></div>
 
 
 
@@ -169,7 +170,7 @@
 
 <div class="get_well_soon">        
     <div class="container-fluid"> 
-        <h3 class="life_title " style="margin-bottom:30px">Get Well Soon</h3> 
+        <h3 class="life_title " style="margin-bottom:30px">সুস্থ থাকুন </h3> 
         <div class="col-md-3">
             <div class="get_well_soon_sec">
                 <br>
@@ -234,28 +235,29 @@
 
 
 <div class="" style="width: 100%;">
-    <div class="col-md-6 become_donor">
+    <div class="col-md-6 become_donor" style="min-height: 350px;">
         <div class="col-md-offset-2 col-md-8">
-            <h2>Become a volenter </h2>
+            <h2> স্বেচ্ছাসেবক হন </h2>
             <p class="text-justify ">
-                A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
+            যারা জরুরী সময়ে মুমুর্ষ রোগির জন্য রক্তদাতা ম্যানেজ করে থাকেন, তাদেরকে সাধারণত আমরা আমাদের ভাষায় রক্তযোদ্ধা, রক্ত সৈনিক অথবা স্বেচ্ছাসেবক বলে থাকি।
             </p>
             <div class="pull-center"> 
-                <button class="join_now hidden-xs"   data-toggle="modal" data-target="#joinVolentier">Join Now</button>
+                <button class="join_now hidden-xs"   data-toggle="modal" data-target="#joinVolentier">যোগদান করুন </button>
 
             </div>
 
         </div>               
     </div>
-    <div class="col-md-6 make_donation">
+    <div class="col-md-6 make_donation" style="min-height: 350px;">
         <div class="col-md-offset-2 col-md-8">
-            <h2>Make a Donation </h2>
+            <h2>রক্ত দাতা হন  </h2>
             <p class="text-justify" style="color:white;">
-                A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components
+            আপনি যদি একজন নিয়মিত রক্তদাতা হন অথবা রক্ত দিতে আগ্রহী হন তাহলে,
+একটু কষ্ট করে নিচে দেওয়া লিংকে যান , আর আপনার নাম, লিঙ্গ, জন্ম তারিখ, ঠিকানা, ব্লাড গ্রুপ, মোবাইল নাম্বার এবং শেষ রক্তদানের তারিখ দিয়ে ফর্মটি পূরণ করুন এবং আপনার কাছে মানুষদেরও ফর্মটি পূরণ করতে বলুন । 
             </p>
             <div class="pull-center">
 
-                <button class="donate_now hidden-xs" data-target="#makeDonation" data-toggle="modal">Donate Now</button>
+                <button class="donate_now hidden-xs" data-target="#makeDonation" data-toggle="modal"> দাতা হন </button>
 
             </div>    
         </div>
@@ -286,10 +288,10 @@
                                             </span>
                                             <span style="float: right; width: 70%">                                      
                                             <h4 style="color: #c9302c; font-size: 20px; padding-left: 10px;"><?php echo e($row->title); ?>  </h4>
-                                            <p style="padding-left: 10px; border-top: 1px solid #c9302c;">Static Location</p>   
+                                            <p style="padding-left: 10px; border-top: 1px solid #c9302c;"> ঢাকা, বাংলাদেশ </p>   
                                             </span>                                              
                                             <span style="width: 100%; padding: 10px; float: left; margin-bottom: 10px">
-                                            <p style="text-align:justify; margin-top: 10px;"><?php echo substr($row->description,0,100); ?></p>
+                                            <p style="text-align:justify; margin-top: 10px;"><?php echo $row->description; ?></p>
 
                                             <a href="<?php echo e(url('/upcoming-event')); ?>/<?php echo e($row->id); ?>" class="btn-serach pull-right" style="color: #c9302c"> বিস্তারিত জানতে </a>
                                             </span> 
@@ -322,7 +324,7 @@
     <div class="row" style="margin-bottom: 20px;">
         <div class="span12">
             <div class=" ">
-                <h2 class="life_title" style="margin-bottom: 20px;">What People Say</h2>
+                <h2 class="life_title" style="margin-bottom: 20px;">রক্তদানে দাতাদের গল্প </h2>
                 <div id="myCarousel" class="carousel fdi-Carousel slide">
                     <!-- Carousel items -->
                     <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
@@ -337,7 +339,7 @@
                                             <div class="row" style="margin-top: -40px">
                                                 <h4><?php echo e($row->name); ?></h4><small><?php echo e($row->designation); ?></small>
                                                 <b><?php echo e($row->institution); ?></b>
-                                                <img class="img img-responsive img-circle pull-right " src="<?php echo e(url('/')); ?>/public/images/testimonial/<?php echo e($row->photo); ?>" alt="testimonial" style="width:130px;height:110px;margin-top: -50px">
+                                                <img class="img img-responsive img-circle pull-right " src="<?php echo e($row->pic_path); ?>" alt="testimonial" style="width:130px;height:110px;margin-top: -50px">
                                             </div>
                                                 
                                                 <hr>
