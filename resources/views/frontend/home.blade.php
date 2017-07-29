@@ -478,35 +478,35 @@
             <p class="text-center">Current blood stock in bangladesh</p>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/1.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">{{$data['a_positive']}}</span>
+                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">Available Donor: {{$data['a_positive']}}</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/2.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">{{$data['b_positive']}}</span>
+                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">Available Donor: {{$data['b_positive']}}</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/3.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">{{$data['o_positive']}}</span>
+                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">Available Donor: {{$data['o_positive']}}</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/4.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">{{$data['ab_positive']}}</span>
+                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">Available Donor: {{$data['ab_positive']}}</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/5.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">{{$data['a_negative']}}</span>
+                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">Available Donor: {{$data['a_negative']}}</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/6.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">{{$data['b_negative']}}</span>
+                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">Available Donor: {{$data['b_negative']}}</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/7.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">{{$data['o_negative']}}</span>
+                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">Available Donor: {{$data['o_negative']}}</span>
              </div>
              <div class="col-md-3" style="margin-top:5px; border: 1px">
                  <img src="{{url('/')}}/public/images/bag/8.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">{{$data['ab_negative']}}</span>
+                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">Available Donor: {{$data['ab_negative']}}</span>
              </div>
 
         </div>

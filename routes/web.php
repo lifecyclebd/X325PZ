@@ -40,9 +40,12 @@ Route::post('/search-any','HomeController@SearchAny');
 Route::get('/admin/addGallery', 'PhotoController@addGallery');
 Route::any('/admin/storeGallery', 'PhotoController@storeGallery');
 Route::any('/admin/viewGallery', 'PhotoController@viewGallery');
+
+
 Route::any('/admin/addPhoto', 'PhotoController@addPhoto');
 Route::any('/admin/storePhoto', 'PhotoController@storePhoto');
 Route::any('/admin/viewPhoto', 'PhotoController@viewPhoto');
+Route::any('/admin/Photo/edit/{id},{g_id}', 'PhotoController@editPhoto');
 
 
 

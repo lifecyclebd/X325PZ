@@ -126,7 +126,7 @@ class PhotoController extends Controller
         return view('gallery.addPhoto')->with('data', $data);
     }
     
-      public function storePhoto(Request $request){
+    public function storePhoto(Request $request){
         $common = new Common;
         $f=date('Y-m-d').'_'.time(); 
         $gallery_details = new Gallery_detail();
@@ -135,7 +135,7 @@ class PhotoController extends Controller
             if ($request->photo_name) {
                 $fileName = $f;
                 $photo_name = $common->uploadImage('photo_name', 'images/gallery', $fileName);
-                $gallery_details->photo_name = $photo_name;
+                $gallery_details->pic_path = $photo_name;
             }
          
         $gallery_details->updated_by = 2;
@@ -153,6 +153,15 @@ class PhotoController extends Controller
         
          //$data['gallery']= Gallery_detail::all(); 
         return view('gallery.viewPhoto')->with('data', $data);
+    }
+    
+    public function editPhoto($id,$g_id){
+        $data['photo'] = DB::table('gallery_details')
+            ->join('galleries', 'galleries.id', '=', $id)
+            ->where('gallery_details.id','id')
+            ->get();
+        $data['gallery']= Gallery::all();
+        return view('gallery.editPhoto')->with('data', $data);
     }
     
 }

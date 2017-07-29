@@ -11,7 +11,7 @@
         <!-- Default box -->
         <div class="box box-info">
             <div class="box-header with-border">
-                <h3 class="box-title">Update Photo into Gallery </h3>
+                <h3 class="box-title">Edit Photo into Gallery </h3>
 
                 <div class="box-tools pull-right">
                     <a href="{{url('/admin/viewGallery')}}" class="">      
@@ -23,14 +23,14 @@
 
             <div class="box-body">
                 <!-- form start -->
-                <form class="form-horizontal" action="{{url('/admin/updatePhoto')}}" method="post" enctype="multipart/form-data"> 
+                <form class="form-horizontal" action="{{url('/admin/storePhoto')}}" method="post" enctype="multipart/form-data"> 
                     {!! csrf_field() !!}
-                    @foreach($data['photo'] as $value)
+
                     <div class="form-group">
                         <label for="name" class="col-md-4 control-label">Select Gallery</label>
                         <div class="col-md-6">
                             <select class="form-control" name="gallery_id">
-                                <option value="">-- Select Gallery --</option>
+                                <option value="">{{$data['photo']->gallery_name}}}</option>
                                 @foreach($data['gallery'] as $row)
                                 
                                 <option value="{{$row->id}}"> {{$row->gallery_name}}  </option>
@@ -48,21 +48,21 @@
                     <div class="form-group">
                         <label for="name" class="col-md-4 control-label">Photo Caption</label>
                         <div class="col-md-6">
-                            <input id="name" type="Text" class="form-control" value="{{$value->caption}}" name="caption" multiple="true">
+                            <input id="name" type="Text" class="form-control" value="{{$data['photo']->caption}}" name="caption" multiple="true">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="name" class="col-md-4 control-label">Short Text</label>
                         <div class="col-md-6">
-                            <input id="name" type="text" class="form-control" value="{{$value->sub_caption}} name="sub_caption" multiple="true">
+                            <input id="name" type="text" class="form-control" value="{{$data['photo']->sub_caption}}" name="sub_caption" multiple="true">
                         </div>
                     </div>
-                    @endforeach
+
                     
                     <div class="form-group">
                         <div class="col-md-12 col-md-offset-4">
                             <button type="submit" class="btn btn-primary">
-                                Add Photo
+                                Update Photo
                             </button>
                         </div>
                     </div>

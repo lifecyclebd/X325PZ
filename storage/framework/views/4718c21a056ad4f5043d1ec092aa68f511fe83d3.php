@@ -1,7 +1,4 @@
-@extends('layouts.myapp')
-
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
@@ -14,7 +11,7 @@
                 <h3 class="box-title">Update Photo into Gallery </h3>
 
                 <div class="box-tools pull-right">
-                    <a href="{{url('/admin/viewGallery')}}" class="">      
+                    <a href="<?php echo e(url('/admin/viewGallery')); ?>" class="">      
                         <i class="fa fa-undo" aria-hidden="true"></i> back
                     </a>
 
@@ -23,18 +20,19 @@
 
             <div class="box-body">
                 <!-- form start -->
-                <form class="form-horizontal" action="{{url('/admin/updatePhoto')}}" method="post" enctype="multipart/form-data"> 
-                    {!! csrf_field() !!}
-                    @foreach($data['photo'] as $value)
+                <form class="form-horizontal" action="<?php echo e(url('/admin/updatePhoto')); ?>" method="post" enctype="multipart/form-data"> 
+                    <?php echo csrf_field(); ?>
+
+                    <?php $__currentLoopData = $data['photo']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="form-group">
                         <label for="name" class="col-md-4 control-label">Select Gallery</label>
                         <div class="col-md-6">
                             <select class="form-control" name="gallery_id">
                                 <option value="">-- Select Gallery --</option>
-                                @foreach($data['gallery'] as $row)
+                                <?php $__currentLoopData = $data['gallery']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 
-                                <option value="{{$row->id}}"> {{$row->gallery_name}}  </option>
-                                @endforeach
+                                <option value="<?php echo e($row->id); ?>"> <?php echo e($row->gallery_name); ?>  </option>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </select>                        
                         </div>
                     </div>
@@ -48,16 +46,16 @@
                     <div class="form-group">
                         <label for="name" class="col-md-4 control-label">Photo Caption</label>
                         <div class="col-md-6">
-                            <input id="name" type="Text" class="form-control" value="{{$value->caption}}" name="caption" multiple="true">
+                            <input id="name" type="Text" class="form-control" value="<?php echo e($value->caption); ?>" name="caption" multiple="true">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="name" class="col-md-4 control-label">Short Text</label>
                         <div class="col-md-6">
-                            <input id="name" type="text" class="form-control" value="{{$value->sub_caption}} name="sub_caption" multiple="true">
+                            <input id="name" type="text" class="form-control" value="<?php echo e($value->sub_caption); ?> name="sub_caption" multiple="true">
                         </div>
                     </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     
                     <div class="form-group">
                         <div class="col-md-12 col-md-offset-4">
@@ -78,4 +76,5 @@
 </div>
 
 
-@endsection 
+<?php $__env->stopSection(); ?> 
+<?php echo $__env->make('layouts.myapp', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
