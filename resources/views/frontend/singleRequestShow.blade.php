@@ -30,8 +30,7 @@
                 <img  class="img-responsive img-circle img" src="{{url('/')}}/public/images/available.png"  style="width:28px; height: 28px;" >
                 </span>
               <span style="float: left; font-size: 20px; padding: 5px">
-                {{$data['donor']->fname}} {{$data['donor']->lname}}  {{$data['login_id']}}
-                </span>
+                {{$data['donor']->fname}} {{$data['donor']->lname}}  
                <span style="clear: both;"></span> 
               <hr>
               <p class="text-muted text-center" style="font-weight:bold">{{$data['donor']->address}}</p>
@@ -647,13 +646,13 @@
             <!-- /.tab-content -->
           </div> 
           <h3 class="life_title">Blood Request</h3>
-          <h4>From: <?php if($data['singlerequest']->receiver_type=="admin"){echo 'Life Cycle'; } ?></h4>
-          <h4>Message Published: {{$data['singlerequest']->created_at}}</h4>
+          <h4>Purpose: {{ $data['singleactivities']->purpose}}</h4>
+          <h4>Message Published: {{$data['singleactivities']->created_at}}</h4>
           <hr>
-          <p align="justify">{{$data['singlerequest']->request_blood_group}}</p>
+          <p align="justify">{{$data['singleactivities']->short_message}}</p>
           <hr>
-          <a class="btn-xs btn-primary" href="{{url('/')}}/singlerequest/agree/{{$data['singlerequest']->id}}">Response for Donation</a>
-          <a class="btn-xs btn-danger" href="{{url('/')}}/singlerequest/disagree/{{$data['singlerequest']->id}}">Unavailable</a> 
+          <a class="btn-xs btn-primary" href="{{url('/')}}/singlerequest/agree/{{$data['singleactivities']->id}}">Response for Donation</a>
+          <a class="btn-xs btn-danger" href="{{url('/')}}/singlerequest/disagree/{{$data['singleactivities']->id}}">Unavailable</a> 
 
 
 
