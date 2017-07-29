@@ -64,27 +64,39 @@ class HomeController extends Controller {
                 ->get();
 
         $data['recent_donor'] = Donor:: where('is_available', 1)->orderByDesc('last_donation')->get();
-        //$data['donor_24'] = More_about_blood::all();
         $data['upcoming_event'] = Content:: where('content_type', 'upcoming_events')->get();
-
-        // =$common->get_footer('system_settings','id',1);
-        //dd($data['footer']);
-        //$data['footer'] = System_setting::first();
-//dd($data['donor_24']);
-        //  $_SESSION['donor_login']="Nazmus Sakib";
-         $data['all_blood_info']=Content::where('content_type','more_blood')->orderByDesc('created_at')->take(4)->get();
-
+        $data['all_blood_info']=Content::where('content_type','more_blood')->orderByDesc('created_at')->take(4)->get();
         $data['testimonial'] = Testimonial::all();
-
         return view('frontend.home')->with('data', $data);
     }
     public function seeMoreBloodInfo(){
         $data['all_blood_info']=Content::where('content_type','more_blood')->orderByDesc('created_at')->get();
-
         return view('frontend.seeMoreBloodInfo')->with('data', $data);
-
-
     }
+
+
+
+//----------send message from contact form ------
+    public function send_message(Request $request){
+
+        $msg = new Message; 
+        $msg->sender_email = $request->email;
+        $msg->sender_type = 'user';
+
+        $msg->receiver_type =  'admin';
+        $msg->receiver_email =  'admin@lifecycle.org'; 
+
+        $msg->message = $request->message;
+        if(!empty($request->session()->get('id'))){$id=$request->session()->get('id');}
+        else{ $id=1000; }
+
+        $msg->created_by = $id; 
+        $msg->save();
+        return redirect('/contact?Your message send successfully !');
+    }
+
+
+
     public function SearchAny(Request $request) {
         $searchdata = $request->searchany;
 

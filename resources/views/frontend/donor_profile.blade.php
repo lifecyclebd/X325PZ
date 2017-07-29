@@ -30,7 +30,7 @@
                 <img  class="img-responsive img-circle img" src="{{url('/')}}/public/images/available.png"  style="width:28px; height: 28px;" >
                 </span>
               <span style="float: left; font-size: 20px; padding: 5px">
-                {{$data['donor']->fname}} {{$data['donor']->lname}}  {{$data['login_id']}}
+                {{$data['donor']->fname}} {{$data['donor']->lname}}  
                 </span>
                <span style="clear: both;"></span> 
               <hr>

@@ -29,7 +29,7 @@ Route::get('/speech-of-CEO', 'SpeechController@index');
 Route::get('/admin/donor/get_district/{id}', 'DonorController@get_district');
 Route::get('/admin/donor/get_upazilla/{id}', 'DonorController@get_upazilla');
 
-
+Route::post('/send-message', 'HomeController@send_message');
 
 Route::post('/search-any','HomeController@SearchAny');
 
