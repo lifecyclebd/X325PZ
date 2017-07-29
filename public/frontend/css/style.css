@@ -347,8 +347,7 @@ border-radius: 5px;    background-color: #4d4d4d !important;    color: white;
     color:white; 
     background: #c9302c;
 }
-.btn_read_more{
-    margin-top: 30px;
+.btn_read_more{ 
     width: 50%;
     height: 30px;
     border-radius: 5px;
@@ -401,13 +400,23 @@ p.title{
     font-size: 16px;
     text-align: center;
     padding: 10px;
+    border-bottom: 1px solid red;
 }
 .info_abou_blood{
-    background: #eee;
-    border-radius: 10px;
+    background: #eee; 
     padding: 10px;
     margin-bottom: 10px;
     margin-top: 10px;
+    border-radius: 0px;
+    border-top: 10px solid red;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+.more_blood_bottom{
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: red; margin-top: -10px;
+    padding: 10px;
 }
 .get_well_soon_sec{
     background: #c9302c;
@@ -773,7 +782,7 @@ textarea:focus {
     line-height: 10px;
     text-transform: uppercase;
     color: white;
-    margin: 5px 5px;
+    margin: 5px 0px;
     min-width: 100px;
     text-align: center;
     border-right: 2px solid rgba(80, 79, 79, 0.85);

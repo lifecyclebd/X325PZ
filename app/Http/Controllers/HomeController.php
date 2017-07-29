@@ -64,24 +64,19 @@ class HomeController extends Controller {
                 ->get();
 
         $data['recent_donor'] = Donor:: where('is_available', 1)->orderByDesc('last_donation')->get();
-        //$data['donor_24'] = More_about_blood::all();
-        $data['donor_24'] = More_about_blood:: where('slug', 'donor_24')->first();
-        $data['platelet'] = More_about_blood:: where('slug', 'platelets')->first();
-        $data['type'] = More_about_blood:: where('slug', 'blood_type')->first();
-        $data['journey'] = More_about_blood:: where('slug', 'journey')->first();
         $data['upcoming_event'] = Content:: where('content_type', 'upcoming_events')->get();
-
-        // =$common->get_footer('system_settings','id',1);
-        //dd($data['footer']);
-        //$data['footer'] = System_setting::first();
-//dd($data['donor_24']);
-        //  $_SESSION['donor_login']="Nazmus Sakib";
-
+        $data['all_blood_info']=Content::where('content_type','more_blood')->orderByDesc('created_at')->take(4)->get();
         $data['testimonial'] = Testimonial::all();
-
         return view('frontend.home')->with('data', $data);
     }
+    public function seeMoreBloodInfo(){
+        $data['all_blood_info']=Content::where('content_type','more_blood')->orderByDesc('created_at')->get();
+        return view('frontend.seeMoreBloodInfo')->with('data', $data);
+    }
 
+
+
+//----------send message from contact form ------
     public function send_message(Request $request){
 
         $msg = new Message; 
@@ -97,8 +92,11 @@ class HomeController extends Controller {
 
         $msg->created_by = $id; 
         $msg->save();
-return redirect('/contact?Your message send successfully !');
+        return redirect('/contact?Your message send successfully !');
     }
+
+
+
     public function SearchAny(Request $request) {
         $searchdata = $request->searchany;
 
@@ -113,7 +111,7 @@ return redirect('/contact?Your message send successfully !');
 
     public function blood_news() {
         //$data['blood_news'] = Blog::all();
-        $data['blood_news'] = Blog:: where('blog_category_id', 2)->orderByDesc('id')->get();
+        $data['blood_news'] = Blog:: where('blog_category', 2)->orderByDesc('id')->get();
         return view('frontend.blood_news')->with('data', $data);
     }
 
@@ -131,6 +129,14 @@ return redirect('/contact?Your message send successfully !');
     }
 
     public function blood_request() {
+        $request=request();
+         $value = $request->session()->get('email');
+
+        if(empty($value)){
+
+            $request->session()->put('redirect_url','/blood-request');
+           return redirect('/donor-login');
+         }
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
         return view('frontend.blood_request');
@@ -189,11 +195,9 @@ return redirect('/contact?Your message send successfully !');
     }
 
     public function news_page() {
-        //$divisions = DB::table("divisions")->lists("name", "id");
-        //return view('search.im', compact('divisions'));
-        //$data['activity'] = Activity::all();
-        $data['news'] = Content:: where('content_type', 'news')->take(10)->get();
-        $data['recent_news'] = Content:: where('content_type', 'news')->take(4)->skip(0)->orderByDesc('created_at')->get();
+        $data['last_news'] = Content:: where('content_type', 'news')->take(1)->orderByDesc('created_at')->first();
+        $data['news'] = Content:: where('content_type', 'news')->take(10)->skip(5)->orderByDesc('created_at')->get();
+        $data['recent_news'] = Content:: where('content_type', 'news')->take(4)->skip(1)->orderByDesc('created_at')->get();
         return view('frontend.news_page')->with('data', $data);
     }
 
@@ -245,7 +249,7 @@ return redirect('/contact?Your message send successfully !');
     public function blog_page() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        $data['blood_news'] = Blog:: where('blog_category_id', 2)->orderByDesc('id')->get();
+        $data['blood_news'] = Blog:: where('blog_category', 2)->orderByDesc('id')->get();
         return view('frontend.view_blog')->with('data', $data);
     }
 

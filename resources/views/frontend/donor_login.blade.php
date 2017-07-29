@@ -51,7 +51,7 @@ h2.login_title{
 
                         
                             {!! csrf_field() !!}
-                            <p><?php  if(isset($_GET['message'])){echo $_GET['message']; } ?></p>
+                            <p align="center" style="color: #eee"><?php  if(isset($_GET['message'])){echo $_GET['message']; } ?></p>
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Email</label>
                                 <div class="col-md-6">
@@ -73,8 +73,13 @@ h2.login_title{
                                     </button>
                                 </div>
                             </div>
+                            <div style="padding: 10px;height: 37px;margin: 10px;border-top: 1px solid #db666f;">
+                            <div style="float: left"><a href="#" style="color:white">Forgot your password?</a> </div>
+                            <div style="float: right;"><a href="{{url('/')}}/donor-register" style="color:white">New donor?  Sign Up</a> </div>
+                        </div>
                         </form>
                         <!-- form close -->
+                        
                     </div> 
                 </div>
                 <!-- /.box -->

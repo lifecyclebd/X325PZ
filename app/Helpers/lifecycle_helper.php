@@ -7,25 +7,20 @@ use App\Division;
 use App\Donor;
    function  get_footer()
     {
-     $sql_result=DB::table('system_settings')->select('*')->where('id', 1)->first();
-    // dd($sql_result);  
+     $sql_result=DB::table('system_settings')->select('*')->where('id', 1)->first(); 
         return $sql_result;
     }
 
 
     function get_session(){
     	$request = request();
-        $value = $request->session()->get('email');
-        if(!empty($value)){
-     //	if ($request->session()->exists('email')) {
-
+        $donor_login_email= $request->session()->get('email');
+        $donor_login_id= $request->session()->get('id');
+        if(!empty($donor_login_email)){
     		 $sql_result=DB::table('donors')->select('*')->where('email', $value)->first();
-    		 //$result= $sql_result->$column_name;
-    	//	 dd($result);
-	    	return $sql_result;
+	    	 return $sql_result;
     	}else{
-    		 
-   			  return null;
+        	return null;
     	} 
     }
 
