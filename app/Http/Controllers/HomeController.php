@@ -86,13 +86,17 @@ class HomeController extends Controller {
         $msg->receiver_type =  'admin';
         $msg->receiver_email =  'admin@lifecycle.org'; 
 
-        $msg->message = $request->message;
+        $msg->message ='Name: '. $request->name.
+        '<br>Email: '. $request->email.
+        '<br>Phone: '. $request->phone.
+        'Date Time: '.date('d-M-Y H:m').
+        '<br>Message:' . $request->message;
         if(!empty($request->session()->get('id'))){$id=$request->session()->get('id');}
         else{ $id=1000; }
 
         $msg->created_by = $id; 
         $msg->save();
-        return redirect('/contact?Your message send successfully !');
+        return redirect('/contact?message='.$request->name.', Your message send successfully !');
     }
 
 

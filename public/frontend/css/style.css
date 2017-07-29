@@ -191,7 +191,7 @@ button.find_search_button{
 .gallery-title
 {
     font-size: 36px;
-    color: red;
+    color: #c9302c;
     text-align: center;
     font-weight: 500;
     BORDER-BOTTOM: 3px solid #eee;
@@ -232,7 +232,7 @@ border-radius: 5px;    background-color: #4d4d4d !important;    color: white;
     margin-top: 30px;
 }
 .blood_info_sec1{
-    border:3px solid red;
+    border:3px solid #c9302c;
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
@@ -336,7 +336,7 @@ border-radius: 5px;    background-color: #4d4d4d !important;    color: white;
     border-radius: 10px;
     border: 3px solid #c9302c;
     text-align: center;
-    color: red;
+    color: #c9302c;
     padding: 5px;
     background: none;
     box-shadow: 3px 3px 5px #959595;
@@ -353,7 +353,7 @@ border-radius: 5px;    background-color: #4d4d4d !important;    color: white;
     border-radius: 5px;
     border: 1px solid #c9302c;
     text-align: center;
-    color: red;
+    color: #c9302c;
     padding: 5px;
     box-shadow: 3px 3px 5px #959595;
 }
@@ -400,7 +400,7 @@ p.title{
     font-size: 16px;
     text-align: center;
     padding: 10px;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid #c9302c;
 }
 .info_abou_blood{
     background: #eee; 
@@ -408,14 +408,14 @@ p.title{
     margin-bottom: 10px;
     margin-top: 10px;
     border-radius: 0px;
-    border-top: 10px solid red;
+    border-top: 10px solid #c9302c;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
 }
 .more_blood_bottom{
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
-    background-color: red; margin-top: -10px;
+    background-color: #c9302c; margin-top: -10px;
     padding: 10px;
 }
 .get_well_soon_sec{
@@ -506,7 +506,7 @@ input[type="text"].write_to_doctor{
     color: black;
 }
 .related_links_news_title a:hover{
-    color: red;
+    color: #c9302c;
 }
 .news_img{
     padding: 10px;
@@ -546,7 +546,7 @@ input[type="text"].write_to_doctor{
     margin-bottom: 20px;
 }
 .breadcumb li a {
-    color: red;
+    color: #c9302c;
 }
 .breadcumb li {
     display: inline-block;
@@ -698,7 +698,7 @@ textarea:focus {
 }
 
 .top-left a:hover {
-    color: red;
+    color: #c9302c;
 }
 
 /*Top Right Menu*/
@@ -717,7 +717,7 @@ textarea:focus {
     content: "\f041";
     font-family: 'FontAwesome';
     font-size: 16px;
-    color: red;
+    color: #c9302c;
     margin-right: 10px;
 }
 
@@ -764,7 +764,7 @@ textarea:focus {
 }
 /*Toggle Menu*/
 #main-nav .navbar-toggle {
-    background-color: red;
+    background-color: #c9302c;
 }
 
 #main-nav .navbar-toggle span {
@@ -800,11 +800,11 @@ display: block;
     border-right: 1px solid black !important;
     }
     .dropdown-menu>li>a {
-        color: red !important;
+        color: #c9302c !important;
     }
 
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
-    color: red !important;
+    color: #c9302c !important;
     text-decoration: none;
     background-color: #f5f5f5;
 }
@@ -822,20 +822,20 @@ display: block;
     border-bottom: 1px solid #9E9E9E !important;
 }
 #main-nav .navbar-right li > a:focus {
-    color: red;
+    color: #c9302c;
     background: white;
     outline: none;
 }
 
 #main-nav .navbar-right li > a:active {
-    color: red;
+    color: #c9302c;
     background: white;
     outline: none;
 }
 
 #main-nav .navbar-nav>li>a:hover,
 #main-nav .navbar-nav>li.active>a {
-    color: red; 
+    color: #c9302c; 
     background: white;
 }
 
@@ -897,7 +897,7 @@ display: block;
 
 #slider .caption span {
     padding: 0 10px;
-    background-color: red;
+    background-color: #c9302c;
     color: #fff;
 }
 
@@ -907,7 +907,7 @@ display: block;
     font-size: 24px;
     font-style: italic;
     margin-top: 30px;
-    color: red;
+    color: #c9302c;
 }
 
 #slider .caption button {
@@ -915,16 +915,16 @@ display: block;
     font-weight: 700;
     font-size: 17px;
     margin-top: 20px;
-    background-color: red;
+    background-color: #c9302c;
     color: #fff;
     border: 1px solid #fff;
 }
 
 #slider .caption button:hover {
     background-color: #fff;
-    border: 1px solid red;
+    border: 1px solid #c9302c;
     transition: 0.3s;
-    color: red;
+    color: #c9302c;
 }
 
 
@@ -945,7 +945,7 @@ display: block;
         font-style: italic;
         margin: 0;
         padding: 0;
-        color: red;
+        color: #c9302c;
     }
 
     #slider .caption .btn {
@@ -973,7 +973,7 @@ display: block;
         font-size: 16px;
         font-style: italic;
         margin-top: 15px;
-        color: red;
+        color: #c9302c;
     }
 
     #slider .caption .btn {
@@ -1002,15 +1002,15 @@ display: block;
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    border: 1px solid red;
+    border: 1px solid #c9302c;
 }
 
 #slider .flex-control-paging li a:hover {
-    background: red;
+    background: #c9302c;
 }
 
 #slider .flex-control-paging li a.flex-active {
-    background: red;
+    background: #c9302c;
     width: 12px;
     height: 12px;
 }
@@ -1073,7 +1073,7 @@ display: block;
     font-size: 45px;
     padding: 65px 30px 0 0;
     float: left;
-    color: red;
+    color: #c9302c;
 }
 .submit-btn{
     background: #c9302c;
@@ -1100,7 +1100,7 @@ display: block;
 }
 
 #about .about-right-wrapper a:hover {
-    color: red;
+    color: #c9302c;
 }
 
 #about .about-right-wrapper p {
@@ -1115,7 +1115,7 @@ display: block;
     font-size: 45px;
     padding: 65px 30px 0 0;
     float: left;
-    color: red;
+    color: #c9302c;
 }
 
 #about .about-right-support:before {
@@ -1124,7 +1124,7 @@ display: block;
     font-size: 45px;
     padding: 65px 30px 0 0;
     float: left;
-    color: red;
+    color: #c9302c;
 }
 
 /*Media*/
@@ -1324,7 +1324,7 @@ display: block;
     margin-right: 20px;
     text-align: center;
     float: left;
-    color: red;
+    color: #c9302c;
 }
 
 #about-bg .about-bg-wrapper p {
@@ -1421,7 +1421,7 @@ display: block;
     font-size: 36px;
     margin-bottom: 15px;
     line-height: 1px;
-    color: red;	
+    color: #c9302c;	
 }
 
 .services-style-one .services-column h4 {
@@ -1456,7 +1456,7 @@ display: block;
 }
 
 .services-style-one .content-column .sec-title h2 > span {
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid #c9302c;
     padding-bottom: 5px;
 }
 
@@ -1472,7 +1472,7 @@ display: block;
 }
 
 .inner-box button {
-    background-color: red;
+    background-color: #c9302c;
     width: 120px;
     height: 35px;
     color: #fff;
@@ -1480,7 +1480,7 @@ display: block;
 
 .inner-box button:hover {
     background-color: #fff;
-    color: red;
+    color: #c9302c;
 }
 
 /*Service Footer*/
@@ -1512,8 +1512,8 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 }
 .btn-search:hover {
     color: #fff;
-    background-color: red;
-    border: 2px solid red;
+    background-color: #c9302c;
+    border: 2px solid #c9302c;
     text-transform: uppercase; 
 }
 #service .service-footer-left h3 {
@@ -1524,7 +1524,7 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 }
 
 #service .service-footer-left h3 > span {
-    color: red;
+    color: #c9302c;
 }
 
 #service .service-footer-left p {
@@ -1538,7 +1538,7 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 }
 
 #service .service-footer-right button {
-    background-color: red;
+    background-color: #c9302c;
     width: 180px;
     height: 50px;
     color: #fff;
@@ -1546,7 +1546,7 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 
 #service .service-footer-right button:hover {
     background-color: #fff;
-    color: red;
+    color: #c9302c;
 }
 
 /*Media*/
@@ -1642,7 +1642,7 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
     height: 45px;
     line-height: 45px;
     text-align: center;
-    color: red;
+    color: #c9302c;
     background-color: #fff;
     position: absolute;
     top: 45%;
@@ -1719,7 +1719,7 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 }
 
 .validation {
-    color: red;
+    color: #c9302c;
     display:none;
     margin: 0 0 20px;
     font-weight:400;
@@ -1737,9 +1737,9 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 }
 
 #errormessage {
-    color: red;
+    color: #c9302c;
     display:none;
-    border:1px solid red;
+    border:1px solid #c9302c;
     text-align:center;
     padding:15px;
     font-weight:600;
@@ -1798,11 +1798,11 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
     margin-top: 25px;
     background-color: transparent;
     color: #7e7e7e;
-    border-color: red;
+    border-color: #c9302c;
 }
 
 #get-touch .content .form .submit .btn:hover {
-    background-color: red;
+    background-color: #c9302c;
     color: #fff;
 }
 
@@ -1936,7 +1936,7 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 }
 
 #footer .footer-heading ul > li > a:hover {
-    color: red;
+    color: #c9302c;
 }
 .insta{
     color: #cccbcb;
@@ -1952,7 +1952,7 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
     margin-top: 30px;
 }
 
-.credits a {
+.c#c9302cits a {
     color: #fff;
 }
 
@@ -1968,6 +1968,6 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 }
 
 #bottom-footer .footer-right ul > li > a:hover {
-    color: red;
+    color: #c9302c;
 }
 
