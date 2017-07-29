@@ -285,11 +285,11 @@
                                             <h4>{{$row->created_at}}</h4>
                                             </span>
                                             <span style="float: right; width: 70%">                                      
-                                            <h4 style="color: #c9302c; font-size: 20px; padding-left: 10px;">{{$row->title}} <?php echo $i;?></h4>
+                                            <h4 style="color: #c9302c; font-size: 20px; padding-left: 10px;">{{$row->title}}  </h4>
                                             <p style="padding-left: 10px; border-top: 1px solid #c9302c;">Static Location</p>   
                                             </span>                                              
                                             <span style="width: 100%; padding: 10px; float: left; margin-bottom: 10px">
-                                            <p style="text-align:justify; margin-top: 10px;">{{substr($row->description,0,100)}}</p>
+                                            <p style="text-align:justify; margin-top: 10px;">{!!substr($row->description,0,100)!!}</p>
 
                                             <a href="{{url('/upcoming-event')}}/{{$row->id}}" class="btn-serach pull-right" style="color: #c9302c"> বিস্তারিত জানতে </a>
                                             </span> 
