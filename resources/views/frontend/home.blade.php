@@ -262,10 +262,7 @@
 
     </div>
 </div>   
-<div class="clearfix"></div>     
-
- 
-
+<div class="clearfix"></div>  
 <div class="container-fluid">
     <div class="row" style="margin-bottom: 20px;">
         <div class="span12">
@@ -276,25 +273,25 @@
                     <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
                         <div class="carousel-inner onebyone-carosel">
                             <?php $i=0;?>
-                            @foreach($data['testimonial'] as $row)
+                            @foreach($data['upcoming_event'] as $row)
                             <div class="item <?php if($i==0)echo 'active';?>">
                                 <div class="col-md-4">
                                     <div style="background: #eee; padding: 5px; margin: 5px; max-height: 300px;min-height: 420px;">
                                         <span style="float: left; width: 100%">
-                                            <img class="img img-responsive img-thumbnail" src="{{url('/')}}/public/images/testimonial/{{$row->photo}}" alt="testimonial" style="width:100%;height:200px;">
+                                            <img class="img img-responsive img-thumbnail" src="{{$row->pic_path}}" alt="testimonial" style="width:100%;height:200px;">
                                         </span>
                                         <span style="float: right; width: 100%; padding: 10px;"> 
                                             <span style="float: left; width: 30%; background: gray; color: white; text-align: center">
-                                            <h4>13</h4> June 2016
+                                            <h4>{{$row->created_at}}</h4>
                                             </span>
                                             <span style="float: right; width: 70%">                                      
-                                            <h4 style="color: #c9302c; font-size: 20px; padding-left: 10px;">Event Title <?php echo $i;?></h4>
-                                            <p style="padding-left: 10px; border-top: 1px solid #c9302c;">Maghbazar, Dhaka</p>   
+                                            <h4 style="color: #c9302c; font-size: 20px; padding-left: 10px;">{{$row->title}} <?php echo $i;?></h4>
+                                            <p style="padding-left: 10px; border-top: 1px solid #c9302c;">Static Location</p>   
                                             </span>                                              
                                             <span style="width: 100%; padding: 10px; float: left; margin-bottom: 10px">
-                                            <p style="text-align:justify; margin-top: 10px;">{{substr($row->message,0,100)}}</p>
+                                            <p style="text-align:justify; margin-top: 10px;">{{substr($row->description,0,100)}}</p>
 
-                                            <a href="#" class="btn-serach pull-right" style="color: #c9302c"> বিস্তারিত জানতে </a>
+                                            <a href="{{url('/upcoming-event')}}/{{$row->id}}" class="btn-serach pull-right" style="color: #c9302c"> বিস্তারিত জানতে </a>
                                             </span> 
                                         </span>
 
