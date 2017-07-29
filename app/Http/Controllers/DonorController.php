@@ -333,24 +333,33 @@ public function signup(Request $request) {
     }
 
    public function singleRequestShow(Request $request,$req_id){
-        $value = $request->session()->get('email');
-        if(empty($value)){
-           return redirect('/donor-login');
-         }
-        $login_donor_id = $request->session()->get('id');
-        $data['login_email'] = $request->session()->get('email');
-        $data['messages'] = Message::where([['sender_id', $login_donor_id], ['sender_type', 'donor']])->get(); 
 
-        $data['singlerequest']=BloodRequest::where([['id',$req_id ],['sender_email', $data['login_email']], ['sender_type', 'donor']])->first();
+        $login_donor_email = $request->session()->get('email');
+        $login_donor_id = $request->session()->get('id');
+
+        if(empty($login_donor_email) && empty($login_donor_id)){
+
+            $request->session()->put('session_url','/donor-profile/request-show/'.$req_id);
+            return redirect('/donor-login');
+         }
+  
+        $data['login_email'] = $request->session()->get('email');
+        $data['messages'] = Message::where([['sender_email', $login_donor_email], ['sender_type', 'donor']])->get(); 
+
+        //$data['singlerequest']=BloodRequest::where([['id',$req_id ],['sender_email', $login_donor_email], ['sender_type', 'donor']])->first();
 
 
          
-        $data['last5message'] = Message::where([['sender_id', $login_donor_id], ['sender_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
+        $data['last5message'] = Message::where([['sender_email', $login_donor_email], ['sender_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
         $data['last5messageCount']=$data['last5message']->count();
 
         
         $data['activities'] = Activity::where([['created_id', $login_donor_id], ['created_type', 'donor']])->get(); 
         $data['last5activities']= Activity::where([['created_id', $login_donor_id], ['created_type', 'donor']])->orderByDesc('created_at')->take(5)->get(); 
+
+        $data['singleactivities']=Activity::where([['id',$req_id ],['created_id', $login_donor_email], ['created_type', 'donor']])->first();
+        dd($data['singleactivities']);
+
         $data['division'] = Division::all();
         $donor_email= $request->session()->get('email');
         $data['donor'] = Donor::where('email',$donor_email)->first();

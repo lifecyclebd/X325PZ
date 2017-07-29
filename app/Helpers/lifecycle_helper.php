@@ -17,7 +17,7 @@ use App\Donor;
         $donor_login_email= $request->session()->get('email');
         $donor_login_id= $request->session()->get('id');
         if(!empty($donor_login_email)){
-    		 $sql_result=DB::table('donors')->select('*')->where('email', $value)->first();
+    		 $sql_result=DB::table('donors')->select('*')->where('email', $donor_login_email)->first();
 	    	 return $sql_result;
     	}else{
         	return null;

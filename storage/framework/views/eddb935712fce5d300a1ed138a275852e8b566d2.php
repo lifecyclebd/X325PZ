@@ -8,7 +8,7 @@
                     <p class="text-center find_out_where">Find out where to give blood</p> 
                     <form class="form-horizontal" method="post" action=""> 
                         <div class="input-group">
-                            <input type="text" class="form-control search_place"  name="search">
+                            <input type="text" class="form-control search_place"  name="search" style="height: 40px">
                             <div class="input-group-btn">
                                 <button class="btn btn-search " type="submit">SEARCH</button>
                             </div>
@@ -29,31 +29,32 @@
 
             <div class="col-md-3">
                 <div class="footer-heading">
-                    <h3><span>Head Office</span></h3>
-                    <p><?php echo e($info->head_office); ?></p>
-                    <p><b>Initial release:</b><?php echo e($info->established_datetime); ?><br>
-                        <b>Director:</b><?php echo e($info->director); ?><br>
+                    <h3><span>হেড অফিস </span></h3>
+                    <p> স্থানঃ  <?php echo e($info->head_office); ?><br>
+                    ফোনঃ +88 01711 42 42 42<br>
+                    ইমেইলঃ info@lifecycle.org<br>
+                         
                     </p>
                 </div>
             </div>
 
             <div class="col-md-3">
                 <div class="footer-heading">
-                    <h3><span>Site Map</span></h3>
+                    <h3><span>সাইটের রুপরেখা </span></h3>
                     <ul>
-                        <li><a href="#">Trends don't matter, but techniques do</a></li>
-                        <li><a href="#">Trends don't matter, but techniques do</a></li>
-                        <li><a href="#">Trends don't matter, but techniques do</a></li>
-                        <li><a href="#">Trends don't matter, but techniques do</a></li>
+                        <li><a href="#">হোমপেজ </a></li>
+                        <li><a href="#"> আমাদের কথা  </a></li>
+                        <li><a href="#"> দাতা হন  </a></li>
+                        <li><a href="#"> আমাদের নিতীমালা </a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="col-md-3">
                 <div class="footer-heading">
-                    <h3><span>Give Blood</span></h3>
+                    <h3><span>রক্ত দান </span></h3>
                     <div class="insta">
-                        <p>Monday to Thursday 10am - 12pm and 2pm-4pm; Friday 10 am-12pm</p>
+                        <p>আপনাদের পাশে ২৪/৭ ঘন্টায় উপস্থিত</p>
                         <h3><?php echo e($info->phone1); ?>  </h3>
                         <p>
                             Please call for blood
@@ -61,18 +62,18 @@
                         <h3><?php echo e($info->phone2); ?></h3>
 
                         <div class="insta">
-                            <button  class="foooter_button">Sign up to give Blood</button>
+                            <button  class="foooter_button">সাইন আপ করুন </button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="footer-heading">
-                    <h3><span>Already Registered</span></h3>
+                    <h3><span>  রেজিস্টার ইউজার  </span></h3>
                     <div class="insta">
-                        <button  class="foooter_button">Change Address</button>
+                        <button  class="foooter_button">ঠিকানা পরিবর্তন </button>
                     </div><br><br>
-                    <h4>Follow Us</h4>
+                    <h4> আমাদের অনুসরণ করুন  </h4>
                     <div class="footer_bottom_fa"> 
                         <a href="<?php echo e(url('https://www.facebook.com/')); ?>" target="_blank"><i style="padding: 5px;" class="fa fa-facebook" aria-hidden="true"></i> </a>
                         <a href="<?php echo e(url('https://plus.google.com/')); ?>" target="_blank"><i style="padding: 5px;"  class="fa fa-google-plus" aria-hidden="true"></i> 

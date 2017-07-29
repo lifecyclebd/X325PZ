@@ -1,7 +1,6 @@
-@extends('layouts/front')
  
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="container">
 
 <div class="wrapper" style="height: auto; min-height: 100%;">
@@ -23,27 +22,27 @@
           <div class="box box-primary">
             <div class="box-body box-profile">
 
-              <img style="width: 100%; height: auto;" class="img-responsive img-circle img" src="{{$data['donor']->pic_path}}" alt="User profile picture">
+              <img style="width: 100%; height: auto;" class="img-responsive img-circle img" src="<?php echo e($data['donor']->pic_path); ?>" alt="User profile picture">
 
 
               <span style="float: left"> 
-                <img  class="img-responsive img-circle img" src="{{url('/')}}/public/images/available.png"  style="width:28px; height: 28px;" >
+                <img  class="img-responsive img-circle img" src="<?php echo e(url('/')); ?>/public/images/available.png"  style="width:28px; height: 28px;" >
                 </span>
               <span style="float: left; font-size: 20px; padding: 5px">
-                {{$data['donor']->fname}} {{$data['donor']->lname}}  
+                <?php echo e($data['donor']->fname); ?> <?php echo e($data['donor']->lname); ?>  
                <span style="clear: both;"></span> 
               <hr>
-              <p class="text-muted text-center" style="font-weight:bold">{{$data['donor']->address}}</p>
+              <p class="text-muted text-center" style="font-weight:bold"><?php echo e($data['donor']->address); ?></p>
 
               <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
-                  <b>Blood Group</b> <a class="pull-right">{{$data['donor']->blood_group}}</a>
+                  <b>Blood Group</b> <a class="pull-right"><?php echo e($data['donor']->blood_group); ?></a>
                 </li>
                 <li class="list-group-item">
-                  <b>Last Donation Date</b> <a class="pull-right">{{$data['donor']->last_donation}}</a>
+                  <b>Last Donation Date</b> <a class="pull-right"><?php echo e($data['donor']->last_donation); ?></a>
                 </li>
                 <li class="list-group-item">
-                  <b>Number of Donation</b> <a class="pull-right">{{$data['donor']->donations_number}}</a>
+                  <b>Number of Donation</b> <a class="pull-right"><?php echo e($data['donor']->donations_number); ?></a>
                 </li>
                 <li class="list-group-item">
                   <b>Any Diseases</b> <a class="pull-right">13,287</a>
@@ -115,15 +114,15 @@
                 <h3 class="life_title">Personal Activities</h3>
                   <table class="table table-bordered">
                       <tr><td>SL</td><td>Purpose</td><td>Short Message</td><td>Published</td> <td>Status</td></tr>
-                      @php $i=1; @endphp
-                    @foreach($data['activities'] as $row)
+                      <?php  $i=1;  ?>
+                    <?php $__currentLoopData = $data['activities']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                       <tr>
-                      <td>{{$i}}</td>
-                      <td>{{$row->purpose}}</td>
-                      <td>{{$row->short_message}}</td>
+                      <td><?php echo e($i); ?></td>
+                      <td><?php echo e($row->purpose); ?></td>
+                      <td><?php echo e($row->short_message); ?></td>
                       <td>
                       <?php $newDate = date("d-m-Y H:m:s", strtotime($row->created_at)); ?>
-                      {{$newDate}}</td>
+                      <?php echo e($newDate); ?></td>
                       <td>
                       <a href=""><i class="fa fa-trash" style="font-size: 20px;"></i></a>
 
@@ -131,8 +130,8 @@
 
                       </td>
                       </tr>
-                      @php $i++; @endphp
-                      @endforeach
+                      <?php  $i++;  ?>
+                      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                       </table>
               </div>
 
@@ -157,8 +156,9 @@
               <div class="tab-pane" id="changepassword">
               <h3 class="life_title">Change Password</h3>
                 
-                    <form class="form-horizontal login" action="{{url('/donor/store')}}" method="post" enctype= "multipart/form-data"> 
-                            {!! csrf_field() !!}
+                    <form class="form-horizontal login" action="<?php echo e(url('/donor/store')); ?>" method="post" enctype= "multipart/form-data"> 
+                            <?php echo csrf_field(); ?>
+
 
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Previous Password</label>
@@ -275,26 +275,27 @@
 
                     <div class="box-body">
                         <!-- form start -->
-                        <form class="form-horizontal login" action="{{url('/donor/store')}}" method="post" enctype= "multipart/form-data"> 
-                            {!! csrf_field() !!}
+                        <form class="form-horizontal login" action="<?php echo e(url('/donor/store')); ?>" method="post" enctype= "multipart/form-data"> 
+                            <?php echo csrf_field(); ?>
+
 
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">First Name</label>
                                 <div class="col-md-8">
-                                    <input id="name" type="text" class="form-control" value="{{$data['donor']->fname}}" name="fname" placeholder="First Name"  autofocus>
+                                    <input id="name" type="text" class="form-control" value="<?php echo e($data['donor']->fname); ?>" name="fname" placeholder="First Name"  autofocus>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Last Name</label>
                                 <div class="col-md-8">
-                                    <input id="name" type="text" class="form-control" value="{{$data['donor']->lname}}" name="lname" placeholder="Last Name"  autofocus>
+                                    <input id="name" type="text" class="form-control" value="<?php echo e($data['donor']->lname); ?>" name="lname" placeholder="Last Name"  autofocus>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Email</label>
                                 <div class="col-md-8">
-                                    <input id="name" type="email" class="form-control" value="{{$data['donor']->email}}" name="email"  autofocus>
+                                    <input id="name" type="email" class="form-control" value="<?php echo e($data['donor']->email); ?>" name="email"  autofocus>
                                 </div>
                             </div>
 
@@ -313,18 +314,18 @@
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Date of Birth</label>
                                 <div class="col-md-4">
-                                    <input id="name" type="date" class="form-control" value="{{$data['donor']->birth_date}}" name="birth_date"  autofocus>
+                                    <input id="name" type="date" class="form-control" value="<?php echo e($data['donor']->birth_date); ?>" name="birth_date"  autofocus>
                                 </div> 
                                 <label for="name" class="col-md-2 control-label">Last Donate</label>
                                 <div class="col-md-2">
-                                    <input id="name" type="date" value="{{$data['donor']->last_donation}}" class="form-control" name="last_donation"  autofocus>
+                                    <input id="name" type="date" value="<?php echo e($data['donor']->last_donation); ?>" class="form-control" name="last_donation"  autofocus>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Phone</label>
                                 <div class="col-md-8">
-                                    <input id="name" type="number" value="{{$data['donor']->phone}}" class="form-control" name="phone"  autofocus>
+                                    <input id="name" type="number" value="<?php echo e($data['donor']->phone); ?>" class="form-control" name="phone"  autofocus>
                                 </div>
                             </div>
 
@@ -333,9 +334,9 @@
                                 <div class="col-md-2">
                                     <select name="division" class="divisions form-control">
 
-                                        @foreach($data['division'] as $row)
-                                        <option value="{{$row->id}}">{{$row->division_name}}</option>
-                                        @endforeach 
+                                        <?php $__currentLoopData = $data['division']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <option value="<?php echo e($row->id); ?>"><?php echo e($row->division_name); ?></option>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
                                     </select>
                                 </div> 
                                 <label for="email" class="col-md-2 control-label">District</label>
@@ -357,7 +358,7 @@
 
                                 <label class="col-md-2 control-label">Post Code</label>
                                 <div class="col-md-2">
-                                    <input type="number" value="{{$data['donor']->post_code}}"  class="form-control" name="post_code" placeholder="Post Code">
+                                    <input type="number" value="<?php echo e($data['donor']->post_code); ?>"  class="form-control" name="post_code" placeholder="Post Code">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -393,7 +394,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="email"  value="{{$data['donor']->fb_url}}"   class="col-md-4 control-label">FB Url</label>
+                                <label for="email"  value="<?php echo e($data['donor']->fb_url); ?>"   class="col-md-4 control-label">FB Url</label>
 
                                 <div class="col-md-2">
                                     <input type="text" class="form-control"  name="fb_url" />
@@ -611,12 +612,12 @@
                 <h3 class="life_title">Mail Box</h3>
                     <table class="table table-bordered">
                       <tr><td>SL</td><td>Donate Date</td><td>Blood Group</td><td>Place</td><td>Status</td></tr>
-                      @foreach($data['messages'] as $row)
+                      <?php $__currentLoopData = $data['messages']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
                       <tr><td>1</td><td>1st Jan 2016</td><td>A+</td><td><i class="fa fa-map-marker margin-r-5"></i> Malibag, Dhaka</td><td>Approved</td></tr>
 
 
-                      @endforeach
+                      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                   </table>
               </div>
 
@@ -646,13 +647,13 @@
             <!-- /.tab-content -->
           </div> 
           <h3 class="life_title">Blood Request</h3>
-          <h4>Purpose: {{ $data['singleactivities']->purpose}}</h4>
-          <h4>Message Published: {{$data['singleactivities']->created_at}}</h4>
+          <h4>Purpose: <?php echo e($data['singleactivities']->purpose); ?></h4>
+          <h4>Message Published: <?php echo e($data['singleactivities']->created_at); ?></h4>
           <hr>
-          <p align="justify">{{$data['singleactivities']->short_message}}</p>
+          <p align="justify"><?php echo e($data['singleactivities']->short_message); ?></p>
           <hr>
-          <a class="btn-xs btn-primary" href="{{url('/')}}/singlerequest/agree/{{$data['singleactivities']->id}}">Response for Donation</a>
-          <a class="btn-xs btn-danger" href="{{url('/')}}/singlerequest/disagree/{{$data['singleactivities']->id}}">Unavailable</a> 
+          <a class="btn-xs btn-primary" href="<?php echo e(url('/')); ?>/singlerequest/agree/<?php echo e($data['singleactivities']->id); ?>">Response for Donation</a>
+          <a class="btn-xs btn-danger" href="<?php echo e(url('/')); ?>/singlerequest/disagree/<?php echo e($data['singleactivities']->id); ?>">Unavailable</a> 
 
 
 
@@ -675,4 +676,5 @@
     </div>
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts/front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
