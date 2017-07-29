@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 28, 2017 at 10:20 AM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.20
+-- Generation Time: Jul 29, 2017 at 07:31 AM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -29,8 +29,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `activities` (
   `id` int(11) NOT NULL,
   `created_id` int(11) NOT NULL,
+  `created_email` varchar(255) NOT NULL,
   `created_type` varchar(255) NOT NULL,
-  `receiver_id` int(11) NOT NULL,
+  `receiver_email` varchar(255) NOT NULL,
   `receiver_type` varchar(255) NOT NULL,
   `purpose` text NOT NULL,
   `short_message` text NOT NULL,
@@ -46,12 +47,14 @@ CREATE TABLE `activities` (
 -- Dumping data for table `activities`
 --
 
-INSERT INTO `activities` (`id`, `created_id`, `created_type`, `receiver_id`, `receiver_type`, `purpose`, `short_message`, `is_read`, `is_reply`, `parent_id`, `created_at`, `created_by`, `updated_at`) VALUES
-(1, 4, 'donor', 303, 'admin', 'Blood Donation', 'Need AB+Blood 6 for Mahedi', 1, 0, 6, '2017-07-14 20:37:31', 'Asru', '2017-07-14 20:37:31'),
-(2, 5, 'donor', 303, 'admin', 'dont know', 'Need A+Blood 3 for Mohin', 1, 0, 6, '2017-07-14 21:04:36', 'Asru', '2017-07-14 21:04:36'),
-(3, 5, 'donor', 303, 'admin', 'dont know', 'Need A+Blood 2 for ', 1, 0, 6, '2017-07-19 19:22:15', 'Asru', '2017-07-19 19:22:15'),
-(4, 5, 'donor', 303, 'admin', 'dont know', 'Need O-Blood 100 for ', 1, 0, 6, '2017-07-19 19:25:50', 'Asru', '2017-07-19 19:25:50'),
-(5, 4, 'donor', 303, 'admin', 'Request for A+ Blood', 'Need B+Blood 6 in Rajshahi Medical', 1, 0, 6, '2017-07-19 19:32:42', 'Asru', '2017-07-19 19:32:42');
+INSERT INTO `activities` (`id`, `created_id`, `created_email`, `created_type`, `receiver_email`, `receiver_type`, `purpose`, `short_message`, `is_read`, `is_reply`, `parent_id`, `created_at`, `created_by`, `updated_at`) VALUES
+(1, 4, '', 'donor', '303', 'admin', 'Blood Donation', 'Need AB+Blood 6 for Mahedi', 1, 0, 6, '2017-07-14 20:37:31', 'Asru', '2017-07-14 20:37:31'),
+(2, 5, '', 'donor', '303', 'admin', 'dont know', 'Need A+Blood 3 for Mohin', 1, 0, 6, '2017-07-14 21:04:36', 'Asru', '2017-07-14 21:04:36'),
+(3, 5, '', 'donor', '303', 'admin', 'dont know', 'Need A+Blood 2 for ', 1, 0, 6, '2017-07-19 19:22:15', 'Asru', '2017-07-19 19:22:15'),
+(4, 5, '', 'donor', '303', 'admin', 'dont know', 'Need O-Blood 100 for ', 1, 0, 6, '2017-07-19 19:25:50', 'Asru', '2017-07-19 19:25:50'),
+(5, 4, '', 'donor', '303', 'admin', 'Request for A+ Blood', 'Need B+Blood 6 in Rajshahi Medical', 1, 0, 6, '2017-07-19 19:32:42', 'Asru', '2017-07-19 19:32:42'),
+(6, 4, 'jmrashed@gmail.com', 'donor', 'admin@lifecycle.org', 'admin', 'umknown', 'Need AB+Blood 4 in Dhaka Medicalat2017-07-31', 0, 0, 0, '2017-07-28 10:07:35', 'jmrashed@gmail.com', '2017-07-28 10:07:35'),
+(7, 4, 'jmrashed@gmail.com', 'donor', 'admin@lifecycle.org', 'admin', 'umknown', 'Need A+Blood 3 in Dhaka Medicalat2017-07-11', 0, 0, 0, '2017-07-28 17:21:30', 'jmrashed@gmail.com', '2017-07-28 17:21:30');
 
 -- --------------------------------------------------------
 
@@ -477,7 +480,9 @@ INSERT INTO `blood_requests` (`id`, `sender_email`, `sender_type`, `receiver_ema
 (11, '0', 'donor', '0', 'admin', 'A+', 'Mohin', '0158965848', 'Moynamoti', 3, 'unknown', 'brother', '2017-07-21 00:00:00', '2017-07-14 21:04:36', '2017-07-14 21:04:36', NULL),
 (12, '0', 'donor', '0', 'admin', 'A+', 'Dhaka Medical', '019100077628', 'Dhaka', 2, 'Fever', 'Brother', '2017-07-05 00:00:00', '2017-07-19 19:22:15', '2017-07-19 19:22:15', NULL),
 (13, '0', 'donor', '0', 'admin', 'O-', 'Dhaka', '011111', 'DHaka', 100, 'No', 'ok', '2017-07-12 00:00:00', '2017-07-19 19:25:50', '2017-07-19 19:25:50', NULL),
-(14, '0', 'donor', '0', 'admin', 'B+', 'Rajshahi Medical', '01865987458', 'Rajshahi', 6, 'Thalasamia', 'Friend', '2017-07-28 00:00:00', '2017-07-19 19:32:41', '2017-07-19 19:32:41', NULL);
+(14, '0', 'donor', '0', 'admin', 'B+', 'Rajshahi Medical', '01865987458', 'Rajshahi', 6, 'Thalasamia', 'Friend', '2017-07-28 00:00:00', '2017-07-19 19:32:41', '2017-07-19 19:32:41', NULL),
+(15, 'jmrashed@gmail.com', 'donor', 'admin@lifecycle.org', 'admin', 'AB+', 'Dhaka Medical', '01788546985', 'Dhaka', 4, 'jani na', 'bro', '2017-07-31 00:00:00', '2017-07-28 10:07:35', '2017-07-28 10:07:35', 4),
+(16, 'jmrashed@gmail.com', 'donor', 'admin@lifecycle.org', 'admin', 'A+', 'Dhaka Medical', '7046864888', 'Comilla', 3, 'Thalasemia', 'Friend', '2017-07-11 00:00:00', '2017-07-28 17:21:30', '2017-07-28 17:21:30', 4);
 
 -- --------------------------------------------------------
 
@@ -538,8 +543,8 @@ CREATE TABLE `contents` (
 --
 
 INSERT INTO `contents` (`id`, `title`, `description`, `content_type`, `pic_path`, `author_id`, `created_at`, `updated_at`) VALUES
-(5, 'কারা রক্তদান করতে পারবেন 1?', '<p>SKILL</p>\r\n\r\n<ul>\r\n	<li>১৮ বছর থেকে ৬০ বছরের যেকোনো সুস্থদেহের মানুষ রক্ত দান করতে পারবেন।</li>\r\n	<li>শারীরিক এবং মানসিক ভাবে সুস্থ নিরোগ ব্যক্তি রক্ত দিতে পারবেন</li>\r\n	<li>আপনার ওজন অবশ্যই ৫০ কিলোগ্রাম কিংবা তার বেশি হতে হবে।</li>\r\n	<li>মহিলাদের ক্ষেত্রে ৪ মাস অন্তর-অন্তর, পুরুষদের ক্ষেত্রে ৩ মাস অন্তর অন্তর রক্ত-দান করা যায়।</li>\r\n	<li>রক্তে হিমোগ্লোবিনের পরিমাণ, রক্তচাপ ও শরীরের তাপমাত্রা স্বাভাবিক থাকতে হবে।</li>\r\n	<li>শ্বাস-প্রশ্বাসজনিত রোগ এ্যাজমা, হাপানি যাদের আছে তারা রক্ত দিতে পারবেন না।</li>\r\n</ul>', 'news', 'http://localhost:81/Lifecycle/public/images/content/news/NEWS_5.jpg', 3, '2017-07-27 19:46:46', '2017-07-27 13:46:46'),
-(6, 'WHO''s work on blood transfusion safety', '<p>An initial assessment revealed extensive damage to the nation&rsquo;s blood supply infrastructure. Out of about 100 blood transfusion centres, 9 were completely destroyed and 21 were partially damaged. The Central Blood Transfusion Service building in Kathmandu had large cracks in its walls and was deemed structurally unsound.</p>', 'news', 'http://localhost:81/Lifecycle/public/images/content/news/NEWS_6.jpg', 3, '2017-07-27 19:47:19', '2017-07-27 13:47:19'),
+(5, 'কারা রক্তদান করতে পারবেন', '<p>পত্রিকা তৈরির কাজ করতে করতে বাংলার সাথে নিজেকে বেঁধে নিয়েছি আষ্টেপৃষ্ঠে। বিশেষ করে অনলাইন পত্রিকা তৈরি করতে ডিযাইন করার সময়, সেই ডিযাইনকে কোডে রূপান্তর করবার সময় বারবার অনুভব করেছি কিছু নমুনা লেখার। যে লেখাগুলো ফটোশপে বসিয়ে বাংলায় ডিযাইন করা যাবে, আবার সেই লেখাই অনলাইনে ব্যবহার করা যাবে। কিন্তু দুঃখজনক হলেও সত্য যে, ইংরেজিতে লাতিন</p>', 'news', 'http://localhost/Lifecycle/public/images/content/news/NEWS_5.jpg', 3, '2017-07-28 15:25:31', '2017-07-28 09:25:31'),
+(6, 'আমার বাংলা নিয়ে প্রথম কাজ', '<p>এর পর একে একে বাংলা উইকিপিডিয়া, ওয়ার্ডপ্রেস বাংলা কোডেক্সসহ বিভিন্ন বাংলা অনলাইন পত্রিকা তৈরির কাজ করতে করতে বাংলার সাথে নিজেকে বেঁধে নিয়েছি আষ্টেপৃষ্ঠে। বিশেষ করে অনলাইন পত্রিকা তৈরি করতে ডিযাইন করার সময়, সেই ডিযাইনকে কোডে রূপান্তর করবার সময় বারবার অনুভব করেছি কিছু নমুনা লেখার। যে লেখাগুলো</p>', 'news', 'http://localhost/Lifecycle/public/images/content/news/NEWS_6.jpg', 3, '2017-07-28 15:26:56', '2017-07-28 09:26:56'),
 (7, 'Giving blood in a time of crisis', '<p>There were also deaths and injuries at two The country&rsquo;s first solar-powered emergency blood transfusion service centre had been inaugurated just five days before the earthquake struck. The designers had predicted that power would be a significant problem after a natural disaster; the rooftop solar panels meant that this was not an issue. Made from shipping containers bolted together for reinforcement, the</p>', 'news', 'http://localhost:81/Lifecycle/public/images/content/news/NEWS_7.png', 3, '2017-07-27 19:47:43', '2017-07-27 13:47:43'),
 (8, 'Medical Camp', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit&nbsp;</p>', 'recent_events', 'EVENTS_8.jpg', 3, '2017-07-17 20:16:44', '2017-07-12 11:53:44'),
 (9, 'World Blood Donor Day 2017', '<p>Within a minute, a region in more   dead and another 22 000 injured.\n\nHalf an hour later, Dr Ghimire, a national professional officer at WHO’s country office in Nepal, was at the Health Ministry to join the team assembled at the health emergency operation centre. He was put in charge of coordinating the blood transfusion services, including the availability of blood and blood products in earthquake response operations.</p> ', 'upcoming_events', 'EVENTS_9.png', 3, '2017-07-21 19:55:42', '2017-07-21 13:02:23'),
@@ -555,7 +560,15 @@ INSERT INTO `contents` (`id`, `title`, `description`, `content_type`, `pic_path`
 (19, 'Medical Camp430', 'enean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate egam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit&nbsp;</p>', 'recent_events', 'EVENTS_8.jpg', 3, '2017-07-17 20:16:50', '2017-07-12 11:53:44'),
 (20, '৩০ বছরের পর হার্ট ভালো রাখার সাত উপায়', '<p>৩০ বছরে পা দেওয়ার পরপর জীবনের চাপগুলো হঠাৎ করেই যেন বাড়তে থাকে। জীবন অনেকটাই জটিল হয়ে পড়ে। এ সময় ক্যারিয়ারের চাপ, সাংসারিক চাপ সমান তালে বাড়তে থাকে। এই চেপে বসা পরিস্থিতি হৃদরোগের ঝুঁকি বাড়ায়। তবে কিছু বিষয় আছে যেগুলো মেনে চললে হৃদরোগের ঝুঁকি অনেকটাই এড়িয়ে জীবন চমৎকার উপভোগ করা যায়। টাইমস অব ইন্ডিয়া জানিয়েছে এই বাড়ন্ত বয়সে হার্ট ভালো রাখার কিছু পরামর্শ।</p>\r\n\r\n<p><strong>১. চাপ এড়ান</strong><br />\r\nঅফিসের কাজের চাপ, পারিবারিক চাপ এড়ানো এত সহজ নয়। তবে এগুলোকে সামলাবেন কীভাবে সেটা তো শেখা যায়। যত রিল্যাক্স থাকবেন, শরীর তত চাপ নিয়ন্ত্রণ শিখবে। গবেষকরা বলেন, যেকোনো ধরনের ব্যায়াম চাপ দূর করে আপনাকে হালকা রাখতে সাহায্য করবে। চাপমুক্ত থাকতে যেটা আপনি পছন্দ করেন, এমন কোনো ব্যায়াম বেছে নিন। এ ছাড়া মেডিটেশন করুন বা পছন্দের কিছু করুন যা চাপমুক্ত রাখতে সাহায্য করবে।</p>\r\n\r\n<p><strong>২. নিয়মিত ব্যায়াম করুন</strong><br />\r\n৩০ বছরের পর হার্ট ভালো রাখতে নিয়মিত ব্যায়াম করা জরুরি। প্রতিদিন ১৫ থেকে ৩০ মিনিট ব্যায়াম হার্টকে ভালো রাখে। এটা আপনাকে ওজন নিয়ন্ত্রণে রাখতেও সাহায্য করবে, যা হার্ট ভালো রাখার আরেকটি বিষয়।</p>\r\n\r\n<p><strong>৩. স্বাস্থ্যকর খাবার খান</strong><br />\r\nছুটির দিনগুলোতে পরিবার বা বন্ধুদের সাথে কিংবা অফিসে কাজের চাপে আমরা অনেক সময়ই অস্বাস্থ্যকর খাবার খাই।বিশেষজ্ঞরা বলেন, হার্ট ভালো রাখতে এগুলো খাওয়া বাদ দেওয়া উচিত। এই অস্বাস্থ্যকর খাবার ক্যালোরি এবং কোলেস্টেরল বাড়াবে এবং হৃদরোগের ঝুঁকি তৈরি করবে। আপনার খাদ্যতালিকায় প্রোটিন, ওমেগা-৩ ফ্যাটি এসিড সমৃদ্ধ খাবার রাখবেন। তবে লাল মাংস (খাসি, গরু) খাওয়া এড়িয়ে চলুন।</p>\r\n\r\n<p><strong>৪. ভালোভাবে ঘুমান</strong><br />\r\nভালো ঘুম শরীরের জন্য খুবই জরুরি। ভালোভাবে না ঘুমালে স্ট্রোক এবং কার্ডিওভাসকুলার রোগের ঝুঁকি বেড়ে যায়। নির্দিষ্ট সময় ঘুমাতে যান এবং ঘুম থেকে উঠুন। ঘুমের আগে মদ্যপান, ধূমপান এবং ভারি খাবার পরিহার করুন।</p>\r\n\r\n<p>৫. সকালের নাস্তা অবশ্যই<br />\r\nসকালের নাস্তা কখনোই এড়ানো যাবে না। স্বাস্থ্যকর এবং পুষ্টিগুণসম্পন্ন সকালের নাস্তা খাওয়া খুবই জরুরি। ভালোভাবে সকালের নাস্তা করলে এটি সারা দিন শরীরকে কর্মক্ষম রাখতে সাহায্য করবে।</p>', 'recent_events', 'RECENT_EVENTS_20.jpg', 3, '2017-07-19 19:02:29', '2017-07-19 13:02:29'),
 (21, '10 বছরের পর হার্ট ভালো রাখার সাত উপায়', '<p>৩০ বছরে পা দেওয়ার পরপর জীবনের চাপগুলো হঠাৎ করেই যেন বাড়তে থাকে। জীবন অনেকটাই জটিল হয়ে পড়ে। এ সময় ক্যারিয়ারের চাপ, সাংসারিক চাপ সমান তালে বাড়তে থাকে। এই চেপে বসা পরিস্থিতি হৃদরোগের ঝুঁকি বাড়ায়। তবে কিছু বিষয় আছে যেগুলো মেনে চললে হৃদরোগের ঝুঁকি অনেকটাই এড়িয়ে জীবন চমৎকার উপভোগ করা যায়। টাইমস অব ইন্ডিয়া জানিয়েছে এই বাড়ন্ত বয়সে হার্ট ভালো রাখার কিছু পরামর্শ।</p>\r\n\r\n<p><strong>১. চাপ এড়ান</strong><br />\r\nঅফিসের কাজের চাপ, পারিবারিক চাপ এড়ানো এত সহজ নয়। তবে এগুলোকে সামলাবেন কীভাবে সেটা তো শেখা যায়। যত রিল্যাক্স থাকবেন, শরীর তত চাপ নিয়ন্ত্রণ শিখবে। গবেষকরা বলেন, যেকোনো ধরনের ব্যায়াম চাপ দূর করে আপনাকে হালকা রাখতে সাহায্য করবে। চাপমুক্ত থাকতে যেটা আপনি পছন্দ করেন, এমন কোনো ব্যায়াম বেছে নিন। এ ছাড়া মেডিটেশন করুন বা পছন্দের কিছু করুন যা চাপমুক্ত রাখতে সাহায্য করবে।</p>\r\n\r\n<p><strong>২. নিয়মিত ব্যায়াম করুন</strong><br />\r\n৩০ বছরের পর হার্ট ভালো রাখতে নিয়মিত ব্যায়াম করা জরুরি। প্রতিদিন ১৫ থেকে ৩০ মিনিট ব্যায়াম হার্টকে ভালো রাখে। এটা আপনাকে ওজন নিয়ন্ত্রণে রাখতেও সাহায্য করবে, যা হার্ট ভালো রাখার আরেকটি বিষয়।</p>\r\n\r\n<p><strong>৩. স্বাস্থ্যকর খাবার খান</strong><br />\r\nছুটির দিনগুলোতে পরিবার বা বন্ধুদের সাথে কিংবা অফিসে কাজের চাপে আমরা অনেক সময়ই অস্বাস্থ্যকর খাবার খাই।বিশেষজ্ঞরা বলেন, হার্ট ভালো রাখতে এগুলো খাওয়া বাদ দেওয়া উচিত। এই অস্বাস্থ্যকর খাবার ক্যালোরি এবং কোলেস্টেরল বাড়াবে এবং হৃদরোগের ঝুঁকি তৈরি করবে। আপনার খাদ্যতালিকায় প্রোটিন, ওমেগা-৩ ফ্যাটি এসিড সমৃদ্ধ খাবার রাখবেন। তবে লাল মাংস (খাসি, গরু) খাওয়া এড়িয়ে চলুন।</p>\r\n\r\n<p><strong>৪. ভালোভাবে ঘুমান</strong><br />\r\nভালো ঘুম শরীরের জন্য খুবই জরুরি। ভালোভাবে না ঘুমালে স্ট্রোক এবং কার্ডিওভাসকুলার রোগের ঝুঁকি বেড়ে যায়। নির্দিষ্ট সময় ঘুমাতে যান এবং ঘুম থেকে উঠুন। ঘুমের আগে মদ্যপান, ধূমপান এবং ভারি খাবার পরিহার করুন।</p>\r\n\r\n<p>৫. সকালের নাস্তা অবশ্যই<br />\r\nসকালের নাস্তা কখনোই এড়ানো যাবে না। স্বাস্থ্যকর এবং পুষ্টিগুণসম্পন্ন সকালের নাস্তা খাওয়া খুবই জরুরি। ভালোভাবে সকালের নাস্তা করলে এটি সারা দিন শরীরকে কর্মক্ষম রাখতে সাহায্য করবে।</p>', 'recent_events', 'RECENT_EVENTS_20.jpg', 3, '2017-07-19 19:02:29', '2017-07-19 13:02:29'),
-(22, 'ghjgjg', '<p>gjhgjh</p>', 'news', NULL, 3, '2017-07-27 12:40:17', '2017-07-27 12:40:17');
+(22, 'ghjgjg', '<p>gjhgjh</p>', 'news', NULL, 3, '2017-07-27 12:40:17', '2017-07-27 12:40:17'),
+(23, 'রক্ত দানের গল্প', '<p>হোক আজ একটি পণ<br />\r\nরক্ত দিয়ে বাঁচাতে সহায়তা করবো রোগীর জীবন&rdquo;হোক আজ একটি পণ রক্ত দিয়ে বাঁচাতে সহায়তা করবো রোগীর জীবন&rdquo;হোক আজ একটি পণ রক্ত দিয়ে বাঁচাতে সহায়তা করবো রোগীর জীবন&rdquo;হোক আজ একটি পণ রক্ত দিয়ে বাঁচাতে সহায়তা করবো রোগীর জীবন&rdquo;</p>', 'more_blood', 'http://localhost/Lifecycle/public/images/content/more_blood/MORE_BLOOD_23.jpg', 3, '2017-07-28 20:55:17', '2017-07-28 14:55:17'),
+(24, 'রক্তদানের উপকারিতা', '<p>আপনি রক্তদানের অভিজ্ঞতা অর্জন করবেন, এতে আপনার রক্তদান ভীতি দূর হবে এবং এ দান পরবর্তীতে আপনাকে নিয়মিত রক্তদানে এগিয়ে আসতে সাহায্য করবে।&nbsp;আপনি রক্তদানের অভিজ্ঞতা অর্জন করবেন, এতে আপনার রক্তদান ভীতি দূর হবে এবং এ দান পরবর্তীতে আপনাকে নিয়মিত রক্তদানে এগিয়ে আসতে সাহায্য করবে।&nbsp;আপনি রক্তদানের অভিজ্ঞতা অর্জন করবেন, এতে আপনার রক্তদান ভীতি দূর হবে এবং এ দান পরবর্তীতে আপনাকে নিয়মিত রক্তদানে এগিয়ে আসতে সাহায্য করবে।&nbsp;আপনি রক্তদানের অভিজ্ঞতা অর্জন করবেন, এতে আপনার রক্তদান ভীতি দূর হবে এবং এ দান পরবর্তীতে আপনাকে নিয়মিত রক্তদানে এগিয়ে আসতে সাহায্য করবে।&nbsp;আপনি রক্তদানের অভিজ্ঞতা অর্জন করবেন, এতে আপনার রক্তদান ভীতি দূর হবে এবং এ দান পরবর্তীতে আপনাকে নিয়মিত রক্তদানে এগিয়ে আসতে সাহায্য করবে।</p>', 'more_blood', 'http://localhost/Lifecycle/public/images/content/more_blood/MORE_BLOOD_24.jpg', 3, '2017-07-28 21:04:37', '2017-07-28 15:04:37'),
+(25, 'কেন রক্তদান করবেন', '<p>প্রথম এবং প্রধান কারণ, আপনার দানকৃত রক্ত একজন মানুষের জীবন বাঁচাবে। রক্তদানের জন্য এর থেকে বড় কারণ আর কি হতে পারে !&nbsp;প্রথম এবং প্রধান কারণ, আপনার দানকৃত রক্ত একজন মানুষের জীবন বাঁচাবে। রক্তদানের জন্য এর থেকে বড় কারণ আর কি হতে পারে !&nbsp;প্রথম এবং প্রধান কারণ, আপনার দানকৃত রক্ত একজন মানুষের জীবন বাঁচাবে। রক্তদানের জন্য এর থেকে বড় কারণ আর কি হতে পারে !&nbsp;প্রথম এবং প্রধান কারণ, আপনার দানকৃত রক্ত একজন মানুষের জীবন বাঁচাবে। রক্তদানের জন্য এর থেকে বড় কারণ আর কি হতে পারে !</p>', 'more_blood', 'http://localhost/Lifecycle/public/images/content/more_blood/MORE_BLOOD_25.jpg', 3, '2017-07-28 21:05:51', '2017-07-28 15:05:51'),
+(26, 'রক্ত এর কোন বিকল্প নেই', '<p>রক্তদান করে যে অনুভূতি সৃষ্টি হয় তা আসলে উপলব্ধি সাক্ষেপ বর্ণনা সাক্ষেপ নয়। আর যাকে দেয়া হয় তার মুখের দিকে তাকালে যে কৃতজ্ঞতার পরিচয় পাওয়া যায়,তার সন্ধান যে একবার পায়,যে বারবার&nbsp;রক্তদান করে যে অনুভূতি সৃষ্টি হয় তা আসলে উপলব্ধি সাক্ষেপ বর্ণনা সাক্ষেপ নয়। আর যাকে দেয়া হয় তার মুখের দিকে তাকালে যে কৃতজ্ঞতার পরিচয় পাওয়া যায়,তার সন্ধান যে একবার পায়,যে বারবার&nbsp;রক্তদান করে যে অনুভূতি সৃষ্টি হয় তা আসলে উপলব্ধি সাক্ষেপ বর্ণনা সাক্ষেপ নয়। আর যাকে দেয়া হয় তার মুখের দিকে তাকালে যে কৃতজ্ঞতার পরিচয় পাওয়া যায়,তার সন্ধান যে একবার পায়,যে বারবার&nbsp;রক্তদান করে যে অনুভূতি সৃষ্টি হয় তা আসলে উপলব্ধি সাক্ষেপ বর্ণনা সাক্ষেপ নয়। আর যাকে দেয়া হয় তার মুখের দিকে তাকালে যে কৃতজ্ঞতার পরিচয় পাওয়া যায়,তার সন্ধান যে একবার পায়,যে বারবার</p>', 'more_blood', 'http://localhost/Lifecycle/public/images/content/more_blood/MORE_BLOOD_26.jpg', 3, '2017-07-28 21:06:41', '2017-07-28 15:06:41'),
+(27, 'রক্ত দিন জীবন বাঁচান', '<p>এই স্লোগান কে সামনে রেখে এগিয়ে যাচ্ছে সিলেটের কিছু তরুণরা. সেপ্টেম্বর ১০, ২০১৬, ১০:০৩ অপরাহ্ণ. রিপোর্টঃ-আরাফাত হোসাইন রাহেল-. ২০১১ সালে ... এতে করে অনেকে স্বেচ্ছায় রক্তদানের মত মহৎ কাজে এগিয়ে আসবে বলে আশা প্রকাশ করে।ক্যাম্পেইনে উপস্তিত ছিলেন &ldquo;আহবান সমাজ কল্যাণ সংস্থা&rdquo; এর উপদেষ্টাবৃন্দ &nbsp;এই স্লোগান কে সামনে রেখে এগিয়ে যাচ্ছে সিলেটের কিছু তরুণরা. সেপ্টেম্বর ১০, ২০১৬, ১০:০৩ অপরাহ্ণ. রিপোর্টঃ-আরাফাত হোসাইন রাহেল-. ২০১১ সালে ... এতে করে অনেকে স্বেচ্ছায় রক্তদানের মত মহৎ কাজে এগিয়ে আসবে বলে আশা প্রকাশ করে।ক্যাম্পেইনে উপস্তিত ছিলেন &ldquo;আহবান সমাজ কল্যাণ সংস্থা&rdquo; এর উপদেষ্টাবৃন্দ &nbsp;এই স্লোগান কে সামনে রেখে এগিয়ে যাচ্ছে সিলেটের কিছু তরুণরা. সেপ্টেম্বর ১০, ২০১৬, ১০:০৩ অপরাহ্ণ. রিপোর্টঃ-আরাফাত হোসাইন রাহেল-. ২০১১ সালে ... এতে করে অনেকে স্বেচ্ছায় রক্তদানের মত মহৎ কাজে এগিয়ে আসবে বলে আশা প্রকাশ করে।ক্যাম্পেইনে উপস্তিত ছিলেন &ldquo;আহবান সমাজ কল্যাণ সংস্থা&rdquo; এর উপদেষ্টাবৃন্দ&nbsp;</p>', 'more_blood', 'http://localhost/Lifecycle/public/images/content/more_blood/MORE_BLOOD_27.jpg', 3, '2017-07-28 21:07:27', '2017-07-28 15:07:27'),
+(28, 'যে পরিমাণ রক্তের তরল অংশ', '<p>এ কারণে অধিকাংশ রক্তদাতা রক্তদানের পর তেমন কিছুই অনুভব করেন না। যে পরিমাণ রক্তের তরল অংশ নেয়া হয় সেই পরিমাণ তরল অংশ মাত্র ৪৮ ঘন্টার মধ্যেই আবার আগের মতো হয়ে যায়। ইহা কি নিরাপদ? এখন প্রশ্ন আসতে পারে রক্ত দান প্রক্রিয়া কতটুকু নিরাপদ? আমরা ইতিমধ্যে&nbsp;এ কারণে অধিকাংশ রক্তদাতা রক্তদানের পর তেমন কিছুই অনুভব করেন না। যে পরিমাণ রক্তের তরল অংশ নেয়া হয় সেই পরিমাণ তরল অংশ মাত্র ৪৮ ঘন্টার মধ্যেই আবার আগের মতো হয়ে যায়। ইহা কি নিরাপদ? এখন প্রশ্ন আসতে পারে রক্ত দান প্রক্রিয়া কতটুকু নিরাপদ? আমরা ইতিমধ্যে&nbsp;এ কারণে অধিকাংশ রক্তদাতা রক্তদানের পর তেমন কিছুই অনুভব করেন না। যে পরিমাণ রক্তের তরল অংশ নেয়া হয় সেই পরিমাণ তরল অংশ মাত্র ৪৮ ঘন্টার মধ্যেই আবার আগের মতো হয়ে যায়। ইহা কি নিরাপদ? এখন প্রশ্ন আসতে পারে রক্ত দান প্রক্রিয়া কতটুকু নিরাপদ? আমরা ইতিমধ্যে&nbsp;এ কারণে অধিকাংশ রক্তদাতা রক্তদানের পর তেমন কিছুই অনুভব করেন না। যে পরিমাণ রক্তের তরল অংশ নেয়া হয় সেই পরিমাণ তরল অংশ মাত্র ৪৮ ঘন্টার মধ্যেই আবার আগের মতো হয়ে যায়। ইহা কি নিরাপদ? এখন প্রশ্ন আসতে পারে রক্ত দান প্রক্রিয়া কতটুকু নিরাপদ? আমরা ইতিমধ্যে</p>', 'more_blood', 'http://localhost/Lifecycle/public/images/content/more_blood/MORE_BLOOD_28.jpg', 3, '2017-07-28 21:08:05', '2017-07-28 15:08:05'),
+(29, 'রক্তদান অপেক্ষাকৃত নিরাপদ', '<p>রক্তদান অপেক্ষাকৃত নিরাপদ, তবে কিছু রক্তদাতার যে জায়গায় সূঁচ প্রবেশ করানো হয় সেখানে কালশিরে পড়ে, আবার কেউ কেউ রক্তদানের পর দুর্বলতা অনুভব করেন। সম্ভাব্য রক্তদাতার রক্ত ব্যবহার যে সব কারণে ঝুঁকিপূর্ণ হতে পারে তার সবকিছুই পরীক্ষা করা হয়। এই পরীক্ষাগুলোর মধ্যে রক্তের মাধ্যমে ছড়ায় এমন রোগ (যেমন এইচআইভি ও ভাইরাল হেপাটাইটিস)&nbsp;রক্তদান অপেক্ষাকৃত নিরাপদ, তবে কিছু রক্তদাতার যে জায়গায় সূঁচ প্রবেশ করানো হয় সেখানে কালশিরে পড়ে, আবার কেউ কেউ রক্তদানের পর দুর্বলতা অনুভব করেন। সম্ভাব্য রক্তদাতার রক্ত ব্যবহার যে সব কারণে ঝুঁকিপূর্ণ হতে পারে তার সবকিছুই পরীক্ষা করা হয়। এই পরীক্ষাগুলোর মধ্যে রক্তের মাধ্যমে ছড়ায় এমন রোগ (যেমন এইচআইভি ও ভাইরাল হেপাটাইটিস)&nbsp;রক্তদান অপেক্ষাকৃত নিরাপদ, তবে কিছু রক্তদাতার যে জায়গায় সূঁচ প্রবেশ করানো হয় সেখানে কালশিরে পড়ে, আবার কেউ কেউ রক্তদানের পর দুর্বলতা অনুভব করেন। সম্ভাব্য রক্তদাতার রক্ত ব্যবহার যে সব কারণে ঝুঁকিপূর্ণ হতে পারে তার সবকিছুই পরীক্ষা করা হয়। এই পরীক্ষাগুলোর মধ্যে রক্তের মাধ্যমে ছড়ায় এমন রোগ (যেমন এইচআইভি ও ভাইরাল হেপাটাইটিস)</p>', 'more_blood', 'http://localhost/Lifecycle/public/images/content/more_blood/MORE_BLOOD_29.jpg', 3, '2017-07-28 21:08:50', '2017-07-28 15:08:50'),
+(30, 'রক্তদান হল কোন প্রাপ্তবয়স্ক সুস্থ মানুষের স্বেচ্ছায় রক্ত দেবার প্রক্রিয়া।', '<p>উন্নত দেশে বেশিরভাগ রক্তদাতাই হলেন স্বেচ্ছায় রক্তদাতা, যারা সামাজিক দায়বদ্ধতা থেকে রক্তদান করেন। দরিদ্র দেশগুলোতে এ ধরণের প্রতিষ্ঠিত স্বেচ্ছায় রক্তদাতার সংখ্যা বেশ কম, বেশিরভাগ রক্তদাতাই কেবল তাদের পরিচিতজনদের প্রয়োজনে রক্তদান করে থাকেন। বেশির ভাগ রক্তদাতাই সমাজসেবামূলক কাজ হিসেবে রক্তদান করেন, তবে কিছু মানুষ পেশাদার রক্তদাতা, অর্থাৎ তারা অর্থ বা কোন ভাতার বিনিময়ে রক্তদান করে থাকেন। আবার রক্তদাতা তার ভবিষ্যত প্রয়োজনে রক্ত পেতে পারেন। রক্তদান অপেক্ষাকৃত নিরাপদ, তবে কিছু রক্তদাতার যে জায়গায় সূঁচ প্রবেশ করানো হয় সেখানে কালশিরে পড়ে, আবার কেউ কেউ রক্তদানের পর দুর্বলতা অনুভব করেন।</p>', 'more_blood', 'http://localhost/Lifecycle/public/images/content/more_blood/MORE_BLOOD_30.jpg', 3, '2017-07-28 21:30:22', '2017-07-28 15:30:22');
 
 -- --------------------------------------------------------
 
@@ -951,7 +964,8 @@ CREATE TABLE `donors` (
 INSERT INTO `donors` (`id`, `phone`, `password`, `pic_path`, `fname`, `lname`, `blood_group`, `birth_date`, `age`, `last_donation`, `new_donor`, `email`, `division`, `district`, `thana`, `address`, `latitude`, `longitude`, `code`, `verification`, `lastLat`, `lastLng`, `fcm_email`, `fcm_uid`, `fcm_token`, `pro_visible`, `called_date`, `called_today`, `donations_number`, `user_type`, `gender`, `already_donated`, `autopro_visible`, `singup_steps`, `post_code`, `rank`, `web_url`, `fb_url`, `profile_photo`, `religion`, `is_physically_disble`, `nationality`, `nid`, `status`, `is_available`, `updated_at`, `created_at`, `updated_by`, `created_by`) VALUES
 (2, '01923589277', 'tatun', 'profileImages/anis.jpg', 'anis', 'mizi', 'A+', '1989-07-14', 28, '2017-07-14', 1, 'tatun@gmail.com', 'Dhaka', 'Dhaka', 'Adabor', 'Mohanagar Middle Rd 2, Dhaka 1212, Bangladesh', 23.7663383, 90.4165958, '36438', 1, 23.7663383, 90.4165958, 'test21@gmail.com', 'avIoHO42GrdjcHHFuJB11cETsQE3', 'fEZReXUJXLc:APA91bFzM-sI_CDDtdRI8OkvXli9GBvSccpMAvcBJQr-JFBLMorR0BP2YFPNh6PX9WxqRZm86cpvBUapWUbyf5P8KdiiI8Mr_D8Z34uPDb_nOKYRgPbPU2XWoJkVcz-q_ZYTNv85Reg8', 1, 'na', 0, 0, 'donor', 'Male', 0, 'na', 3, 'na', 1, 'na', 'na', 'a.jpg', 'na', 'na', 'na', 'na', 'na', 1, '2017-07-27 21:25:41', '2014-08-11 23:14:54', 1, 1),
 (3, '01923589278', 'anisur', 'profileImages/salam.jpg', 'salam', 'mizi', 'A-', '1991-07-14', 26, '2017-07-14', 1, 'salam@gmail.com', 'Dhaka', 'Dhaka', 'Adabor', 'Mohanagar Middle Rd 2, Dhaka 1212, Bangladesh', 23.782062399999997, 90.4160527, '95035', 1, 23.782062399999997, 90.4160527, 'test20@gmail.com', 'UvoewKHQkXOZ1Afzzv1Q182ybCI2', 'fa1DqrAZhvY:APA91bGKG3d-AA1NeE7bZjSAkSTWSZQbxLd-Y4yHd5S6TUr0KlXUixld45knPAuwXErucpzv68vfcXh9Y1rG-yTCUn1NGRdhiL34FBOps0emDu6nhzRvLc2j5eGqTG0da2bOnx2Paq-g', 1, 'na', 0, 0, 'admin', 'Male', 0, 'na', 3, 'na', 1, 'na', 'na', 'c.jpg', 'na', 'na', 'na', 'na', 'na', 1, '2017-07-21 17:18:02', '2014-08-11 23:14:54', 1, 1),
-(4, '0159856', '123', 'http://localhost/Lifecycle/public/images/profile/user.png', 'Jaman', 'Rashed', 'B+', '2003-02-10', 0, '2017-06-19', NULL, 'jmrashed@gmail.com', '4', '60', '306', 'Chourhash, Kushtia, Khulna Division, Bangladesh', 0, 0, NULL, 0, 0, 0, 'na', 'na', 'na', 1, 'na', 0, 0, NULL, 'male', NULL, NULL, NULL, '7000', 0, 'na', 'na', NULL, 'na', '0', 'Bangladeshi', 'na', '1', NULL, '2017-07-28 03:47:36', '2017-07-27 16:20:47', NULL, NULL);
+(4, '0159856', '123', 'http://localhost:81/Lifecycle/public/images/profile/user.png', 'Jaman', 'Rashed', 'B+', '2003-02-10', 0, '2017-06-19', NULL, 'jmrashed@gmail.com', '4', '60', '306', 'Chourhash, Kushtia, Khulna Division, Bangladesh', 0, 0, NULL, 0, 0, 0, 'na', 'na', 'na', 1, 'na', 0, 0, NULL, 'male', NULL, NULL, NULL, '7000', 0, 'na', 'na', NULL, 'na', '0', 'Bangladeshi', 'na', '1', NULL, '2017-07-28 08:59:16', '2017-07-27 16:20:47', NULL, NULL),
+(5, '01456985', '123', 'http://localhost/Lifecycle/public/images/profile/user.png', 'Abdullah', NULL, 'A+', '1991-08-25', 0, '2017-04-18', NULL, 'shaheen@gmail.com', '2', '46', '107', 'Feni District, Chittagong Division, Bangladesh', 0, 0, NULL, 0, 0, 0, 'na', 'na', 'na', 1, 'na', 0, 0, NULL, 'male', NULL, NULL, NULL, '3900', 0, 'na', 'na', NULL, 'na', '0', 'Bangladeshi', 'na', '1', NULL, '2017-07-28 06:11:04', '2017-07-28 06:11:04', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1046,8 +1060,7 @@ CREATE TABLE `find_solutions` (
 INSERT INTO `find_solutions` (`id`, `name`, `age`, `last_blood_pressure`, `any_disease`, `problems`, `email`, `phone`, `is_solved`, `doctor_suggestion`, `doctor_detail`, `sort_order`, `status`, `updated_at`, `updated_by`, `created_at`, `created_by`) VALUES
 (1, 'Ashru', 21, '120/80', 'Many', 'Onek problem', 'ashru@gmail.com', '7046864888', NULL, NULL, NULL, NULL, NULL, '2017-07-11 07:17:55', NULL, '2017-07-11 13:17:55', NULL),
 (2, 'Meem', 21, '130/90', 'yes', 'pathay problem', 'meem@gmail.com', '123965874', NULL, NULL, NULL, NULL, NULL, '2017-07-11 07:43:36', NULL, '2017-07-11 13:43:36', NULL),
-(3, 'Rashed Jaman', 26, '100/80', 'no', 'onek problem bt jana nai', 'rashed@gmail.com', '789654123', NULL, NULL, NULL, NULL, NULL, '2017-07-11 07:45:00', NULL, '2017-07-11 13:45:00', NULL),
-(4, 'asdd', 23, '120/80', 'no', 'sfsvvf', 'asd@fghbfg', '345345', NULL, NULL, NULL, NULL, NULL, '2017-07-23 10:30:16', NULL, '2017-07-23 16:30:16', NULL);
+(3, 'Rashed Jaman', 26, '100/80', 'no', 'onek problem bt jana nai', 'rashed@gmail.com', '789654123', NULL, NULL, NULL, NULL, NULL, '2017-07-11 07:45:00', NULL, '2017-07-11 13:45:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -1119,12 +1132,12 @@ INSERT INTO `gallery_details` (`id`, `gallery_id`, `photo_name`, `caption`, `sub
 (18, 1, '2017-07-12_1499839504.png', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 06:05:04', '2017-07-12 06:05:04'),
 (19, 1, '2017-07-12_1499839511.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 06:05:11', '2017-07-12 06:05:11'),
 (20, 1, '2017-07-12_1499839516.jpg', 'This is caption text.', 'Sub caption ', 2, '2017-07-12 06:05:16', '2017-07-12 06:05:16'),
-(21, 7, '2017-07-14_1500041889.jpg', 'This is caption text. 1', 'Sub caption 1', 2, '2017-07-14 14:18:09', '2017-07-14 14:18:09'),
-(22, 7, '2017-07-14_1500041899.jpg', 'This is caption text. 2', 'Sub caption 2', 2, '2017-07-14 14:18:19', '2017-07-14 14:18:19'),
-(23, 7, '2017-07-14_1500041906.jpg', 'This is caption text. 3', 'Sub caption 3', 2, '2017-07-14 14:18:26', '2017-07-14 14:18:26'),
-(24, 7, '2017-07-14_1500041912.jpg', 'This is caption text. 4', 'Sub caption 4', 2, '2017-07-14 14:18:32', '2017-07-14 14:18:32'),
-(25, 7, '2017-07-14_1500041920.jpg', 'This is caption text. 5', 'Sub caption 5', 2, '2017-07-14 14:18:40', '2017-07-14 14:18:40'),
-(26, 7, '2017-07-14_1500041927.jpg', 'This is caption text. 6', 'Sub caption 6', 2, '2017-07-14 14:18:47', '2017-07-14 14:18:47');
+(21, 7, '2017-07-14_1500041889.jpg', 'Blood donation is the real act of humanity.', NULL, 2, '2017-07-14 14:18:09', '2017-07-14 14:18:09'),
+(22, 7, '2017-07-14_1500041899.jpg', 'Donate blood and be the reason of smile to many faces.', NULL, 2, '2017-07-14 14:18:19', '2017-07-14 14:18:19'),
+(23, 7, '2017-07-14_1500041906.jpg', 'Donate blood and spread happiness to many families.', NULL, 2, '2017-07-14 14:18:26', '2017-07-14 14:18:26'),
+(24, 7, '2017-07-14_1500041912.jpg', 'You can give smile to many faces through blood donation.', NULL, 2, '2017-07-14 14:18:32', '2017-07-14 14:18:32'),
+(25, 7, '2017-07-14_1500041920.jpg', 'Your blood donation can give a precious smile to someone’s face.', NULL, 2, '2017-07-14 14:18:40', '2017-07-14 14:18:40'),
+(26, 7, '2017-07-14_1500041927.jpg', 'A drop of blood can save a life! Don’t waste it and donate blood.', NULL, 2, '2017-07-14 14:18:47', '2017-07-14 14:18:47');
 
 -- --------------------------------------------------------
 
@@ -1354,33 +1367,33 @@ INSERT INTO `locations` (`id`, `division`, `district`, `thana`) VALUES
 CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
   `sender_id` int(11) NOT NULL,
-  `sender_type` varchar(255) NOT NULL,
-  `receiver_id` int(11) NOT NULL,
-  `receiver_type` varchar(255) NOT NULL,
-  `message` text NOT NULL,
+  `sender_type` varchar(255) DEFAULT NULL,
+  `receiver_email` varchar(255) DEFAULT NULL,
+  `receiver_type` varchar(255) DEFAULT NULL,
+  `message` text,
   `is_read` int(11) DEFAULT '0',
-  `donor_response` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `created_by` varchar(255) NOT NULL,
+  `created_by` varchar(255) DEFAULT NULL,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_by` varchar(255) NOT NULL
+  `updated_by` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `messages`
 --
 
-INSERT INTO `messages` (`id`, `sender_id`, `sender_type`, `receiver_id`, `receiver_type`, `message`, `is_read`, `donor_response`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
-(1, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', 0, 'disagree', '2017-07-14 20:32:35', 'Sakib', '2017-07-14 20:32:35', 'Rashed'),
-(2, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', 0, 'disagree', '2017-07-14 20:32:35', 'Sakib', '2017-07-14 20:32:35', 'Rashed'),
-(3, 4, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi. Please help Me, I need 5 bag A+ blood', 0, 'disagree', '2017-07-14 20:33:32', 'Sakib', '2017-07-14 20:33:32', 'Rashed'),
-(4, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', 0, 'disagree', '2017-07-14 20:36:30', 'Sakib', '2017-07-14 20:36:30', 'Rashed'),
-(5, 2, 'donor', 303, 'admin', 'Need AB+Blood 6 for Mahedi', 0, 'disagree', '2017-07-14 20:37:11', 'Sakib', '2017-07-14 20:37:11', 'Rashed'),
-(6, 4, 'donor', 303, 'admin', 'Please help Me, I need 5 bag A+ blood', 0, 'disagree', '2017-07-14 20:37:30', 'Sakib', '2017-07-14 20:37:30', 'Rashed'),
-(7, 2, 'donor', 303, 'admin', 'Need A+Blood 3 for Mohin', 0, 'disagree', '2017-07-14 21:04:36', 'Sakib', '2017-07-14 21:04:36', 'Rashed'),
-(8, 2, 'donor', 303, 'admin', 'Need A+Blood 2 for ', 0, 'disagree', '2017-07-19 19:22:15', 'Sakib', '2017-07-19 19:22:15', 'Rashed'),
-(9, 4, 'donor', 303, 'admin', 'Need O-Blood 100 for ', 0, 'disagree', '2017-07-19 19:25:50', 'Sakib', '2017-07-19 19:25:50', 'Rashed'),
-(10, 2, 'donor', 303, 'admin', 'Need B+Blood 6 for ', 0, 'disagree', '2017-07-19 19:32:41', 'Sakib', '2017-07-19 19:32:41', 'Rashed');
+INSERT INTO `messages` (`id`, `sender_id`, `sender_type`, `receiver_email`, `receiver_type`, `message`, `is_read`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
+(1, 2, 'donor', '303', 'admin', 'Need AB+Blood 6 for Mahedi', 0, '2017-07-14 20:32:35', 'Sakib', '2017-07-14 20:32:35', 'Rashed'),
+(2, 2, 'donor', '303', 'admin', 'Need AB+Blood 6 for Mahedi', 0, '2017-07-14 20:32:35', 'Sakib', '2017-07-14 20:32:35', 'Rashed'),
+(3, 4, 'donor', '303', 'admin', 'Need AB+Blood 6 for Mahedi. Please help Me, I need 5 bag A+ blood', 0, '2017-07-14 20:33:32', 'Sakib', '2017-07-14 20:33:32', 'Rashed'),
+(4, 2, 'donor', '303', 'admin', 'Need AB+Blood 6 for Mahedi', 0, '2017-07-14 20:36:30', 'Sakib', '2017-07-14 20:36:30', 'Rashed'),
+(5, 2, 'donor', '303', 'admin', 'Need AB+Blood 6 for Mahedi', 0, '2017-07-14 20:37:11', 'Sakib', '2017-07-14 20:37:11', 'Rashed'),
+(6, 4, 'donor', '303', 'admin', 'Please help Me, I need 5 bag A+ blood', 0, '2017-07-14 20:37:30', 'Sakib', '2017-07-14 20:37:30', 'Rashed'),
+(7, 2, 'donor', '303', 'admin', 'Need A+Blood 3 for Mohin', 0, '2017-07-14 21:04:36', 'Sakib', '2017-07-14 21:04:36', 'Rashed'),
+(8, 2, 'donor', '303', 'admin', 'Need A+Blood 2 for ', 0, '2017-07-19 19:22:15', 'Sakib', '2017-07-19 19:22:15', 'Rashed'),
+(9, 4, 'donor', '303', 'admin', 'Need O-Blood 100 for ', 0, '2017-07-19 19:25:50', 'Sakib', '2017-07-19 19:25:50', 'Rashed'),
+(10, 2, 'donor', '303', 'admin', 'Need B+Blood 6 for ', 0, '2017-07-19 19:32:41', 'Sakib', '2017-07-19 19:32:41', 'Rashed'),
+(11, 1, 'doctor', 'ashru@gmail.com', 'donor', '<p>no solution.. sent her to pabna</p>', 0, '2017-07-28 11:36:21', 'Doctor', '2017-07-28 11:36:21', NULL);
 
 -- --------------------------------------------------------
 
@@ -1423,10 +1436,14 @@ CREATE TABLE `more_about_bloods` (
 --
 
 INSERT INTO `more_about_bloods` (`id`, `title`, `short_description`, `long_description`, `photo`, `slug`, `updated_at`) VALUES
-(2, 'আমার বাংলাদেশ', 'আমার বাংলাদেশ', 'আমার বাংলাদেশ', '.jpg', 'donor_24', '2017-07-23 19:45:51'),
-(3, 'Give Platelets', 'Patients of Scotland rely on platelets including people with cancer and leukaemia', 'long description', '.jpg', 'platelets', '2017-07-21 10:00:55'),
-(4, 'Blood Types', 'How much do you know about your blood? We aim to have six days supply of each blood group at all times.', 'jdnfslj ouvhzsdo', '.png', 'blood_type', '2017-07-21 10:01:20'),
-(5, 'The journey of donated blood', 'Each precious blood donation has a very short shelf life. We have to act fast to make sure it goes where it needed.', 'kjdfhihdfui lsdfbsduifh sklDJfbhsdui', 'sdfg.jpg', 'journey', '2017-07-16 22:20:50');
+(2, 'রক্ত দানের গল্প', 'হোক আজ একটি পণ\nরক্ত দিয়ে বাঁচাতে সহায়তা করবো রোগীর জীবন”', 'আমার বাংলাদেশ', '.jpg', 'donor_24', '2017-07-23 19:45:51'),
+(3, 'তাহলে আমি', '“আমার রক্তে যদি সহযোগিতা করে- মুমূর্ষ রোগীর\nপ্রাণ,\nতাহলে আমি কেন করবোনা স্বেচ্ছায় রক্তদান?”', 'long description', '.jpg', 'platelets', '2017-07-21 10:00:55'),
+(4, 'রক্তদানের উপকারিতা', 'আপনি রক্তদানের অভিজ্ঞতা অর্জন করবেন, এতে আপনার রক্তদান ভীতি দূর হবে এবং এ দান পরবর্তীতে আপনাকে নিয়মিত রক্তদানে এগিয়ে আসতে সাহায্য করবে।', 'jdnfslj ouvhzsdo', '.png', 'blood_type', '2017-07-21 10:01:20'),
+(5, 'কেন রক্তদান করবেন', 'প্রথম এবং প্রধান কারণ, আপনার দানকৃত রক্ত একজন মানুষের জীবন বাঁচাবে। রক্তদানের জন্য এর থেকে বড় কারণ আর কি হতে পারে !', 'kjdfhihdfui lsdfbsduifh sklDJfbhsdui', 'sdfg.jpg', 'journey', '2017-07-16 22:20:50'),
+(6, 'রক্ত এর কোন বিকল্প নেই', 'রক্তদান করে যে অনুভূতি সৃষ্টি হয় তা আসলে উপলব্ধি সাক্ষেপ বর্ণনা সাক্ষেপ নয়। আর যাকে দেয়া হয় তার মুখের দিকে তাকালে যে কৃতজ্ঞতার পরিচয় পাওয়া যায়,তার সন্ধান যে একবার পায়,যে বারবার', 'রক্তদান করে যে অনুভূতি সৃষ্টি হয় তা আসলে উপলব্ধি সাক্ষেপ বর্ণনা সাক্ষেপ নয়। আর যাকে দেয়া হয় তার মুখের দিকে তাকালে যে কৃতজ্ঞতার পরিচয় পাওয়া যায়,তার সন্ধান যেএকবার পায়,যে বারবার', 'kop.jpg', 'okp', '2017-07-29 01:52:31'),
+(7, 'রক্ত দিন জীবন বাঁচান', 'এই স্লোগান কে সামনে রেখে এগিয়ে যাচ্ছে সিলেটের কিছু তরুণরা. সেপ্টেম্বর ১০, ২০১৬, ১০:০৩ অপরাহ্ণ. রিপোর্টঃ-আরাফাত হোসাইন রাহেল-. ২০১১ সালে ... এতে করে অনেকে স্বেচ্ছায় রক্তদানের মত মহৎ কাজে এগিয়ে আসবে বলে আশা প্রকাশ করে।ক্যাম্পেইনে উপস্তিত ছিলেন “আহবান সমাজ কল্যাণ সংস্থা” এর উপদেষ্টাবৃন্দ ', 'এই স্লোগান কে সামনে রেখে এগিয়ে যাচ্ছে সিলেটের কিছু তরুণরা. সেপ্টেম্বর ১০, ২০১৬, ১০:০৩ অপরাহ্ণ. রিপোর্টঃ-আরাফাত হোসাইন রাহেল-. ২০১১ সালে ... এতে করে অনেকে স্বেচ্ছায় রক্তদানের মত মহৎ কাজে এগিয়ে আসবে বলে আশা প্রকাশ করে।ক্যাম্পেইনে উপস্তিত ছিলেন “আহবান সমাজ কল্যাণ সংস্থা” এর উপদেষ্টাবৃন্দ ', 'kjh.jpg', 'rokto_din', '2017-07-29 01:54:39'),
+(8, 'যে পরিমাণ রক্তের তরল অংশ ', 'এ কারণে অধিকাংশ রক্তদাতা রক্তদানের পর তেমন কিছুই অনুভব করেন না। যে পরিমাণ রক্তের তরল অংশ নেয়া হয় সেই পরিমাণ তরল অংশ মাত্র ৪৮ ঘন্টার মধ্যেই আবার আগের মতো হয়ে যায়। ইহা কি নিরাপদ? এখন প্রশ্ন আসতে পারে রক্ত দান প্রক্রিয়া কতটুকু নিরাপদ? আমরা ইতিমধ্যে', 'এ কারণে অধিকাংশ রক্তদাতা রক্তদানের পর তেমন কিছুই অনুভব করেন না। যে পরিমাণ রক্তের তরল অংশ নেয়া হয় সেই পরিমাণ তরল অংশ মাত্র ৪৮ ঘন্টার মধ্যেই আবার আগের মতো হয়ে যায়। ইহা কি নিরাপদ? এখন প্রশ্ন আসতে পারে রক্ত দান প্রক্রিয়া কতটুকু নিরাপদ? আমরা ইতিমধ্যে', 'ase.jpg', 'jani_na', '2017-07-29 01:56:09'),
+(9, 'রক্তদান অপেক্ষাকৃত নিরাপদ', 'রক্তদান অপেক্ষাকৃত নিরাপদ, তবে কিছু রক্তদাতার যে জায়গায় সূঁচ প্রবেশ করানো হয় সেখানে কালশিরে পড়ে, আবার কেউ কেউ রক্তদানের পর দুর্বলতা অনুভব করেন। সম্ভাব্য রক্তদাতার রক্ত ব্যবহার যে সব কারণে ঝুঁকিপূর্ণ হতে পারে তার সবকিছুই পরীক্ষা করা হয়। এই পরীক্ষাগুলোর মধ্যে রক্তের মাধ্যমে ছড়ায় এমন রোগ (যেমন এইচআইভি ও ভাইরাল হেপাটাইটিস)', 'রক্তদান অপেক্ষাকৃত নিরাপদ, তবে কিছু রক্তদাতার যে জায়গায় সূঁচ প্রবেশ করানো হয় সেখানে কালশিরে পড়ে, আবার কেউ কেউ রক্তদানের পর দুর্বলতা অনুভব করেন। সম্ভাব্য রক্তদাতার রক্ত ব্যবহার যে সব কারণে ঝুঁকিপূর্ণ হতে পারে তার সবকিছুই পরীক্ষা করা হয়। এই পরীক্ষাগুলোর মধ্যে রক্তের মাধ্যমে ছড়ায় এমন রোগ (যেমন এইচআইভি ও ভাইরাল হেপাটাইটিস)', 'dfg.jpg', 'nirapod', '2017-07-29 01:57:45');
 
 -- --------------------------------------------------------
 
@@ -2483,7 +2500,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `activities`
 --
 ALTER TABLE `activities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `admins`
 --
@@ -2518,7 +2535,7 @@ ALTER TABLE `bloodgroups`
 -- AUTO_INCREMENT for table `blood_requests`
 --
 ALTER TABLE `blood_requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `categorys`
 --
@@ -2533,7 +2550,7 @@ ALTER TABLE `cities`
 -- AUTO_INCREMENT for table `contents`
 --
 ALTER TABLE `contents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `countries`
 --
@@ -2578,7 +2595,7 @@ ALTER TABLE `donateblood`
 -- AUTO_INCREMENT for table `donors`
 --
 ALTER TABLE `donors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `donors_details`
 --
@@ -2593,7 +2610,7 @@ ALTER TABLE `faqs`
 -- AUTO_INCREMENT for table `find_solutions`
 --
 ALTER TABLE `find_solutions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `galleries`
 --
@@ -2623,7 +2640,7 @@ ALTER TABLE `locations`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
@@ -2633,7 +2650,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `more_about_bloods`
 --
 ALTER TABLE `more_about_bloods`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `permissions`
 --
