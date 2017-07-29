@@ -318,7 +318,8 @@ class HomeController extends Controller {
     public function about_us() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('frontend.about_us');
+        $data['about_us'] = Content:: where('content_type', 'about_us')->first();
+        return view('frontend.about_us')->with('data', $data);
     }
 
     public function contact() {

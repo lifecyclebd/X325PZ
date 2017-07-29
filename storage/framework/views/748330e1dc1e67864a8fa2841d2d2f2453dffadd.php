@@ -26,12 +26,6 @@
                 </a>
             </li>
             <li class="treeview">
-                <a href="<?php echo e(url('/admin/write/to/doctor')); ?>">
-                    <i class="fa fa-user"></i>
-                    <span>Mail to Doctor</span>
-                </a>
-            </li>
-            <li class="treeview">
                 <a href="#">
                     <i class="fa fa-rss" aria-hidden="true"></i>
                     <span>Blood Donor</span>
@@ -45,11 +39,12 @@
                     <li><a href="<?php echo e(url('/search')); ?>"><i class="fa fa-circle-o"></i> Search</a></li>
                     <li><a href="<?php echo e(url('/bloodrequest')); ?>"><i class="fa fa-circle-o"></i> Blood Request</a></li>
                     <li><a href="<?php echo e(url('/activity-list')); ?>"><i class="fa fa-circle-o"></i> Activity List</a></li>
+                    <li><a href="<?php echo e(url('/sms')); ?>"><i class="fa fa-envelope"></i><span>SMS</span></a></li>
                 </ul>
             </li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-pie-chart"></i>
+                    <i class="fa fa-picture-o" aria-hidden="true"></i>
                     <span>Gallery</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
@@ -126,42 +121,15 @@
                 </a>
             </li>
             <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-share"></i> <span>Multilevel</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
+                <a href="<?php echo e(url('/admin/write/to/doctor')); ?>">
+                    <i class="fa fa-envelope-square" aria-hidden="true"></i>
+                    <span>Doctor Mailbox</span>
                 </a>
-                <ul class="treeview-menu"> 
-                    <li>
-                        <a href="#"><i class="fa fa-circle-o"></i> Level One
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu"> 
-                            <li>
-                                <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                                    <span class="pull-right-container">
-                                        <i class="fa fa-angle-left pull-right"></i>
-                                    </span>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li> 
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-                </ul>
-            </li>
+            </li> 
             <li class="treeview">
-                <a href="mailbox.html">
+                <a href="#">
                     <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                    <span class="pull-right-container">
-              <small class="label pull-left bg-yellow">12</small>
-              <small class="label pull-left bg-green">16</small>
-              <small class="label pull-left bg-red">5</small>
+                    <span class="pull-right-container"> <small class="label pull-left bg-green">16</small> 
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
@@ -187,36 +155,20 @@
                     </a></li>
                 </ul>
             </li>
-
-            <li class=""><a href="<?php echo e(url('/admin/more-blood/view')); ?>"><i class="fa fa-home"></i> <span>More About Blood</span></a></li> 
-
-            <li class="treeview">
-                <a href="<?php echo e(url('/admin/content')); ?>">
-                    <i class="fa fa-tasks"></i>
-                    <span>Content</span>
-                </a>
-            </li>
-
-
+ 
+         
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-share"></i> <span>Content</span>
+                    <i class="fa fa-info-circle"></i> <span>Content</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">  
-                    <li><a href="<?php echo e(url('admin/content')); ?>"><i class="fa fa-circle-o"></i> View Content</a></li>
-                    <li><a href="<?php echo e(url('admin/content/create')); ?>"><i class="fa fa-circle-o"></i>Add Content</a></li>
+                    <li><a href="<?php echo e(url('admin/content')); ?>"><i class="fa fa-tasks"></i> View Content</a></li>
+                    <li><a href="<?php echo e(url('/admin/content/search-content')); ?>"><i class="fa fa-search"></i> Search Content</a></li>
+                    <li><a href="<?php echo e(url('admin/content/create')); ?>"><i class="fa fa-plus"></i>Add Content</a></li>
                 </ul>
-            </li>
-
-
-            <li class="treeview">
-                <a href="<?php echo e(url('/sms')); ?>">
-                    <i class="fa fa-envelope"></i>
-                    <span>SMS</span>
-                </a>
             </li>
 
         </ul>

@@ -44,6 +44,10 @@
                                 <option value="events"<?php if ($data->content_type == "events") echo 'selected="selected"'; ?> > Events</option>
                                 <option value="post" <?php if ($data->content_type == "post") echo 'selected="selected"'; ?> > Post </option>
                                 <option value="page" <?php if ($data->content_type == "page") echo 'selected="selected"'; ?>  > Page </option>
+                                <option value="upcoming_events" <?php if ($data->content_type == "upcoming_events") echo 'selected="selected"'; ?>  > Upcoming Event </option>
+                                <option value="recent_events" <?php if ($data->content_type == "recent_events") echo 'selected="selected"'; ?>  > Recent Event </option>
+                                <option value="more_blood" <?php if ($data->content_type == "more_blood") echo 'selected="selected"'; ?>  > More About Blood </option>
+                                <option value="about_us" <?php if ($data->content_type == "about_us") echo 'selected="selected"'; ?>  > About Us </option>
                             </select>
 
                         </div>
