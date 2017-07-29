@@ -82,6 +82,23 @@ class HomeController extends Controller {
         return view('frontend.home')->with('data', $data);
     }
 
+    public function send_message(Request $request){
+
+        $msg = new Message; 
+        $msg->sender_email = $request->email;
+        $msg->sender_type = 'user';
+
+        $msg->receiver_type =  'admin';
+        $msg->receiver_email =  'admin@lifecycle.org'; 
+
+        $msg->message = $request->message;
+        if(!empty($request->session()->get('id'))){$id=$request->session()->get('id');}
+        else{ $id=1000; }
+
+        $msg->created_by = $id; 
+        $msg->save();
+return redirect('/contact?Your message send successfully !');
+    }
     public function SearchAny(Request $request) {
         $searchdata = $request->searchany;
 
