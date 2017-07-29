@@ -140,7 +140,7 @@
 
 <div class="More_about_info">
     <div class="container-fluid" style="background-color: gray;height: 580px"> 
-        <h3 class="life_title " style="margin-bottom:50px;color: white">More about blood</h3> 
+        <h3 class="life_title " style="margin-bottom:50px;color: white"> রক্তদান - কিছু প্রয়োজনীয় কথা </h3> 
 
         @foreach($data['all_blood_info'] as $row) 
         <div class="col-md-3 col-sm-6 col-xs-12" style="border-radius: 8px">
@@ -159,7 +159,8 @@
         @endforeach
         <br> 
     </div> 
-    <div class="container-fluid" style="padding: 20px; background-color: #4d4f54"><a class="pull-right btn btn-serach" href="{{url('/')}}/seeMoreBloodInfo">See More</a></div>
+    <div class="container-fluid" style="padding: 20px; background-color: #4d4f54">
+    <a style="color: red; padding: 10px" class="pull-right btn btn-serach" href="{{url('/')}}/seeMoreBloodInfo">একই রকম পোস্ট </a></div>
 
 
 
