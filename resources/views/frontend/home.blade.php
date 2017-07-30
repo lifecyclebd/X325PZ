@@ -90,7 +90,7 @@
             echo 'active';
         } ?>"> 
             <!-- Set the first background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('{{asset('/')}}public/images/gallery/{{$row->photo_name}}');"></div>
+            <div class="fill" style="background-image:url('{{asset('/')}}public/images/gallery/{{$row->pic_path}}');"></div>
             <div class="carousel-caption">
 
                 <h2><?php if (!empty($row->caption)) {
@@ -239,7 +239,7 @@
         <div class="col-md-offset-2 col-md-8">
             <h2> স্বেচ্ছাসেবক হন </h2>
             <p class="text-justify ">
-            যারা জরুরী সময়ে মুমুর্ষ রোগির জন্য রক্তদাতা ম্যানেজ করে থাকেন, তাদেরকে সাধারণত আমরা আমাদের ভাষায় রক্তযোদ্ধা, রক্ত সৈনিক অথবা স্বেচ্ছাসেবক বলে থাকি।
+            যারা জরুরী সময়ে মুমুর্ষ রোগির জন্য রক্তদাতা ম্যানেজ করে থাকেন, তাদেরকে সাধারণত আমরা আমাদের ভাষায় রক্তযোদ্ধা, রক্ত সৈনিক অথবা স্বেচ্ছাসেবক বলে থাকি। আমাদের স্বেচ্ছাসেবক হওয়া কঠিন নয়। আপনার ইচ্ছাই যথেষ্ট। স্বেচ্ছাসেবক হতে নিচের বাটনে ক্লিক করুন।
             </p>
             <div class="pull-center"> 
                 <button class="join_now hidden-xs"   data-toggle="modal" data-target="#joinVolentier">যোগদান করুন </button>
@@ -250,10 +250,9 @@
     </div>
     <div class="col-md-6 make_donation" style="min-height: 350px;">
         <div class="col-md-offset-2 col-md-8">
-            <h2>রক্ত দাতা হন  </h2>
+            <h2>দাতা হন  </h2>
             <p class="text-justify" style="color:white;">
-            আপনি যদি একজন নিয়মিত রক্তদাতা হন অথবা রক্ত দিতে আগ্রহী হন তাহলে,
-একটু কষ্ট করে নিচে দেওয়া লিংকে যান , আর আপনার নাম, লিঙ্গ, জন্ম তারিখ, ঠিকানা, ব্লাড গ্রুপ, মোবাইল নাম্বার এবং শেষ রক্তদানের তারিখ দিয়ে ফর্মটি পূরণ করুন এবং আপনার কাছে মানুষদেরও ফর্মটি পূরণ করতে বলুন । 
+            আমাদের সঙ্গে সামাজিক কাজে অংশগ্রহণ করতে আপনার হাত বাড়িয়ে দিতে পারেন। আমরা আপনার দানের ব্যপারে সর্বোচ্চ গোপনীয়তা বজায় রাখবো এবং সঠিক কাজে সঠিক জায়গায় কার্যকরে সচেষ্ট হবো। 
             </p>
             <div class="pull-center">
 
@@ -395,8 +394,8 @@
 
         <div class="popup-gallery">
             @foreach($data['blood_fighter'] as $row)
-        <a href="{{url('public/images/gallery')}}/{{$row->photo_name}}" title="The Cleaner" class="col-md-3" >
-            <img src="{{url('public/images/gallery')}}/{{$row->photo_name}}"  class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid #c9302c; float: left;">
+        <a href="{{url('public/images/gallery')}}/{{$row->pic_path}}" title="The Cleaner" class="col-md-3" >
+            <img src="{{url('public/images/gallery')}}/{{$row->pic_path}}"  class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid #c9302c; float: left;">
         </a>
             @endforeach
         </div>

@@ -151,17 +151,32 @@ class PhotoController extends Controller
             ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id')
             ->get();
         
-         //$data['gallery']= Gallery_detail::all(); 
         return view('gallery.viewPhoto')->with('data', $data);
     }
     
-    public function editPhoto($id,$g_id){
-        $data['photo'] = DB::table('gallery_details')
-            ->join('galleries', 'galleries.id', '=', $id)
-            ->where('gallery_details.id','id')
-            ->get();
-        $data['gallery']= Gallery::all();
+    public function editPhoto($id){
+        $data['photo'] = Gallery_detail::where('id',$id)->first();
         return view('gallery.editPhoto')->with('data', $data);
+    }
+    
+    public function updatePhoto(Request $request){
+        $common =New  Common;
+        $id = $request->id;
+        $galleries = Gallery_detail::find($id);
+        
+        $galleries->caption = $request->caption;
+        $galleries->sub_caption = $request->sub_caption;
+        $galleries->updated_by = 2;
+
+        $f=date('Y-m-d').'_'.time();
+        if ($request->photo_name) {
+                $fileName = $f;
+                $photo_name = $common->uploadImage('photo_name', 'images/gallery', $fileName);
+                $galleries->pic_path = $photo_name;
+            }
+
+        $galleries->save();
+        return redirect('/admin/viewPhoto');
     }
     
 }

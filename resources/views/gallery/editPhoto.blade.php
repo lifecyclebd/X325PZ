@@ -23,26 +23,14 @@
 
             <div class="box-body">
                 <!-- form start -->
-                <form class="form-horizontal" action="{{url('/admin/storePhoto')}}" method="post" enctype="multipart/form-data"> 
+                <form class="form-horizontal" action="{{url('/admin/Photo/update')}}" method="post" enctype="multipart/form-data"> 
                     {!! csrf_field() !!}
-
-                    <div class="form-group">
-                        <label for="name" class="col-md-4 control-label">Select Gallery</label>
-                        <div class="col-md-6">
-                            <select class="form-control" name="gallery_id">
-                                <option value="">{{$data['photo']->gallery_name}}}</option>
-                                @foreach($data['gallery'] as $row)
-                                
-                                <option value="{{$row->id}}"> {{$row->gallery_name}}  </option>
-                                @endforeach
-                            </select>                        
-                        </div>
-                    </div>
 
                     <div class="form-group">
                         <label for="name" class="col-md-4 control-label">Upload Photo</label>
                         <div class="col-md-6">
                             <input id="name" type="file" class="form-control" name="photo_name" multiple="true">
+                            <input id="name" type="hidden" name="id" value="{{$data['photo']->id}}" multiple="true">
                         </div>
                     </div>
                     <div class="form-group">

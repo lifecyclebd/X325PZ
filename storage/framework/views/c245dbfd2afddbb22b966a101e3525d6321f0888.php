@@ -25,7 +25,8 @@
                             <thead>
                                 <tr>
                                     <th> ID</th>
-                                    <th>Caption & Sub Caption</th> 
+                                    <th>Caption</th>
+                                    <th>Sub Caption</th> 
                                     <th>Category</th> 
                                     <th>Gallery</th> 
                                     <th>Image</th>
@@ -37,11 +38,8 @@
                                 <?php $__currentLoopData = $data['galleries']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
                                     <td><?php echo e($row->id); ?></td>
-                                    <td>
-                                    <?php echo e($row->caption); ?><br>
-                                    <small><?php echo e($row->sub_caption); ?></small>
-
-                                    </td> 
+                                    <td><?php echo e($row->caption); ?></td>
+                                    <td><?php echo e($row->sub_caption); ?></td> 
                                     <td><?php echo e($row->page_name); ?></td> 
                                     <td><?php echo e($row->gallery_name); ?></td> 
                                     <td><img style="width:100px; height:70px" src="<?php echo e($row->pic_path); ?>"> </td>  

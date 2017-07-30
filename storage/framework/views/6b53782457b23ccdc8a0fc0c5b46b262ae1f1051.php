@@ -20,27 +20,15 @@
 
             <div class="box-body">
                 <!-- form start -->
-                <form class="form-horizontal" action="<?php echo e(url('/admin/storePhoto')); ?>" method="post" enctype="multipart/form-data"> 
+                <form class="form-horizontal" action="<?php echo e(url('/admin/Photo/update')); ?>" method="post" enctype="multipart/form-data"> 
                     <?php echo csrf_field(); ?>
 
-
-                    <div class="form-group">
-                        <label for="name" class="col-md-4 control-label">Select Gallery</label>
-                        <div class="col-md-6">
-                            <select class="form-control" name="gallery_id">
-                                <option value=""><?php echo e($data['photo']->gallery_name); ?>}</option>
-                                <?php $__currentLoopData = $data['gallery']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                
-                                <option value="<?php echo e($row->id); ?>"> <?php echo e($row->gallery_name); ?>  </option>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            </select>                        
-                        </div>
-                    </div>
 
                     <div class="form-group">
                         <label for="name" class="col-md-4 control-label">Upload Photo</label>
                         <div class="col-md-6">
                             <input id="name" type="file" class="form-control" name="photo_name" multiple="true">
+                            <input id="name" type="hidden" name="id" value="<?php echo e($data['photo']->id); ?>" multiple="true">
                         </div>
                     </div>
                     <div class="form-group">
