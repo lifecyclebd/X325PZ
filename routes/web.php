@@ -237,6 +237,7 @@ Route::any('/blog/show/{id}', 'BlogController@blog_show');
 //-----------------------Mail box----------------------
 Route::any('admin/mailbox/inbox', 'MailController@show_inbox');
 Route::any('admin/mailbox/compose', 'MailController@show_compose');
+Route::any('admin/mailbox/store', 'MailController@store_compose');
 Route::any('admin/mailbox/read/{id}', 'MailController@show_read');
 Route::any('admin/mailbox/sent', 'MailController@show_sent');
 

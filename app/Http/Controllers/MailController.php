@@ -51,6 +51,19 @@ class MailController extends Controller
        $data['donor'] = Donor::all();
        return view('mailbox.compose')->with('data', $data);
    }
+   public function store_compose(Request $request){
+    $data = new Message;
+    $data->sender_email='admin@mail.com';
+    $data->sender_type='admin';
+    $data->receiver_email=$request->email;
+    $data->receiver_type='donor';
+    $data->message=$request->message;
+    $data->is_read=0;
+    $data->sender_email='admin@mail.com';
+    $data->save();
+    return redirect('admin/mailbox/compose');
+
+   }
    public function show_read($id){
        $data['read'] = Message::find($id);
        return view('mailbox.read')->with('data', $data);
