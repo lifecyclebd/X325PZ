@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use App\Message;
 use App\Activity;
+use App\BloodRequest;
 use App\Division;
 use App\Donor;
    function  get_footer()
@@ -39,6 +40,12 @@ use App\Donor;
             }
             
             $data['activities'] = Activity::where([['created_id', $data['login_id']], ['created_type', 'donor']])->get(); 
+
+
+            $data['blood_request'] = BloodRequest::where([['receiver_email', $donor_email], ['receiver_type', 'donor']])->get(); 
+
+            $data['bloodRequestCount']=$data['blood_request']->count();
+
             $data['last5activities']= Activity::where([['created_id', $data['login_id']], ['created_type', 'donor']])->orderByDesc('created_at')->take(5)->get(); 
             $data['division'] = Division::all();
             $data['donor'] = Donor::where('email',$donor_email)->first();

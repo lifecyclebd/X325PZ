@@ -646,13 +646,10 @@
             <!-- /.tab-content -->
           </div> 
           <h3 class="life_title">Blood Request</h3>
-          <h4>Purpose: {{ $data['singleactivities']->purpose}}</h4>
-          <h4>Message Published: {{$data['singleactivities']->created_at}}</h4>
-          <hr>
-          <p align="justify">{{$data['singleactivities']->short_message}}</p>
-          <hr>
-          <a class="btn-xs btn-primary" href="{{url('/')}}/singlerequest/agree/{{$data['singleactivities']->id}}">Response for Donation</a>
-          <a class="btn-xs btn-danger" href="{{url('/')}}/singlerequest/disagree/{{$data['singleactivities']->id}}">Unavailable</a> 
+          <h4>Need: <span class="badge" style="background-color: red">{{ $data['blood_request']->request_blood_group}}</span> Blood..!!</h4>
+          <p>If you think, you are fit and available to donate blood Please response..!! It may save a life :)</p> 
+          <a class="btn-xs btn-primary" href="{{url('/')}}/singlerequest/agree/{{$data['blood_request']->id}}">Response for Donation</a>
+          <a class="btn-xs btn-danger" href="{{url('/')}}/singlerequest/disagree/{{$data['blood_request']->id}}">Unavailable</a> 
 
 
 

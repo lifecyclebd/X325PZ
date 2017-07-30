@@ -126,7 +126,7 @@ class PhotoController extends Controller
         return view('gallery.addPhoto')->with('data', $data);
     }
     
-      public function storePhoto(Request $request){
+    public function storePhoto(Request $request){
         $common = new Common;
         $f=date('Y-m-d').'_'.time(); 
         $gallery_details = new Gallery_detail();
@@ -135,7 +135,7 @@ class PhotoController extends Controller
             if ($request->photo_name) {
                 $fileName = $f;
                 $photo_name = $common->uploadImage('photo_name', 'images/gallery', $fileName);
-                $gallery_details->photo_name = $photo_name;
+                $gallery_details->pic_path = $photo_name;
             }
          
         $gallery_details->updated_by = 2;
@@ -151,8 +151,37 @@ class PhotoController extends Controller
             ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id')
             ->get();
         
-         //$data['gallery']= Gallery_detail::all(); 
         return view('gallery.viewPhoto')->with('data', $data);
+    }
+    
+    public function editPhoto($id){
+        $data['photo'] = Gallery_detail::where('id',$id)->first();
+        return view('gallery.editPhoto')->with('data', $data);
+    }
+    
+    public function updatePhoto(Request $request){
+        $common =New  Common;
+        $id = $request->id;
+        $galleries = Gallery_detail::find($id);
+        
+        $galleries->caption = $request->caption;
+        $galleries->sub_caption = $request->sub_caption;
+        $galleries->updated_by = 2;
+
+        $f=date('Y-m-d').'_'.time();
+        if ($request->photo_name) {
+                $fileName = $f;
+                $photo_name = $common->uploadImage('photo_name', 'images/gallery', $fileName);
+                $galleries->pic_path = $photo_name;
+            }
+
+        $galleries->save();
+        return redirect('/admin/viewPhoto');
+    }
+    public function deletePhoto($id){
+        $galleries = Gallery_detail::find($id);
+        $galleries->delete();
+        return redirect('/admin/viewPhoto');
     }
     
 }

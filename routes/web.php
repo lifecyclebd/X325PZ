@@ -8,6 +8,8 @@ Route::any('/admin/testimonial/store', 'AdminController@store_testimonial');
 Route::get('/donor-profile', 'DonorController@donor_profile');
 Route::get('donor-profile/message-show/{id}', 'DonorController@singleMessageShow');
 Route::get('donor-profile/request-show/{id}', 'DonorController@singleRequestShow');
+Route::post('/donor/tobeproud/store', 'DonorController@tobeproud_save');
+
 
 
 Route::post('/donor/signup', 'DonorController@signup');
@@ -40,13 +42,14 @@ Route::post('/search-any','HomeController@SearchAny');
 Route::get('/admin/addGallery', 'PhotoController@addGallery');
 Route::any('/admin/storeGallery', 'PhotoController@storeGallery');
 Route::any('/admin/viewGallery', 'PhotoController@viewGallery');
+
+
 Route::any('/admin/addPhoto', 'PhotoController@addPhoto');
 Route::any('/admin/storePhoto', 'PhotoController@storePhoto');
 Route::any('/admin/viewPhoto', 'PhotoController@viewPhoto');
-
-
-
-
+Route::any('/admin/Photo/edit/{id}', 'PhotoController@editPhoto');
+Route::any('/admin/Photo/update', 'PhotoController@updatePhoto');
+Route::any('/admin/Photo/delete/{id}', 'PhotoController@deletePhoto');
 
 
 
@@ -56,7 +59,6 @@ Route::any('/admin/viewPhoto', 'PhotoController@viewPhoto');
 Route::get('/DonorSearchByLocation', 'SearchController@DonorSearchByLocation');
 Route::get('/search', 'SearchController@index');
 Route::get('/my-profile', 'ProfileController@viewMyProfile');
-//Route::get('/', 'PostController@WhoWeAre');
 
 
 
@@ -211,6 +213,7 @@ Route::get('api/get-city-list','APIController@getCityList');
 //---------Content--------------------
 
 Route::get('/admin/content', 'ContentController@index'); 
+Route::any('/admin/content/search-content', 'ContentController@contentSearch'); 
 Route::get('/admin/content/create', 'ContentController@create');
 Route::get('/admin/content/{id}', 'ContentController@show');
 Route::get('/admin/content/{id}/edit', 'ContentController@edit'); 
@@ -236,6 +239,7 @@ Route::any('/blog/show/{id}', 'BlogController@blog_show');
 //-----------------------Mail box----------------------
 Route::any('admin/mailbox/inbox', 'MailController@show_inbox');
 Route::any('admin/mailbox/compose', 'MailController@show_compose');
+Route::any('admin/mailbox/store', 'MailController@store_compose');
 Route::any('admin/mailbox/read/{id}', 'MailController@show_read');
 Route::any('admin/mailbox/sent', 'MailController@show_sent');
 

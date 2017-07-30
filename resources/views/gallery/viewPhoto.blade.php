@@ -12,7 +12,7 @@
                 <div class="box">
 
                     <div class="box-header with-border">
-                        <h3 class="box-title">Donor List</h3>
+                        <h3 class="box-title">Gallery List</h3>
                         <div class="box-tools pull-right">
                             <a href="{{url('/admin/addGallery')}}" class="">      
                                 <i class="fa fa-plus" aria-hidden="true"></i> View Photo Collections
@@ -28,7 +28,8 @@
                             <thead>
                                 <tr>
                                     <th> ID</th>
-                                    <th>Caption & Sub Caption</th> 
+                                    <th>Caption</th>
+                                    <th>Sub Caption</th> 
                                     <th>Category</th> 
                                     <th>Gallery</th> 
                                     <th>Image</th>
@@ -40,19 +41,16 @@
                                 @foreach($data['galleries'] as $row)
                                 <tr>
                                     <td>{{$row->id}}</td>
-                                    <td>
-                                    {{$row->caption}}<br>
-                                    <small>{{$row->sub_caption}}</small>
-
-                                    </td> 
+                                    <td>{{$row->caption}}</td>
+                                    <td>{{$row->sub_caption}}</td> 
                                     <td>{{$row->page_name}}</td> 
                                     <td>{{$row->gallery_name}}</td> 
-                                    <td><img style="width:100px; height:70px" src="{{url('/public/images/gallery')}}/{{$row->photo_name}}"> </td>  
+                                    <td><img style="width:100px; height:70px" src="{{$row->pic_path}}"> </td>  
                                     <td> 
-                                        <a href="{{url('/donor')}}/{{$row->id}}/edit" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
-                                        <a href="{{url('/donor')}}/{{$row->id}}/destroy" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
+                                        <a href="{{url('/admin/Photo')}}/edit/{{$row->id}}" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
+                                        <a href="{{url('/admin/Photo')}}/delete/{{$row->id}}" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
                                         <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
-                                        <a href="{{url('/donor/')}}/{{ $row->id }}" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
+                                        <a href="{{url('/admin/Photo')}}/delete{{ $row->id }}" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
                                         </a>
                                     </td>
 

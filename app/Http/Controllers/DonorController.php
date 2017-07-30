@@ -10,6 +10,7 @@ use App\Upazila;
 use App\Activity;
 use App\BloodRequest;
 use App\Message;
+use App\Tobeproud;
 use App\Libraries\Common;
 use DB;
 use Hash;
@@ -285,9 +286,9 @@ public function signup(Request $request) {
             $request->session()->put('session_url','/donor-profile');
             return redirect('/donor-login');
          }
-
-        $data['messages'] = Message::where([['sender_email', $login_donor_email], ['sender_type', 'donor']])->get(); 
-        $data['last5message'] = Message::where([['sender_email', $login_donor_email], ['sender_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
+        $data['tobeproud_gallery']=Tobeproud::where('sender_email',$login_donor_email)->orderByDesc('created_at')->take(8)->get();
+        $data['messages'] = Message::where([['receiver_email', $login_donor_email], ['receiver_type', 'donor']])->get(); 
+        $data['last5message'] = Message::where([['receiver_email', $login_donor_email], ['receiver_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
         $data['last5messageCount']=$data['last5message']->count();
 
 
@@ -315,12 +316,12 @@ public function signup(Request $request) {
             return redirect('/donor-login');
          }
 
-        $data['messages'] = Message::where([['sender_email', $login_donor_email], ['sender_type', 'donor']])->get(); 
-        $data['singlemeaasge']=Message::where([['id',$msg_id ],['sender_email', $login_donor_email], ['sender_type', 'donor']])->first();
+        $data['messages'] = Message::where([['receiver_email', $login_donor_email], ['receiver_type', 'donor']])->get(); 
+        $data['singlemeaasge']=Message::where([['id',$msg_id ],['receiver_email', $login_donor_email], ['receiver_type', 'donor']])->first();
 
 
          
-        $data['last5message'] = Message::where([['sender_email', $login_donor_email], ['sender_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
+        $data['last5message'] = Message::where([['receiver_email', $login_donor_email], ['receiver_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
         $data['last5messageCount']=$data['last5message']->count();
 
         
@@ -344,13 +345,16 @@ public function signup(Request $request) {
          }
   
         $data['login_email'] = $request->session()->get('email');
-        $data['messages'] = Message::where([['sender_email', $login_donor_email], ['sender_type', 'donor']])->get(); 
+        $data['messages'] = Message::where([['receiver_email', $login_donor_email], ['receiver_type', 'donor']])->get(); 
 
-        //$data['singlerequest']=BloodRequest::where([['id',$req_id ],['sender_email', $login_donor_email], ['sender_type', 'donor']])->first();
+        //$data['singlerequest']=BloodRequest::where([['id',$req_id ],['receiver_email', $login_donor_email], ['receiver_type', 'donor']])->first();
 
+           $data['blood_request'] = BloodRequest::where('id',$req_id)->first(); 
+          // dd($data['blood_request']);
+            $data['bloodRequestCount']=$data['blood_request']->count();
 
          
-        $data['last5message'] = Message::where([['sender_email', $login_donor_email], ['sender_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
+        $data['last5message'] = Message::where([['receiver_email', $login_donor_email], ['receiver_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
         $data['last5messageCount']=$data['last5message']->count();
 
         
@@ -358,7 +362,7 @@ public function signup(Request $request) {
         $data['last5activities']= Activity::where([['created_id', $login_donor_id], ['created_type', 'donor']])->orderByDesc('created_at')->take(5)->get(); 
 
         $data['singleactivities']=Activity::where([['id',$req_id ],['created_id', $login_donor_email], ['created_type', 'donor']])->first();
-        dd($data['singleactivities']);
+       // dd($data['singleactivities']);
 
         $data['division'] = Division::all();
         $donor_email= $request->session()->get('email');
@@ -412,6 +416,34 @@ public function signup(Request $request) {
         $request->session()->flush();
 
        return redirect('/donor-login');
+    }
+ 
+    public function tobeproud_save(Request $request){
+        $data=new Tobeproud;
+        $common = new Common; 
+        $email=$request->session()->get('email');
+        $data->sender_email=$email;
+        $data->sender_type='donor';
+ 
+        $data->donate_date=$request->donate_date;
+        $data->donate_place=$request->donate_place;
+        $data->reason_of_proud=$request->reason_of_proud;
+        $data->donate_place=$request->donate_place;   
+        $data->save();
+        $last_insert_id=$data->id;
+        $Content_file = new Tobeproud;
+        $Content_file = Tobeproud::find($last_insert_id);
+
+        if ($request->pic_path) {
+            $common=new Common;
+            $fileName ='donor_'. $last_insert_id;
+            $content_photo = $common->uploadImage('pic_path', 'images/donor/', $fileName);
+            $Content_file->pic_path = $common->get_site_url().'public/images/donor/'.$content_photo;
+            $Content_file->save();
+        }
+        
+
+        return redirect('/donor-profile');
     }
 
 }

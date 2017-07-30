@@ -63,7 +63,19 @@ class HomeController extends Controller {
                 ->orderBy('gallery_details.id', 'desc')
                 ->get();
 
-        $data['recent_donor'] = Donor:: where('is_available', 1)->orderByDesc('last_donation')->get();
+
+        $data['a_positive'] = Donor::where([['blood_group','A+'],['already_donated',1]])->get()->count();
+        $data['a_negative'] = Donor::where([['blood_group','A-'],['already_donated',1]])->get()->count();
+        $data['b_positive'] = Donor::where([['blood_group','B+'],['already_donated',1]])->get()->count();
+        $data['b_negative'] = Donor::where([['blood_group','B-'],['already_donated',1]])->get()->count();
+        $data['ab_positive'] = Donor::where([['blood_group','AB+'],['already_donated',1]])->get()->count();
+        $data['ab_negative'] = Donor::where([['blood_group','AB-'],['already_donated',1]])->get()->count();
+        $data['o_positive'] = Donor::where([['blood_group','O+'],['already_donated',1]])->get()->count();
+        $data['o_negative'] = Donor::where([['blood_group','O-'],['already_donated',1]])->get()->count();
+
+
+
+        $data['recent_donor'] = Donor:: where('already_donated', 1)->orderByDesc('last_donation')->get();
         $data['upcoming_event'] = Content:: where('content_type', 'upcoming_events')->get();
         $data['all_blood_info']=Content::where('content_type','more_blood')->orderByDesc('created_at')->take(4)->get();
         $data['testimonial'] = Testimonial::all();
@@ -122,7 +134,7 @@ class HomeController extends Controller {
     public function read_more($id) {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        $data['read_more_detail'] = More_about_blood::find($id);
+        $data['read_more_detail'] = Content::find($id);
         return view('frontend.read_more')->with('data', $data);
     }
 
@@ -306,7 +318,8 @@ class HomeController extends Controller {
     public function about_us() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        return view('frontend.about_us');
+        $data['about_us'] = Content:: where('content_type', 'about_us')->first();
+        return view('frontend.about_us')->with('data', $data);
     }
 
     public function contact() {
