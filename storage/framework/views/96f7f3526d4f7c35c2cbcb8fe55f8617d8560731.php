@@ -89,7 +89,7 @@
             echo 'active';
         } ?>"> 
             <!-- Set the first background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('<?php echo e(asset('/')); ?>public/images/gallery/<?php echo e($row->photo_name); ?>');"></div>
+            <div class="fill" style="background-image:url('<?php echo e(asset('/')); ?>public/images/gallery/<?php echo e($row->pic_path); ?>');"></div>
             <div class="carousel-caption">
 
                 <h2><?php if (!empty($row->caption)) {
@@ -114,11 +114,11 @@
     <div class="clearfix"></div>
 
     <div class="row" style="min-height: 100px; background-color: #8f0002; padding: 10px; margin: 0 auto;">
-        <div class="col-md-8">
+        <div class="col-md-8" style="margin-top: 8px">
             <!--<form class="form-horizontak" method="get" action="" style="margin: 10px;">
                 <?php echo csrf_field(); ?>-->
                 <div class="input-group">
-                    <span class="input-group-addon" style="padding: 0px 30px; font-size: 25px;"><i class="fa fa-map-marker map_marker"></i></span>
+                    <span class="input-group-addon" style="padding: 0px 0px; font-size: 25px;"><i class="fa fa-map-marker map_marker"></i></span>
 
                     <input type="text" style="height: 45px;    background: white;    font-size: 20px;" class="form-control" aria-label="Search Donor" placeholder="Search Donor Location" name="searchany">
                     <div id="map" style="overflow: hidden;"></div>
@@ -239,7 +239,7 @@
         <div class="col-md-offset-2 col-md-8">
             <h2> স্বেচ্ছাসেবক হন </h2>
             <p class="text-justify ">
-            যারা জরুরী সময়ে মুমুর্ষ রোগির জন্য রক্তদাতা ম্যানেজ করে থাকেন, তাদেরকে সাধারণত আমরা আমাদের ভাষায় রক্তযোদ্ধা, রক্ত সৈনিক অথবা স্বেচ্ছাসেবক বলে থাকি।
+            যারা জরুরী সময়ে মুমুর্ষ রোগির জন্য রক্তদাতা ম্যানেজ করে থাকেন, তাদেরকে সাধারণত আমরা আমাদের ভাষায় রক্তযোদ্ধা, রক্ত সৈনিক অথবা স্বেচ্ছাসেবক বলে থাকি। আমাদের স্বেচ্ছাসেবক হওয়া কঠিন নয়। আপনার ইচ্ছাই যথেষ্ট। স্বেচ্ছাসেবক হতে নিচের বাটনে ক্লিক করুন।
             </p>
             <div class="pull-center"> 
                 <button class="join_now hidden-xs"   data-toggle="modal" data-target="#joinVolentier">যোগদান করুন </button>
@@ -250,10 +250,9 @@
     </div>
     <div class="col-md-6 make_donation" style="min-height: 350px;">
         <div class="col-md-offset-2 col-md-8">
-            <h2>রক্ত দাতা হন  </h2>
+            <h2>দাতা হন  </h2>
             <p class="text-justify" style="color:white;">
-            আপনি যদি একজন নিয়মিত রক্তদাতা হন অথবা রক্ত দিতে আগ্রহী হন তাহলে,
-একটু কষ্ট করে নিচে দেওয়া লিংকে যান , আর আপনার নাম, লিঙ্গ, জন্ম তারিখ, ঠিকানা, ব্লাড গ্রুপ, মোবাইল নাম্বার এবং শেষ রক্তদানের তারিখ দিয়ে ফর্মটি পূরণ করুন এবং আপনার কাছে মানুষদেরও ফর্মটি পূরণ করতে বলুন । 
+            আমাদের সঙ্গে সামাজিক কাজে অংশগ্রহণ করতে আপনার হাত বাড়িয়ে দিতে পারেন। আমরা আপনার দানের ব্যপারে সর্বোচ্চ গোপনীয়তা বজায় রাখবো এবং সঠিক কাজে সঠিক জায়গায় কার্যকরে সচেষ্ট হবো। 
             </p>
             <div class="pull-center">
 
@@ -395,8 +394,8 @@
 
         <div class="popup-gallery">
             <?php $__currentLoopData = $data['blood_fighter']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <a href="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->photo_name); ?>" title="The Cleaner" class="col-md-3" >
-            <img src="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->photo_name); ?>"  class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid #c9302c; float: left;">
+        <a href="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->pic_path); ?>" title="The Cleaner" class="col-md-3" >
+            <img src="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->pic_path); ?>"  class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid #c9302c; float: left;">
         </a>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
