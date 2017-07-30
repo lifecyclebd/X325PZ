@@ -178,5 +178,10 @@ class PhotoController extends Controller
         $galleries->save();
         return redirect('/admin/viewPhoto');
     }
+    public function deletePhoto($id){
+        $galleries = Gallery_detail::find($id);
+        $galleries->delete();
+        return redirect('/admin/viewPhoto');
+    }
     
 }
