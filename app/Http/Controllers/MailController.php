@@ -3,6 +3,7 @@
 namespace App\Http\Controllers; 
 use Illuminate\Http\Request;
 use Mail; 
+use App\Donor;
 use App\Message;
 
 class MailController extends Controller
@@ -47,7 +48,8 @@ class MailController extends Controller
        return view('mailbox.inbox')->with('data', $data);
    }
    public function show_compose(){
-       return view('mailbox.compose');
+       $data['donor'] = Donor::all();
+       return view('mailbox.compose')->with('data', $data);
    }
    public function show_read($id){
        $data['read'] = Message::find($id);

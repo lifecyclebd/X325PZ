@@ -47,10 +47,7 @@ Route::any('/admin/storePhoto', 'PhotoController@storePhoto');
 Route::any('/admin/viewPhoto', 'PhotoController@viewPhoto');
 Route::any('/admin/Photo/edit/{id}', 'PhotoController@editPhoto');
 Route::any('/admin/Photo/update', 'PhotoController@updatePhoto');
-
-
-
-
+Route::any('/admin/Photo/delete/{id}', 'PhotoController@deletePhoto');
 
 
 
@@ -60,7 +57,6 @@ Route::any('/admin/Photo/update', 'PhotoController@updatePhoto');
 Route::get('/DonorSearchByLocation', 'SearchController@DonorSearchByLocation');
 Route::get('/search', 'SearchController@index');
 Route::get('/my-profile', 'ProfileController@viewMyProfile');
-//Route::get('/', 'PostController@WhoWeAre');
 
 
 

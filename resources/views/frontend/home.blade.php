@@ -115,11 +115,11 @@
     <div class="clearfix"></div>
 
     <div class="row" style="min-height: 100px; background-color: #8f0002; padding: 10px; margin: 0 auto;">
-        <div class="col-md-8">
+        <div class="col-md-8" style="margin-top: 8px">
             <!--<form class="form-horizontak" method="get" action="" style="margin: 10px;">
                 {!! csrf_field() !!}-->
                 <div class="input-group">
-                    <span class="input-group-addon" style="padding: 0px 30px; font-size: 25px;"><i class="fa fa-map-marker map_marker"></i></span>
+                    <span class="input-group-addon" style="padding: 0px 0px; font-size: 25px;"><i class="fa fa-map-marker map_marker"></i></span>
 
                     <input type="text" style="height: 45px;    background: white;    font-size: 20px;" class="form-control" aria-label="Search Donor" placeholder="Search Donor Location" name="searchany">
                     <div id="map" style="overflow: hidden;"></div>
