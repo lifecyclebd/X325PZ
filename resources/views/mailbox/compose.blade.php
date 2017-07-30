@@ -15,12 +15,6 @@
             </div>
           <form action="{{url('admin/mailbox/store')}}" method="post" class="form-horizontal" enctype="multipart/form-data">
             <div class="box-body">
-
-                <input type="hidden" name="receiver_email" value="{{$row->email}}">
-                <input type="hidden" name="receiver_type" value="donor">
-                <input type="hidden" name="sender_email" value="admin@lifecyclebd.org">
-                <input type="hidden" name="sender_type" value="admin">
-
                   <div class="input-group" style="margin-bottom: 30px">
                     <span class="input-group-addon" id="basic-addon1">To </span> 
                       <select class="form-control" name="email">

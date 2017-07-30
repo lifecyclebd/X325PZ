@@ -461,12 +461,12 @@
               <div class="tab-pane" id="to_be_proud">
               <h2 class="life_title">Add your feelings</h2>
                 <div class="row" style="background: #eee">
-                    <form class="form-horizontal" action="" method="" style="margin: 10px" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo e(url('/donor/tobeproud/store')); ?>" method="post" style="margin: 10px" enctype="multipart/form-data">
                     <div class="form-group">
                       <label class="control-label col-md-2">Donate Date</label>
                       <div class="col-md-4"><input type="date" name="donate_date" class="form-control"></div>
                       <label class="control-label col-md-2">Donate Place</label>
-                      <div class="col-md-4"><input type="text" name="donate_plsce" class="form-control"></div>
+                      <div class="col-md-4"><input type="text" name="donate_place" class="form-control"></div>
                     </div>
                     <div class="form-group">
                       <label class="control-label col-md-2">Reason of Proud</label>
@@ -474,7 +474,7 @@
                     </div>
                     <div class="form-group">
                       <label class="control-label col-md-2">Blood Fighter Image</label>
-                      <div class="col-md-10"><input type="file" name="blood_fighter" class="form-control"></div> 
+                      <div class="col-md-10"><input type="file" name="pic_path" class="form-control"></div> 
                     </div>
                     <div class="pull-right"><input type="submit" name="Save" value="Save" class="btn btn-primary"></div>
                     </form>
@@ -482,15 +482,19 @@
                 </div>
                     <div class="row">
               <h2 class="life_title">Gallery</h2>
-                        <?php for($i=0; $i<8; $i++ ){ ?>
+                        <?php $__currentLoopData = $data['tobeproud_gallery']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="col-md-3">
                                   <div class="proud" style="background: #eee; padding: 10px; margin:5px;">
-                                    <img src="<?php echo e(url('/')); ?>/public/images/user.jpg" style="width: 100%; height: auto; " class="img img-responsive img-thumbnail">
-                                    <p style="text-align: center;background: #00BCD4; padding: 5px; color: white; border-radius: 5px">15 july 2017, DMC College</p> 
-                                    <p style="color: #00BCD4; text-align: center;">I am very proud to be blood donor. </p>
+                                    <img src="<?php echo e($row->pic_path); ?>" style="width: 100%; height: auto; " class="img img-responsive img-thumbnail">
+                                    <p style="text-align: center;background: #00BCD4; padding: 5px; color: white; border-radius: 5px">
+                                    <?php 
+                                    $new_date=strtotime($row->donate_date); 
+                                    echo date('d \o\f F Y', $new_date);
+                                    ?>, <?php echo e($row->donate_place); ?></p> 
+                                    <p style="color: #00BCD4; text-align: center;"><?php echo e($row->reason_of_proud); ?></p>
                                 </div>
                               </div>
-                        <?php  } ?>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         
                      </div>
                     

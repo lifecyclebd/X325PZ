@@ -571,11 +571,11 @@
         }
     </style>
         <h2 class="">Social Media</h2>
-        <span><i class="fa fa-facebook-official icon_custom"></i></span>
-        <span><i class="fa fa-google-plus-square icon_custom"></i></span>
-        <span><i class="fa fa-youtube-square icon_custom"></i></span>
-        <span><i class="fa fa-twitter-square icon_custom"></i></span>
-        <span><i class="fa fa-linkedin-square icon_custom"></i></span>
+        <span><i class="fa fa-facebook-square icon_custom"  style="font-size: 45px;color: blue"></i></span>
+        <span><i class="fa fa-google-plus-square icon_custom"  style="font-size: 45px;color: red"></i></span>
+        <span><i class="fa fa-youtube-square icon_custom"  style="font-size: 45px;color: maroon"></i></span>
+        <span><i class="fa fa-twitter-square icon_custom"  style="font-size: 45px;color: cyan"></i></span>
+        <span><i class="fa fa-linkedin-square icon_custom"  style="font-size: 45px;color: yellow"></i></span>
     </div>
     <div class="col-md-3">
         <h2 class="">Be Donor</h2>

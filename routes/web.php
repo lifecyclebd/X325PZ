@@ -8,6 +8,8 @@ Route::any('/admin/testimonial/store', 'AdminController@store_testimonial');
 Route::get('/donor-profile', 'DonorController@donor_profile');
 Route::get('donor-profile/message-show/{id}', 'DonorController@singleMessageShow');
 Route::get('donor-profile/request-show/{id}', 'DonorController@singleRequestShow');
+Route::post('/donor/tobeproud/store', 'DonorController@tobeproud_save');
+
 
 
 Route::post('/donor/signup', 'DonorController@signup');

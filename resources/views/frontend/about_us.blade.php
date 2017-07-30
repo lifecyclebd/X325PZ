@@ -10,7 +10,7 @@
 <div class="container">
 
         <!-- Portfolio Item Heading -->
-        <div class="row">
+        <div class="col-md-offset-1 col-md-10 text-justify">
         {!!$data['about_us']->description!!}
         </div>
 </div>
