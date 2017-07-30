@@ -59,7 +59,6 @@ class MailController extends Controller
     $data->receiver_type='donor';
     $data->message=$request->message;
     $data->is_read=0;
-    $data->sender_email='admin@mail.com';
     $data->save();
     return redirect('admin/mailbox/compose');
 
