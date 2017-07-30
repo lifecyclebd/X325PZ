@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 29, 2017 at 09:42 AM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 7.0.9
+-- Generation Time: Jul 30, 2017 at 05:55 AM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.6.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -54,7 +54,7 @@ INSERT INTO `activities` (`id`, `created_id`, `created_email`, `created_type`, `
 (4, 5, '', 'donor', '303', 'admin', 'dont know', 'Need O-Blood 100 for ', 1, 0, 6, '2017-07-19 19:25:50', 'Asru', '2017-07-19 19:25:50'),
 (5, 4, '', 'donor', '303', 'admin', 'Request for A+ Blood', 'Need B+Blood 6 in Rajshahi Medical', 1, 0, 6, '2017-07-19 19:32:42', 'Asru', '2017-07-19 19:32:42'),
 (6, 4, 'jmrashed@gmail.com', 'donor', 'admin@lifecycle.org', 'admin', 'umknown', 'Need AB+Blood 4 in Dhaka Medicalat2017-07-31', 0, 0, 0, '2017-07-28 10:07:35', 'jmrashed@gmail.com', '2017-07-28 10:07:35'),
-(7, 4, 'jmrashed@gmail.com', 'donor', 'admin@lifecycle.org', 'admin', 'umknown', 'Need A+Blood 3 in Dhaka Medicalat2017-07-11', 0, 0, 0, '2017-07-28 17:21:30', 'jmrashed@gmail.com', '2017-07-28 17:21:30');
+(7, 7, 'jmrashed@gmail.com', 'donor', 'admin@lifecycle.org', 'admin', 'umknown', 'Need A+Blood 3 in Dhaka Medicalat2017-07-11', 0, 0, 0, '2017-07-28 17:21:30', 'jmrashed@gmail.com', '2017-07-28 17:21:30');
 
 -- --------------------------------------------------------
 
@@ -473,7 +473,7 @@ INSERT INTO `blood_requests` (`id`, `sender_email`, `sender_type`, `receiver_ema
 (4, '0', 'donor', '0', 'admin', 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:30:55', '2017-07-14 20:30:55', NULL),
 (5, '0', 'donor', '0', 'admin', 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:32:35', '2017-07-14 20:32:35', NULL),
 (6, '0', 'donor', '0', 'admin', 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:32:35', '2017-07-14 20:32:35', NULL),
-(7, '0', 'donor', '0', 'admin', 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:33:32', '2017-07-14 20:33:32', NULL),
+(7, 'jmrashed', 'donor', '0', 'admin', 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:33:32', '2017-07-14 20:33:32', NULL),
 (8, '0', 'donor', '0', 'admin', 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:36:30', '2017-07-14 20:36:30', NULL),
 (9, '0', 'donor', '0', 'admin', 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:37:11', '2017-07-14 20:37:11', NULL),
 (10, '0', 'donor', '0', 'admin', 'AB+', 'Mahedi', '0169856485', 'Comilla', 6, 'Thalasemia', 'Friend', '2017-07-28 00:00:00', '2017-07-14 20:37:30', '2017-07-14 20:37:30', NULL),
@@ -547,7 +547,7 @@ INSERT INTO `contents` (`id`, `title`, `description`, `content_type`, `pic_path`
 (6, 'আমার বাংলা নিয়ে প্রথম কাজ', '<p>এর পর একে একে বাংলা উইকিপিডিয়া, ওয়ার্ডপ্রেস বাংলা কোডেক্সসহ বিভিন্ন বাংলা অনলাইন পত্রিকা তৈরির কাজ করতে করতে বাংলার সাথে নিজেকে বেঁধে নিয়েছি আষ্টেপৃষ্ঠে। বিশেষ করে অনলাইন পত্রিকা তৈরি করতে ডিযাইন করার সময়, সেই ডিযাইনকে কোডে রূপান্তর করবার সময় বারবার অনুভব করেছি কিছু নমুনা লেখার। যে লেখাগুলো</p>', 'news', 'http://localhost/Lifecycle/public/images/content/news/NEWS_6.jpg', 3, '2017-07-28 15:26:56', '2017-07-28 09:26:56'),
 (7, 'Giving blood in a time of crisis', '<p>There were also deaths and injuries at two The country&rsquo;s first solar-powered emergency blood transfusion service centre had been inaugurated just five days before the earthquake struck. The designers had predicted that power would be a significant problem after a natural disaster; the rooftop solar panels meant that this was not an issue. Made from shipping containers bolted together for reinforcement, the</p>', 'news', 'http://localhost:81/Lifecycle/public/images/content/news/NEWS_7.png', 3, '2017-07-27 19:47:43', '2017-07-27 13:47:43'),
 (8, 'Medical Camp', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit&nbsp;</p>', 'recent_events', 'EVENTS_8.jpg', 3, '2017-07-17 20:16:44', '2017-07-12 11:53:44'),
-(9, 'World Blood Donor Day 2017', '<p>Within a minute, a region in more   dead and another 22 000 injured.\n\nHalf an hour later, Dr Ghimire, a national professional officer at WHO’s country office in Nepal, was at the Health Ministry to join the team assembled at the health emergency operation centre. He was put in charge of coordinating the blood transfusion services, including the availability of blood and blood products in earthquake response operations.</p> ', 'upcoming_events', 'EVENTS_9.png', 3, '2017-07-21 19:55:42', '2017-07-21 13:02:23'),
+(9, 'World Blood Donor Day 2017', ' রক্তদান ক্যাম্প সংগঠনের সদস্য ফরম ছাড়া হয়েছে আপনারা সংগহরণ করুন', 'upcoming_events', 'http://localhost/Lifecycle/public/images/content/upcoming_events/UPCOMING_EVENTS_32.jpg', 3, '2017-07-29 08:35:41', '2017-07-21 13:02:23'),
 (10, 'যে কথাকে কাজে লাগাতে চাও', '<p>যে কথাকে কাজে লাগাতে চাও, তাকে কাজে লাগানোর কথা চিন্তা করার আগে ভাবো, তুমি কি সেই কথার জাদুতে আচ্ছন্ন হয়ে গেছ কিনা। তুমি যদি নিশ্চিত হও যে, তুমি কোনো মোহাচ্ছাদিত আবহে আবিষ্ট হয়ে অন্যের শেখানো বুলি আত্মস্থ করছো না, তাহলে তুমি নির্ভয়ে, নিশ্চিন্তে অগ্রসর হও। তুমি সেই কথাকে জানো, বুঝো, আত্মস্থ করো; মনে রাখবে, যা অনুসরণ করতে চলেছো, তা আগে অনুধাবন করা জরুরি; এখানে কিংকর্তব্যবিমূঢ় হবার কোনো সুযোগ নেই।</p>', 'news', 'NEWS_10.jpg', 3, '2017-07-18 18:04:53', '2017-07-18 12:04:53'),
 (11, 'কোনো কথা শোনামাত্রই কি তুমি তা বিশ্বাস করবে?', '<p>কোনো কথা শোনামাত্রই কি তুমি তা বিশ্বাস করবে? হয়তো বলবে, করবে, হয়তো বলবে &ldquo;আমি করবো না।&rdquo; হ্যা, &ldquo;আমি করবো না&rdquo; বললেই সবকিছু অস্বীকার করা যায় না, হয়তো তুমি মনের গহীন গভীর থেকে ঠিকই বিশ্বাস করতে শুরু করেছো সেই কথাটি, কিন্তু মুখে অস্বীকার করছো। তাই সচেতন থাকো, তুমি কী ভাবছো&mdash; তার প্রতি; সচেতন থাকো, তুমি কি আসলেই বিশ্বাস করতে চলেছো ঐ কথাটি&hellip; শুধু এতটুকু বলি, যা-ই বিশ্বাস করো না কেন, আগে যাচাই করে নাও; আর এতে চাই তোমার প্রত্যুৎপন্নমতিত্ব।</p>', 'news', 'NEWS_11.jpg', 3, '2017-07-18 18:06:16', '2017-07-18 12:06:16'),
 (12, 'তাই কোন কথাটি কাজে লাগবে', '<p>তাই কোন কথাটি কাজে লাগবে, তা নির্ধারণ করবে তুমি&mdash; হ্যাঁ, তুমি। হয়তো সামান্য ক&rsquo;টা বাংলা অক্ষর: খন্ড-ত, অনুস্বার, বিঃসর্গ কিংবা চন্দ্রবিন্দু&mdash; কিন্তু যদি তুমি বিশ্বাস করো, তাহলে হয়তো তুমি তা দিয়েই তৈরি করতে পারো এক উচ্চমার্গীয় মহাকাব্য- এক চিরসবুজ অর্ঘ্য। রচিত হতে পারে পৃথিবীর ১ম বিরাম চিহ্নের ইতিকথা &ndash; এক নতুন ঊষা। &hellip;মহাকাব্য লিখতে ঋষি-মুনি হওয়া লাগে না।</p>', 'news', 'NEWS_12.jpg', 3, '2017-07-18 18:07:23', '2017-07-18 12:07:23'),
@@ -555,7 +555,6 @@ INSERT INTO `contents` (`id`, `title`, `description`, `content_type`, `pic_path`
 (14, 'তুমি সেই কথাকে জানো, বুঝো, আত্মস্থ করো', '<p>সেই কথার জাদুতে আচ্ছন্ন হয়ে গেছ কিনা। তুমি যদি নিশ্চিত হও যে, তুমি কোনো মোহাচ্ছাদিত আবহে আবিষ্ট হয়ে অন্যের শেখানো বুলি আত্মস্থ করছো না, তাহলে তুমি নির্ভয়ে, নিশ্চিন্তে অগ্রসর হও। তুমি সেই কথাকে জানো, বুঝো, আত্মস্থ করো; মনে রাখবে, যা অনুসরণ করতে চলেছো, তা আগে অনুধাবন করা জরুরি; এখানে কিংকর্তব্যবিমূঢ় হবার কোনো সুযোগ নেই।</p>', 'news', 'NEWS_14.png', 3, '2017-07-18 18:10:07', '2017-07-18 12:10:07'),
 (15, 'Medical Camp 22', '<p>Lorem ipsum dolor sit amet, consectetuer a libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit&nbsp;</p>', 'recent_events', 'EVENTS_8.jpg', 3, '2017-07-17 20:16:44', '2017-07-12 11:53:44'),
 (16, 'Medical Camp138', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius ', 'recent_events', 'EVENTS_8.jpg', 3, '2017-07-17 20:16:44', '2017-07-12 11:53:44'),
-(17, 'Medical Camp224', 'tur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ', 'recent_events', 'EVENTS_8.jpg', 3, '2017-07-17 20:16:44', '2017-07-12 11:53:44'),
 (18, 'Medical Camp350', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit&nbsp;</p>', 'recent_events', 'EVENTS_8.jpg', 3, '2017-07-17 20:16:49', '2017-07-12 11:53:44'),
 (19, 'Medical Camp430', 'enean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate egam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit&nbsp;</p>', 'recent_events', 'EVENTS_8.jpg', 3, '2017-07-17 20:16:50', '2017-07-12 11:53:44'),
 (20, '৩০ বছরের পর হার্ট ভালো রাখার সাত উপায়', '<p>৩০ বছরে পা দেওয়ার পরপর জীবনের চাপগুলো হঠাৎ করেই যেন বাড়তে থাকে। জীবন অনেকটাই জটিল হয়ে পড়ে। এ সময় ক্যারিয়ারের চাপ, সাংসারিক চাপ সমান তালে বাড়তে থাকে। এই চেপে বসা পরিস্থিতি হৃদরোগের ঝুঁকি বাড়ায়। তবে কিছু বিষয় আছে যেগুলো মেনে চললে হৃদরোগের ঝুঁকি অনেকটাই এড়িয়ে জীবন চমৎকার উপভোগ করা যায়। টাইমস অব ইন্ডিয়া জানিয়েছে এই বাড়ন্ত বয়সে হার্ট ভালো রাখার কিছু পরামর্শ।</p>\r\n\r\n<p><strong>১. চাপ এড়ান</strong><br />\r\nঅফিসের কাজের চাপ, পারিবারিক চাপ এড়ানো এত সহজ নয়। তবে এগুলোকে সামলাবেন কীভাবে সেটা তো শেখা যায়। যত রিল্যাক্স থাকবেন, শরীর তত চাপ নিয়ন্ত্রণ শিখবে। গবেষকরা বলেন, যেকোনো ধরনের ব্যায়াম চাপ দূর করে আপনাকে হালকা রাখতে সাহায্য করবে। চাপমুক্ত থাকতে যেটা আপনি পছন্দ করেন, এমন কোনো ব্যায়াম বেছে নিন। এ ছাড়া মেডিটেশন করুন বা পছন্দের কিছু করুন যা চাপমুক্ত রাখতে সাহায্য করবে।</p>\r\n\r\n<p><strong>২. নিয়মিত ব্যায়াম করুন</strong><br />\r\n৩০ বছরের পর হার্ট ভালো রাখতে নিয়মিত ব্যায়াম করা জরুরি। প্রতিদিন ১৫ থেকে ৩০ মিনিট ব্যায়াম হার্টকে ভালো রাখে। এটা আপনাকে ওজন নিয়ন্ত্রণে রাখতেও সাহায্য করবে, যা হার্ট ভালো রাখার আরেকটি বিষয়।</p>\r\n\r\n<p><strong>৩. স্বাস্থ্যকর খাবার খান</strong><br />\r\nছুটির দিনগুলোতে পরিবার বা বন্ধুদের সাথে কিংবা অফিসে কাজের চাপে আমরা অনেক সময়ই অস্বাস্থ্যকর খাবার খাই।বিশেষজ্ঞরা বলেন, হার্ট ভালো রাখতে এগুলো খাওয়া বাদ দেওয়া উচিত। এই অস্বাস্থ্যকর খাবার ক্যালোরি এবং কোলেস্টেরল বাড়াবে এবং হৃদরোগের ঝুঁকি তৈরি করবে। আপনার খাদ্যতালিকায় প্রোটিন, ওমেগা-৩ ফ্যাটি এসিড সমৃদ্ধ খাবার রাখবেন। তবে লাল মাংস (খাসি, গরু) খাওয়া এড়িয়ে চলুন।</p>\r\n\r\n<p><strong>৪. ভালোভাবে ঘুমান</strong><br />\r\nভালো ঘুম শরীরের জন্য খুবই জরুরি। ভালোভাবে না ঘুমালে স্ট্রোক এবং কার্ডিওভাসকুলার রোগের ঝুঁকি বেড়ে যায়। নির্দিষ্ট সময় ঘুমাতে যান এবং ঘুম থেকে উঠুন। ঘুমের আগে মদ্যপান, ধূমপান এবং ভারি খাবার পরিহার করুন।</p>\r\n\r\n<p>৫. সকালের নাস্তা অবশ্যই<br />\r\nসকালের নাস্তা কখনোই এড়ানো যাবে না। স্বাস্থ্যকর এবং পুষ্টিগুণসম্পন্ন সকালের নাস্তা খাওয়া খুবই জরুরি। ভালোভাবে সকালের নাস্তা করলে এটি সারা দিন শরীরকে কর্মক্ষম রাখতে সাহায্য করবে।</p>', 'recent_events', 'RECENT_EVENTS_20.jpg', 3, '2017-07-19 19:02:29', '2017-07-19 13:02:29'),
@@ -566,11 +565,11 @@ INSERT INTO `contents` (`id`, `title`, `description`, `content_type`, `pic_path`
 (25, 'কেন রক্তদান করবেন', '<p>প্রথম এবং প্রধান কারণ, আপনার দানকৃত রক্ত একজন মানুষের জীবন বাঁচাবে। রক্তদানের জন্য এর থেকে বড় কারণ আর কি হতে পারে !&nbsp;প্রথম এবং প্রধান কারণ, আপনার দানকৃত রক্ত একজন মানুষের জীবন বাঁচাবে। রক্তদানের জন্য এর থেকে বড় কারণ আর কি হতে পারে !&nbsp;প্রথম এবং প্রধান কারণ, আপনার দানকৃত রক্ত একজন মানুষের জীবন বাঁচাবে। রক্তদানের জন্য এর থেকে বড় কারণ আর কি হতে পারে !&nbsp;প্রথম এবং প্রধান কারণ, আপনার দানকৃত রক্ত একজন মানুষের জীবন বাঁচাবে। রক্তদানের জন্য এর থেকে বড় কারণ আর কি হতে পারে !</p>', 'more_blood', 'http://localhost/Lifecycle/public/images/content/more_blood/MORE_BLOOD_25.jpg', 3, '2017-07-28 21:05:51', '2017-07-28 15:05:51'),
 (26, 'রক্ত এর কোন বিকল্প নেই', '<p>রক্তদান করে যে অনুভূতি সৃষ্টি হয় তা আসলে উপলব্ধি সাক্ষেপ বর্ণনা সাক্ষেপ নয়। আর যাকে দেয়া হয় তার মুখের দিকে তাকালে যে কৃতজ্ঞতার পরিচয় পাওয়া যায়,তার সন্ধান যে একবার পায়,যে বারবার&nbsp;রক্তদান করে যে অনুভূতি সৃষ্টি হয় তা আসলে উপলব্ধি সাক্ষেপ বর্ণনা সাক্ষেপ নয়। আর যাকে দেয়া হয় তার মুখের দিকে তাকালে যে কৃতজ্ঞতার পরিচয় পাওয়া যায়,তার সন্ধান যে একবার পায়,যে বারবার&nbsp;রক্তদান করে যে অনুভূতি সৃষ্টি হয় তা আসলে উপলব্ধি সাক্ষেপ বর্ণনা সাক্ষেপ নয়। আর যাকে দেয়া হয় তার মুখের দিকে তাকালে যে কৃতজ্ঞতার পরিচয় পাওয়া যায়,তার সন্ধান যে একবার পায়,যে বারবার&nbsp;রক্তদান করে যে অনুভূতি সৃষ্টি হয় তা আসলে উপলব্ধি সাক্ষেপ বর্ণনা সাক্ষেপ নয়। আর যাকে দেয়া হয় তার মুখের দিকে তাকালে যে কৃতজ্ঞতার পরিচয় পাওয়া যায়,তার সন্ধান যে একবার পায়,যে বারবার</p>', 'more_blood', 'http://localhost/Lifecycle/public/images/content/more_blood/MORE_BLOOD_26.jpg', 3, '2017-07-28 21:06:41', '2017-07-28 15:06:41'),
 (27, 'রক্ত দিন জীবন বাঁচান', '<p>এই স্লোগান কে সামনে রেখে এগিয়ে যাচ্ছে সিলেটের কিছু তরুণরা. সেপ্টেম্বর ১০, ২০১৬, ১০:০৩ অপরাহ্ণ. রিপোর্টঃ-আরাফাত হোসাইন রাহেল-. ২০১১ সালে ... এতে করে অনেকে স্বেচ্ছায় রক্তদানের মত মহৎ কাজে এগিয়ে আসবে বলে আশা প্রকাশ করে।ক্যাম্পেইনে উপস্তিত ছিলেন &ldquo;আহবান সমাজ কল্যাণ সংস্থা&rdquo; এর উপদেষ্টাবৃন্দ &nbsp;এই স্লোগান কে সামনে রেখে এগিয়ে যাচ্ছে সিলেটের কিছু তরুণরা. সেপ্টেম্বর ১০, ২০১৬, ১০:০৩ অপরাহ্ণ. রিপোর্টঃ-আরাফাত হোসাইন রাহেল-. ২০১১ সালে ... এতে করে অনেকে স্বেচ্ছায় রক্তদানের মত মহৎ কাজে এগিয়ে আসবে বলে আশা প্রকাশ করে।ক্যাম্পেইনে উপস্তিত ছিলেন &ldquo;আহবান সমাজ কল্যাণ সংস্থা&rdquo; এর উপদেষ্টাবৃন্দ &nbsp;এই স্লোগান কে সামনে রেখে এগিয়ে যাচ্ছে সিলেটের কিছু তরুণরা. সেপ্টেম্বর ১০, ২০১৬, ১০:০৩ অপরাহ্ণ. রিপোর্টঃ-আরাফাত হোসাইন রাহেল-. ২০১১ সালে ... এতে করে অনেকে স্বেচ্ছায় রক্তদানের মত মহৎ কাজে এগিয়ে আসবে বলে আশা প্রকাশ করে।ক্যাম্পেইনে উপস্তিত ছিলেন &ldquo;আহবান সমাজ কল্যাণ সংস্থা&rdquo; এর উপদেষ্টাবৃন্দ&nbsp;</p>', 'more_blood', 'http://localhost/Lifecycle/public/images/content/more_blood/MORE_BLOOD_27.jpg', 3, '2017-07-28 21:07:27', '2017-07-28 15:07:27'),
-(28, 'যে পরিমাণ রক্তের তরল অংশ', '<p>এ কারণে অধিকাংশ রক্তদাতা রক্তদানের পর তেমন কিছুই অনুভব করেন না। যে পরিমাণ রক্তের তরল অংশ নেয়া হয় সেই পরিমাণ তরল অংশ মাত্র ৪৮ ঘন্টার মধ্যেই আবার আগের মতো হয়ে যায়। ইহা কি নিরাপদ? এখন প্রশ্ন আসতে পারে রক্ত দান প্রক্রিয়া কতটুকু নিরাপদ? আমরা ইতিমধ্যে&nbsp;এ কারণে অধিকাংশ রক্তদাতা রক্তদানের পর তেমন কিছুই অনুভব করেন না। যে পরিমাণ রক্তের তরল অংশ নেয়া হয় সেই পরিমাণ তরল অংশ মাত্র ৪৮ ঘন্টার মধ্যেই আবার আগের মতো হয়ে যায়। ইহা কি নিরাপদ? এখন প্রশ্ন আসতে পারে রক্ত দান প্রক্রিয়া কতটুকু নিরাপদ? আমরা ইতিমধ্যে&nbsp;এ কারণে অধিকাংশ রক্তদাতা রক্তদানের পর তেমন কিছুই অনুভব করেন না। যে পরিমাণ রক্তের তরল অংশ নেয়া হয় সেই পরিমাণ তরল অংশ মাত্র ৪৮ ঘন্টার মধ্যেই আবার আগের মতো হয়ে যায়। ইহা কি নিরাপদ? এখন প্রশ্ন আসতে পারে রক্ত দান প্রক্রিয়া কতটুকু নিরাপদ? আমরা ইতিমধ্যে&nbsp;এ কারণে অধিকাংশ রক্তদাতা রক্তদানের পর তেমন কিছুই অনুভব করেন না। যে পরিমাণ রক্তের তরল অংশ নেয়া হয় সেই পরিমাণ তরল অংশ মাত্র ৪৮ ঘন্টার মধ্যেই আবার আগের মতো হয়ে যায়। ইহা কি নিরাপদ? এখন প্রশ্ন আসতে পারে রক্ত দান প্রক্রিয়া কতটুকু নিরাপদ? আমরা ইতিমধ্যে</p>', 'more_blood', 'http://localhost:81/Lifecycle/public/images/content/upcoming_events/UPCOMING_EVENTS_32.jpg', 3, '2017-07-29 07:37:23', '2017-07-28 15:08:05'),
-(29, 'রক্তদান অপেক্ষাকৃত নিরাপদ', '<p>রক্তদান অপেক্ষাকৃত নিরাপদ, তবে কিছু রক্তদাতার যে জায়গায় সূঁচ প্রবেশ করানো হয় সেখানে কালশিরে পড়ে, আবার কেউ কেউ রক্তদানের পর দুর্বলতা অনুভব করেন। সম্ভাব্য রক্তদাতার রক্ত ব্যবহার যে সব কারণে ঝুঁকিপূর্ণ হতে পারে তার সবকিছুই পরীক্ষা করা হয়। এই পরীক্ষাগুলোর মধ্যে রক্তের মাধ্যমে ছড়ায় এমন রোগ (যেমন এইচআইভি ও ভাইরাল হেপাটাইটিস)&nbsp;রক্তদান অপেক্ষাকৃত নিরাপদ, তবে কিছু রক্তদাতার যে জায়গায় সূঁচ প্রবেশ করানো হয় সেখানে কালশিরে পড়ে, আবার কেউ কেউ রক্তদানের পর দুর্বলতা অনুভব করেন। সম্ভাব্য রক্তদাতার রক্ত ব্যবহার যে সব কারণে ঝুঁকিপূর্ণ হতে পারে তার সবকিছুই পরীক্ষা করা হয়। এই পরীক্ষাগুলোর মধ্যে রক্তের মাধ্যমে ছড়ায় এমন রোগ (যেমন এইচআইভি ও ভাইরাল হেপাটাইটিস)&nbsp;রক্তদান অপেক্ষাকৃত নিরাপদ, তবে কিছু রক্তদাতার যে জায়গায় সূঁচ প্রবেশ করানো হয় সেখানে কালশিরে পড়ে, আবার কেউ কেউ রক্তদানের পর দুর্বলতা অনুভব করেন। সম্ভাব্য রক্তদাতার রক্ত ব্যবহার যে সব কারণে ঝুঁকিপূর্ণ হতে পারে তার সবকিছুই পরীক্ষা করা হয়। এই পরীক্ষাগুলোর মধ্যে রক্তের মাধ্যমে ছড়ায় এমন রোগ (যেমন এইচআইভি ও ভাইরাল হেপাটাইটিস)</p>', 'more_blood', 'http://localhost:81/Lifecycle/public/images/content/upcoming_events/UPCOMING_EVENTS_32.jpg', 3, '2017-07-29 07:37:27', '2017-07-28 15:08:50'),
-(30, 'রক্তদান হল কোন প্রাপ্তবয়স্ক সুস্থ মানুষের স্বেচ্ছায় রক্ত দেবার প্রক্রিয়া।', '<p>উন্নত দেশে বেশিরভাগ রক্তদাতাই হলেন স্বেচ্ছায় রক্তদাতা, যারা সামাজিক দায়বদ্ধতা থেকে রক্তদান করেন। দরিদ্র দেশগুলোতে এ ধরণের প্রতিষ্ঠিত স্বেচ্ছায় রক্তদাতার সংখ্যা বেশ কম, বেশিরভাগ রক্তদাতাই কেবল তাদের পরিচিতজনদের প্রয়োজনে রক্তদান করে থাকেন। বেশির ভাগ রক্তদাতাই সমাজসেবামূলক কাজ হিসেবে রক্তদান করেন, তবে কিছু মানুষ পেশাদার রক্তদাতা, অর্থাৎ তারা অর্থ বা কোন ভাতার বিনিময়ে রক্তদান করে থাকেন। আবার রক্তদাতা তার ভবিষ্যত প্রয়োজনে রক্ত পেতে পারেন। রক্তদান অপেক্ষাকৃত নিরাপদ, তবে কিছু রক্তদাতার যে জায়গায় সূঁচ প্রবেশ করানো হয় সেখানে কালশিরে পড়ে, আবার কেউ কেউ রক্তদানের পর দুর্বলতা অনুভব করেন।</p>', 'more_blood', 'http://localhost:81/Lifecycle/public/images/content/upcoming_events/UPCOMING_EVENTS_32.jpg', 3, '2017-07-29 07:37:32', '2017-07-28 15:30:22'),
-(31, 'পত্রিকা তৈরি করতে ডিযাইন করার সময়', 'আমার বাংলা নিয়ে প্রথম কাজ করবার সুযোগ তৈরি হয়েছিল অভ্র^ নামক এক যুগান্তকারী বাংলা সফ্‌টওয়্যারের মধ্য দিয়ে। এর পর একে একে বাংলা উইকিপিডিয়া, ওয়ার্ডপ্রেস বাংলা কোডেক্সসহ বিভিন্ন বাংলা অনলাইন পত্রিকা তৈরির কাজ করতে করতে বাংলার সাথে নিজেকে বেঁধে নিয়েছি আষ্টেপৃষ্ঠে। বিশেষ করে অনলাইন পত্রিকা তৈরি করতে ডিযাইন করার সময়, সেই', 'upcoming_events', 'http://localhost:81/Lifecycle/public/images/content/upcoming_events/UPCOMING_EVENTS_32.jpg', 3, '2017-07-29 07:37:38', '2017-07-29 01:11:51'),
-(32, 'রক্তদাতাদের করণীয় কি ?', '<p>দরিদ্রের জন্য অল্প ব্যয়ে উন্নত চিকিৎসা সেবা ও সকলের জন্য হাসপাতাল সম্পর্কিত জরুরী তথ্য যেমন জরুরী নম্বর, ডাক্তার গণের তালিকা, কি ধরনের চিকিৎসা করে ইত্যাদি সর্ম্পকে জানানো ।</p>', 'upcoming_events', 'http://localhost:81/Lifecycle/public/images/content/upcoming_events/UPCOMING_EVENTS_32.jpg', 3, '2017-07-29 07:35:49', '2017-07-29 01:34:05');
+(28, 'যে পরিমাণ রক্তের তরল অংশ', '<p>এ কারণে অধিকাংশ রক্তদাতা রক্তদানের পর তেমন কিছুই অনুভব করেন না। যে পরিমাণ রক্তের তরল অংশ নেয়া হয় সেই পরিমাণ তরল অংশ মাত্র ৪৮ ঘন্টার মধ্যেই আবার আগের মতো হয়ে যায়। ইহা কি নিরাপদ? এখন প্রশ্ন আসতে পারে রক্ত দান প্রক্রিয়া কতটুকু নিরাপদ? আমরা ইতিমধ্যে&nbsp;এ কারণে অধিকাংশ রক্তদাতা রক্তদানের পর তেমন কিছুই অনুভব করেন না। যে পরিমাণ রক্তের তরল অংশ নেয়া হয় সেই পরিমাণ তরল অংশ মাত্র ৪৮ ঘন্টার মধ্যেই আবার আগের মতো হয়ে যায়। ইহা কি নিরাপদ? এখন প্রশ্ন আসতে পারে রক্ত দান প্রক্রিয়া কতটুকু নিরাপদ? আমরা ইতিমধ্যে&nbsp;এ কারণে অধিকাংশ রক্তদাতা রক্তদানের পর তেমন কিছুই অনুভব করেন না। যে পরিমাণ রক্তের তরল অংশ নেয়া হয় সেই পরিমাণ তরল অংশ মাত্র ৪৮ ঘন্টার মধ্যেই আবার আগের মতো হয়ে যায়। ইহা কি নিরাপদ? এখন প্রশ্ন আসতে পারে রক্ত দান প্রক্রিয়া কতটুকু নিরাপদ? আমরা ইতিমধ্যে&nbsp;এ কারণে অধিকাংশ রক্তদাতা রক্তদানের পর তেমন কিছুই অনুভব করেন না। যে পরিমাণ রক্তের তরল অংশ নেয়া হয় সেই পরিমাণ তরল অংশ মাত্র ৪৮ ঘন্টার মধ্যেই আবার আগের মতো হয়ে যায়। ইহা কি নিরাপদ? এখন প্রশ্ন আসতে পারে রক্ত দান প্রক্রিয়া কতটুকু নিরাপদ? আমরা ইতিমধ্যে</p>', 'more_blood', 'http://localhost/Lifecycle/public/images/content/upcoming_events/UPCOMING_EVENTS_32.jpg', 3, '2017-07-29 08:05:25', '2017-07-28 15:08:05'),
+(29, 'রক্তদান অপেক্ষাকৃত নিরাপদ', ' রক্তদান ক্যাম্প সংগঠনের সদস্য ফরম ছাড়া হয়েছে আপনারা সংগহরণ করুন', 'more_blood', 'http://localhost/Lifecycle/public/images/content/upcoming_events/UPCOMING_EVENTS_32.jpg', 3, '2017-07-29 08:34:49', '2017-07-28 15:08:50'),
+(30, 'রক্তদান হল কোন প্রাপ্তবয়স্ক সুস্থ মানুষের স্বেচ্ছায় রক্ত দেবার প্রক্রিয়া।', ' রক্তদান ক্যাম্প সংগঠনের সদস্য ফরম ছাড়া হয়েছে আপনারা সংগহরণ করুন', 'more_blood', 'http://localhost/Lifecycle/public/images/content/upcoming_events/UPCOMING_EVENTS_32.jpg', 3, '2017-07-29 08:34:42', '2017-07-28 15:30:22'),
+(31, 'পত্রিকা তৈরি করতে ডিযাইন করার সময়', ' রক্তদান ক্যাম্প সংগঠনের সদস্য ফরম ছাড়া হয়েছে আপনারা সংগহরণ করুন', 'upcoming_events', 'http://localhost/Lifecycle/public/images/content/upcoming_events/UPCOMING_EVENTS_32.jpg', 3, '2017-07-29 08:34:37', '2017-07-29 01:11:51'),
+(32, 'রক্তদাতাদের করণীয় কি ?', ' রক্তদান ক্যাম্প সংগঠনের সদস্য ফরম ছাড়া হয়েছে আপনারা সংগহরণ করুন', 'upcoming_events', 'http://localhost/Lifecycle/public/images/content/upcoming_events/UPCOMING_EVENTS_32.jpg', 3, '2017-07-29 08:34:27', '2017-07-29 01:34:05');
 
 -- --------------------------------------------------------
 
@@ -964,9 +963,9 @@ CREATE TABLE `donors` (
 --
 
 INSERT INTO `donors` (`id`, `phone`, `password`, `pic_path`, `fname`, `lname`, `blood_group`, `birth_date`, `age`, `last_donation`, `new_donor`, `email`, `division`, `district`, `thana`, `address`, `latitude`, `longitude`, `code`, `verification`, `lastLat`, `lastLng`, `fcm_email`, `fcm_uid`, `fcm_token`, `pro_visible`, `called_date`, `called_today`, `donations_number`, `user_type`, `gender`, `already_donated`, `autopro_visible`, `singup_steps`, `post_code`, `rank`, `web_url`, `fb_url`, `profile_photo`, `religion`, `is_physically_disble`, `nationality`, `nid`, `status`, `is_available`, `updated_at`, `created_at`, `updated_by`, `created_by`) VALUES
-(2, '01923589277', 'tatun', 'profileImages/anis.jpg', 'anis', 'mizi', 'A+', '1989-07-14', 28, '2017-07-14', 1, 'tatun@gmail.com', 'Dhaka', 'Dhaka', 'Adabor', 'Mohanagar Middle Rd 2, Dhaka 1212, Bangladesh', 23.7663383, 90.4165958, '36438', 1, 23.7663383, 90.4165958, 'test21@gmail.com', 'avIoHO42GrdjcHHFuJB11cETsQE3', 'fEZReXUJXLc:APA91bFzM-sI_CDDtdRI8OkvXli9GBvSccpMAvcBJQr-JFBLMorR0BP2YFPNh6PX9WxqRZm86cpvBUapWUbyf5P8KdiiI8Mr_D8Z34uPDb_nOKYRgPbPU2XWoJkVcz-q_ZYTNv85Reg8', 1, 'na', 0, 0, 'donor', 'Male', 0, 'na', 3, 'na', 1, 'na', 'na', 'a.jpg', 'na', 'na', 'na', 'na', 'na', 1, '2017-07-27 21:25:41', '2014-08-11 23:14:54', 1, 1),
-(3, '01923589278', 'anisur', 'profileImages/salam.jpg', 'salam', 'mizi', 'A-', '1991-07-14', 26, '2017-07-14', 1, 'salam@gmail.com', 'Dhaka', 'Dhaka', 'Adabor', 'Mohanagar Middle Rd 2, Dhaka 1212, Bangladesh', 23.782062399999997, 90.4160527, '95035', 1, 23.782062399999997, 90.4160527, 'test20@gmail.com', 'UvoewKHQkXOZ1Afzzv1Q182ybCI2', 'fa1DqrAZhvY:APA91bGKG3d-AA1NeE7bZjSAkSTWSZQbxLd-Y4yHd5S6TUr0KlXUixld45knPAuwXErucpzv68vfcXh9Y1rG-yTCUn1NGRdhiL34FBOps0emDu6nhzRvLc2j5eGqTG0da2bOnx2Paq-g', 1, 'na', 0, 0, 'admin', 'Male', 0, 'na', 3, 'na', 1, 'na', 'na', 'c.jpg', 'na', 'na', 'na', 'na', 'na', 1, '2017-07-21 17:18:02', '2014-08-11 23:14:54', 1, 1),
-(4, '0159856', '123', 'http://localhost:81/Lifecycle/public/images/profile/user.png', 'Jaman', 'Rashed', 'B+', '2003-02-10', 0, '2017-06-19', NULL, 'jmrashed@gmail.com', '4', '60', '306', 'Chourhash, Kushtia, Khulna Division, Bangladesh', 0, 0, NULL, 0, 0, 0, 'na', 'na', 'na', 1, 'na', 0, 0, NULL, 'male', NULL, NULL, NULL, '7000', 0, 'na', 'na', NULL, 'na', '0', 'Bangladeshi', 'na', '1', NULL, '2017-07-28 08:59:16', '2017-07-27 16:20:47', NULL, NULL),
+(2, '01923589277', 'tatun', 'http://localhost/Lifecycle/public/images/profile/user.png', 'anis', 'mizi', 'A+', '1989-07-14', 28, '2017-07-14', 1, 'tatun@gmail.com', 'Dhaka', 'Dhaka', 'Adabor', 'Mohanagar Middle Rd 2, Dhaka 1212, Bangladesh', 23.7663383, 90.4165958, '36438', 1, 23.7663383, 90.4165958, 'test21@gmail.com', 'avIoHO42GrdjcHHFuJB11cETsQE3', 'fEZReXUJXLc:APA91bFzM-sI_CDDtdRI8OkvXli9GBvSccpMAvcBJQr-JFBLMorR0BP2YFPNh6PX9WxqRZm86cpvBUapWUbyf5P8KdiiI8Mr_D8Z34uPDb_nOKYRgPbPU2XWoJkVcz-q_ZYTNv85Reg8', 1, 'na', 0, 0, 'donor', 'Male', 0, 'na', 3, 'na', 1, 'na', 'na', 'a.jpg', 'na', 'na', 'na', 'na', 'na', 1, '2017-07-29 09:13:37', '2014-08-11 23:14:54', 1, 1),
+(3, '01923589278', 'anisur', 'http://localhost/Lifecycle/public/images/profile/user.png', 'salam', 'mizi', 'A-', '1991-07-14', 26, '2017-07-14', 1, 'salam@gmail.com', 'Dhaka', 'Dhaka', 'Adabor', 'Mohanagar Middle Rd 2, Dhaka 1212, Bangladesh', 23.782062399999997, 90.4160527, '95035', 1, 23.782062399999997, 90.4160527, 'test20@gmail.com', 'UvoewKHQkXOZ1Afzzv1Q182ybCI2', 'fa1DqrAZhvY:APA91bGKG3d-AA1NeE7bZjSAkSTWSZQbxLd-Y4yHd5S6TUr0KlXUixld45knPAuwXErucpzv68vfcXh9Y1rG-yTCUn1NGRdhiL34FBOps0emDu6nhzRvLc2j5eGqTG0da2bOnx2Paq-g', 1, 'na', 0, 0, 'admin', 'Male', 0, 'na', 3, 'na', 1, 'na', 'na', 'c.jpg', 'na', 'na', 'na', 'na', 'na', 1, '2017-07-29 09:13:37', '2014-08-11 23:14:54', 1, 1),
+(4, '0159856', '123', 'http://localhost/Lifecycle/public/images/profile/user.png', 'Jaman', 'Rashed', 'B+', '2003-02-10', 0, '2017-06-19', NULL, 'jmrashed@gmail.com', '4', '60', '306', 'Chourhash, Kushtia, Khulna Division, Bangladesh', 0, 0, NULL, 0, 0, 0, 'na', 'na', 'na', 1, 'na', 0, 0, NULL, 'male', NULL, NULL, NULL, '7000', 0, 'na', 'na', NULL, 'na', '0', 'Bangladeshi', 'na', '1', NULL, '2017-07-29 09:13:22', '2017-07-27 16:20:47', NULL, NULL),
 (5, '01456985', '123', 'http://localhost/Lifecycle/public/images/profile/user.png', 'Abdullah', NULL, 'A+', '1991-08-25', 0, '2017-04-18', NULL, 'shaheen@gmail.com', '2', '46', '107', 'Feni District, Chittagong Division, Bangladesh', 0, 0, NULL, 0, 0, 0, 'na', 'na', 'na', 1, 'na', 0, 0, NULL, 'male', NULL, NULL, NULL, '3900', 0, 'na', 'na', NULL, 'na', '0', 'Bangladeshi', 'na', '1', NULL, '2017-07-28 06:11:04', '2017-07-28 06:11:04', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -1004,30 +1003,6 @@ CREATE TABLE `donors_details` (
   `donor_emergency_contact_name` varchar(255) DEFAULT NULL,
   `emergency_contact_phone` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `faqs`
---
-
-CREATE TABLE `faqs` (
-  `id` int(11) NOT NULL,
-  `category` varchar(200) NOT NULL,
-  `question` text NOT NULL,
-  `answer` longtext NOT NULL,
-  `author_id` int(11) NOT NULL,
-  `create_datetime` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `faqs`
---
-
-INSERT INTO `faqs` (`id`, `category`, `question`, `answer`, `author_id`, `create_datetime`) VALUES
-(1, 'faq', 'Who is blood donner?', 'A blood donation occurs when a person voluntarily has blood drawn and used for transfusions and/or made into biopharmaceutical medications by a process called fractionation (separation of whole-blood components). Donation may be of whole blood (WB), or of specific components directly (the latter called apheresis).', 1, '2017-04-14 09:16:20'),
-(2, 'faq', 'What is the blood donation?', 'Blood donation is a voluntary procedure. You agree to have blood drawn so that it can be given to someone who needs a blood transfusion. Millions of people need blood transfusions each year. Some may need blood during surgery.', 1, '2017-04-14 09:16:20'),
-(3, 'faq', 'Can you give blood if you have a cold?\r\n', 'Cold symptoms may be similar, but colds are less likely to cause fever or headaches. You can''t donate blood if you have a fever, a productive cough, if you do not feel well, or if you are taking antibiotics to treat a sinus, throat, or lung infection.\r\n', 1, '2017-04-14 09:16:20');
 
 -- --------------------------------------------------------
 
@@ -1368,11 +1343,11 @@ INSERT INTO `locations` (`id`, `division`, `district`, `thana`) VALUES
 
 CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
-  `sender_id` int(11) NOT NULL,
+  `sender_email` varchar(255) NOT NULL,
   `sender_type` varchar(255) DEFAULT NULL,
   `receiver_email` varchar(255) DEFAULT NULL,
   `receiver_type` varchar(255) DEFAULT NULL,
-  `message` text,
+  `message` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   `is_read` int(11) DEFAULT '0',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_by` varchar(255) DEFAULT NULL,
@@ -1384,18 +1359,18 @@ CREATE TABLE `messages` (
 -- Dumping data for table `messages`
 --
 
-INSERT INTO `messages` (`id`, `sender_id`, `sender_type`, `receiver_email`, `receiver_type`, `message`, `is_read`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
-(1, 2, 'donor', '303', 'admin', 'Need AB+Blood 6 for Mahedi', 0, '2017-07-14 20:32:35', 'Sakib', '2017-07-14 20:32:35', 'Rashed'),
-(2, 2, 'donor', '303', 'admin', 'Need AB+Blood 6 for Mahedi', 0, '2017-07-14 20:32:35', 'Sakib', '2017-07-14 20:32:35', 'Rashed'),
-(3, 4, 'donor', '303', 'admin', 'Need AB+Blood 6 for Mahedi. Please help Me, I need 5 bag A+ blood', 0, '2017-07-14 20:33:32', 'Sakib', '2017-07-14 20:33:32', 'Rashed'),
-(4, 2, 'donor', '303', 'admin', 'Need AB+Blood 6 for Mahedi', 0, '2017-07-14 20:36:30', 'Sakib', '2017-07-14 20:36:30', 'Rashed'),
-(5, 2, 'donor', '303', 'admin', 'Need AB+Blood 6 for Mahedi', 0, '2017-07-14 20:37:11', 'Sakib', '2017-07-14 20:37:11', 'Rashed'),
-(6, 4, 'donor', '303', 'admin', 'Please help Me, I need 5 bag A+ blood', 0, '2017-07-14 20:37:30', 'Sakib', '2017-07-14 20:37:30', 'Rashed'),
-(7, 2, 'donor', '303', 'admin', 'Need A+Blood 3 for Mohin', 0, '2017-07-14 21:04:36', 'Sakib', '2017-07-14 21:04:36', 'Rashed'),
-(8, 2, 'donor', '303', 'admin', 'Need A+Blood 2 for ', 0, '2017-07-19 19:22:15', 'Sakib', '2017-07-19 19:22:15', 'Rashed'),
-(9, 4, 'donor', '303', 'admin', 'Need O-Blood 100 for ', 0, '2017-07-19 19:25:50', 'Sakib', '2017-07-19 19:25:50', 'Rashed'),
-(10, 2, 'donor', '303', 'admin', 'Need B+Blood 6 for ', 0, '2017-07-19 19:32:41', 'Sakib', '2017-07-19 19:32:41', 'Rashed'),
-(11, 1, 'doctor', 'ashru@gmail.com', 'donor', '<p>no solution.. sent her to pabna</p>', 0, '2017-07-28 11:36:21', 'Doctor', '2017-07-28 11:36:21', NULL);
+INSERT INTO `messages` (`id`, `sender_email`, `sender_type`, `receiver_email`, `receiver_type`, `message`, `is_read`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
+(1, 'jmrashed@gmail.com', 'donor', '303', 'admin', 'Need AB+Blood 6 for Mahedi', 0, '2017-07-14 20:32:35', 'Sakib', '2017-07-14 20:32:35', 'Rashed'),
+(2, '2', 'donor', '303', 'admin', 'Need AB+Blood 6 for Mahedi', 0, '2017-07-14 20:32:35', 'Sakib', '2017-07-14 20:32:35', 'Rashed'),
+(3, '4', 'donor', '303', 'admin', 'Need AB+Blood 6 for Mahedi. Please help Me, I need 5 bag A+ blood', 0, '2017-07-14 20:33:32', 'Sakib', '2017-07-14 20:33:32', 'Rashed'),
+(4, 'jmrashed@gmail.com', 'donor', '303', 'admin', 'Need AB+Blood 6 for Mahedi', 0, '2017-07-14 20:36:30', 'Sakib', '2017-07-14 20:36:30', 'Rashed'),
+(5, '2', 'donor', '303', 'admin', 'Need AB+Blood 6 for Mahedi', 0, '2017-07-14 20:37:11', 'Sakib', '2017-07-14 20:37:11', 'Rashed'),
+(6, '4', 'donor', '303', 'admin', 'Please help Me, I need 5 bag A+ blood', 0, '2017-07-14 20:37:30', 'Sakib', '2017-07-14 20:37:30', 'Rashed'),
+(7, '2', 'donor', '303', 'admin', 'Need A+Blood 3 for Mohin', 0, '2017-07-14 21:04:36', 'Sakib', '2017-07-14 21:04:36', 'Rashed'),
+(8, 'jmrashed@gmail.com', 'donor', '303', 'admin', 'Need A+Blood 2 for ', 0, '2017-07-19 19:22:15', 'Sakib', '2017-07-19 19:22:15', 'Rashed'),
+(9, '4', 'donor', '303', 'admin', 'Need O-Blood 100 for ', 0, '2017-07-19 19:25:50', 'Sakib', '2017-07-19 19:25:50', 'Rashed'),
+(10, '2', 'donor', '303', 'admin', 'Need B+Blood 6 for ', 0, '2017-07-19 19:32:41', 'Sakib', '2017-07-19 19:32:41', 'Rashed'),
+(11, '1', 'doctor', 'ashru@gmail.com', 'donor', '<p>no solution.. sent her to pabna</p>', 0, '2017-07-28 11:36:21', 'Doctor', '2017-07-28 11:36:21', NULL);
 
 -- --------------------------------------------------------
 
@@ -1636,17 +1611,17 @@ INSERT INTO `system_settings` (`id`, `system_name`, `director`, `established_dat
 
 CREATE TABLE `testimonials` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `designation` varchar(255) NOT NULL,
-  `institution` varchar(255) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `message` text NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `designation` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `institution` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `message` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   `web_url` text,
   `fb_url` text,
   `linkdin_url` text,
-  `rank` varchar(255) NOT NULL,
-  `photo` text,
+  `rank` varchar(255) CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
+  `pic_path` text,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_by` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -1657,12 +1632,12 @@ CREATE TABLE `testimonials` (
 -- Dumping data for table `testimonials`
 --
 
-INSERT INTO `testimonials` (`id`, `name`, `email`, `designation`, `institution`, `title`, `message`, `web_url`, `fb_url`, `linkdin_url`, `rank`, `photo`, `updated_at`, `updated_by`, `created_at`, `created_by`) VALUES
-(1, 'Engr. Md Rasheduzzaman', 'jmrashed@gmail.com', 'Software Engineer', 'United Group', 'So Friendly!', 'All the donation center staff was so sweet and accommodating. My first donation experience was fabulous, the warm blankets and chairs were so comfortable. I couldn''t have asked for a better experience!', 'http://localhost:81/phpmyadmin/tbl_change.php?', 'http://localhost:81/phpmyadmin/tbl_change.php?', 'http://localhost:81/phpmyadmin/tbl_change.php?', '4', 'A.png', '2017-07-11 00:41:51', '', '2017-07-11 00:41:51', '2'),
-(2, 'Engr. Md Nazmus Sakib', 'sakib@gmail.com', 'Software Engineer', 'United Group', 'Great experience!', 'UNC''s donation center was really awesome and extremely friendly from the time you walk in and the time you walk out, they make sure you''re comfortable all the way through. I will be donating again!', 'http://localhost:81/phpmyadmin/tbl_change.php?', 'http://localhost:81/phpmyadmin/tbl_change.php?', 'http://localhost:81/phpmyadmin/tbl_change.php?', '4', 'B.png', '2017-07-11 00:42:15', '', '2017-07-11 00:42:15', '2'),
-(3, 'Meem', 'meem@gmail.com', 'sister', 'home', 'Platelet Donation', 'The staff at the Blood Donation Center for platelet donation are a wonderfully remarkable group of health care professionals. Your comfort and ease through the process is their focus. Knowing my platelets will help save or extend a life is one way for me to give back. Even if you are squeamish about blood products or IV sticks, you should try platelet donation.', 'asd.com', 'hfgf', 'podfjdisdjfbdj', 'sdjhfbsdjh', 'C.png', '2017-07-10 19:36:39', NULL, '2017-07-10 19:36:39', NULL),
-(4, 'Asru', 'asru@gmail.com', 'sister', 'stamford', 'Good experience for good cause', 'It feels really good to do a good thing like donate platelets, and it is even better when you do it here. Really friendly, helpful people. Plus you get snacks, and get to watch a movie of your choice--- and they have a good selection to choose from. Plus a free t-shirt. I am really glad I spent a couple hours there, and other people should do it as well.', 'test.com', 'test.com/asru', 'test.com/asru', '6', '', '2017-07-10 19:40:51', NULL, '2017-07-10 19:40:51', NULL),
-(5, 'Nazmus Sakib', 'sakib.cse.bd@gmail.com', 'Soft. Developer', 'stamford', 'Top notch staff', 'The staff at the Blood Donation Center make the platelet donation process the best that it can be. They are friendly and personable and go above and beyond to make sure everything goes smoothly and that the patients are as comfortable as possible before, during, and after.', '1675 Snyder Avenue', 'thdt.com', 'test.com/asru', '434', '5_.png', '2017-07-10 19:47:10', NULL, '2017-07-10 19:47:10', NULL);
+INSERT INTO `testimonials` (`id`, `name`, `email`, `designation`, `institution`, `title`, `message`, `web_url`, `fb_url`, `linkdin_url`, `rank`, `pic_path`, `updated_at`, `updated_by`, `created_at`, `created_by`) VALUES
+(1, 'ইঞ্জিঃ মোঃ রাশেদুজ্জামান', 'jmrashed@gmail.com', 'Software Engineer', 'United Group', 'So Friendly!', 'অনেকেই রক্ত দান করা নিয়ে অহেতুক ভয় পান। রক্ত দিলে মনে করেন যে তার শরীরে হয়ত কোন সমস্যা হবে। কিন্তু এটি যে একদমই নিছক ভাবনা, নিচে কিছু তথ্য উপাত্ত দিয়ে সেটা প্রমান করা হলো। কেন রক্ত দানের পরেও আপনি সম্পূর্ন সুস্থ থাকবেন,সেটিই দেখে নিন।', 'http://localhost:81/phpmyadmin/tbl_change.php?', 'http://localhost:81/phpmyadmin/tbl_change.php?', 'http://localhost:81/phpmyadmin/tbl_change.php?', '4', 'http://localhost/lifecycle/public/images/testimonial/A.png', '2017-07-11 00:41:51', '', '2017-07-11 00:41:51', '2'),
+(2, 'নাজমুস সাকিব রাতুল', 'sakib@gmail.com', 'Software Engineer', 'United Group', 'Great experience!', 'এ ছাড়া রক্তদাতা শারীরিকভাবে রক্তদানে উপযুক্ত কি না, তা জানার জন্য তাঁর শরীরের ওজন, তাপমাত্রা, নাড়ির গতি, রক্তল্পতা বা জন্ডিসের উপস্থিতি ইত্যাদি পরীক্ষা করে দেখা হয়।', 'http://localhost:81/phpmyadmin/tbl_change.php?', 'http://localhost:81/phpmyadmin/tbl_change.php?', 'http://localhost:81/phpmyadmin/tbl_change.php?', '4', 'http://localhost/lifecycle/public/images/testimonial/A.png', '2017-07-11 00:42:15', '', '2017-07-11 00:42:15', '2'),
+(3, 'সৈয়েদা তাসনিম মিম', 'meem@gmail.com', 'শিক্ষিকা', 'ঢাকা বিশ্ববিদ্যালয়', 'Platelet Donation', 'আজ শুক্রবার। বন্ধের দিন। সপ্তাহের অন্য দিনগুলোতে অফিস থাকে, ব্যস্ত থাকেন। ইচ্ছা থাকা সত্ত্বেও রক্তদান করা সম্ভব হয়ে উঠে না। আজ ফ্রী আছেন। রক্তদান করে ফেলুন না।\n', 'asd.com', 'hfgf', 'podfjdisdjfbdj', '獤????????', 'http://localhost/lifecycle/public/images/testimonial/A.png', '2017-07-10 19:36:39', NULL, '2017-07-10 19:36:39', NULL),
+(4, 'সামিনা ইয়াসমিন ', 'asru@gmail.com', 'শিক্ষিকা', 'ঢাকা বিশ্ববিদ্যালয়', 'Good experience for good cause', 'এ ছাড়া রক্তদাতা শারীরিকভাবে রক্তদানে উপযুক্ত কি না, তা জানার জন্য তাঁর শরীরের ওজন, তাপমাত্রা, নাড়ির গতি, রক্তল্পতা বা জন্ডিসের উপস্থিতি ইত্যাদি পরীক্ষা করে দেখা হয়।', 'test.com', 'test.com/asru', 'test.com/asru', '6', 'http://localhost/lifecycle/public/images/testimonial/A.png', '2017-07-10 19:40:51', NULL, '2017-07-10 19:40:51', NULL),
+(5, 'আব্দুল্লাহ আল-আমিন', 'sakib.cse.bd@gmail.com', 'ব্যাবসায়ী', 'পল্টন', 'Top notch staff', 'এখন A এন্টিজেন বহনকারী রক্তের সাথে যদি B এন্টিজেন বহনকারী রক্তের সংমিশ্রণ ঘটে তবে A ব্লাডগ্রুপধারীর শরীর তা প্রত্যাখান করবে। এমনকি মারাও যেতে পারেন। B এন্টিজেন এর সাথে A এন্টিজেনের মিশ্রণেও একই প্রতিক্রিয়া হতে পারে। রক্তের গ্রুপ A এবং A আর B এবং B মিললেও সমস্যার শেষ হবে এমন কথা নেই। কেননা আরেকটি এন্টিজেন Rh রয়ে গেছে। Rh নাই অর্থাৎ Rh Negative এমন কারো রক্তের সাথে Rh আছে অর্থাৎ Rh Positive কারো রক্তের মিশ্রণ ঘটলেও নেগেটিভ রক্ত পজিটিভ রক্তকে গ্রহণ করবে না। ', '1675 Snyder Avenue', 'thdt.com', 'test.com/asru', '?', 'http://localhost/lifecycle/public/images/testimonial/A.png', '2017-07-10 19:47:10', NULL, '2017-07-10 19:47:10', NULL);
 
 -- --------------------------------------------------------
 
@@ -2358,12 +2333,6 @@ ALTER TABLE `donors_details`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `faqs`
---
-ALTER TABLE `faqs`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `find_solutions`
 --
 ALTER TABLE `find_solutions`
@@ -2604,11 +2573,6 @@ ALTER TABLE `donors`
 ALTER TABLE `donors_details`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `faqs`
---
-ALTER TABLE `faqs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
 -- AUTO_INCREMENT for table `find_solutions`
 --
 ALTER TABLE `find_solutions`
@@ -2678,61 +2642,6 @@ ALTER TABLE `speeches`
 --
 ALTER TABLE `states`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `system_settings`
---
-ALTER TABLE `system_settings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `testimonials`
---
-ALTER TABLE `testimonials`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `tobeproud`
---
-ALTER TABLE `tobeproud`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `upazilas`
---
-ALTER TABLE `upazilas`
-  MODIFY `id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=493;
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `districts`
---
-ALTER TABLE `districts`
-  ADD CONSTRAINT `districts_ibfk_1` FOREIGN KEY (`division_row_id`) REFERENCES `divisions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `permission_role`
---
-ALTER TABLE `permission_role`
-  ADD CONSTRAINT `permission_role_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `permission_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `role_user`
---
-ALTER TABLE `role_user`
-  ADD CONSTRAINT `role_user_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `role_user_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `upazilas`
---
-ALTER TABLE `upazilas`
-  ADD CONSTRAINT `upazilas_ibfk_1` FOREIGN KEY (`district_row_id`) REFERENCES `districts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
