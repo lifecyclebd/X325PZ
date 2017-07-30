@@ -1,9 +1,6 @@
-@extends('layouts.myapp')
+<?php $__env->startSection('content'); ?>
 
-
-@section('content')
-
-<link rel="stylesheet" href="{{asset('/')}}/public/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+<link rel="stylesheet" href="<?php echo e(asset('/')); ?>/public/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 <div class="content-wrapper" style="min-height: 946px;">
     <!-- Main content -->
     <section class="content">
@@ -19,9 +16,9 @@
                   <div class="input-group" style="margin-bottom: 30px">
                     <span class="input-group-addon" id="basic-addon1">To </span> 
                       <select class="form-control">
-                        @foreach($data['donor'] as $row)
-                          <option value="">{{$row->email}} - {{$row->blood_group}}</option>
-                        @endforeach
+                        <?php $__currentLoopData = $data['donor']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                          <option value=""><?php echo e($row->email); ?> - <?php echo e($row->blood_group); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                       </select>
                     </div>
                     <div class="form-group"> 
@@ -64,4 +61,6 @@
     $("#compose-textarea").wysihtml5();
   });
 </script>
-@endsection 
+<?php $__env->stopSection(); ?> 
+
+<?php echo $__env->make('layouts.myapp', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
