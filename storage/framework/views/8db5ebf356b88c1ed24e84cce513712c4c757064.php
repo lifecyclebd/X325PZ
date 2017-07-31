@@ -59,7 +59,7 @@
                                 <ul> 
                                     <li><i class="fa fa-envelope" aria-hidden="true"> </i> info@lifecyclebd.org </li>
                                     <?php if (!empty($site_info->phone1)) { ?> 
-                                        <li><i class="fa fa-phone" aria-hidden="true"></i><span class="phone"> +880 1711 111 222</span></li>
+                                        <li><i class="fa fa-phone" aria-hidden="true"></i><span class="phone"> 01709848480</span></li>
                                     <?php } if (!empty($site_info->fb_url)) { ?>                                        
                                         <li><a href="<?php echo e($site_info->fb_url); ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>                                    <li><a href="<?php echo e(url('https://twitter.com/')); ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                     <?php } if (!empty($site_info->web_url)) { ?>                                     
@@ -100,13 +100,18 @@
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> 
                                                 <span class="hidden-xs" style="margin-left: 10px"> 
                                                 <i style="font-size: 22px; color: red" class="fa fa-tint" aria-hidden="true"></i>
-                                               <sup> <span class="badge"  style="margin-top: -20px;">  5</span></sup> </span>
+                                               <sup> <span class="badge"  style="margin-top: -20px;">  <?php echo e($data['bloodRequestCount']); ?></span></sup> </span>
                                             </a>
                                             <ul class="dropdown-menu" style="    background: rgb(132, 125, 125);">
                                                 <!-- User image -->
-                                                <?php $__currentLoopData = $data['last5activities']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <?php $__currentLoopData = $data['blood_request']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <li class="" style="min-width: 250px;"> 
-                                                     <a class="li_menu" href="<?php echo e(url('/')); ?>/" style="text-transform: none;"> <?php echo e($row->short_message); ?> nn</a> 
+                                                     <a class="li_menu" href="<?php echo e(url('/')); ?>/donor-profile/request-show/<?php echo e($row->id); ?>" style="text-transform: none;">
+You are requested for <?php echo e($row->number_blood_bag); ?> bag of 
+<span class="badge badge-danger" style="background: red"><?php echo e($row->request_blood_group); ?></span> Blood.
+
+
+                                                       </a> 
                                                 </li> 
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </ul>

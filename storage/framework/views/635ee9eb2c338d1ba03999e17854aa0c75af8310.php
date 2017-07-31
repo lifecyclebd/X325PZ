@@ -2,6 +2,9 @@
 <?php $__env->startSection('pageTitle', 'About Us'); ?>
 <?php $__env->startSection('parentName', 'Home'); ?>
 <?php $__env->startSection('content'); ?>
+
+
+
 <link rel="stylesheet" href="<?php echo e(asset('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css')); ?>"> 
 <style type="text/css">
 
@@ -82,14 +85,12 @@
 
     <!-- Wrapper for Slides -->
     <div class="carousel-inner">
-        <?php $i = 0; ?>
+        <?php $i = 0; if(!empty($data['slider'])){ ?>
         <?php $__currentLoopData = $data['slider']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
-        <div class="item <?php if ($i == 0) {
-            echo 'active';
-        } ?>"> 
+        <div class="item <?php if ($i == 0) { echo 'active'; } ?>"> 
             <!-- Set the first background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('<?php echo e(asset('/')); ?>public/images/gallery/<?php echo e($row->photo_name); ?>');"></div>
+            <div class="fill" style="background-image:url('<?php echo e(asset('/')); ?>public/images/gallery/<?php echo e($row->pic_path); ?>');"></div>
             <div class="carousel-caption">
 
                 <h2><?php if (!empty($row->caption)) {
@@ -102,6 +103,7 @@
         </div>
 <?php $i++; ?>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
+        <?php } ?>
     </div>
 
     <!-- Controls -->
@@ -113,12 +115,13 @@
     </a>
     <div class="clearfix"></div>
 
-    <div class="row" style="min-height: 100px; background-color: #8f0002; padding: 10px; margin: 0 auto;">
-        <div class="col-md-8 hidden-xs">
+    <div class="row" style="min-height: 100px; background-color: #8f0002; padding: 10px; margin: 0 auto;"> 
+        <div class="col-md-8 hidden-xs"> 
+        <div class="col-md-8" style="margin-top: 8px"> 
             <!--<form class="form-horizontak" method="get" action="" style="margin: 10px;">
                 <?php echo csrf_field(); ?>-->
                 <div class="input-group">
-                    <span class="input-group-addon" style="padding: 0px 30px; font-size: 25px;"><i class="fa fa-map-marker map_marker"></i></span>
+                    <span class="input-group-addon" style="padding: 0px 0px; font-size: 25px;"><i class="fa fa-map-marker map_marker"></i></span>
 
                     <input type="text" style="height: 45px;    background: white;    font-size: 20px;" class="form-control" aria-label="Search Donor" placeholder="Search Donor Location" name="searchany">
                      
@@ -145,7 +148,7 @@
         <div class="col-md-3 col-sm-6 col-xs-12" style="border-radius: 8px">
             <div class="info_abou_blood " style="min-height:350px">
                  
-                <p class="title"><?php echo e($row->title); ?></p>
+                <p class="title" style="font-size: 20px"><strong><?php echo e($row->title); ?></strong></p>
                 <p class="text-justify" style="padding:10px">
                     <?php echo substr($row->description,0,600); ?>
 
@@ -240,7 +243,7 @@
         <div class="col-md-offset-2 col-md-8">
             <h2> স্বেচ্ছাসেবক হন </h2>
             <p class="text-justify ">
-            যারা জরুরী সময়ে মুমুর্ষ রোগির জন্য রক্তদাতা ম্যানেজ করে থাকেন, তাদেরকে সাধারণত আমরা আমাদের ভাষায় রক্তযোদ্ধা, রক্ত সৈনিক অথবা স্বেচ্ছাসেবক বলে থাকি।
+            যারা জরুরী সময়ে মুমুর্ষ রোগির জন্য রক্তদাতা ম্যানেজ করে থাকেন, তাদেরকে সাধারণত আমরা আমাদের ভাষায় রক্তযোদ্ধা, রক্ত সৈনিক অথবা স্বেচ্ছাসেবক বলে থাকি। আমাদের স্বেচ্ছাসেবক হওয়া কঠিন নয়। আপনার ইচ্ছাই যথেষ্ট। স্বেচ্ছাসেবক হতে নিচের বাটনে ক্লিক করুন।
             </p>
             <div class="pull-center"> 
                 <button class="join_now hidden-xs"   data-toggle="modal" data-target="#joinVolentier">যোগদান করুন </button>
@@ -251,10 +254,9 @@
     </div>
     <div class="col-md-6 make_donation" style="min-height: 350px;">
         <div class="col-md-offset-2 col-md-8">
-            <h2>রক্ত দাতা হন  </h2>
+            <h2>দাতা হন  </h2>
             <p class="text-justify" style="color:white;">
-            আপনি যদি একজন নিয়মিত রক্তদাতা হন অথবা রক্ত দিতে আগ্রহী হন তাহলে,
-একটু কষ্ট করে নিচে দেওয়া লিংকে যান , আর আপনার নাম, লিঙ্গ, জন্ম তারিখ, ঠিকানা, ব্লাড গ্রুপ, মোবাইল নাম্বার এবং শেষ রক্তদানের তারিখ দিয়ে ফর্মটি পূরণ করুন এবং আপনার কাছে মানুষদেরও ফর্মটি পূরণ করতে বলুন । 
+            আমাদের সঙ্গে সামাজিক কাজে অংশগ্রহণ করতে আপনার হাত বাড়িয়ে দিতে পারেন। আমরা আপনার দানের ব্যপারে সর্বোচ্চ গোপনীয়তা বজায় রাখবো এবং সঠিক কাজে সঠিক জায়গায় কার্যকরে সচেষ্ট হবো। 
             </p>
             <div class="pull-center">
 
@@ -396,8 +398,8 @@
 
         <div class="popup-gallery">
             <?php $__currentLoopData = $data['blood_fighter']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <a href="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->photo_name); ?>" title="The Cleaner" class="col-md-3" >
-            <img src="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->photo_name); ?>"  class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid #c9302c; float: left;">
+        <a href="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->pic_path); ?>" title="The Cleaner" class="col-md-3" >
+            <img src="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->pic_path); ?>"  class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid #c9302c; float: left;">
         </a>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
@@ -471,43 +473,71 @@
     .margin{
         margin: 0 auto;
     }
+    .blood_bag {
+    margin: 10px;     
+    background: rgba(51, 51, 51, 0.64);
+    padding: 15px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    color: white    
+}
 </style>
 <div class="blood_stock" style="  margin-top: 30px">
     <div class="container-fluid">
         <div class="row text-center">
-            <h2 class="life_title" style="margin-bottom: 20px; margin-top: 30px">blood stock</h2>
+            <h2 class="life_title" style="margin-bottom: 20px; margin-top: 30px"> দাতা সংখ্যা </h2>
             <p class="text-center">Current blood stock in bangladesh</p>
-             <div class="col-md-3" style="margin-top:5px; border: 1px">
-                 <img src="<?php echo e(url('/')); ?>/public/images/bag/1.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">45%</span>
+             <div class="col-md-3">
+                <div class="blood_bag">
+                     <img src="<?php echo e(url('/')); ?>/public/images/bag/1.png" class="img img-responsive margin">
+                     <span style="font-size: 18px; padding: 10px">সহজলভ্য দাতাঃ  <?php echo e($data['a_positive']); ?></span>
+                 </div>
              </div>
-             <div class="col-md-3" style="margin-top:5px; border: 1px">
+             <div class="col-md-3">
+                <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/2.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">50%</span>
+                 <span style="font-size: 22px; padding: 10px">সহজলভ্য দাতাঃ  <?php echo e($data['b_positive']); ?></span>
              </div>
-             <div class="col-md-3" style="margin-top:5px; border: 1px">
+             </div>
+             <div class="col-md-3">
+                <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/3.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">36%</span>
+                 <span style="font-size: 22px; padding: 10px">সহজলভ্য দাতাঃ  <?php echo e($data['o_positive']); ?></span>
+                 </div>
              </div>
-             <div class="col-md-3" style="margin-top:5px; border: 1px">
+             <div class="col-md-3" >
+                <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/4.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">62%</span>
+                 <span style="font-size: 22px; padding: 10px">সহজলভ্য দাতাঃ  <?php echo e($data['ab_positive']); ?></span>
+                 </div>
              </div>
-             <div class="col-md-3" style="margin-top:5px; border: 1px">
+             <div class="col-md-3">
+
+                <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/5.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">78%</span>
+                 <span style="font-size: 22px; padding: 10px">সহজলভ্য দাতাঃ  <?php echo e($data['a_negative']); ?></span>
+                 </div>
              </div>
-             <div class="col-md-3" style="margin-top:5px; border: 1px">
+             <div class="col-md-3">
+                <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/6.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">25%</span>
-             </div>
-             <div class="col-md-3" style="margin-top:5px; border: 1px">
+                 <span style="font-size: 22px; padding: 10px">সহজলভ্য দাতাঃ  <?php echo e($data['b_negative']); ?></span>
+             </div></div>
+
+
+             <div class="col-md-3">
+
+                <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/7.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">49%</span>
+                 <span style="font-size: 22px; padding: 10px">সহজলভ্য দাতাঃ  <?php echo e($data['o_negative']); ?></span>
+                 </div>
              </div>
-             <div class="col-md-3" style="margin-top:5px; border: 1px">
+             <div class="col-md-3">
+
+                <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/8.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">36%</span>
+                 <span style="font-size: 22px; padding: 10px">সহজলভ্য দাতাঃ  <?php echo e($data['ab_negative']); ?></span>
+                 </div>
              </div>
 
         </div>
@@ -529,7 +559,7 @@
                                 <div class="col-md-4" style="">
                                     <div class="recent_donor">
                                         <span style="width: 40%; float: left;">
-                                            <a href="#"><img src="<?php echo e(url('/')); ?>/public/images/content/donor/<?php echo e($row->profile_photo); ?>" class="img-responsive center-block img-thumbnail"></a>
+                                            <a href="#"><img src="<?php echo e($row->pic_path); ?>" class="img-responsive center-block img-thumbnail"></a>
                                         </span>
                                         <span style="float: right; width: 60%; padding-left: 10px;">
                                             <div class="text-left">
@@ -556,36 +586,29 @@
     </div>
 </div>
 
-<div class="video" style="background: black; color: white">
-<div class="container">
-    <div class="col-md-6">
-        <h2 class="">Video</h2>
-        <iframe width="333" height="220" src="https://www.youtube.com/embed/NqqPEwVP8Mo" frameborder="0" allowfullscreen></iframe>
+<div class="video" style="    background: #313131;color: #9e9b9b; min-height: 340px;font-size: 16px;text-align: center;">
+	<div class="container-fluid">
+		<div class="col-md-4"> 
+			<div style="padding:15px;" style=" margin:0 auto;">
+					<img src="<?php echo e(url('/')); ?>/public/images/videogallery.png" style="width:200px; height:200px; margin:0 auto" class="img img-responsive"> 
+					<p style="margin:5px;">ভিডিও গ্যালারি </p>
+ </div>
+		</div>
+		<div class="col-md-4">
+	   
+			<div style="padding:15px;" style=" margin:0 auto;">
+				<img style="width:200px; height:200px;    margin: 0 auto;" src="<?php echo e(url('/')); ?>/public/images/24-7-icon.png" class="img img-responsive"><p>
+				আমরা ২৪ ঘন্টায় আপনাদের সাথে, আপনাদের পাশে, আপনাদের কাজে নিয়োজিত ।। </p>
+			</div>
+			 
+		</div>
+		<div class="col-md-4">
+			<a href="<?php echo e(url('/')); ?>/donor-register"><img style="width:200px; height:200px;margin:0 auto" src="<?php echo e(url('/')); ?>/public/images/be-a-donor.jpg" class="img img-responsive"></a>
+			 রক্তদাতা হন  
+			
+		</div>
 
-        
-    </div>
-    <div class="col-md-3">
-    <style type="text/css">
- i.icon_custom{ 
-            font-size: 20px;
-    padding: 5px;
-    margin: 5px;
-        }
-    </style>
-        <h2 class="">Social Media</h2>
-        <span><i class="fa fa-facebook-official icon_custom"></i></span>
-        <span><i class="fa fa-google-plus-square icon_custom"></i></span>
-        <span><i class="fa fa-youtube-square icon_custom"></i></span>
-        <span><i class="fa fa-twitter-square icon_custom"></i></span>
-        <span><i class="fa fa-linkedin-square icon_custom"></i></span>
-    </div>
-    <div class="col-md-3">
-        <h2 class="">Be Donor</h2>
-        <a href="<?php echo e(url('/')); ?>/"><img style="width: 100%" src="<?php echo e(url('/')); ?>/public/images/be-a-donor.jpg" class="img img-responsive"></a>
-        
-    </div>
-
-</div>
+	</div>
 
 </div>
 <div class="modal fade" id="makeDonation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
