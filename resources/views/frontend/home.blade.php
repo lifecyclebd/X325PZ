@@ -117,12 +117,9 @@
     </a>
     <div class="clearfix"></div>
 
-    <div class="row" style="min-height: 100px; background-color: #8f0002; padding: 10px; margin: 0 auto;">
-<<<<<<< HEAD
-        <div class="col-md-8 hidden-xs">
-=======
-        <div class="col-md-8" style="margin-top: 8px">
->>>>>>> 34f19140ff602724cc13fb67171d9bff2c33c64f
+    <div class="row" style="min-height: 100px; background-color: #8f0002; padding: 10px; margin: 0 auto;"> 
+        <div class="col-md-8 hidden-xs"> 
+        <div class="col-md-8" style="margin-top: 8px"> 
             <!--<form class="form-horizontak" method="get" action="" style="margin: 10px;">
                 {!! csrf_field() !!}-->
                 <div class="input-group">

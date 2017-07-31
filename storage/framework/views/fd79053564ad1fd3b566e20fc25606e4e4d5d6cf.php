@@ -2,6 +2,9 @@
 <?php $__env->startSection('pageTitle', 'About Us'); ?>
 <?php $__env->startSection('parentName', 'Home'); ?>
 <?php $__env->startSection('content'); ?>
+
+
+
 <link rel="stylesheet" href="<?php echo e(asset('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css')); ?>"> 
 <style type="text/css">
 
@@ -113,12 +116,9 @@
     </a>
     <div class="clearfix"></div>
 
-    <div class="row" style="min-height: 100px; background-color: #8f0002; padding: 10px; margin: 0 auto;">
-<<<<<<< HEAD
-        <div class="col-md-8 hidden-xs">
-=======
-        <div class="col-md-8" style="margin-top: 8px">
->>>>>>> 34f19140ff602724cc13fb67171d9bff2c33c64f
+    <div class="row" style="min-height: 100px; background-color: #8f0002; padding: 10px; margin: 0 auto;"> 
+        <div class="col-md-8 hidden-xs"> 
+        <div class="col-md-8" style="margin-top: 8px"> 
             <!--<form class="form-horizontak" method="get" action="" style="margin: 10px;">
                 <?php echo csrf_field(); ?>-->
                 <div class="input-group">
