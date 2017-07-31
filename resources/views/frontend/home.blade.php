@@ -115,14 +115,18 @@
     <div class="clearfix"></div>
 
     <div class="row" style="min-height: 100px; background-color: #8f0002; padding: 10px; margin: 0 auto;">
+<<<<<<< HEAD
+        <div class="col-md-8 hidden-xs">
+=======
         <div class="col-md-8" style="margin-top: 8px">
+>>>>>>> 34f19140ff602724cc13fb67171d9bff2c33c64f
             <!--<form class="form-horizontak" method="get" action="" style="margin: 10px;">
                 {!! csrf_field() !!}-->
                 <div class="input-group">
                     <span class="input-group-addon" style="padding: 0px 0px; font-size: 25px;"><i class="fa fa-map-marker map_marker"></i></span>
 
                     <input type="text" style="height: 45px;    background: white;    font-size: 20px;" class="form-control" aria-label="Search Donor" placeholder="Search Donor Location" name="searchany">
-                    <div id="map" style="overflow: hidden;"></div>
+                     
                     <span class="input-group-addon" style="padding: 0px 0px; font-size: 25px;">
 
                         <button class="btn  btn-serach search_button" > SEARCH </i> </button>
@@ -152,15 +156,16 @@
                 </p>
             </div>
                 <div class="text-center more_blood_bottom">
-                    <a href="{{url('/read-more')}}/detail/{{$row->id}}"><button class="btn_read_more">আরো জানতে</button></a>
+                    <a href="{{url('/read-more')}}/detail/{{$row->id}}"><button class="btn_read_more" style="    margin-top: 30px;">আরো জানতে</button></a>
                
                 </div> 
         </div>
         @endforeach
-        <br> 
+        <br> <br> <br> 
     </div> 
-    <div class="container-fluid" style="padding: 20px; background-color: #4d4f54">
-    <a style="color: red; padding: 10px" class="pull-right btn btn-serach" href="{{url('/')}}/seeMoreBloodInfo">একই রকম পোস্ট </a></div>
+    <div class="container-fluid" style="padding: 20px; background-color: #4d4f54; margin-top: 30px;">
+    <a style="color: red; padding: 10px" class="pull-right btn btn-serach" href="{{url('/')}}/seeMoreBloodInfo">একই রকম পোস্ট </a>
+    </div>
 
 
 
