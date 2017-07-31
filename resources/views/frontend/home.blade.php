@@ -173,45 +173,26 @@
     <!-- Wrapper for Slides -->
 
     <div class="carousel-inner">
-<<<<<<< HEAD
+ 
         <?php $i = 0; if(!empty($data['slider'])){ ?>
         @foreach($data['slider'] as $row)
 
         <div class="item <?php if ($i == 0) { echo 'active'; } ?>"> 
-=======
+ 
+ 
 
-        <?php $i = 0; ?>
-
-        @foreach($data['slider'] as $row)
-
-
-
-        <div class="item <?php if ($i == 0) {
-
-            echo 'active';
-
-        } ?>"> 
-
->>>>>>> c623e13babe572f6c2df8a614a22f6b82a673c2e
+        <div class="item <?php if ($i == 0) { echo 'active'; } ?>"> 
+ 
             <!-- Set the first background image using inline CSS below. -->
 
             <div class="fill" style="background-image:url('{{asset('/')}}public/images/gallery/{{$row->pic_path}}'); background-size: 100% 100%"></div>
 
             <div class="carousel-caption">
+ 
 
+                <h2><?php if (!empty($row->caption)) { echo $row->caption; } ?></h2>
 
-
-                <h2><?php if (!empty($row->caption)) {
-
-            echo $row->caption;
-
-        } ?></h2>
-
-                <h4><?php if (!empty($row->sub_caption)) {
-
-            echo $row->sub_caption;
-
-        } ?></h4>
+                <h4><?php if (!empty($row->sub_caption)) { echo $row->sub_caption;  } ?></h4>
 
             </div>
 
@@ -219,12 +200,8 @@
 
 <?php $i++; ?>
 
-        @endforeach 
-<<<<<<< HEAD
-        <?php } ?>
-=======
-
->>>>>>> c623e13babe572f6c2df8a614a22f6b82a673c2e
+        @endforeach  
+        <?php } ?> 
     </div>
 
 
