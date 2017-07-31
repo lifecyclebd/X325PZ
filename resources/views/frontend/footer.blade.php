@@ -85,10 +85,12 @@ s0.parentNode.insertBefore(s1,s0);
                     <div class="insta">
                         <button  class="foooter_button">ঠিকানা পরিবর্তন </button>
                     </div><br>
-                    <div style="width: 178px;height: 100px">
-                        <img class="img img-responsive img-rounded" src="public/images/googleplay_badge.jpg">
+                    <a href="#">
+                    <div>
+                        <img  style="width: 178px;height: 70px" class="img img-responsive img-rounded" src="public/images/googleplay_badge.jpg">
                     </div>
-                    <h4 style="margin-top: -25px"> <span>আমাদের অনুসরণ করুন </span> </h4>
+                    </a>
+                    <h4> <span>আমাদের অনুসরণ করুন </span> </h4>
                     <div class="footer_bottom_fa"> 
                         <a href="{{url('https://www.facebook.com/')}}" target="_blank"><i style="padding: 5px;" class="fa fa-facebook" aria-hidden="true"></i> </a>
                         <a href="{{url('https://plus.google.com/')}}" target="_blank"><i style="padding: 5px;"  class="fa fa-google-plus" aria-hidden="true"></i> 
