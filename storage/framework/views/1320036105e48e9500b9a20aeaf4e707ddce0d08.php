@@ -15,6 +15,7 @@
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     margin-bottom: 10px;}
+    #footer_id a{ color: white; padding-right: 10px; }
 </style>
 <div id="donor-register" style="height: auto">
 
@@ -33,17 +34,22 @@
         <div class="row pull-center"> 
             <?php $__currentLoopData = $data['doctor_list']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col-lg-4  text-center">
-            <div style="background: rgba(255, 0, 0, 0.25); min-height: 440px; color: white; border-top:10px solid green; padding: 20px; border-top-right-radius: 10px;border-top-left-radius: 10px;">
+            <div style="background: rgba(255, 0, 0, 0.25); min-height: 350px; color: white; border-top:10px solid green; padding: 20px; border-top-right-radius: 10px;border-top-left-radius: 10px;">
                 <img style="width:150px; height: 150px; margin: 0 auto" class="img-circle img-responsive img-center" src="<?php echo e($row->pic_path); ?>" alt="pic">
                 <h3><?php echo e($row->name); ?>
 
                     <small><?php echo e($row->designation); ?></small>
                 </h3>
-                <h4>Hospital Name: <?php echo e($row->hospital); ?></h4>
-                <h4>Phone No: <?php echo e($row->phone); ?></h4>
+                <p>Hospital Name: <?php echo e($row->hospital); ?></h4>
+                <p>Phone No: <?php echo e($row->phone); ?></h4>
             </div>
             <div id="footer_id">
-            <i class="fa fa-envelope"> </i> Send Message</div>
+            <a href="#"> <i class="fa fa-envelope"> </i></a>
+            <a href="#"> <i class="fa fa-facebook"> </i></a> 
+            <a href="#"> <i class="fa fa-linkedin"> </i></a> 
+            <a href="#"> <i class="fa fa-youtube"> </i></a> 
+            <a href="#"> <i class="fa fa-google-plus"> </i></a>  
+             </div>
            
             </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

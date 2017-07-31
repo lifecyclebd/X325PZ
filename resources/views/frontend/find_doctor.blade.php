@@ -21,7 +21,7 @@
             {!! csrf_field() !!} 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
-                    <select name="specialist" class="form-control find_search_button divisions" >
+                    <select name="speacilist" class="form-control find_search_button divisions" >
                         <option value="">Select Specialist</option>
                         @foreach($data['doctor_specialities'] as $row)
                             <option value="{{$row->id}}">{{$row->name}}</option>

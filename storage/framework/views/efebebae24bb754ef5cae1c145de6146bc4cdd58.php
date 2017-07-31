@@ -1,20 +1,19 @@
-@extends('layouts/front')
-
-@section('title', 'Search Hospitals')
-@section('pageTitle', 'Search Hospitals')
-@section('parentName', 'Health')
-@section('content')
+<?php $__env->startSection('title', 'Search Hospitals'); ?>
+<?php $__env->startSection('pageTitle', 'Search Hospitals'); ?>
+<?php $__env->startSection('parentName', 'Health'); ?>
+<?php $__env->startSection('content'); ?>
 <div class="all_hospitals">
     <div class="container">   
 
-        <form class="form-horizontal" method="post" action="{{url('/search-hospital')}}">
-            {!! csrf_field() !!}
+        <form class="form-horizontal" method="post" action="<?php echo e(url('/search-hospital')); ?>">
+            <?php echo csrf_field(); ?>
+
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
                     <select name="division" class="form-control find_search_button divisions">
-                        @foreach($data['division'] as $row)
-                            <option value="{{$row->id}}">{{$row->division_name}}</option>
-                        @endforeach
+                        <?php $__currentLoopData = $data['division']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($row->id); ?>"><?php echo e($row->division_name); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                 </span>
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
@@ -58,27 +57,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($data['hospital_list'] as $row)
+                        <?php $__currentLoopData = $data['hospital_list']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td><img class="img-responsive" src="{{$row->pick_path}}" alt="" style="width: 200px;height: 120px"></td>  
+                            <td><img class="img-responsive" src="<?php echo e($row->pick_path); ?>" alt="" style="width: 200px;height: 120px"></td>  
                             <td>
                                 <span style="float: left; margin-right: 10px;">
 
                                     <i class="fa fa-home" style="font-size: 20px;"></i>
                                 </span>
                                 <span style="font-weight: bold; float:left">
-                                    <a href="#"> {{$row->hospital_name}}</a>
+                                    <a href="#"> <?php echo e($row->hospital_name); ?></a>
                                 </span>
                             </td>
                                 
                             <td>
                                 <i class="fa fa-map-marker"></i>
-                                {{$row->location}}
+                                <?php echo e($row->location); ?>
+
                             </td>
-                            <td>{{$row->phone}}</td>
-                            <td>{{$row->details}}</td>
+                            <td><?php echo e($row->phone); ?></td>
+                            <td><?php echo e($row->details); ?></td>
                         </tr>  
-                        @endforeach
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                     </tbody>
                 </table>
@@ -89,8 +89,8 @@
 
  
 <!-- DataTables -->
-<script src="{{ asset('public/AdminLTE/plugins/datatables/jquery.dataTables.min.js')}}"></script>
- <script src="{{ asset('public/AdminLTE/plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
+<script src="<?php echo e(asset('public/AdminLTE/plugins/datatables/jquery.dataTables.min.js')); ?>"></script>
+ <script src="<?php echo e(asset('public/AdminLTE/plugins/datatables/dataTables.bootstrap.min.js')); ?>"></script>
  
 <script type="text/javascript">
    $(function () {
@@ -105,5 +105,7 @@
     });
   });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
 
+
+<?php echo $__env->make('layouts/front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

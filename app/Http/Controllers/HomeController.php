@@ -253,9 +253,24 @@ class HomeController extends Controller {
         $dis = $request->district;
         $upz = $request->upazila;
         $data['division'] = Division::all();
+        if(!empty($div) && !empty($dis) && !empty($upz) ){
         $data['hospital_list'] = Hospital:: where([['division', $div], ['district', $dis], ['upazila', $upz]])->get();
+      }
+        if(!empty($div) && !empty($dis)) {
+        $data['hospital_list'] = Hospital:: where([['division', $div], ['district', $dis]])->get();
+      }
+
+        if(!empty($div) ) {
+        $data['hospital_list'] = Hospital:: where('division', $div)->get();
+      }
+
+
+    else{
+            $data['hospital_list'] = Hospital::all();
+    }
         return view('frontend.search_hospital')->with('data', $data);
     }
+    
 
     public function view_ambulance() {
         //$divisions = DB::table("divisions")->lists("name", "id");
