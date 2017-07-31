@@ -381,7 +381,7 @@
 
                                 <div class="col-md-2">
                                     <select name="pro_visible" class="form-control">
-                                        <option value="<?php if($data['donor']->is_physically_disble =0) echo 'No' else echo 'Yes'?>">{{$data['donor']->is_physically_disble}}</option>
+                                        <option value="<?php if($data['donor']->is_physically_disble =0) echo 'No'; else echo 'Yes'?>">{{$data['donor']->is_physically_disble}}</option>
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>

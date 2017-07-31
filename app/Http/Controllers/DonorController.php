@@ -118,13 +118,22 @@ public function signup(Request $request) {
         $Donor = new Donor;
         $common = new Common;
 
-        $Donor->fname = $request->fname;
-        $Donor->lname = $request->fullname;
-        $Donor->email = $request->email;
+$Donor->signup_steps = 3;
+$Donor->is_physically_disable = 'na';
+$Donor->religion = 'na'; 
+$Donor->nid = 'na';
+
+if(!empty($request->fname)){$Donor->fname = $request->fname;}else{$Donor->fname ='na';}
+if(!empty($request->fullname)){$Donor->lname = $request->lname;}else{$Donor->fname ='na';}
+if(empty($request->email)){ return redirect('/donor-register?e=Email is empty'); }else { $Donor->email = $request->email;}    
+if(empty($request->phone)){ return redirect('/donor-register?p=Phone is empty'); }else { $Donor->phone = $request->phone;}    
+if(empty($request->blood_group)){ return redirect('/donor-register?b=Blood Group is empty');}else {$Donor->blood_group = $request->blood_group;}
+   
+        
         $Donor->fcm_email = 'na';
         $Donor->fcm_uid =  'na';
         $Donor->fcm_token =  'na';
-        $Donor->verification =0;
+        $Donor->verification =1;
         $Donor->gender = $request->gender;
         $Donor->birth_date = $request->birth_date;
         $Donor->last_donation = $request->last_donation;
@@ -132,8 +141,7 @@ public function signup(Request $request) {
         $Donor->division = $request->division;
         $Donor->district = $request->district;
         $Donor->thana = $request->thana;
-        $Donor->address = $request->address;
-        $Donor->blood_group = $request->blood_group;
+        $Donor->address = $request->address; 
         $Donor->rank = 0;
         $Donor->web_url = 'na';
         $Donor->fb_url = 'na';
