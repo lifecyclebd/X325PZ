@@ -44,9 +44,8 @@ s0.parentNode.insertBefore(s1,s0);
             <div class="col-md-3">
                 <div class="footer-heading">
                     <h3><span>হেড অফিস </span></h3>
-                    <p> স্থানঃ  <?php echo e($info->head_office); ?><br>
-                    ফোনঃ +88 01711 42 42 42<br>
-                    ইমেইলঃ info@lifecycle.org<br>
+                    <p> স্থানঃ  <?php echo e($info->head_office); ?>
+
                          
                     </p>
                 </div>
@@ -86,8 +85,11 @@ s0.parentNode.insertBefore(s1,s0);
                     <h3><span>  রেজিস্টার ইউজার  </span></h3>
                     <div class="insta">
                         <button  class="foooter_button">ঠিকানা পরিবর্তন </button>
-                    </div><br><br>
-                    <h4> আমাদের অনুসরণ করুন  </h4>
+                    </div><br>
+                    <div style="width: 178px;height: 100px">
+                        <img class="img img-responsive img-rounded" src="public/images/googleplay_badge.jpg">
+                    </div>
+                    <h4 style="margin-top: -25px"> <span>আমাদের অনুসরণ করুন </span> </h4>
                     <div class="footer_bottom_fa"> 
                         <a href="<?php echo e(url('https://www.facebook.com/')); ?>" target="_blank"><i style="padding: 5px;" class="fa fa-facebook" aria-hidden="true"></i> </a>
                         <a href="<?php echo e(url('https://plus.google.com/')); ?>" target="_blank"><i style="padding: 5px;"  class="fa fa-google-plus" aria-hidden="true"></i> 
@@ -96,6 +98,7 @@ s0.parentNode.insertBefore(s1,s0);
 
                                     </div>
                                     </div>
+                                    
                                     </div>
 
                                     </div>

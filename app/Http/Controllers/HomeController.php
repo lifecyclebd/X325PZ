@@ -134,6 +134,7 @@ class HomeController extends Controller {
     public function read_more($id) {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
+        $data['all_news']=Content::where('content_type','more_blood')->take(3)->get();
         $data['read_more_detail'] = Content::find($id);
         return view('frontend.read_more')->with('data', $data);
     }

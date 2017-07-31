@@ -146,7 +146,7 @@
         <div class="col-md-3 col-sm-6 col-xs-12" style="border-radius: 8px">
             <div class="info_abou_blood " style="min-height:350px">
                  
-                <p class="title">{{$row->title}}</p>
+                <p class="title" style="font-size: 20px"><strong>{{$row->title}}</strong></p>
                 <p class="text-justify" style="padding:10px">
                     {!!substr($row->description,0,600)!!}
                 </p>

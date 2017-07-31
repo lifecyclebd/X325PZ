@@ -59,7 +59,7 @@
                                 <ul> 
                                     <li><i class="fa fa-envelope" aria-hidden="true"> </i> info@lifecyclebd.org </li>
                                     <?php if (!empty($site_info->phone1)) { ?> 
-                                        <li><i class="fa fa-phone" aria-hidden="true"></i><span class="phone"> +880 1711 111 222</span></li>
+                                        <li><i class="fa fa-phone" aria-hidden="true"></i><span class="phone"> 01709848480</span></li>
                                     <?php } if (!empty($site_info->fb_url)) { ?>                                        
                                         <li><a href="{{$site_info->fb_url}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>                                    <li><a href="{{url('https://twitter.com/')}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                     <?php } if (!empty($site_info->web_url)) { ?>                                     
