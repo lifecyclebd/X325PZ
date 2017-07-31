@@ -559,36 +559,29 @@
     </div>
 </div>
 
-<div class="video" style="background: black; color: white">
-<div class="container">
-    <div class="col-md-6">
-        <h2 class="">Video</h2>
-        <iframe width="333" height="220" src="https://www.youtube.com/embed/NqqPEwVP8Mo" frameborder="0" allowfullscreen></iframe>
+<div class="video" style="    background: #313131;color: #9e9b9b; min-height: 340px;font-size: 16px;text-align: center;">
+	<div class="container-fluid">
+		<div class="col-md-4"> 
+			<div style="padding:15px;" style=" margin:0 auto;">
+					<img src="<?php echo e(url('/')); ?>/public/images/videogallery.png" style="width:200px; height:200px; margin:0 auto" class="img img-responsive"> 
+					<p style="margin:5px;">ভিডিও গ্যালারি </p>
+ </div>
+		</div>
+		<div class="col-md-4">
+	   
+			<div style="padding:15px;" style=" margin:0 auto;">
+				<img style="width:200px; height:200px;    margin: 0 auto;" src="<?php echo e(url('/')); ?>/public/images/24-7-icon.png" class="img img-responsive"><p>
+				আমরা ২৪ ঘন্টায় আপনাদের সাথে, আপনাদের পাশে, আপনাদের কাজে নিয়োজিত ।। </p>
+			</div>
+			 
+		</div>
+		<div class="col-md-4">
+			<a href="<?php echo e(url('/')); ?>/donor-register"><img style="width:200px; height:200px;margin:0 auto" src="<?php echo e(url('/')); ?>/public/images/be-a-donor.jpg" class="img img-responsive"></a>
+			 রক্তদাতা হন  
+			
+		</div>
 
-        
-    </div>
-    <div class="col-md-3">
-    <style type="text/css">
- i.icon_custom{ 
-            font-size: 20px;
-    padding: 5px;
-    margin: 5px;
-        }
-    </style>
-        <h2 class="">Social Media</h2>
-        <span><i class="fa fa-facebook-square icon_custom"  style="font-size: 45px;color: blue"></i></span>
-        <span><i class="fa fa-google-plus-square icon_custom"  style="font-size: 45px;color: red"></i></span>
-        <span><i class="fa fa-youtube-square icon_custom"  style="font-size: 45px;color: maroon"></i></span>
-        <span><i class="fa fa-twitter-square icon_custom"  style="font-size: 45px;color: cyan"></i></span>
-        <span><i class="fa fa-linkedin-square icon_custom"  style="font-size: 45px;color: yellow"></i></span>
-    </div>
-    <div class="col-md-3">
-        <h2 class="">Be Donor</h2>
-        <a href="<?php echo e(url('/')); ?>/"><img style="width: 100%" src="<?php echo e(url('/')); ?>/public/images/be-a-donor.jpg" class="img img-responsive"></a>
-        
-    </div>
-
-</div>
+	</div>
 
 </div>
 <div class="modal fade" id="makeDonation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

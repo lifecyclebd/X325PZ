@@ -1,0 +1,98 @@
+create table user_info(
+id int not null AUTO_INCREMENT,
+phone varchar(255) not null,
+password varchar(255) not null,
+pic_path varchar(255),
+fname varchar(255),
+lname varchar(255),
+blood_group varchar(255) not null,
+birth_date varchar(255) not null,
+age double not null,
+last_donation varchar(255) not null,
+new_donor int not null,
+email varchar(255) not null,
+division varchar(255) not null,
+district varchar(255) not null,
+thana varchar(255) not null,
+address varchar(255) not null,
+latitude double not null,
+longitude double not null,
+code varchar(255) not null,
+verification int not null,
+lastLat double not null,
+lastLng double not null,
+fcm_email varchar(255) not null,
+fcm_uid varchar(255) not null,
+fcm_token varchar(255) not null,
+pro_visible int not null,
+called_date varchar(255) not null,
+called_today int not null,
+donations_number int not null,
+user_type varchar(255) not null,
+gender varchar(255) not null,
+already_donated int not null,
+autopro_visible varchar(255) not null,
+singup_steps int not null,
+PRIMARY KEY (phone ),
+KEY (id) 
+);
+
+insert into user_info(phone,password,pic_path,fname,lname,blood_group,birth_date,age,last_donation,new_donor,email,division,district,thana,address,latitude,longitude,code,verification,lastLat,lastLng,fcm_email,fcm_uid,fcm_token,pro_visible,called_date,called_today,donations_number,user_type,gender,already_donated,autopro_visible,singup_steps)
+values('01923589277','anisur123','anis.jpg','anis','mizi','A+','30-03-1991',28,'30-03-2017',1,'anismizicse@gmail.com','Dhaka','Dhaka','Rampura','Ulonbazar,Rampura','23.766416','90.417949','234567',0,'23.766416','90.417949','anismizi1@gmail.com','U4h1OfMlWXhYjipaZ2dzbEpq14p1','cRaFHF3lB0k:APA91bH4hISdjc2JhRmLsZ6eh-fMYF-oaXLa0HYYTjCpj396OkGYn0jEggWsP4JDxhaekw_hXf0ABEovYCEoMXalKLPZ49KYVHE5dBwhyorOa11lYz7mlF6K2ebplnOD-4MIg1pbz5MM',1,'27-05-2017',0,0,'donor','Male','0','30-07-2017','3');
+
+create table locations(
+id int not null AUTO_INCREMENT,
+division varchar(255) not null,
+district varchar(255) not null,
+thana varchar(255) not null,
+PRIMARY KEY (id )
+);
+
+insert into locations(division,district,thana) values('Dhaka','Faridpur','Alfadanga');
+
+insert into locations(division,district,thana) values('Dhaka','Faridpur','Alfadanga');
+insert into locations(division,district,thana) values('Dhaka','Faridpur','Alfadanga');
+insert into locations(division,district,thana) values('Dhaka','Faridpur','Alfadanga');
+insert into locations(division,district,thana) values('Dhaka','Faridpur','Alfadanga');
+insert into locations(division,district,thana) values('Dhaka','Faridpur','Alfadanga');
+insert into locations(division,district,thana) values('Dhaka','Faridpur','Alfadanga');
+insert into locations(division,district,thana) values('Dhaka','Faridpur','Alfadanga');
+insert into locations(division,district,thana) values('Dhaka','Faridpur','Alfadanga');
+insert into locations(division,district,thana) values('Dhaka','Faridpur','Alfadanga');
+insert into locations(division,district,thana) values('Dhaka','Faridpur','Alfadanga');
+insert into locations(division,district,thana) values('Dhaka','Faridpur','Alfadanga');
+insert into locations(division,district,thana) values('Dhaka','Faridpur','Alfadanga');
+
+create table apphospitals(
+id int not null AUTO_INCREMENT,
+pic_path varchar(255) not null,
+name varchar(255) not null,
+address varchar(255) not null,
+speciality varchar(255) not null,
+phone varchar(255) not null,
+latitude double not null,
+longitude double not null,
+division varchar(255) not null,
+district varchar(255) not null,
+thana varchar(255) not null,
+PRIMARY KEY (id )
+);
+
+insert into apphospitals(pic_path,name,address,speciality,phone,latitude,longitude,division,district,thana) values('dhakasishu.jpg','Dhaka Shishu (children) Hospital','Sher-e-Bangla Nagar, Dhaka-1207,
+Bangladesh','Cardiology, Nephrology, Neurology, Child Development & Child Pschycology, Neonatology, Gastroenterology, Hepatology and Nutrition','880-2-9128308','23.771230','90.375225','Dhaka','Dhaka','Sher-e-Bangla Nagar');
+
+create table tobeproud(
+id int not null AUTO_INCREMENT,
+phone varchar(255) not null,
+comment varchar(255) not null,
+pic_path varchar(255) not null,
+share_date varchar(255) not null,
+PRIMARY KEY (id )
+);
+
+insert into tobeproud(phone,comment,pic_path,share_date) values('01923589277','Donating Blood','image/path.jpg','30-032017');
+
+
+
+
+
