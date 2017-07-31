@@ -1,25 +1,24 @@
-@extends('layouts/front')
-@section('title', 'Page Title')
-@section('pageTitle', 'About Us')
-@section('parentName', 'Home')
-@section('content')
+<?php $__env->startSection('title', 'Page Title'); ?>
+<?php $__env->startSection('pageTitle', 'About Us'); ?>
+<?php $__env->startSection('parentName', 'Home'); ?>
+<?php $__env->startSection('content'); ?>
  
  <div class="More_about_info" style="margin-top: -30px">
     <div class="container-fluid" style="background-color: gray;height: auto;"> 
         <h3 class="life_title " style="margin-bottom:50px;color: white">More about blood</h3> 
 
-        @foreach($data['all_blood_info'] as $row) 
+        <?php $__currentLoopData = $data['all_blood_info']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
         <div class="col-md-3 col-sm-6 col-xs-12" style="border-radius: 8px">
             <div class="info_abou_blood " style="min-height:350px;color: black">                 
-                <p class="title">{{$row->title}}</p>
-                <p class="text-justify" style="padding:10px">{!!substr($row->description,0,500)!!}</p>
+                <p class="title"><?php echo e($row->title); ?></p>
+                <p class="text-justify" style="padding:10px"><?php echo substr($row->description,0,500); ?></p>
             </div>
             <div class="text-center more_blood_bottom">
-                <a href="{{url('/read-more')}}/detail/{{$row->id}}"><button class="btn_read_more">
+                <a href="<?php echo e(url('/read-more')); ?>/detail/<?php echo e($row->id); ?>"><button class="btn_read_more">
                 আরো জানতে </button></a>              
             </div> 
         </div>
-        @endforeach
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 </div>
 </div>
@@ -184,15 +183,15 @@
         </div>
     </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('script_link') 
+<?php $__env->startSection('script_link'); ?> 
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('javascript_code')
+<?php $__env->startSection('javascript_code'); ?>
 
 
 <script type="text/javascript">
@@ -242,5 +241,7 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
 
+
+<?php echo $__env->make('layouts/front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

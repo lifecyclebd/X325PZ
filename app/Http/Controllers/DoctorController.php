@@ -32,8 +32,20 @@ public function ViewDoctor(Request $request){
         $div=$request->division;
         $dis=$request->district;
         $upz=$request->upazila;
-        $data['doctor_list'] = Doctor:: where([['division', $div], ['district', $dis], ['upazila', $upz], ['speacilist', $specialist]])->get();
+
+
+        if(empty($specialist)){
+            $data['doctor_list'] = Doctor:: where([['division', $div], ['district', $dis], ['upazila', $upz]])->get();
+        }     
+        if(empty($specialist) && empty($div)){
+            $data['doctor_list'] = Doctor::all();
+        }    
+
+        if(!empty($specialist) && empty($div)){
+            $data['doctor_list'] = Doctor:: where('specialist', $specialist )->get();
+        }
         
+        //dd( $data['doctor_list']);
         return view('frontend.view_doctor')->with('data', $data);
 }
 

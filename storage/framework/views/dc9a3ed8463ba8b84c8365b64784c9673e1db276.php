@@ -1,10 +1,7 @@
-@extends('layouts/front')
-
-
-@section('title', 'Find Hospitals')
-@section('pageTitle', 'Find Hospitals')
-@section('parentName', 'Health')
-@section('content')
+<?php $__env->startSection('title', 'Find Hospitals'); ?>
+<?php $__env->startSection('pageTitle', 'Find Hospitals'); ?>
+<?php $__env->startSection('parentName', 'Health'); ?>
+<?php $__env->startSection('content'); ?>
 <style type="text/css">
  
 </style>
@@ -17,23 +14,23 @@
             <h3 class="find_hospital_title">ডাক্তারের সাথে সরাসরি কথা বলতে  ০১৭০৯৮৪৮৪৮২ কল করুন </h1>
             <p> </p>
             <p></p> 
-                    <form class="form-horizontal" method="post" action="{{url('/view-doctor')}}">
-            {!! csrf_field() !!} 
+                    <form class="form-horizontal" method="post" action="<?php echo e(url('/view-doctor')); ?>">
+            <?php echo csrf_field(); ?> 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
                     <select name="specialist" class="form-control find_search_button divisions" >
                         <option value="">Select Specialist</option>
-                        @foreach($data['doctor_specialities'] as $row)
-                            <option value="{{$row->id}}">{{$row->name}}</option>
-                        @endforeach
+                        <?php $__currentLoopData = $data['doctor_specialities']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($row->id); ?>"><?php echo e($row->name); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                 </span>
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
                     <select name="division" class="form-control find_search_button divisions" >
                         <option value="">Select Division</option>
-                        @foreach($data['division'] as $row)
-                            <option value="{{$row->id}}">{{$row->division_name}}</option>
-                        @endforeach
+                        <?php $__currentLoopData = $data['division']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($row->id); ?>"><?php echo e($row->division_name); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                 </span>
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
@@ -58,5 +55,7 @@
     </div>
 </div> 
 
-@endsection
+<?php $__env->stopSection(); ?>
 
+
+<?php echo $__env->make('layouts/front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
