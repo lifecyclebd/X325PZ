@@ -9,6 +9,14 @@
     <div class="container">  
         <h2 class="find_hospital_title">Find Doctor</h2>
         <p style="margin-top: 120px"></p>
+        <header class="jumbotron hero-spacer" style="background-color: #ddd;">
+            <h1>ডাক্তার: ০১৭০৯৮৪৮৪৮২।</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+            <p></p>
+            <div style="margin-top:30px">
+            <a class="btn-ambulance">Call for Ambulance</a>
+            </div>
+        </header>
         <form class="form-horizontal" method="post" action="{{url('/view-doctor')}}">
             {!! csrf_field() !!} 
             <div class="input-group">
@@ -40,7 +48,7 @@
                 </span>
                 
                 <span class="input-group-addon" id="basic-addon1"> 
-                    <button class="col-xs-12 btn btn-xs btn-search find_search_button">
+                    <button class="col-xs-12 btn btn-lg" style="background-color: red">
                         <i class="fa fa-search"> Search</i>
                     </button>
                 </span>

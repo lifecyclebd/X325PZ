@@ -32,7 +32,7 @@
                 </span>
                 
                 <span class="input-group-addon" id="basic-addon1"> 
-                    <button class="col-xs-12 btn btn-xs btn-search find_search_button">
+                    <button class="col-xs-12 btn btn-lg" style="background-color: red">
                         <i class="fa fa-search"> Search</i>
                     </button>
                 </span>

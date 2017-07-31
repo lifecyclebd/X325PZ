@@ -208,20 +208,20 @@
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">First Name</label>
                                 <div class="col-md-8">
-                                    <input id="name" type="text" class="form-control" value="{{$data['donor']->fname}}" name="fname" placeholder="First Name"  autofocus>
+                                    <input id="name" type="text" class="form-control" value="{{$data['donor']->fname}}" name="fname" placeholder="First Name">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Last Name</label>
                                 <div class="col-md-8">
-                                    <input id="name" type="text" class="form-control" value="{{$data['donor']->lname}}" name="lname" placeholder="Last Name"  autofocus>
+                                    <input id="name" type="text" class="form-control" value="{{$data['donor']->lname}}" name="lname" placeholder="Last Name"  >
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Email</label>
                                 <div class="col-md-8">
-                                    <input id="name" type="email" class="form-control" value="{{$data['donor']->email}}" name="email"  autofocus>
+                                    <input id="name" type="email" class="form-control" value="{{$data['donor']->email}}" name="email"  >
                                 </div>
                             </div>
 
@@ -231,8 +231,9 @@
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Gender</label>
                                 <div class="col-md-8">
-                                    <input id="name" type="radio" name="gender" value="male" >Male &nbsp;&nbsp;&nbsp;
-                                    <input id="name" type="radio" name="gender" value="female" >Female
+                                    <?php $gndr=$data['donor']->gender?>
+                                    <input id="name" type="radio" name="gender" value="Male" >Male &nbsp;&nbsp;&nbsp;
+                                    <input id="name" type="radio" name="gender" value="Female" >Female
                                     <input type="hidden" value="87890" name="donner_id">
                                 </div>
                             </div>
@@ -240,18 +241,18 @@
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Date of Birth</label>
                                 <div class="col-md-4">
-                                    <input id="name" type="date" class="form-control" value="{{$data['donor']->birth_date}}" name="birth_date"  autofocus>
+                                    <input id="name" type="date" class="form-control" value="{{$data['donor']->birth_date}}" name="birth_date"  >
                                 </div> 
                                 <label for="name" class="col-md-2 control-label">Last Donate</label>
                                 <div class="col-md-2">
-                                    <input id="name" type="date" value="{{$data['donor']->last_donation}}" class="form-control" name="last_donation"  autofocus>
+                                    <input id="name" type="date" value="{{$data['donor']->last_donation}}" class="form-control" name="last_donation"  >
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Phone</label>
                                 <div class="col-md-8">
-                                    <input id="name" type="number" value="{{$data['donor']->phone}}" class="form-control" name="phone"  autofocus>
+                                    <input id="name" type="number" value="{{$data['donor']->phone}}" class="form-control" name="phone"  >
                                 </div>
                             </div>
 
@@ -291,7 +292,7 @@
                                 <label for="password" class="col-md-4 control-label">Address</label>
 
                                 <div class="col-md-8" style="height: 150px;">
-                                    <input name="address" id="pac-input" class=" form-control" type="text" placeholder="Search Box" style="background: rgb(79, 0, 0);">
+                                    <input name="address" id="pac-input" value="{{$data['donor']->address}}" class=" form-control" type="text" placeholder="Search Box" style="background: rgb(79, 0, 0);">
                                     <div id="map" style="overflow: hidden;"></div>
                                 </div>
                             </div>
@@ -301,6 +302,7 @@
 
                                 <div class="col-md-2">
                                     <select name="blood_group" class="form-control">
+                                        <option value="{{$data['donor']->blood_group}}">{{$data['donor']->blood_group}}</option>
                                         <option value="A+">A+</option>
                                         <option value="AB+">AB+</option>
                                         <option value="B+">B+</option>
@@ -320,36 +322,25 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="email"  value="{{$data['donor']->fb_url}}"   class="col-md-4 control-label">FB Url</label>
+                                <label for="email"    class="col-md-4 control-label">FB Url</label>
 
                                 <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="fb_url" />
+                                    <input type="text" class="form-control" value="{{$data['donor']->fb_url}}"  name="fb_url" />
                                 </div> 
                                 <label for="email" class="col-md-2 control-label">Web url</label>
 
                                 <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="web_url" />
+                                    <input type="text" class="form-control" value="{{$data['donor']->web_url}}  name="web_url" />
 
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">Called Date</label>
-
-                                <div class="col-md-2">
-                                    <input type="date" class="form-control"  name="called_date" />
-                                </div> 
-                                <label for="email" class="col-md-2 control-label">Called Today</label>
-
-                                <div class="col-md-2">
-                                    <input type="date" class="form-control"  name="called_today" />
-
-                                </div>
-                            </div>
+                            
                             <div class="form-group">
                                 <label for="email" class="col-md-4 control-label">Religion</label>
 
                                 <div class="col-md-2">
                                     <select name="religion" class="form-control">
+                                        <option value="{{$data['donor']->religion}}">{{$data['donor']->religion}}</option>
                                         <option value="Muslim">Muslim</option>
                                         <option value="Hindu">Hindu</option>
                                         <option value="Christian">Christian</option>
@@ -360,6 +351,7 @@
 
                                 <div class="col-md-2">
                                     <select name="is_physically_disble" class="form-control">
+                                        <option value="{{$data['donor']->is_physically_disble}}">{{$data['donor']->is_physically_disble}}</option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
                                     </select>
@@ -370,12 +362,12 @@
                                 <label for="email" class="col-md-4 control-label">Nationality</label>
 
                                 <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="nationality" />
+                                    <input type="text" class="form-control" value="{{$data['donor']->nationality}}"  name="nationality" />
                                 </div> 
-                                <label for="email" class="col-md-2 control-label">NID</label>
+                                <label for="email" class="col-md-2 control-label" >NID</label>
 
                                 <div class="col-md-2">
-                                    <input type="number" class="form-control"  name="nid" />
+                                    <input type="number" class="form-control" value="{{$data['donor']->nid}}"  name="nid" />
 
                                 </div>
                             </div>
@@ -383,44 +375,21 @@
                                 <label for="email" class="col-md-4 control-label">Age</label>
 
                                 <div class="col-md-2">
-                                    <input type="number" class="form-control"  name="age" />
+                                    <input type="number" class="form-control" value="{{$data['donor']->age}}"  name="age" />
                                 </div> 
                                 <label for="email" class="col-md-2 control-label">Profile Visible</label>
 
                                 <div class="col-md-2">
                                     <select name="pro_visible" class="form-control">
+                                        <option value="<?php if($data['donor']->is_physically_disble =0) echo 'No' else echo 'Yes'?>">{{$data['donor']->is_physically_disble}}</option>
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
 
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">Latitude</label>
-
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="latitude" />
-                                </div> 
-                                <label for="email" class="col-md-2 control-label">Longitude</label>
-
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="longitude" />
-
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">Last Latitude</label>
-
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="lastLat" />
-                                </div> 
-                                <label for="email" class="col-md-2 control-label">Last Longitude</label>
-
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="lastLng" />
-
-                                </div>
-                            </div>
+                            
+                            
 
                             <div class="form-group">
                                 <label for="email" class="col-md-4 control-label">Rank</label>
@@ -460,12 +429,12 @@
               <div class="tab-pane" id="to_be_proud">
               <h2 class="life_title">Add your feelings</h2>
                 <div class="row" style="background: #eee">
-                    <form class="form-horizontal" action="" method="" style="margin: 10px" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="{{url('/donor/tobeproud/store')}}" method="post" style="margin: 10px" enctype="multipart/form-data">
                     <div class="form-group">
                       <label class="control-label col-md-2">Donate Date</label>
                       <div class="col-md-4"><input type="date" name="donate_date" class="form-control"></div>
                       <label class="control-label col-md-2">Donate Place</label>
-                      <div class="col-md-4"><input type="text" name="donate_plsce" class="form-control"></div>
+                      <div class="col-md-4"><input type="text" name="donate_place" class="form-control"></div>
                     </div>
                     <div class="form-group">
                       <label class="control-label col-md-2">Reason of Proud</label>
@@ -473,7 +442,7 @@
                     </div>
                     <div class="form-group">
                       <label class="control-label col-md-2">Blood Fighter Image</label>
-                      <div class="col-md-10"><input type="file" name="blood_fighter" class="form-control"></div> 
+                      <div class="col-md-10"><input type="file" name="pic_path" class="form-control"></div> 
                     </div>
                     <div class="pull-right"><input type="submit" name="Save" value="Save" class="btn btn-primary"></div>
                     </form>
@@ -481,15 +450,19 @@
                 </div>
                     <div class="row">
               <h2 class="life_title">Gallery</h2>
-                        <?php for($i=0; $i<8; $i++ ){ ?>
+                        @foreach($data['tobeproud_gallery'] as $row )
                             <div class="col-md-3">
                                   <div class="proud" style="background: #eee; padding: 10px; margin:5px;">
-                                    <img src="{{url('/')}}/public/images/user.jpg" style="width: 100%; height: auto; " class="img img-responsive img-thumbnail">
-                                    <p style="text-align: center;background: #00BCD4; padding: 5px; color: white; border-radius: 5px">15 july 2017, DMC College</p> 
-                                    <p style="color: #00BCD4; text-align: center;">I am very proud to be blood donor. </p>
+                                    <img src="{{$row->pic_path}}" style="width: 100%; height: auto; " class="img img-responsive img-thumbnail">
+                                    <p style="text-align: center;background: #00BCD4; padding: 5px; color: white; border-radius: 5px">
+                                    <?php 
+                                    $new_date=strtotime($row->donate_date); 
+                                    echo date('d \o\f F Y', $new_date);
+                                    ?>, {{$row->donate_place}}</p> 
+                                    <p style="color: #00BCD4; text-align: center;">{{$row->reason_of_proud}}</p>
                                 </div>
                               </div>
-                        <?php  } ?>
+                        @endforeach
                         
                      </div>
                     

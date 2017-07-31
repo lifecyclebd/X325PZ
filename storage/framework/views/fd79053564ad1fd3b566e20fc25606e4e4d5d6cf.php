@@ -114,14 +114,18 @@
     <div class="clearfix"></div>
 
     <div class="row" style="min-height: 100px; background-color: #8f0002; padding: 10px; margin: 0 auto;">
+<<<<<<< HEAD
+        <div class="col-md-8 hidden-xs">
+=======
         <div class="col-md-8" style="margin-top: 8px">
+>>>>>>> 34f19140ff602724cc13fb67171d9bff2c33c64f
             <!--<form class="form-horizontak" method="get" action="" style="margin: 10px;">
                 <?php echo csrf_field(); ?>-->
                 <div class="input-group">
                     <span class="input-group-addon" style="padding: 0px 0px; font-size: 25px;"><i class="fa fa-map-marker map_marker"></i></span>
 
                     <input type="text" style="height: 45px;    background: white;    font-size: 20px;" class="form-control" aria-label="Search Donor" placeholder="Search Donor Location" name="searchany">
-                    <div id="map" style="overflow: hidden;"></div>
+                     
                     <span class="input-group-addon" style="padding: 0px 0px; font-size: 25px;">
 
                         <button class="btn  btn-serach search_button" > SEARCH </i> </button>
@@ -145,22 +149,23 @@
         <div class="col-md-3 col-sm-6 col-xs-12" style="border-radius: 8px">
             <div class="info_abou_blood " style="min-height:350px">
                  
-                <p class="title"><?php echo e($row->title); ?></p>
+                <p class="title" style="font-size: 20px"><strong><?php echo e($row->title); ?></strong></p>
                 <p class="text-justify" style="padding:10px">
                     <?php echo substr($row->description,0,600); ?>
 
                 </p>
             </div>
                 <div class="text-center more_blood_bottom">
-                    <a href="<?php echo e(url('/read-more')); ?>/detail/<?php echo e($row->id); ?>"><button class="btn_read_more">আরো জানতে</button></a>
+                    <a href="<?php echo e(url('/read-more')); ?>/detail/<?php echo e($row->id); ?>"><button class="btn_read_more" style="    margin-top: 30px;">আরো জানতে</button></a>
                
                 </div> 
         </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        <br> 
+        <br> <br> <br> 
     </div> 
-    <div class="container-fluid" style="padding: 20px; background-color: #4d4f54">
-    <a style="color: red; padding: 10px" class="pull-right btn btn-serach" href="<?php echo e(url('/')); ?>/seeMoreBloodInfo">একই রকম পোস্ট </a></div>
+    <div class="container-fluid" style="padding: 20px; background-color: #4d4f54; margin-top: 30px;">
+    <a style="color: red; padding: 10px" class="pull-right btn btn-serach" href="<?php echo e(url('/')); ?>/seeMoreBloodInfo">একই রকম পোস্ট </a>
+    </div>
 
 
 
@@ -571,11 +576,11 @@
         }
     </style>
         <h2 class="">Social Media</h2>
-        <span><i class="fa fa-facebook-official icon_custom"></i></span>
-        <span><i class="fa fa-google-plus-square icon_custom"></i></span>
-        <span><i class="fa fa-youtube-square icon_custom"></i></span>
-        <span><i class="fa fa-twitter-square icon_custom"></i></span>
-        <span><i class="fa fa-linkedin-square icon_custom"></i></span>
+        <span><i class="fa fa-facebook-square icon_custom"  style="font-size: 45px;color: blue"></i></span>
+        <span><i class="fa fa-google-plus-square icon_custom"  style="font-size: 45px;color: red"></i></span>
+        <span><i class="fa fa-youtube-square icon_custom"  style="font-size: 45px;color: maroon"></i></span>
+        <span><i class="fa fa-twitter-square icon_custom"  style="font-size: 45px;color: cyan"></i></span>
+        <span><i class="fa fa-linkedin-square icon_custom"  style="font-size: 45px;color: yellow"></i></span>
     </div>
     <div class="col-md-3">
         <h2 class="">Be Donor</h2>

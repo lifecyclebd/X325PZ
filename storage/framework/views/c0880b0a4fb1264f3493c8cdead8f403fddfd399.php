@@ -12,7 +12,7 @@
             </div>
           <form action="<?php echo e(url('admin/mailbox/store')); ?>" method="post" class="form-horizontal" enctype="multipart/form-data">
             <div class="box-body">
-
+                
                   <div class="input-group" style="margin-bottom: 30px">
                     <span class="input-group-addon" id="basic-addon1">To </span> 
                       <select class="form-control" name="email">

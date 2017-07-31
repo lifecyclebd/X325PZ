@@ -75,20 +75,26 @@
 
     input:focus{
         background: none;
+        color: white !important;
     }
 
-    input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus {
+    input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="number"]:focus, textarea:focus {
     background: none;
     outline: none;
     color: #fff;
 }
 
-input[type="text"], input[type="password"], input[type="email"], textarea {
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], textarea {
 
     background: none;
     }
     select{
-        background: none;
+            background: none !important;
+            color: white !important;
+    }
+    select:focus{
+            background: none !important;
+            color: red !important;
     }
 </style>
 <div id="donor-register" style="height: auto;">
