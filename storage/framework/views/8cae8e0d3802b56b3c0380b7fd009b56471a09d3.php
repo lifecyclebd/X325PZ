@@ -2,13 +2,16 @@
 <?php $__env->startSection('pageTitle', 'Find Hospitals'); ?>
 <?php $__env->startSection('parentName', 'Health'); ?>
 <?php $__env->startSection('content'); ?>
+<style type="text/css">
+ 
+</style>
 <div class="find_hospital">
     <div class="container">  
         <h2 class="find_hospital_title">Find Doctor</h2>
         <p style="margin-top: 120px"></p>
         <header class="jumbotron hero-spacer" style="background-color: #ddd;">
             <h1>ডাক্তার: ০১৭০৯৮৪৮৪৮২।</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+            <p> </p>
             <p></p>
             <div style="margin-top:30px">
             <a class="btn-ambulance">Call for Ambulance</a>
