@@ -14,10 +14,10 @@
 
             <p><span class="glyphicon glyphicon-time"></span>{{$row->created_at}}</p>
             <hr>
-            <img class="img-responsive" src="{{url('/')}}/public/frontend/images/news/{{$row->photo}}" alt="">
+            <img style="width: 100%; height: 340px;" class="img-responsive img" src="{{$row->pic_path}}" alt="">
             <hr>
-            <p>{{$row->description}}</p>
-            <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+            <p align="justify">{!!$row->description!!}</p>
+            <a class="btn btn-primary" href="#">বিস্তারিত  <span class="glyphicon glyphicon-chevron-right"></span></a>
 
             <hr>
 
@@ -26,10 +26,10 @@
             <!-- Pager -->
             <ul class="pager">
                 <li class="previous">
-                    <a href="#">← Older</a>
+                    <a href="#">← পুরাতন </a>
                 </li>
                 <li class="next">
-                    <a href="#">Newer →</a>
+                    <a href="#">নতুন  →</a>
                 </li>
             </ul>
         </div>
@@ -39,9 +39,9 @@
 
             <!-- Blog Search Well -->
             <div class="well">
-                <h4>Blog Search</h4>
+                <h4>আপনার ব্লগ খুজুন </h4>
                 <div class="input-group">
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" style="    height: 40px;">
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button">
                             <span class="glyphicon glyphicon-search"></span>
@@ -53,7 +53,7 @@
 
             <!-- Blog Categories Well -->
             <div class="well">
-                <h4>Blog Categories</h4>
+                <h4> সাম্প্রতিক পোস্ট </h4>
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="list-unstyled">
@@ -70,15 +70,7 @@
 
     </div>
     <hr>
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright © Your Website 2014</p>
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
-    </footer>
+ 
 
 </div>
 

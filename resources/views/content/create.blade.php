@@ -52,6 +52,7 @@
                                 <option value="more_blood">More About Blood</option>
                                 <option value="about_us">About Us</option>
                                 <option value="post">Post </option>
+                                <option value="blog">Blog </option>
                                 <option value="page">Page </option>
                                 <option value="what_people_say">What People Say </option>
                             </select>

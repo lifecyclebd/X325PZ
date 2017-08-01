@@ -50,6 +50,8 @@
                                 <option value="more_blood" <?php if ($data->content_type == "more_blood") echo 'selected="selected"'; ?>  > More About Blood </option>
                                 <option value="about_us" <?php if ($data->content_type == "about_us") echo 'selected="selected"'; ?>  > About Us </option>
                                 <option value="what_people_say" <?php if ($data->content_type == "what_people_say") echo 'selected="selected"'; ?>  > What People Say </option>
+                                
+                                <option value="blog">Blog </option>
                             </select>
 
                         </div>

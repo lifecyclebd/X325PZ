@@ -43,12 +43,16 @@
 
                         <div class="col-md-10">
                             <select class="form-control" name="content_type"> 
-                                 <option value="news">News </option>
+                                <option value="">Select Content Type </option>
+                                <option value="news">News </option>
                                 <option value="upcoming_events">Upcoming Events</option>
                                 <option value="recent_events">Recent Events</option>
                                 <option value="more_blood">More About Blood</option>
+                                <option value="about_us">About Us</option>
                                 <option value="post">Post </option>
+                                <option value="blog">Blog </option>
                                 <option value="page">Page </option>
+                                <option value="what_people_say">What People Say </option>
                             </select>
 
                         </div>
