@@ -141,7 +141,24 @@
         padding:20px; 
 
     }
-
+.signup_button {
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    background: #8f0002 !important;
+    margin-top: 15px; 
+    height: 50px;
+}
+.signup_button:hover {
+        color: #fff !important;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    background: #8f0002 !important;
+    margin-top: 15px; 
+    height: 50px;
+}
 </style>
 
 
@@ -176,11 +193,7 @@
         <?php $__currentLoopData = $data['slider']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
         <div class="item <?php if ($i == 0) { echo 'active'; } ?>"> 
- 
- 
-
-        <div class="item <?php if ($i == 0) { echo 'active'; } ?>"> 
- 
+   
             <!-- Set the first background image using inline CSS below. -->
 
             <div class="fill" style="background-image:url('<?php echo e($row->pic_path); ?>'); background-size: 100% 100%"></div>
@@ -223,18 +236,15 @@
 
 
     <div class="row" style="min-height: 100px; background-color:red; padding: 10px; margin: 0 auto;"> 
+        <div class="col-md-8 hidden-xs" style="margin-top: 8px"> 
 
-        <div class="col-md-8 hidden-xs"> 
+             <form class="form-horizontak" method="get" action="<?php echo e(url('/')); ?>/search-doctor" style="margin: 10px;">
 
-        <div class="col-md-8" style="margin-top: 8px"> 
-
-            <!--<form class="form-horizontak" method="get" action="" style="margin: 10px;">
-
-                <?php echo csrf_field(); ?>-->
+                <?php echo csrf_field(); ?> 
 
                 <div class="input-group">
 
-                    <span class="input-group-addon" style="padding: 0px 0px; font-size: 25px;"><i class="fa fa-map-marker map_marker"></i></span>
+                    <span class="input-group-addon" style="padding: 0px 0px; font-size: 25px; width: 60px;"><i class="fa fa-map-marker map_marker"></i></span>
 
 
 
@@ -252,7 +262,7 @@
 
                 </div>
 
-            <!--</form>-->
+             </form> 
 
         </div>
 
