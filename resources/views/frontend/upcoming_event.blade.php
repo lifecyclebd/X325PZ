@@ -24,7 +24,7 @@
         <br>
     </div>
     <div class="col-md-3">
-        <span class="more_news_title">Upcoming Events</span>
+        <span class="more_news_title">সাম্প্রতিক ঘটনাবলী </span>
         <hr  class="more_news">
         @foreach($data['upcoming'] as $row)
         <div class="col-md-12 border-bottom">
