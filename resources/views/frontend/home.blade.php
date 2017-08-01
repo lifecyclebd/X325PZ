@@ -314,6 +314,7 @@
  
 
     </div> 
+    </div>
 
     <div class="container-fluid" style="padding: 20px; background-color: #4d4f54;  ">
 
