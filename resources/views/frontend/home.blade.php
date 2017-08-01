@@ -545,7 +545,7 @@
 
             <div class=" ">
 
-                <h2 class="life_title" style="margin-bottom: 20px;">Upcoming Events</h2>
+                <h2 class="life_title" style="margin-bottom: 20px;">সাম্প্রতিক ঘটনাবলী </h2>
 
                 <div id="myCarousel" class="carousel fdi-Carousel slide">
 
@@ -555,7 +555,7 @@
 
                         <div class="carousel-inner onebyone-carosel">
 
-                            <?php $i=0;?>
+                            <?php $i=0;?>   
 
                             @foreach($data['upcoming_event'] as $row)
 
@@ -673,20 +673,21 @@
 
                                 <div class="col-md-4" style="">
 
-                                    <div class="what_people_say" style="height: 400px;padding: 25px"> 
+                                    <div class="what_people_say" style="height: 450px;padding: 25px"> 
 
                                         <span style="padding-left: 10px;">
 
                                             <div class="text-left">
 
                                             <div class="row" style="margin-top: -40px">
+                                            <div class="col-md-8">
+                                                <h4>Name </h4><p>Designation</p></h4>
 
-                                                <h4>{{ $row->name}}</h4><small>{{ $row->designation}}</small>
-
-                                                <b>{{$row->institution}}</b>
-
-                                                <img class="img img-responsive img-circle pull-right " src="{{$row->pic_path}}" alt="testimonial" style="width:130px;height:110px;margin-top: -50px">
-
+                                                <p>{{$row->title}}</p>
+</div>
+<div class="col-md-4">
+                                                <img class="img img-responsive img-circle pull-right " src="{{$row->pic_path}}" alt="testimonial" style="width:100%; height: auto;margin-top:0px">
+</div>
                                             </div>
 
                                                 
@@ -695,9 +696,10 @@
 
                                                 <div class="row">
 
-                                                    <p style="text-align: justify; min-height: 220px;   background: white !important;color: black;padding: 10px;border-radius: 8px;">
+                                                    <div style="text-align: justify; min-height: 220px;   background: white !important;color: black;padding: 10px;border-radius: 8px;">
 
-                                                    {{ $row->message}}</p>
+                                                    {!! $row->description !!}
+                                                    </div>
 
                                                 </div>
 
