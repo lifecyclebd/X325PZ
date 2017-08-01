@@ -28,12 +28,26 @@ class DoctorController extends Controller {
     }
 
 public function ViewDoctor(Request $request){
-        $specialist=$request->specialist;
+        $speacilist=$request->speacilist;
         $div=$request->division;
         $dis=$request->district;
         $upz=$request->upazila;
-        $data['doctor_list'] = Doctor:: where([['division', $div], ['district', $dis], ['upazila', $upz], ['speacilist', $specialist]])->get();
-        
+
+
+        if(empty($speacilist)){
+            $data['doctor_list'] = Doctor:: where([['division', $div], ['district', $dis], ['upazila', $upz]])->get();
+        }     
+        if(empty($specialist) && empty($div)){
+            $data['doctor_list'] = Doctor::all();
+        }    
+
+        if(!empty($speacilist) && !empty($div)){
+            $data['doctor_list'] = Doctor:: where([['specialist', $specialist],['division', $div], ['district', $dis], ['upazila', $upz]]  )->get();
+        }
+        else{
+              $data['doctor_list'] = Doctor::all();
+        }
+        //dd( $data['doctor_list']);
         return view('frontend.view_doctor')->with('data', $data);
 }
 

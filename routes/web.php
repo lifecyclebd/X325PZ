@@ -20,7 +20,7 @@ Route::get('/Blogs', 'BlogController@view');
 Route::any('/donor-logout','DonorController@logout');
 
 
-Route::get('/search-doctor', 'DoctorController@FindDoctor');
+Route::any('/search-doctor', 'DoctorController@FindDoctor');
 Route::any('/view-doctor', 'DoctorController@ViewDoctor');
 Route::get('/search-blood-donor', 'HomeController@SearchBloodDonor');
 Route::post('/view/search-blood-donor','HomeController@ShowBloodDonor');

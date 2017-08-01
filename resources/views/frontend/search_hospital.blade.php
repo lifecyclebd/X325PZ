@@ -60,7 +60,7 @@
                     <tbody>
                         @foreach($data['hospital_list'] as $row)
                         <tr>
-                            <td><img class="img-responsive" src="{{url('/')}}/public/images/hospitals/{{$row->photo}}" alt="" style="width: 200px;height: 120px"></td>  
+                            <td><img class="img-responsive" src="{{$row->pick_path}}" alt="" style="width: 200px;height: 120px"></td>  
                             <td>
                                 <span style="float: left; margin-right: 10px;">
 

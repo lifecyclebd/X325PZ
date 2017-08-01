@@ -10,21 +10,18 @@
 </style>
 <div class="find_hospital">
     <div class="container">  
-        <h2 class="find_hospital_title">Find Doctor</h2>
-        <p style="margin-top: 120px"></p>
-        <header class="jumbotron hero-spacer" style="background-color: #ddd;">
-            <h1>ডাক্তার: ০১৭০৯৮৪৮৪৮২।</h1>
+        <p style="margin-top: 60px"></p>
+        <header class="jumbotron hero-spacer" style="    background-color: rgba(255, 0, 0, 0.43); border-radius: 10px;">
+        <h2 class="find_hospital_title" >বিশেষজ্ঞ ডাক্তারের পরামর্শ পেতে আপনার নিকটবর্তী ডাক্তার খুজুন
+</h2>
+            <h3 class="find_hospital_title">ডাক্তারের সাথে সরাসরি কথা বলতে  ০১৭০৯৮৪৮৪৮২ কল করুন </h1>
             <p> </p>
-            <p></p>
-            <div style="margin-top:30px">
-            <a class="btn-ambulance">Call for Ambulance</a>
-            </div>
-        </header>
-        <form class="form-horizontal" method="post" action="{{url('/view-doctor')}}">
+            <p></p> 
+                    <form class="form-horizontal" method="post" action="{{url('/view-doctor')}}">
             {!! csrf_field() !!} 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
-                    <select name="specialist" class="form-control find_search_button divisions" required>
+                    <select name="speacilist" class="form-control find_search_button divisions" >
                         <option value="">Select Specialist</option>
                         @foreach($data['doctor_specialities'] as $row)
                             <option value="{{$row->id}}">{{$row->name}}</option>
@@ -32,7 +29,7 @@
                     </select>
                 </span>
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
-                    <select name="division" class="form-control find_search_button divisions" required>
+                    <select name="division" class="form-control find_search_button divisions" >
                         <option value="">Select Division</option>
                         @foreach($data['division'] as $row)
                             <option value="{{$row->id}}">{{$row->division_name}}</option>
@@ -51,12 +48,13 @@
                 </span>
                 
                 <span class="input-group-addon" id="basic-addon1"> 
-                    <button class="col-xs-12 btn btn-lg" style="background-color: red">
-                        <i class="fa fa-search"> Search</i>
-                    </button>
+                    <input type="submit"  class="col-xs-12 btn btn-lg" style="background-color: red; color: white">
+                         
                 </span>
             </div>
         </form>
+        </header>
+
     </div>
 </div> 
 

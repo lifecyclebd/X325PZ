@@ -5,14 +5,14 @@
 @section('content')
  
  <div class="More_about_info" style="margin-top: -30px">
-    <div class="container-fluid" style="background-color: gray;height: 1050px"> 
+    <div class="container-fluid" style="background-color: gray;height: auto;"> 
         <h3 class="life_title " style="margin-bottom:50px;color: white">More about blood</h3> 
 
         @foreach($data['all_blood_info'] as $row) 
         <div class="col-md-3 col-sm-6 col-xs-12" style="border-radius: 8px">
-            <div class="info_abou_blood " style="min-height:350px">                 
+            <div class="info_abou_blood " style="min-height:350px;color: black">                 
                 <p class="title">{{$row->title}}</p>
-                <p class="text-justify" style="padding:10px">{!!substr($row->description,0,600)!!}</p>
+                <p class="text-justify" style="padding:10px">{!!substr($row->description,0,500)!!}</p>
             </div>
             <div class="text-center more_blood_bottom">
                 <a href="{{url('/read-more')}}/detail/{{$row->id}}"><button class="btn_read_more">

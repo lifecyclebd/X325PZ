@@ -155,7 +155,7 @@ margin-top: 50px;
 }
 .find_hospital{
     background: url(../images/backround.jpg) center center no-repeat;
-    min-height: 500px; 
+ height: auto; 
     opacity: .8;
     filter: alpha(opacity=80);
     background-size: cover;

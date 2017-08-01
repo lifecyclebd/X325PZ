@@ -109,10 +109,11 @@
               <li><a href="#changepassword" data-toggle="tab">Change Password</a></li> 
               <li><a class="<?php if(isset($_GET['inbox'])){ echo 'active';} ?>" href="#inbox" data-toggle="tab">Inbox  <span class="badge badge-danger">5</span></a></li>
               <li><a href="#blood_request" data-toggle="tab">Blood Request  <span class="badge badge-danger">15</span></a></li> 
+              <li><a href="#to_be_proud" data-toggle="tab">To be Proud</a></li> 
             </ul>
             <div class="tab-content">
                 <div class="tab-pane  <?php if(!isset($_GET['inbox'])){ echo 'active';} ?> " id="activities">
-                <h3 class="life_title">Personal Activities</h3>
+                  <h3 class="life_title">Personal Activities</h3>
                   <table class="table table-bordered">
                       <tr><td>SL</td><td>Purpose</td><td>Short Message</td><td>Published</td> <td>Status</td></tr>
                       <?php  $i=1;  ?>
@@ -138,18 +139,18 @@
 
             
               <div class="tab-pane" id="newsfeed">
-              <h3 class="life_title">News Feed</h3>
-              <table class="table table-bordered" class="example1">
-                <tr><th>SL</th><th>Published</th><th>Message</th><td>Operation</td></tr>
-                <tr>
-                <th>1</th>
-                <th><span class="bg-red" style="color:red"> 10 Feb. 2014 <i class="fa fa-clock-o"></i> 12:05 </span></th>
-                <th><a href="#">Support Team</a> sent you an email</th><td><a href="#">Unread</a></td>
-                </tr>
+                <h3 class="life_title">News Feed</h3>
+                <table class="table table-bordered" class="example1">
+                  <tr><th>SL</th><th>Published</th><th>Message</th><td>Operation</td></tr>
+                  <tr>
+                  <th>1</th>
+                  <th><span class="bg-red" style="color:red"> 10 Feb. 2014 <i class="fa fa-clock-o"></i> 12:05 </span></th>
+                  <th><a href="#">Support Team</a> sent you an email</th><td><a href="#">Unread</a></td>
+                  </tr>
 
 
-              </table>
-                <!-- The timeline -->
+                </table>
+                  <!-- The timeline -->
                 
               </div>
               <!-- /.tab-pane -->
@@ -157,30 +158,35 @@
               <div class="tab-pane" id="changepassword">
               <h3 class="life_title">Change Password</h3>
                 
-                    <form class="form-horizontal login" action="<?php echo e(url('/donor/store')); ?>" method="post" enctype= "multipart/form-data"> 
-                            <?php echo csrf_field(); ?>
+                  <form class="form-horizontal login" action="<?php echo e(url('/donor/store')); ?>" method="post" enctype= "multipart/form-data"> 
+                          <?php echo csrf_field(); ?>
 
 
-                            <div class="form-group">
-                                <label for="name" class="col-md-4 control-label">Previous Password</label>
-                                <div class="col-md-8">
-                                    <input id="name" type="password" class="form-control" name="fname" placeholder="Previous Password"  autofocus>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="col-md-4 control-label">New Password</label>
-                                <div class="col-md-8">
-                                    <input id="name" type="password" class="form-control" name="lname" placeholder="New Password"  autofocus>
-                                </div>
-                            </div>
+                          <div class="form-group">
+                              <label for="name" class="col-md-4 control-label">Previous Password</label>
+                              <div class="col-md-8">
+                                  <input id="name" type="password" class="form-control" name="fname" placeholder="Previous Password"  autofocus>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="name" class="col-md-4 control-label">New Password</label>
+                              <div class="col-md-8">
+                                  <input id="name" type="password" class="form-control" name="lname" placeholder="New Password"  autofocus>
+                              </div>
+                          </div>
 
-                            <div class="form-group">
-                                <label for="name" class="col-md-4 control-label">Confirm Password</label>
-                                <div class="col-md-8">
-                                    <input id="name" type="password" class="form-control"  name="email"  autofocus placeholder="Confirm Password">
-                                </div>
-                            </div>
-                            </form>
+                          <div class="form-group">
+                              <label for="name" class="col-md-4 control-label">Confirm Password</label>
+                              <div class="col-md-8">
+                                  <input id="name" type="password" class="form-control"  name="email"  autofocus placeholder="Confirm Password">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                               
+                                  <input id="name" type="submit" class=" pull-right col-md-4 btn btn-primary"  name="changepassword" value="Change Password">
+                             
+                          </div>
+                    </form>
                 
               </div>
               <!-- /.tab-pane -->
@@ -188,87 +194,7 @@
               
 
               <div class="tab-pane" id="settings"> 
-
-              <style type="text/css">
-   
-
-    #map {
-        height: 100%;
-    } 
-
-    #description {
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-    }
-
-    #infowindow-content .title {
-        font-weight: bold;
-    }
-
-    #infowindow-content {
-        display: none;
-    }
-
-    #map #infowindow-content {
-        display: inline;
-    }
-
-
-
-    #pac-container {
-        padding-bottom: 12px;
-        margin-right: 12px;
-    }
-
-    .pac-controls {
-        display: inline-block;
-        padding: 5px 11px;
-    }
-
-    .pac-controls label {
-        font-family: Roboto;
-        font-size: 13px;
-        font-weight: 300;
-    }
-
-
-
-
-    #title {
-        color: #fff;
-        background-color: #4d90fe;
-        font-size: 25px;
-        font-weight: 500;
-        padding: 6px 12px;
-    }
-    #target {
-        width: 345px;
-    }
-    #pac-input:focus{
-        background:none;
-        color: white;
-    }
-    form.login{ 
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px;
-    padding-top: 50px; 
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    }
-
-    
-
-    input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus {
-    background: none;
-    outline: none; 
-}
-</style>
-<div>
-
-                <!-- Default box -->
+                <link rel="stylesheet" href="<?php echo e(asset('public/css/donorlocation.css')); ?>">                 
                 <div class="box box-info">
                     <div class="box-header with-border">
                         <h2 class="box-title text-center">Update your Profile </h2>
@@ -283,20 +209,20 @@
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">First Name</label>
                                 <div class="col-md-8">
-                                    <input id="name" type="text" class="form-control" value="<?php echo e($data['donor']->fname); ?>" name="fname" placeholder="First Name"  autofocus>
+                                    <input id="name" type="text" class="form-control" value="<?php echo e($data['donor']->fname); ?>" name="fname" placeholder="First Name">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Last Name</label>
                                 <div class="col-md-8">
-                                    <input id="name" type="text" class="form-control" value="<?php echo e($data['donor']->lname); ?>" name="lname" placeholder="Last Name"  autofocus>
+                                    <input id="name" type="text" class="form-control" value="<?php echo e($data['donor']->lname); ?>" name="lname" placeholder="Last Name"  >
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Email</label>
                                 <div class="col-md-8">
-                                    <input id="name" type="email" class="form-control" value="<?php echo e($data['donor']->email); ?>" name="email"  autofocus>
+                                    <input id="name" type="email" class="form-control" value="<?php echo e($data['donor']->email); ?>" name="email"  >
                                 </div>
                             </div>
 
@@ -306,8 +232,9 @@
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Gender</label>
                                 <div class="col-md-8">
-                                    <input id="name" type="radio" name="gender" value="male" >Male &nbsp;&nbsp;&nbsp;
-                                    <input id="name" type="radio" name="gender" value="female" >Female
+                                    <?php $gndr=$data['donor']->gender?>
+                                    <input id="name" type="radio" name="gender" value="Male" >Male &nbsp;&nbsp;&nbsp;
+                                    <input id="name" type="radio" name="gender" value="Female" >Female
                                     <input type="hidden" value="87890" name="donner_id">
                                 </div>
                             </div>
@@ -315,18 +242,18 @@
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Date of Birth</label>
                                 <div class="col-md-4">
-                                    <input id="name" type="date" class="form-control" value="<?php echo e($data['donor']->birth_date); ?>" name="birth_date"  autofocus>
+                                    <input id="name" type="date" class="form-control" value="<?php echo e($data['donor']->birth_date); ?>" name="birth_date"  >
                                 </div> 
                                 <label for="name" class="col-md-2 control-label">Last Donate</label>
                                 <div class="col-md-2">
-                                    <input id="name" type="date" value="<?php echo e($data['donor']->last_donation); ?>" class="form-control" name="last_donation"  autofocus>
+                                    <input id="name" type="date" value="<?php echo e($data['donor']->last_donation); ?>" class="form-control" name="last_donation"  >
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Phone</label>
                                 <div class="col-md-8">
-                                    <input id="name" type="number" value="<?php echo e($data['donor']->phone); ?>" class="form-control" name="phone"  autofocus>
+                                    <input id="name" type="number" value="<?php echo e($data['donor']->phone); ?>" class="form-control" name="phone"  >
                                 </div>
                             </div>
 
@@ -366,7 +293,7 @@
                                 <label for="password" class="col-md-4 control-label">Address</label>
 
                                 <div class="col-md-8" style="height: 150px;">
-                                    <input name="address" id="pac-input" class=" form-control" type="text" placeholder="Search Box" style="background: rgb(79, 0, 0);">
+                                    <input name="address" id="pac-input" value="<?php echo e($data['donor']->address); ?>" class=" form-control" type="text" placeholder="Search Box" style="background: rgb(79, 0, 0);">
                                     <div id="map" style="overflow: hidden;"></div>
                                 </div>
                             </div>
@@ -376,6 +303,7 @@
 
                                 <div class="col-md-2">
                                     <select name="blood_group" class="form-control">
+                                        <option value="<?php echo e($data['donor']->blood_group); ?>"><?php echo e($data['donor']->blood_group); ?></option>
                                         <option value="A+">A+</option>
                                         <option value="AB+">AB+</option>
                                         <option value="B+">B+</option>
@@ -395,36 +323,25 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="email"  value="<?php echo e($data['donor']->fb_url); ?>"   class="col-md-4 control-label">FB Url</label>
+                                <label for="email"    class="col-md-4 control-label">FB Url</label>
 
                                 <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="fb_url" />
+                                    <input type="text" class="form-control" value="<?php echo e($data['donor']->fb_url); ?>"  name="fb_url" />
                                 </div> 
                                 <label for="email" class="col-md-2 control-label">Web url</label>
 
                                 <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="web_url" />
+                                    <input type="text" class="form-control" value="<?php echo e($data['donor']->web_url); ?>  name="web_url" />
 
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">Called Date</label>
-
-                                <div class="col-md-2">
-                                    <input type="date" class="form-control"  name="called_date" />
-                                </div> 
-                                <label for="email" class="col-md-2 control-label">Called Today</label>
-
-                                <div class="col-md-2">
-                                    <input type="date" class="form-control"  name="called_today" />
-
-                                </div>
-                            </div>
+                            
                             <div class="form-group">
                                 <label for="email" class="col-md-4 control-label">Religion</label>
 
                                 <div class="col-md-2">
                                     <select name="religion" class="form-control">
+                                        <option value="<?php echo e($data['donor']->religion); ?>"><?php echo e($data['donor']->religion); ?></option>
                                         <option value="Muslim">Muslim</option>
                                         <option value="Hindu">Hindu</option>
                                         <option value="Christian">Christian</option>
@@ -435,6 +352,7 @@
 
                                 <div class="col-md-2">
                                     <select name="is_physically_disble" class="form-control">
+                                        <option value="<?php echo e($data['donor']->is_physically_disble); ?>"><?php echo e($data['donor']->is_physically_disble); ?></option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
                                     </select>
@@ -445,12 +363,12 @@
                                 <label for="email" class="col-md-4 control-label">Nationality</label>
 
                                 <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="nationality" />
+                                    <input type="text" class="form-control" value="<?php echo e($data['donor']->nationality); ?>"  name="nationality" />
                                 </div> 
-                                <label for="email" class="col-md-2 control-label">NID</label>
+                                <label for="email" class="col-md-2 control-label" >NID</label>
 
                                 <div class="col-md-2">
-                                    <input type="number" class="form-control"  name="nid" />
+                                    <input type="number" class="form-control" value="<?php echo e($data['donor']->nid); ?>"  name="nid" />
 
                                 </div>
                             </div>
@@ -458,44 +376,21 @@
                                 <label for="email" class="col-md-4 control-label">Age</label>
 
                                 <div class="col-md-2">
-                                    <input type="number" class="form-control"  name="age" />
+                                    <input type="number" class="form-control" value="<?php echo e($data['donor']->age); ?>"  name="age" />
                                 </div> 
                                 <label for="email" class="col-md-2 control-label">Profile Visible</label>
 
                                 <div class="col-md-2">
                                     <select name="pro_visible" class="form-control">
+                                        <option value="<?php if($data['donor']->is_physically_disble =0) echo 'No'; else echo 'Yes'?>"><?php echo e($data['donor']->is_physically_disble); ?></option>
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
 
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">Latitude</label>
-
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="latitude" />
-                                </div> 
-                                <label for="email" class="col-md-2 control-label">Longitude</label>
-
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="longitude" />
-
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">Last Latitude</label>
-
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="lastLat" />
-                                </div> 
-                                <label for="email" class="col-md-2 control-label">Last Longitude</label>
-
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control"  name="lastLng" />
-
-                                </div>
-                            </div>
+                            
+                            
 
                             <div class="form-group">
                                 <label for="email" class="col-md-4 control-label">Rank</label>
@@ -529,9 +424,124 @@
                     </div> 
                 </div>
                 <!-- /.box --> 
+            </div>
 
+
+              <div class="tab-pane" id="to_be_proud">
+              <h2 class="life_title">Add your feelings</h2>
+                <div class="row" style="background: #eee">
+                    <form class="form-horizontal" action="<?php echo e(url('/donor/tobeproud/store')); ?>" method="post" style="margin: 10px" enctype="multipart/form-data">
+                    <div class="form-group">
+                      <label class="control-label col-md-2">Donate Date</label>
+                      <div class="col-md-4"><input type="date" name="donate_date" class="form-control"></div>
+                      <label class="control-label col-md-2">Donate Place</label>
+                      <div class="col-md-4"><input type="text" name="donate_place" class="form-control"></div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-md-2">Reason of Proud</label>
+                      <div class="col-md-10"><input type="text" name="reason_of_proud" class="form-control"></div> 
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-md-2">Blood Fighter Image</label>
+                      <div class="col-md-10"><input type="file" name="pic_path" class="form-control"></div> 
+                    </div>
+                    <div class="pull-right"><input type="submit" name="Save" value="Save" class="btn btn-primary"></div>
+                    </form>
+
+                </div>
+                    <div class="row">
+              <h2 class="life_title">Gallery</h2>
+                        <?php $__currentLoopData = $data['tobeproud_gallery']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="col-md-3">
+                                  <div class="proud" style="background: #eee; padding: 10px; margin:5px;">
+                                    <img src="<?php echo e($row->pic_path); ?>" style="width: 100%; height: auto; " class="img img-responsive img-thumbnail">
+                                    <p style="text-align: center;background: #00BCD4; padding: 5px; color: white; border-radius: 5px">
+                                    <?php 
+                                    $new_date=strtotime($row->donate_date); 
+                                    echo date('d \o\f F Y', $new_date);
+                                    ?>, <?php echo e($row->donate_place); ?></p> 
+                                    <p style="color: #00BCD4; text-align: center;"><?php echo e($row->reason_of_proud); ?></p>
+                                </div>
+                              </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        
+                     </div>
+                    
+
+                  </div> 
+ 
+
+
+
+              <div class="tab-pane <?php if(isset($_GET['inbox'])){ echo 'active';} ?>" id="inbox"  >
+                <h3 class="life_title">Mail Box</h3>
+                    <table class="table table-bordered">
+                      <tr><td>SL</td><td>Donate Date</td><td>Blood Group</td><td>Place</td><td>Status</td></tr>
+                      <?php $__currentLoopData = $data['messages']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                      <tr><td>1</td><td>1st Jan 2016</td><td>A+</td><td><i class="fa fa-map-marker margin-r-5"></i> Malibag, Dhaka</td><td>Approved</td></tr>
+
+
+                      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                  </table>
+              </div>
+
+
+
+              <div class="tab-pane" id="blood_request">
+                <h3 class="life_title">Blood Request</h3>
+                    <table class="table table-bordered">
+                      <tr><td>SL</td><td>Donate Date</td><td>Blood Group</td><td>Place</td><td>Status</td></tr>
+                      <tr><td>1</td><td>1st Jan 2016</td><td>A+</td><td><i class="fa fa-map-marker margin-r-5"></i> Malibag, Dhaka</td><td>Approved</td></tr>
+                      <tr><td>2</td><td>23 April 2017</td><td>AB+</td><td><i class="fa fa-map-marker margin-r-5"></i> DMC, Dhaka-1212</td><td>Approved</td></tr>
+                      <tr><td>3</td><td>1 June 2017</td><td>AB-</td><td><i class="fa fa-map-marker margin-r-5"></i> Ramna, Dhaka, Bangladesh</td><td style="color: orange">Pending</td></tr>
+                  </table>
+              </div>
+
+
+          
+
+
+
+
+
+
+
+              <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+          </div>
+          <!-- /.nav-tabs-custom -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+    <div>
+ 
+
+</section>
+    <!-- /.content -->
+  </div>
+ 
 </div>
 
+
+    </div>
+
+
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('script_link'); ?>
+
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZaGo1-bLGV49YimZizEHF4Ny_4gxGG3E&libraries=places&callback=initAutocomplete"
+        async defer></script> 
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('javascript_code'); ?>
         <script>
             function initAutocomplete() {
                 var map = new google.maps.Map(document.getElementById('map'), {
@@ -602,68 +612,6 @@
             }
 
         </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZaGo1-bLGV49YimZizEHF4Ny_4gxGG3E&libraries=places&callback=initAutocomplete"
-        async defer></script>   
-              </div>
- 
-
-
-
-              <div class="tab-pane <?php if(isset($_GET['inbox'])){ echo 'active';} ?>" id="inbox"  >
-                <h3 class="life_title">Mail Box</h3>
-                    <table class="table table-bordered">
-                      <tr><td>SL</td><td>Donate Date</td><td>Blood Group</td><td>Place</td><td>Status</td></tr>
-                      <?php $__currentLoopData = $data['messages']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-
-                      <tr><td>1</td><td>1st Jan 2016</td><td>A+</td><td><i class="fa fa-map-marker margin-r-5"></i> Malibag, Dhaka</td><td>Approved</td></tr>
-
-
-                      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                  </table>
-              </div>
-
-
-
-              <div class="tab-pane" id="blood_request">
-                <h3 class="life_title">Blood Request</h3>
-                    <table class="table table-bordered">
-                      <tr><td>SL</td><td>Donate Date</td><td>Blood Group</td><td>Place</td><td>Status</td></tr>
-                      <tr><td>1</td><td>1st Jan 2016</td><td>A+</td><td><i class="fa fa-map-marker margin-r-5"></i> Malibag, Dhaka</td><td>Approved</td></tr>
-                      <tr><td>2</td><td>23 April 2017</td><td>AB+</td><td><i class="fa fa-map-marker margin-r-5"></i> DMC, Dhaka-1212</td><td>Approved</td></tr>
-                      <tr><td>3</td><td>1 June 2017</td><td>AB-</td><td><i class="fa fa-map-marker margin-r-5"></i> Ramna, Dhaka, Bangladesh</td><td style="color: orange">Pending</td></tr>
-                  </table>
-              </div>
-
-
-          
-
-
-
-
-
-
-
-              <!-- /.tab-pane -->
-            </div>
-            <!-- /.tab-content -->
-          </div>
-          <!-- /.nav-tabs-custom -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-
-    <div>
- 
-
-</section>
-    <!-- /.content -->
-  </div>
- 
-</div>
-
-
-    </div>
 
 
 <?php $__env->stopSection(); ?>
