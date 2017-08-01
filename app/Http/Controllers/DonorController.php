@@ -118,8 +118,8 @@ public function signup(Request $request) {
         $Donor = new Donor;
         $common = new Common;
 
-$Donor->signup_steps = 3;
-$Donor->is_physically_disable = 'na';
+$Donor->singup_steps = 3;
+$Donor->is_physically_disble = 'na';
 $Donor->religion = 'na'; 
 $Donor->nid = 'na';
 
@@ -294,7 +294,7 @@ if(empty($request->blood_group)){ return redirect('/donor-register?b=Blood Group
             $request->session()->put('session_url','/donor-profile');
             return redirect('/donor-login');
          }
-        $data['tobeproud_gallery']=Tobeproud::where('sender_email',$login_donor_email)->orderByDesc('created_at')->take(8)->get();
+      //  $data['tobeproud_gallery']=Tobeproud::where('sender_email',$login_donor_email)->orderByDesc('created_at')->take(8)->get();
         $data['messages'] = Message::where([['receiver_email', $login_donor_email], ['receiver_type', 'donor']])->get(); 
         $data['last5message'] = Message::where([['receiver_email', $login_donor_email], ['receiver_type', 'donor'],['is_read',0]])->orderByDesc('created_at')->take(5)->get(); 
         $data['last5messageCount']=$data['last5message']->count();

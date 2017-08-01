@@ -448,23 +448,7 @@
                     </form>
 
                 </div>
-                    <div class="row">
-              <h2 class="life_title">Gallery</h2>
-                        @foreach($data['tobeproud_gallery'] as $row )
-                            <div class="col-md-3">
-                                  <div class="proud" style="background: #eee; padding: 10px; margin:5px;">
-                                    <img src="{{$row->pic_path}}" style="width: 100%; height: auto; " class="img img-responsive img-thumbnail">
-                                    <p style="text-align: center;background: #00BCD4; padding: 5px; color: white; border-radius: 5px">
-                                    <?php 
-                                    $new_date=strtotime($row->donate_date); 
-                                    echo date('d \o\f F Y', $new_date);
-                                    ?>, {{$row->donate_place}}</p> 
-                                    <p style="color: #00BCD4; text-align: center;">{{$row->reason_of_proud}}</p>
-                                </div>
-                              </div>
-                        @endforeach
-                        
-                     </div>
+    
                     
 
                   </div> 
