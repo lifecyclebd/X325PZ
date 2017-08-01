@@ -14,8 +14,8 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">Gallery List</h3>
                         <div class="box-tools pull-right">
-                            <a href="{{url('/admin/addGallery')}}" class="">      
-                                <i class="fa fa-plus" aria-hidden="true"></i> View Photo Collections
+                            <a href="{{url('/admin/addPhoto')}}" class="">      
+                                <i class="fa fa-plus" aria-hidden="true"></i> Add Photo
                             </a>
 
                         </div>

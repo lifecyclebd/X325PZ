@@ -170,7 +170,7 @@ class Common {
 
 
     public function get_site_url(){
-        $site_url="http://localhost:81/Lifecycle/";
+        $site_url="http://localhost/lifecycle/";
         return $site_url;
     }
 

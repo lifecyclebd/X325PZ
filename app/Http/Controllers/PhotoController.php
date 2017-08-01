@@ -127,16 +127,25 @@ class PhotoController extends Controller
     }
     
     public function storePhoto(Request $request){
-        $common = new Common;
-        $f=date('Y-m-d').'_'.time(); 
+        $common = new Common; 
         $gallery_details = new Gallery_detail();
 
-        $gallery_details->gallery_id = $request->gallery_id;
-            if ($request->photo_name) {
-                $fileName = $f;
-                $photo_name = $common->uploadImage('photo_name', 'images/gallery', $fileName);
-                $gallery_details->pic_path = $photo_name;
-            }
+        $gallery_details->caption = $request->caption;
+        $gallery_details->sub_caption = $request->sub_caption;
+        $gallery_details->gallery_id = $request->gallery_id; 
+        $gallery_details->save();       
+
+        $last_insert_id = $gallery_details->id;
+        $gallery_details = new Gallery_detail;
+        $gallery_details = Gallery_detail::find($last_insert_id);                   
+            if ($request->pic_path) {
+            $common=new Common;
+            $fileName = 'gallery_'. $last_insert_id;
+            $content_photo = $common->uploadImage('pic_path', 'images/gallery/', $fileName);
+            $gallery_details->pic_path = $common->get_site_url().'public/images/gallery/'.$content_photo;
+           
+        }
+
          
         $gallery_details->updated_by = 2;
         $gallery_details->save();
@@ -168,14 +177,18 @@ class PhotoController extends Controller
         $galleries->sub_caption = $request->sub_caption;
         $galleries->updated_by = 2;
 
-        $f=date('Y-m-d').'_'.time();
-        if ($request->photo_name) {
-                $fileName = $f;
-                $photo_name = $common->uploadImage('photo_name', 'images/gallery', $fileName);
-                $galleries->pic_path = $photo_name;
-            }
 
-        $galleries->save();
+        $last_insert_id = $galleries->id;
+        $gallery_details = new Gallery_detail;
+        $gallery_details = Gallery_detail::find($last_insert_id);                   
+            if ($request->pic_path) {
+            $common=new Common;
+            $fileName = 'gallery_'. $last_insert_id;
+            $content_photo = $common->uploadImage('pic_path', 'images/gallery/', $fileName);
+            $gallery_details->pic_path = $common->get_site_url().'public/images/gallery/'.$content_photo;
+           
+        }
+         $gallery_details->save();
         return redirect('/admin/viewPhoto');
     }
     public function deletePhoto($id){
