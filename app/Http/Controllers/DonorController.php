@@ -118,8 +118,8 @@ public function signup(Request $request) {
         $Donor = new Donor;
         $common = new Common;
 
-$Donor->signup_steps = 3;
-$Donor->is_physically_disable = 'na';
+$Donor->singup_steps = 3;
+//$Donor->is_physically_disable = 'na';
 $Donor->religion = 'na'; 
 $Donor->nid = 'na';
 
@@ -304,8 +304,11 @@ if(empty($request->blood_group)){ return redirect('/donor-register?b=Blood Group
         $data['last5activities']= Activity::where([['created_id', $login_donor_id], ['created_type', 'donor']])->orderByDesc('created_at')->take(5)->get(); 
         $data['last5activitiesCount']=$data['last5activities']->count();
 
-        $data['division'] = Division::all(); 
+        $data['division'] = Division::all();
+
         $data['donor'] = Donor::where('email',$login_donor_email)->first();
+
+      //  dd($login_donor_email);
         //dd($data);
         return view('frontend.donor_profile')->with('data', $data);
     }

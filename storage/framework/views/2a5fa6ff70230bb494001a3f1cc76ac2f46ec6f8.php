@@ -21,7 +21,7 @@
     input[type="text"], textarea{
         background:none;
         color:white !important;
-        font-size: 20px;
+        font-size: 15px;
     }
 
     textarea.form-control {
@@ -48,7 +48,7 @@ p{
 input[placeholder], [placeholder], *[placeholder] {
     color: red !important;
 }
-
+body{color: white}
 </style>
 <div class="" style=" background:url(public/images/pres1.jpg) center center no-repeat; background-size: cover; width: 100%; height: 900px;">
     <div class=" col-md-offset-1 col-md-7">
@@ -97,7 +97,7 @@ input[placeholder], [placeholder], *[placeholder] {
 
          <hr>
 
-<h1> সরাসরি কথা বলতে কল করুন ০১৯১০০০৭৫৩৫৪৫ </h1>
+<h1> সরাসরি কথা বলতে কল করুন ০১৭০৯৮৪৮৪৮২</h1>
 
     </div>
     </div>
