@@ -57,7 +57,7 @@
                     <li><a href="{{url('/admin/viewPhoto')}}"><i class="fa fa-circle-o"></i> View Photo</a></li>
                 </ul>
             </li>
-            <li class="treeview">
+            <!--li class="treeview">
                 <a href="#">
                     <i class="fa fa-rss" aria-hidden="true"></i>
                     <span>Blog</span>
@@ -69,7 +69,7 @@
                     <li><a href="{{url('/blog/category')}}"><i class="fa fa-circle-o"></i> Category</a></li>
                     <li><a href="{{url('/blog/content')}}"><i class="fa fa-circle-o"></i> Content</a></li>
                 </ul>
-            </li>
+            </li -->
 
             <li class="treeview">
                 <a href="#">

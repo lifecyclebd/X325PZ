@@ -1,27 +1,26 @@
-@extends('layouts/front')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="container">
 
     <div class="row">
 
         <!-- Blog Entries Column -->
         <div class="col-md-8">
-            @foreach($data['blood_news'] as $row)
+            <?php $__currentLoopData = $data['blood_news']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <h1 class="page-header">
-                {{$row->title}}
+                <?php echo e($row->title); ?>
+
             </h1>
 
-            <p><span class="glyphicon glyphicon-time"></span>{{$row->created_at}}</p>
+            <p><span class="glyphicon glyphicon-time"></span><?php echo e($row->created_at); ?></p>
             <hr>
-            <img style="width: 100%; height: 340px;" class="img-responsive img" src="{{$row->pic_path}}" alt="">
+            <img style="width: 100%; height: 340px;" class="img-responsive img" src="<?php echo e($row->pic_path); ?>" alt="">
             <hr>
-            <p align="justify">{!!$row->description!!}</p>
+            <p align="justify"><?php echo $row->description; ?></p>
             <a class="btn btn-primary" href="#">বিস্তারিত  <span class="glyphicon glyphicon-chevron-right"></span></a>
 
             <hr>
 
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             
             <!-- Pager -->
             <ul class="pager">
@@ -57,11 +56,11 @@
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="list-unstyled">
-                            @foreach($data['blood_news'] as $row)
+                            <?php $__currentLoopData = $data['blood_news']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <li>
-                                <a href="#">{{$row->title}}</a>
+                                <a href="#"><?php echo e($row->title); ?></a>
                             </li>
-                            @endforeach
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </div>
                 </div>
@@ -75,5 +74,7 @@
 </div>
 
 
-@endsection
+<?php $__env->stopSection(); ?>
 
+
+<?php echo $__env->make('layouts/front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

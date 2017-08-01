@@ -1,7 +1,4 @@
-@extends('layouts.myapp')
-
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
@@ -10,7 +7,7 @@
             <div class="box-header with-border">
                 <h3 class="box-title">Update Content</h3>
                 <div class="box-tools pull-right">
-                    <a href="{{url('/admin/content')}}" class="">      
+                    <a href="<?php echo e(url('/admin/content')); ?>" class="">      
                         <i class="fa fa-undo" aria-hidden="true"></i> back
                     </a>
 
@@ -18,20 +15,22 @@
             </div>
             <div class="box-body">
                 <!-- form start -->
-                <form method="post" action="{{url('/admin/content/update')}}" class="form-horizontal" enctype="multipart/form-data">
-                    {!! csrf_field() !!}
-                    <input type="hidden" name="id" value="{{$data->id}}">
+                <form method="post" action="<?php echo e(url('/admin/content/update')); ?>" class="form-horizontal" enctype="multipart/form-data">
+                    <?php echo csrf_field(); ?>
+
+                    <input type="hidden" name="id" value="<?php echo e($data->id); ?>">
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">Title</label>
                         <div class="col-md-8">
-                            <input id="name" type="text" class="form-control" value="{{$data->title}}" name="title" required autofocus>
+                            <input id="name" type="text" class="form-control" value="<?php echo e($data->title); ?>" name="title" required autofocus>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">Description</label>
                         <div class="col-md-8">
                             <textarea id="ckeditor" name="description"  class="form-control ckeditor"> 
-                            {{$data->description}}
+                            <?php echo e($data->description); ?>
+
                             </textarea>
                         </div>
                     </div>
@@ -80,4 +79,5 @@
 
 </div>
 <!-- /.content-wrapper -->
-@endsection 
+<?php $__env->stopSection(); ?> 
+<?php echo $__env->make('layouts.myapp', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

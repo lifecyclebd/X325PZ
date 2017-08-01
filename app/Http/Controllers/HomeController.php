@@ -281,7 +281,7 @@ class HomeController extends Controller {
     public function blog_page() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        $data['blood_news'] = Blog:: where('blog_category', 2)->orderByDesc('id')->get();
+        $data['blood_news'] = Content:: where('content_type', 'blog')->orderByDesc('created_at')->get();
         return view('frontend.view_blog')->with('data', $data);
     }
 
