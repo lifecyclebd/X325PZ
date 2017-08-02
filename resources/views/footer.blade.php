@@ -10,8 +10,8 @@
 </div>
 <!-- ./wrapper --> 
 <!-- jQuery 2.2.3 -->
-<script src="{{ asset('public/AdminLTE/plugins/ckeditor/ckeditor.js')}}"></script>
-<script src="{{ asset('public/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
+
+
 <!-- Bootstrap 3.3.6 -->
 <script src="{{ asset('public/AdminLTE/bootstrap/js/bootstrap.min.js')}}"></script>
  
@@ -32,7 +32,6 @@
  
 <!-- AdminLTE for demo purposes -->
  <script src="{{ asset('public/AdminLTE/dist/js/demo.js')}}"></script>   
- <script src="{{ asset('/')}}/public/jquery.js}}"></script>
   
               
 	

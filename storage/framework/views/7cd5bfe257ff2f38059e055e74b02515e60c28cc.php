@@ -20,6 +20,11 @@
         <link rel="stylesheet" href="<?php echo e(asset('public/AdminLTE/dist/css/AdminLTE.min.css')); ?>">
         <link rel="stylesheet" href="<?php echo e(asset('public/AdminLTE/dist/css/skins/_all-skins.min.css')); ?>"> 
         <link rel="stylesheet" href="<?php echo e(asset('public/AdminLTE/dist/css/mystyle.css')); ?>"> 
+        
+        
+
+        <script src="<?php echo e(asset('public/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('public/AdminLTE/plugins/ckeditor/ckeditor.js')); ?>"></script>
         <script>
             window.Laravel = <?php echo json_encode([
                     'csrfToken' => csrf_token(),
