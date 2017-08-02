@@ -9,6 +9,7 @@
   
   
 @yield('script_link')
+
 @yield('javascript_code')
 
 
