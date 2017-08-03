@@ -57,8 +57,7 @@ class HomeController extends Controller {
 
 
         $data['blood_fighter'] = DB::table('galleries')
-                ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id')
-                ->where('galleries.page_name', 'Home_Page')
+                ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id') 
                 ->take(8)
                 ->orderBy('gallery_details.id', 'desc')
                 ->get();
@@ -88,7 +87,8 @@ class HomeController extends Controller {
         $data['recent_donor'] = Donor:: where('already_donated', 1)->orderByDesc('last_donation')->get();
         $data['upcoming_event'] = Content:: where('content_type', 'upcoming_events')->get();
         $data['all_blood_info']=Content::where('content_type','more_blood')->orderByDesc('created_at')->take(4)->get();
-        $data['testimonial'] = Testimonial::all();
+        $data['testimonial']=Content::where('content_type','what_people_say')->orderByDesc('created_at')->take(5)->get();
+   //     $data['testimonial'] = Testimonial::all();
         return view('frontend.home')->with('data', $data);
     }
     public function seeMoreBloodInfo(){

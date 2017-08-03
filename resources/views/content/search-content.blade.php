@@ -52,8 +52,7 @@
                             <thead>
                                 <tr>
                                     <th> ID</th>
-                                    <th style="width: 20%"> Title</th>
-                                    <th style="width: 30%">Description</th>
+                                    <th style="width: 60%"> Title</th> 
                                     <th>Content Type</th>
                                     <th>Image</th>
                                     <th>Operation</th>
@@ -63,8 +62,7 @@
                                 @foreach($data['content'] as $row)
                                 <tr>
                                     <td>{{$row->id}}</td>
-                                    <td>{{$row->title}}</td>
-                                    <td align="justify">{!! substr($row->description,0,200) !!}...</td> 
+                                    <td><a href="{{url('/admin/content/')}}/{{ $row->id }}">{{$row->content_title}}</a></td> 
                                     <td>{{$row->content_type}}</td> 
                                     <td>
                                         <img src="{{$row->pic_path}}" style="width: 60px; height: 60px;"> 

@@ -44,7 +44,8 @@
             <div class="col-md-3">
                 <div class="footer-heading">
                     <h3><span>হেড অফিস </span></h3>
-                    <p> স্থানঃ  <?php echo e($info->head_office); ?>
+                <p style="font-size: 16px; ">লাইফ সাইকেল বিডি </p>
+                    <p  > স্থানঃ  <?php echo e($info->head_office); ?>
 
                          
                     </p>

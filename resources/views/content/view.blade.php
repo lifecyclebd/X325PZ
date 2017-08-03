@@ -3,6 +3,44 @@
 
 @section('content')
 <!-- Content Wrapper. Contains page content -->
+<style type="text/css">
+    /* padding-bottom and top for image */
+.mfp-no-margins img.mfp-img {
+    padding: 0;
+}
+/* position of shadow behind the image */
+.mfp-no-margins .mfp-figure:after {
+    top: 0;
+    bottom: 0;
+}
+/* padding for main container */
+.mfp-no-margins .mfp-container {
+    padding: 0;
+}
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+    opacity: 0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: all 0.3s ease-out; 
+    -moz-transition: all 0.3s ease-out; 
+    -o-transition: all 0.3s ease-out; 
+    transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+        opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+        opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container, 
+.mfp-with-zoom.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"> 
 <div class="content-wrapper">
     <!-- Main content -->
     <section class="content">
@@ -10,12 +48,12 @@
             <div class="col-xs-12">
                 <div class="box">
 
-                    <div class="box-header with-border">
+                    <div class="box-header with-border" style="background: #eee">
                         <h3 class="box-title"> </h3>
 
                         <div class="box-tools pull-right">
-
-                            <a class="btn btn-success pull-right" href="{{ url('/admin/content/create') }}"><i class="fa fa-plus"></i> Add Content</a>
+                        <a class="btn btn-xs btn-info pull-left" href="{{ url('/admin/content/search-content') }}" style="margin-right: 5px"><i class="fa fa-search"></i> Search Content </a>  
+                        <a class="btn btn-xs btn-success pull-right" href="{{ url('/admin/content/create') }}"><i class="fa fa-plus"></i> Add Content</a>
 
                         </div>
                         <h3 class="box-title">Content List</h3>
@@ -29,8 +67,7 @@
                             <thead>
                                 <tr>
                                     <th> ID</th>
-                                    <th style="width: 20%"> Title</th>
-                                    <th style="width: 30%">Description</th>
+                                    <th style="width: 60%"> Title</th> 
                                     <th>Content Type</th>
                                     <th>Image</th>
                                     <th>Operation</th>
@@ -40,17 +77,47 @@
                                 @foreach($data['content'] as $row)
                                 <tr>
                                     <td>{{$row->id}}</td>
-                                    <td>{{$row->title}}</td>
-                                    <td align="justify">{!! substr($row->description,0,200) !!}...</td> 
+                                    <td><a href="{{url('/admin/content/')}}/{{ $row->id }}" > {{$row->content_title}} </a></td> 
                                     <td>{{$row->content_type}}</td> 
-                                    <td>
-                                        <img src="{{$row->pic_path}}" style="width: 60px; height: 60px;"> 
+                                    <td> 
+
+                                        <div class="popup-gallery">
+                                        <a href="{{$row->pic_path}}" title="{{$row->content_title}}  -  [ {{$row->content_type}} ]" ><i class="fa fa-picture-o" aria-hidden="true"></i>
+                                  View</a>
+                                </div>
 
                                     </td> 
                                     <td> 
-                                        <a href="{{url('/admin/content')}}/{{$row->id}}/edit" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
-                                        <a href="{{url('/admin/content')}}/delete/{{$row->id}}" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
-                                        <a href="{{url('/admin/content/')}}/{{ $row->id }}" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
+                                        <a href="{{url('/admin/content')}}/{{$row->id}}/edit" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Edit content"><i class="fa fa-fw fa-edit"></i> </a>
+                                        <a href="" class="btn  btn-danger btn-xs" title="Delete content" data-toggle="modal" data-target="#myModal"><i class="fa fa-fw fa-remove"></i></a>
+
+ 
+
+<!-- Modal -->
+                                        <div id="myModal" class="modal fade" role="dialog">
+                                          <div class="modal-dialog">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                              <div class="modal-header" style="background: red; color: white">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Delete Content</h4>
+                                              </div>
+                                              <div class="modal-body">
+                                                <p style="font-size: 20px; color: red">Are you sure, Do you want to delete this content? </p>
+                                              </div>
+                                              <div class="modal-footer" style="background: #eee">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                <a href="{{url('/admin/content')}}/delete/{{$row->id}}"  class="btn btn-success"  >Confirm</a>
+                                                
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+
+
+                                        <a href="{{url('/admin/content/')}}/{{ $row->id }}" data-toggle="tooltip" title="Show content" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
                                         </a>
                                     </td>
 
@@ -73,4 +140,61 @@
     <!-- /.content --> 
 </div>
 <!-- /.content-wrapper -->
+@endsection
+
+
+
+
+
+
+@section('script_link') 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+@endsection
+
+
+
+@section('javascript_code')
+    <script type="text/javascript">  
+        $(document).ready(function() {
+
+            $('.popup-gallery').magnificPopup({
+
+                delegate: 'a',
+
+                type: 'image',
+
+                tLoading: 'Loading image #%curr%...',
+
+                mainClass: 'mfp-img-mobile',
+
+                gallery: {
+
+                    enabled: true,
+
+                    navigateByImgClick: true,
+
+                    preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+
+                },
+
+                image: {
+
+                    tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+
+                    titleSrc: function(item) {
+
+                        return item.el.attr('title') + '<small>by lifecycle</small>';
+
+                    }
+
+                }
+
+            });
+
+        });
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+
+</script>
 @endsection 

@@ -2,7 +2,8 @@
 <!--about-->
 <style type="text/css">
     input{color:white;}
-    select{color:white;}
+    input[type=date]{color: white; background:none;}
+    select{color:white; background:none;}
     textarea{color:white;}
 
     #map {
@@ -87,6 +88,7 @@
 input[type="text"], input[type="password"], input[type="email"], input[type="number"], textarea {
 
     background: none;
+    color: white !important;
     }
     select{
             background: none !important;
@@ -131,16 +133,17 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
                             </div> 
 
                             <div class="form-group">
+                            <?php if(isset($_GET['e'])) echo $_GET['e']; ?>
                                 <label for="name" class="col-md-4 control-label">Email</label>
                                 <div class="col-md-6">
-                                    <input id="name" type="email" class="form-control" placeholder="email" name="email"  autofocus>
+                                    <input id="name" type="email" class="form-control" required="true" placeholder="email" name="email"  autofocus>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Password</label>
                                 <div class="col-md-6">
-                                    <input id="name" placeholder="Password" type="password" class="form-control" name="password"  autofocus>
+                                    <input id="name" placeholder="Password" type="password" class="form-control" required="true" name="password"  autofocus>
                                 </div>
                             </div>
 
@@ -167,16 +170,17 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-md-4 control-label">Phone</label>
+                            <?php if(isset($_GET['p'])) echo $_GET['p']; ?>
+                                <label for="name" class="col-md-4 control-label">Phone <span style="color: red"> * </span> </label>
                                 <div class="col-md-6">
-                                    <input id="name" type="number" class="form-control" name="phone"  autofocus>
+                                    <input id="name" type="number" class="form-control" name="phone" required="true"  autofocus>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Division</label>
                                 <div class="col-md-2">
-                                    <select name="division" class="divisions form-control">
+                                    <select name="division" class="divisions form-control" style="background:none">
 
                                         <?php $__currentLoopData = $data['division']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <option value="<?php echo e($row->id); ?>"><?php echo e($row->division_name); ?></option>
@@ -215,10 +219,11 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
                             </div>
 
                             <div class="form-group">
+                            <?php if(isset($_GET['b'])) echo $_GET['b']; ?>
                                 <label for="email" class="col-md-4 control-label">Blood Group</label>
 
                                 <div class="col-md-6">
-                                    <select name="blood_group" class="form-control">
+                                    <select name="blood_group" class="form-control"  style="background:none">
                                         <option value="A+">A+</option>
                                         <option value="AB+">AB+</option>
                                         <option value="B+">B+</option>

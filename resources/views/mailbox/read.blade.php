@@ -20,7 +20,7 @@
     <section class="content">
         <div class="row">
             <div class="col-md-3">
-                <a href="compose.html" class="btn btn-primary btn-block margin-bottom">Compose</a>
+                <a href="{{url('/')}}/admin/mailbox/compose" class="btn btn-primary btn-block margin-bottom">Compose</a>
 
                 <div class="box box-solid">
                     <div class="box-header with-border">
@@ -36,10 +36,7 @@
                         <ul class="nav nav-pills nav-stacked">
                             <li class="active"><a href="{{url('admin/mailbox/inbox')}}"><i class="fa fa-inbox"></i> Inbox
                                     <span class="label label-primary pull-right">12</span></a></li>
-                            <li><a href="{{url('admin/mailbox/compose')}}"><i class="fa fa-envelope-o"></i> Sent<span class="label label-success pull-right">65</span></a></a></li>
-                            <li><a href="#"><i class="fa fa-file-text-o"></i> Drafts<span class="label label-danger pull-right">65</span></a></a></li>
-                             
-                            <li><a href="#"><i class="fa fa-trash-o"></i> Trash <span class="label label-warning pull-right">65</span></a></li>
+                            <li><a href="{{url('admin/mailbox/compose')}}"><i class="fa fa-envelope-o"></i> Sent<span class="label label-success pull-right">65</span></a></a></li> 
                         </ul>
                     </div>
                     <!-- /.box-body -->
@@ -64,7 +61,7 @@
                     <div class="box-body no-padding">
                         <div class="mailbox-read-info">
                             <h3>Message Subject Is Placed Here</h3>
-                            <h5>From: help@example.com
+                            <h5>From: {{$data['read']->sender_email}}
                                 <span class="mailbox-read-time pull-right">15 Feb. 2016 11:03 PM</span></h5>
                         </div>
                         <!-- /.mailbox-read-info -->

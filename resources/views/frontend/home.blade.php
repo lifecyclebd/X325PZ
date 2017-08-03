@@ -546,7 +546,11 @@
 
             <div class=" ">
 
+<<<<<<< HEAD
                 <h2 class="life_title" style="margin-bottom: 20px;">আসন্ন কর্মসূচী</h2>
+=======
+                <h2 class="life_title" style="margin-bottom: 20px;">সাম্প্রতিক ঘটনাবলী </h2>
+>>>>>>> cf3671f349b7539c15767f1462db8588d46883a3
 
                 <div id="myCarousel" class="carousel fdi-Carousel slide">
 
@@ -556,7 +560,7 @@
 
                         <div class="carousel-inner onebyone-carosel">
 
-                            <?php $i=0;?>
+                            <?php $i=0;?>   
 
                             @foreach($data['upcoming_event'] as $row)
 
@@ -674,20 +678,21 @@
 
                                 <div class="col-md-4" style="">
 
-                                    <div class="what_people_say" style="height: 400px;padding: 25px"> 
+                                    <div class="what_people_say" style="height: 450px;padding: 25px"> 
 
                                         <span style="padding-left: 10px;">
 
                                             <div class="text-left">
 
                                             <div class="row" style="margin-top: -40px">
+                                            <div class="col-md-8">
+                                                <h4>Name </h4><p>Designation</p></h4>
 
-                                                <h4>{{ $row->name}}</h4><small>{{ $row->designation}}</small>
-
-                                                <b>{{$row->institution}}</b>
-
-                                                <img class="img img-responsive img-circle pull-right " src="{{$row->pic_path}}" alt="testimonial" style="width:130px;height:110px;margin-top: -50px">
-
+                                                <p>{{$row->title}}</p>
+</div>
+<div class="col-md-4">
+                                                <img class="img img-responsive img-circle pull-right " src="{{$row->pic_path}}" alt="testimonial" style="width:100%; height: auto;margin-top:0px">
+</div>
                                             </div>
 
                                                 
@@ -696,9 +701,10 @@
 
                                                 <div class="row">
 
-                                                    <p style="text-align: justify; min-height: 220px;   background: white !important;color: black;padding: 10px;border-radius: 8px;">
+                                                    <div style="text-align: justify; min-height: 220px;   background: white !important;color: black;padding: 10px;border-radius: 8px;">
 
-                                                    {{ $row->message}}</p>
+                                                    {!! $row->description !!}
+                                                    </div>
 
                                                 </div>
 
@@ -798,7 +804,7 @@
 
             @foreach($data['blood_fighter'] as $row)
 
-        <a href="{{url('public/images/gallery')}}/{{$row->pic_path}}" title="The Cleaner" class="col-md-3" >
+        <a href="{{$row->pic_path}}" title="The Cleaner" class="col-md-3" >
 
             <img src="{{$row->pic_path}}"  class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid #c9302c; float: left;">
 

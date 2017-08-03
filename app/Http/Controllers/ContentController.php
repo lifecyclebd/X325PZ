@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Content;
+use App\Blog_Category;
 use Illuminate\Http\Request;
 use App\BloodRequest;
 use App\Libraries\Common;
@@ -32,16 +33,39 @@ class ContentController extends Controller {
 
     public function create() {
 
-        return view('content.create');
+        $data['all_blog_categories']=Blog_Category::all();
+
+        return view('content.create')->with('data', $data);
     }
 
     public function store(Request $request) {
-        $Content = new Content;
-        //$formdata = $request->all();
-        $Content->title = $request->title;
-        $Content->description = $request->description; 
-        $Content->content_type = $request->content_type; 
-        $Content->author_id = 3;
+        $Content = new Content; 
+
+        $Content->name=$request->name;
+        $Content->designation=$request->designation;
+        $Content->institution=$request->institution;
+        $Content->email=$request->email;
+        $Content->phone=$request->phone;
+        $Content->location=$request->location;
+        $Content->blood_group=$request->blood_group;
+        $Content->content_title=$request->content_title;
+        $Content->content_description=$request->content_description;
+        $Content->content_type=$request->content_type;
+        $Content->event_start_date=$request->event_start_date;
+        $Content->event_end_date=$request->event_end_date;
+        $Content->blog_category=$request->blog_category;
+        $Content->access_mode=$request->access_mode;
+      //  $Content->published_date=$request->published_date;
+        $Content->post_order=$request->post_order;
+
+        $Content->fb_url=$request->fb_url;
+        $Content->web_url=$request->web_url;
+        $Content->linked_url=$request->linked_url;
+        $Content->twitter_url=$request->twitter_url; 
+
+        //$Content->created_at=1;
+        $Content->created_by=1;
+        //$Content->updated_at=1;  
         $Content->save();
         
         

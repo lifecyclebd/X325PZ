@@ -222,8 +222,8 @@ Route::post('/admin/content/update', 'ContentController@update');
 Route::any('/admin/content/delete/{id}', 'ContentController@delete');
 
 //-------------------Blog-----------------------------
-Route::any('/blog/category', 'BlogController@blog_category');
-Route::any('/blog/createCategory', 'BlogController@create_category');
+Route::any('/admin/blog/category', 'BlogController@blog_category');
+Route::any('/admin/blog/createCategory', 'BlogController@create_category');
 Route::any('/blog/saveCategory', 'BlogController@save_category');
 Route::any('/blog/content', 'BlogController@view_blog');
 Route::any('/blog/create', 'BlogController@create_blog');

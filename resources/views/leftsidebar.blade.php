@@ -114,12 +114,12 @@
                     </li>
                 </ul>
             </li>
-            <li class="treeview">
+            <!--li class="treeview">
                 <a href="{{url('/admin/testimonial')}}">
                     <i class="fa fa-home" aria-hidden="true"></i>
                     <span>Testimonials</span>
                 </a>
-            </li>
+            </li -->
             <li class="treeview">
                 <a href="{{ url('/admin/write/to/doctor') }}">
                     <i class="fa fa-envelope-square" aria-hidden="true"></i>
@@ -129,47 +129,67 @@
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                    <span class="pull-right-container"> <small class="label pull-left bg-green">16</small> 
+                    <span class="pull-right-container"> 
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu" style="display: none;">
                     <li class="active">
-                        <a href="{{url('admin/mailbox/inbox')}}">Inbox
+                        <a href="{{url('admin/mailbox/inbox')}}"> <i class="fa fa-inbox"></i> Inbox
                             <span class="pull-right-container">
-                                <span class="label label-primary pull-right">13</span>
+                                 
                             </span>
                         </a>
                     </li>
-                    <li><a href="{{url('admin/mailbox/compose')}}">Compose
-                    </a></li>
-                    <li><a href="{{url('admin/mailbox/read')}}">Read
-                            <span class="pull-right-container">
-                                <span class="label label-info pull-right">3</span>
-                            </span>
-                    </a></li>
-                    <li><a href="{{url('admin/mailbox/sent')}}">Sent
-                            <span class="pull-right-container">
-                                <span class="label label-success pull-right">1</span>
+                    <li><a href="{{url('admin/mailbox/compose')}}"><i class="fa fa-edit"></i> Compose
+                    </a></li> 
+                    <li><a href="{{url('admin/mailbox/sent')}}"> <i class="fa fa-envelope-o"></i>Sent
+                            <span class="pull-right-container"> 
                             </span>
                     </a></li>
                 </ul>
             </li>
- 
-         
+            
+
+
+
+
             <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-info-circle"></i> <span>Content</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">  
-                    <li><a href="{{ url('admin/content') }}"><i class="fa fa-tasks"></i> View Content</a></li>
-                    <li><a href="{{ url('/admin/content/search-content') }}"><i class="fa fa-search"></i> Search Content</a></li>
-                    <li><a href="{{ url('admin/content/create') }}"><i class="fa fa-plus"></i>Add Content</a></li>
-                </ul>
-            </li>
+          <a href="#">
+            <i class="fa fa-share"></i> <span>Content Section</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu"> 
+            <li class="treeview">
+              <a href="#"><i class="fa fa-rss"></i> Blog
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('admin/blog/createCategory') }}"><i class="fa fa-plus"></i> Add Blog Category</a></li> 
+                <li><a href="{{ url('/admin/blog/category') }}"><i class="fa fa-tasks"></i> Blog Category</a></li> 
+              </ul>
+            </li> 
+
+
+            <li class="treeview">
+              <a href="#"><i class="fa fa-rss"></i> Content
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('admin/content/create') }}"><i class="fa fa-plus"></i>Add Content</a></li> 
+                <li><a href="{{ url('admin/content') }}"><i class="fa fa-tasks"></i> View Content</a></li>
+                <li><a href="{{ url('/admin/content/search-content') }}"><i class="fa fa-search"></i> Search Content</a></li>
+              </ul>
+            </li> 
+
+          </ul>
+        </li> 
 
         </ul>
     </section>
