@@ -4,14 +4,14 @@
 <?php $__env->startSection('content'); ?>
  
  <div class="More_about_info" style="margin-top: -30px">
-    <div class="container-fluid" style="background-color: gray;height: 1050px"> 
-        <h3 class="life_title " style="margin-bottom:50px;color: white">More about blood</h3> 
+    <div class="container-fluid" style="background-color: gray;height: auto;"> 
+        <h3 class="life_title " style="margin-bottom:50px;color: white"> রক্তদানের কিছু প্রয়োজনীয় কথা </h3> 
 
         <?php $__currentLoopData = $data['all_blood_info']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
         <div class="col-md-3 col-sm-6 col-xs-12" style="border-radius: 8px">
-            <div class="info_abou_blood " style="min-height:350px">                 
-                <p class="title"><?php echo e($row->title); ?></p>
-                <p class="text-justify" style="padding:10px"><?php echo substr($row->description,0,600); ?></p>
+            <div class="info_abou_blood " style="min-height:350px;color: black">                 
+                <p class="title" style="font-size: 20px"><strong><?php echo e($row->title); ?></strong></p>
+                <p class="text-justify" style="padding:10px"><?php echo substr($row->description,0,500); ?></p>
             </div>
             <div class="text-center more_blood_bottom">
                 <a href="<?php echo e(url('/read-more')); ?>/detail/<?php echo e($row->id); ?>"><button class="btn_read_more">

@@ -4,7 +4,7 @@
 <div class="container-fluid" style="margin-top: 30px; height: auto;"> 
     <div class="col-md-9">
 
-        <span class="more_news_title"> {{$data['last_recent_event']->title}}</span>
+        <span class="more_news_title" style="color: black"><strong> {{$data['last_recent_event']->title}}</strong></span>
         <hr  class="more_news">
         <div class="row border-bottom">
             <div class="col-md-6">
@@ -19,7 +19,7 @@
         </div>
         
         <div class="row" style="height: auto;">
-            <span class="more_news_title">চলতি ঘটনাবলী </span>
+            <span class="more_news_title" style="color: black"><strong>চলতি ঘটনাবলী </strong></span>
             <hr>
             @foreach($data['recent_event'] as $row)
             <div class="col-md-6"> 
@@ -44,7 +44,7 @@
 
     </div>
     <div class="col-md-3">
-        <span class="more_news_title">সাম্প্রতিক ঘটনাবলী </span>
+        <span class="more_news_title" style="color: black"><strong>সাম্প্রতিক ঘটনাবলী</strong></span>
         <hr  class="more_news">
         @foreach($data['upcoming_event'] as $row)
         <div class="col-md-12 border-bottom">
