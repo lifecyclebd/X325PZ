@@ -9,11 +9,6 @@
 @section('content')
 
 
-
-
-
-
-
 <link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css') }}"> 
 
 <style type="text/css">
@@ -331,18 +326,7 @@
 
     </div>
 
-
-
-
-
-
-
-
-
-    
-
-
-
+ 
 
 
 <div class="get_well_soon">        

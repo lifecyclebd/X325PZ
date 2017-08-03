@@ -7,11 +7,6 @@
 <?php $__env->startSection('content'); ?>
 
 
-
-
-
-
-
 <link rel="stylesheet" href="<?php echo e(asset('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css')); ?>"> 
 
 <style type="text/css">
@@ -330,18 +325,7 @@
 
     </div>
 
-
-
-
-
-
-
-
-
-    
-
-
-
+ 
 
 
 <div class="get_well_soon">        
