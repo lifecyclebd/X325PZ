@@ -119,11 +119,7 @@ public function signup(Request $request) {
         $common = new Common;
 
 $Donor->singup_steps = 3;
-<<<<<<< HEAD
-//$Donor->is_physically_disable = 'na';
-=======
 $Donor->is_physically_disble = 'na';
->>>>>>> cf3671f349b7539c15767f1462db8588d46883a3
 $Donor->religion = 'na'; 
 $Donor->nid = 'na';
 

@@ -545,12 +545,7 @@
         <div class="span12">
 
             <div class=" ">
-
-<<<<<<< HEAD
                 <h2 class="life_title" style="margin-bottom: 20px;">আসন্ন কর্মসূচী</h2>
-=======
-                <h2 class="life_title" style="margin-bottom: 20px;">সাম্প্রতিক ঘটনাবলী </h2>
->>>>>>> cf3671f349b7539c15767f1462db8588d46883a3
 
                 <div id="myCarousel" class="carousel fdi-Carousel slide">
 

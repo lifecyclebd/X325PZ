@@ -544,7 +544,6 @@
         <div class="span12">
 
             <div class=" ">
-
                 <h2 class="life_title" style="margin-bottom: 20px;">আসন্ন কর্মসূচী</h2>
 
                 <div id="myCarousel" class="carousel fdi-Carousel slide">
@@ -555,7 +554,7 @@
 
                         <div class="carousel-inner onebyone-carosel">
 
-                            <?php $i=0;?>
+                            <?php $i=0;?>   
 
                             <?php $__currentLoopData = $data['upcoming_event']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
@@ -673,20 +672,21 @@
 
                                 <div class="col-md-4" style="">
 
-                                    <div class="what_people_say" style="height: 400px;padding: 25px"> 
+                                    <div class="what_people_say" style="height: 450px;padding: 25px"> 
 
                                         <span style="padding-left: 10px;">
 
                                             <div class="text-left">
 
                                             <div class="row" style="margin-top: -40px">
+                                            <div class="col-md-8">
+                                                <h4>Name </h4><p>Designation</p></h4>
 
-                                                <h4><?php echo e($row->name); ?></h4><small><?php echo e($row->designation); ?></small>
-
-                                                <b><?php echo e($row->institution); ?></b>
-
-                                                <img class="img img-responsive img-circle pull-right " src="<?php echo e($row->pic_path); ?>" alt="testimonial" style="width:130px;height:110px;margin-top: -50px">
-
+                                                <p><?php echo e($row->title); ?></p>
+</div>
+<div class="col-md-4">
+                                                <img class="img img-responsive img-circle pull-right " src="<?php echo e($row->pic_path); ?>" alt="testimonial" style="width:100%; height: auto;margin-top:0px">
+</div>
                                             </div>
 
                                                 
@@ -695,9 +695,11 @@
 
                                                 <div class="row">
 
-                                                    <p style="text-align: justify; min-height: 220px;   background: white !important;color: black;padding: 10px;border-radius: 8px;">
+                                                    <div style="text-align: justify; min-height: 220px;   background: white !important;color: black;padding: 10px;border-radius: 8px;">
 
-                                                    <?php echo e($row->message); ?></p>
+                                                    <?php echo $row->description; ?>
+
+                                                    </div>
 
                                                 </div>
 
@@ -797,7 +799,7 @@
 
             <?php $__currentLoopData = $data['blood_fighter']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
-        <a href="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->pic_path); ?>" title="The Cleaner" class="col-md-3" >
+        <a href="<?php echo e($row->pic_path); ?>" title="The Cleaner" class="col-md-3" >
 
             <img src="<?php echo e($row->pic_path); ?>"  class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid #c9302c; float: left;">
 

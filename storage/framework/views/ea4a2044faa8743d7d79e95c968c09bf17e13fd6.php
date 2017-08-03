@@ -43,6 +43,7 @@
             <div class="col-md-3">
                 <div class="footer-heading">
                     <h3><span>হেড অফিস </span></h3>
+ 
                     <p><?php echo e($info->head_office); ?>
 
                          
