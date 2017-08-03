@@ -10,14 +10,13 @@
             <div class="box-header with-border">
               <h3 class="box-title">Compose New Message</h3>
             </div>
-          <form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
+          <form action="<?php echo e(url('admin/mailbox/store')); ?>" method="post" class="form-horizontal" enctype="multipart/form-data">
             <div class="box-body">
-
                   <div class="input-group" style="margin-bottom: 30px">
                     <span class="input-group-addon" id="basic-addon1">To </span> 
-                      <select class="form-control">
+                      <select class="form-control" name="email">
                         <?php $__currentLoopData = $data['donor']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                          <option value=""><?php echo e($row->email); ?> - <?php echo e($row->blood_group); ?></option>
+                          <option value="<?php echo e($row->email); ?>"><?php echo e($row->email); ?> - <?php echo e($row->blood_group); ?></option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                       </select>
                     </div>

@@ -53,5 +53,32 @@ use App\Donor;
         $data['empty']="";
         return $data;
     }
+
+
+
+
+
+    function admin_header_bar(){
+       $data['admin_message'] = Message::where('receiver_type', 'admin')->get();
+       //    $data['messages'] = Message::where([['sender_email',$donor_email], ['sender_type', 'donor']])->get();  
+
+     //  dd($data);
+       $data['admin_message_count']=$data['admin_message']->count();
+     //  dd($data);
+    //$data=1;
+       return $data;
+   }
+
+
+function bn2enNumber ($number){
+    $search_array= array("১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯", "০");
+    $replace_array= array("1", "2", "3", "4", "5", "6", "7", "8", "9", "0");
+    $en_number = str_replace($search_array, $replace_array, $number);
+
+    return $en_number;
+}
+
+
+
  ?>
 

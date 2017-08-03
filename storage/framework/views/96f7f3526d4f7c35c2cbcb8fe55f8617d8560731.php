@@ -7,6 +7,11 @@
 <?php $__env->startSection('content'); ?>
 
 
+
+
+
+
+
 <link rel="stylesheet" href="<?php echo e(asset('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css')); ?>"> 
 
 <style type="text/css">
@@ -325,7 +330,18 @@
 
     </div>
 
- 
+
+
+
+
+
+
+
+
+    
+
+
+
 
 
 <div class="get_well_soon">        
@@ -783,7 +799,7 @@
 
             <?php $__currentLoopData = $data['blood_fighter']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
-        <a href="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->pic_path); ?>" title="The Cleaner" class="col-md-3" >
+        <a href="<?php echo e($row->pic_path); ?>" title="The Cleaner" class="col-md-3" >
 
             <img src="<?php echo e($row->pic_path); ?>"  class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid #c9302c; float: left;">
 

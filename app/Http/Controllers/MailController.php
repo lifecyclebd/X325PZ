@@ -68,7 +68,8 @@ class MailController extends Controller
        return view('mailbox.read')->with('data', $data);
    }
    public function show_sent(){
-       return view('mailbox.sent');
+       $data['message'] = Message::where('sender_type', 'admin')->get();
+       return view('mailbox.sent')->with('data', $data); 
    }
    
    

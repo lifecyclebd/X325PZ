@@ -57,8 +57,7 @@ class HomeController extends Controller {
 
 
         $data['blood_fighter'] = DB::table('galleries')
-                ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id')
-                ->where('galleries.page_name', 'Home_Page')
+                ->join('gallery_details', 'gallery_details.gallery_id', '=', 'galleries.id') 
                 ->take(8)
                 ->orderBy('gallery_details.id', 'desc')
                 ->get();

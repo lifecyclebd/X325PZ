@@ -9,6 +9,11 @@
 @section('content')
 
 
+
+
+
+
+
 <link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css') }}"> 
 
 <style type="text/css">
@@ -326,7 +331,18 @@
 
     </div>
 
- 
+
+
+
+
+
+
+
+
+    
+
+
+
 
 
 <div class="get_well_soon">        
@@ -783,7 +799,7 @@
 
             @foreach($data['blood_fighter'] as $row)
 
-        <a href="{{url('public/images/gallery')}}/{{$row->pic_path}}" title="The Cleaner" class="col-md-3" >
+        <a href="{{$row->pic_path}}" title="The Cleaner" class="col-md-3" >
 
             <img src="{{$row->pic_path}}"  class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid #c9302c; float: left;">
 

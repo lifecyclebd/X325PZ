@@ -49,8 +49,7 @@
                             <thead>
                                 <tr>
                                     <th> ID</th>
-                                    <th style="width: 20%"> Title</th>
-                                    <th style="width: 30%">Description</th>
+                                    <th style="width: 60%"> Title</th> 
                                     <th>Content Type</th>
                                     <th>Image</th>
                                     <th>Operation</th>
@@ -60,8 +59,7 @@
                                 <?php $__currentLoopData = $data['content']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
                                     <td><?php echo e($row->id); ?></td>
-                                    <td><?php echo e($row->title); ?></td>
-                                    <td align="justify"><?php echo substr($row->description,0,200); ?>...</td> 
+                                    <td><a href="<?php echo e(url('/admin/content/')); ?>/<?php echo e($row->id); ?>"><?php echo e($row->content_title); ?></a></td> 
                                     <td><?php echo e($row->content_type); ?></td> 
                                     <td>
                                         <img src="<?php echo e($row->pic_path); ?>" style="width: 60px; height: 60px;"> 

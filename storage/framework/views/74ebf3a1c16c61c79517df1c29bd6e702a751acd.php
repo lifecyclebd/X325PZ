@@ -1,13 +1,11 @@
-@extends('layouts.myapp')
-
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper" style="min-height: 946px;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Inbox
+            Sent
+            <small>13 messages</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -19,7 +17,7 @@
     <section class="content">
         <div class="row">
             <div class="col-md-3">
-                <a href="{{url('/')}}/admin/mailbox/compose" class="btn btn-primary btn-block margin-bottom">Compose</a>
+                <a href="compose.html" class="btn btn-primary btn-block margin-bottom">Compose</a>
 
                 <div class="box box-solid">
                     <div class="box-header with-border">
@@ -30,22 +28,22 @@
                             </button>
                         </div>
                     </div>
-                   
                     <div class="box-body no-padding">
                         <ul class="nav nav-pills nav-stacked">
-                            <li class="active"><a href="{{url('admin/mailbox/inbox')}}"><i class="fa fa-inbox"></i> Inbox
+                            <li class="active"><a href="<?php echo e(url('admin/mailbox/inbox')); ?>"><i class="fa fa-inbox"></i> Inbox
                                     <span class="label label-primary pull-right">12</span></a></li>
-                            <li><a href="{{url('admin/mailbox/compose')}}"><i class="fa fa-envelope-o"></i> Sent<span class="label label-success pull-right">65</span></a></a></li> 
+                            <li><a href="<?php echo e(url('admin/mailbox/compose')); ?>"><i class="fa fa-envelope-o"></i> Sent</a></li> 
                         </ul>
                     </div>
                     <!-- /.box-body -->
-                </div>
+                </div> 
+                <!-- /.box -->
             </div>
             <!-- /.col -->
             <div class="col-md-9">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Inbox</h3>
+                        <h3 class="box-title">Sent Mail</h3>
 
                         <div class="box-tools pull-right">
                             <div class="has-feedback">
@@ -80,18 +78,27 @@
                         </div>
                         <div class="table-responsive mailbox-messages">
                             <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Select</th><th>Important</th><th>Receiver Email</th><th>Message</th><th>Attached</th><th>Duration</th>
+                                </tr>
+                            </thead>
                                 <tbody>
-                                    @foreach($data['message'] as $row)
+                                <?php $__currentLoopData = $data['message']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
-                                        <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
+                                        <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute;">
+                                        <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; "></ins>
+                                        </div></td>
                                         <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
-                                        <td class="mailbox-name"><a href="{{url('admin/mailbox/read')}}/{{$row->id}}"> {{$row->sender_email}}</a></td>
-                                        <td class="mailbox-subject"><b></b>{{$row->message}}</td>
-                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
-                                        <td class="mailbox-date">{{$row->created_at}}</td>
-                                        <td class="mailbox-date"><a href="{{url('admin/mailbox/read')}}/{{$row->id}}">View</a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html"><?php echo e($row->receiver_email); ?></a></td>
+                                        <td class="mailbox-subject"><b> <?php echo e($row->message); ?>
+
+                                        </td>
+                                        <td class="mailbox-attachment">No Attached</td>
+                                        <td class="mailbox-date">5 mins ago</td>
                                     </tr>
-                                    @endforeach
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
                                 </tbody>
                             </table>
                             <!-- /.table -->
@@ -131,4 +138,5 @@
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-@endsection 
+<?php $__env->stopSection(); ?> 
+<?php echo $__env->make('layouts.myapp', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

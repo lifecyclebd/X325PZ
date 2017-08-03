@@ -94,7 +94,7 @@
                  
 
                     <hr>
-                    <div class="col-md-12 " id="h1" class="what_people_say" style="background: #eee; padding: 10px; ">
+                    <div class="col-md-12 hidden " id="h1" class="what_people_say" style="background: #eee; padding: 10px; ">
                      
                         <div class="form-group">
                             <label class="control-label col-sm-2">Name</label>
