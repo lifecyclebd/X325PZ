@@ -41,27 +41,7 @@
                         <div class="col-md-10">
                             <input type="file" name="pic_path" > 
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="col-sm-2 control-label">Content Category</label>
-
-                        <div class="col-md-10">
-                            <select class="form-control" name=""> 
-                                <option value="">Select Content Type </option>
-                                <option value="news">News </option>
-                                <option value="upcoming_events">Upcoming Events</option>
-                                <option value="recent_events">Recent Events</option>
-                                <option value="more_blood">More About Blood</option>
-                                <option value="about_us">About Us</option>
-                                <option value="post">Post </option>
-                                <option value="blog">Blog </option>
-                                <option value="page">Page </option>
-                                <option value="what_people_say">What People Say </option>
-                            </select>
-
-                        </div>
-                    </div>
+                    </div> 
                     <div class="form-group">
                             <label class="control-label col-sm-2">Select Publish Mode</label>
                             <div class="col-sm-3"> 
@@ -91,6 +71,11 @@
                                   <option value="3" id="optionSelector">Blog</option> 
                                   <option value="4" id="optionSelector">More About Blood</option> 
                                   <option value="5" id="optionSelector">About Us</option> 
+                                <option value="6">News </option> 
+                                <option value="7">Recent Events</option>  
+                                <option value="8">Post </option> 
+                                <option value="9">Page </option> 
+
                                 </select>
                             </div>
                     </div> 
