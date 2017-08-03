@@ -38,27 +38,7 @@
                         <div class="col-md-10">
                             <input type="file" name="pic_path" > 
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="col-sm-2 control-label">Content Category</label>
-
-                        <div class="col-md-10">
-                            <select class="form-control" name=""> 
-                                <option value="">Select Content Type </option>
-                                <option value="news">News </option>
-                                <option value="upcoming_events">Upcoming Events</option>
-                                <option value="recent_events">Recent Events</option>
-                                <option value="more_blood">More About Blood</option>
-                                <option value="about_us">About Us</option>
-                                <option value="post">Post </option>
-                                <option value="blog">Blog </option>
-                                <option value="page">Page </option>
-                                <option value="what_people_say">What People Say </option>
-                            </select>
-
-                        </div>
-                    </div>
+                    </div> 
                     <div class="form-group">
                             <label class="control-label col-sm-2">Select Publish Mode</label>
                             <div class="col-sm-3"> 
@@ -83,11 +63,16 @@
                             <label class="control-label col-sm-3">Select Content Type</label>
                             <div class=" col-sm-4">
                                 <select name="content_type" class="form-control" id="mySelector">
-                                  <option value="1" id="optionSelector">What People Say</option> 
-                                  <option value="2" id="optionSelector">Upcoming Event</option> 
-                                  <option value="3" id="optionSelector">Blog</option> 
-                                  <option value="4" id="optionSelector">More About Blood</option> 
-                                  <option value="5" id="optionSelector">About Us</option> 
+                                    <option value="1">What People Say</option> 
+                                    <option value="2">Upcoming Event</option> 
+                                    <option value="3">Recent Events</option>  
+                                    <option value="4">Blog</option> 
+                                    <option value="5">More About Blood</option> 
+                                    <option value="6">About Us</option> 
+                                    <option value="7">News </option> 
+                                    <option value="8">Post </option> 
+                                    <option value="9">Page </option> 
+
                                 </select>
                             </div>
                     </div> 
@@ -200,8 +185,34 @@
                             <input type="hidden" id="dtp_input1" value="" class="form-control" /><br/>
                         </div>    
                     </div>
+                    <div class="col-md-12 hidden  " id="h3" class="events" style="background: #eee; padding: 10px;">                 
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Event Location</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="location" class="form-control" placeholder="Location">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Event Start Date Time</label>
+                            <div class="col-sm-10 controls input-append date form_datetime" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                            <input type="text" value="" name="event_start_date"  class="form-control"> 
+                            <span class="add-on"><i class="icon-remove"></i></span>
+                            <span class="add-on"><i class="icon-th"></i></span>                
+                            </div>
+                            <input type="hidden" id="dtp_input1" value="" class="form-control" /><br/>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Event End  Date Time</label>
+                            <div class="col-sm-10 controls input-append date form_datetime" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                <input type="text" value="" name="event_end_date"  class="form-control"> 
+                                <span class="add-on"><i class="icon-remove"></i></span>
+                                <span class="add-on"><i class="icon-th"></i></span>                
+                            </div>
+                            <input type="hidden" id="dtp_input1" value="" class="form-control" /><br/>
+                        </div>    
+                    </div>
 
-                    <div class="col-md-12  hidden " id="h3" class="blog" style="background: #eee; padding: 10px;">
+                    <div class="col-md-12  hidden " id="h4" class="blog" style="background: #eee; padding: 10px;">
                         <div class="form-group">
                             <label class="control-label col-sm-2">Select Blog Category</label>
                             <div class="col-sm-3">
@@ -240,61 +251,9 @@
                         </div> 
                          
                     </div>
-                    <div class="col-md-12  hidden" id="h4" class="testimonial" style="background: #eee; padding: 10px;">
-                     
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">Lcation</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="location" class="form-control" placeholder="Location">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class=" control-label   col-sm-2">Event Date</label>
-                            <div class="col-sm-3">
-                                <input type="date" name="event_date" class="form-control" >
-                            </div> 
-                            <label class="control-label col-sm-3">Event Strat Time</label>
-                            <div class="col-sm-4">
-                                <input type="time" name="start_time" class="form-control">
-                            </div>
-                        </div>      
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">Select Publish Mode</label>
-                            <div class="col-sm-3"> 
-                                <select name="blog_category" class="form-control" >
-                                    <option value="1"> Public</option>
-                                    <option value="2"> Admin</option>
-                                    <option value="3"> Only Me</option>
-                                </select>
-                            </div> 
-                            <label class="control-label col-sm-3">Sort Order</label>
-                            <div class="col-sm-4">
-                                <input type="number" name="sort_order" class="form-control" placeholder=" Post Order">
-                            </div>
-                        </div>
+                  
 
-                         
-                    </div>
-
-                    <div class="col-md-12 hidden  " id="h5" class="testimonial" style="background: #eee; padding: 10px;">
-                        
-                        <div class="form-group">
-                            <label class=" control-label   col-sm-2">Post Published Date</label>
-                            <div class="col-sm-3">
-                                <input type="date" name="post_published_date" class="form-control" >
-                            </div> 
-                            <label class="control-label col-sm-3">Select Publish Mode</label>
-                            <div class="col-sm-4"> 
-                                <select name="blog_category" class="form-control" >
-                                    <option value="1"> Public</option>
-                                    <option value="2"> Admin</option>
-                                    <option value="3"> Only Me</option>
-                                </select>
-                            </div>
-                        </div> 
-                         
-                    </div>
+                 
 
                     <div class="form-group">
                         <div class="col-md-12 col-md-offset-8" style="margin-top: 15px">
@@ -413,41 +372,35 @@ $("#mySelector").change(function () {
     if( $(this).val() == 1){
         $('#h1').removeClass('hidden');
         $('#h2').addClass('hidden');
-        $('#h3').addClass('hidden');
-        $('#h4').addClass('hidden');
-        $('#h5').addClass('hidden');
+        $('#h3').addClass('hidden'); 
+        $('#h4').addClass('hidden'); 
     }
     else if( $(this).val() == 2){
         $('#h2').removeClass('hidden');
         $('#h1').addClass('hidden');
-        $('#h3').addClass('hidden');
-        $('#h4').addClass('hidden');
-        $('#h5').addClass('hidden');
+        $('#h3').addClass('hidden'); 
+        $('#h4').addClass('hidden'); 
     }
     else if( $(this).val() == 3){
 
         $('#h3').removeClass('hidden');
         $('#h2').addClass('hidden');
-        $('#h1').addClass('hidden');
-        $('#h4').addClass('hidden');
-        $('#h5').addClass('hidden');
-    }
-    else if( $(this).val() == 4)
-    {
+        $('#h1').addClass('hidden'); 
+        $('#h4').addClass('hidden'); 
+    } 
+    else if( $(this).val() == 4){
 
         $('#h4').removeClass('hidden');
         $('#h2').addClass('hidden');
-        $('#h3').addClass('hidden');
-        $('#h1').addClass('hidden');
-        $('#h5').addClass('hidden');
-    }
-    else if( $(this).val() == 5){
+        $('#h3').addClass('hidden'); 
+        $('#h1').addClass('hidden'); 
+    } 
+    else{
 
-        $('#h5').removeClass('hidden');
-        $('#h2').addClass('hidden');
-        $('#h3').addClass('hidden');
-        $('#h4').addClass('hidden');
-        $('#h1').addClass('hidden');
+        $('#h1').addClass('hidden'); 
+        $('#h2').addClass('hidden'); 
+        $('#h3').addClass('hidden'); 
+        $('#h4').addClass('hidden'); 
     }
   });
 </script>
