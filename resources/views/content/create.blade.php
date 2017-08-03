@@ -22,18 +22,17 @@
             <div class="box-body">
                 <!-- form start -->
                 <form method="post" action="{{url('admin/content/store')}}" class="form-horizontal" enctype="multipart/form-data"> 
-                    {!! csrf_field() !!}
-
+                    {!! csrf_field() !!} 
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">Content Title</label>
                         <div class="col-md-10">
-                            <input id="name" type="text" class="form-control" name="title" required autofocus>
+                            <input id="name" type="text" class="form-control" name="content_title" required autofocus>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">Details </label>
                         <div class="col-md-10">
-                            <textarea id="ckeditor" name="description" class="form-control ckeditor"> </textarea>
+                            <textarea id="ckeditor" name="content_description" class="form-control ckeditor"> </textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -48,7 +47,7 @@
                         <label for="email" class="col-sm-2 control-label">Content Category</label>
 
                         <div class="col-md-10">
-                            <select class="form-control" name="content_type"> 
+                            <select class="form-control" name=""> 
                                 <option value="">Select Content Type </option>
                                 <option value="news">News </option>
                                 <option value="upcoming_events">Upcoming Events</option>
@@ -62,24 +61,43 @@
                             </select>
 
                         </div>
-                    </div> 
+                    </div>
+                    <div class="form-group">
+                            <label class="control-label col-sm-2">Select Publish Mode</label>
+                            <div class="col-sm-3"> 
+                                <select name="access_mode" class="form-control" >
+                                    <option value="1"> Public</option>
+                                    <option value="2"> Admin</option>
+                                    <option value="3"> Only Me</option>
+                                </select>
+                            </div>                    
+                            <label class="control-label col-sm-3">Sort Order</label>
+                            <div class="col-sm-4">
+                                <input type="number" name="post_order" class="form-control" placeholder=" Post Order">
+                            </div>
+                    </div>
  
                      <div class="form-group">
-                            <label class="control-label col-sm-2">Select Content Type</label>
-                        <div class=" col-sm-10">
-                            <select name="sec" class="form-control" id="mySelector">
-                              <option value="1" id="optionSelector">What People Say</option> 
-                              <option value="2" id="optionSelector">Upcoming Event</option> 
-                              <option value="3" id="optionSelector">Blog</option> 
-                              <option value="4" id="optionSelector">More About Blood</option> 
-                              <option value="5" id="optionSelector">About Us</option> 
-                            </select>
-                        </div>
+                            <label class=" control-label   col-sm-2">Post Published Date</label>
+                            <div class="col-sm-3">
+                                <input type="date" name="published_date" class="form-control" >
+                            </div>
+
+                            <label class="control-label col-sm-3">Select Content Type</label>
+                            <div class=" col-sm-4">
+                                <select name="content_type" class="form-control" id="mySelector">
+                                  <option value="1" id="optionSelector">What People Say</option> 
+                                  <option value="2" id="optionSelector">Upcoming Event</option> 
+                                  <option value="3" id="optionSelector">Blog</option> 
+                                  <option value="4" id="optionSelector">More About Blood</option> 
+                                  <option value="5" id="optionSelector">About Us</option> 
+                                </select>
+                            </div>
                     </div> 
                  
 
-
-                    <div class="col-md-12 hidden " id="h1" class="testimonial" style="background: #eee; padding: 5px;">
+                    <hr>
+                    <div class="col-md-12 " id="h1" class="what_people_say" style="background: #eee; padding: 10px; ">
                      
                         <div class="form-group">
                             <label class="control-label col-sm-2">Name</label>
@@ -105,70 +123,96 @@
                         
                         <div class="form-group">
                             <label class=" control-label col-sm-2">Phone</label>
-                            <div class="col-sm-10">
-                                <input type="number" name="number" class="form-control" placeholder="Phone Number">
+                            <div class="col-sm-3">
+                                <input type="number" name="phone" class="form-control" placeholder="Phone Number">
+                            </div> 
+                            <label class="control-label col-sm-3">Blood Group</label>
+                            <div class="col-sm-4 ">
+                                <select name="blood_group" class="form-control">
+                                    <option value="A+">A+</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="B+">B+</option>
+                                    <option value="O+">O+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O-">O-</option>
+                                </select>
                             </div>
                         </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Facebook Url</label>
+                              <div class="input-group col-sm-8 ">
+                                <span class="input-group-addon"><i class="fa fa-facebook"></i></span>
+                                <input id="email" type="text" class="form-control" value="http://www.facebook.com/" name="fb_url" placeholder="username">
+                              </div>  
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Twitter Url</label>
+                              <div class="input-group col-sm-8 ">
+                                <span class="input-group-addon"> </i><i class="fa fa-twitter"></i></span>
+                                <input id="email" type="text" class="form-control" value="http://www.twitter.com/" name="twitter_url" placeholder="username">
+                              </div>                              
+
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Personal Web Url</label>
+                              <div class="input-group col-sm-8 ">
+                                <span class="input-group-addon"> <i class="fa fa-chrome"></i> </span>
+                                <input id="email" type="text" class="form-control" value="http://www.demo.com/" name="web_url" placeholder="username">
+                              </div>  
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Linked Url</label>
+                              <div class="input-group col-sm-8 ">
+                                <span class="input-group-addon"> <i class="fa fa-linkedin"></i></span>
+                                <input id="email" type="text" value="http://www.linkedin.com/" class="form-control" name="linked_url" placeholder="username">
+                              </div>                              
+
+                        </div>
+
+ 
+
                     </div>
                  
-                    <div class="col-md-12 hidden  " id="h2" class="testimonial" style="background: #eee; padding: 5px;">
-                     
+                    <div class="col-md-12 hidden  " id="h2" class="events" style="background: #eee; padding: 10px;">                 
                         <div class="form-group">
-                            <label class="control-label col-sm-2">Lcation</label>
+                            <label class="control-label col-sm-2">Event Location</label>
                             <div class="col-sm-10">
                                 <input type="text" name="location" class="form-control" placeholder="Location">
                             </div>
                         </div>
-
-
-                    <div class="form-group">
-                        <label class="control-label col-sm-2">Event Start  Date Time</label>
-                        <div class="col-sm-10 controls input-append date form_datetime" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
-                    
-                            <input type="text" value=""   class="form-control"> 
-         
-                            <span class="add-on"><i class="icon-remove"></i></span>
-                            <span class="add-on"><i class="icon-th"></i></span>                
-                        </div>
-                        <input type="hidden" id="dtp_input1" value="" class="form-control" /><br/>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2">Event End  Date Time</label>
-                        <div class="col-sm-10 controls input-append date form_datetime" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
-                    
-                            <input type="text" value=""   class="form-control"> 
-         
-                            <span class="add-on"><i class="icon-remove"></i></span>
-                            <span class="add-on"><i class="icon-th"></i></span>                
-                        </div>
-                        <input type="hidden" id="dtp_input1" value="" class="form-control" /><br/>
-                    </div>      
- 
                         <div class="form-group">
-                            <label class="control-label col-sm-2">Select Publish Mode</label>
-                            <div class="col-sm-3"> 
-                                <select name="blog_category" class="form-control" >
-                                    <option value="1"> Public</option>
-                                    <option value="2"> Admin</option>
-                                    <option value="3"> Only Me</option>
-                                </select>
+                            <label class="control-label col-sm-2">Event Start Date Time</label>
+                            <div class="col-sm-10 controls input-append date form_datetime" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                            <input type="text" value="" name="event_start_date"  class="form-control"> 
+                            <span class="add-on"><i class="icon-remove"></i></span>
+                            <span class="add-on"><i class="icon-th"></i></span>                
                             </div>
-                            <label class="control-label col-sm-3">Sort Order</label>
-                            <div class="col-sm-4">
-                                <input type="number" name="sort_order" class="form-control" placeholder=" Post Order">
+                            <input type="hidden" id="dtp_input1" value="" class="form-control" /><br/>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Event End  Date Time</label>
+                            <div class="col-sm-10 controls input-append date form_datetime" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                <input type="text" value="" name="event_end_date"  class="form-control"> 
+                                <span class="add-on"><i class="icon-remove"></i></span>
+                                <span class="add-on"><i class="icon-th"></i></span>                
                             </div>
-                        </div>  
-                         
+                            <input type="hidden" id="dtp_input1" value="" class="form-control" /><br/>
+                        </div>    
                     </div>
 
-                    <div class="col-md-12  hidden " id="h3" class="blog" style="background: #eee; padding: 5px;">
+                    <div class="col-md-12  hidden " id="h3" class="blog" style="background: #eee; padding: 10px;">
                         <div class="form-group">
                             <label class="control-label col-sm-2">Select Blog Category</label>
                             <div class="col-sm-3">
                                 <select name="blog_category" class="form-control" >
                                     <option value="health"> Health</option>
-                                    <option value="doctor"> Doctor</option>
-                                    <option value="blood"> Blood</option>
+                                    @foreach($data['all_blog_categories'] as $row)
+                                        <option value="{{$row->category_name}}"> {{$row->category_name}}</option>
+                                    @endforeach
                                 </select>
                             </div>  
                             <label class="control-label col-sm-3">Blog Publish Date Time</label>
@@ -199,16 +243,8 @@
                         </div> 
                          
                     </div>
-
-
-
-
-                    <div class="col-md-12  hidden" id="h4" class="testimonial" style="background: #eee; padding: 5px;">
+                    <div class="col-md-12  hidden" id="h4" class="testimonial" style="background: #eee; padding: 10px;">
                      
- 
-
-
-
                         <div class="form-group">
                             <label class="control-label col-sm-2">Lcation</label>
                             <div class="col-sm-10">
@@ -244,7 +280,7 @@
                          
                     </div>
 
-                    <div class="col-md-12 hidden  " id="h5" class="testimonial" style="background: #eee; padding: 5px;">
+                    <div class="col-md-12 hidden  " id="h5" class="testimonial" style="background: #eee; padding: 10px;">
                         
                         <div class="form-group">
                             <label class=" control-label   col-sm-2">Post Published Date</label>
@@ -262,13 +298,11 @@
                         </div> 
                          
                     </div>
- 
-
 
                     <div class="form-group">
-                        <div class="col-md-6 col-md-offset-2">
-                            <button type="submit" class="btn btn-primary">
-                            Create 
+                        <div class="col-md-12 col-md-offset-8" style="margin-top: 15px">
+                            <button type="submit" class="btn btn-primary col-md-3">
+                                Create 
                             </button>
                         </div>
                     </div>

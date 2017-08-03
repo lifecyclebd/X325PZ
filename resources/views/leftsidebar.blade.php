@@ -155,21 +155,47 @@
                     </a></li>
                 </ul>
             </li>
- 
-         
+            
+
+
+
+
             <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-info-circle"></i> <span>Content</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">  
-                    <li><a href="{{ url('admin/content') }}"><i class="fa fa-tasks"></i> View Content</a></li>
-                    <li><a href="{{ url('/admin/content/search-content') }}"><i class="fa fa-search"></i> Search Content</a></li>
-                    <li><a href="{{ url('admin/content/create') }}"><i class="fa fa-plus"></i>Add Content</a></li>
-                </ul>
-            </li>
+          <a href="#">
+            <i class="fa fa-share"></i> <span>Content Section</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu"> 
+            <li class="treeview">
+              <a href="#"><i class="fa fa-rss"></i> Blog
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('admin/blog/createCategory') }}"><i class="fa fa-plus"></i> Add Blog Category</a></li> 
+                <li><a href="{{ url('/admin/blog/category') }}"><i class="fa fa-tasks"></i> Blog Category</a></li> 
+              </ul>
+            </li> 
+
+
+            <li class="treeview">
+              <a href="#"><i class="fa fa-rss"></i> Content
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('admin/content/create') }}"><i class="fa fa-plus"></i>Add Content</a></li> 
+                <li><a href="{{ url('admin/content') }}"><i class="fa fa-tasks"></i> View Content</a></li>
+                <li><a href="{{ url('/admin/content/search-content') }}"><i class="fa fa-search"></i> Search Content</a></li>
+              </ul>
+            </li> 
+
+          </ul>
+        </li> 
 
         </ul>
     </section>

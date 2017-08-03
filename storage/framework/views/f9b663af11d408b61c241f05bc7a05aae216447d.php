@@ -9,6 +9,7 @@
   
   
 <?php echo $__env->yieldContent('script_link'); ?>
+
 <?php echo $__env->yieldContent('javascript_code'); ?>
 
 

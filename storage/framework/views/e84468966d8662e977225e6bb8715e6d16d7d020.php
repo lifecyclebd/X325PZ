@@ -37,8 +37,8 @@
                                 <?php $__currentLoopData = $data['content']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
                                     <td><?php echo e($row->id); ?></td>
-                                    <td><?php echo e($row->title); ?></td>
-                                    <td align="justify"><?php echo substr($row->description,0,200); ?>...</td> 
+                                    <td><?php echo e($row->content_title); ?></td>
+                                    <td align="justify"><?php echo substr($row->content_description,0,200); ?></td> 
                                     <td><?php echo e($row->content_type); ?></td> 
                                     <td>
                                         <img src="<?php echo e($row->pic_path); ?>" style="width: 60px; height: 60px;"> 
