@@ -38,7 +38,7 @@
 
             <header class="main-header">
                 <!-- Logo -->
-                <a href="" class="logo"> 
+                <a href="{{url('/')}}/admin/home" class="logo"> 
                     <span class="logo-lg"><b>Lifecycle </b>BD</span>
                 </a>
                 <!-- Header Navbar: style can be found in header.less -->

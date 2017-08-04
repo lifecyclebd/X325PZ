@@ -39,7 +39,7 @@
 
             <header class="main-header">
                 <!-- Logo -->
-                <a href="" class="logo"> 
+                <a href="<?php echo e(url('/')); ?>/admin/home" class="logo"> 
                     <span class="logo-lg"><b>Lifecycle </b>BD</span>
                 </a>
                 <!-- Header Navbar: style can be found in header.less -->
