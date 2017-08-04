@@ -3,9 +3,9 @@
 @section('content')
 <div class="container-fluid"> 
     <div class="col-md-9">
-        <div class="row ">
+        <div class="row " style="margin-top: 10px">
             <div class="col-md-6">
-                <img src="{{$data['last_news']->pic_path}}" class="img img-rounded" style="width: 100%; height: auto">
+                <img src="{{$data['last_news']->pic_path}}" class="img img-rounded" style="width: 100%; height: 350px">
             </div>
             <div class="col-md-6">
                 <span class="related_links_news_title"><a class="" href="{{url('/news-detail')}}/{{$data['last_news']->id}}"><strong>{{$data['last_news']->title}}</strong></a></span>

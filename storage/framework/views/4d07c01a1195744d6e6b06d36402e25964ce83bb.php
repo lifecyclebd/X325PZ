@@ -63,6 +63,7 @@
                             <label class="control-label col-sm-3">Select Content Type</label>
                             <div class=" col-sm-4">
                                 <select name="content_type" class="form-control" id="mySelector">
+                                    <option value="What People Say">-- Select Content --</option> 
                                     <option value="What People Say">What People Say</option> 
                                     <option value="Upcoming Event">Upcoming Event</option> 
                                     <option value="Recent Events">Recent Events</option>  
