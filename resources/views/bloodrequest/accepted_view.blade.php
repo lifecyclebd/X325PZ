@@ -23,9 +23,9 @@
                                 <tr>
                                     <th>SL</th>
                                     <th>Blood Group</th>
-                                    <th>Request Phone</th>
-                                    <th>Accepted Phonne</th>
-                                    <th>Accepted Time</th>
+                                    <th>Request From</th>
+                                    <th>Request To</th>
+                                    <th>Request Time</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -34,8 +34,8 @@
                                     <td>{{$row->id}}</td>
                                     <td>{{$row->request_blood}}</td>
                                     <td>{{$row->request_phone}}</td>
-                                    <td>{{$row->accepted_phone}}</td>
-                                    <td>{{$row->accepted_time}}</td>
+                                    <td>{{$row->request_to}}</td>
+                                    <td>{{$row->request_time}}</td>
                                 </tr>
 
                                 @endforeach

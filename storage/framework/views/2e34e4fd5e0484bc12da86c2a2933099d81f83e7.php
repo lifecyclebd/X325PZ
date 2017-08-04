@@ -20,9 +20,9 @@
                                 <tr>
                                     <th>SL</th>
                                     <th>Blood Group</th>
-                                    <th>Request Phone</th>
-                                    <th>Accepted Phonne</th>
-                                    <th>Accepted Time</th>
+                                    <th>Request From</th>
+                                    <th>Request To</th>
+                                    <th>Request Time</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -31,8 +31,8 @@
                                     <td><?php echo e($row->id); ?></td>
                                     <td><?php echo e($row->request_blood); ?></td>
                                     <td><?php echo e($row->request_phone); ?></td>
-                                    <td><?php echo e($row->accepted_phone); ?></td>
-                                    <td><?php echo e($row->accepted_time); ?></td>
+                                    <td><?php echo e($row->request_to); ?></td>
+                                    <td><?php echo e($row->request_time); ?></td>
                                 </tr>
 
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
