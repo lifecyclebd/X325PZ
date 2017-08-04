@@ -85,7 +85,7 @@ class HomeController extends Controller {
 
 
         $data['recent_donor'] = Donor:: where('already_donated', 1)->orderByDesc('last_donation')->get();
-        $data['upcoming_event'] = Content:: where('content_type', 'upcoming_events')->get();
+        $data['upcoming_event'] = Content:: where('content_type', 'Upcoming Event')->get();
         $data['all_blood_info']=Content::where('content_type','More About Blood')->orderByDesc('created_at')->take(4)->get();
         $data['testimonial']=Content::where('content_type','What People Say')->orderByDesc('created_at')->take(5)->get();
    //     $data['testimonial'] = Testimonial::all();

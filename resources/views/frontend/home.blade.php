@@ -318,12 +318,12 @@
 
                 </div> 
 
-        </div>
+        </d iv>
 
         @endforeach
  
 
-    </div> 
+        </div> 
     </div>
 
     <div class="container-fluid" style="padding: 20px; background-color: #4d4f54;  ">
@@ -331,19 +331,6 @@
     <a style="color: red; padding: 10px" class="pull-right btn btn-serach" href="{{url('/')}}/seeMoreBloodInfo">একই রকম পোস্ট </a>
 
     </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-
 
 
 <div class="get_well_soon">        

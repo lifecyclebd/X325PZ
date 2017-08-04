@@ -74,12 +74,12 @@
                                 <?php $__currentLoopData = $data['content']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
                                     <td><?php echo e($row->id); ?></td>
-                                    <td><a href="<?php echo e(url('/admin/content/')); ?>/<?php echo e($row->id); ?>" > <?php echo e($row->content_title); ?> </a></td> 
+                                    <td><a href="<?php echo e(url('/admin/content/')); ?>/<?php echo e($row->id); ?>" > <?php echo e($row->title); ?> </a></td> 
                                     <td><?php echo e($row->content_type); ?></td> 
                                     <td> 
 
                                         <div class="popup-gallery">
-                                        <a href="<?php echo e($row->pic_path); ?>" title="<?php echo e($row->content_title); ?>  -  [ <?php echo e($row->content_type); ?> ]" ><i class="fa fa-picture-o" aria-hidden="true"></i>
+                                        <a href="<?php echo e($row->pic_path); ?>" title="<?php echo e($row->title); ?>  -  [ <?php echo e($row->content_type); ?> ]" ><i class="fa fa-picture-o" aria-hidden="true"></i>
                                   View</a>
                                 </div>
 
