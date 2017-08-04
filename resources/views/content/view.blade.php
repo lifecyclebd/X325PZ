@@ -77,12 +77,12 @@
                                 @foreach($data['content'] as $row)
                                 <tr>
                                     <td>{{$row->id}}</td>
-                                    <td><a href="{{url('/admin/content/')}}/{{ $row->id }}" > {{$row->content_title}} </a></td> 
+                                    <td><a href="{{url('/admin/content/')}}/{{ $row->id }}" > {{$row->title}} </a></td> 
                                     <td>{{$row->content_type}}</td> 
                                     <td> 
 
                                         <div class="popup-gallery">
-                                        <a href="{{$row->pic_path}}" title="{{$row->content_title}}  -  [ {{$row->content_type}} ]" ><i class="fa fa-picture-o" aria-hidden="true"></i>
+                                        <a href="{{$row->pic_path}}" title="{{$row->title}}  -  [ {{$row->content_type}} ]" ><i class="fa fa-picture-o" aria-hidden="true"></i>
                                   View</a>
                                 </div>
 

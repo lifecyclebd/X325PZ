@@ -62,7 +62,7 @@
                                 @foreach($data['content'] as $row)
                                 <tr>
                                     <td>{{$row->id}}</td>
-                                    <td><a href="{{url('/admin/content/')}}/{{ $row->id }}">{{$row->content_title}}</a></td> 
+                                    <td><a href="{{url('/admin/content/')}}/{{ $row->id }}">{{$row->title}}</a></td> 
                                     <td>{{$row->content_type}}</td> 
                                     <td>
                                         <img src="{{$row->pic_path}}" style="width: 60px; height: 60px;"> 

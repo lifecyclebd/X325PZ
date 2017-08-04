@@ -48,8 +48,8 @@ class ContentController extends Controller {
         $Content->phone=$request->phone;
         $Content->location=$request->location;
         $Content->blood_group=$request->blood_group;
-        $Content->content_title=$request->content_title;
-        $Content->content_description=$request->content_description;
+        $Content->title=$request->content_title;
+        $Content->description=$request->content_description;
         $Content->content_type=$request->content_type;
         $Content->event_start_date=$request->event_start_date;
         $Content->event_end_date=$request->event_end_date;

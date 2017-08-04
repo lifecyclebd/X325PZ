@@ -681,13 +681,19 @@
 
                                             <div class="row" style="margin-top: -40px">
                                             <div class="col-md-8">
-                                                <h4>Name </h4><p>Designation</p></h4>
-
+                                                <h4>{{$row->name}} </h4><p>{{$row->designation}}</p></h4>
+                                                <span style="font-size: 16px"> 
+                                                <a href="{{$row->fb_url}}"> <i class="fa fa-facebook-official"></i></a>
+                                                <a href="{{$row->linked_url}}"> <i class="fa fa-linkedin-square"></i></a>
+                                                <a href="{{$row->twitter_url}}"> <i class="fa fa-twitter-square"></i></a>
+                                                <a href="{{$row->web_url}}"> <i class="fa fa-chrome" aria-hidden="true"></i>
+</a>
+                                                 </span>
                                                 <p>{{$row->title}}</p>
-</div>
-<div class="col-md-4">
-                                                <img class="img img-responsive img-circle pull-right " src="{{$row->pic_path}}" alt="testimonial" style="width:100%; height: auto;margin-top:0px">
-</div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <img class="img img-responsive img-thumbnail pull-right " src="{{$row->pic_path}}" alt="testimonial" style="width:100%; height: 100px;margin-top:0px">
+                                            </div>
                                             </div>
 
                                                 
