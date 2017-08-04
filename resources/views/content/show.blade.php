@@ -47,13 +47,13 @@ h4{
                     <!-- /.box-header -->
                     <div class="box-body" style="min-height: 300px">
 
-                        <h3 class="">{{$data['content']->content_title}}</h3>
+                        <h3 class="">{{$data['content']->title}}</h3>
                         <hr>
                         <div class="col-md-4">
                             <img src="{{$data['content']->pic_path}}" style="width: 50%; height: auto">
                         </div>
                         <div class="col-md-8">
-                            {!! $data['content']->content_description  !!}
+                            {!! $data['content']->description  !!}
                             <hr>
                             <?php 
                                 if(!empty($data['content']->location)) echo '<h4>Location: '. $data['content']->location.'</h4>' ;

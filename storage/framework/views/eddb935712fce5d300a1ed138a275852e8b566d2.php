@@ -38,55 +38,59 @@
 <div id="footer">
     <div class="container">
         <div class="row">
-            <h3 class="footer_title">যোগাযোগ</h3>
             <?php $info = get_footer(); ?>
 
             <div class="col-md-3">
                 <div class="footer-heading">
                     <h3><span>হেড অফিস </span></h3>
-                <p style="font-size: 16px; ">লাইফ সাইকেল বিডি </p>
-                    <p  > স্থানঃ  <?php echo e($info->head_office); ?>
+ 
+                    <p><?php echo e($info->head_office); ?>
 
                          
                     </p>
                 </div>
+                    <div class="footer_bottom_fa"> 
+                        <a href="<?php echo e(url('https://www.facebook.com/')); ?>" target="_blank"><i style="padding: 5px;" class="fa fa-facebook" aria-hidden="true"></i> </a>
+                        <a href="<?php echo e(url('https://plus.google.com/')); ?>" target="_blank"><i style="padding: 5px;"  class="fa fa-google-plus" aria-hidden="true"></i> </a>
+                        <a href="<?php echo e(url('https://www.youtube.com/')); ?>" target="_blank"><i style="padding: 5px;"  class="fa fa-youtube" aria-hidden="true"></i> </a>
+                        <a href="<?php echo e(url('https://www.twitter.com/')); ?>" target="_blank"><i style="padding: 5px;"  class="fa fa-twitter" aria-hidden="true"></i> </a>
+                        <a href="<?php echo e(url('')); ?>" target="_blank"><i style="padding: 5px;"" class="fa fa-whatsapp" aria-hidden="true"></i></a>
+
+                                    </div>
             </div>
 
             <div class="col-md-3">
                 <div class="footer-heading">
                     <h3><span>সাইটের রুপরেখা </span></h3>
                     <ul>
-                        <li><a href="#">হোমপেজ </a></li>
-                        <li><a href="#"> আমাদের কথা  </a></li>
-                        <li><a href="#"> দাতা হন  </a></li>
-                        <li><a href="#"> আমাদের নিতীমালা </a></li>
+                        <li><a href="<?php echo e(url('/')); ?>"> হোমপেজ </a></li>
+                        <li><a href="<?php echo e(url('/about-us')); ?>"> আমাদের কথা  </a></li>
+                        <li><a href="<?php echo e(url('/donor-register')); ?>"> দাতা হন  </a></li>
+                        <li><a href="<?php echo e(url('/search-doctor')); ?>"> ডাক্তার </a></li>
+                        <li><a href="<?php echo e(url('/view-hospital')); ?>"> হাসপাতাল </a></li>
+                        <li><a href="<?php echo e(url('/view-ambulance')); ?>"> এ্যাম্বুলেন্স </a></li>
                     </ul>
                 </div>
             </div>
-
+            <?php $info = get_footer(); ?>
             <div class="col-md-3">
                 <div class="footer-heading">
                     <h3><span>রক্ত দান </span></h3>
-                    <div class="insta">
-                        <p>আপনাদের পাশে ২৪/৭ ঘন্টায় উপস্থিত</p>
-                        <h3><?php echo e($info->phone1); ?>  </h3>
-                        <p>
-                           মানুষের জন্য মানুষ, রক্ত দরকারে কল করুন 
-                        </p> 
-                        <h3><?php echo e($info->phone2); ?></h3>
+                    <div>
 
-                        <div class="insta">
-                            <button  class="foooter_button">সাইন আপ করুন </button>
-                        </div>
+                        <ul>
+                        <li> হটলাইন- <?php echo e($info->hot_line_phone); ?></li>
+                        <li> আমাদের কথা-  <?php echo e($info->doctor_phone); ?></li>
+                        <li> এ্যাম্বুলেন্স- <?php echo e($info->ambulance_phone); ?></li>
+                        <li> রক্তের জন্য- <?php echo e($info->blood_phone); ?></li>
+                    </ul>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="footer-heading">
-                    <h3><span>  রেজিস্টার ইউজার  </span></h3>
+                    <h3><span>  এ্যানড্রয়েড এ্যাপ ডাউনলোড করুন </span></h3>
                     <div class="insta"> 
-                        <button type="button" class="foooter_button" data-toggle="modal" data-target="#changeAddress">ঠিকানা পরিবর্তন</button>
-
                         <div id="changeAddress" class="modal fade" role="dialog">
                               <div class="modal-dialog">
 
@@ -119,14 +123,7 @@
                         <img  style="width: 178px;height: 70px" class="img img-responsive img-rounded" src="public/images/googleplay_badge.jpg">
                     </div>
                     </a>
-                    <h4> <span>আমাদের অনুসরণ করুন </span> </h4>
-                    <div class="footer_bottom_fa"> 
-                        <a href="<?php echo e(url('https://www.facebook.com/')); ?>" target="_blank"><i style="padding: 5px;" class="fa fa-facebook" aria-hidden="true"></i> </a>
-                        <a href="<?php echo e(url('https://plus.google.com/')); ?>" target="_blank"><i style="padding: 5px;"  class="fa fa-google-plus" aria-hidden="true"></i> 
-                            <a href="<?php echo e(url('https://www.youtube.com/')); ?>" target="_blank"><i style="padding: 5px;"  class="fa fa-youtube" aria-hidden="true"></i> 
-                                <a href="<?php echo e(url('https://twitter.com/')); ?>" target="_blank"><i style="padding: 5px;"  class="fa fa-twitter" aria-hidden="true"></i> 
-
-                                    </div>
+                    
                                     </div>
                                     
                                     </div>

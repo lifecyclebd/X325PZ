@@ -66,15 +66,13 @@
                             <label class="control-label col-sm-3">Select Content Type</label>
                             <div class=" col-sm-4">
                                 <select name="content_type" class="form-control" id="mySelector">
-                                    <option value="1">What People Say</option> 
-                                    <option value="2">Upcoming Event</option> 
-                                    <option value="3">Recent Events</option>  
-                                    <option value="4">Blog</option> 
-                                    <option value="5">More About Blood</option> 
-                                    <option value="6">About Us</option> 
-                                    <option value="7">News </option> 
-                                    <option value="8">Post </option> 
-                                    <option value="9">Page </option> 
+                                    <option value="What People Say">What People Say</option> 
+                                    <option value="Upcoming Event">Upcoming Event</option> 
+                                    <option value="Recent Events">Recent Events</option>  
+                                    <option value="Blog">Blog</option> 
+                                    <option value="More About Blood">More About Blood</option> 
+                                    <option value="About Us">About Us</option> 
+                                    <option value="News">News </option>   
 
                                 </select>
                             </div>
@@ -218,40 +216,15 @@
                     <div class="col-md-12  hidden " id="h4" class="blog" style="background: #eee; padding: 10px;">
                         <div class="form-group">
                             <label class="control-label col-sm-2">Select Blog Category</label>
-                            <div class="col-sm-3">
+                            <div class="col-sm-10">
                                 <select name="blog_category" class="form-control" >
                                     <option value="health"> Health</option>
                                     @foreach($data['all_blog_categories'] as $row)
                                         <option value="{{$row->category_name}}"> {{$row->category_name}}</option>
                                     @endforeach
                                 </select>
-                            </div>  
-                            <label class="control-label col-sm-3">Blog Publish Date Time</label>
-                            <div class="col-sm-4 controls input-append date form_datetime" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
-                        
-                                <input type="text" value=""   class="form-control"> 
-             
-                                <span class="add-on"><i class="icon-remove"></i></span>
-                                <span class="add-on"><i class="icon-th"></i></span>                
-                            </div>
-                            <input type="hidden" id="dtp_input1" value="" class="form-control" /><br/>
-                        </div> 
-                         
-                        
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">Select Publish Mode</label>
-                            <div class="col-sm-3"> 
-                                <select name="blog_category" class="form-control" >
-                                    <option value="1"> Public</option>
-                                    <option value="2"> Admin</option>
-                                    <option value="3"> Only Me</option>
-                                </select>
-                            </div>
-                            <label class="control-label col-sm-3">Sort Order</label>
-                            <div class="col-sm-4">
-                                <input type="number" name="sort_order" class="form-control" placeholder=" Post Order">
-                            </div>
-                        </div> 
+                            </div>   
+                        </div>  
                          
                     </div>
                   
@@ -369,28 +342,29 @@
                 $('#datetimepicker1').datetimepicker();
             });
 
-$("#mySelector").change(function () {
+
+ $("#mySelector").change(function () {
  //   alert('123');
-    if( $(this).val() == 1){
+    if( $(this).val() == "What People Say"){
         $('#h1').removeClass('hidden');
         $('#h2').addClass('hidden');
         $('#h3').addClass('hidden'); 
         $('#h4').addClass('hidden'); 
     }
-    else if( $(this).val() == 2){
+    else if( $(this).val() =="Upcoming Event"){
         $('#h2').removeClass('hidden');
         $('#h1').addClass('hidden');
         $('#h3').addClass('hidden'); 
         $('#h4').addClass('hidden'); 
     }
-    else if( $(this).val() == 3){
+    else if( $(this).val() == "Recent Events"){
 
         $('#h3').removeClass('hidden');
         $('#h2').addClass('hidden');
         $('#h1').addClass('hidden'); 
         $('#h4').addClass('hidden'); 
     } 
-    else if( $(this).val() == 4){
+    else if( $(this).val() == "Blog"){
 
         $('#h4').removeClass('hidden');
         $('#h2').addClass('hidden');

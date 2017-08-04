@@ -681,13 +681,19 @@
 
                                             <div class="row" style="margin-top: -40px">
                                             <div class="col-md-8">
-                                                <h4>Name </h4><p>Designation</p></h4>
-
+                                                <h4>{{$row->name}} </h4><p>{{$row->designation}}</p></h4>
+                                                <span style="font-size: 16px"> 
+                                                <a href="{{$row->fb_url}}"> <i class="fa fa-facebook-official"></i></a>
+                                                <a href="{{$row->linked_url}}"> <i class="fa fa-linkedin-square"></i></a>
+                                                <a href="{{$row->twitter_url}}"> <i class="fa fa-twitter-square"></i></a>
+                                                <a href="{{$row->web_url}}"> <i class="fa fa-chrome" aria-hidden="true"></i>
+</a>
+                                                 </span>
                                                 <p>{{$row->title}}</p>
-</div>
-<div class="col-md-4">
-                                                <img class="img img-responsive img-circle pull-right " src="{{$row->pic_path}}" alt="testimonial" style="width:100%; height: auto;margin-top:0px">
-</div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <img class="img img-responsive img-thumbnail pull-right " src="{{$row->pic_path}}" alt="testimonial" style="width:100%; height: 100px;margin-top:0px">
+                                            </div>
                                             </div>
 
                                                 
@@ -1127,7 +1133,7 @@
 
 			<div style="padding:15px;" style=" margin:0 auto;">
 
-					<img src="{{url('/')}}/public/images/videogallery.png" style="width:200px; height:200px; margin:0 auto" class="img img-responsive"> 
+					<img src="{{url('/')}}/public/images/videogallery.png" style="width:300px; height:200px; margin:0 auto" class="img img-responsive"> 
 
 					<p style="margin:5px;">ভিডিও গ্যালারি </p>
 
@@ -1141,10 +1147,10 @@
 
 			<div style="padding:15px;" style=" margin:0 auto;" class="text-left">
 				<div class="col-md-12 text-center" style="font-size: 22px;margin-bottom: 35px">আমরা ২৪ ঘন্টায় আপনাদের সাথে, আপনাদের পাশে, আপনাদের কাজে নিয়োজিত ।। </div>
-                <div class="col-md-6">হটলাইন- </div><div class="col-md-6">{{$info->hot_line_phone}}</div>
-                <div class="col-md-6">ডাক্তার- </div><div class="col-md-6">{{$info->doctor_phone}}</div>
-                <div class="col-md-6">এ্যাম্বুলেন্স- </div><div class="col-md-6">{{$info->ambulance_phone}}</div>
-                <div class="col-md-6">রক্তের জন্য- </div><div class="col-md-6">{{$info->blood_phone}}</div>
+                <div class="col-md-6 pull-right">হটলাইন- </div><div class="col-md-6">{{$info->hot_line_phone}}</div>
+                <div class="col-md-6 pull-right">ডাক্তার- </div><div class="col-md-6">{{$info->doctor_phone}}</div>
+                <div class="col-md-6 pull-right">এ্যাম্বুলেন্স- </div><div class="col-md-6">{{$info->ambulance_phone}}</div>
+                <div class="col-md-6 pull-right">রক্তের জন্য- </div><div class="col-md-6">{{$info->blood_phone}}</div>
                 
 			</div>
 

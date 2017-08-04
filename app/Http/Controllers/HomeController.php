@@ -86,13 +86,13 @@ class HomeController extends Controller {
 
         $data['recent_donor'] = Donor:: where('already_donated', 1)->orderByDesc('last_donation')->get();
         $data['upcoming_event'] = Content:: where('content_type', 'upcoming_events')->get();
-        $data['all_blood_info']=Content::where('content_type','more_blood')->orderByDesc('created_at')->take(4)->get();
-        $data['testimonial']=Content::where('content_type','what_people_say')->orderByDesc('created_at')->take(5)->get();
+        $data['all_blood_info']=Content::where('content_type','More About Blood')->orderByDesc('created_at')->take(4)->get();
+        $data['testimonial']=Content::where('content_type','What People Say')->orderByDesc('created_at')->take(5)->get();
    //     $data['testimonial'] = Testimonial::all();
         return view('frontend.home')->with('data', $data);
     }
     public function seeMoreBloodInfo(){
-        $data['all_blood_info']=Content::where('content_type','more_blood')->orderByDesc('created_at')->get();
+        $data['all_blood_info']=Content::where('content_type','More About Blood')->orderByDesc('created_at')->get();
         return view('frontend.seeMoreBloodInfo')->with('data', $data);
     }
 
@@ -144,7 +144,7 @@ class HomeController extends Controller {
     public function read_more($id) {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        $data['all_news']=Content::where('content_type','more_blood')->take(6)->get();
+        $data['all_news']=Content::where('content_type','More About Blood')->take(6)->get();
         $data['read_more_detail'] = Content::find($id);
         return view('frontend.read_more')->with('data', $data);
     }

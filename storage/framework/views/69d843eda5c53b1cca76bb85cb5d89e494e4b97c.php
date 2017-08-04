@@ -44,13 +44,13 @@ h4{
                     <!-- /.box-header -->
                     <div class="box-body" style="min-height: 300px">
 
-                        <h3 class=""><?php echo e($data['content']->content_title); ?></h3>
+                        <h3 class=""><?php echo e($data['content']->title); ?></h3>
                         <hr>
                         <div class="col-md-4">
                             <img src="<?php echo e($data['content']->pic_path); ?>" style="width: 50%; height: auto">
                         </div>
                         <div class="col-md-8">
-                            <?php echo $data['content']->content_description; ?>
+                            <?php echo $data['content']->description; ?>
 
                             <hr>
                             <?php 
