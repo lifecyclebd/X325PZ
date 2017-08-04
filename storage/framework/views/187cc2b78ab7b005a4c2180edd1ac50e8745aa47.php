@@ -3,14 +3,18 @@
 <?php $__env->startSection('parentName', 'Health'); ?>
 <?php $__env->startSection('content'); ?>
 <div class="find_hospital">
-    <div class="container">  
-        <h2 class="find_hospital_title">Find Your Hospital</h2>
-        <p style="margin-top: 120px"></p>
+    <div class="container">   
+
+<header class="jumbotron hero-spacer" style="    background-color: rgba(255, 0, 0, 0.43); border-radius: 10px;">
+        <h2 class="find_hospital_title">বিশেষজ্ঞ ডাক্তারের পরামর্শ পেতে আপনার নিকটবর্তী ডাক্তার খুজুন
+</h2>
+            <h3 class="find_hospital_title">ডাক্তারের সাথে সরাসরি কথা বলতে  ০১৭০৯৮৪৮৪৮২ কল করুন </h3>
+            <p> </p> <p style="margin-top: 120px"></p>
         <form class="form-horizontal" method="post" action="<?php echo e(url('/search-hospital')); ?>">
             <?php echo csrf_field(); ?> 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1" style="width: 25%;"> 
-                    <select name="division" class="form-control find_search_button divisions" required>
+                    <select name="division" class="form-control find_search_button divisions">
                         <option value="">Select Division</option>
                         <?php $__currentLoopData = $data['division']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <option value="<?php echo e($row->id); ?>"><?php echo e($row->division_name); ?></option>
@@ -35,6 +39,9 @@
                 </span>
             </div>
         </form>
+</header>
+
+        
     </div>
 </div> 
 

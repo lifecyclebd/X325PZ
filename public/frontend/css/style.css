@@ -1872,7 +1872,7 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     padding: 0 20px;
-    color: #fff;
+    color: white;
     margin-bottom: 5px;
 }
 
@@ -1893,7 +1893,7 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
     word-spacing: 3px;
     font-weight: 300;
     margin-top: 40px;
-    color: #7e7e7e;
+    color: white;
 }
 .foooter_button{
     border-radius: 5px;
@@ -1914,7 +1914,7 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
 }
 
 #footer .footer-heading li {
-    border-bottom: 1px solid #8b8b8b;
+    border-bottom: 1px solid #fff;
     padding: 10px 0;
 }
 
@@ -1930,7 +1930,7 @@ input[type="text"].search_place:focus, input[type="password"]:focus, input[type=
     font-size: 15px;
     padding-top: 9px;
     padding-bottom: 9px;
-    color: #7e7e7e;
+    color: white;
 }
 
 #footer .footer-heading ul > li > a:hover {

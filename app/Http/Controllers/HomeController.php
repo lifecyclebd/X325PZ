@@ -63,14 +63,24 @@ class HomeController extends Controller {
                 ->get();
 
 
-        $data['a_positive'] = Donor::where([['blood_group','A+'],['already_donated',1]])->get()->count();
-        $data['a_negative'] = Donor::where([['blood_group','A-'],['already_donated',1]])->get()->count();
-        $data['b_positive'] = Donor::where([['blood_group','B+'],['already_donated',1]])->get()->count();
-        $data['b_negative'] = Donor::where([['blood_group','B-'],['already_donated',1]])->get()->count();
-        $data['ab_positive'] = Donor::where([['blood_group','AB+'],['already_donated',1]])->get()->count();
-        $data['ab_negative'] = Donor::where([['blood_group','AB-'],['already_donated',1]])->get()->count();
-        $data['o_positive'] = Donor::where([['blood_group','O+'],['already_donated',1]])->get()->count();
-        $data['o_negative'] = Donor::where([['blood_group','O-'],['already_donated',1]])->get()->count();
+        $data['a_positive'] = Donor::where([['blood_group','A+'],['already_donated',0]])->get()->count();
+        $data['a_negative'] = Donor::where([['blood_group','A-'],['already_donated',0]])->get()->count();
+        $data['b_positive'] = Donor::where([['blood_group','B+'],['already_donated',0]])->get()->count();
+        $data['b_negative'] = Donor::where([['blood_group','B-'],['already_donated',0]])->get()->count();
+        $data['ab_positive'] = Donor::where([['blood_group','AB+'],['already_donated',0]])->get()->count();
+        $data['ab_negative'] = Donor::where([['blood_group','AB-'],['already_donated',0]])->get()->count();
+        $data['o_positive'] = Donor::where([['blood_group','O+'],['already_donated',0]])->get()->count();
+        $data['o_negative'] = Donor::where([['blood_group','O-'],['already_donated',0]])->get()->count();
+
+        //-----------
+        $data['t_a_positive'] = Donor::where('blood_group','A+')->get()->count();
+        $data['t_a_negative'] = Donor::where('blood_group','A-')->get()->count();
+        $data['t_b_positive'] = Donor::where('blood_group','B+')->get()->count();
+        $data['t_b_negative'] = Donor::where('blood_group','B-')->get()->count();
+        $data['t_ab_positive'] = Donor::where('blood_group','AB+')->get()->count();
+        $data['t_ab_negative'] = Donor::where('blood_group','AB-')->get()->count();
+        $data['t_o_positive'] = Donor::where('blood_group','O+')->get()->count();
+        $data['t_o_negative'] = Donor::where('blood_group','O-')->get()->count();
 
 
 
@@ -134,7 +144,7 @@ class HomeController extends Controller {
     public function read_more($id) {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        $data['all_news']=Content::where('content_type','more_blood')->take(3)->get();
+        $data['all_news']=Content::where('content_type','more_blood')->take(6)->get();
         $data['read_more_detail'] = Content::find($id);
         return view('frontend.read_more')->with('data', $data);
     }
@@ -221,7 +231,7 @@ class HomeController extends Controller {
     public function news_detail_page($id) {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'))
-        $data['news'] = Content:: where('content_type', 'news')->take(10)->get();
+        $data['news'] = Content:: where('content_type', 'news')->take(6)->get();
         $data['news_detail'] = Content::find($id);
         //dd($data['news_detail']);
         return view('frontend.news_detail_page')->with('data', $data);

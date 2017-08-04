@@ -6,12 +6,12 @@
  
  <div class="More_about_info" style="margin-top: -30px">
     <div class="container-fluid" style="background-color: gray;height: auto;"> 
-        <h3 class="life_title " style="margin-bottom:50px;color: white">More about blood</h3> 
+        <h3 class="life_title " style="margin-bottom:50px;color: white"> রক্তদানের কিছু প্রয়োজনীয় কথা </h3> 
 
         @foreach($data['all_blood_info'] as $row) 
         <div class="col-md-3 col-sm-6 col-xs-12" style="border-radius: 8px">
             <div class="info_abou_blood " style="min-height:350px;color: black">                 
-                <p class="title">{{$row->title}}</p>
+                <p class="title" style="font-size: 20px"><strong>{{$row->title}}</strong></p>
                 <p class="text-justify" style="padding:10px">{!!substr($row->description,0,500)!!}</p>
             </div>
             <div class="text-center more_blood_bottom">

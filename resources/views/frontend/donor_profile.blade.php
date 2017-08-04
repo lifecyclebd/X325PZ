@@ -22,7 +22,6 @@
           <!-- Profile Image -->
           <div class="box box-primary">
             <div class="box-body box-profile">
-
               <img style="width: 100%; height: auto;" class="img-responsive img-circle img" src="{{$data['donor']->pic_path}}" alt="User profile picture">
 
 
@@ -58,7 +57,8 @@
           <!-- About Me Box -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Blood Donate History</h3>
+              <h3 class="
+              box-title">Blood Donate History</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body"> 

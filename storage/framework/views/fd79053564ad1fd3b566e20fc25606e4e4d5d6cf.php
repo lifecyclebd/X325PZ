@@ -141,7 +141,24 @@
         padding:20px; 
 
     }
-
+.signup_button {
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    background: #8f0002 !important;
+    margin-top: 15px; 
+    height: 50px;
+}
+.signup_button:hover {
+        color: #fff !important;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    background: #8f0002 !important;
+    margin-top: 15px; 
+    height: 50px;
+}
 </style>
 
 
@@ -171,38 +188,22 @@
     <!-- Wrapper for Slides -->
 
     <div class="carousel-inner">
-
-        <?php $i = 0; ?>
-
+ 
+        <?php $i = 0; if(!empty($data['slider'])){ ?>
         <?php $__currentLoopData = $data['slider']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
-
-
-        <div class="item <?php if ($i == 0) {
-
-            echo 'active';
-
-        } ?>"> 
-
+        <div class="item <?php if ($i == 0) { echo 'active'; } ?>"> 
+   
             <!-- Set the first background image using inline CSS below. -->
 
-            <div class="fill" style="background-image:url('<?php echo e(asset('/')); ?>public/images/gallery/<?php echo e($row->pic_path); ?>'); background-size: 100% 100%"></div>
+            <div class="fill" style="background-image:url('<?php echo e($row->pic_path); ?>'); background-size: 100% 100%"></div>
 
             <div class="carousel-caption">
+ 
 
+                <h2><?php if (!empty($row->caption)) { echo $row->caption; } ?></h2>
 
-
-                <h2><?php if (!empty($row->caption)) {
-
-            echo $row->caption;
-
-        } ?></h2>
-
-                <h4><?php if (!empty($row->sub_caption)) {
-
-            echo $row->sub_caption;
-
-        } ?></h4>
+                <h4><?php if (!empty($row->sub_caption)) { echo $row->sub_caption;  } ?></h4>
 
             </div>
 
@@ -210,8 +211,8 @@
 
 <?php $i++; ?>
 
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
-
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>  
+        <?php } ?> 
     </div>
 
 
@@ -234,19 +235,16 @@
 
 
 
-    <div class="row" style="min-height: 100px; background-color: #8f0002; padding: 10px; margin: 0 auto;"> 
+    <div class="row" style="min-height: 100px; background-color:red; padding: 10px; margin: 0 auto;"> 
+        <div class="col-md-8 hidden-xs" style="margin-top: 8px"> 
 
-        <div class="col-md-8 hidden-xs"> 
+             <form class="form-horizontak" method="get" action="<?php echo e(url('/')); ?>/search-doctor" style="margin: 10px;">
 
-        <div class="col-md-8" style="margin-top: 8px"> 
-
-            <!--<form class="form-horizontak" method="get" action="" style="margin: 10px;">
-
-                <?php echo csrf_field(); ?>-->
+                <?php echo csrf_field(); ?> 
 
                 <div class="input-group">
 
-                    <span class="input-group-addon" style="padding: 0px 0px; font-size: 25px;"><i class="fa fa-map-marker map_marker"></i></span>
+                    <span class="input-group-addon" style="padding: 0px 0px; font-size: 25px; width: 60px;"><i class="fa fa-map-marker map_marker"></i></span>
 
 
 
@@ -264,7 +262,7 @@
 
                 </div>
 
-            <!--</form>-->
+             </form> 
 
         </div>
 
@@ -286,17 +284,17 @@
 
 <div class="More_about_info">
 
-    <div class="container-fluid" style="background-color: gray;height: 580px"> 
+    <div class="container-fluid" style="background-color: gray;height: auto"> 
 
-        <h3 class="life_title " style="margin-bottom:50px;color: white"> রক্তদান - কিছু প্রয়োজনীয় কথা </h3> 
+        <h3 class="life_title " style="margin-bottom:50px;color: white"> রক্তদানের কিছু প্রয়োজনীয় কথা </h3> 
 
 
 
         <?php $__currentLoopData = $data['all_blood_info']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
 
-        <div class="col-md-3 col-sm-6 col-xs-12" style="border-radius: 8px">
+        <div class="col-md-3 col-sm-6 col-xs-12" style="border-radius: 8px; margin-bottom: 30px">
 
-            <div class="info_abou_blood " style="min-height:350px">
+            <div class="info_abou_blood " style="min-height:350px; color: black">
 
                  
 
@@ -322,12 +320,12 @@
         </div>
 
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-        <br> <br> <br> 
+ 
 
     </div> 
+    </div>
 
-    <div class="container-fluid" style="padding: 20px; background-color: #4d4f54; margin-top: 30px;">
+    <div class="container-fluid" style="padding: 20px; background-color: #4d4f54;  ">
 
     <a style="color: red; padding: 10px" class="pull-right btn btn-serach" href="<?php echo e(url('/')); ?>/seeMoreBloodInfo">একই রকম পোস্ট </a>
 
@@ -351,7 +349,7 @@
 
     <div class="container-fluid"> 
 
-        <h3 class="life_title " style="margin-bottom:30px">সুস্থ থাকুন </h3> 
+        <h3 class="life_title " style="margin-bottom:30px">আমাদের সেবাসমূহ </h3> 
 
         <div class="col-md-3">
 
@@ -546,8 +544,7 @@
         <div class="span12">
 
             <div class=" ">
-
-                <h2 class="life_title" style="margin-bottom: 20px;">Upcoming Events</h2>
+                <h2 class="life_title" style="margin-bottom: 20px;">আসন্ন কর্মসূচী</h2>
 
                 <div id="myCarousel" class="carousel fdi-Carousel slide">
 
@@ -557,7 +554,7 @@
 
                         <div class="carousel-inner onebyone-carosel">
 
-                            <?php $i=0;?>
+                            <?php $i=0;?>   
 
                             <?php $__currentLoopData = $data['upcoming_event']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
@@ -675,20 +672,21 @@
 
                                 <div class="col-md-4" style="">
 
-                                    <div class="what_people_say" style="height: 400px;padding: 25px"> 
+                                    <div class="what_people_say" style="height: 450px;padding: 25px"> 
 
                                         <span style="padding-left: 10px;">
 
                                             <div class="text-left">
 
                                             <div class="row" style="margin-top: -40px">
+                                            <div class="col-md-8">
+                                                <h4>Name </h4><p>Designation</p></h4>
 
-                                                <h4><?php echo e($row->name); ?></h4><small><?php echo e($row->designation); ?></small>
-
-                                                <b><?php echo e($row->institution); ?></b>
-
-                                                <img class="img img-responsive img-circle pull-right " src="<?php echo e($row->pic_path); ?>" alt="testimonial" style="width:130px;height:110px;margin-top: -50px">
-
+                                                <p><?php echo e($row->title); ?></p>
+</div>
+<div class="col-md-4">
+                                                <img class="img img-responsive img-circle pull-right " src="<?php echo e($row->pic_path); ?>" alt="testimonial" style="width:100%; height: auto;margin-top:0px">
+</div>
                                             </div>
 
                                                 
@@ -697,9 +695,11 @@
 
                                                 <div class="row">
 
-                                                    <p style="text-align: justify; min-height: 220px;   background: white !important;color: black;padding: 10px;border-radius: 8px;">
+                                                    <div style="text-align: justify; min-height: 220px;   background: white !important;color: black;padding: 10px;border-radius: 8px;">
 
-                                                    <?php echo e($row->message); ?></p>
+                                                    <?php echo $row->description; ?>
+
+                                                    </div>
 
                                                 </div>
 
@@ -779,7 +779,7 @@
 
             <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                <h3 class="life_title " style="margin-bottom: 30px">Blood Fighter</h3>
+                <h3 class="life_title " style="margin-bottom: 30px">রক্ত যোদ্ধা</h3>
 
 
 
@@ -799,9 +799,9 @@
 
             <?php $__currentLoopData = $data['blood_fighter']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
-        <a href="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->pic_path); ?>" title="The Cleaner" class="col-md-3" >
+        <a href="<?php echo e($row->pic_path); ?>" title="The Cleaner" class="col-md-3" >
 
-            <img src="<?php echo e(url('public/images/gallery')); ?>/<?php echo e($row->pic_path); ?>"  class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid #c9302c; float: left;">
+            <img src="<?php echo e($row->pic_path); ?>"  class="img-responsive thumbnail" style="width: 300px;height: 200px;border: 5px solid #c9302c; float: left;">
 
         </a>
 
@@ -947,84 +947,84 @@
 
         margin: 0 auto;
 
-    }
-
+    } 
+    .blood_bag {
+    margin: 10px;     
+    background: rgba(51, 51, 51, 0.64);
+    padding: 15px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    color: white    
+} 
 </style>
 
 <div class="blood_stock" style="  margin-top: 30px">
 
     <div class="container-fluid">
 
-        <div class="row text-center">
-
-            <h2 class="life_title" style="margin-bottom: 20px; margin-top: 30px">blood stock</h2>
-
+        <div class="row text-center"> 
+            <h2 class="life_title" style="margin-bottom: 20px; margin-top: 30px"> দাতা সংখ্যা </h2>
             <p class="text-center">Current blood stock in bangladesh</p>
-
-             <div class="col-md-3" style="margin-top:5px; border: 1px">
-
-                 <img src="<?php echo e(url('/')); ?>/public/images/bag/1.png" class="img img-responsive margin">
-
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">Available Donor: <?php echo e($data['a_positive']); ?></span>
-
+             <div class="col-md-3">
+                <div class="blood_bag">
+                     <img src="<?php echo e(url('/')); ?>/public/images/bag/1.png" class="img img-responsive margin">
+                     <span style="font-size: 16px; padding: 10px">সক্রিয় ডোনারঃ  <?php echo e($data['a_positive']); ?></span><br>
+                     <span style="font-size: 16px; padding: 10px">সর্বমোট ডোনারঃ  <?php echo e($data['t_a_positive']); ?></span>
+                 </div>
              </div>
-
-             <div class="col-md-3" style="margin-top:5px; border: 1px">
-
+             <div class="col-md-3">
+                <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/2.png" class="img img-responsive margin">
-
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">Available Donor: <?php echo e($data['b_positive']); ?></span>
-
+                 <span style="font-size: 16px; padding: 10px">সক্রিয় ডোনারঃ  <?php echo e($data['b_positive']); ?></span><br>
+                 <span style="font-size: 16px; padding: 10px">সর্বমোট ডোনারঃ  <?php echo e($data['t_b_positive']); ?></span>
              </div>
-
-             <div class="col-md-3" style="margin-top:5px; border: 1px">
-
+             </div>
+             <div class="col-md-3">
+                <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/3.png" class="img img-responsive margin">
-
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">Available Donor: <?php echo e($data['o_positive']); ?></span>
-
+                 <span style="font-size: 16px; padding: 10px">সক্রিয় ডোনারঃ  <?php echo e($data['o_positive']); ?></span><br>
+                 <span style="font-size: 16px; padding: 10px">সর্বমোট ডোনারঃ  <?php echo e($data['t_o_positive']); ?></span>
+                 </div>
              </div>
-
-             <div class="col-md-3" style="margin-top:5px; border: 1px">
-
+             <div class="col-md-3" >
+                <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/4.png" class="img img-responsive margin">
-
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">Available Donor: <?php echo e($data['ab_positive']); ?></span>
-
+                 <span style="font-size: 16px; padding: 10px">সক্রিয় ডোনারঃ  <?php echo e($data['ab_positive']); ?></span><br>
+                 <span style="font-size: 16px; padding: 10px">সর্বমোট ডোনারঃ  <?php echo e($data['t_ab_positive']); ?></span>
+                 </div>
              </div>
+             <div class="col-md-3">
 
-             <div class="col-md-3" style="margin-top:5px; border: 1px">
-
+                <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/5.png" class="img img-responsive margin">
-
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">Available Donor: <?php echo e($data['a_negative']); ?></span>
-
+                 <span style="font-size: 16px; padding: 10px">সক্রিয় ডোনারঃ  <?php echo e($data['a_negative']); ?></span><br>
+                 <span style="font-size: 16px; padding: 10px">সর্বমোট ডোনারঃ  <?php echo e($data['t_a_negative']); ?></span>
+                 </div>
              </div>
-
-             <div class="col-md-3" style="margin-top:5px; border: 1px">
-
+             <div class="col-md-3">
+                <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/6.png" class="img img-responsive margin">
+                 <span style="font-size: 16px; padding: 10px">সক্রিয় ডোনারঃ  <?php echo e($data['b_negative']); ?></span><br>
+                 <span style="font-size: 16px; padding: 10px">সর্বমোট ডোনারঃ  <?php echo e($data['t_b_negative']); ?></span>
+             </div></div>
 
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">Available Donor: <?php echo e($data['b_negative']); ?></span>
 
-             </div>
+             <div class="col-md-3">
 
-             <div class="col-md-3" style="margin-top:5px; border: 1px">
-
+                <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/7.png" class="img img-responsive margin">
-
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">Available Donor: <?php echo e($data['o_negative']); ?></span>
-
+                 <span style="font-size: 16px; padding: 10px">সক্রিয় ডোনারঃ  <?php echo e($data['o_negative']); ?></span><br>
+                 <span style="font-size: 16px; padding: 10px">সর্বমোট ডোনারঃ  <?php echo e($data['t_o_negative']); ?></span>
+                 </div>
              </div>
+             <div class="col-md-3">
 
-             <div class="col-md-3" style="margin-top:5px; border: 1px">
-
+                <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/8.png" class="img img-responsive margin">
-
-                 <span style="font-size: 22px; color: #c9302c; text-align: center;padding: 10px">Available Donor: <?php echo e($data['ab_negative']); ?></span>
-
-             </div>
-
+                 <span style="font-size: 16px; padding: 10px">সক্রিয় ডোনারঃ  <?php echo e($data['ab_negative']); ?></span><br>
+                 <span style="font-size: 16px; padding: 10px">সর্বমোট ডোনারঃ  <?php echo e($data['t_ab_negative']); ?></span>
+                 </div> 
+            
 
 
         </div>
@@ -1043,7 +1043,7 @@
 
             <div class=" ">
 
-                <h2 class="life_title" style="margin-bottom: 20px;">Recent Donor</h2>
+                <h2 class="life_title" style="margin-bottom: 20px;">সাম্প্রতিক দাতা</h2>
 
                 <div id="myCarousel" class="carousel fdi-Carousel slide">
 
@@ -1119,7 +1119,7 @@
 
 
 
-<div class="video" style="    background: #313131;color: #9e9b9b; min-height: 340px;font-size: 16px;text-align: center;">
+<div class="video" style="    background: #313131;color: white; min-height: auto;font-size: 16px;text-align: center;">
 
 	<div class="container-fluid">
 
@@ -1137,14 +1137,15 @@
 
 		<div class="col-md-4">
 
-	   
+	       <?php $info = get_footer(); ?>
 
-			<div style="padding:15px;" style=" margin:0 auto;">
-
-				<img style="width:200px; height:200px;    margin: 0 auto;" src="<?php echo e(url('/')); ?>/public/images/24-7-icon.png" class="img img-responsive"><p>
-
-				আমরা ২৪ ঘন্টায় আপনাদের সাথে, আপনাদের পাশে, আপনাদের কাজে নিয়োজিত ।। </p>
-
+			<div style="padding:15px;" style=" margin:0 auto;" class="text-left">
+				<div class="col-md-12 text-center" style="font-size: 22px;margin-bottom: 35px">আমরা ২৪ ঘন্টায় আপনাদের সাথে, আপনাদের পাশে, আপনাদের কাজে নিয়োজিত ।। </div>
+                <div class="col-md-6">হটলাইন- </div><div class="col-md-6"><?php echo e($info->hot_line_phone); ?></div>
+                <div class="col-md-6">ডাক্তার- </div><div class="col-md-6"><?php echo e($info->doctor_phone); ?></div>
+                <div class="col-md-6">এ্যাম্বুলেন্স- </div><div class="col-md-6"><?php echo e($info->ambulance_phone); ?></div>
+                <div class="col-md-6">রক্তের জন্য- </div><div class="col-md-6"><?php echo e($info->blood_phone); ?></div>
+                
 			</div>
 
 			 

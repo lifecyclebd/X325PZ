@@ -40,7 +40,7 @@
                     <div class="form-group">
                         <label for="name" class="col-md-4 control-label">Upload Photo</label>
                         <div class="col-md-6">
-                            <input id="name" type="file" class="form-control" name="photo_name" multiple="true">
+                            <input id="name" type="file" class="form-control" name="pic_path" multiple="true">
                         </div>
                     </div>
                     <div class="form-group">

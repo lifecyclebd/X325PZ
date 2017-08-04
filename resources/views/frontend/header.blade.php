@@ -220,7 +220,7 @@ You are requested for {{$row->number_blood_bag}} bag of
                                     <ul class="dropdown-menu">
                                         <li><a href="{{ url('/news') }}">News</a></li>
                                         <li><a href="{{ url('/blog') }}">Blog</a></li>
-                                        <li><a href="{{ url('/blood-info') }}">Blood Info</a></li>
+                                        <li><a href="{{ url('/seeMoreBloodInfo') }}">Blood Info</a></li>
                                         <!--
                                         <li><a href="{{ url('/search-blood-donor') }}">Search Donor</a></li>
                                         <li><a href="{{ url('/blood-news') }}">Blood News</a></li>

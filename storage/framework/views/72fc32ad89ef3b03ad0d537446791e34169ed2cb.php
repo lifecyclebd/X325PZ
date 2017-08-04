@@ -30,13 +30,13 @@ background: none; color: white; font-size: 20px;
 <div class="" id="donor-register">
 <div class="contact-content sec-padding">
        
-<div class="container" id="header" style="margin-top: -30px;" ><h3 class="text-center">Contact Us</h3></div>
+<div class="container" id="header" style="margin-top: -30px;color: white" ><h3 class="text-center">Contact Us</h3></div>
 
        <div class="container" style="background: rgba(189, 189, 189, 0.4); margin-bottom: 20px; padding: 30px;">
        
             <div class="row">
                 <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom: 10px;">
-                 
+                    <?php $info = get_footer(); ?>
                     <h3 style="color: white !important; padding-left: 10px">Address</h3> 
                     <ul class="contact-info">
                         <li>
@@ -47,8 +47,7 @@ background: none; color: white; font-size: 20px;
                             </div>
                             <div class="content-box"  style="color: white !important">
                                 <h4 style="color: white !important; padding-left: 10px">  Address</h4>
-                                <p style="color: white !important; padding-left: 10px"> H 00, 11-22 Avenue, <br>
-								example, country </p>
+                                <p style="color: white !important; padding-left: 10px">ইউনাইটেড ন্যাশনস রোড,<br>গুলশান সার্কেল-২,<br> ঢাকা-১২১২</p>
                             </div>
                         </li>
                         <li>
@@ -59,7 +58,7 @@ background: none; color: white; font-size: 20px;
                             </div>
                             <div class="content-box">
                                 <h4 style="color: white !important; padding-left: 10px">Phone</h4>
-                                <p style="color: white !important; padding-left: 10px">00 1111 2222 <br>Mobile: 00 111 222 333 </p>
+                                <p style="color: white !important; padding-left: 10px"><?php echo e($info->hot_line_phone); ?> </p>
                             </div>
                         </li>
                         <li>
@@ -70,7 +69,7 @@ background: none; color: white; font-size: 20px;
                             </div>
                             <div class="content-box">
                                 <h4 style="color: white !important; padding-left: 10px">Email</h4>
-                                <p style="color: white !important; padding-left: 10px">info@lifecyclebd.org <br> lifecyclebd@gmail.com</p>
+                                <p style="color: white !important; padding-left: 10px"><?php echo e($info->email1); ?> <br> <?php echo e($info->email2); ?></p>
                             </div>
                         </li>
                     </ul> 
@@ -111,7 +110,7 @@ background: none; color: white; font-size: 20px;
 <div class="container-fluid">
 
 <div style="min-height: 450px">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.6061408838555!2d90.39588331456119!3d23.72575508460154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8e6474187cf%3A0xb3d3783755659522!2sDhaka+Medical+College+Hospital!5e0!3m2!1sen!2sbd!4v1501241907662" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14602.44655179129!2d90.40739530670326!3d23.796840036563882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7a7ba38543b%3A0x91d5f14ad296d72e!2sGulshan+2%2C+Dhaka+1212!5e0!3m2!1sen!2sbd!4v1501792335338" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
 </div>
 <?php $__env->stopSection(); ?>  
