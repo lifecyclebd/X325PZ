@@ -6,13 +6,12 @@
 @section('parentName', 'Health')
 @section('content')
 <div class="find_hospital">
-    <div class="container">   
+    <div class="container" style="min-height: 540px">   
+        <p style="margin-top:200px"></p>
 
-<header class="jumbotron hero-spacer" style="    background-color: rgba(255, 0, 0, 0.43); border-radius: 10px;">
-        <h2 class="find_hospital_title">বিশেষজ্ঞ ডাক্তারের পরামর্শ পেতে আপনার নিকটবর্তী ডাক্তার খুজুন
-</h2>
-            <h3 class="find_hospital_title">ডাক্তারের সাথে সরাসরি কথা বলতে  ০১৭০৯৮৪৮৪৮২ কল করুন </h3>
-            <p> </p> <p style="margin-top: 120px"></p>
+<header >
+        <h4 class="find_hospital_title">দ্রুত সেবা পেতে আপনার নিকটবর্তী হাসপাতাল খুজুন </h4> 
+            <p> </p>  
         <form class="form-horizontal" method="post" action="{{url('/search-hospital')}}">
             {!! csrf_field() !!} 
             <div class="input-group">
