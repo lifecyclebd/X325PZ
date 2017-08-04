@@ -12,9 +12,9 @@
                 <a href="<?php echo e(url('/profile')); ?>"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
-      
-        
-           
+
+
+
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu"> 
@@ -37,7 +37,24 @@
 
                     <li><a href="<?php echo e(url('/donor')); ?>"><i class="fa fa-circle-o"></i> Donor</a></li>
                     <li><a href="<?php echo e(url('/search')); ?>"><i class="fa fa-circle-o"></i> Search</a></li>
-                    <li><a href="<?php echo e(url('/bloodrequest')); ?>"><i class="fa fa-circle-o"></i> Blood Request</a></li>
+
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-rss"></i>  Blood Request
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="<?php echo e(url('/admin/blood/web-blood-request')); ?>"> 
+                                    <i class="fa fa-globe" aria-hidden="true"></i>
+                                    Web Blood Request</a>
+                            </li>
+                            <li><a href="<?php echo e(url('admin/blood/app-blood-request')); ?>"><i class="fa fa-plus"></i> App Blood Request</a></li> 
+                            <li><a href="<?php echo e(url('/admin/blood/accept-blood-request')); ?>"><i class="fa fa-tasks"></i> Accept Blood Request</a></li> 
+                        </ul>
+                    </li> 
+
+
                     <li><a href="<?php echo e(url('/activity-list')); ?>"><i class="fa fa-circle-o"></i> Activity List</a></li>
                     <li><a href="<?php echo e(url('/sms')); ?>"><i class="fa fa-envelope"></i><span>SMS</span></a></li>
                 </ul>
@@ -90,7 +107,7 @@
                         </a>
                         <ul class="treeview-menu" style="display: none;">
                             <li><a href="<?php echo e(url('/')); ?>/admin/doctor/view"><i class="fa fa-medkit" aria-hidden="true"></i>
- Doctors</a></li>
+                                    Doctors</a></li>
                             <li><a href="<?php echo e(url('/admin/doctor/search_view')); ?>"><i class="fa fa-circle-o"></i> Search Doctors</a></li>
                             <li><a href="<?php echo e(url('admin/doctor/problem-view')); ?>"><i class="fa fa-circle-o"></i> Patient Problems</a></li>
                         </ul>
@@ -138,59 +155,59 @@
                     <li class="active">
                         <a href="<?php echo e(url('admin/mailbox/inbox')); ?>"> <i class="fa fa-inbox"></i> Inbox
                             <span class="pull-right-container">
-                                 
+
                             </span>
                         </a>
                     </li>
                     <li><a href="<?php echo e(url('admin/mailbox/compose')); ?>"><i class="fa fa-edit"></i> Compose
-                    </a></li> 
+                        </a></li> 
                     <li><a href="<?php echo e(url('admin/mailbox/sent')); ?>"> <i class="fa fa-envelope-o"></i>Sent
                             <span class="pull-right-container"> 
                             </span>
-                    </a></li>
+                        </a></li>
                 </ul>
             </li>
-            
+
 
 
 
 
             <li class="treeview">
-          <a href="#">
-            <i class="fa fa-share"></i> <span>Content Section</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu"> 
-            <li class="treeview">
-              <a href="#"><i class="fa fa-rss"></i> Blog
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo e(url('admin/blog/createCategory')); ?>"><i class="fa fa-plus"></i> Add Blog Category</a></li> 
-                <li><a href="<?php echo e(url('/admin/blog/category')); ?>"><i class="fa fa-tasks"></i> Blog Category</a></li> 
-              </ul>
+                <a href="#">
+                    <i class="fa fa-share"></i> <span>Content Section</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu"> 
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-rss"></i> Blog
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="<?php echo e(url('admin/blog/createCategory')); ?>"><i class="fa fa-plus"></i> Add Blog Category</a></li> 
+                            <li><a href="<?php echo e(url('/admin/blog/category')); ?>"><i class="fa fa-tasks"></i> Blog Category</a></li> 
+                        </ul>
+                    </li> 
+
+
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-rss"></i> Content
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="<?php echo e(url('admin/content/create')); ?>"><i class="fa fa-plus"></i>Add Content</a></li> 
+                            <li><a href="<?php echo e(url('admin/content')); ?>"><i class="fa fa-tasks"></i> View Content</a></li>
+                            <li><a href="<?php echo e(url('/admin/content/search-content')); ?>"><i class="fa fa-search"></i> Search Content</a></li>
+                        </ul>
+                    </li> 
+
+                </ul>
             </li> 
-
-
-            <li class="treeview">
-              <a href="#"><i class="fa fa-rss"></i> Content
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo e(url('admin/content/create')); ?>"><i class="fa fa-plus"></i>Add Content</a></li> 
-                <li><a href="<?php echo e(url('admin/content')); ?>"><i class="fa fa-tasks"></i> View Content</a></li>
-                <li><a href="<?php echo e(url('/admin/content/search-content')); ?>"><i class="fa fa-search"></i> Search Content</a></li>
-              </ul>
-            </li> 
-
-          </ul>
-        </li> 
 
         </ul>
     </section>
