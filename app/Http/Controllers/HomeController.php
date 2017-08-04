@@ -223,16 +223,16 @@ class HomeController extends Controller {
     }
 
     public function news_page() {
-        $data['last_news'] = Content:: where('content_type', 'news')->take(1)->orderByDesc('created_at')->first();
-        $data['news'] = Content:: where('content_type', 'news')->take(10)->skip(5)->orderByDesc('created_at')->get();
-        $data['recent_news'] = Content:: where('content_type', 'news')->take(4)->skip(1)->orderByDesc('created_at')->get();
+        $data['last_news'] = Content:: where('content_type', 'News')->take(1)->orderByDesc('created_at')->first();
+        $data['news'] = Content:: where('content_type', 'News')->take(10)->skip(5)->orderByDesc('created_at')->get();
+        $data['recent_news'] = Content:: where('content_type', 'News')->take(4)->skip(1)->orderByDesc('created_at')->get();
         return view('frontend.news_page')->with('data', $data);
     }
 
     public function news_detail_page($id) {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'))
-        $data['news'] = Content:: where('content_type', 'news')->take(6)->get();
+        $data['news'] = Content:: where('content_type', 'News')->take(6)->get();
         $data['news_detail'] = Content::find($id);
         //dd($data['news_detail']);
         return view('frontend.news_detail_page')->with('data', $data);
@@ -292,7 +292,7 @@ class HomeController extends Controller {
     public function blog_page() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        $data['blood_news'] = Content:: where('content_type', 'blog')->orderByDesc('created_at')->get();
+        $data['blood_news'] = Content:: where('content_type', 'Blog')->orderByDesc('created_at')->get();
         return view('frontend.view_blog')->with('data', $data);
     }
 
@@ -307,16 +307,16 @@ class HomeController extends Controller {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
         //$data['division'] = Division::all();
-        $data['upcoming_event'] = Content:: where('content_type', 'upcoming_events')->take(10)->orderByDesc('created_at')->get();
-        $data['recent_event'] = Content:: where('content_type', 'recent_events')->take(4)->skip(1)->orderByDesc('created_at')->get();
-        $data['last_recent_event'] = Content:: where('content_type', 'recent_events')->take(1)->orderByDesc('created_at')->first();
+        $data['upcoming_event'] = Content:: where('content_type', 'Upcoming Event')->take(10)->orderByDesc('created_at')->get();
+        $data['recent_event'] = Content:: where('content_type', 'Recent Events')->take(4)->skip(1)->orderByDesc('created_at')->get();
+        $data['last_recent_event'] = Content:: where('content_type', 'Recent Events')->take(1)->orderByDesc('created_at')->first();
         return view('frontend.events')->with('data', $data);
     }
 
     public function recent_event($id) {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        $data['recent'] = Content:: where('content_type', 'recent_events')->take(10)->get();
+        $data['recent'] = Content:: where('content_type', 'Recent Events')->take(10)->get();
         $data['recent_detail'] = Content::find($id);
         return view('frontend.recent_event')->with('data', $data);
     }
@@ -324,7 +324,7 @@ class HomeController extends Controller {
     public function upcoming_event($id) {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        $data['upcoming'] = Content:: where('content_type', 'upcoming_events')->take(10)->get();
+        $data['upcoming'] = Content:: where('content_type', 'Upcoming Event')->take(10)->get();
         $data['upcoming_detail'] = Content::find($id);
         //  dd($data['upcoming_detail']);
         return view('frontend.upcoming_event')->with('data', $data);
@@ -345,7 +345,7 @@ class HomeController extends Controller {
     public function about_us() {
         //$divisions = DB::table("divisions")->lists("name", "id");
         //return view('search.im', compact('divisions'));
-        $data['about_us'] = Content:: where('content_type', 'about_us')->first();
+        $data['about_us'] = Content:: where('content_type', 'About Us')->first();
         return view('frontend.about_us')->with('data', $data);
     }
 

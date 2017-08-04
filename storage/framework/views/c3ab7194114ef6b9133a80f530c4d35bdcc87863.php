@@ -1,9 +1,9 @@
 <?php $__env->startSection('content'); ?>
 <div class="container-fluid"> 
     <div class="col-md-9">
-        <div class="row ">
+        <div class="row " style="margin-top: 10px">
             <div class="col-md-6">
-                <img src="<?php echo e($data['last_news']->pic_path); ?>" class="img img-rounded" style="width: 100%; height: auto">
+                <img src="<?php echo e($data['last_news']->pic_path); ?>" class="img img-rounded" style="width: 100%; height: 350px">
             </div>
             <div class="col-md-6">
                 <span class="related_links_news_title"><a class="" href="<?php echo e(url('/news-detail')); ?>/<?php echo e($data['last_news']->id); ?>"><strong><?php echo e($data['last_news']->title); ?></strong></a></span>
