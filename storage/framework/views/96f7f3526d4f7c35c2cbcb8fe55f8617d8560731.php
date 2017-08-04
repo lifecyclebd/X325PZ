@@ -286,7 +286,7 @@
 
     <div class="container-fluid" style="background-color: gray;height: auto"> 
 
-        <h3 class="life_title " style="margin-bottom:50px;color: white"> রক্তদান - কিছু প্রয়োজনীয় কথা </h3> 
+        <h3 class="life_title " style="margin-bottom:50px;color: white"> রক্তদানের কিছু প্রয়োজনীয় কথা </h3> 
 
 
 
@@ -323,6 +323,7 @@
  
 
     </div> 
+    </div>
 
     <div class="container-fluid" style="padding: 20px; background-color: #4d4f54;  ">
 
@@ -348,7 +349,7 @@
 
     <div class="container-fluid"> 
 
-        <h3 class="life_title " style="margin-bottom:30px">সুস্থ থাকুন </h3> 
+        <h3 class="life_title " style="margin-bottom:30px">আমাদের সেবাসমূহ </h3> 
 
         <div class="col-md-3">
 
@@ -543,8 +544,7 @@
         <div class="span12">
 
             <div class=" ">
-
-                <h2 class="life_title" style="margin-bottom: 20px;">সাম্প্রতিক ঘটনাবলী </h2>
+                <h2 class="life_title" style="margin-bottom: 20px;">আসন্ন কর্মসূচী</h2>
 
                 <div id="myCarousel" class="carousel fdi-Carousel slide">
 
@@ -785,7 +785,7 @@
 
             <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                <h3 class="life_title " style="margin-bottom: 30px">Blood Fighter</h3>
+                <h3 class="life_title " style="margin-bottom: 30px">রক্ত যোদ্ধা</h3>
 
 
 
@@ -974,38 +974,44 @@
              <div class="col-md-3">
                 <div class="blood_bag">
                      <img src="<?php echo e(url('/')); ?>/public/images/bag/1.png" class="img img-responsive margin">
-                     <span style="font-size: 18px; padding: 10px">সহজলভ্য দাতাঃ  <?php echo e($data['a_positive']); ?></span>
+                     <span style="font-size: 16px; padding: 10px">সক্রিয় ডোনারঃ  <?php echo e($data['a_positive']); ?></span><br>
+                     <span style="font-size: 16px; padding: 10px">সর্বমোট ডোনারঃ  <?php echo e($data['t_a_positive']); ?></span>
                  </div>
              </div>
              <div class="col-md-3">
                 <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/2.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; padding: 10px">সহজলভ্য দাতাঃ  <?php echo e($data['b_positive']); ?></span>
+                 <span style="font-size: 16px; padding: 10px">সক্রিয় ডোনারঃ  <?php echo e($data['b_positive']); ?></span><br>
+                 <span style="font-size: 16px; padding: 10px">সর্বমোট ডোনারঃ  <?php echo e($data['t_b_positive']); ?></span>
              </div>
              </div>
              <div class="col-md-3">
                 <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/3.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; padding: 10px">সহজলভ্য দাতাঃ  <?php echo e($data['o_positive']); ?></span>
+                 <span style="font-size: 16px; padding: 10px">সক্রিয় ডোনারঃ  <?php echo e($data['o_positive']); ?></span><br>
+                 <span style="font-size: 16px; padding: 10px">সর্বমোট ডোনারঃ  <?php echo e($data['t_o_positive']); ?></span>
                  </div>
              </div>
              <div class="col-md-3" >
                 <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/4.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; padding: 10px">সহজলভ্য দাতাঃ  <?php echo e($data['ab_positive']); ?></span>
+                 <span style="font-size: 16px; padding: 10px">সক্রিয় ডোনারঃ  <?php echo e($data['ab_positive']); ?></span><br>
+                 <span style="font-size: 16px; padding: 10px">সর্বমোট ডোনারঃ  <?php echo e($data['t_ab_positive']); ?></span>
                  </div>
              </div>
              <div class="col-md-3">
 
                 <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/5.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; padding: 10px">সহজলভ্য দাতাঃ  <?php echo e($data['a_negative']); ?></span>
+                 <span style="font-size: 16px; padding: 10px">সক্রিয় ডোনারঃ  <?php echo e($data['a_negative']); ?></span><br>
+                 <span style="font-size: 16px; padding: 10px">সর্বমোট ডোনারঃ  <?php echo e($data['t_a_negative']); ?></span>
                  </div>
              </div>
              <div class="col-md-3">
                 <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/6.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; padding: 10px">সহজলভ্য দাতাঃ  <?php echo e($data['b_negative']); ?></span>
+                 <span style="font-size: 16px; padding: 10px">সক্রিয় ডোনারঃ  <?php echo e($data['b_negative']); ?></span><br>
+                 <span style="font-size: 16px; padding: 10px">সর্বমোট ডোনারঃ  <?php echo e($data['t_b_negative']); ?></span>
              </div></div>
 
 
@@ -1013,14 +1019,16 @@
 
                 <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/7.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; padding: 10px">সহজলভ্য দাতাঃ  <?php echo e($data['o_negative']); ?></span>
+                 <span style="font-size: 16px; padding: 10px">সক্রিয় ডোনারঃ  <?php echo e($data['o_negative']); ?></span><br>
+                 <span style="font-size: 16px; padding: 10px">সর্বমোট ডোনারঃ  <?php echo e($data['t_o_negative']); ?></span>
                  </div>
              </div>
              <div class="col-md-3">
 
                 <div class="blood_bag">
                  <img src="<?php echo e(url('/')); ?>/public/images/bag/8.png" class="img img-responsive margin">
-                 <span style="font-size: 22px; padding: 10px">সহজলভ্য দাতাঃ  <?php echo e($data['ab_negative']); ?></span>
+                 <span style="font-size: 16px; padding: 10px">সক্রিয় ডোনারঃ  <?php echo e($data['ab_negative']); ?></span><br>
+                 <span style="font-size: 16px; padding: 10px">সর্বমোট ডোনারঃ  <?php echo e($data['t_ab_negative']); ?></span>
                  </div> 
             
 
@@ -1041,7 +1049,7 @@
 
             <div class=" ">
 
-                <h2 class="life_title" style="margin-bottom: 20px;">Recent Donor</h2>
+                <h2 class="life_title" style="margin-bottom: 20px;">সাম্প্রতিক দাতা</h2>
 
                 <div id="myCarousel" class="carousel fdi-Carousel slide">
 
@@ -1117,7 +1125,7 @@
 
 
 
-<div class="video" style="    background: #313131;color: #9e9b9b; min-height: 340px;font-size: 16px;text-align: center;">
+<div class="video" style="    background: #313131;color: white; min-height: auto;font-size: 16px;text-align: center;">
 
 	<div class="container-fluid">
 
@@ -1125,7 +1133,7 @@
 
 			<div style="padding:15px;" style=" margin:0 auto;">
 
-					<img src="<?php echo e(url('/')); ?>/public/images/videogallery.png" style="width:200px; height:200px; margin:0 auto" class="img img-responsive"> 
+					<img src="<?php echo e(url('/')); ?>/public/images/videogallery.png" style="width:300px; height:200px; margin:0 auto" class="img img-responsive"> 
 
 					<p style="margin:5px;">ভিডিও গ্যালারি </p>
 
@@ -1135,14 +1143,15 @@
 
 		<div class="col-md-4">
 
-	   
+	       <?php $info = get_footer(); ?>
 
-			<div style="padding:15px;" style=" margin:0 auto;">
-
-				<img style="width:200px; height:200px;    margin: 0 auto;" src="<?php echo e(url('/')); ?>/public/images/24-7-icon.png" class="img img-responsive"><p>
-
-				আমরা ২৪ ঘন্টায় আপনাদের সাথে, আপনাদের পাশে, আপনাদের কাজে নিয়োজিত ।। </p>
-
+			<div style="padding:15px;" style=" margin:0 auto;" class="text-left">
+				<div class="col-md-12 text-center" style="font-size: 22px;margin-bottom: 35px">আমরা ২৪ ঘন্টায় আপনাদের সাথে, আপনাদের পাশে, আপনাদের কাজে নিয়োজিত ।। </div>
+                <div class="col-md-6 pull-right">হটলাইন- </div><div class="col-md-6"><?php echo e($info->hot_line_phone); ?></div>
+                <div class="col-md-6 pull-right">ডাক্তার- </div><div class="col-md-6"><?php echo e($info->doctor_phone); ?></div>
+                <div class="col-md-6 pull-right">এ্যাম্বুলেন্স- </div><div class="col-md-6"><?php echo e($info->ambulance_phone); ?></div>
+                <div class="col-md-6 pull-right">রক্তের জন্য- </div><div class="col-md-6"><?php echo e($info->blood_phone); ?></div>
+                
 			</div>
 
 			 

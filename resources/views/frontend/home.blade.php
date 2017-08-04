@@ -1133,7 +1133,7 @@
 
 			<div style="padding:15px;" style=" margin:0 auto;">
 
-					<img src="{{url('/')}}/public/images/videogallery.png" style="width:200px; height:200px; margin:0 auto" class="img img-responsive"> 
+					<img src="{{url('/')}}/public/images/videogallery.png" style="width:300px; height:200px; margin:0 auto" class="img img-responsive"> 
 
 					<p style="margin:5px;">ভিডিও গ্যালারি </p>
 
@@ -1147,10 +1147,10 @@
 
 			<div style="padding:15px;" style=" margin:0 auto;" class="text-left">
 				<div class="col-md-12 text-center" style="font-size: 22px;margin-bottom: 35px">আমরা ২৪ ঘন্টায় আপনাদের সাথে, আপনাদের পাশে, আপনাদের কাজে নিয়োজিত ।। </div>
-                <div class="col-md-6">হটলাইন- </div><div class="col-md-6">{{$info->hot_line_phone}}</div>
-                <div class="col-md-6">ডাক্তার- </div><div class="col-md-6">{{$info->doctor_phone}}</div>
-                <div class="col-md-6">এ্যাম্বুলেন্স- </div><div class="col-md-6">{{$info->ambulance_phone}}</div>
-                <div class="col-md-6">রক্তের জন্য- </div><div class="col-md-6">{{$info->blood_phone}}</div>
+                <div class="col-md-6 pull-right">হটলাইন- </div><div class="col-md-6">{{$info->hot_line_phone}}</div>
+                <div class="col-md-6 pull-right">ডাক্তার- </div><div class="col-md-6">{{$info->doctor_phone}}</div>
+                <div class="col-md-6 pull-right">এ্যাম্বুলেন্স- </div><div class="col-md-6">{{$info->ambulance_phone}}</div>
+                <div class="col-md-6 pull-right">রক্তের জন্য- </div><div class="col-md-6">{{$info->blood_phone}}</div>
                 
 			</div>
 
