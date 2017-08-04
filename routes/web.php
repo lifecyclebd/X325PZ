@@ -86,8 +86,7 @@ Route::get('/volunteer', 'HomeController@volunteer');
 Route::get('/make-donation', 'HomeController@make_donation');
 Route::get('/about-us', 'HomeController@about_us');
 Route::get('/contact', 'HomeController@contact');
-Route::get('/read-more/detail/{id}', 'HomeController@
-	0.');
+Route::get('/read-more/detail/{id}', 'HomeController@read_more');
 Route::get('/seeMoreBloodInfo', 'HomeController@seeMoreBloodInfo');
 
 Route::get('/events', 'HomeController@events');
@@ -201,6 +200,8 @@ Route::any('admin/degree/delete/{id}', 'DoctorController@degree_delete');
 Route::get('/bloodrequest', 'DonorController@blood_request_view');
 Route::get('/bloodrequest/create', 'DonorController@blood_request_create');
 Route::post('/bloodrequest/store', 'DonorController@blood_request_store');
+Route::get('/app/bloodrequest', 'DonorController@app_blood_request_view');
+Route::get('/accepted/bloodrequest', 'DonorController@accepted_blood_request_view');
 
 //------------------------------Search -------------------------------
 /*

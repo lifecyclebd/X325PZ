@@ -11,6 +11,8 @@ use App\Activity;
 use App\BloodRequest;
 use App\Message;
 use App\Tobeproud;
+use App\AcceptedBloodRequest;
+use App\AppBloodRequest;
 use App\Libraries\Common;
 use DB;
 use Hash;
@@ -456,5 +458,17 @@ if(empty($request->blood_group)){ return redirect('/donor-register?b=Blood Group
 
         return redirect('/donor-profile');
     }
+    
+    public function app_blood_request_view() {
+        //$data['blood_news'] = Blog::all();
+        $data['app_blood_request'] = AppBloodRequest::all();
+        return view('bloodrequest.app_view')->with('data', $data);
+    }
+    public function accepted_blood_request_view() {
+        //$data['blood_news'] = Blog::all();
+        $data['app_blood_request'] = AcceptedBloodRequest::all();
+        return view('bloodrequest.accepted_view')->with('data', $data);
+    }
+
 
 }
