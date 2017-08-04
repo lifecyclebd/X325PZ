@@ -175,6 +175,7 @@ class HomeController extends Controller {
         $actv = new Activity;
         //-------------------For BloodRequest Table--------------------------
         $data->request_blood_group = $request->request_blood_group;
+        $data->patient_name = $request->patient_name;
         $data->patient_hospital = $request->patient_hospital;
         $data->patient_phone = $request->patient_phone;
         $data->patient_place = $request->patient_place;

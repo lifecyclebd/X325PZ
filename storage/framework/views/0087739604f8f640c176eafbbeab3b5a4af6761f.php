@@ -88,7 +88,6 @@
                                     <th>Blood Group</th>
                                     <th>Last Donate Date</th>
                                     <th>Number Of Donation</th>
-                                    <th>Location</th>
                                     <th>Any Disease</th> 
                                     <th>Operation</th>
                                 </tr>
@@ -98,13 +97,12 @@
                                     <?php $__currentLoopData = $data['result']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
                                         <td><?php echo e($row->id); ?></td>                                   
-                                        <td><?php echo e($row->fullname); ?></td>
+                                        <td><?php echo e($row->fname); ?></td>
                                         <td><?php echo e($row->email); ?></td>                                    
                                         <td><?php echo e($row->phone); ?></td>
                                         <td><?php echo e($row->blood_group); ?></td>
-                                        <td><?php echo e($row->last_donate_date); ?></td>
-                                        <td><?php echo e($row->number_of_donate); ?></td>
-                                        <td><?php echo e($row->location); ?></td>
+                                        <td><?php echo e($row->last_donation); ?></td>
+                                        <td><?php echo e($row->donations_number); ?></td>
                                         <td><?php echo e($row->is_physically_disble); ?></td> 
                                         <td><a class="btn btn-sm btn-success" href="<?php echo e(url('/')); ?>/donor/viewprofile/<?php echo e($row->id); ?>">view </a> </td>
 

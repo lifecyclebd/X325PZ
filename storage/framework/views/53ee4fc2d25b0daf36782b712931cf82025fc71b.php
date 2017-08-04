@@ -20,50 +20,53 @@
 
                     <!-- /.box-header -->
                     <div class="box-body">
+                        <div class="table-responsive">
+                            <table id="example1" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>SL</th>
+                                        <th>Sender Email</th>
+                                        <th>Requested Blood Group</th>
+                                        <th>Patient Info</th>
+                                        <th>Number of Blood Bag</th>
+                                        <th>Reason</th>
+                                        <th>Relation</th>
+                                        <th>Operation Date</th>
+                                        <th>Donation Date</th>
+                                        <th>Operation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $__currentLoopData = $data['request_list']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <tr>
+                                        <td><?php echo e($row->id); ?></td>
+                                        <td><?php echo e($row->sender_email); ?></td>
+                                        <td><?php echo e($row->request_blood_group); ?></td>
+                                        <td>
+                                            <strong>Name:</strong> <?php echo e($row->patient_name); ?><br>
+                                            <strong>Hospital:</strong> <?php echo e($row->patient_hospital); ?><br>
+                                            <strong>Phone:</strong> <?php echo e($row->patient_phone); ?><br>
+                                            <strong>Place:</strong> <?php echo e($row->patient_place); ?>
 
-                        <table id="example1" class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>SL</th>
-                                    <th>User Name</th>
-                                    <th>Requested Blood Group</th>
-                                    <th>Patient Hospital</th>
-                                    <th>Patient Phone</th>
-                                    <th>Patient Place</th>
-                                    <th>Number of Blood Bag</th>
-                                    <th>Any Disease?</th>
-                                    <th>Relation</th>
-                                    <th>Operation Date</th>
-                                    <th>Operation</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $__currentLoopData = $data['request_list']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <tr>
-                                    <td><?php echo e($row->id); ?></td>
-                                    <td><?php echo e($row->user_id); ?></td>
-                                    <td><?php echo e($row->request_blood_group); ?></td>
-                                    <td><?php echo e($row->patient_hospital); ?></td>
-                                    <td><?php echo e($row->patient_phone); ?></td>
-                                    <td><?php echo e($row->patient_place); ?></td>
-                                    <td><?php echo e($row->number_blood_bag); ?></td>
-                                    <td><?php echo e($row->disease); ?></td>
-                                    <td><?php echo e($row->relation); ?></td>
-                                    <td><?php echo e($row->opration_time); ?></td>
-                                    <td> 
-                                        <a href="<?php echo e(url('/donor')); ?>/<?php echo e($row->id); ?>/edit" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
-                                        <a href="<?php echo e(url('/donor')); ?>/<?php echo e($row->id); ?>/destroy" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
-                                        <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
-                                        <a href="<?php echo e(url('/donor/')); ?>/<?php echo e($row->id); ?>" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
-                                        </a>
-                                    </td>
+                                        </td>
+                                        <td><?php echo e($row->number_blood_bag); ?></td>
+                                        <td><?php echo e($row->disease); ?></td>
+                                        <td><?php echo e($row->relation); ?></td>
+                                        <td><?php echo e($row->opration_time); ?></td>
+                                        <td><?php echo e($row->donation_time); ?></td>
+                                        <td> 
+                                            <a href="<?php echo e(url('/donor')); ?>/<?php echo e($row->id); ?>/edit" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-edit"></i> </a>
+                                            <a href="<?php echo e(url('/donor')); ?>/<?php echo e($row->id); ?>/destroy" class="btn  btn-danger btn-xs"><i class="fa fa-fw fa-remove"></i></a>
+                                            <a href="#" class="btn  btn-info btn-xs"><i class="fa fa-fw fa-print"></i></a>
+                                            <a href="<?php echo e(url('/donor/')); ?>/<?php echo e($row->id); ?>" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                    </tr> 
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </tbody>
 
-                                </tr>
-
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            </tbody>
-
-                        </table>
+                            </table>
+                        </div>
                     </div>
                     <!-- /.box-body -->
                 </div>

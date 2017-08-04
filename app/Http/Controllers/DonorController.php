@@ -140,9 +140,26 @@ if(empty($request->blood_group)){ return redirect('/donor-register?b=Blood Group
         $Donor->birth_date = $request->birth_date;
         $Donor->last_donation = $request->last_donation;
         $Donor->phone = $request->phone;
+
+
         $Donor->division = $request->division;
         $Donor->district = $request->district;
         $Donor->thana = $request->thana;
+
+        $div_id=$request->division;
+        $div_name =Division:: where('id', $div_id)->First();
+        $Donor->division = $div_name['division_name'];
+
+        $dis_id=$request->district;
+        $dis_name = District:: where('id', $dis_id)->First();
+        $Donor->district = $dis_name['district_name'];
+
+        $upz_id=$request->upazila;
+        $upz_name = Upazila:: where('id', $upz_id)->First();
+        $Donor->thana = $upz_name['upazila_name'];
+
+
+
         $Donor->address = $request->address; 
         $Donor->rank = 0;
         $Donor->web_url = 'na';
@@ -243,13 +260,13 @@ if(empty($request->blood_group)){ return redirect('/donor-register?b=Blood Group
 
         if ($request->division != 0) {
             if (isset($request->division)) {
-                $str .= "  division_id=" . $request->division;
+                $str .= "  division=" . $request->division;
             }
             if (isset($request->district)) {
                 $str .= " AND district=" . $request->district;
             }
             if (isset($request->upazila)) {
-                $str .= " AND upazila=" . $request->upazila;
+                $str .= " AND thana=" . $request->upazila;
             }
         }
 
@@ -302,7 +319,9 @@ if(empty($request->blood_group)){ return redirect('/donor-register?b=Blood Group
         $data['last5messageCount']=$data['last5message']->count();
 
 
-        $data['activities'] = Activity::where([['created_id', $login_donor_id], ['created_type', 'donor']])->get(); 
+        $data['activities'] = Activity::where([['created_id', $login_donor_id], ['created_type', 'donor']])->get();
+        $data['history'] = BloodRequest::where([['receiver_email', $login_donor_email],['is_donated',1]])->get();
+
         $data['last5activities']= Activity::where([['created_id', $login_donor_id], ['created_type', 'donor']])->orderByDesc('created_at')->take(5)->get(); 
         $data['last5activitiesCount']=$data['last5activities']->count();
 

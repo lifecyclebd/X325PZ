@@ -90,7 +90,6 @@
                                     <th>Blood Group</th>
                                     <th>Last Donate Date</th>
                                     <th>Number Of Donation</th>
-                                    <th>Location</th>
                                     <th>Any Disease</th> 
                                     <th>Operation</th>
                                 </tr>
@@ -100,13 +99,12 @@
                                     @foreach($data['result'] as $row)
                                     <tr>
                                         <td>{{$row->id}}</td>                                   
-                                        <td>{{$row->fullname}}</td>
+                                        <td>{{$row->fname}}</td>
                                         <td>{{$row->email}}</td>                                    
                                         <td>{{$row->phone}}</td>
                                         <td>{{$row->blood_group}}</td>
-                                        <td>{{$row->last_donate_date}}</td>
-                                        <td>{{$row->number_of_donate}}</td>
-                                        <td>{{$row->location}}</td>
+                                        <td>{{$row->last_donation}}</td>
+                                        <td>{{$row->donations_number}}</td>
                                         <td>{{$row->is_physically_disble}}</td> 
                                         <td><a class="btn btn-sm btn-success" href="{{url('/')}}/donor/viewprofile/{{$row->id}}">view </a> </td>
 

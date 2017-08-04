@@ -109,28 +109,20 @@
               <li><a href="#changepassword" data-toggle="tab">Change Password</a></li> 
               <li><a class="<?php if(isset($_GET['inbox'])){ echo 'active';} ?>" href="#inbox" data-toggle="tab">Inbox  <span class="badge badge-danger">5</span></a></li>
               <li><a href="#blood_request" data-toggle="tab">Blood Request  <span class="badge badge-danger">15</span></a></li> 
-              <li><a href="#to_be_proud" data-toggle="tab">To be Proud</a></li> 
+              <li><a href="#to_be_proud" data-toggle="tab">Share Feelings</a></li> 
             </ul>
             <div class="tab-content">
                 <div class="tab-pane  <?php if(!isset($_GET['inbox'])){ echo 'active';} ?> " id="activities">
                   <h3 class="life_title">Personal Activities</h3>
                   <table class="table table-bordered">
-                      <tr><td>SL</td><td>Purpose</td><td>Short Message</td><td>Published</td> <td>Status</td></tr>
+                      <tr><td>SL</td><td>Donation Date</td><td>Patient Name</td><td>Reasone</td></tr>
                       <?php  $i=1;  ?>
-                    <?php $__currentLoopData = $data['activities']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php $__currentLoopData = $data['history']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                       <tr>
                       <td><?php echo e($i); ?></td>
-                      <td><?php echo e($row->purpose); ?></td>
-                      <td><?php echo e($row->short_message); ?></td>
-                      <td>
-                      <?php $newDate = date("d-m-Y H:m:s", strtotime($row->created_at)); ?>
-                      <?php echo e($newDate); ?></td>
-                      <td>
-                      <a href=""><i class="fa fa-trash" style="font-size: 20px;"></i></a>
-
-                      <a href=""><i class="fa fa-clock-o" style="font-size: 20px;"></i></a>
-
-                      </td>
+                      <td><?php echo e($row->donation_date); ?></td>
+                      <td><?php echo e($row->patient_name); ?></td>
+                      <td><?php echo e($row->disease); ?></td>
                       </tr>
                       <?php  $i++;  ?>
                       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -449,23 +441,7 @@
                     </form>
 
                 </div>
-                    <div class="row">
-              <h2 class="life_title">Gallery</h2>
-                        <?php $__currentLoopData = $data['tobeproud_gallery']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <div class="col-md-3">
-                                  <div class="proud" style="background: #eee; padding: 10px; margin:5px;">
-                                    <img src="<?php echo e($row->pic_path); ?>" style="width: 100%; height: auto; " class="img img-responsive img-thumbnail">
-                                    <p style="text-align: center;background: #00BCD4; padding: 5px; color: white; border-radius: 5px">
-                                    <?php 
-                                    $new_date=strtotime($row->donate_date); 
-                                    echo date('d \o\f F Y', $new_date);
-                                    ?>, <?php echo e($row->donate_place); ?></p> 
-                                    <p style="color: #00BCD4; text-align: center;"><?php echo e($row->reason_of_proud); ?></p>
-                                </div>
-                              </div>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        
-                     </div>
+    
                     
 
                   </div> 
