@@ -110,28 +110,20 @@
               <li><a href="#changepassword" data-toggle="tab">Change Password</a></li> 
               <li><a class="<?php if(isset($_GET['inbox'])){ echo 'active';} ?>" href="#inbox" data-toggle="tab">Inbox  <span class="badge badge-danger">5</span></a></li>
               <li><a href="#blood_request" data-toggle="tab">Blood Request  <span class="badge badge-danger">15</span></a></li> 
-              <li><a href="#to_be_proud" data-toggle="tab">To be Proud</a></li> 
+              <li><a href="#to_be_proud" data-toggle="tab">Share Feelings</a></li> 
             </ul>
             <div class="tab-content">
                 <div class="tab-pane  <?php if(!isset($_GET['inbox'])){ echo 'active';} ?> " id="activities">
                   <h3 class="life_title">Personal Activities</h3>
                   <table class="table table-bordered">
-                      <tr><td>SL</td><td>Purpose</td><td>Short Message</td><td>Published</td> <td>Status</td></tr>
+                      <tr><td>SL</td><td>Donation Date</td><td>Patient Name</td><td>Reasone</td></tr>
                       @php $i=1; @endphp
-                    @foreach($data['activities'] as $row)
+                    @foreach($data['history'] as $row)
                       <tr>
                       <td>{{$i}}</td>
-                      <td>{{$row->purpose}}</td>
-                      <td>{{$row->short_message}}</td>
-                      <td>
-                      <?php $newDate = date("d-m-Y H:m:s", strtotime($row->created_at)); ?>
-                      {{$newDate}}</td>
-                      <td>
-                      <a href=""><i class="fa fa-trash" style="font-size: 20px;"></i></a>
-
-                      <a href=""><i class="fa fa-clock-o" style="font-size: 20px;"></i></a>
-
-                      </td>
+                      <td>{{$row->donation_date}}</td>
+                      <td>{{$row->patient_name}}</td>
+                      <td>{{$row->disease}}</td>
                       </tr>
                       @php $i++; @endphp
                       @endforeach

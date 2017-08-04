@@ -31,6 +31,9 @@
                     </select>
                     
                 </div>
+                <div class="col-md- ">
+                    <input type="text" class="form-control write_to_doctor" name="patient_name" title="Operation Date" placeholder="Patient Name">
+                </div>
                 <div class="col-md-6">
                     <input type="text" class="form-control write_to_doctor" name="patient_hospital" placeholder="Patient Hospital">
                 </div> 
@@ -44,7 +47,7 @@
                     <input type="number" class="form-control write_to_doctor" name="number_blood_bag" placeholder="Blood Bag">
                 </div>
                 <div class="col-md-6 ">
-                    <input type="text" class="form-control write_to_doctor" name="disease" placeholder="Disease">
+                    <input type="text" class="form-control write_to_doctor" name="disease" placeholder="Reason">
                 </div>
                 <div class="col-md-6 ">
                     <input type="text" class="form-control write_to_doctor" name="relation" placeholder="Relation">
