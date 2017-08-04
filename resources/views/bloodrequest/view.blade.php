@@ -28,7 +28,7 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
-                                    <th>User Name</th>
+                                    <th>Sender Email</th>
                                     <th>Requested Blood Group</th>
                                     <th>Patient Hospital</th>
                                     <th>Patient Phone</th>
@@ -44,7 +44,7 @@
                                 @foreach ($data['request_list'] as $row)
                                 <tr>
                                     <td>{{$row->id}}</td>
-                                    <td>{{$row->user_id}}</td>
+                                    <td>{{$row->sender_email}}</td>
                                     <td>{{$row->request_blood_group}}</td>
                                     <td>{{$row->patient_hospital}}</td>
                                     <td>{{$row->patient_phone}}</td>

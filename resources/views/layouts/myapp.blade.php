@@ -1,8 +1,9 @@
 
   @include('header')
-  @include('leftsidebar')
-  
-  
+  @include('leftsidebar') 
+
+
+
    @yield('content')
   
   
