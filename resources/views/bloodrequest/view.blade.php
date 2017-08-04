@@ -63,9 +63,7 @@
                                             <a href="{{url('/donor/')}}/{{ $row->id }}" class="btn  btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
                                             </a>
                                         </td>
-
-                                    </tr>
-
+                                    </tr> 
                                     @endforeach
                                 </tbody>
 

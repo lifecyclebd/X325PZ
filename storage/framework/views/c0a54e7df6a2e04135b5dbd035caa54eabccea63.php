@@ -25,7 +25,7 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
-                                    <th>User Name</th>
+                                    <th>Sender Email</th>
                                     <th>Requested Blood Group</th>
                                     <th>Patient Hospital</th>
                                     <th>Patient Phone</th>
@@ -41,7 +41,7 @@
                                 <?php $__currentLoopData = $data['request_list']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
                                     <td><?php echo e($row->id); ?></td>
-                                    <td><?php echo e($row->user_id); ?></td>
+                                    <td><?php echo e($row->sender_email); ?></td>
                                     <td><?php echo e($row->request_blood_group); ?></td>
                                     <td><?php echo e($row->patient_hospital); ?></td>
                                     <td><?php echo e($row->patient_phone); ?></td>

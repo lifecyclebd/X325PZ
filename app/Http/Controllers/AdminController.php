@@ -64,7 +64,9 @@ class AdminController extends Controller {
         $User->password = bcrypt($request->password);
         $User->remember_token = $request->_token;
         $User->save();
-        return redirect('/admin');
+
+        $request->session()->put('operationMessage', 'Admin Add Successfully.');
+        return redirect('/admin/view');
     }
 
     public function show($id) {

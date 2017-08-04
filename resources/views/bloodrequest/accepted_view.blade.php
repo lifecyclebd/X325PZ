@@ -35,7 +35,14 @@
                                     <td>{{$row->request_blood}}</td>
                                     <td>{{$row->request_phone}}</td>
                                     <td>{{$row->request_to}}</td>
-                                    <td>{{$row->request_time}}</td>
+                                    <td> 
+
+                                    <?php  
+                                        $date = new DateTime();
+                                        $date->setTimestamp($row->request_time);
+                                        echo $date->format('d M Y H:i:s') . "\n";
+                                    ?>
+                                    </td>
                                 </tr>
 
                                 @endforeach

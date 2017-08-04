@@ -53,12 +53,18 @@ use App\Donor;
         $data['empty']="";
         return $data;
     }
-
-
-
+    
 
 
     function admin_header_bar(){
+        $request= request();
+
+        if(!empty($request->session()->get('operationMessage'))){
+
+            $data['messages'] = $request->session()->get('operationMessage');
+            $request->session()->forget('donors');
+        } 
+        
        $data['admin_message'] = Message::where('receiver_type', 'admin')->get();
        //    $data['messages'] = Message::where([['sender_email',$donor_email], ['sender_type', 'donor']])->get();  
 

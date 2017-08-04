@@ -39,7 +39,7 @@
 
             <header class="main-header">
                 <!-- Logo -->
-                <a href="" class="logo"> 
+                <a href="<?php echo e(url('/')); ?>/admin/home" class="logo"> 
                     <span class="logo-lg"><b>Lifecycle </b>BD</span>
                 </a>
                 <!-- Header Navbar: style can be found in header.less -->
@@ -252,3 +252,18 @@
                 </nav>
             </header>
 
+
+<?php 
+  if(!empty( $header['messages'])){
+    ?>
+<script type="text/javascript">
+  alert('<div class="alert alert-success alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><strong>Success!</strong> <?php echo $header['messages']; ?></div>');
+</script>
+
+<?php 
+    $request= request();
+    $request->session()->forget('operationMessage');
+  } 
+
+  ?>
+ 
