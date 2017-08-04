@@ -197,11 +197,11 @@ Route::any('admin/degree/delete/{id}', 'DoctorController@degree_delete');
 
 
 //-------------------------Blood Request-----------------------------
-Route::get('/bloodrequest', 'DonorController@blood_request_view');
+Route::get('/admin/blood/web-blood-request', 'DonorController@blood_request_view');
 Route::get('/bloodrequest/create', 'DonorController@blood_request_create');
 Route::post('/bloodrequest/store', 'DonorController@blood_request_store');
-Route::get('/app/bloodrequest', 'DonorController@app_blood_request_view');
-Route::get('/accepted/bloodrequest', 'DonorController@accepted_blood_request_view');
+Route::get('admin/blood/app-blood-request', 'DonorController@app_blood_request_view');
+Route::get('/admin/blood/accept-blood-request', 'DonorController@accepted_blood_request_view');
 
 //------------------------------Search -------------------------------
 /*

@@ -466,7 +466,7 @@ if(empty($request->blood_group)){ return redirect('/donor-register?b=Blood Group
     }
     public function accepted_blood_request_view() {
         //$data['blood_news'] = Blog::all();
-        $data['app_blood_request'] = AcceptedBloodRequest::all();
+        $data['accepted_blood_request'] = AcceptedBloodRequest::all();
         return view('bloodrequest.accepted_view')->with('data', $data);
     }
 

@@ -13,12 +13,6 @@
 
                     <div class="box-header with-border">
                         <h3 class="box-title">Blood Donor <i class="fa fa-angle-right"> </i>  App  Blood Request List</h3>
-                        <div class="box-tools pull-right">
-                            <a href="{{url('bloodrequest/create')}}" class="">      
-                                <i class="fa fa-plus" aria-hidden="true"></i> Add Blood Request
-                            </a>
-
-                        </div>
                     </div>
 
                     <!-- /.box-header -->
